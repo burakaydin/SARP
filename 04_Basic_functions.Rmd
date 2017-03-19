@@ -1,0 +1,458 @@
+
+
+# Giriş {#basics}
+R veri analizi, grafik veya interaktif web uygulaması gibi basit olmayan çıktılar oluşturabilir. Bu bölümün amacı basit olmayan çıktılar oluşturmadan önce gereken temel prensipleri göstermektir.
+
+
+## Fonksiyonlar
+R gibi programlanabilir gelişmiş hesap makineleri kullanıcıların fonksiyon yazmasına ve saklamasına izin verir. R kullanıcılarının fonksiyonların nasıl çalıştığını kavraması önemlidir.
+
+
+### R: Basit Hesap makinesi 
+R hesap yapabilir. Aşağıdaki işlemleri ve ilgili R kodlarını inceleyiniz. 
+
+\begin{equation}
+1+1=2 
+(\#eq:bc1)
+\end{equation}
+
+```{r, collapse=T}
+1+1
+```
+
+\begin{equation}
+1-1=0 
+(\#eq:bc2)
+\end{equation}
+
+```{r,collapse=T}
+1-1
+```
+
+\begin{equation}
+1 + (2 / 3) - (2 * 6.5) = -11.33 
+(\#eq:bc3)
+\end{equation}
+
+```{r, collapse=TRUE}
+1 + (2 / 3) - (2 * 6.5)
+```
+
+\begin{equation}
+sin(30) + 4^3 + log(4) + e^3 + \sqrt{7} = 87.13 
+(\#eq:bc4)
+\end{equation}
+
+```{r, collapse=TRUE}
+sin(30) + 4^3 + log(4) + exp(3) + sqrt(7)
+```
+
+Eşitlik \@ref(eq:bc1) 'den \@ref(eq:bc4) 'e kadar olan işlemler R tarafından tamamlanır fakat hafızada tutulmaz. Eğer yaptığınız bir işelmin sonucunu tekrar kullanmak istiyorsanız ona isim vermelisiniz. İsim verdiğiniz R çıktıları oturum süresince (session) tekrar erişime açıktır. Çıktılara oturum kapandıktan sonra da ulaşmak istiyorsanız kaydetmelisiniz. Kaydetme işlemleri ilerleyen bölümlerde ele alınmıştır. İsim verme işlemi fraklı şekillerde yapılabilir;   "=", "<-" or "<<-". Bu materyal "=" operatörünü kullanır.
+
+Eşitlik \@ref(eq:bc1) 'den \@ref(eq:bc4) 'e kadar olan işlemleri oturum süresince saklamak için;
+
+```{r, collapse=TRUE}
+a=1 - 1
+b=1 + 1
+c=1 + (2 / 3) - (2 * 6.5)
+d=sin(30) + 4^3 + log(4) + exp(3) + sqrt(7)
+```
+
+İsim verdiğiniz çıktılar ile işlem yapabilirsiniz.
+```{r, collapse=TRUE}
+a+b+c+d
+```
+
+İsim verdiğiniz bir çıktıyı değiştirebilirsiniz (overwrite)
+```{r, collapse=TRUE}
+e=3+2
+e
+e=e+10
+e
+```
+
+Farklı bir isim vermek için (Not: R büyük harf küçük harf ayrımı yapar)
+```{r, collapse=TRUE}
+Equation1_output=a
+Equation1_output + b + c + d  # a+b+c+d ile eşit
+```
+
+
+###R: Programlanabilir Hesap makinesi 
+En basit hali ile fonksiyon 3 parçadan oluşur, girdi, işlem, çıktı. Bu bölümde verilen fonksiyonların test puanlarının analiz basamağında kullanıldığını varsayalım.
+
+
+#### Tek girdi - Tek Çıktı  
+Aşağıda verilen fonksiyonun adı _sabit5_ olsun. _sabit5_ fonksiyonu her öğrencinin puanına 5 puan ekleyecektir. Bir diğer deyişle, son derece basit bir fonksiyon olan _sabit5_ verilen bir puana 5 ekleyerek çıktı oluşturur.
+
+```{r,collapse=T}
+sabit5=function(girdi){
+    cikti=girdi+5
+    return(cikti)
+    }
+
+sabit5(girdi=50)
+sabit5(60)
+sabit5(80)
+```
+
+_sabit5_ fonksiyonu girdiyi alır , 5 ekler _(input+5)_, ve bir çıktı oluşturur _(cikti=girdi+5)_, ve çıktıyı rapor eder _(return(cikti))_.  Bütün bu işlemler _{   }_ içinde verilmelidir. 
+
+Diğer basit bir fonksiyon _sistematik1_ olarak isimlendirilmiştir ve verilen her bir puana %1 ekler.
+
+```{r,collapse=T}
+systematic1=function(input){
+    output=input+(input/100)
+    return(output)
+    }
+
+systematic1(input=50)
+systematic1(100)
+systematic1(120)
+```
+
+
+#### Çoklu Girdi-Tek Çıktı 
+Daha önce verilen fonksiyonlar tek girdi alıp tek çıktı oluşturmuştur. Bu örnekte iki farklı girdi ve tek bir çıktı vardır. Fonksiyona _eksipuan_ adı verilmiştir. Ham puan ve yanlış sayısı verilen fonksiyon, her yanlış için 0.2 puan düşürür. Örneğin 90 puan ve 6 yanlış girildiğinde çıktı olarak (90-0.2*6) 88.8 verilir. 
+
+```{r, collapse=TRUE}
+eksipuan=function(puan, yanlis){
+    cikti=puan - (0.2 * yanlis)
+    return(cikti)
+    }
+eksipuan(puan=90,yanlis=6)
+eksipuan(90,17)
+```
+
+Bir R fonksiyonunda girdiler _argüman_ (arguments) olarak isimlendirilir. _eksipuan_ fonksiyonu 2 argümana sahiptir (puan ve yanlış) ve tek bir çıktı verir. Çoklu argüman ve çoklu çıktı içeren fonksiyonlar yazılabilir. 
+
+####  Çoklu Girdi ve Çoklu Çıktı
+
+_geridönüt_ fonksiyonu doğru yanıt sayısını ve her sorunun kaç puan olduğu argümanlarını alır, çıktı olarak toplam puanı ve 100 almak için eksik kalan soru sayısını hesaplar.
+
+```{r, collapse=TRUE}
+geridonut=function(dogruyanit, katsayi){
+    total=dogruyanit*katsayi
+    kalan=(100-total)/katsayi
+    cikti=c(paste("Puan:", total," eksik:",kalan))
+    return(cikti)
+    }
+geridonut(dogruyanit=20,katsayi=2)
+geridonut(27,2)
+```
+
+#### Basit Hata
+R fonksiyonlarının çalışması için argumanların doğru kullanılması gerekir. Eğer _geridönüt_ fonksiyonuna _katsayı_ parametresini girmezseniz bir hata ile karşılaşırsınız.
+
+```{r, collapse=TRUE,error=T}
+geridonut=function(dogruyanit, katsayi){
+    total=dogruyanit*katsayi
+    kalan=(100-total)/katsayi
+    cikti=c(paste("Puan:", total," eksik:",kalan))
+    return(cikti)
+    }
+geridonut(dogruyanit=20)
+```
+
+#### Basit uyarı
+R fonksiyonları uyarı içerebilir. Daha önce yazdığımız _eksipuan_ fonksiyonunu düşünelim
+
+```{r, collapse=TRUE,error=T}
+eksipuan=function(puan, yanlis){
+    cikti=puan - (0.2 * yanlis)
+    return(cikti)
+    }
+eksipuan(puan=50,yanlis=10)
+
+```
+
+Bu fonksiyona bir uyarı ekleyebiliriz. Örneğin hesaplanacak puan sıfırın altında ise bir uyarı verebbiliriz.
+
+```{r, collapse=TRUE}
+eksipuan2=function(puan, yanlis){
+      output=puan - (0.2 * yanlis)
+      if (output<0) 
+    warning("Yeni puan 0'dan düşük")  
+    return(cikti)
+    }
+eksipuan2(puan=10,yanlis=60)
+```
+
+
+#### Basit Sekte
+Bir R fonksiyonu, yazarın belirlediği durumlarda sekteye uğrayabilir. Örneğin _eksipuan3_ fonksiyonunu 20'den düşük puanlar için düzeltme yapmayacak şekilde yazabiliriz.
+ 
+```{r, collapse=TRUE,error=T}
+eksipuan3=function(puan, yanlis){
+ 
+    if ((puan)<(20)) 
+    stop("20den düşük puanlar için bu fonksiyon işlemez")
+  
+     cikti=puan - (0.2 * yanlis)
+      return(cikti)
+    }
+eksipuan3(10,9)
+
+```
+
+
+### Yardım!
+Her R kullanıcısı yeni fonksiyonlar yazmak zorunda değildir, fakat fonksiyonların nasıl çalıştığını bilmek önemlidir. Eğer R bir hata veriyorsa bu genellikle kullanıcı veya datadan kaynaklıdır. Her ne kadar çok karşılaşılmasa da hatanın fonksiyonun kendisinden kaynaklandığı durumlar da olabilir. 
+
+R fonksiyonlar sayesinde çalışır. Dünyanın her yerinden araştırmacılar R fonksiyonları yazmakta, bu fonksiyonları bir R paketi olarak erişime açmaktadırlar. Hali hazırda 10 binden fazla R paketi vardır. R programını indirdiğinizde yaklaşık 30 R paketi bilgisayarınıza otomatik olarak indirilir. Bu 30 R paketinde binlerce fonksiyon bulunur.
+
+R programınızı yüklediğinizde otomatik olarak yüklenen 30 paketten bir tanesi _base_ dir. Bu paketin içinde 1200'den fazla fonksiyon bulunur. Örneğin _mean_ fonksiyonu aritmetik ortalama hesaplar.Genellikle paketler detaylı açıklamalar ile birlikte sunulur. Kullanıcıların bu açıklamalara ulaşabilmesi için çeşitli yollar mevcuttur; _help_, _?_, _??_ veya _example_
+
+
+
+```{r, collapse=T, eval=F}
+help("base")  # 
+help(mean)    # aritmetik ortalama fonksiyonu ve argümanları
+?mean         # aritmetik ortalama fonksiyonu ve argümanları
+??mean        # aritmetik ortalama fonksiyonu ve argümanları
+example(mean) # aritmetik ortalama fonksiyonu ve argümanları
+
+```
+
+
+## R Data Tipleri
+Bu bölümde vektörler, matrisler, değişken çeşitleri, kayıp veriler ve data çerçeveleri (data frames) kısaca tanıtılmıştır.
+
+
+### Vektörler
+R _c_ fonksionu ile vektör oluşturabilir. 10 öğrenci için not girelim.
+
+```{r, collapse=T}
+notlar=c(40,50,53,65,72,77,79,81,86,90)
+notlar
+```
+
+R vektörler üzerinden işlem yapabilir.
+
+```{r, collapse=T}
+notlar=c(40,50,53,65,72,77,79,81,86,90)
+#her nota 10 ekle
+notlar+10
+#her nota yüzde 10 ekle
+notlar+(notlar*0.10)
+#kendi ile çarp
+notlar*notlar
+# yeni notlar
+notlar2=c(30,40,46,58,64,66,69,72,74,81)
+# notlar ve notlar2 nin ortalamasını al
+(notlar+notlar2)/2
+
+# ilk notların yüzde 40ı ile ikinci notların yüzde 60ını topla
+notlar*0.4 + notlar2*0.6
+
+
+```
+
+Vektör oluşturmak için işeyarar birçok fonksiyon vardır. Örneğin _rep_ fonksiyonu (bknz: example(rep)) aynı değerleri tekrarlamak için kullanışlıdır.
+
+_rnorm_ fonksiyonu normal dağılıma sahip veriler simüle etmek için işe yarar. Eğer _?rnorm_ kullanılırsa bu fonksiyonun 3 argümanı olduğu görülür  _rnorm(n, mean = 0, sd = 1)_. Bu fonksiyon vektör uzunluğu (değişken sayısı) _n_ verilmediği sürece çalışmaz. Eğer sadece _n_ verilirse, popülasyon ortalaması 0 ve standart sapması 1 olan dağılımdan rasgele seçilen değerler ile bir vektör oluşturulur. Bu parametreler değiştirilebilir. Örneğin _rnorm(12,mean=10,sd=2)_  popülasyon parametreleri 10 ve 2 olan normal bir dağılımdan 12 adet gözlem çeker. Benzer bir fonksiyon _runif(n, min = 0, max = 1)_ tekdüzey bir dağılımdan gözlem çeker.
+
+
+```{r, collapse=T}
+a=1:12            # a 1 den 12ye tam sayılar
+rep(0,12)         # 0 12 kez tekrarlanır
+rep(1:5,each=3)   # 1 den 5'e tam sayılar 3er kez tekrarlanır
+rep(1:5,times=3)  # 3 kere 1'den 5'e tekrarla
+seq(from=1,to=12) # 1'den 12'ye tam sayılar
+seq(1,25,by=2)    # 1'den 25'e ikişer atla
+seq(1,6,by=0.5)   # 1'den 6'ya 0.5 atla
+rnorm(12)        #  ~N(0,1) 12 gözlem
+rnorm(12,mean=10,sd=2) #~ N(10,2) 12 gözlem
+runif(12, min = 10, max = 37) 
+```
+
+
+
+### Matrisler
+R matrisler oluşturup işlem yapabilir.
+
+```{r, collapse=T}
+A=matrix(1:16,ncol=4,nrow=4) #4x4 matris oluştur
+A
+B=matrix(runif(16,min=20,max=40),ncol=4) #4x4 matris oluştur
+
+# işlem örnekleri
+A+B    # topla
+A*B    # çarp
+A%*%B  # matris çarp
+t(B)   # çevir
+```
+
+### Değişkenler {#variables}
+Çözümlenecek verisetinin özelliklerini bilmek çok önemlidir. R içerisinde çözümlenecek değişkenler genellikle sınıflama, sıralı, sürekli , kayıp veya tarih tipindedir.
+
+
+#### Sınıflama
+R'da bir sınıflama verisi alfanumerik şekilde girilebilir fakat yorumlanması sayısal değil sınıflama şeklindedir. Örneğin;
+
+
+```{r, collapse=T,cache=T}
+adres=c("AAX","BBZ","CBT","DBA","DDC","XZT")
+cinsiyet=c("M","F","F","M","F","M")
+id=sample(letters,6)
+program=rep(c("var","yok"),each=3)
+sehir=as.character(1:6)
+```
+
+#### Sıralı
+Sıralı bir değişken sınıflama değişkenine göre daha çok bilgi içerir. Sıra ifade eder fakat  değerler arasındaki farklılık anlmalı değildir. Örneğin koşucular birinci, ikinci ve üçüncü olarak sıralanabilir fakat bu sıralama verisi birinci ile ikinci arasında kaç dakika farklılık olduğunu belirtmez. Birinci koşucu ikinciden 5 saniye hızlı iken, ikinci koşucu üçüncü koşucudan yarım saat daha hızlı olabilir.
+R içerisinde _ordered_ fonksiyonu ve _level_ argümanı ile sıra belirtilebilir. Eğer _level_ argüanı boş bırakılırsa R değerleri küçükten büyüğe sıralar.
+
+
+```{r, collapse=T,cache=T}
+soru1=ordered(c("zayif","orta","iyi","iyi","zayif","zayif"),
+              levels=c("zayif","orta","iyi"))
+ses=ordered(c(1,3,2,2,1,3),levels=c("1","2","3"))
+```
+
+#### Sürekli
+Eşit aralıklı veya eşit oranlı değişkenler sıralı ve sınıflama değişkenlerine göre daha fazla bilgi içerir. Değerler arasındaki farklılık anlamlıdır. 
+
+```{r, collapse=T,cache=T}
+notlar=c(52,75,39,62,24,86)
+notlar=rnorm(n=6,mean=160,sd=5)
+```
+
+
+#### Tarih 
+_as.Date_ fonksiyonu ile tarih verisi girilebilir. 
+
+
+```{r, collapse=T,cache=T}
+dt=as.Date(c("1994-06-01","1988-10-20","1990-12-01",
+                   "1978-03-23","1974-08-22","1994-11-04"))
+
+dt
+
+tatil=as.Date(c("01/01/2016","04/23/2016","05/19/2016","08/30/2016","09/29/2016"),
+                 format="%m/%d/%y")
+
+tatil
+
+Sys.Date( )
+Sys.Date( )-dt
+```
+
+#### Doğru-Yanlış (logical)
+Bu değişken TRUE veya FALSE değerlerini alır. Eğer sayısal veri olmaya zorlanırsa 1 ve 0 değerlerini alır. Aşağıda verilen kod girilen notların ortalamadan düşük olup olmadığını gösterir.
+
+```{r, collapse=T,cache=T}
+notlar=c(52,75,39,62,24,86)    # notlar
+notlar>mean(notlar)            
+as.numeric(notlar>mean(notlar)) # 1 ve 0.
+```
+
+### Faktörler
+R içerisinde yer alan _factor_ veri tipi sıralı ve sınıflama verileri için kullanılan bir çatıdır.
+
+```{r, collapse=T,cache=T}
+kurs=factor(c("muhasebe","garson","temizlik","garson","muhasebe","garson"))
+ga1=factor(c(1,1,3,4,2,3),levels = 1:4,
+           labels=c("tamamenkatilmiyorum","katilmiyorum","katiliyorum","tamamenkatiliyorum"))
+ga2=factor(c(1,3,4,4,2,3),ordered = T)
+ga3=gl(n=3,k=2,labels=c("A","B","C"),ordered=F)
+
+```
+
+Faktörler önemlidir. Faktörlerin alt sınıfları (levels) dikkatli bir şekilde incelenmelidir. Çözümleme aşamasında kullanılmayan alt sınıflar silinmelidir.
+Örneğin veri seti bölünmeden önce _Renk_ faktörü girilmiş olsun, "mavi", "yeşil", "sarı" alt sınıflar olsun. Daha sonra veri seti bölündüğünde alt sınıf "sarı" kullanılmamış olsun. R _Renk_ değişkenini hala 3 alt sınıflı olarak düşünecektir ve ona göre işlem yapacaktır. Bu hatalara sebep olur. Droplevel fonksiyonu kullanılarak faktör değişkeni düzeltilmelidir.
+```{r, collapse=T,cache=T}
+
+renk=factor(c(1,1,1,2,2,3),levels = 1:3,labels=c("mavi","yesil","sari"))
+renk
+renk2=renk[1:5]  # renk2 değişkeni son degeri almadı
+renk2  #fakat hala 3 level mevcut
+droplevels(renk2) #kullanılmayan level silindi
+```
+
+
+### Missing Values
+The data might be incomplete. R uses __NA__ (not available) to represent missing values. 
+```{r, collapse=T,cache=T}
+incomeSource=c("wage","wage","pension",NA,NA,"wage")
+houseMember=c(3,2,3,NA,NA,4)
+```
+
+NOTE: Missing data indicators might be confusing. Notice the difference between NA, <NA> , " " (empty cell) and a predefined missing indicator, such as -99.
+
+```{r, collapse=T,cache=T}
+temp = factor(c('wage','pension', NA, 'NA'," ",-99,"-99"))
+
+#for a factor or a character variable NA is shown as <NA> to specify a true missing cell
+# NA without < > represents a factor level
+# " " also represents a factor level
+#-99 and "-99" represents the same factor level
+
+is.na(temp) # identifies only the third element as a missing value.
+
+#A possible solution
+temp[temp=='NA' | temp==" "| temp== -99 | temp== "-99"]=NA
+
+#check
+is.na(temp)
+
+#DO NOT forget to drop levels
+temp=droplevels(temp)
+
+```
+
+### Data Frames {#dataframes}
+A data frame includes variables. Assuming a social scientist is generally interested in the relationships between the variables, a data frame is their main R structure. Below command creates a data frame using some of the earlier created variables. 
+
+```{r, collapse=T,cache=T}
+# reminder
+# id=sample(letters,6)
+
+# treatment=rep(c("cntrl","trt"),each=3)
+
+# gender=c("M","F","F","M","F","M")
+
+# item1=ordered(c("poor","average","good","good","poor","poor"),
+#              levels=c("poor","average","good"))
+
+# ses=ordered(c(1,3,2,2,1,3),levels=c("1","2","3"))
+
+# grade=c(52,75,39,62,24,86)
+
+# incomeSource=c("wage","wage","pension",NA,NA,"wage")
+
+# birthday=as.Date(c("1984-06-01","1988-10-20","1990-12-01",
+#                   "1978-03-23","1974-08-22","1994-11-04"))
+
+# course=factor(c("Cook","Plumber","Designer","Plumber","Cook","Plumber"))
+
+basic_data=data.frame(id,treatment,gender,item1,ses,
+                      grade,incomeSource,birthday,course)
+basic_data
+
+```
+
+Data can be entered manually into R. However this is generally not the case. When a data transferred into the R environment, a useful function to check its internal structure is named as _str_.
+
+```{r, collapse=T,cache=T}
+str(basic_data)
+```
+
+## R Packages
+R version 3.3.1 downloads to a computer with 30 packages that includes thousands of functions.These packages stored under _system library_. Other useful functions are created by R users and made available to R community. For example linear mixed effect models can be analyzed R using _lme4_[@lme4pack] package. This package is cited more than 1500 times and has been downloaded more than 60000 times. You can use Figure \@ref(fig:Rpackdown) to check its current usage. R packages are generally available via CRAN and they are generally not archived further if they are maintained properly. You can download R packages into your computer and store them locally, under _user library_ . You need to load (activate) the packages in each session before you can use them. 
+
+You have probably noticed that R, RStudio and R packages are interconnected. When you download Rstuido after you have downloaded R, The Rstudio scans your computer, locates R and connects to it. Both R and RStudio can locate your libraries unless you manually manipulated the file locations. If you wonder the location of your R packages you can run _.libPaths()_ function. 
+
+R packages located in CRAN can easily be downloaded into your machine using RStuido's __Packages__ tab, or you can directly type _install.packages("packagename")_. When you open a new session, some of the main packages are loaded automatically. When a package is loaded, you can see the tick in the _Packages_ tab. If the package you plan to use in a session is not loaded, you can click the box or you can directly type _library("packagename")_. You can see these steps in (Video4 \@ref(fig:Video4)).
+
+```{r Video4, fig.cap='Download R Packages', fig.width=8, fig.height=6 , echo=FALSE}
+knitr::include_url("https://www.youtube.com/embed/BiJhU0Rn6t4")
+``` 
+
+
+## The Workspace {#theworkspace}
+When a session is started by opening an R script, every operation takes place in the working space. Every step is recorded and can be seen in _History_ tab of R Studio. Working space can be saved when closing the session. The objects created in a session are kept in the space. You can use _ls()_ function to see your objects in the working space, you can also check _Environment_ tab of R Studio.
+
+The objects in a workspace can easily be saved into the working directory as separate outputs. Also the objects in the working directory can easily be loaded into the working space. Here _easily_ refers to the unnecessity of providing a path. If the path is provided, you can save or load objects from different directories.
+
+You can run _getwd()_ command to see your working directory. You can change the working directory within a session using _setwd()_ function. Alternatively you can change the directory using _Session_ tab of R Studio. The data input and output is covered more broadly in the next chapter.

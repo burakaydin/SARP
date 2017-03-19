@@ -1,0 +1,16 @@
+
+
+# R'ın popülerliği
+
+R programının kullanım sıklığı sürekli artmaktadır. @tipmann15 Scopus veri tabanında taranan ve 2014 yılında basılmış her 100 makaleden 1 tanesinde R programına veya R paketlerine atıfta bulunulduğunu yazmıştır. 2014 yılında 2925 R paketi mevcuttur. 2016 yılı sonunda bu sayı 10000'e ulaşmıştır.
+
+Data analizi ve istatistiksel modellemenin yanında, işlevsel grafikler çizme, dokümanlar oluşturma, sunum hazırlama ve simülasyon üretme gibi çeşitli amaçlar için kullanılabilen R, başta istatistikçiler olmak üzere, mühendisler, ekonometristler ve sosyal bilimlerde modern ve komplike modellerle çalışan araştırmacıların dikkatini çekmiştir.R programının yaygınlığı hakkındaki diğer göstergelere örnekler;
+
+1. R veri analizikonusunda evrensel bir dil olmuştur ve yeni metotlar çoğu zaman R ile sunulur [@Muenchen11].
+
+2. Elektrik ve elektronik mühendisleri enstitüsü (IEEE) üyeleri tarafından en çok kullanılan 5 programlama dilinden biridir. <a href="http://blog.revolutionanalytics.com/popularity/" target="_blank">see</a>
+
+3. R programlama dilini lisans ve yüksek lisans düzeyinde ders olarak sunan üniversiteler ve uzaktan eğitim kurumları mevcuttur.
+
+4. Özel şirketler tarafından kullanılan bir programlama dilidir.
+

@@ -1,0 +1,52 @@
+---
+title: "SARP: Sosyal Bilimler R Platformu"
+author: "Burak AYDIN, James ALGINA, Walter LEITE"
+date: "2017"
+output: bookdown::gitbook
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: burakaydin/BAP2219
+description: "Sosyal Bilimler R Platformu"
+cover-image: images/coverpicture.png
+always_allow_html: yes
+---
+
+
+
+# Kapak
+
+```{r fig.align='center', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html'), fig.link='https://www.aydinburak.net'}
+knitr::include_graphics('images/coverpicture.png', dpi = NA)
+```
+
+![](images/cc0pic.png)  
+
+Bu platformun hakları korunmuştur [CC0](https://creativecommons.org/publicdomain/zero/1.0/) by [Burak AYDIN](http://aydinburak.net).
+
+
+## Tanıtım 
+Bu materyal İngilizce olarak hazırlanıp Türkçeye çevirilmiştir.
+Bu _platform_ sosyal bilimler alanında çalışan ve nicel veri analizlerinin teoriden ziyade uygulama aşamasına ilgi gösteren araştırmacılar için oluşturulmuştur. Bütün istatistiksel prosedürler R [@R-base] ile yürütülmüş, gerçek veri kullanımına özen gösterilmiştir. Bu materyale _platform_ denilmesinin üç sebebi vardır, (a) katkıya açıktır,(b) dinamik bir içeriğe sahiptir, (c) bilgisayar anakartı gibi kullanılabilir, R ile oluşturulmuş herhangi bir üst düzey çıktı platforma eklenebilir. Bu materyal Bookdown [@R-bookdown] ile inşaa edilmiştir, Bookdown ise R Markdown [@R-rmarkdown] üzerine inşa edilmiştir. Materyalin hazırlanma aşamasında R Studio [@R-studio] kullanılmıştır.
+
+
+### Neden Bookdown?
+Bookdown ile görsel zenginliği mevcut materyaller oluşturulabilir. Shiny uygulamaları, basit olmayan grafikler gibi R'ın araştırmacılara sunduğu ve sunacağı teknolojiler bu materyale kolayca eklenebilir. Bookdown ile aynı materyal PDF, HTML veya EBOOK olarak farklı şekilde kolayca okunabilir. Bookdown ile yazılan bir kitap Git Hub içerisinde depolanabilir ve en önemlisi katkı sağlamak isteyen araştırmacıların kolaylık sağlar. Kısacası Bookdown yeni nesil kitap yazma araçlarından biridir.
+
+
+
+### İçerik
+Platformun bu versiyonunda yer alan konular; 
+
+* Windows için R kurulumu
+* R'a giRiş
+* Veri Setleri
+* Betimsel analizler ve hipotez testi
+* t-test
+* Varyans analizine giriş
+* Korelasyon
+* Çoklu regresyona giriş
+
+Kitabın içeriği bir ders kitabından ziyade yardımcı materyal olarak hazırlanmıştır. İçerik az ve öz ele alınmıştır. Eğer açıklamaların yetersiz olduğunu düşünüyorsanız ve katkı sağlamak istiyorsanız isminize Teşekkürler \@ref(tesekkur) kısmında yer verilecektir.
