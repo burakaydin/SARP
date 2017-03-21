@@ -1,26 +1,27 @@
 
 
-# Descriptive Statistics and Hypthoses Testing
-Descriptive statistics are used to describe a sample. We used the dataWBT (Section \@ref(dataWBT)) to illustrate  (a) how to calculate and report descriptive statistics, (b) prepare basic graphics and (c) conduct hypothesis testing. 
+# Betimleyici İstatistikler ve Hipotez Testi
+Betimleyici istatistikler örneklemi tanımlamayı amaçlar. Bu bölüm içeriside daha önce tanıtılan dataWBT (\@ref(dataWBT)) kullanılarak (a) betimleyici istatistikler hesaplanmış (b) basit grafikler çizilmiş ve (c) hipotez testi açıklanmıştır.  
 
-In section 2, we demonstrated how to download R, R studio and to create an R script. This section was built on an assumption that the reader would create a script and follow the steps. It would definetely be more convenient if each step is undertaken to given order.The dataWBT can be imported into your R environment by running:
+Bu bölümde yer alan R kodlarını kullanmak isteyen araştırmacıların bir önceki bölümü inceledikleri varsayılmıştır. Bu bölümde yer alan basamakların atlanmadan takip edildiği varsayımı da yapılmıltır. dataWBT çalışma alanınıza çağırmak için;
 
 
 ```{r, collapse=T, eval=T, cache=T, message=F}
 
-# load csv from an online repository
-urlfile='https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv'
-dataWBT=read.csv(urlfile)
+# CSV yükle
+urldosya='https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv'
+dataWBT=read.csv(urldosya)
 
 #remove URL 
-rm(urlfile)
+rm(urldosya)
 ```
 
-##Descriptive Statistics  {#descstats}
-This subsection covers mean, median, variance, standard deviation, skewness and kurtosis calculations. The gender attitude variable (\@ref(dataWBT))is chosen for illustrations. 
+##Betimleyici İstatistikler  {#descstats}
+Bu alt bölümde ortalama, ortanca, varyans, standart sapma, çarpıklık ve basıklık hesaplanmıştır. Örneklerde toplumsal cinsiyet algısı (gen_att) değişkeni kullanılmıştır.
 
-### Mean
-The arithmetic mean is the sum of the available scores on a variable divided by the number scores as shown in Equation \@ref(eq:mean).
+
+### Ortalama
+Eşitlik \@ref(eq:mean) 'de verildiği gibi, ortalama, bir değişkeni oluşturan değerlerin toplamının toplam değer sayısına bölünmesi ile hesaplanır.  
 
 \begin{equation}
 \bar{Y} = \frac{1}{n} \sum\limits_{i=1}^n {Y_i}
@@ -28,25 +29,26 @@ The arithmetic mean is the sum of the available scores on a variable divided by 
 \end{equation}
 
 ```{r, collapse=T}
-# Calculate the mean for available gen_att variable
+# gen_att değişkeninin ortalamasını hesapla
 mean(dataWBT$gen_att,na.rm = T)
 
-# Calculate the mean for more than one variable
-# check ?colMeans
+# birden fazla değişkenin ortalamasını hesapla
+# ?colMeans
 colMeans(dataWBT[,c("gen_att","item1")],na.rm = T)
 
 ```
 
 
-### Median
-The median is the mid-point of the scores that have been ranked form low to high. If the number of elements in a vector is odd, the median is the ${(n+1)/2}^{th}$ value. If it is even, the median is the average of ${n/2}^{th}$ and ${(n+1)/2}^{th}$ value.
+### Ortanca
+Büyükten küçüğe veya küçükten büyüğe dizilmiş bir değişkenin orta noktasına ortanca denir. Eğer değişkenin eleman sayısı (n) tek sayı ise  $({(n+1)/2}).$ sırada yer alan, eğer çift sayı ise  $(n/2).$ ve $((n+1)/2).$ değerin ortalaması ortancayı verir.
 ```{r, collapse=T}
-# Calculate the median 
+# Ortanca hesapla
 median(dataWBT$gen_att,na.rm = T)
 ```
 
-### Variance
-The sample variance is a summary of spread. It is the average squared deviation of values around their mean as shown is Equation \@ref(eq:variance).
+### Varyans
+
+Varyans değişkenin ne kadar yayıldığını anlamada çok kullanılan bir ölçüdür. Eşitlik \@ref(eq:variance) ile hesaplanır.
 
 \begin{equation}
 s_Y^2  = \frac{1}{{n - 1}}\sum\limits_{i = 1}^n {\left( {Y_i  - \bar Y} \right)^2 }
@@ -55,12 +57,12 @@ s_Y^2  = \frac{1}{{n - 1}}\sum\limits_{i = 1}^n {\left( {Y_i  - \bar Y} \right)^
 
 
 ```{r, collapse=T}
-#calculate variance
+#varyans hesapla
 var(dataWBT$gen_att,na.rm = T)
 ```
 
-### Standard deviation
-The sample standard deviation is the square root of the sample variance as shown is Equation \@ref(eq:std).
+### Standart Sapma
+Varyansın kareköküdür ve Eşitlik \@ref(eq:std) ile hesaplanır.
 
 \begin{equation}
 s_Y  = \sqrt {\frac{1}{{n - 1}}\sum\limits_{i = 1}^n {\left( {Y_i  - \bar Y} \right)^2 } }
@@ -68,19 +70,20 @@ s_Y  = \sqrt {\frac{1}{{n - 1}}\sum\limits_{i = 1}^n {\left( {Y_i  - \bar Y} \ri
 \end{equation}
 
 ```{r, collapse=T, eval=T, cache=T,message=F}
-#calculate standard deviation
+#SS hesapla
 sd(dataWBT$gen_att,na.rm = T)
 
 ```
 
-### Skewness
-Skewness is a measure of distributional shape. The skewness value of a perfectly symmetric distributional shape is 0.
+### Çarpıklık (Skewness)
+Çarpıklık değeri dağılımın şekli hakkında bilgi verir. Tamamen simetrik olan bir dağılımın çarpıklık değeri 0'dır.
 
-A negative value typically indicates that the shape has longer tails on the left side, hence called skewed left or negatively skewed. The median is larger than the mean.
+Dağılımın sol kuyruğu sağ kuyruğuna nazaran uzun olduğunda çarpıklık değerinin sıfırdan küçük hesaplanması olasıdır. Bu tür dağılımlar sola çarpık veya negatif çarpık olarak isimlendirilir. Bu tür dağılımlarda medyan ortalamadan yüksektir
 
-A positive value typically indicates that the shape has longer tails on the right side, hence called skewed right or positively skewed. The median is smaller than the mean.
+Dağılımın sağ kuyruğu sol kuyruğuna nazaran uzun olduğunda çarpıklık değerinin sıfırdan büyük hesaplanması olasıdır. Bu tür dağılımlar sağa çarpık veya pozitif çarpık olarak isimlendirilir. Bu tür dağılımlarda medyan ortalamadan küçüktür.
 
-The sample skewness formula^[These formulas are for biased estimators of skewness and kurtosis, R can calculate unbiased estimators, please see the note in the subsection _7.1.7_, specifically the _type_ argument in the _describe_ function] is  shown in Equation \@ref(eq:skew).
+Örneklem için çarpıklık formülü ^[Bu formül popülasyon için yanlı (biased) bir tahminleyicidir. R yanlı olmayan çarpıklık ve basıklık istatistikleri hesaplayabilir, _describe_ fonksiyonu  _type_ argümanı incelenebilir. ]
+
 
 \begin{equation}
 \sqrt{n}\frac{\sum_{i}^{n}\left ( X_{i}-\bar{X} \right )^{3}}
@@ -88,10 +91,11 @@ The sample skewness formula^[These formulas are for biased estimators of skewnes
 (\#eq:skew)
 \end{equation}
 
-The package _moments_ [@moments] includes the _skewness_ function to calculate sample skewness.
+Örneklem için çarpıklık değeri _moments_ [@moments] paketinde yer alan _skewness_ fonksiyonu ile hesaplanabilir. 
+
 
 ```{r, collapse=T, eval=T, cache=T,message=F}
-#calculate sample skewness using the moments package
+#çarpıklık hesapla
 library(moments)
 skewness(dataWBT$gen_att,na.rm = T)
 
@@ -99,109 +103,110 @@ skewness(dataWBT$gen_att,na.rm = T)
 
 
 ```{r, eval=F, options(width=6)}
-NOTE: It is possible to estimate population skewness parameter and its standard error, 
-hence, to calculate a z-score. This z-score can be compared to a critical value , 
-such as 1.96, to conclude whether the skewness is statistically significant or not.
-The same procedure applies to Kurtosis.
-There also are other procedures to test for normality, such as Shapiro-Wilk. 
-The decisions based on these procedures are sensitive to sample size. 
-These procedures are losing their popularity. 
-Robustness to non-normality for a given procedure is often investigated 
-via Monte Carlo simulation studies.
+NOT: Çarpıklık ve basıklık değerleri için standart hata ve sonrasında z-puanı hesaplanabilir.
+Hesaplanan bu z-puanı seçilen bir kritik değer ile (ör. 1.96) kıyaslanarak
+çarpıklık veya basıklığın istatistiksel olarak anlamlı olup olmadığı sınanabilir.
+Benzer şekilde normallik testleri de (ör. Shapiro-Wilk) yapılabilir. Fakat bu testler
+örneklem büyüklüğüne hassasstır. Bir diğer deyişle örneklem büyüdükçe çok küçük farklılıklar
+istatistiksel olarak anlamlı bulunabilir.
+Çarpıklık,basıklık veya normallik testlerinin varsayım ihlallerini tespit etmek 
+üzere kullanılışı nispeten eskimiş yöntemlerdir. Bu testleri kullanmak yerine normallik
+grafik üzerinden incelenip, dirençli tahminleyicilerin (robust estimators) veya
+Monte Carlo simulasyon tekniklerinin çıktıları incelenebilir.
 ```
 
-#### Skewness Examples
-A sample from a  normal distribution and its skewness value
+#### Çarpıklık örnekleri
+Normal bir dağılım ve çarpıklık istatistiği;
 
-```{r, fig.height=5, fig.cap="A random variable with normal distribution",echo=F}
+```{r, fig.height=5, fig.cap="Normal dağılım gösteren bir sürekli değişken",echo=F}
 library(moments)
 set.seed(12345)
 noskew=rnorm(10000)
 skval=round(skewness(noskew),3)
-hist(noskew, col = "blue", breaks = 75,main="A random variable with normal distribution",
-     xlab=paste("skewness=",skval,sep=""))
+hist(noskew, col = "blue", breaks = 75,main="Normal dağılım gösteren bir sürekli değişken",
+     xlab=paste("çarpıklık=",skval,sep=""))
 rug(noskew)
 ```
 
-A sample from a left skewed distribution
+Sola çarpık sürekli değişken;
 
-```{r, fig.height=5, fig.cap="A random variable with left skewed distribution",echo=F}
+```{r, fig.height=5, fig.cap="Sola çarpık sürekli değişken",echo=F}
 set.seed(12345)
 noskew=rbeta(10000, shape1=22, shape2=2, ncp = 0)
 skval=round(skewness(noskew),3)
-hist(noskew, col = "blue", breaks = 75,main="A random variable with left skewed distribution",
-     xlab=paste("skewness=",skval,sep=""))
+hist(noskew, col = "blue", breaks = 75,main="Sola çarpık sürekli değişken",
+     xlab=paste("çarpıklık=",skval,sep=""))
 rug(noskew)
 ```
 
-A sample from a right skewed distribution
+Sağa çarpık sürekli değişken;
 
-```{r, fig.height=5, fig.cap="A random variable with right skewed distribution",echo=F}
+```{r, fig.height=5, fig.cap="Sağa çarpık sürekli değişken",echo=F}
 set.seed(12345)
 noskew=rbeta(10000, shape1=1.5, shape2=12, ncp = 0)
 skval=round(skewness(noskew),3)
-hist(noskew, col = "blue", breaks = 75,main="A random variable with right skewed distribution",
-     xlab=paste("skewness=",skval,sep=""))
+hist(noskew, col = "blue", breaks = 75,main="Sağa çarpık sürekli değişken",
+     xlab=paste("çarpıklık=",skval,sep=""))
 rug(noskew)
 ```
 
-### Kurtosis
+### Basıklık (Kurtosis)
 
-Kurtosis is another measure of distributional shape. The Pearson kurtosis value of a normal distribution, $N \sim (0,1)$ is 3. 
-
-The sample kurtosis formula is  shown in Equation \@ref(eq:kurto) .
+Basıklık değeri dağılımın şekli hakkında bilgi verir. Normal bir dağılımın Pearson basıklık değeri 3'tür.
+Eşitlik \@ref(eq:kurto) basıklık değerinin hesaplanışını gösterir.
 
 \begin{equation}
 n\frac{\sum_{i}^{n}(X_i-\bar{X})^4}{(\sum_{i}^{n}(X_i-\bar{X})^2)^2}
 (\#eq:kurto)
 \end{equation}
 
-Equation \@ref(eq:kurto) does not give values lower than 0. Values between 0 and 3 might occur for flatter distributions, such as uniform. Values larger than might 3 occur for long tailed distributions. It is common practice to subtract 3 from the calculated value to ease interpretation.
+Eşitlik \@ref(eq:kurto) sıfırdan küçük değerler vermez. 0 ile 3 arasında yer alan değerler genellikle düz dağılımlarda hesaplanır, örneğin tekdüzey dağılımlar. Uzun kuyruklu dağılımlarda 3'ten büyük değerler görülebilir. Alanyazında yorumu kolaylaştırmak için Eşitlik \@ref(eq:kurto) 'ten 3 çıkarıldığı durumlar mevcuttur.
 
-The package _moments_ [@moments] includes the _kurtosis_ function to calculate the Pearson kurtosis value.
+Örneklem için Pearson basıklık değeri _moments_ [@moments] paketinde yer alan _kurtosis_ fonksiyonu ile hesaplanabilir.
+
 
 ```{r, collapse=T, eval=T, cache=T,message=F}
-#calculate skewness using the moments package
+#basıklık hesapla
 library(moments)
 kurtosis(dataWBT$gen_att,na.rm = T)
 
 ```
 
-#### Kurtosis Examples
-A sample from a normal distribution and its kurtosis value
+#### Basıklık Örnekleri
+Normal bir dağılım ve basıklık ölçüsü
 
-```{r, fig.height=5, fig.cap="A random variable with normal distribution",echo=F}
+```{r, fig.height=5, fig.cap="Normal dağılım gösteren bir sürekli değişken",echo=F}
 set.seed(12345)
 noskew=rnorm(10000)
 skval=round(kurtosis(noskew),3)
-hist(noskew, col = "blue", breaks = 75,main="A random variable with normal distribution",
-     xlab=paste("kurtosis=",skval,sep=""))
+hist(noskew, col = "blue", breaks = 75,main="Normal dağılım gösteren bir sürekli değişken",
+     xlab=paste("basıklık=",skval,sep=""))
 rug(noskew)
 ```
 
-A sample from a uniform distribution and its kurtosis value
+Tekdüzey bir dağılım ve basıklık değeri
 
-```{r, fig.height=5, fig.cap="A random variable with unifrom distribution",echo=F}
+```{r, fig.height=5, fig.cap="Tekdüzey dağılım gösteren sürekli değişken",echo=F}
 set.seed(12345)
 noskew=runif(10000, 0, 2)
 skval=round(kurtosis(noskew),3)
-hist(noskew, col = "blue", breaks = 75,main="A random variable with uniform distribution",
-     xlab=paste("kurtosis=",skval,sep=""))
+hist(noskew, col = "blue", breaks = 75,main="Tekdüzey dağılım gösteren sürekli değişken",
+     xlab=paste("basıklık=",skval,sep=""))
 rug(noskew)
 ```
 
-A sample from a beta distribution
+Beta dağılımı gösteren bir sürekli değişken
 
-```{r, fig.height=5, fig.cap="A random variable with right skewed distribution",echo=F}
+```{r, fig.height=5, fig.cap="Beta dağılımı gösteren bir sürekli değişken",echo=F}
 set.seed(12345)
 noskew=rbeta(10000, shape1=1.5, shape2=12, ncp = 0)
 skval=round(kurtosis(noskew),3)
-hist(noskew, col = "blue", breaks = 75,main="A random variable with beta distribution",
-     xlab=paste("kurtosis=",skval,sep=""))
+hist(noskew, col = "blue", breaks = 75,main="Beta dağılımı gösteren bir sürekli değişken",
+     xlab=paste("basıklık=",skval,sep=""))
 rug(noskew)
 ```
 
-### Reporting descriptives
+### Betimleyici İstatisklerin Raporlanması
 
 Library _psych_ [@R-psych], _doBy_ [@R-doBy] and _apaStyle_ [@R-apaStyle] MIGHT be helpful for reporting results but it might need further modifications, for example rows should not be numbered. Following R code outputs descriptive statistics for the gender attitudes average score and age.
 

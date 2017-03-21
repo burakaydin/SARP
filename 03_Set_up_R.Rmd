@@ -4,19 +4,19 @@
 
 R kurulumu oldukça kolaydır. <a href="https://www.r-project.org/" target="_blank">R-project</a> websitesinde yer alan basamaklar takip edilebilir veya sessiz olarak kaydedilmiş video izlenebilir (Video1 \@ref(fig:Video1)).
 
-```{r Video1, fig.cap='Download R for Windows ', fig.width=8, fig.height=6 , echo=FALSE}
+```{r Video1, fig.cap='Windows için R yükle ', fig.width=8, fig.height=6 , echo=FALSE}
 knitr::include_url("https://www.youtube.com/embed/ym8szN2Zim4")
 ```
 
 R programını betik dosyası oluşturmadan doğrudan kullanmak mümkündğr fakat bir betik düzenleyici kullanmak kolaylık sağlar. En basit betik düzenleyicisi R programının içeresinde yer alır. R açık iken _File_ ve sonrasında _new script_ seçilerek betik düzenleyici açılır. Bu basamaklar Video2 \@ref(fig:Video2)) ile gösterilmiştir. 
 
-```{r Video2, fig.cap='R script ', fig.width=8, fig.height=6 , echo=FALSE}
+```{r Video2, fig.cap='R betik ', fig.width=8, fig.height=6 , echo=FALSE}
 knitr::include_url("https://www.youtube.com/embed/6AEdcRmG4Rk")
 ```
 
 Fakat R içerisinde yer alan betik düzenleyici çok basittir. Kullanışlılğı oldukça yüksek olan ve bu materyalin hazırlanmasında da kullanılmış olan betik dzenleyici  <a href="https://www.rstudio.com/" target="_blank">R studio'dur</a>. Kurulum basamakları Video3 \@ref(fig:Video3) ile gösterilmiştir.
 
 
-```{r Video3, fig.cap='Download R Studio  ', fig.width=8, fig.height=6 , echo=FALSE}
+```{r Video3, fig.cap=' R Studio  Yükle', fig.width=8, fig.height=6 , echo=FALSE}
 knitr::include_url("https://www.youtube.com/embed/i6DjNs-hgz4")
 ```
