@@ -170,8 +170,8 @@ Bu fonksiyona bir uyarı ekleyebiliriz. Örneğin hesaplanacak puan sıfırın a
 
 ```{r, collapse=TRUE}
 eksipuan2=function(puan, yanlis){
-      output=puan - (0.2 * yanlis)
-      if (output<0) 
+      cikti=puan - (0.2 * yanlis)
+      if (cikti<0) 
     warning("Yeni puan 0'dan düşük")  
     return(cikti)
     }
@@ -371,88 +371,94 @@ droplevels(renk2) #kullanılmayan level silindi
 ```
 
 
-### Missing Values
-The data might be incomplete. R uses __NA__ (not available) to represent missing values. 
+### Kayıp Veriler
+Veri seti kayıp veriler içerebilir. R kayıp verileri _NA_ (not available) ile belirtir. 
 ```{r, collapse=T,cache=T}
-incomeSource=c("wage","wage","pension",NA,NA,"wage")
-houseMember=c(3,2,3,NA,NA,4)
+gelir=c("maas","maas","destek",NA,NA,"maas")
+hanekisi=c(3,2,3,NA,NA,4)
 ```
 
-NOTE: Missing data indicators might be confusing. Notice the difference between NA, <NA> , " " (empty cell) and a predefined missing indicator, such as -99.
+NOT: Kayıp veri belirleyiciler çetrefilli olabilir. NA, <NA> , " " (boşluk) veya önceden belirlenmiş bir sayı,örneğin -99 kayıp verileri temsil edebilir.
 
 ```{r, collapse=T,cache=T}
-temp = factor(c('wage','pension', NA, 'NA'," ",-99,"-99"))
+ornek = factor(c('maas','destek', NA, 'NA'," ",-99,"-99"))
 
-#for a factor or a character variable NA is shown as <NA> to specify a true missing cell
-# NA without < > represents a factor level
-# " " also represents a factor level
-#-99 and "-99" represents the same factor level
+# faktör içerisinde kayıp veriler <NA> olarak verilir.
+#  < > içinde yer almayan NA faktör sınıfını gosterir.
+# " " bu da faktör alt sınıfını gösterir
+#-99 and "-99" aynı faktör sınıfını gösterir
 
-is.na(temp) # identifies only the third element as a missing value.
 
-#A possible solution
-temp[temp=='NA' | temp==" "| temp== -99 | temp== "-99"]=NA
+# is.na fonksiyonu kayıp verileri gösterir.
+# ornek için bakıldığında sadece 3. eleman kayıp veri olarak görünür
+is.na(ornek) 
 
-#check
-is.na(temp)
 
-#DO NOT forget to drop levels
-temp=droplevels(temp)
+#çözüm 'NA', " ", -99 ve "-99" ları NA'ye çevirelim
+ornek[ornek=='NA' | ornek==" "| ornek== -99 | ornek== "-99"]=NA
+
+#kontrol
+is.na(ornek)
+
+#droplevel kullanalım
+ornek=droplevels(ornek)
 
 ```
 
-### Data Frames {#dataframes}
-A data frame includes variables. Assuming a social scientist is generally interested in the relationships between the variables, a data frame is their main R structure. Below command creates a data frame using some of the earlier created variables. 
+### Veri Çerçeveleri (Data Frames) {#dataframes}
+Bir veri çerçevesi değişkenlerden oluşur. Sosyal bilimcilerin genellikle değişkenler arası ilişkileri araştırdığını düşünürsek, veri çerçeveleri kullanıcılarının temel R ögesidir. Daha önce oluşturduğumuz değişkenleri bir veri çerçevesine alabiliriz;
+
 
 ```{r, collapse=T,cache=T}
-# reminder
+# hatırlatma
 # id=sample(letters,6)
 
-# treatment=rep(c("cntrl","trt"),each=3)
+# program=rep(c("var","yok"),each=3)
 
-# gender=c("M","F","F","M","F","M")
+# cinsiyet=c("M","F","F","M","F","M")
 
-# item1=ordered(c("poor","average","good","good","poor","poor"),
-#              levels=c("poor","average","good"))
+# soru1=ordered(c("zayif","orta","iyi","iyi","zayif","zayif"),
+#              levels=c("zayif","orta","iyi"))
 
 # ses=ordered(c(1,3,2,2,1,3),levels=c("1","2","3"))
 
-# grade=c(52,75,39,62,24,86)
+# notlar=c(52,75,39,62,24,86)
 
-# incomeSource=c("wage","wage","pension",NA,NA,"wage")
+# gelir=c("maas","maas","destek",NA,NA,"maas")
 
-# birthday=as.Date(c("1984-06-01","1988-10-20","1990-12-01",
-#                   "1978-03-23","1974-08-22","1994-11-04"))
 
-# course=factor(c("Cook","Plumber","Designer","Plumber","Cook","Plumber"))
+# dt=as.Date(c("1994-06-01","1988-10-20","1990-12-01",
+#                    "1978-03-23","1974-08-22","1994-11-04"))
 
-basic_data=data.frame(id,treatment,gender,item1,ses,
-                      grade,incomeSource,birthday,course)
-basic_data
+# kurs=factor(c("muhasebe","garson","temizlik","garson","muhasebe","garson"))
+
+basit_data=data.frame(id,program,cinsiyet,soru1,ses,
+                      notlar,gelir,dt,kurs)
+basit_data
 
 ```
 
-Data can be entered manually into R. However this is generally not the case. When a data transferred into the R environment, a useful function to check its internal structure is named as _str_.
+Veri setleri el yordamı ile girildiğinde veya hazır olarak R a aktarıldığında (örneğin excel dosyasından) veri setinin yapısını incelemek önemlidir. _str_ (structure) fonksiyonu kullanılabilir.
 
 ```{r, collapse=T,cache=T}
-str(basic_data)
+str(basit_data)
 ```
 
-## R Packages
-R version 3.3.1 downloads to a computer with 30 packages that includes thousands of functions.These packages stored under _system library_. Other useful functions are created by R users and made available to R community. For example linear mixed effect models can be analyzed R using _lme4_[@lme4pack] package. This package is cited more than 1500 times and has been downloaded more than 60000 times. You can use Figure \@ref(fig:Rpackdown) to check its current usage. R packages are generally available via CRAN and they are generally not archived further if they are maintained properly. You can download R packages into your computer and store them locally, under _user library_ . You need to load (activate) the packages in each session before you can use them. 
+## R Paketleri
+R bilgisayarınıza kurulurken 30'dan fazla paket yükler. Bu paketler _sistem kütüphanesinde_ saklanır. R paketleri otomatik olarak yüklenen bu 30 paketle sınırlı değildir, örneğin doğrusal karma etkiler modellerini (linear mixed models) çözümlemek için _lme_[@lme4pack] paketi kullanılabilir. Bu paket 60000'den fazla bilgisayara yüklenmiş ve 1500'den fazla akademik yayında kullanılmıştır. R paketleri genellikle CRAN (comprehensive R archive network) içerisinde bulunur. Paketler yazarlar tarafından güncellendiği sürece CRAN'da bulunur. R paketlerini CRAN'dan çekerek kendi bilgisayarınızda saklayabilirsiniz. Yüklediğiniz paketler _kullanıcı kütüphanesinde_ tutulur. Paketleri bir R oturumunda kullanabilmek için onları aktif hale getirmeniz gerekir.
 
-You have probably noticed that R, RStudio and R packages are interconnected. When you download Rstuido after you have downloaded R, The Rstudio scans your computer, locates R and connects to it. Both R and RStudio can locate your libraries unless you manually manipulated the file locations. If you wonder the location of your R packages you can run _.libPaths()_ function. 
+R ve R Studio'yu kurma aşamasında R-RStudio-R paketleri arasında bilgisayar tarafından sağlanan otomatik bir bağ olduğunu farketmiş olabilirsiniz. R studio R'dan sonra yüklendiğinde bilgisayarınızı tarayacak, R programının yerini bulacak ve ona bağlanacaktır. Hem R hem de R Studio R paketlerinizin yerini bulabilir (eğer siz yerlerini değiştirmediyseniz). Eğer R paketlerinizin nerede olduğunu öğrenmek isterseniz _.libPaths()_ fonksiyonunu kullanabilirsiniz.
 
-R packages located in CRAN can easily be downloaded into your machine using RStuido's __Packages__ tab, or you can directly type _install.packages("packagename")_. When you open a new session, some of the main packages are loaded automatically. When a package is loaded, you can see the tick in the _Packages_ tab. If the package you plan to use in a session is not loaded, you can click the box or you can directly type _library("packagename")_. You can see these steps in (Video4 \@ref(fig:Video4)).
+CRAN'da yer alan R kütüphaneleri bilgisayarınıza kolayca yüklenebilir. R studio'da yer alan _Packages_ ve _install_ sekmesinden veya  _install.packages("paketismi")_ fonksiyonu ile paketleri indirebilirsiniz. Paketlerin oturum esnasında aktif hale getirilmesi gerekir. Bu işlem R studio _Paketler_ sekmesinde yer alan paket isimlerinin yanındaki kutucuğa tıklayarak veya _library("paketismi")_ fonksiyonu ile tamamlanabilir. Bu basamaklar Video 4 ile gösterilmiştir.\@ref(fig:Video4).
 
-```{r Video4, fig.cap='Download R Packages', fig.width=8, fig.height=6 , echo=FALSE}
+```{r Video4, fig.cap=' R Paketi Yükle', fig.width=8, fig.height=6 , echo=FALSE}
 knitr::include_url("https://www.youtube.com/embed/BiJhU0Rn6t4")
 ``` 
 
 
-## The Workspace {#theworkspace}
-When a session is started by opening an R script, every operation takes place in the working space. Every step is recorded and can be seen in _History_ tab of R Studio. Working space can be saved when closing the session. The objects created in a session are kept in the space. You can use _ls()_ function to see your objects in the working space, you can also check _Environment_ tab of R Studio.
+## Çalışma alanı (workspace) {#theworkspace}
+Bir R oturumu açtığınızda ve R işlemleri yaptığınızda bu işlemler çalışma alanında yürütülür. Her adımınız R Studio sağ üst köşede yer alan _History_ sekmesinde görülür. Çalışma alanınızı oturum sonunda kaydedebilirsiniz. Oturum esnasında oluşturduğunuz R çıktıları çalışma alanında tutulur. _ls()_ fonksiyonu ile bu çıktıları görebilirsiniz.  
 
-The objects in a workspace can easily be saved into the working directory as separate outputs. Also the objects in the working directory can easily be loaded into the working space. Here _easily_ refers to the unnecessity of providing a path. If the path is provided, you can save or load objects from different directories.
+R çıktıları çalışma alanına getirilebilir veya çalışma alanı dışına uzun süreliğine kaydedilebilir. Dosyaların yerlerini bulmak ile uğraşmak istemiyorsanız bütün işlemlerinizi aynı klasörde tamamlamayı tercih edebilirsiniz. _getwd()_ fonksiyonu size hangi klasör içinde (working directory) olduğunuzu gösterir. Uzun süreliğine kaydetmek istediğiniz bir R çıktısı bu klasöre kolayca kaydedilebilir. Aktif olan klasörünüzü _setwd()_  fonksiyonu ile değiştirebilirsiniz. Tabiki bilgisayarınızda her hangi bir klasörde, hatta internette sakladığınız bir nesneyi R çalışma alanınıza getirebilir veya çalışma alanınızda oluşturduğunuz bir dosyayı bilgisayarınızda her hangi bir klasöre kaydedebilirsiniz. Fakat bu durumlarda adresi (location) hatasız bir şekilde R'a bildirmeniz gerekir. Girdi ve Çıktı konuları bir sonraki bölümde ele alınmıştır. 
 
-You can run _getwd()_ command to see your working directory. You can change the working directory within a session using _setwd()_ function. Alternatively you can change the directory using _Session_ tab of R Studio. The data input and output is covered more broadly in the next chapter.
+

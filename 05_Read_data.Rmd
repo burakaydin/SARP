@@ -1,372 +1,366 @@
 
 
-#  Data Sets
+#  Veri Setleri
+Verileri teker teker kaydetme  \@ref(dataframes) bölümünde verilmiştir. Fakat veri setleri genellikle çözümleme yapacak araştırmacıya hazır şekilde gelir. Bu bölüm (a) veri çekme , (b) basit veri işleme etme yöntemleri ve (c) veri kaydetme konularını içerir.
 
-In section \@ref(dataframes) we have illustrated how to enter data manually. However the data are generally available beforehand. This section aims to illustrate how to (a) import data into R, (b) perform basic data manipulation  and (c) export data.
 
-
-##Import Data
-A data set might be available in different formats. Some of the most commonly used formats are .csv, .sav, .Rdata, .txt. Importing data and checking their status are initial steps and should be conducted carefully. As mentioned in \@ref(theworkspace), if the data and the R script are in the same folder, a detailed path to locate the data is NOT needed. 
+##Veri Çekme
+Bir veri seti farklı formatlarda bulunabilir. R kullanıcılarının çok karşılaştığı veri formatları arasında .csv, .sav, .Rdata, .txt sayılabilir. Çözümleme işleminden önce verilerin düzgün bir şekilde çalışma alanına getirilmesi önemlidir.Eğer çalışacağınız veri seti ve R betiği aynı klasör içerisinde ise, bir diğer deyişle veri setiniz çalışma klasörünün (working directory) içerisinde ise adres belirtmeden veriyi çalısma alanınıza çağırabilirsiniz.
 
 ### CSV
-CSV stands for comma separated values. Microsoft Excel is a useful tool to create this format. The csv is simpler compared to xls, xlsx, xlsb or other Excel formats. A csv file can be imported into R working space using _read.csv_ function. Following code is the simplest specification to read a csv file
+CSV (comma separated values) virgülle ayrılmış değerler içeren dosyalardır. Microsoft Excel kullanıcıları excel formatında yer alan verileri kolayca csv olarak kaydedbilirler. Diğer excel formatları ile kıyaslandığında (xls,xlsx,xlsb, vd.) işlemesi daha kolay veri formatıdır. _read.csv_ fonksiyonu ile veri çalısma alanına çağırılabilir. En basit hali ile; 
 
 ```{r, collapse=T, eval=F}
-data=read.csv("dataname.csv")   # works if dataname.csv is located within the working directory
+data1=read.csv("dataismi.csv")   # eğer çalısma klasöründe dataisim.csv dosyası
+                                # mevut ise çalışır
 
-#In a windows machine
-data=read.csv("C:\\Users\Desktop\\folderX\\data.name.csv")  # with path
-data=read.csv("C:/Users/Desktop/folderX/data.name.csv")  # with path
-#NOTE: A backslash (\) will cause error in a windows machine 
+#Windows için
+data1=read.csv("C:\\Users\Desktop\\folderX\\dataismi.csv")  # adres (path) 
+data1=read.csv("C:/Users/Desktop/folderX/dataismi.csv")  # adres (path) 
+#NOTE:  \ karakteri hata verir / veya \\ kullanılmalıdır. 
 
 ```
 
-Use _?read.csv_ to view its arguments. See following notes for relatively important arguments
+_?read.csv_ komutu ile fonksiyonun argümanlarını görebilirsiniz. Önemli olan argümanlara örnek;
 
-a) _header=FALSE_ or _header=TRUE_ indicates whether the file contains variable names.    
-b) _na.strings_ is used for declaring missing value indicators. This is generally critical. For example _na.strings = "-99"_ indicates that -99s should be interpreted as _NA_ or _na.strings = c("-99" , "-9" )_ indicates that both -99s and -9s represents missing data.
-c) _stringsAsFactors=TRUE_ or _stringsAsFactors=FALSE_ indicates whether character vectors should be converted into factors.
-d) _col.names_ allows renaming variables while reading the data. For example, when reading three variables, _col.names_ should have three elements, such as _col.names=c("A1","B2","C3")_.
+a) veya  değişken isimleri mevcut ise _header=TRUE_ aksi halde _header=FALSE_ .    
+b) Kayıp veri belirticiler için _na.strings_ . Örneğin  _na.strings = "-99"_ bütün -99 değerlerinin kayıp veriyi belirttiğini R'a iletir. Benzer şekilde _na.strings = c("-99" , "-9" )_ hem -99 hem de -9 değerlerinin kayıp veri olduğunu belirtir. 
+c) Eğer karakter verilerini faktör olarak kullanmak istiyorsanız _stringsAsFactors=TRUE_  aksi halde _stringsAsFactors=FALSE_.
+d) Veriyi çağırma esnasında değişkenlere yeni isim vermek istiyorsanız _col.names_ argümanı kullanılabilir. Örneğin 3 değiskeniniz varsa _col.names=c("A1","B2","C3")_ argümanı ile sütunlara isim verebilirsiniz.
+
+Eğer csv dosyanızda ondalık sayılar nokta yerine virgül ile ayrılmış ise (Avrupa ve Türkiye) bu read.csv fonksiyonu için problem oluşturur. Çözüm olarak _read.csv2_ fonksiyonunu kullanabilir, veya read.csv içerisinde _sep=";"_ ve _dec=","_ argümanlarını kullanabilirsiniz. CSV dosyasından veri çağırma basamakları Video 5 ile gösterilmiştir. 
 
 
 
-Use _read.csv2_ function when decimals indicated with a comma and values are separated with semicolon. Alternatively use _sep=";"_ and _dec=","_ arguments in _read.csv_ function. 
-
-A silent video is recorded (Video5 \@ref(fig:Video5)) to show these steps.
-
-```{r Video5, fig.cap='Read CSV file', fig.width=8, fig.height=6 , echo=FALSE}
+```{r Video5, fig.cap=' CSV Oku', fig.width=8, fig.height=6 , echo=FALSE}
 knitr::include_url("https://www.youtube.com/embed/RjiKIWxaZBk")
 ```
 
 
 ### SPSS
-SAV files are common data formats, at least among the social scientists. The package _foreign_ [@foreign] includes _read.spss_ function.
+SAV sosyal bilimciler tarafından kullanılan bir veri formatıdır. _foreign_ [@foreign] paketinde yer alan _read.spss_ fonksiyonu sav dosyalarını okumak için kullanılabilir.
+
 ```{r, collapse=T, eval=F}
 require(foreign)
 ?read.spss
-data=read.spss("dataname.sav",to.data.frame=TRUE)   
-# works if dataname.sav is located within the working directory
+data=read.spss("dataismi.sav",to.data.frame=TRUE)   
+# eğer dataisim.sav çalışma klasöründe ise çalılşır
 
 ```
 
 ### Rdata
-Rdata format is a memory friendly alternative. By default, it includes a name for the data set. 
+Rdata formatı genelde daha az bilgisayar hafızası işgal eder. Rdata olarak kaydedilecek her R çıktısı ismi ile birlikte kaydedilir.
 
 ```{r, collapse=T, eval=F}
-load("dataname.Rdata")  # works if dataname.Rdata is located within the working directory
+load("dataisim.Rdata")  #eğer dataisim.Rdata çalışma klasöründe ise çalılşır
 ```
 
-### Pull online {#pullonline}
+### Sanal Depolardan Veri Çekmek {#pullonline}
 
-Its possible to import data from the web, but these procedures are well beyond the scope of this material. The basic approach includes mainly three steps, (a) correctly specify the location , (b) correctly specify the data format, (c) download and import or directly import into R. Following code should import the World Bank data introduced in Section \@ref(dataWBT).
+R ile sanal dünyadan veri çekilebilir. Süreci basite indirgersek, (a) öncelikle verinin nerede yer aldığı doğru şekilde belirlenmelidir, (b) verinin formatı doğru şekilde belirlenmelidir, (c) veri indirilip R' çağrılır veya doğrudan R'a çağrılır. Aşağıda verilen komutlar \@ref(dataWBT) bölümünde tanıtılan dataWBT'nin çalışma alanınıza getirilmesini sağlar.
 
 ```{r, collapse=T, eval=F}
-#read csv from an online repository
-urlfile='https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv'
-dataname=read.csv(urlfile)
-str(dataname)
+#sanal depodan CSV oku
+urldosyasi='https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv'
+dataismi=read.csv(urldosyasi)
+str(dataismi)
 
 
-# load Rdata from an online repository
-urlfile2='https://github.com/burakaydin/materyaller/blob/gh-pages/ARPASS/dataWBT.Rdata?raw=true'
-load(url(urlfile2))
+#sanal depodan Rdata oku
+urldosyasi2='https://github.com/burakaydin/materyaller/blob/gh-pages/ARPASS/dataWBT.Rdata?raw=true'
+load(url(urldosyasi2))
 str(dataWBT)
 
 ```
 
-These data sets can be downloaded as a file from the <a href="https://github.com/burakaydin/materyaller/tree/gh-pages/ARPASS" target="_blank">Github Repository</a>. Alternatively, an excel file is located <a href="https://www.aydinburak.net/sarp" target="_blank">here</a>.
+Bu veri setleri <a href="https://github.com/burakaydin/materyaller/tree/gh-pages/ARPASS" target="_blank">Github Depo</a> veya , excel dosyası olarak <a href="https://www.aydinburak.net/sarp" target="_blank">buradan</a> indirilebilir.
 
-### Read data through R studio
-When the data are not located within the working directory or point-click approach is preferable, _Import Dataset_ gadget located in _Environment_ window might be helpful. A silent video is recorded (Video6 \@ref(fig:Video6)) to show how to read a csv file through Rstudio. It is also possible to read from Excel, SPSS, SAS and Stata.
+### R Stuido Aracılığı ile Veri Çağırma
+Veri dosyanız bilgisayarınızda farklı bir klasörde (çalışma klasörü dışında) ise veya tıkla-bırak yöntemini (point-click) tercih ederseniz R Studio'nun sağ üst köşesinde _Environment_ sekmesi altında yer alan _import dataset_ ile veri çağırabilirsiniz. Bu basamaklar Video 6 ile gösterilmiştir.
 
-```{r Video6, fig.cap='Read CSV file through R Studio', fig.width=8, fig.height=6 , echo=FALSE}
+```{r Video6, fig.cap='R Studio ile CSV Oku', fig.width=8, fig.height=6 , echo=FALSE}
 knitr::include_url("https://www.youtube.com/embed/D_5wJFmlmxk")
 ```
 
 
-## Basic Data Manipulation
+## Basit Veri İşlemleri
+Genellikle çözümleme basamağına geçilmeden önce verinin işlenmesi gerekir. Bu bölüm (a) değişkenleri yeniden kodlama, (b) alt küme seçme, (c) yeni değişken oluşturma, (d) veri çerçevesini değiştirme, (e) değişken türünü değiştirme ve (f) veri silme işlemlerini kısaca özetler.
 
-Generally a data set should be processed after it is imported. This section illustrates basic manipulation procedures, (a) replace values, (b) subsetting, (c) create new variables, (d) reshape (e) convert between variable types, (f) delete cases.
-
-### Replacing values
-It is possible to replace a specific datum or a value. It is also possible to rename variables. The R package _plyr_ [@plyrpack] might be useful.
+### Değişkenleri yeniden kodlama 
+Bir satırı, bir sütünü veya bir satır/sütün keşiminde yer alan tek bir elemanı değiştirmek mümkündür. Değişkenlerin yeni isimler vermek mümkündür. _plyr_ [@plyrpack] paketi değişkenleri yeniden kodlamada yardımcı olabilir.
 
 ```{r, collapse=T, eval=F, cache=T,message=F}
 
-# load csv from an online repository
-urlfile='https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv'
-tempdata=read.csv(urlfile)
+# sanal depodan CSV oku
+urldosya='https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv'
+veriseti1=read.csv(urldosya)
 
-#remove URL 
-rm(urlfile)
+#URL adresini sil
+rm(urldosya)
 
 
-# replace a specific datum:i.e. row 151 column 16 should be 30 
-tempdata[151,16]=30
+# 151. satır 16. sütunu değiştir ve 30 yap
+veriseti1[151,16]=30
 
-# replace a specific datum using locaters
-# row 151 belongs to id 67034022 and column 16 is named "age".
-tempdata[tempdata$id==67034022,"age"]=32
+# aynı işlem satır ismi ve sütün ismi verilerek yapılabilir.
+# id numarası 67034022 olan satırın yaş değerini 32 yap. 
+veriseti1[veriseti1$id==67034022,"age"]=32
 
-# Replace values
-# Replace treatment values
-# originally has 1 for treatment and 2 for control
-# Replace 1s with "trt" and 2s with "cnt" 
-tempdata[tempdata$treatment==1,"treatment"]="trt"
-tempdata[tempdata$treatment==2,"treatment"]="cnt"
+# tekrar kodlama
+# Veri setinde yer alan treatment değişkeni 0 ve 1 olarak girilmiştir.
+# 1leri  "trt" ve 2leri  "cnt" yapmak için 
+veriseti1[veriseti1$treatment==1,"treatment"]="trt"
+veriseti1[veriseti1$treatment==2,"treatment"]="cnt"
 
-# Or use ifelse function
-# replace "wage01" If "wage01" equals "Yes" change to 0.5, otherwise -0.5
-tempdata$wage01=ifelse(tempdata$wage01=="Yes",0.5,-0.5)
+# ifelse fonksiyonu benzer şekilde çalışır
+# "wage01" değişkeninde "wage01"  "Yes" ise 0.5, değil ise -0.5 olarak kodlayalım
+veriseti1$wage01=ifelse(veriseti1$wage01=="Yes",0.5,-0.5)
 
-# Or use mapvalue function in the plyr package
+# plyr paketi kullanarak
 require(plyr)
-# create a new variable named pension01NEW, 0 if pension01 is "No", 1 if "Yes"
-tempdata$pension01NEW <- mapvalues(tempdata$pension01, 
+# pension01yeni değişkeni pension01 değişkeni üzeriden tanımlanmıştır
+# eski değerler olan Yes ve No yerine 1 ve 0 kodlayalım
+veriseti1$pension01yeni <- mapvalues(veriseti1$pension01, 
                                    from=c("Yes","No"),to=c("1","0"))
 
 
-#rename a variable
-#rename 4th and 5th column
-colnames(tempdata)[4]="course"
-colnames(tempdata)[5]="region"
+#bir değişkene yeni isim verelim
+#4. ve 5. değişkenlere yeni isim verelim
+colnames(veriseti1)[4]="kurs"
+colnames(veriseti1)[5]="bolge"
 
-#rename at the same time
-colnames(tempdata)[c(17,21)]=c("Tinc","WAGE1")
+#isim verme işlemini tek sıra kod ile yapalım
+colnames(veriseti1)[c(17,21)]=c("Tgelir","maas1")
 
-#rename using plyr package
-tempdata <- rename(tempdata,c('gen_att'='GENDERATT'))
+#plyr paketini kullanalım gen_att değişkenine toplumsalCinsiyet ismi verelim
+veriseti1 <- rename(veriseti1,c('gen_att'='toplumsalCinsiyet'))
 
-#use head(tempdata) to visually check
-#use summary(tempdata) to check
+#kontrol etmek için head(veriseti) veya summary(veriseti) kullanılabilir
 
-#remove tempdata
-rm(tempdata)
+# veriseti1'i çalışma alanından sil
+rm(veriseti1)
 
 ```
 
 
 
-### Subsetting
+### Alt Küme Seçme (Subsetting)
 
-It is easily possible to subset a data set.
+R ile alt küme oluşturmak oldukça kolaydır.
 
 
 ```{r, collapse=T, eval=F, cache=T,message=F}
 
-# load csv from an online repository
-urlfile='https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv'
-tempdata=read.csv(urlfile)
+# CSV yükle 
+urldosya='https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv'
+veriseti1=read.csv(urldosya)
 
-#remove URL 
-rm(urlfile)
+# URL adresi sil 
+rm(urldosya)
 
 
-# select only city=ISTANBUL
-istDAT=tempdata[tempdata$city=="ISTANBUL",]
+# sadece İstanbul'u seç
+istDAT=veriseti1[veriseti1$city=="ISTANBUL",]
 
-# select only city=ISTANBUL and first 8 columns
-istDAT18=tempdata[tempdata$city=="ISTANBUL",1:8]
+# sadece İstanbul'dan ilk sekiz katılımcıyı seç
+istDAT18=veriseti1[veriseti1$city=="ISTANBUL",1:8]
 
-# select only city=ISTANBUL and Gender Attitude score larger than 2
-istDATGAT2=tempdata[tempdata$city=="ISTANBUL" | tempdata$gen_att >2 ,]
+# sadece İstanbul'dan gen_att puanı 2den yüksek olanları seç
+istDATGAT2=veriseti1[veriseti1$city=="ISTANBUL" | veriseti1$gen_att >2 ,]
 
-# Alternatively use the subset function
-# use the select argument to specify the columns, otherwise all columns are selected
-istDATGAT2B=subset(tempdata, city=="ISTANBUL" | tempdata$gen_att >2, select=1:8) 
+# subset fonksiyonu
+# sadece İstanbul'dan gen_att puanı 2den yüksek olan ilk sekiz katılımcıyı seç
+istDATGAT2B=subset(veriseti1, city=="ISTANBUL" | veriseti1$gen_att >2, select=1:8) 
 
-#subset based on variable values
-item1_123 <- tempdata[tempdata$item1 %in% c(1,2,3), ]
+#item 1 değeri 1,2 ve 3 olan katılımcıları seç
+item1_123 <- veriseti1[veriseti1$item1 %in% c(1,2,3), ]
 
-#remove all objects in workspace
+#çalışma alanını temizle
 rm(list=ls())
 
 ```
 
 
-### Creating new variables
-Procedures to create new variables are covered in Section \@ref(basics). Following computations are mainly a review. 
+### Yeni Değişken Oluştur
+Daha önce \@ref(basics) bölümünde değişken oluşturma yöntemlerine değinilmiştir. Bu bölüm hatırlatma olarak görülebilir.
 
 ```{r, collapse=T, eval=F, cache=T,message=F}
-# load csv from an online repository
-urlfile='https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv'
-tempdata=read.csv(urlfile)
+# CSV yükle
+urldosya='https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv'
+veriseti1=read.csv(urldosya)
 
-#remove URL 
-rm(urlfile)
+#URL dosyası yükle 
+rm(urldosya)
 
-# create sum for item2 to item6
-tempdata$itemSUM=with(tempdata,item2+item3+item4+item5+item6)
+# item2'den 6'ya kadar olan sütünları topla
+veriseti1$itemTOPLAM=with(veriseti1,item2+item3+item4+item5+item6)
 
-# create average of item2 to item6 (notice na.rm)
-tempdata$itemAVE=with(tempdata,
+# item2'den 6'ya kadar olan sütünların ortalamasını al (na.rm =T önemli)
+veriseti1$itemAVE=with(veriseti1,
                       rowMeans(cbind(item2,item3,item4,item5,item6),na.rm=T))
 
-#or
-tempdata$itemAVE=rowMeans(tempdata[,10:14],na.rm = T)
+#veya rowMeans fonksiyonu
+veriseti1$itemAVE=rowMeans(veriseti1[,10:14],na.rm = T)
 
-# Create average by city
-tempdata$CityAVEscore =with(tempdata, ave(itemAVE,city,FUN=function(x) mean(x, na.rm=T)))
+# Şehirler için ortalama hesapla
+veriseti1$CityAVEscore =with(veriseti1, ave(itemAVE,city,FUN=function(x) mean(x, na.rm=T)))
 
-#or
-tempdata=merge(tempdata, aggregate(itemAVE ~ city, data = tempdata, FUN=mean, na.rm=TRUE), 
+#veya
+veriseti1=merge(veriseti1, aggregate(itemAVE ~ city, data = veriseti1, FUN=mean, na.rm=TRUE), 
           by = "city", suffixes = c("", "citymean"),all=T)
 
-#or take each item's average by city
-tempdata=merge(tempdata, aggregate(cbind(item2,item3,item4,item5,item6) ~ city, 
-                                   data = tempdata, FUN=mean, na.rm=TRUE), 
+#veya her bir soru için şehir ortalaması hesapla
+veriseti1=merge(veriseti1, aggregate(cbind(item2,item3,item4,item5,item6) ~ city, 
+                                   data = veriseti1, FUN=mean, na.rm=TRUE), 
                                    by = "city", suffixes = c("", "Citymean"),all=T)
 
 
-# categorize variables. Create 0s if itemAVE is lower than 2 and 1 otherwise
-tempdata$itemAVE01=ifelse(tempdata$itemAVE<2,0,1)
+# değişkenlerin kategorize edilmesi. Eğer item1AVE 2'den küçük ise 0 aksi halde 1
+veriseti1$itemAVE01=ifelse(veriseti1$itemAVE<2,0,1)
 
-# create 1s if the average is between 0 and 1.8
-# create 2s if the average is between 1.8 and 2.5
-# create 3s if the average is between 2.5 and 5
-tempdata$itemAVE123=with(tempdata,cut(itemAVE, breaks=c(0,1.8,2.5,5), labels = FALSE))
-# check right=TRUE argument.
-# i.e if right=T  values exactly equal to 1.8 goes into category 1
-#     if right=F  values exactly equal to 1.8 goes into category 2
+
+# 0 ile 1.8 arasına 1 ver
+# 1.8 ve 2.5 arasına 2 ver
+# 2.5 ile 5 arasına 3 ver
+veriseti1$itemAVE123=with(veriseti1,cut(itemAVE, breaks=c(0,1.8,2.5,5), labels = FALSE))
+# cut fonksiyonu içerisinde yer alan right=T argümanına göz gezdirin
+# örneğin  right=T  ise değeri tam olarak 1.8 olan değişkenler 1 olur
+#          right=F  ise değeri tam olarak 1.8 olan değişkenler 2 olur
      
 
 ```
 
 
 
-### Reshaping data
-It might be needed to reshape the data. Mainly from a wide format to long format or vice versa. The R package _tidyr_ [@tidyrpack] might be useful.
+### Veri Çerçevesini Değiştirme (Reshaping data)
+Veri çerçevesini değitirmek, uzun formattan geniş formata geçmek veya tam tersi gerekli olabilir. _tidyr_ [@tidyrpack] yardımcı olabilir.
+
 
 ```{r, collapse=T, eval=F, cache=T,message=F}
-# load csv from an online repository
-urlfile='https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv'
-tempdata=read.csv(urlfile)
+# CSV yükle
+urldosya='https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv'
+veriseti1=read.csv(urldosya)
 
-#remove URL 
-rm(urlfile)
+#adresi sil
+rm(urldosya)
 
-# from wide to long. Create one single item column based on item1 to item6
-# while keeping other values in the data set 
+# genişten uzuna item 1den 6 ya kadar olan sütünları item adı altında birleştir
 library(tidyr)
-data_long = gather(tempdata, item, score, item1:item6, factor_key=TRUE)
+data_long = gather(veriseti1, item, score, item1:item6, factor_key=TRUE)
 
-#sort data by id
+#id'ye göre diz
 data_long=data_long[order(data_long$id),] 
 
-# from long  to wide.
+# uzundan genişe.
 data_wide = spread(data_long, item, score)
 
-## remove all objects but certain in workspace
-rm(list=setdiff(ls(),c("tempdata")))
+## belirlediğiniz nesneler dışında çalışma alanını temizle
+rm(list=setdiff(ls(),c("veriseti1")))
 
 ```
 
-### Converting between variable types
-Converting numeric values to factors or vice versa might be needed.
+### Değişken Türünü Değiştirme
+Sayısal girilen verileri faktöre çevirme gibi işlemler çözümleme basamağından önce gerekli olabilir.
 
 
 ```{r, collapse=T, eval=F, cache=T,message=F}
-# load csv from an online repository
-urlfile='https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv'
-tempdata=read.csv(urlfile,stringsAsFactors = F)
+# CSV yükle
+urldosya='https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv'
+veriseti1=read.csv(urldosya,stringsAsFactors = F)
 
-#remove URL 
-rm(urlfile)
+#URL sil
+rm(urldosya)
 
-#check treatment variable's structure 
-str(tempdata$treatment)
+#treatment değişkenini incele
+str(veriseti1$treatment)
 
-#convert numeric to factor.
-tempdata$treatmentFactor=factor(tempdata$treatment,labels=c("treatment","control"))
+#sayısal veriyi faktöre çevir
+veriseti1$treatmentFactor=factor(veriseti1$treatment,labels=c("treatment","control"))
 
-#convert factors to numeric (when numbers show up as a character variable)
+#karakter olarak girildiğinde faktörleri sayıya çevirme
 
-#create illustrative variable
-tempdata$iv1=factor(rep(c("1","2","3"),length=nrow(tempdata)))
-tempdata$iv1numeric=as.numeric(levels(tempdata$iv1))[tempdata$iv1]
-#or
-tempdata$iv1numeric=as.numeric(as.character(tempdata$iv1))
+veriseti1$iv1=factor(rep(c("1","2","3"),length=nrow(veriseti1)))
+veriseti1$iv1numeric=as.numeric(levels(veriseti1$iv1))[veriseti1$iv1]
+#veya
+veriseti1$iv1numeric=as.numeric(as.character(veriseti1$iv1))
 
-#convert NAs to -99  
-tempdata[is.na(tempdata)]= (-99)
+#NAleri -99'a çevir  
+veriseti1[is.na(veriseti1)]= (-99)
 
-#remove all objects in workspace
+#çalışma alanını temizle
 rm(list=ls())
 ```
 
 
-### Delete cases
-
-It might be needed to delete an element, an entire row or an entire column
+### Veri Silme
+Bir tek hücreyi, bir satırı veya bir sütunu silmek gerekebilir.
 
 ```{r, collapse=T, eval=F, cache=T,message=F}
-# load csv from an online repository
-urlfile='https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv'
-tempdata=read.csv(urlfile,stringsAsFactors = F)
+# CSV yükle
+urldosya='https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv'
+veriseti1=read.csv(urldosya,stringsAsFactors = F)
 
-#remove URL 
-rm(urlfile)
+#URL sil
+rm(urldosya)
 
-#Delete a specific element i.e row 3 column 5
-tempdata[3,5]=NA
+#3. satır 5. sütunda yer alan hücreyi sil
+veriseti1[3,5]=NA
 
-#Delete a row. i.e the 3rd 
-tempdata[3,]= NA
+#3. satırı sil
+veriseti1[3,]= NA
 
-#or
-tempdata=tempdata[-3,]
+#veya
+veriseti1=veriseti1[-3,]
 
-#delete a column, i.e the 5th 
-tempdata$course_taken=NULL
+#course taken isimli sütunu sil 
+veriseti1$course_taken=NULL
 
-#listwise deletion, remove any row with missing data
-# subset temp for illustrative purposes
-temp=tempdata[,1:10]
+#gösterim amaçlı veri oluştur
+temp=veriseti1[,1:10]
 
-# listwise deletion
+# kayıp verili satırı silme (listwise)
 temp=na.omit(temp)
 
-#remove all objects in workspace
+#çalışma alanını temizle
 rm(list=ls())
 
 ```
 
 
 
-## Export Data
+## veri Kaydetme
 
-It is possible to export R objects. Unless the working directory is changed using _setwd()_ or a path is provided, all the objects are sent to your current working directory.
+Adres belirtmediğiniz sürece kaydetme işlemi mevcut çalışma klasörünüz (working directory) içeriside tamamlanır.
 
 ```{r, collapse=T, eval=F, cache=T,message=F}
-# load csv from an online repository
-urlfile='https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv'
-tempdata=read.csv(urlfile,stringsAsFactors = F)
+# CSV yükle
+urldosya='https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv'
+veriseti1=read.csv(urldosya,stringsAsFactors = F)
 
-#remove URL 
-rm(urlfile)
+#URL sil 
+rm(urldosya)
 
-#create objects
-# select rows 1 to 20 and columns 1 to 5
-subset1=tempdata[1:20,1:5]
-object2=mean(tempdata$item1,na.rm = T)
+#nesne oluştur.
+subset1=veriseti1[1:20,1:5]
+object2=mean(veriseti1$item1,na.rm = T)
 
 
-#Check working directory
+#çalışma klasörünüzü kontrol edin
 getwd()
 
-# save as an R object
+# Rdata olarak sakla
 save(subset1,file="subset1Rfile.Rdata")
-# provide a path if needed
+# adres vererek sakla
 save(object2,file="C:/Users/Desktop/object2Rfile.Rdata")
 
-# Export as a csv
+# csv olarak sakla
 write.csv(subset1,file="subset1CSVfile.csv",row.names = F)
 
-#Export to SPSS
+#sps dosyası olarak sakla
 library(foreign)
 write.foreign(subset1, "subset1SPSfile.txt","subset1SPSfile.sps", package="SPSS")
 
-#remove all objects in workspace
+#çalışma alanını temizle
 rm(list=ls())
 
 ```
