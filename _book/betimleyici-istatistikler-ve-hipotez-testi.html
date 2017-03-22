@@ -178,10 +178,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.3" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#hipotez-testi-tantm"><i class="fa fa-check"></i><b>7.3</b> Hipotez Testi Tanıtım</a><ul>
 <li class="chapter" data-level="7.3.1" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#samplingdist"><i class="fa fa-check"></i><b>7.3.1</b> Örnekleme Dağılım</a></li>
 <li class="chapter" data-level="7.3.2" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#guven-aralklar-the-confidence-intervals-ci"><i class="fa fa-check"></i><b>7.3.2</b> Güven Aralıkları (The Confidence Intervals (CI))</a></li>
-<li class="chapter" data-level="7.3.3" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#yokluk-hipotezi"><i class="fa fa-check"></i><b>7.3.3</b> Yokluk Hipotezi</a></li>
+<li class="chapter" data-level="7.3.3" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#bos-hipotez"><i class="fa fa-check"></i><b>7.3.3</b> Boş Hipotez</a></li>
 <li class="chapter" data-level="7.3.4" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#z-puan-ve-z-testi"><i class="fa fa-check"></i><b>7.3.4</b> z-puanı ve z-testi</a></li>
-<li class="chapter" data-level="7.3.5" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#the-one-sample-t-test"><i class="fa fa-check"></i><b>7.3.5</b> The one-sample t test</a></li>
-<li class="chapter" data-level="7.3.6" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#the-p-value"><i class="fa fa-check"></i><b>7.3.6</b> The p value</a></li>
+<li class="chapter" data-level="7.3.5" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#tek-orneklem-t-testi"><i class="fa fa-check"></i><b>7.3.5</b> Tek örneklem t-testi</a></li>
+<li class="chapter" data-level="7.3.6" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#p-degeri"><i class="fa fa-check"></i><b>7.3.6</b> p-değeri</a></li>
 <li class="chapter" data-level="7.3.7" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#the-p-value-illustration"><i class="fa fa-check"></i><b>7.3.7</b> The p value illustration</a></li>
 <li class="chapter" data-level="7.3.8" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#statisticalpower"><i class="fa fa-check"></i><b>7.3.8</b> Statistical power</a></li>
 <li class="chapter" data-level="7.3.9" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#in-case-the-z-and-the-t-distribution-is-not-valid"><i class="fa fa-check"></i><b>7.3.9</b> In case the z and the t distribution is not valid</a></li>
@@ -346,8 +346,8 @@ s_Y  = \sqrt {\frac{1}{{n - 1}}\sum\limits_{i = 1}^n {\left( {Y_i  - \bar Y} \ri
 <div id="carpklk-skewness" class="section level3">
 <h3><span class="header-section-number">7.1.5</span> Çarpıklık (Skewness)</h3>
 <p>Çarpıklık değeri dağılımın şekli hakkında bilgi verir. Tamamen simetrik olan bir dağılımın çarpıklık değeri 0’dır.</p>
-<p>Dağılımın sol kuyruğu sağ kuyruğuna nazaran uzun olduğunda çarpıklık değerinin sıfırdan küçük hesaplanması olasıdır. Bu tür dağılımlar sola çarpık veya negatif çarpık olarak isimlendirilir. Bu tür dağılımlarda medyan ortalamadan yüksektir</p>
-<p>Dağılımın sağ kuyruğu sol kuyruğuna nazaran uzun olduğunda çarpıklık değerinin sıfırdan büyük hesaplanması olasıdır. Bu tür dağılımlar sağa çarpık veya pozitif çarpık olarak isimlendirilir. Bu tür dağılımlarda medyan ortalamadan küçüktür.</p>
+<p>Dağılımın sol kuyruğu sağ kuyruğuna nazaran uzun olduğunda çarpıklık değerinin sıfırdan küçük çıkması tipiktir. Bu tür dağılımlar sola çarpık veya negatif çarpık olarak isimlendirilir. Bu tür dağılımlarda medyan ortalamadan yüksektir</p>
+<p>Dağılımın sağ kuyruğu sol kuyruğuna nazaran uzun olduğunda çarpıklık değerinin sıfırdan büyük hesaplanması tipiktir. Bu tür dağılımlar sağa çarpık veya pozitif çarpık olarak isimlendirilir. Bu tür dağılımlarda medyan ortalamadan küçüktür.</p>
 <p>Örneklem için çarpıklık formülü<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
 <span class="math display" id="eq:skew">\[\begin{equation}
 \sqrt{n}\frac{\sum_{i}^{n}\left ( X_{i}-\bar{X} \right )^{3}}
@@ -640,17 +640,17 @@ GA_m +<span class="kw">c</span>(-<span class="dv">1</span>,<span class="dv">1</s
 <p>5302 katılımcı için Toplumsal Cinsiyet Algısı puanlarına ait ortalama 1.94 (%95 GA [1.92-1.96]), standart sapma 0.60 bulunmuştur.</p>
 </div>
 </div>
-<div id="yokluk-hipotezi" class="section level3">
-<h3><span class="header-section-number">7.3.3</span> Yokluk Hipotezi</h3>
+<div id="bos-hipotez" class="section level3">
+<h3><span class="header-section-number">7.3.3</span> Boş Hipotez</h3>
 <p>Hipotez testinin amacı evren hakkında öne sürülen iki hipotezden hangisinin örneklem tarafından desteklendiğine karar vermektir. Bir hipotez testi beş basamaktan oluşur;</p>
 <ol style="list-style-type: decimal">
-<li><p>Yokluk hipotezinin<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> belirlenmesi (örneğin <span class="math inline">\(\mu=0\)</span>)</p></li>
+<li><p>Boş hipotezin<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> belirlenmesi (örneğin <span class="math inline">\(\mu=0\)</span>)</p></li>
 <li><p>Alternatif hipotezin belirlenmesi. (örneğin <span class="math inline">\(\mu \neq 0\)</span>)</p></li>
 <li><p>Test istatistiğinin seçilmesi</p></li>
-<li><p>Test istatistiği ve belirlenen kritik değeri karşılaştırarak karar verilmesi. Eğer hesaplanan test istatistiği kritik değerden daha yüksekse yokluk hipotezinin ret edilmesi (kritik değer alternatif hipoteze göre değişir).</p></li>
+<li><p>Test istatistiği ve belirlenen kritik değeri karşılaştırarak karar verilmesi. Eğer hesaplanan test istatistiği kritik değerden daha yüksekse boş hipotezin ret edilmesi (kritik değer alternatif hipoteze göre değişir).</p></li>
 <li><p>Sonucun açıklanması. Araştırma sorusuna yanıt vermek üzere kararın ifade edilmesi.</p></li>
 </ol>
-<p>Yokluk hipotezi (<span class="math inline">\(H_0\)</span>) ve alternatif hipotez (<span class="math inline">\(H_1\)</span>) araştırma sorusunu cevaplamak üzere belirlenir. İstatistiksel kanıtlar yokluk hipotezini kabul veya terketmek için kullanılır. Yokluk hipotezini kabul etmek veya terketmek bir karardır, teorik istatistik açısından bu karara yönelik oluşabilecek durumlar şunlardır;</p>
+<p>Boş hipotez (<span class="math inline">\(H_0\)</span>) ve alternatif hipotez (<span class="math inline">\(H_1\)</span>) araştırma sorusunu cevaplamak üzere belirlenir. İstatistiksel kanıtlar boş hipotezini kabul veya terketmek için kullanılır. Boş hipotezi kabul etmek veya terketmek bir karardır, teorik istatistik açısından bu karara yönelik oluşabilecek durumlar şunlardır;</p>
 <table>
 <thead>
 <tr class="header">
@@ -682,8 +682,8 @@ GA_m +<span class="kw">c</span>(-<span class="dv">1</span>,<span class="dv">1</s
 </tr>
 </tbody>
 </table>
-<p>Tip-I hata: Gerçekte doğru olduğu halde yokluk hipotezinin terkedilmesi durumudur. Alfa , <span class="math inline">\(\alpha\)</span>, yokluk hipotezinin gerçekte doğru olduğu halde red edilme olasılığıdır. Hipotez testi sürecinde önemli olan noktalardan biri <span class="math inline">\(\alpha\)</span>’nın yeterince küçük olması gerektiğidir. Sosyal bilimlerde sıklıkla <span class="math inline">\(\alpha=.05\)</span> kullanılır.</p>
-<p>Tip-II hata: Gerçekte yanlış olan bir yokluk hipotezinin terkedilememisidir. Beta, <span class="math inline">\(\beta\)</span>, gerçekte yanlış olan bir yokluk hipotezini kabul etme olasılığıdır.</p>
+<p>Tip-I hata: Gerçekte doğru olduğu halde boş hipotezin terkedilmesi durumudur. Alfa , <span class="math inline">\(\alpha\)</span>, boş hipotezin gerçekte doğru olduğu halde red edilme olasılığıdır. Hipotez testi sürecinde önemli olan noktalardan biri <span class="math inline">\(\alpha\)</span>’nın yeterince küçük olması gerektiğidir. Sosyal bilimlerde sıklıkla <span class="math inline">\(\alpha=.05\)</span> kullanılır.</p>
+<p>Tip-II hata: Gerçekte yanlış olan bir boş hipotezin terkedilememisidir. Beta, <span class="math inline">\(\beta\)</span>, gerçekte yanlış olan bir boş hipotezi kabul etme olasılığıdır.</p>
 </div>
 <div id="z-puan-ve-z-testi" class="section level3">
 <h3><span class="header-section-number">7.3.4</span> z-puanı ve z-testi</h3>
@@ -703,62 +703,62 @@ z_GA=<span class="kw">scale</span>(dataWBT$gen_att, <span class="dt">center=</sp
 <span class="co"># scale=T farkı standart sapmaya böler</span>
 <span class="co"># scale(dataWBT$gen_att, center=3, scale=2)her değerden 3 çıkarıp 2&#39;ye böler.</span></code></pre></div>
 <p>Ortalama için z-istatistiği hesaplamak kolaydır;</p>
-<p><span class="math display">\[ z=\frac{\bar{X}-\mu_{hipotez}}{Standart Hata} = \frac{\bar{X}-\mu_{hipotez}}{\sigma_X/\sqrt{n}}\]</span> Hesaplanan bu z istatistiği bir z dağılımı kullanılarak yorumlanabilir (Figure <a href="betimleyici-istatistikler-ve-hipotez-testi.html#fig:normaldist">7.10</a>);</p>
+<p><span class="math display">\[ z=\frac{\bar{X}-\mu_{hipotez}}{Standart Hata} = \frac{\bar{X}-\mu_{hipotez}}{\sigma_X/\sqrt{n}}\]</span> Hesaplanan bu z istatistiği bir z dağılımı kullanılarak yorumlanabilir (Figür <a href="betimleyici-istatistikler-ve-hipotez-testi.html#fig:normaldist">7.10</a>);</p>
 <ol style="list-style-type: lower-alpha">
-<li><p>Eğer alternatif hipotez, gözlemlenen ortalamanın, hipotez değerinden küçük olacağını belirtiyorsa, hesaplanan z istatistiği <span class="math inline">\(z_{alpha}\)</span> veya <span class="math inline">\(-z_{(1-alpha)}\)</span> ile kıyaslanır. Eğer hesaplanan z , <span class="math inline">\(z_{alpha}\)</span>’ya eşit veya küçük ise yokluk hipotezi terkedilir.</p></li>
-<li><p>Eğer alternatif hipotez, gözlemlenen ortalamanın, hipotez değerinden farklı olacağını belirtiyorsa, hesaplanan z istatistiğinin mutlak değeri <span class="math inline">\(z_{1-(alpha/2)}\)</span> ile kıyaslanır. Eğer mutlak z , <span class="math inline">\(z_{1-(alpha/2)}\)</span>’ya eşit veya büyük ise yokluk hipotezi terkedilir.</p></li>
-<li><p>Eğer alternatif hipotez, gözlemlenen ortalamanın, hipotez değerinden büyük olacağını belirtiyorsa, hesaplanan z istatistiği <span class="math inline">\(z_{1-alpha}\)</span> ile kıyaslanır. Eğer hesaplanan z , <span class="math inline">\(z_{1-(alpha)}\)</span>’ya eşit veya büyük ise yokluk hipotezi terkedilir.</p></li>
+<li><p>Eğer alternatif hipotez, gözlemlenen ortalamanın, hipotez değerinden küçük olacağını belirtiyorsa, hesaplanan z istatistiği <span class="math inline">\(z_{alpha}\)</span> veya <span class="math inline">\(-z_{(1-alpha)}\)</span> ile kıyaslanır. Eğer hesaplanan z , <span class="math inline">\(z_{alpha}\)</span>’ya eşit veya küçük ise boş hipotez terkedilir.</p></li>
+<li><p>Eğer alternatif hipotez, gözlemlenen ortalamanın, hipotez değerinden farklı olacağını belirtiyorsa, hesaplanan z istatistiğinin mutlak değeri <span class="math inline">\(z_{1-(alpha/2)}\)</span> ile kıyaslanır. Eğer mutlak z , <span class="math inline">\(z_{1-(alpha/2)}\)</span>’ya eşit veya büyük ise boş hipotez terkedilir.</p></li>
+<li><p>Eğer alternatif hipotez, gözlemlenen ortalamanın, hipotez değerinden büyük olacağını belirtiyorsa, hesaplanan z istatistiği <span class="math inline">\(z_{1-alpha}\)</span> ile kıyaslanır. Eğer hesaplanan z , <span class="math inline">\(z_{1-(alpha)}\)</span>’ya eşit veya büyük ise boş hipotez terkedilir.</p></li>
 </ol>
 <p>Burada dikkat edilmesi gereken nokta a ve c senaryolarında (yönlü alternatif) kullanılan kritik değerin b senaryosunda (yönsüz alternatif) kullanılan kritik değerden farklı oluşudur. Araştırmacılar alternatif hipotezlerinin yönlü veya yönsüz oluşunu savunabilmelidir.</p>
-<div id="z-test-illustration-1-non-directional" class="section level4">
-<h4><span class="header-section-number">7.3.4.1</span> z test illustration-1 (non-directional)</h4>
-<p>Stating the null as <span class="math inline">\(H_0: \mu_{Gender Attitudes} = 2\)</span> and alternative as <span class="math inline">\(H_1: \mu_{Gender Attitudes} \neq 2\)</span> and using <span class="math inline">\(\alpha=0.05\)</span>;</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># the number of available data points, n</span>
+<div id="z-testi-ornek-1-yonsuz" class="section level4">
+<h4><span class="header-section-number">7.3.4.1</span> z testi örnek-1 (yönsüz)</h4>
+<p>Boş hipotez <span class="math inline">\(H_0: \mu_{Cinsiyet Algisi} = 2\)</span> ve alternatif hipotez <span class="math inline">\(H_1: \mu_{Cinsiyet Algisi} \neq 2\)</span> ve <span class="math inline">\(\alpha=0.05\)</span>;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#  n</span>
 GA_n=<span class="kw">sum</span>(!<span class="kw">is.na</span>(dataWBT$gen_att))
 
-<span class="co">#calculate the mean</span>
+<span class="co">#ortalama</span>
 GA_m=<span class="kw">mean</span>(dataWBT$gen_att,<span class="dt">na.rm =</span> T)
 
-<span class="co">#calculate the sd</span>
+<span class="co">#ss</span>
 GA_s=<span class="kw">sd</span>(dataWBT$gen_att,<span class="dt">na.rm =</span> T)
 
-<span class="co"># set the null</span>
+<span class="co"># boş hipotez</span>
 mu_hyp=<span class="dv">2</span>
 
-<span class="co"># z statistic</span>
+<span class="co"># z istatistiği</span>
 (GA_m-mu_hyp)/(GA_s/<span class="kw">sqrt</span>(GA_n))
 ## [1] -7.17343
 
-<span class="co">#the critical value for alpha=0.05 and nondirectional test </span>
+<span class="co">#alpha=0.05 ve yönsüz alternatif için kritik değer</span>
 <span class="kw">qnorm</span>(<span class="dv">1</span>-(<span class="fl">0.05</span>/<span class="dv">2</span>))
 ## [1] 1.959964</code></pre></div>
-<p>The Gender Attitudes score from 5302 participants had a mean of 1.94 and SD=0.6. A one-sample z test revealed that the observed mean is 7.17 standard deviation below the hypothesized mean of 2. Using a rejection criteria of 1.96 (<span class="math inline">\(z_{1-(0.05/2)}\)</span>) the difference between the observed mean and the hypothesized mean was concluded to be statistically significant.</p>
+<p>5302 katılımcıya ait Toplumsal Cinsiyet Algısı puanları için ortalama 1.94 ve standart sampma 0.6 olarak hesaplanmıştır. Tek örneklem için hesaplanan z testi, gözlemlenen ortalamanın, hipotez ile öne sürülen 2’den 7.17 standart hata daha düşük olduğunu göstermiştir. Kritik değer olarak 1.96 (<span class="math inline">\(z_{1-(0.05/2)}\)</span>) seçildiğinde ve gözlemlenen ortalama ve hipotez ile öne sürülen ortalama arasındaki farkın istatistiksel olarak anlamlı olduğu kararı verilmiştir.</p>
 </div>
-<div id="z-test-illustration-2-directional" class="section level4">
-<h4><span class="header-section-number">7.3.4.2</span> z test illustration-2 (directional)</h4>
-<p>In this illustration, the Gender Attitudes scores’ population mean is assumed to be 1.9 with a standard deviation of 0.75. When the population standard deviation is known it should be used. Stating the null as <span class="math inline">\(H_0: \mu_{Gender Attitudes} = 1.9\)</span> and alternative as <span class="math inline">\(H_1: \mu_{Gender Attitudes} &gt; 1.9\)</span> and using <span class="math inline">\(\alpha=0.01\)</span>;</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># set the null</span>
+<div id="z-testi-ornek-2-yonlu" class="section level4">
+<h4><span class="header-section-number">7.3.4.2</span> z testi örnek-2 (yönlü)</h4>
+<p>Bu örnekte Toplumsal Cinsiyet Algısı değişkeninin evren bazında ortalaması 1.9 ve standart sapması 0.75 olarak varsayılmıştır. Eğer evren bazında standart sapma biliniyorsa istatistik hesaplarken kullanılmalıdır. <span class="math inline">\(H_0: \mu_{Cinsiyet Algisi} = 1.9\)</span> ve <span class="math inline">\(H_1: \mu_{Cinsiyet Algisi} &gt; 1.9\)</span> ve <span class="math inline">\(\alpha=0.01\)</span>;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># boş hipotez</span>
 mu_hyp=<span class="fl">1.9</span>
 
-<span class="co"># z statistic</span>
+<span class="co"># z istatistik</span>
 (GA_m-mu_hyp)/(<span class="fl">0.75</span>/<span class="kw">sqrt</span>(GA_n))
 ## [1] 3.939368
 
-<span class="co">#the critical value for alpha=0.01 and directional test </span>
+<span class="co">#yönlü alternatif ve alfa=.01</span>
 <span class="kw">qnorm</span>(<span class="dv">1</span>-(<span class="fl">0.01</span>))
 ## [1] 2.326348</code></pre></div>
-<p>Using a critical value of 2.33 (<span class="math inline">\(z_{0.99}\)</span>), results indicated that the Gender Attitudes scores’ mean was significantly greater than the hypothesized value of 1.9 (<span class="math inline">\(z=3.94\)</span>).</p>
+<p>Kritik değer olarak 2.33 kullanıldığında (<span class="math inline">\(z_{0.99}\)</span>) gözlemlenen ortalamanın hipotez ile öne sürülen ortalamadan büyük olduğu ve bu farkın istatistiksel olarak anlamlı olduğu kararına varılmıştır <span class="math inline">\(z=3.94\)</span>.</p>
 </div>
 </div>
-<div id="the-one-sample-t-test" class="section level3">
-<h3><span class="header-section-number">7.3.5</span> The one-sample t test</h3>
-<p>Interpreting a z statistic based on a z distribution is not valid for small sample sizes. If the sample size is small, a t distribution with a n-1 degrees of freedom is valid assuming the population has a normal distribution. The procedure is the same as the z-statistic, but the critical values change.</p>
-<div id="t-test-illustration-1-non-directional" class="section level4">
-<h4><span class="header-section-number">7.3.5.1</span> t test illustration-1 (non-directional)</h4>
-<p>In the dataWBT, city <em>DUZCE</em> has only 52 participants and 47 available Gender Attitudes scores. For illustrative purposes this city is chosen.</p>
-<p>Stating the null as <span class="math inline">\(H_0: \mu_{Gender Attitudes} = 1.94\)</span> and alternative as <span class="math inline">\(H_1: \mu_{Gender Attitudes} \neq 1.94\)</span> and using <span class="math inline">\(\alpha=0.05\)</span>;</p>
+<div id="tek-orneklem-t-testi" class="section level3">
+<h3><span class="header-section-number">7.3.5</span> Tek örneklem t-testi</h3>
+<p>Evrene ait dağılım normal olsa dahi küçük örneklemler için z dağılımı yerine t dağılımı kullanmak daha geçerlidir. bu t dağılımının serbestlik derecesi n-1’dir.</p>
+<div id="t-test-ornek-1-yonsuz" class="section level4">
+<h4><span class="header-section-number">7.3.5.1</span> t test örnek-1 (yönsüz)</h4>
+<p>Örnek için Düzce ilinde yaşadığını belirten katılımcılara ait Toplumsal Cinsiyet Algısı puanları kullanılmıştır.</p>
+<p><span class="math inline">\(H_0: \mu_{Cinsiyet Algisi} = 1.94\)</span> ve alternatif <span class="math inline">\(H_1: \mu_{Cinsiyet Algisi} \neq 1.94\)</span> ve <span class="math inline">\(\alpha=0.05\)</span>;</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dataWBT_DUZCE=dataWBT[dataWBT$city==<span class="st">&quot;DUZCE&quot;</span>,]
-<span class="co">#descriptive statistics</span>
+<span class="co">#betimleyici</span>
 <span class="kw">describe</span>(dataWBT_DUZCE[,<span class="st">&quot;gen_att&quot;</span>],<span class="dt">type=</span><span class="dv">3</span>)
 ##    vars  n mean   sd median trimmed  mad min max range skew kurtosis   se
 ## X1    1 47 2.18 0.55      2    2.14 0.59   1 3.8   2.8 0.56     0.28 0.08
@@ -780,15 +780,14 @@ mu_hyp=<span class="fl">1.9</span>
 ## mean of x 
 ##  2.175532
 
-<span class="co">#critical value</span>
+<span class="co">#kritik değer</span>
 <span class="kw">qt</span>(.<span class="dv">975</span>,<span class="dt">df=</span><span class="dv">46</span>)
 ## [1] 2.012896</code></pre></div>
-<p>The Gender Attitudes scores from 47 participants in DUZCE had a range of 1–3.8, a median of 2, a mean of 2.18 and SD=0.55. The score distribution had a sample skewness value of 0.56 and a sample kurtosis value of 0.28.<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> A one sample t-test revealed a significant difference, t(46)=2.94 between the city’s observed mean and the hypothesized mean of 1.94 using a critical value of 2.01 (<span class="math inline">\(t_{.975,46}\)</span>).</p>
+<p>Düzce ilinde yaşayan katılımcıların Cinsiyet Algısı puanları 1 ve 3.8 arasında değişmiştir, ortanca 2, ortalama 2.18, standart sapma 0.55, örnekleme ait dağılımın çarpıklığı 0.56 ve basıklığı 0.28 olarak hesaplanmıştır. Düzce şehrinde yaşayan katılımcılara ait Toplumsal Cinsiyet Algısı ortalaması, hipotez ile öne sürülen 1.94 değerinden farklıdır ve bu farklılık istatistiksel olarak anlamlıdır, t(46)=2.94 ve <span class="math inline">\(t_{.975,46}=2.01\)</span></p>
 </div>
-<div id="t-test-illustration-2" class="section level4">
-<h4><span class="header-section-number">7.3.5.2</span> t test illustration-2</h4>
-<p>In the previous example a directional test was conducted in which the alternative hypothesis specified that the population mean would not be equal to 1.94. What will happen if the null hypothesis is <span class="math inline">\(H_1:\mu_{GenderAttitudes} \leq 1.94\)</span>?</p>
-<p>For the city <em>DUZCE</em>, stating the null as <span class="math inline">\(H_0: \mu_{Gender Attitudes} = 1.94\)</span> and alternative as <span class="math inline">\(H_1: \mu_{Gender Attitudes} \leq 1.94\)</span> and using <span class="math inline">\(\alpha=0.05\)</span>;</p>
+<div id="t-test-ornek-2" class="section level4">
+<h4><span class="header-section-number">7.3.5.2</span> t test örnek-2</h4>
+<p><span class="math inline">\(H_0: \mu_{Cinsiyet Algisi} = 1.94\)</span> ve alternatif <span class="math inline">\(H_1: \mu_{Cinsiyet Algisi} \leq 1.94\)</span> ve <span class="math inline">\(\alpha=0.05\)</span>;</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#t test</span>
 <span class="kw">t.test</span>(dataWBT_DUZCE$gen_att,
        <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>,
@@ -806,14 +805,14 @@ mu_hyp=<span class="fl">1.9</span>
 ## mean of x 
 ##  2.175532
 
-<span class="co">#critical value</span>
+<span class="co">#kritik  değer</span>
 <span class="kw">qt</span>(.<span class="dv">05</span>,<span class="dt">df=</span><span class="dv">46</span>)
 ## [1] -1.67866</code></pre></div>
-<p>A one sample t-test, t(46)=2.94, revealed that the evidence does not support a conclusion that the population mean is smaller than 1.94, using a critical value of -1.68 (<span class="math inline">\(t_{.05,46}\)</span>).</p>
+<p>Test istatistiği t(46)=2.94 ve kritik değer <span class="math inline">\(t_{.05,46}=-1.68\)</span> kullanılarak örneklemin, evrene ait ortalamanın 1.94’ten küçük olduğu hipotezini destekleyecek kanıtı içermediği kararı verilmiştir.</p>
 </div>
 </div>
-<div id="the-p-value" class="section level3">
-<h3><span class="header-section-number">7.3.6</span> The p value</h3>
+<div id="p-degeri" class="section level3">
+<h3><span class="header-section-number">7.3.6</span> p-değeri</h3>
 <p>The t-test illustrations (the t.test function) reported a p-value. Calculation of a p-value is based on the assumption that the null hypothesis is true and an assumption about the distribution of the test statistic . The p-value aims to inform if the calculated statistic is ordinary or not for a given distribution. Historically, a p-value smaller than the pre-determined alpha value led researchers to conclude whether a finding is statistically significant.</p>
 </div>
 <div id="the-p-value-illustration" class="section level3">
@@ -842,7 +841,7 @@ Figure 7.12: The z distribution and abs(z)=1.8
 <div id="statisticalpower" class="section level3">
 <h3><span class="header-section-number">7.3.8</span> Statistical power</h3>
 <p>The power of a statistical test is the probability that it will correctly reject the null hypothesis,and is equal to <span class="math inline">\(1-\beta\)</span>. This probability can be computed a-priori or post-hoc, whereas a post-hoc analysis is less useful. A-priori power analyses is helpful to design a study and to decide the desired sample size. A-priori power analyses are required for the related grant proposals.</p>
-<p>The plot produce by the following R program can be used to explain statistical power<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>.</p>
+<p>The plot produce by the following R program can be used to explain statistical power<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">seq</span>(-<span class="dv">4</span>, <span class="dv">8</span>, <span class="fl">0.02</span>)
 zdat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">x =</span> x, <span class="dt">y1 =</span> <span class="kw">dnorm</span>(x, <span class="dv">0</span>, <span class="dv">1</span>), <span class="dt">y2 =</span> <span class="kw">dnorm</span>(x, <span class="fl">2.5</span>, <span class="dv">1</span>))
 <span class="kw">ggplot</span>(zdat, <span class="kw">aes</span>(<span class="dt">x =</span> x)) +
@@ -867,7 +866,7 @@ Figure 7.13: Power illustration with z distribution
 <p>The z distribution assuming a true null hypothesis (<span class="math inline">\(H_0:\mu=0\)</span>) is depicted with black borders; the mean for the sampling distribution is 0 under this assumption and is shown with a dashed line. The z distribution assuming (a) the null hypothesis is false and (b) the actual population mean and standard deviation are such that <span class="math inline">\(((\mu-\mu_{hypothesis} )⁄(\sigma⁄\sqrt{n})=2.5)\)</span> is depicted with red borders. This visual is valid for a directional test with <span class="math inline">\(\alpha=0.05\)</span>, hence, with a critical value of <span class="math inline">\(z_{0.95}=1.65\)</span>. The blue area represents <span class="math inline">\(\alpha\)</span>, the yellow area represent <span class="math inline">\(\beta\)</span> and the green area represents power. In this particular case the power is .804.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span>-<span class="kw">pnorm</span>(<span class="kw">qnorm</span>(<span class="fl">0.95</span>),<span class="dt">mean=</span><span class="fl">2.5</span>)</code></pre></div>
 <pre><code>## [1] 0.8037649</code></pre>
-<p>Figure <a href="betimleyici-istatistikler-ve-hipotez-testi.html#fig:zpower">7.13</a> visually shows that<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> a power calculation includes 2 distributions, an alpha value and a test statistic. With these knowns the statistical power can be calculated. It should be noted that a test statistic has its own elements, generally a numerator and a denominator. For a z test, the numerator is the difference between the hypothesized mean and the null, whereas the denominator is the standard error of the mean (<span class="math inline">\(\sigma/\sqrt(n)\)</span>). If the power is set to a constant (i.e. .80) , equation can be solved for any desired unknown. Generally, the equation is solved for <em>n</em>, the sample size.</p>
+<p>Figure <a href="betimleyici-istatistikler-ve-hipotez-testi.html#fig:zpower">7.13</a> visually shows that<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> a power calculation includes 2 distributions, an alpha value and a test statistic. With these knowns the statistical power can be calculated. It should be noted that a test statistic has its own elements, generally a numerator and a denominator. For a z test, the numerator is the difference between the hypothesized mean and the null, whereas the denominator is the standard error of the mean (<span class="math inline">\(\sigma/\sqrt(n)\)</span>). If the power is set to a constant (i.e. .80) , equation can be solved for any desired unknown. Generally, the equation is solved for <em>n</em>, the sample size.</p>
 <p>The statistical power is revisited in the following chapters. Each design has its own standard error of the parameter estimate and the test statistic has its own distributional features. For a one sample t-test, the <em>power.t.test</em> function is useful;</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#power.t.test</span>
 <span class="kw">power.t.test</span>(<span class="dt">delta=</span>.<span class="dv">1</span>, <span class="dt">sd=</span>.<span class="dv">6</span>,<span class="dt">sig.level=</span><span class="fl">0.05</span>, <span class="dt">power=</span><span class="fl">0.9</span>, 
@@ -984,10 +983,9 @@ Tc=output[<span class="kw">as.integer</span>(B*(<span class="dv">1</span>-alpha)
 <ol start="2">
 <li id="fn2"><p>Bu formül popülasyon için yanlı (biased) bir tahminleyicidir. R yanlı olmayan çarpıklık ve basıklık istatistikleri hesaplayabilir, <em>describe</em> fonksiyonu <em>type</em> argümanı incelenebilir.<a href="betimleyici-istatistikler-ve-hipotez-testi.html#fnref2">↩</a></p></li>
 <li id="fn3"><p>evrende yer alan her üyenin eşit seçilme olasılığı olduğunda ve seçilen bir üyenin diğer bir üyenin seçilme olasılığını etkilemediği durumlarda<a href="betimleyici-istatistikler-ve-hipotez-testi.html#fnref3">↩</a></p></li>
-<li id="fn4"><p>Boş veya sıfır hipotezi olarak da bilinir<a href="betimleyici-istatistikler-ve-hipotez-testi.html#fnref4">↩</a></p></li>
-<li id="fn5"><p>Descriptive statistics were calculated with <em>psych</em> <span class="citation">(Revelle <a href="#ref-R-psych">2016</a>)</span> package.<a href="betimleyici-istatistikler-ve-hipotez-testi.html#fnref5">↩</a></p></li>
-<li id="fn6"><p>partially based on <a href="http://multithreaded.stitchfix.com/blog/2015/05/26/significant-sample/" class="uri">http://multithreaded.stitchfix.com/blog/2015/05/26/significant-sample/</a><a href="betimleyici-istatistikler-ve-hipotez-testi.html#fnref6">↩</a></p></li>
-<li id="fn7"><p>accurate only for post hoc power<a href="betimleyici-istatistikler-ve-hipotez-testi.html#fnref7">↩</a></p></li>
+<li id="fn4"><p>yokluk veya sıfır hipotezi olarak da bilinir<a href="betimleyici-istatistikler-ve-hipotez-testi.html#fnref4">↩</a></p></li>
+<li id="fn5"><p>partially based on <a href="http://multithreaded.stitchfix.com/blog/2015/05/26/significant-sample/" class="uri">http://multithreaded.stitchfix.com/blog/2015/05/26/significant-sample/</a><a href="betimleyici-istatistikler-ve-hipotez-testi.html#fnref5">↩</a></p></li>
+<li id="fn6"><p>accurate only for post hoc power<a href="betimleyici-istatistikler-ve-hipotez-testi.html#fnref6">↩</a></p></li>
 </ol>
 </div>
             </section>

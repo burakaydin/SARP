@@ -178,10 +178,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.3" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#hipotez-testi-tantm"><i class="fa fa-check"></i><b>7.3</b> Hipotez Testi Tanıtım</a><ul>
 <li class="chapter" data-level="7.3.1" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#samplingdist"><i class="fa fa-check"></i><b>7.3.1</b> Örnekleme Dağılım</a></li>
 <li class="chapter" data-level="7.3.2" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#guven-aralklar-the-confidence-intervals-ci"><i class="fa fa-check"></i><b>7.3.2</b> Güven Aralıkları (The Confidence Intervals (CI))</a></li>
-<li class="chapter" data-level="7.3.3" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#yokluk-hipotezi"><i class="fa fa-check"></i><b>7.3.3</b> Yokluk Hipotezi</a></li>
+<li class="chapter" data-level="7.3.3" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#bos-hipotez"><i class="fa fa-check"></i><b>7.3.3</b> Boş Hipotez</a></li>
 <li class="chapter" data-level="7.3.4" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#z-puan-ve-z-testi"><i class="fa fa-check"></i><b>7.3.4</b> z-puanı ve z-testi</a></li>
-<li class="chapter" data-level="7.3.5" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#the-one-sample-t-test"><i class="fa fa-check"></i><b>7.3.5</b> The one-sample t test</a></li>
-<li class="chapter" data-level="7.3.6" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#the-p-value"><i class="fa fa-check"></i><b>7.3.6</b> The p value</a></li>
+<li class="chapter" data-level="7.3.5" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#tek-orneklem-t-testi"><i class="fa fa-check"></i><b>7.3.5</b> Tek örneklem t-testi</a></li>
+<li class="chapter" data-level="7.3.6" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#p-degeri"><i class="fa fa-check"></i><b>7.3.6</b> p-değeri</a></li>
 <li class="chapter" data-level="7.3.7" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#the-p-value-illustration"><i class="fa fa-check"></i><b>7.3.7</b> The p value illustration</a></li>
 <li class="chapter" data-level="7.3.8" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#statisticalpower"><i class="fa fa-check"></i><b>7.3.8</b> Statistical power</a></li>
 <li class="chapter" data-level="7.3.9" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#in-case-the-z-and-the-t-distribution-is-not-valid"><i class="fa fa-check"></i><b>7.3.9</b> In case the z and the t distribution is not valid</a></li>
@@ -478,7 +478,7 @@ tstatistic=(<span class="fl">1.832-1.635</span>)/(sp*<span class="kw">sqrt</span
 ##                  1.831783                  1.635294</code></pre></div>
 <div id="write-up-for-non-directional-test" class="section level4">
 <h4><span class="header-section-number">8.1.1.1</span> Write up for non-directional test:</h4>
-<p>An independent groups t-test showed that in the city of USAK, the gender attitudes scores for the college graduates (n=51, mean=1.64, SD=0.61, skew=1.19, kurtosis=1.09) were not statistically different than the non-college graduates (n=86, mean=1.83, SD=0.54, skew=0.72, kurtosis=0.90), t(135)=1.96, p=0.052. The 95% confidence interval was [-0.002,0.395].<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>:</p>
+<p>An independent groups t-test showed that in the city of USAK, the gender attitudes scores for the college graduates (n=51, mean=1.64, SD=0.61, skew=1.19, kurtosis=1.09) were not statistically different than the non-college graduates (n=86, mean=1.83, SD=0.54, skew=0.72, kurtosis=0.90), t(135)=1.96, p=0.052. The 95% confidence interval was [-0.002,0.395].<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a>:</p>
 </div>
 <div id="write-up-for-directional-test" class="section level4">
 <h4><span class="header-section-number">8.1.1.2</span> Write up for directional test:</h4>
@@ -557,7 +557,7 @@ output[<span class="kw">as.integer</span>(B*(<span class="dv">1</span>-alpha))]
 </div>
 <div id="write-up-for-percentile-bootstrap-method" class="section level4">
 <h4><span class="header-section-number">8.1.3.2</span> Write up for percentile bootstrap method:</h4>
-<p>In the city of USAK, the gender attitudes scores for the college graduates (n=51, mean=1.64, SD=0.61, skew=1.19, kurtosis=1.09) were not statistically different than the non-college graduates (n=86, mean=1.83, SD=0.54, skew=0.72, kurtosis=0.90) given that the 95% confidence interval was [-0.013,0.390].<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a></p>
+<p>In the city of USAK, the gender attitudes scores for the college graduates (n=51, mean=1.64, SD=0.61, skew=1.19, kurtosis=1.09) were not statistically different than the non-college graduates (n=86, mean=1.83, SD=0.54, skew=0.72, kurtosis=0.90) given that the 95% confidence interval was [-0.013,0.390].<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a></p>
 <p>For a directional test: When the direction is appropriately stated in the alternative hypothesis, the lower limit of the 95% CI is 0.022 and yields the rejection of the null hypothesis of <span class="math inline">\(H_0:\mu_{non-college} = \mu_{college}\)</span> in favor of <span class="math inline">\(H_1:\mu_{non-college}-\mu_{college} &gt; 0\)</span>.</p>
 <p>For a directional test: When the direction is NOT appropriately stated in the alternative hypothesis, the upper limit of the 95% CI is 0.358 and yields the retaining of the null hypothesis of <span class="math inline">\(H_0:\mu_{non-college} = \mu_{college}\)</span> against the <span class="math inline">\(H_1:\mu_{non-college}-\mu_{college} &lt; 0\)</span>.</p>
 </div>
@@ -795,12 +795,12 @@ output[<span class="kw">as.integer</span>(B*(<span class="dv">1</span>-alpha))]
 ## [1] 2.1445</code></pre></div>
 <div id="write-up-for-an-non-directional-percentile-bootstrap-method" class="section level4">
 <h4><span class="header-section-number">8.2.3.1</span> Write up for an non-directional percentile bootstrap method:</h4>
-<p>The tensile strength after surgical tape (mean=6.67, SD=1.71, skew=0.55, kurtosis=-0.45) was statistically different than the tensile strength after the suture (mean=5.17, SD=1.49, skew=-0.08, kurtosis=-0.87) given that the 95% confidence interval was [0.667,2.2555].<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>:</p>
+<p>The tensile strength after surgical tape (mean=6.67, SD=1.71, skew=0.55, kurtosis=-0.45) was statistically different than the tensile strength after the suture (mean=5.17, SD=1.49, skew=-0.08, kurtosis=-0.87) given that the 95% confidence interval was [0.667,2.2555].<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>:</p>
 </div>
 </div>
 <div id="effect-size-for-the-dependent-groups-t-test" class="section level3">
 <h3><span class="header-section-number">8.2.4</span> Effect size for the dependent groups t-test</h3>
-<p>A simple effect size formulae for a dependent t test is (Equation 7 in <span class="citation">Lakens (<a href="#ref-lakens2013">2013</a>)</span>)<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a>;</p>
+<p>A simple effect size formulae for a dependent t test is (Equation 7 in <span class="citation">Lakens (<a href="#ref-lakens2013">2013</a>)</span>)<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>;</p>
 <p><span class="math display">\[ES=\frac{t}{\sqrt{n}}\]</span></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">##  the normality and the equal variances assumptions are made 
 ## given the robust procedures provided roughly the same results
@@ -1245,11 +1245,11 @@ ES
 </div>
 <div class="footnotes">
 <hr />
-<ol start="8">
-<li id="fn8"><p>The descriptive statistics were calculated with the <em>psych</em> package <span class="citation">(Revelle <a href="#ref-R-psych">2016</a>)</span> and the t-test is conducted with the stats package <span class="citation">(R Core Team <a href="#ref-R-base">2016</a><a href="#ref-R-base">b</a>)</span>.<a href="comparing-two-means-the-t-test.html#fnref8">↩</a></p></li>
+<ol start="7">
+<li id="fn7"><p>The descriptive statistics were calculated with the <em>psych</em> package <span class="citation">(Revelle <a href="#ref-R-psych">2016</a>)</span> and the t-test is conducted with the stats package <span class="citation">(R Core Team <a href="#ref-R-base">2016</a><a href="#ref-R-base">b</a>)</span>.<a href="comparing-two-means-the-t-test.html#fnref7">↩</a></p></li>
+<li id="fn8"><p>The descriptive statistics were calculated with the <em>psych</em> package <span class="citation">(Revelle <a href="#ref-R-psych">2016</a>)</span> and the non-directional percentile bootstrap method with 5000 replications was conducted with the base package <span class="citation">(R Core Team <a href="#ref-R-base">2016</a><a href="#ref-R-base">b</a>)</span>.<a href="comparing-two-means-the-t-test.html#fnref8">↩</a></p></li>
 <li id="fn9"><p>The descriptive statistics were calculated with the <em>psych</em> package <span class="citation">(Revelle <a href="#ref-R-psych">2016</a>)</span> and the non-directional percentile bootstrap method with 5000 replications was conducted with the base package <span class="citation">(R Core Team <a href="#ref-R-base">2016</a><a href="#ref-R-base">b</a>)</span>.<a href="comparing-two-means-the-t-test.html#fnref9">↩</a></p></li>
-<li id="fn10"><p>The descriptive statistics were calculated with the <em>psych</em> package <span class="citation">(Revelle <a href="#ref-R-psych">2016</a>)</span> and the non-directional percentile bootstrap method with 5000 replications was conducted with the base package <span class="citation">(R Core Team <a href="#ref-R-base">2016</a><a href="#ref-R-base">b</a>)</span>.<a href="comparing-two-means-the-t-test.html#fnref10">↩</a></p></li>
-<li id="fn11"><p>it goes to infinity as <em>r</em> goes to 1 even when the means are very similar. Equation 10 in <span class="citation">Lakens (<a href="#ref-lakens2013">2013</a>)</span> is more appropriate which is <span class="math inline">\(\frac{mean difference}{(SD_1+SD_2)/2}\)</span><a href="comparing-two-means-the-t-test.html#fnref11">↩</a></p></li>
+<li id="fn10"><p>it goes to infinity as <em>r</em> goes to 1 even when the means are very similar. Equation 10 in <span class="citation">Lakens (<a href="#ref-lakens2013">2013</a>)</span> is more appropriate which is <span class="math inline">\(\frac{mean difference}{(SD_1+SD_2)/2}\)</span><a href="comparing-two-means-the-t-test.html#fnref10">↩</a></p></li>
 </ol>
 </div>
             </section>

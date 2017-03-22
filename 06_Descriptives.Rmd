@@ -78,9 +78,10 @@ sd(dataWBT$gen_att,na.rm = T)
 ### Çarpıklık (Skewness)
 Çarpıklık değeri dağılımın şekli hakkında bilgi verir. Tamamen simetrik olan bir dağılımın çarpıklık değeri 0'dır.
 
-Dağılımın sol kuyruğu sağ kuyruğuna nazaran uzun olduğunda çarpıklık değerinin sıfırdan küçük hesaplanması olasıdır. Bu tür dağılımlar sola çarpık veya negatif çarpık olarak isimlendirilir. Bu tür dağılımlarda medyan ortalamadan yüksektir
+Dağılımın sol kuyruğu sağ kuyruğuna nazaran uzun olduğunda çarpıklık değerinin sıfırdan küçük çıkması tipiktir. Bu tür dağılımlar sola çarpık veya negatif çarpık olarak isimlendirilir. Bu tür dağılımlarda medyan ortalamadan yüksektir
 
-Dağılımın sağ kuyruğu sol kuyruğuna nazaran uzun olduğunda çarpıklık değerinin sıfırdan büyük hesaplanması olasıdır. Bu tür dağılımlar sağa çarpık veya pozitif çarpık olarak isimlendirilir. Bu tür dağılımlarda medyan ortalamadan küçüktür.
+Dağılımın sağ kuyruğu sol kuyruğuna nazaran uzun olduğunda çarpıklık değerinin sıfırdan büyük hesaplanması tipiktir. Bu tür dağılımlar sağa çarpık veya pozitif çarpık olarak isimlendirilir. Bu tür dağılımlarda medyan ortalamadan küçüktür.
+
 
 Örneklem için çarpıklık formülü ^[Bu formül popülasyon için yanlı (biased) bir tahminleyicidir. R yanlı olmayan çarpıklık ve basıklık istatistikleri hesaplayabilir, _describe_ fonksiyonu  _type_ argümanı incelenebilir. ]
 
@@ -432,20 +433,20 @@ GA_m +c(-1,1)*1.96 * (GA_s/sqrt(GA_n))
 5302 katılımcı için Toplumsal Cinsiyet Algısı puanlarına ait ortalama 1.94 (%95 GA [1.92-1.96]), standart sapma 0.60 bulunmuştur. 
 
 
-### Yokluk Hipotezi 
+### Boş Hipotez 
 Hipotez testinin amacı evren hakkında öne sürülen iki hipotezden hangisinin örneklem tarafından desteklendiğine karar vermektir. Bir hipotez testi beş basamaktan oluşur;
 
-1) Yokluk hipotezinin^[Boş veya sıfır hipotezi olarak da bilinir] belirlenmesi (örneğin $\mu=0$)
+1) Boş hipotezin^[yokluk veya sıfır hipotezi olarak da bilinir] belirlenmesi (örneğin $\mu=0$)
 
 2) Alternatif hipotezin belirlenmesi. (örneğin $\mu \neq 0$)
 
 3) Test istatistiğinin seçilmesi
 
-4) Test istatistiği ve belirlenen kritik değeri karşılaştırarak karar verilmesi. Eğer hesaplanan test istatistiği kritik değerden daha yüksekse yokluk hipotezinin ret edilmesi (kritik değer alternatif hipoteze göre değişir).
+4) Test istatistiği ve belirlenen kritik değeri karşılaştırarak karar verilmesi. Eğer hesaplanan test istatistiği kritik değerden daha yüksekse boş hipotezin ret edilmesi (kritik değer alternatif hipoteze göre değişir).
 
 5) Sonucun açıklanması. Araştırma sorusuna yanıt vermek üzere kararın ifade edilmesi.
 
-Yokluk hipotezi ($H_0$) ve alternatif hipotez ($H_1$) araştırma sorusunu cevaplamak üzere belirlenir. İstatistiksel kanıtlar yokluk hipotezini kabul veya terketmek için kullanılır. Yokluk hipotezini kabul etmek veya terketmek bir karardır, teorik istatistik açısından bu karara yönelik oluşabilecek durumlar şunlardır; 
+Boş hipotez ($H_0$) ve alternatif hipotez ($H_1$) araştırma sorusunu cevaplamak üzere belirlenir. İstatistiksel kanıtlar boş hipotezini kabul veya terketmek için kullanılır. Boş hipotezi kabul etmek veya terketmek bir karardır, teorik istatistik açısından bu karara yönelik oluşabilecek durumlar şunlardır; 
 
 | __Gerçekte Durum__ | __Karar__ |              __Sonuç__             |
 |:-------------------:|:------------:|:-----------------------------------:|
@@ -455,9 +456,9 @@ Yokluk hipotezi ($H_0$) ve alternatif hipotez ($H_1$) araştırma sorusunu cevap
 |        $H_1$        |    Kabul $H_0$    |     Yanlış Karar _(Tip II hata, $\beta$)_     |
 
 
-Tip-I hata: Gerçekte doğru olduğu halde yokluk hipotezinin terkedilmesi durumudur. Alfa  , $\alpha$, yokluk hipotezinin gerçekte doğru olduğu halde red edilme olasılığıdır. Hipotez testi sürecinde önemli olan noktalardan biri $\alpha$'nın yeterince küçük olması gerektiğidir. Sosyal bilimlerde sıklıkla $\alpha=.05$ kullanılır.  
+Tip-I hata: Gerçekte doğru olduğu halde boş hipotezin terkedilmesi durumudur. Alfa  , $\alpha$, boş hipotezin gerçekte doğru olduğu halde red edilme olasılığıdır. Hipotez testi sürecinde önemli olan noktalardan biri $\alpha$'nın yeterince küçük olması gerektiğidir. Sosyal bilimlerde sıklıkla $\alpha=.05$ kullanılır.  
 
-Tip-II hata: Gerçekte yanlış olan bir yokluk hipotezinin terkedilememisidir.  Beta, $\beta$, gerçekte yanlış olan bir yokluk hipotezini kabul etme olasılığıdır.
+Tip-II hata: Gerçekte yanlış olan bir boş hipotezin terkedilememisidir.  Beta, $\beta$, gerçekte yanlış olan bir boş hipotezi kabul etme olasılığıdır.
 
 
 ### z-puanı ve z-testi
@@ -487,77 +488,78 @@ z_GA=scale(dataWBT$gen_att, center=T, scale=T)
 Ortalama için z-istatistiği hesaplamak kolaydır;
 
 $$ z=\frac{\bar{X}-\mu_{hipotez}}{Standart Hata} = \frac{\bar{X}-\mu_{hipotez}}{\sigma_X/\sqrt{n}}$$
-Hesaplanan bu z istatistiği bir z dağılımı kullanılarak yorumlanabilir (Figure \@ref(fig:normaldist)); 
+Hesaplanan bu z istatistiği bir z dağılımı kullanılarak yorumlanabilir (Figür \@ref(fig:normaldist)); 
 
-a) Eğer alternatif hipotez, gözlemlenen ortalamanın, hipotez değerinden küçük olacağını belirtiyorsa, hesaplanan z istatistiği $z_{alpha}$ veya $-z_{(1-alpha)}$ ile kıyaslanır. Eğer hesaplanan z ,  $z_{alpha}$'ya eşit veya küçük ise yokluk hipotezi terkedilir.
+a) Eğer alternatif hipotez, gözlemlenen ortalamanın, hipotez değerinden küçük olacağını belirtiyorsa, hesaplanan z istatistiği $z_{alpha}$ veya $-z_{(1-alpha)}$ ile kıyaslanır. Eğer hesaplanan z ,  $z_{alpha}$'ya eşit veya küçük ise boş hipotez terkedilir.
 
-b) Eğer alternatif hipotez, gözlemlenen ortalamanın, hipotez değerinden farklı olacağını belirtiyorsa, hesaplanan z istatistiğinin mutlak değeri $z_{1-(alpha/2)}$ ile kıyaslanır. Eğer mutlak z ,  $z_{1-(alpha/2)}$'ya eşit veya büyük ise yokluk hipotezi terkedilir.
+b) Eğer alternatif hipotez, gözlemlenen ortalamanın, hipotez değerinden farklı olacağını belirtiyorsa, hesaplanan z istatistiğinin mutlak değeri $z_{1-(alpha/2)}$ ile kıyaslanır. Eğer mutlak z ,  $z_{1-(alpha/2)}$'ya eşit veya büyük ise boş hipotez terkedilir.
 
 
-c) Eğer alternatif hipotez, gözlemlenen ortalamanın, hipotez değerinden büyük olacağını belirtiyorsa, hesaplanan z istatistiği $z_{1-alpha}$ ile kıyaslanır. Eğer hesaplanan z ,  $z_{1-(alpha)}$'ya eşit veya büyük ise yokluk hipotezi terkedilir.
+c) Eğer alternatif hipotez, gözlemlenen ortalamanın, hipotez değerinden büyük olacağını belirtiyorsa, hesaplanan z istatistiği $z_{1-alpha}$ ile kıyaslanır. Eğer hesaplanan z ,  $z_{1-(alpha)}$'ya eşit veya büyük ise boş hipotez terkedilir.
  
 Burada dikkat edilmesi gereken nokta a ve c senaryolarında (yönlü alternatif)  kullanılan kritik değerin b senaryosunda (yönsüz alternatif) kullanılan kritik değerden farklı oluşudur. Araştırmacılar alternatif hipotezlerinin yönlü veya yönsüz oluşunu savunabilmelidir.
 
 
-#### z test illustration-1 (non-directional)
-Stating the null as $H_0: \mu_{Gender Attitudes} = 2$ and alternative as $H_1: \mu_{Gender Attitudes} \neq 2$ and using  $\alpha=0.05$;
+#### z testi örnek-1 (yönsüz)
+Boş hipotez $H_0: \mu_{Cinsiyet Algisi} = 2$ ve alternatif hipotez $H_1: \mu_{Cinsiyet Algisi} \neq 2$ ve $\alpha=0.05$;
+
 
 ```{r, collapse=T, eval=T, cache=T,message=F}
-# the number of available data points, n
+#  n
 GA_n=sum(!is.na(dataWBT$gen_att))
 
-#calculate the mean
+#ortalama
 GA_m=mean(dataWBT$gen_att,na.rm = T)
 
-#calculate the sd
+#ss
 GA_s=sd(dataWBT$gen_att,na.rm = T)
 
-# set the null
+# boş hipotez
 mu_hyp=2
 
-# z statistic
+# z istatistiği
 (GA_m-mu_hyp)/(GA_s/sqrt(GA_n))
 
-#the critical value for alpha=0.05 and nondirectional test 
+#alpha=0.05 ve yönsüz alternatif için kritik değer
 qnorm(1-(0.05/2))
 
 
 ```
 
-The Gender Attitudes score from 5302 participants had a mean of 1.94 and SD=0.6. A one-sample z test revealed that the observed mean is 7.17 standard deviation below the hypothesized mean of 2. Using a rejection criteria of 1.96 ($z_{1-(0.05/2)}$) the difference between the observed mean and the hypothesized mean was concluded to be statistically significant.
+5302 katılımcıya ait Toplumsal Cinsiyet Algısı puanları için ortalama 1.94 ve standart sampma 0.6 olarak hesaplanmıştır. Tek örneklem için hesaplanan z testi, gözlemlenen ortalamanın, hipotez ile öne sürülen 2'den 7.17 standart hata daha düşük olduğunu göstermiştir. Kritik değer olarak 1.96 ($z_{1-(0.05/2)}$) seçildiğinde ve gözlemlenen ortalama ve hipotez ile öne sürülen ortalama arasındaki farkın istatistiksel olarak anlamlı olduğu kararı verilmiştir. 
 
 
-#### z test illustration-2 (directional)
-In this illustration, the Gender Attitudes scores' population mean is assumed to be 1.9 with a standard deviation of 0.75. When the population standard deviation is known it should be used. Stating the null as $H_0: \mu_{Gender Attitudes} = 1.9$ and alternative as $H_1: \mu_{Gender Attitudes} > 1.9$ and using  $\alpha=0.01$;
+####  z testi örnek-2 (yönlü)
+Bu örnekte Toplumsal Cinsiyet Algısı değişkeninin evren bazında ortalaması 1.9 ve standart sapması 0.75 olarak varsayılmıştır. Eğer evren bazında standart sapma biliniyorsa istatistik hesaplarken kullanılmalıdır. 
+$H_0: \mu_{Cinsiyet Algisi} = 1.9$ ve $H_1: \mu_{Cinsiyet Algisi} > 1.9$ ve  $\alpha=0.01$;
+
 
 ```{r, collapse=T, eval=T, cache=T,message=F}
-# set the null
+# boş hipotez
 mu_hyp=1.9
 
-# z statistic
+# z istatistik
 (GA_m-mu_hyp)/(0.75/sqrt(GA_n))
 
-#the critical value for alpha=0.01 and directional test 
+#yönlü alternatif ve alfa=.01
 qnorm(1-(0.01))
 
 ```
 
-Using a critical value of 2.33 ($z_{0.99}$), results indicated that the Gender Attitudes scores' mean was significantly greater than the hypothesized value of 1.9 ($z=3.94$).
-
-### The one-sample t test
-
-Interpreting a z statistic based on a z distribution is not valid for small sample sizes. If the sample size is small, a t distribution with a n-1 degrees of freedom is valid assuming the population has a normal distribution. The procedure is the same as the z-statistic, but the critical values change.
+Kritik değer olarak 2.33 kullanıldığında ($z_{0.99}$) gözlemlenen ortalamanın hipotez ile öne sürülen ortalamadan büyük olduğu ve bu farkın istatistiksel olarak anlamlı olduğu kararına varılmıştır $z=3.94$.
 
 
+### Tek örneklem t-testi
+Evrene ait dağılım normal olsa dahi küçük örneklemler için z dağılımı yerine t dağılımı kullanmak daha geçerlidir. bu t dağılımının serbestlik derecesi n-1'dir.
 
-#### t test illustration-1 (non-directional)
-In the dataWBT, city _DUZCE_ has only 52 participants and 47 available Gender Attitudes scores. For illustrative purposes this city is chosen.
+#### t test örnek-1 (yönsüz)
+Örnek için Düzce ilinde yaşadığını belirten katılımcılara ait Toplumsal Cinsiyet Algısı puanları kullanılmıştır.
 
-Stating the null as $H_0: \mu_{Gender Attitudes} = 1.94$ and alternative as $H_1: \mu_{Gender Attitudes} \neq 1.94$ and using  $\alpha=0.05$;
+ $H_0: \mu_{Cinsiyet Algisi} = 1.94$ ve alternatif $H_1: \mu_{Cinsiyet Algisi} \neq 1.94$ ve   $\alpha=0.05$;
 
 ```{r, collapse=T, eval=T, cache=F,message=F}
 dataWBT_DUZCE=dataWBT[dataWBT$city=="DUZCE",]
-#descriptive statistics
+#betimleyici
 describe(dataWBT_DUZCE[,"gen_att"],type=3)
 
 #t test
@@ -566,16 +568,16 @@ t.test(dataWBT_DUZCE$gen_att,
        mu=1.94,
        conf.level = 0.95)
 
-#critical value
+#kritik değer
 qt(.975,df=46)
 ```
 
-The Gender Attitudes scores from 47 participants in DUZCE had a range of 1–3.8, a median of 2, a mean of 2.18 and SD=0.55. The score distribution had a sample skewness value of 0.56 and a sample kurtosis value of 0.28.^[Descriptive statistics were calculated with _psych_ [@R-psych] package.] A one sample t-test revealed a significant difference, t(46)=2.94 between the city's observed mean and the hypothesized mean of 1.94 using a critical value of 2.01 ($t_{.975,46}$).
+Düzce ilinde yaşayan katılımcıların Cinsiyet Algısı puanları 1 ve 3.8 arasında değişmiştir, ortanca 2, ortalama 2.18, standart sapma 0.55, örnekleme ait dağılımın çarpıklığı 0.56 ve basıklığı 0.28 olarak hesaplanmıştır. Düzce şehrinde yaşayan katılımcılara ait Toplumsal Cinsiyet Algısı ortalaması, hipotez ile öne sürülen 1.94 değerinden farklıdır ve bu farklılık istatistiksel olarak anlamlıdır, t(46)=2.94 ve $t_{.975,46}=2.01$
 
-#### t test illustration-2 
-In the previous example a directional test was conducted in which the alternative hypothesis specified that the population mean would not be equal to 1.94.  What will happen if the null hypothesis  is $H_1:\mu_{GenderAttitudes} \leq 1.94$?
 
-For the city _DUZCE_, stating the null as $H_0: \mu_{Gender Attitudes} = 1.94$ and alternative as $H_1: \mu_{Gender Attitudes} \leq 1.94$ and using  $\alpha=0.05$;
+#### t test örnek-2 
+ $H_0: \mu_{Cinsiyet Algisi} = 1.94$ ve alternatif $H_1: \mu_{Cinsiyet Algisi} \leq 1.94$ ve   $\alpha=0.05$;
+
 
 ```{r, collapse=T, eval=T, cache=F,message=F}
 #t test
@@ -584,13 +586,14 @@ t.test(dataWBT_DUZCE$gen_att,
        mu=1.94,
        conf.level = 0.95)
 
-#critical value
+#kritik  değer
 qt(.05,df=46)
 ```
 
-A one sample t-test, t(46)=2.94, revealed that the evidence does not support a conclusion that the population mean is smaller than 1.94, using a critical value of -1.68 ($t_{.05,46}$).
+Test istatistiği t(46)=2.94 ve  kritik değer $t_{.05,46}=-1.68$ kullanılarak örneklemin, evrene ait ortalamanın 1.94'ten küçük olduğu hipotezini destekleyecek kanıtı içermediği kararı verilmiştir. 
 
-### The p value
+
+### p-değeri
 
 The t-test illustrations (the t.test function) reported a p-value. Calculation of a p-value is based on the assumption that the null hypothesis is true and an assumption about the distribution of the test statistic . The p-value aims to inform if the calculated statistic is ordinary or not for a given distribution.  Historically, a p-value smaller than the pre-determined alpha value led researchers to conclude whether a finding is statistically significant.
 
