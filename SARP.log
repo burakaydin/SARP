@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (MiKTeX 2.9.6100) (preloaded format=xelatex 2016.12.11)  21 MAR 2017 16:14
+This is XeTeX, Version 3.14159265-2.6-0.99996 (MiKTeX 2.9.6100) (preloaded format=xelatex 2016.12.11)  23 MAR 2017 12:59
 entering extended mode
 **./SARP.tex
 (SARP.tex
@@ -1017,52 +1017,74 @@ File: SARP_files/figure-latex/zpower-1.pdf Graphic file (type QTm)
 <use  "SARP_files/figure-latex/zpower-1.pdf" >
 Missing character: There is no ⁄ in font rm-lmr10!
 Missing character: There is no ⁄ in font rm-lmr10!
-[57] [58]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[57] [58] [59] [60
 
-[59] [60]
+]
 Chapter 8.
-[61
-
-] [62]
+[61]
 File: SARP_files/figure-latex/genattusakcity-1.pdf Graphic file (type QTm)
-<use  "SARP_files/figure-latex/genattusakcity-1.pdf" > [63] [64] [65] [66]
-Underfull \vbox (badness 7907) has occurred while \output is active []
-
+<use  "SARP_files/figure-latex/genattusakcity-1.pdf" > [62] [63] [64] [65] [66]
 [67] [68] [69]
-File: SARP_files/figure-latex/woundsexampleplot-1.pdf Graphic file (type QTm)
-<use  "SARP_files/figure-latex/woundsexampleplot-1.pdf" > [70] [71] [72] [73] [
-74] [75] [76] [77] [78]
-Chapter 9.
-[79
+File: SARP_files/figure-latex/gerMUKexampleplot-1.pdf Graphic file (type QTm)
+<use  "SARP_files/figure-latex/gerMUKexampleplot-1.pdf" > [70] [71] [72]
+Overfull \hbox (70.27701pt too wide) in paragraph at lines 3370--3376
+\EU1/lmr/m/n/10 Bağlı gruplar t testi hesaplarına dayanarak, gerilim mukavemeti
+nin bant tedavisi (ort=6.67,SS=1.71,çarpıklık=0.55,basıklık=-
+ []
 
-] [80]
-Overfull \hbox (37.50458pt too wide) in paragraph at lines 4034--4036
+
+Underfull \hbox (badness 1490) in paragraph at lines 3370--3376
+\EU1/lmr/m/n/10 0.45) ve dikiş tedavisi (ort=5.17,SS=1.49,çarpıklık=-0.08,basık
+lık=-0.87) arasında farklılık gösterdiği
+ []
+
+[73]
+Underfull \hbox (badness 2189) in paragraph at lines 3439--3447
+\EU1/lmr/m/n/10 Yaraların tedavisinden 10 gün sonra gerilim mukavemeti ölçümler
+i yapılmıştır. Yara bandı ile
+ []
+
+
+Overfull \hbox (3.13498pt too wide) in paragraph at lines 3439--3447
+\EU1/lmr/m/n/10 (ort=6.67,SS=1.71,çarpıklık=0.55,basıklık=-0.45) dikiş tedavisi
+ (ort=5.17,SS=1.49,çarpıklık=-0.08,basıklık=-
+ []
+
+[74] [75] [76]
+Underfull \vbox (badness 10000) detected at line 3659
+ []
+
+[77] [78
+
+]
+Chapter 9.
+[79] [80]
+Overfull \hbox (37.50458pt too wide) in paragraph at lines 3898--3900
  []|$[][] [][]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 Y[] \OMS/lmsy/m/n/10 ^^@ 
  []
 
 
-Overfull \hbox (23.25635pt too wide) in paragraph at lines 4045--4047
+Overfull \hbox (23.25635pt too wide) in paragraph at lines 3909--3911
  []|$[][] \OML/lmm/m/it/10 n[]\OT1/lmr/m/n/10 ([] \OMS/lmsy/m/n/10 ^^@ 
  []
 
 
-Overfull \hbox (1.7209pt too wide) in paragraph at lines 4047--4049
+Overfull \hbox (1.7209pt too wide) in paragraph at lines 3911--3913
  []|$\OML/lmm/m/it/10 SS[]=df[]$| 
  []
 
 
-Overfull \hbox (26.96239pt too wide) in paragraph at lines 4049--4051
+Overfull \hbox (26.96239pt too wide) in paragraph at lines 3913--3915
  []|$\OML/lmm/m/it/10 MS[]=MS[]$| 
  []
 
 
-Overfull \hbox (37.50458pt too wide) in paragraph at lines 4056--4058
+Overfull \hbox (37.50458pt too wide) in paragraph at lines 3920--3922
  []|$[][] [][]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 Y[] \OMS/lmsy/m/n/10 ^^@ 
  []
 
 
-Overfull \hbox (18.77928pt too wide) in paragraph at lines 4058--4060
+Overfull \hbox (18.77928pt too wide) in paragraph at lines 3922--3924
  []|$\OML/lmm/m/it/10 SS[]=df[]$| 
  []
 
@@ -1070,7 +1092,7 @@ Overfull \hbox (18.77928pt too wide) in paragraph at lines 4058--4060
 Missing character: There is no ⁄ in font rm-lmr7!
 Missing character: There is no ⁄ in font rm-lmr10!
 [82] [83]
-Underfull \vbox (badness 10000) detected at line 4346
+Underfull \vbox (badness 10000) detected at line 4210
  []
 
 
@@ -1081,14 +1103,14 @@ File: SARP_files/figure-latex/genattKOCAELI-1.pdf Graphic file (type QTm)
 <use  "SARP_files/figure-latex/genattKOCAELI-1.pdf" > [85]
 File: SARP_files/figure-latex/genattKOCAELIbox-1.pdf Graphic file (type QTm)
 <use  "SARP_files/figure-latex/genattKOCAELIbox-1.pdf" > [86]
-Underfull \vbox (badness 2088) detected at line 4486
+Underfull \vbox (badness 2088) detected at line 4350
  []
 
 
 Underfull \vbox (badness 2027) has occurred while \output is active []
 
 [87] [88]
-Underfull \vbox (badness 10000) detected at line 4624
+Underfull \vbox (badness 10000) detected at line 4488
  []
 
 
@@ -1164,7 +1186,7 @@ File: SARP_files/figure-latex/unnamed-chunk-131-1.pdf Graphic file (type QTm)
 <use  "SARP_files/figure-latex/unnamed-chunk-131-1.pdf" >
 File: SARP_files/figure-latex/unnamed-chunk-131-2.pdf Graphic file (type QTm)
 <use  "SARP_files/figure-latex/unnamed-chunk-131-2.pdf" >
-Overfull \hbox (2.2224pt too wide) in paragraph at lines 6924--6924
+Overfull \hbox (2.2224pt too wide) in paragraph at lines 6788--6788
 [][] [] 
  []
 
@@ -1177,55 +1199,55 @@ File: SARP_files/figure-latex/unnamed-chunk-134-1.pdf Graphic file (type QTm)
 ]
 Chapter 12.
 [141]
-Underfull \vbox (badness 10000) detected at line 7436
+Underfull \vbox (badness 10000) detected at line 7300
  []
 
 
-Underfull \vbox (badness 10000) detected at line 7436
+Underfull \vbox (badness 10000) detected at line 7300
  []
 
 [142]
-Underfull \vbox (badness 10000) detected at line 7436
+Underfull \vbox (badness 10000) detected at line 7300
  []
 
 
-Underfull \vbox (badness 10000) detected at line 7436
+Underfull \vbox (badness 10000) detected at line 7300
  []
 
 [143]
-Underfull \vbox (badness 10000) detected at line 7436
+Underfull \vbox (badness 10000) detected at line 7300
  []
 
 
-Underfull \vbox (badness 10000) detected at line 7436
+Underfull \vbox (badness 10000) detected at line 7300
  []
 
 [144]
-Underfull \vbox (badness 10000) detected at line 7436
+Underfull \vbox (badness 10000) detected at line 7300
  []
 
 
-Underfull \vbox (badness 10000) detected at line 7436
+Underfull \vbox (badness 10000) detected at line 7300
  []
 
 [145] [146] (SARP.bbl [147] [148
 
 ] [149] [150])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 7488.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 7352.
 [151]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 7488.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 7352.
 (SARP.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 7488.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 7488.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 7352.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 7352.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 25863 strings out of 428437
- 454421 string characters out of 3159924
- 544828 words of memory out of 3000000
- 28951 multiletter control sequences out of 15000+200000
+ 25860 strings out of 428437
+ 454047 string characters out of 3159924
+ 544384 words of memory out of 3000000
+ 28948 multiletter control sequences out of 15000+200000
  24450 words of font info for 63 fonts, out of 3000000 for 9000
  1314 hyphenation exceptions out of 8191
  52i,9n,68p,10404b,507s stack positions out of 5000i,500n,10000p,200000b,50000s

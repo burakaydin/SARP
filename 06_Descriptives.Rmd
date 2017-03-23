@@ -361,7 +361,7 @@ Sosyal bilimciler araştırma soruları doğrultusunda ilgili evreni tanımlar. 
 Seçkisiz seçilen bir örneklem ile ulaşılan değişken evrende sahip olduğu bütün değerleri içermeyebilir. Fakat, özellikle gözlem sayısı küçük değil ise, seçkisiz seçme işleminde sistematik bir yanlılık görülmeyeceği düşünüldüğünde, örneklemin evrene benzer özellikler göstermesi beklenir.Bu bilgi kullanılarak evrene ait bir parametre örneklemden yola çıkarak tahmin edilebilir. Bu işlem genellikle bir model sayesinde olur. Modelin veriye gösterdiği uyum araştırmacı tarafından değerlendirilir. Hipotez testleri kullanılan bir model sonrasında araştırma soruları ile ilgili  karara varma sürecidir.
 
 
-### Örnekleme Dağılım {#samplingdist}
+### Örnekleme Dağılım (Sampling Distribution) {#samplingdist}
 
 Seçkisiz bir örneklem için hesaplanmış bir istatistik aslında bir değişkendir ve belli bir dağılıma sahiptir. Örnekleme dağılım konusununu açıklamak için en çok kullanılan istatistik aritmetik ortalamadır. Merkezi limit teoremine göre basit seçkisiz örneklem kullanıldığında ^[evrende yer alan her üyenin eşit seçilme olasılığı olduğunda ve seçilen bir üyenin diğer bir üyenin seçilme olasılığını etkilemediği durumlarda] değişkenin evrende gösterdiği dağılımdan bağımsız olarak, o değişkene ait örneklem ortalamalarının dağılımı yaklaşık olarak normaldir. Örneklem büyüdükçe ; 
 
@@ -594,14 +594,13 @@ Test istatistiği t(46)=2.94 ve  kritik değer $t_{.05,46}=-1.68$ kullanılarak 
 
 
 ### p-değeri
+Tek örneklem ile t testi için kullanılan t.test fonksiyonu bir p değeri rapor etmiştir. Bu p değeri hesabı,  boş hipotezin ve dağılım için yapılan varsayımın doğru olduğu kabulü üzerine yapılır. Bu p-değerinin amacı araştıracıyı hesaplanan istatistiğin sıradan olup olmadığı yönünde bilgilendirmektir. Uzun yıllardır araştırmacılar hesapladıkları bu p-değerini daha önceden belirledikleri bir alfa kriteri ile kıyaslayıp, buldukları sonuçların istatistiksel olarak anlamlı olup olmadığına karar vermişlerdir. 
 
-The t-test illustrations (the t.test function) reported a p-value. Calculation of a p-value is based on the assumption that the null hypothesis is true and an assumption about the distribution of the test statistic . The p-value aims to inform if the calculated statistic is ordinary or not for a given distribution.  Historically, a p-value smaller than the pre-determined alpha value led researchers to conclude whether a finding is statistically significant.
 
+### p değeri örnek-1
+Bir z-dağılımın geçerli olduğu ve z değerinin 1.80 hesaplandığı durum için grafik;
 
-### The p value illustration
-Assuming a z-distribution is valid, and the calculated z-statistic is 1.80, following visual is drawn.
-
-```{r pvalue1, message=F,warning=F,echo=FALSE,fig.cap='The z distribution and z=1.8'}
+```{r pvalue1, message=F,warning=F,echo=FALSE,fig.cap='z dağılımı ve z=1.8'}
 library(ggplot2)
 df <- data.frame(z = seq(-4, 4, length = 500))
 
@@ -610,14 +609,14 @@ qplot(z, dnorm(z), data = df, geom = "area",fill=I("grey"), col=I("black")) +
   geom_area(aes(group = sign(z)),data = subset(df, z > 1.8), fill = "blue")+theme_bw()
 ```
 
-The blue area corresponds to 3.6% of the density, in other words p=0.0359;
+Mavi alan yoğunluğun %3.6'sını gösterir, p=0.0359
 ```{r}
 1-pnorm(1.8)
 ```
 
-This p-value is valid for a directional test but not for a non-directional test. When the uncertainty exists for the direction, the following visual depicts the situation;
+Bu p değeri yönlü bir alternatif hipotez için hesaplanmıştır. Yönsüz alternatif için geçerli değildir. Yönsüz alternatif için ; 
 
-```{r pvalue2, message=F,warning=F,echo=FALSE,fig.cap='The z distribution and abs(z)=1.8'}
+```{r pvalue2, message=F,warning=F,echo=FALSE,fig.cap='z dağılımı ve |z|)=1.8'}
 library(ggplot2)
 df <- data.frame(z = seq(-4, 4, length = 500))
 
@@ -626,18 +625,17 @@ qplot(z, dnorm(z), data = df, geom = "area",fill=I("grey"), col=I("black")) +
   geom_area(aes(group = sign(z)),data = subset(df, abs(z) > 1.8), fill = "blue")+theme_bw()
 ```
 
-The blue area, now, corresponds to 7.2% of the density, in other words p=0.0719;
+Mavi alan yoğunluğun %7.2'sini gösterir, p=0.0719;
 ```{r}
 2*(1-pnorm(1.8))
 ```
 
-### Statistical power {#statisticalpower}
+### İstatiksel Güç {#statisticalpower}
+İstatistiksel güç, gerçekte yanlış olan bir boş hipotezi terketme olasılığıdır ve $(1-\beta) 'ya$ eşittir. Bu olasılık istatistiksel sınamalar yapıldıktan önce (a-priori) veya sonra (post-hoc) hesaplanabilir, fakat sınama sonrasında yapılan güç analizi genellikle işlevsizdir. Sınama yapılmadan önce, daha doğrusu veriler toplanmadan önce yapılacak bir güç hesabı ile çalışma tasarısı gözden geçirebilir, yeniden düzenlenebilir ve örneklem sayısı belirlenebilir. Amerika'da bir çok proje başvurusu istatistiksel güç analizlerini mecbur tutar.
 
-The power of a statistical test is the probability that it will correctly reject the null hypothesis,and is equal to $1-\beta$. This probability can be computed a-priori or post-hoc, whereas a post-hoc analysis is less useful. A-priori power analyses is helpful to design a study and to decide the desired sample size. A-priori power analyses are required for the related grant proposals.
+İstatisksel gücü açıklamak için R ile çizilen grafik ve kod^[partially based on http://multithreaded.stitchfix.com/blog/2015/05/26/significant-sample/]; 
 
-The plot produce by the following R program can be used to explain statistical power^[partially based on http://multithreaded.stitchfix.com/blog/2015/05/26/significant-sample/]. 
-
-```{r zpower, message=F,warning=F,echo=T,fig.cap='Power illustration with z distribution'}
+```{r zpower, message=F,warning=F,echo=T,fig.cap='z dağılımı ile istatistiksel güç'}
 x <- seq(-4, 8, 0.02)
 zdat <- data.frame(x = x, y1 = dnorm(x, 0, 1), y2 = dnorm(x, 2.5, 1))
 ggplot(zdat, aes(x = x)) +
@@ -655,17 +653,16 @@ ggplot(zdat, aes(x = x)) +
   xlab("z") + ylab("dnorm(z)") + theme_bw()
 ```
 
-The  z distribution assuming a true null hypothesis ($H_0:\mu=0$) is depicted with black borders; the mean for the sampling distribution is 0 under this assumption and is shown with a dashed line. The z distribution assuming (a) the null hypothesis is false and (b) the actual population mean and standard deviation are such that $((\mu-\mu_{hypothesis} )⁄(\sigma⁄\sqrt{n})=2.5)$ is depicted with red borders. This visual is valid for a directional test with $\alpha=0.05$, hence, with a critical value of $z_{0.95}=1.65$. The blue area represents $\alpha$, the yellow area represent $\beta$ and the green area represents power. In this particular case the power is .804. 
+$H_0:\mu=0$ boş hipotezini doğru kabul eden bir z dağılımı siyah çizgiler ile gösterilmiştir, bu dağılımın ortalaması sıfırdır ve kesik çizgiler ile gösterilmiştir. Kırmızı çizgiler ile gösterilen dağılım (a) boş hipotezin yanlış olduğu ve (b) evrene ait ortalama ve standard sapma ile hesaplanan z-istatistiğinin $((\mu-\mu_{hypothesis} )⁄(\sigma⁄\sqrt{n})=2.5)$ olduğu varsayımı ile çizilmiştir. Bu görsel yönlü bir alternatif hipotez ve alfa=0.05, dolayısıyla kritik değer $z_{0.95}=1.65$ için geçerlidir. Mavi alan $\alpha$'yı, sarı alan  $\beta$'yı ve yeşil alan istatistiksel gücü yansıtır. Bu görselde istatistiksel güç .804'tür. 
+
 ```{r}
 1-pnorm(qnorm(0.95),mean=2.5)
 ```
 
+Figüre^[accurate only for post hoc power]  \@ref(fig:zpower) , istatistiksel güç hesaplamak için iki farklı dağılımın, bir alfa değerinin ve bir test istatistiğinin olması gerektiğini gösterir. Bu bilinenler ile istatistiksel güç hesaplanabilir. Burda önemli olan detay bir test istatistiğinin kendi bileşenleri olduğudur, genellikle bu bileşenler bir bölünen ve bir bölendir. z testi için bölünen , hipotez ile öne sürülen değer ile gözlemlenen değer arasındaki fark, bölen ise ortalamanın standart hatasıdır ($\sigma/\sqrt(n)$). Eğer istatistiksel güç sabit tutulursa (örneğin .8) eşitlik seçilen bir bilinmeyene göre çözülebilir. Genellikle de seçilen bilinmeyen örneklem sayısıdır, _n_.
 
+İstatistiksel güç ilerleyen bölümlerde tekrar değinilmiştir. Test istatistikleri, parametre kestirimleri, standart hatalar, dağılımsal varsayımlar tasarlanan araştırmaya göre değişecektir. Tek örneklem için t testi düşünüldüğünde _power.t.test_ fonksiyonu işeyarardır.
 
-
-Figure \@ref(fig:zpower) visually shows that^[accurate only for post hoc power] a power calculation includes 2 distributions, an alpha value and a test statistic. With these knowns the statistical power can be calculated. It should be noted that a test statistic has its own elements, generally a numerator and a denominator. For a z test, the numerator is the difference between the hypothesized mean and the null, whereas the denominator is the standard error of the mean ($\sigma/\sqrt(n)$). If the power is set to a constant (i.e. .80) , equation can be solved for any desired unknown. Generally, the equation is solved for _n_, the sample size. 
-
-The statistical power is revisited in the following chapters. Each design has its own standard error of the parameter estimate and the test statistic has its own distributional features. For a one sample t-test, the  _power.t.test_ function is useful;
 
 ```{r, collapse=T, eval=T, cache=F,message=F}
 #power.t.test
@@ -674,32 +671,32 @@ power.t.test(delta=.1, sd=.6,sig.level=0.05, power=0.9,
 
 ```
 
-This illustration shows that for pre-determined knowns of a mean difference of 0.1, a standard deviation of 0.6, an alpha level of 0.05, a directional test and a desired power of 0.9, the sample size should be 310. In other words, the probability of rejecting the null ($H_0:\mu=0$) is .9 with a sample size of 310, a mean difference of 0.1, SD=0.6, alpha=0.05 and a directional test.
+Bu örnek, belirlenmiş bir ortalama fark 0.1, standart sapma 0.6, alfa 0.05, yönlü alternatif ve istenilen güç 0.9 için örneklemin 310 olması gerektiğini gösterir. Bir diğer ifade ile, araştırmacı 310 kişiden gelen bir veride, ortalama fark 0.1 , standart sapme 0.6 tespıt eder ve alfa 0.05 ile yönlü bir test kullanırsa boş hipotezi ($H_0:\mu=0$) terketme olasılığı 0.90'dır.
 
-### In case the z and the t distribution is not valid
-Generalization from knowns to unknowns requires assumptions. A test statistic is robust to a violation of an assumption if, for a given sample size, the sampling distribution of the test statistic remains substantially the same under violation of the assumption(@verzani2014). It should be noted that a test statistic may be robust to violations of one assumption but not to violation of another assumption. In addition a test statistic that is robust to violation of one assumption, may not be robust to violation of that assumption when a second assumption is also violated. Even when a test statistic is robust to violation of assumptions, there may be a better test statistic to use when those assumptions are violated.
+### z ve t dağılımları geçerli değil ise
+Bilinenlerden (örneklem) bilinmeyenlere (evren) genelleme varsayımların yapılmasını gerektirir. Bir test istatistiğine ait örnekleme dağılımın, belli bir örneklem sayısında, belirli bir varsayımın ihlal edilmesi ile büyük ölçüde değişmemesi durumu _direnç_ (robustness) olarak isimlendirilir (@verzani2014). Burda dikkat edilmesi gereken, bir test istatitiğinin bir varsayım ihlaline dirençli iken başka bir varsayım ihlaline dirençsiz olabileceğidir. Ayrıca, bir varsayım ihlaline dirençli olan bir test istatistiği, ikinci bir varsayım ihlalinin de yaşanması durumunda direncini yitirebilir. Bir test istatistiği dirençli olduğu için kullanılması şart değildir çünkü aynı şartlar altında daha iyi çalışan bir başka test istatistiği olabilir.
 
-The z statistic for the one sample mean is expected to be robust against the violations of normality when the sample size is larger than 30 (@Andy2012, page 198).  However, it should be noted that the rate at which the sampling distribution converges to normality depends on the distribution of the data. As a separate note, if the population is assumed to be normal and the sample sizes small, a t distribution is valid.
+z istatistiği, örneklem 30'dan büyük ise normallik varsayımının ihlallerine karşı dirençlidir(@Andy2012, page 198). Örnekleme dağılımın z dağılımına yakınlığını etkileyen bir faktör diğer faktörde örneklemin nasıl bir dağılım gösterdiğidir. Ayrıca, evrene ait dağılımın normal olduğu varsayımı ile küçük örneklemler için t dağılımı geçerlidir.
 
-There are several approaches to produce robust statistics for a one-sample mean test, comprehensively illustrated by @wilcox2012. Below R code calculates 95% confidence intervals using the second variation of the bootstrap-t method (@wilcox2012, page 117)
+Tek örneklem ile aritmetik ortalama için yapılacak dirençli istatistikler detaylı olarak @wilcox2012 tarafından verilmiştir. Verilen R kodu bootstrap-t metodu içim %95 güven aralığı hesaplar (@wilcox2012, page 117).
 
 ```{r, collapse=T, eval=T, cache=F,message=F}
-#the second variation of the bootstrap-t method
-# select DUZCE and perfom listwise deletion using na.omit
+#ikinci tür bootstrap t metodu
+# Düzce katılımcılarını seç
 dataWBT_DUZCE=na.omit(dataWBT[dataWBT$city=="DUZCE",c("id","gen_att")])
 
-# test whether the Gender Attitudes' mean is equal to 1.94
-# assuming normality and using a t-test
+# normallik varsayımı ve t test kullanarak
+# evren ortalamasının 1.94 olup olmadığını sına
 t.test(dataWBT_DUZCE$gen_att,mu=1.94,conf.level = 0.95)
 
 
-#Calculate 95% CI using bootstrap (normality is not assumed)
+# bootstrap ile 95% GA  (normallik varsayımı yok)
 set.seed(04012017)
-B=5000       # number of bootstraps
-alpha=0.05   # alpha
+B=5000       # bootstrap sayısı
+alpha=0.05   # alfa
 
-#x is the variable
-# xBAR is the observed mean
+#x değişken
+# xBAR gözlemlenen ortalama
 tstar=function(x,xBAR) sqrt(length(x))*abs(mean(x)-xBAR)/sd(x)
 
 
@@ -713,14 +710,13 @@ for (i in 1:B){
 output=sort(output)
 Tc=output[as.integer(B*(1-alpha))]
 
-#bootstrap confidence interval
+#bootstrap GA
 mean(dataWBT_DUZCE$gen_att)+c(-1,1)*(Tc*sd(dataWBT_DUZCE$gen_att)/sqrt(length(dataWBT_DUZCE$gen_att)))
 
 ```
 
-#### Write up 
-The Gender Attitudes scores from 47 participants in DUZCE had a range of 1 to 3.8, a median of 2, a mean of 2.18 and SD=0.55. The score distribution had a sample skewness value of 0.56 and a sample kurtosis value of 0.28. Using a critical value of 2.01 ($t_{.975,46}$), a one sample t-test revealed a significant difference, t(46)=2.94 between the city's observed mean and the hypothesized mean of 1.94 . When the normality is assumed, the 95% confidence intervals using a t-distribution were [2.01,2.34]. When this assumption is not made, the 95% confidence intervals using the bootstrap-t method with 5000 replications [@wilcox2012] were [2.01,2.34]. 
+#### Raporlama 
+Düzce ilinden 47 katılımcının verdiği yanıtlar ile hesaplanan Toplumsal Cinsiyet Algısı puanları 1 ve 3.8 arasında değişmiş, ortancası 2, ortalaması 2.18, standart sapması 0.55 bulunmuştur. Puanların dağılımına ait çarpıklık değeri 0.56, basıklık değeri 0.28 olarak hesaplanmıştır. Kritik değer olarak  2.01 ($t_{.975,46}$) kullanıldığında, tek örneklem t testi anlamlı bir farklılığa işaret etmiştir,t(46)=2.94, bu şehirdeki katılımcıların puanları hipotez ile öne sürülen 1.94 değerinden farklıdır. Normallik varsayımı yapıldığında %95 güven aralığı [2.01,2.34] olarak bulunmuştur. Normallik varsayımı yapılmadığıda 5000 tekrarlı bootstrap metodu ile hesaplanan güven aralığı  [2.01,2.34] olarak bulunmuştur. 
 
 
-### Shiny application to visualize sampling distribution
-To be added.
+

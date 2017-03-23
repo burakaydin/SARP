@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SARP: Sosyal Bilimler R Platformu</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Sosyal Bilimler R Platformu">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="SARP: Sosyal Bilimler R Platformu" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="images/coverpicture.png" />
+  <meta property="og:description" content="Sosyal Bilimler R Platformu" />
+  <meta name="github-repo" content="burakaydin/BAP2219" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="SARP: Sosyal Bilimler R Platformu" />
+  
+  <meta name="twitter:description" content="Sosyal Bilimler R Platformu" />
+  <meta name="twitter:image" content="images/coverpicture.png" />
+
+<meta name="author" content="Burak AYDIN, James ALGINA, Walter LEITE">
+
+
+<meta name="date" content="2017-01-01">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="betimleyici-istatistikler-ve-hipotez-testi.html">
+<link rel="next" href="analysis-of-variance-anova.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-0.8/htmlwidgets.js"></script>
+<link href="libs/rglwidgetClass-2/rgl.css" rel="stylesheet" />
+<script src="libs/rglwidgetClass-2/rglClass.src.js"></script>
+<script src="libs/CanvasMatrix4-2016/CanvasMatrix.src.js"></script>
+<script src="libs/rglWebGL-binding-0.97.0/rglWebGL.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SARP</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Kapak</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#tantm"><i class="fa fa-check"></i><b>1.1</b> Tanıtım</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#neden-bookdown"><i class="fa fa-check"></i><b>1.1.1</b> Neden Bookdown?</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#icerik"><i class="fa fa-check"></i><b>1.1.2</b> İçerik</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="onyuz.html"><a href="onyuz.html"><i class="fa fa-check"></i><b>2</b> Önyüz</a><ul>
+<li class="chapter" data-level="2.1" data-path="onyuz.html"><a href="onyuz.html#yazarlar"><i class="fa fa-check"></i><b>2.1</b> Yazarlar</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="onyuz.html"><a href="onyuz.html#burak-aydn-ph.d.egitimde-arastrma-ve-degerlendirme-metotlar-doktora-ve-istatistik-doktora-yandal-derecesi-mevcuttur.-2010-ylndan-bu-yana-r-kullancsdr.-yapsal-esitlik-modelleri-cok-duzeyli-modeller-ve-egilim-puanlar-uzerine-akademik-calsmalar-vardr.-detayl-bilgi-icin-kisisel-or-kurumsal"><i class="fa fa-check"></i><b>2.1.1</b> Burak Aydın, Ph.D. Eğitimde araştırma ve değerlendirme metotları doktora ve istatistik doktora yandal derecesi mevcuttur. 2010 yılından bu yana R kullanıcısıdır. Yapısal eşitlik modelleri, çok düzeyli modeller ve eğilim puanları üzerine akademik çalışmaları vardır. Detaylı bilgi için <a href="http://www.aydinburak.net" target="_blank">Kişisel</a> or <a href="http://aves.erdogan.edu.tr/burak.aydin/" target="_blank">Kurumsal</a></a></li>
+<li class="chapter" data-level="2.1.2" data-path="onyuz.html"><a href="onyuz.html#james-algina-ph.d."><i class="fa fa-check"></i><b>2.1.2</b> James Algina, Ph.D.</a></li>
+<li class="chapter" data-level="2.1.3" data-path="onyuz.html"><a href="onyuz.html#walter-l.-leite-ph.d."><i class="fa fa-check"></i><b>2.1.3</b> Walter L. Leite, Ph.D.</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="onyuz.html"><a href="onyuz.html#tesekkur"><i class="fa fa-check"></i><b>2.2</b> Teşekkür</a></li>
+<li class="chapter" data-level="2.3" data-path="onyuz.html"><a href="onyuz.html#dataWBT"><i class="fa fa-check"></i><b>2.3</b> Data</a></li>
+<li class="chapter" data-level="2.4" data-path="onyuz.html"><a href="onyuz.html#finansal-destek"><i class="fa fa-check"></i><b>2.4</b> Finansal Destek</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="rn-populerligi.html"><a href="rn-populerligi.html"><i class="fa fa-check"></i><b>3</b> R’ın popülerliği</a></li>
+<li class="chapter" data-level="4" data-path="windows-icin-r-kurulumu.html"><a href="windows-icin-r-kurulumu.html"><i class="fa fa-check"></i><b>4</b> Windows için R kurulumu</a></li>
+<li class="chapter" data-level="5" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>5</b> Giriş</a><ul>
+<li class="chapter" data-level="5.1" data-path="basics.html"><a href="basics.html#fonksiyonlar"><i class="fa fa-check"></i><b>5.1</b> Fonksiyonlar</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="basics.html"><a href="basics.html#r-basit-hesap-makinesi"><i class="fa fa-check"></i><b>5.1.1</b> R: Basit Hesap makinesi</a></li>
+<li class="chapter" data-level="5.1.2" data-path="basics.html"><a href="basics.html#r-programlanabilir-hesap-makinesi"><i class="fa fa-check"></i><b>5.1.2</b> R: Programlanabilir Hesap makinesi</a></li>
+<li class="chapter" data-level="5.1.3" data-path="basics.html"><a href="basics.html#yardm"><i class="fa fa-check"></i><b>5.1.3</b> Yardım!</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="basics.html"><a href="basics.html#r-data-tipleri"><i class="fa fa-check"></i><b>5.2</b> R Data Tipleri</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="basics.html"><a href="basics.html#vektorler"><i class="fa fa-check"></i><b>5.2.1</b> Vektörler</a></li>
+<li class="chapter" data-level="5.2.2" data-path="basics.html"><a href="basics.html#matrisler"><i class="fa fa-check"></i><b>5.2.2</b> Matrisler</a></li>
+<li class="chapter" data-level="5.2.3" data-path="basics.html"><a href="basics.html#variables"><i class="fa fa-check"></i><b>5.2.3</b> Değişkenler</a></li>
+<li class="chapter" data-level="5.2.4" data-path="basics.html"><a href="basics.html#faktorler"><i class="fa fa-check"></i><b>5.2.4</b> Faktörler</a></li>
+<li class="chapter" data-level="5.2.5" data-path="basics.html"><a href="basics.html#kayp-veriler"><i class="fa fa-check"></i><b>5.2.5</b> Kayıp Veriler</a></li>
+<li class="chapter" data-level="5.2.6" data-path="basics.html"><a href="basics.html#dataframes"><i class="fa fa-check"></i><b>5.2.6</b> Veri Çerçeveleri (Data Frames)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="basics.html"><a href="basics.html#r-paketleri"><i class="fa fa-check"></i><b>5.3</b> R Paketleri</a></li>
+<li class="chapter" data-level="5.4" data-path="basics.html"><a href="basics.html#theworkspace"><i class="fa fa-check"></i><b>5.4</b> Çalışma alanı (workspace)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="veri-setleri.html"><a href="veri-setleri.html"><i class="fa fa-check"></i><b>6</b> Veri Setleri</a><ul>
+<li class="chapter" data-level="6.1" data-path="veri-setleri.html"><a href="veri-setleri.html#veri-cekme"><i class="fa fa-check"></i><b>6.1</b> Veri Çekme</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="veri-setleri.html"><a href="veri-setleri.html#csv"><i class="fa fa-check"></i><b>6.1.1</b> CSV</a></li>
+<li class="chapter" data-level="6.1.2" data-path="veri-setleri.html"><a href="veri-setleri.html#spss"><i class="fa fa-check"></i><b>6.1.2</b> SPSS</a></li>
+<li class="chapter" data-level="6.1.3" data-path="veri-setleri.html"><a href="veri-setleri.html#rdata"><i class="fa fa-check"></i><b>6.1.3</b> Rdata</a></li>
+<li class="chapter" data-level="6.1.4" data-path="veri-setleri.html"><a href="veri-setleri.html#pullonline"><i class="fa fa-check"></i><b>6.1.4</b> Sanal Depolardan Veri Çekmek</a></li>
+<li class="chapter" data-level="6.1.5" data-path="veri-setleri.html"><a href="veri-setleri.html#r-stuido-araclg-ile-veri-cagrma"><i class="fa fa-check"></i><b>6.1.5</b> R Stuido Aracılığı ile Veri Çağırma</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="veri-setleri.html"><a href="veri-setleri.html#basit-veri-islemleri"><i class="fa fa-check"></i><b>6.2</b> Basit Veri İşlemleri</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="veri-setleri.html"><a href="veri-setleri.html#degiskenleri-yeniden-kodlama"><i class="fa fa-check"></i><b>6.2.1</b> Değişkenleri yeniden kodlama</a></li>
+<li class="chapter" data-level="6.2.2" data-path="veri-setleri.html"><a href="veri-setleri.html#alt-kume-secme-subsetting"><i class="fa fa-check"></i><b>6.2.2</b> Alt Küme Seçme (Subsetting)</a></li>
+<li class="chapter" data-level="6.2.3" data-path="veri-setleri.html"><a href="veri-setleri.html#yeni-degisken-olustur"><i class="fa fa-check"></i><b>6.2.3</b> Yeni Değişken Oluştur</a></li>
+<li class="chapter" data-level="6.2.4" data-path="veri-setleri.html"><a href="veri-setleri.html#veri-cercevesini-degistirme-reshaping-data"><i class="fa fa-check"></i><b>6.2.4</b> Veri Çerçevesini Değiştirme (Reshaping data)</a></li>
+<li class="chapter" data-level="6.2.5" data-path="veri-setleri.html"><a href="veri-setleri.html#degisken-turunu-degistirme"><i class="fa fa-check"></i><b>6.2.5</b> Değişken Türünü Değiştirme</a></li>
+<li class="chapter" data-level="6.2.6" data-path="veri-setleri.html"><a href="veri-setleri.html#veri-silme"><i class="fa fa-check"></i><b>6.2.6</b> Veri Silme</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="veri-setleri.html"><a href="veri-setleri.html#veri-kaydetme"><i class="fa fa-check"></i><b>6.3</b> veri Kaydetme</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html"><i class="fa fa-check"></i><b>7</b> Betimleyici İstatistikler ve Hipotez Testi</a><ul>
+<li class="chapter" data-level="7.1" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#descstats"><i class="fa fa-check"></i><b>7.1</b> Betimleyici İstatistikler</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#ortalama"><i class="fa fa-check"></i><b>7.1.1</b> Ortalama</a></li>
+<li class="chapter" data-level="7.1.2" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#ortanca"><i class="fa fa-check"></i><b>7.1.2</b> Ortanca</a></li>
+<li class="chapter" data-level="7.1.3" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#varyans"><i class="fa fa-check"></i><b>7.1.3</b> Varyans</a></li>
+<li class="chapter" data-level="7.1.4" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#standart-sapma"><i class="fa fa-check"></i><b>7.1.4</b> Standart Sapma</a></li>
+<li class="chapter" data-level="7.1.5" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#carpklk-skewness"><i class="fa fa-check"></i><b>7.1.5</b> Çarpıklık (Skewness)</a></li>
+<li class="chapter" data-level="7.1.6" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#basklk-kurtosis"><i class="fa fa-check"></i><b>7.1.6</b> Basıklık (Kurtosis)</a></li>
+<li class="chapter" data-level="7.1.7" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#betimleyici-istatisklerin-raporlanmas"><i class="fa fa-check"></i><b>7.1.7</b> Betimleyici İstatisklerin Raporlanması</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#basit-grafikler"><i class="fa fa-check"></i><b>7.2</b> Basit Grafikler</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#histogram"><i class="fa fa-check"></i><b>7.2.1</b> Histogram</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#hipotez-testi-tantm"><i class="fa fa-check"></i><b>7.3</b> Hipotez Testi Tanıtım</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#samplingdist"><i class="fa fa-check"></i><b>7.3.1</b> Örnekleme Dağılım (Sampling Distribution)</a></li>
+<li class="chapter" data-level="7.3.2" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#guven-aralklar-the-confidence-intervals-ci"><i class="fa fa-check"></i><b>7.3.2</b> Güven Aralıkları (The Confidence Intervals (CI))</a></li>
+<li class="chapter" data-level="7.3.3" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#bos-hipotez"><i class="fa fa-check"></i><b>7.3.3</b> Boş Hipotez</a></li>
+<li class="chapter" data-level="7.3.4" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#z-puan-ve-z-testi"><i class="fa fa-check"></i><b>7.3.4</b> z-puanı ve z-testi</a></li>
+<li class="chapter" data-level="7.3.5" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#tek-orneklem-t-testi"><i class="fa fa-check"></i><b>7.3.5</b> Tek örneklem t-testi</a></li>
+<li class="chapter" data-level="7.3.6" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#p-degeri"><i class="fa fa-check"></i><b>7.3.6</b> p-değeri</a></li>
+<li class="chapter" data-level="7.3.7" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#p-degeri-ornek-1"><i class="fa fa-check"></i><b>7.3.7</b> p değeri örnek-1</a></li>
+<li class="chapter" data-level="7.3.8" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#statisticalpower"><i class="fa fa-check"></i><b>7.3.8</b> İstatiksel Güç</a></li>
+<li class="chapter" data-level="7.3.9" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#z-ve-t-daglmlar-gecerli-degil-ise"><i class="fa fa-check"></i><b>7.3.9</b> z ve t dağılımları geçerli değil ise</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html"><i class="fa fa-check"></i><b>8</b> İki Ortalamanın Karşılaştırılması, t-testi</a><ul>
+<li class="chapter" data-level="8.1" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#bagmsz-gruplar-t-test-the-independent-groups-t-test"><i class="fa fa-check"></i><b>8.1</b> Bağımsız gruplar t-test (The Independent Groups t-test)</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#bagmsz-gruplar-t-testi-icin-r-betigi"><i class="fa fa-check"></i><b>8.1.1</b> Bağımsız gruplar t testi için R betiği</a></li>
+<li class="chapter" data-level="8.1.2" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#bagmsz-gruplar-t-testi-varsaymlar"><i class="fa fa-check"></i><b>8.1.2</b> Bağımsız gruplar t testi varsayımları</a></li>
+<li class="chapter" data-level="8.1.3" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#welch-t-test"><i class="fa fa-check"></i><b>8.1.3</b> Welch t test</a></li>
+<li class="chapter" data-level="8.1.4" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#indepteff"><i class="fa fa-check"></i><b>8.1.4</b> Bağımsız gruplar t testi için etki büyüklüğü</a></li>
+<li class="chapter" data-level="8.1.5" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#extra-pratikte-anlamllk-ve-istatistiksel-anlamllk"><i class="fa fa-check"></i><b>8.1.5</b> Extra: Pratikte anlamlılık ve istatistiksel anlamlılık</a></li>
+<li class="chapter" data-level="8.1.6" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#kayp-veriler-ile-bagmsz-gruplar-t-testi"><i class="fa fa-check"></i><b>8.1.6</b> Kayıp veriler ile bağımsız gruplar t testi</a></li>
+<li class="chapter" data-level="8.1.7" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#destekleyici-grafikler"><i class="fa fa-check"></i><b>8.1.7</b> Destekleyici grafikler</a></li>
+<li class="chapter" data-level="8.1.8" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#istatisksel-guc"><i class="fa fa-check"></i><b>8.1.8</b> İstatisksel güç</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#bagl-gruplar-t-testi-within-subjects-t-test"><i class="fa fa-check"></i><b>8.2</b> Bağlı gruplar t-testi (Within-subjects t-test)</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#bagl-gruplar-icin-t-testi"><i class="fa fa-check"></i><b>8.2.1</b> Bağlı gruplar için t testi</a></li>
+<li class="chapter" data-level="8.2.2" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#varsaymlar-bagl-gruplar-icin-t-testi"><i class="fa fa-check"></i><b>8.2.2</b> Varsayımlar: bağlı gruplar için t testi</a></li>
+<li class="chapter" data-level="8.2.3" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#direncli-yontem-bagl-gruplar-icin-t-testi"><i class="fa fa-check"></i><b>8.2.3</b> Dirençli yöntem: bağlı gruplar için t testi</a></li>
+<li class="chapter" data-level="8.2.4" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#effect-size-for-the-dependent-groups-t-test"><i class="fa fa-check"></i><b>8.2.4</b> Effect size for the dependent groups t-test</a></li>
+<li class="chapter" data-level="8.2.5" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#kayp-veriler-ile-bagl-gruplar-t-testi"><i class="fa fa-check"></i><b>8.2.5</b> Kayıp veriler ile bağlı gruplar t testi</a></li>
+<li class="chapter" data-level="8.2.6" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#destekleyici-grafikler-1"><i class="fa fa-check"></i><b>8.2.6</b> Destekleyici grafikler</a></li>
+<li class="chapter" data-level="8.2.7" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#istatistiksel-guc-bagl-gruplar-t-testi"><i class="fa fa-check"></i><b>8.2.7</b> İstatistiksel güç: bağlı gruplar t testi</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#yaygn-tasarlar"><i class="fa fa-check"></i><b>8.3</b> Yaygın Tasarılar</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#gruplarn-iliskili-oldugu-durumlar"><i class="fa fa-check"></i><b>8.3.1</b> Grupların ilişkili olduğu durumlar</a></li>
+<li class="chapter" data-level="8.3.2" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#designbetween"><i class="fa fa-check"></i><b>8.3.2</b> Bağlı olmayan grup tasarılarına örnekler</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="analysis-of-variance-anova.html"><a href="analysis-of-variance-anova.html"><i class="fa fa-check"></i><b>9</b> Analysis of Variance (ANOVA)</a><ul>
+<li class="chapter" data-level="9.1" data-path="analysis-of-variance-anova.html"><a href="analysis-of-variance-anova.html#terminology"><i class="fa fa-check"></i><b>9.1</b> Terminology</a></li>
+<li class="chapter" data-level="9.2" data-path="analysis-of-variance-anova.html"><a href="analysis-of-variance-anova.html#between-subjects-anova"><i class="fa fa-check"></i><b>9.2</b> Between Subjects ANOVA</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="analysis-of-variance-anova.html"><a href="analysis-of-variance-anova.html#one-way-between-subjects-anova"><i class="fa fa-check"></i><b>9.2.1</b> One-way Between Subjects ANOVA</a></li>
+<li class="chapter" data-level="9.2.2" data-path="analysis-of-variance-anova.html"><a href="analysis-of-variance-anova.html#two-factor-between-subjects-anova"><i class="fa fa-check"></i><b>9.2.2</b> Two-Factor Between Subjects ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="analysis-of-variance-anova.html"><a href="analysis-of-variance-anova.html#within-subjects-anova"><i class="fa fa-check"></i><b>9.3</b> Within Subjects ANOVA</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="analysis-of-variance-anova.html"><a href="analysis-of-variance-anova.html#one-way-within-subjects-anova"><i class="fa fa-check"></i><b>9.3.1</b> One-way Within-Subjects ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="analysis-of-variance-anova.html"><a href="analysis-of-variance-anova.html#mixed-design"><i class="fa fa-check"></i><b>9.4</b> Mixed Design</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="correlation.html"><a href="correlation.html"><i class="fa fa-check"></i><b>10</b> Correlation</a><ul>
+<li class="chapter" data-level="10.1" data-path="correlation.html"><a href="correlation.html#pearson-correlation-coefficient"><i class="fa fa-check"></i><b>10.1</b> Pearson correlation coefficient</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="correlation.html"><a href="correlation.html#inference-on-a-pearson-correlation-coefficient"><i class="fa fa-check"></i><b>10.1.1</b> Inference on a Pearson correlation coefficient</a></li>
+<li class="chapter" data-level="10.1.2" data-path="correlation.html"><a href="correlation.html#r-codes-for-pearson-correlation-coefficent"><i class="fa fa-check"></i><b>10.1.2</b> R codes for Pearson Correlation coefficent</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="correlation.html"><a href="correlation.html#spearmans-rho-and-kendalls-tau"><i class="fa fa-check"></i><b>10.2</b> Spearman’s rho and Kendall’s tau</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="correlation.html"><a href="correlation.html#the-r-code-for-spearmans-rho-and-kendalls-tau"><i class="fa fa-check"></i><b>10.2.1</b> The R code for Spearman’s rho and Kendall’s tau</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="correlation.html"><a href="correlation.html#biserial-and-point-biserial-correlation-coefficients-with-r"><i class="fa fa-check"></i><b>10.3</b> Biserial and Point-Biserial Correlation Coefficients with R</a></li>
+<li class="chapter" data-level="10.4" data-path="correlation.html"><a href="correlation.html#phi-correlation-coefficient-with-r"><i class="fa fa-check"></i><b>10.4</b> Phi Correlation Coefficient with R</a></li>
+<li class="chapter" data-level="10.5" data-path="correlation.html"><a href="correlation.html#issues-in-interpreting-correlation-coefficients"><i class="fa fa-check"></i><b>10.5</b> Issues in Interpreting Correlation Coefficients</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="multiple-linear-regression-a-short-introduction.html"><a href="multiple-linear-regression-a-short-introduction.html"><i class="fa fa-check"></i><b>11</b> Multiple Linear Regression, A Short Introduction</a><ul>
+<li class="chapter" data-level="11.1" data-path="multiple-linear-regression-a-short-introduction.html"><a href="multiple-linear-regression-a-short-introduction.html#matricies-and-least-square-estimation"><i class="fa fa-check"></i><b>11.1</b> Matricies and Least Square Estimation</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="multiple-linear-regression-a-short-introduction.html"><a href="multiple-linear-regression-a-short-introduction.html#a-essentially-all-models-are-wrong-but-some-are-useful."><i class="fa fa-check"></i><b>11.1.1</b> a) “Essentially, all models are wrong, but some are useful.”</a></li>
+<li class="chapter" data-level="11.1.2" data-path="multiple-linear-regression-a-short-introduction.html"><a href="multiple-linear-regression-a-short-introduction.html#b-strength-of-relationship-between-the-dependent-and-independent-variables"><i class="fa fa-check"></i><b>11.1.2</b> b) Strength of relationship between the dependent and independent variables</a></li>
+<li class="chapter" data-level="11.1.3" data-path="multiple-linear-regression-a-short-introduction.html"><a href="multiple-linear-regression-a-short-introduction.html#c-residuals-and-influential-data-points"><i class="fa fa-check"></i><b>11.1.3</b> c) Residuals and influential data points</a></li>
+<li class="chapter" data-level="11.1.4" data-path="multiple-linear-regression-a-short-introduction.html"><a href="multiple-linear-regression-a-short-introduction.html#d-equal-variance-assumption"><i class="fa fa-check"></i><b>11.1.4</b> d) <em>Equal variance assumption</em></a></li>
+<li class="chapter" data-level="11.1.5" data-path="multiple-linear-regression-a-short-introduction.html"><a href="multiple-linear-regression-a-short-introduction.html#e-hypothesis-testing"><i class="fa fa-check"></i><b>11.1.5</b> e) Hypothesis testing</a></li>
+<li class="chapter" data-level="11.1.6" data-path="multiple-linear-regression-a-short-introduction.html"><a href="multiple-linear-regression-a-short-introduction.html#f-variable-selection"><i class="fa fa-check"></i><b>11.1.6</b> f) Variable Selection</a></li>
+<li class="chapter" data-level="11.1.7" data-path="multiple-linear-regression-a-short-introduction.html"><a href="multiple-linear-regression-a-short-introduction.html#g-colliniearity"><i class="fa fa-check"></i><b>11.1.7</b> g) Colliniearity</a></li>
+<li class="chapter" data-level="11.1.8" data-path="multiple-linear-regression-a-short-introduction.html"><a href="multiple-linear-regression-a-short-introduction.html#h-non-linearity"><i class="fa fa-check"></i><b>11.1.8</b> h) Non-linearity</a></li>
+<li class="chapter" data-level="11.1.9" data-path="multiple-linear-regression-a-short-introduction.html"><a href="multiple-linear-regression-a-short-introduction.html#i-correlated-errors-and-nonindependent-errors"><i class="fa fa-check"></i><b>11.1.9</b> i) Correlated errors and nonindependent errors</a></li>
+<li class="chapter" data-level="11.1.10" data-path="multiple-linear-regression-a-short-introduction.html"><a href="multiple-linear-regression-a-short-introduction.html#j-centering-and-scaling"><i class="fa fa-check"></i><b>11.1.10</b> j) Centering and Scaling</a></li>
+<li class="chapter" data-level="11.1.11" data-path="multiple-linear-regression-a-short-introduction.html"><a href="multiple-linear-regression-a-short-introduction.html#k-standardized-coefficients"><i class="fa fa-check"></i><b>11.1.11</b> k) Standardized coefficients</a></li>
+<li class="chapter" data-level="11.1.12" data-path="multiple-linear-regression-a-short-introduction.html"><a href="multiple-linear-regression-a-short-introduction.html#l-interactions"><i class="fa fa-check"></i><b>11.1.12</b> l) Interactions</a></li>
+<li class="chapter" data-level="11.1.13" data-path="multiple-linear-regression-a-short-introduction.html"><a href="multiple-linear-regression-a-short-introduction.html#m-estimators"><i class="fa fa-check"></i><b>11.1.13</b> m) Estimators</a></li>
+<li class="chapter" data-level="11.1.14" data-path="multiple-linear-regression-a-short-introduction.html"><a href="multiple-linear-regression-a-short-introduction.html#n-robust-regression"><i class="fa fa-check"></i><b>11.1.14</b> n) Robust Regression</a></li>
+<li class="chapter" data-level="11.1.15" data-path="multiple-linear-regression-a-short-introduction.html"><a href="multiple-linear-regression-a-short-introduction.html#o-sample-size-and-statistical-power"><i class="fa fa-check"></i><b>11.1.15</b> o) Sample size and statistical power</a></li>
+<li class="chapter" data-level="11.1.16" data-path="multiple-linear-regression-a-short-introduction.html"><a href="multiple-linear-regression-a-short-introduction.html#p-reliability-of-variables"><i class="fa fa-check"></i><b>11.1.16</b> p) Reliability of variables</a></li>
+<li class="chapter" data-level="11.1.17" data-path="multiple-linear-regression-a-short-introduction.html"><a href="multiple-linear-regression-a-short-introduction.html#q-the-nature-of-the-variables"><i class="fa fa-check"></i><b>11.1.17</b> q) The nature of the variables</a></li>
+<li class="chapter" data-level="11.1.18" data-path="multiple-linear-regression-a-short-introduction.html"><a href="multiple-linear-regression-a-short-introduction.html#r-multiple-dependent-variables"><i class="fa fa-check"></i><b>11.1.18</b> r) Multiple dependent variables</a></li>
+<li class="chapter" data-level="11.1.19" data-path="multiple-linear-regression-a-short-introduction.html"><a href="multiple-linear-regression-a-short-introduction.html#s-missing-variables"><i class="fa fa-check"></i><b>11.1.19</b> s) Missing variables</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="useful-r-codes.html"><a href="useful-r-codes.html"><i class="fa fa-check"></i><b>12</b> Useful R codes</a><ul>
+<li class="chapter" data-level="12.1" data-path="useful-r-codes.html"><a href="useful-r-codes.html#more-on-the-apastyle-package"><i class="fa fa-check"></i><b>12.1</b> More on the apaStyle package</a></li>
+<li class="chapter" data-level="12.2" data-path="useful-r-codes.html"><a href="useful-r-codes.html#a-useful-shiny-application"><i class="fa fa-check"></i><b>12.2</b> A useful shiny application</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">SARP: Sosyal Bilimler R Platformu</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="iki-ortalamann-karslastrlmas-t-testi" class="section level1">
+<h1><span class="header-section-number"> 8</span> İki Ortalamanın Karşılaştırılması, t-testi</h1>
+<p>Bölüm <a href="betimleyici-istatistikler-ve-hipotez-testi.html#samplingdist">7.3.1</a> örnekleme dağılım (sampling distribution) konusunun ana hatlarını tek bir aritmetik ortalama üzerinden ele almıştır. Eğer iki farklı aritmetik ortalama kıyaslanmak isteniyorsa t testi kullanılabilir, bu prosedür aritmetik ortalamaların örnekleme dağılımı üzerine inşaa edilmiştir.</p>
+<p><span class="math inline">\(\bar{Y_1}-\bar{Y_2}\)</span> <span class="math inline">\((\mu_{\bar{Y_1}-\bar{Y_2}})\)</span> sonucunun örnekleme dağılım ortalaması daima <span class="math inline">\(\mu_1 - \mu_2\)</span> ’dir. Fakat örnekleme dağılım standart sapması <span class="math inline">\((\sigma_{\bar{Y_1}-\bar{Y_2}})\)</span> araştırmanın tasarısına göre değişir.</p>
+<p><em>Örnek</em> Bir cerrahın yaraların iyileşmesi konusunda araştırma yaptığını düşünelim. Cerrahın kapanan bir yaradan sonra gerilme direncini araştırdığını, yara bandı ve dikiş atma tedavisinin arasında bir fark olup olmadığını araştırdığını varsayalım. Bu çalışmada tek bir faktör vardır, yara kapatma yöntemi ve bu faktöre ait iki alt sınıf vardır, yara bandı ve dikiş. Bu araştırmayı iki farklı şekilde tasarlamak mümkündür.</p>
+<p><strong>Bağlı gözlemler (within-subjects)</strong> 10 tavşanın her birinin sırtına (omurganın sağına ve soluna) 2 kesik oluşturulur. 2 kesikten bir tanesi yeni geliştirilen bir yara bandı ile diğeri dikiş ile kapatılır, hangi kapatma yönteminin hangi yarayı kapatacağı rassal (random) seçilmelidir. Bu tasarı <em>bağlı-gözlemler</em> olarak isimlendirilmiştir çünkü faktöre ait iki alt sınıf aynı tavşan üzerinde gözlemlenmiştir.</p>
+<p><strong>Bağlı olmayan gözlemler (between-subjects)</strong> 20 tavşan rassal olarak 2 gruba ayrılır, birinci grupta yer alan tavşanların yaraları bant ile, ikinci grupta yer alan tavşanların yaraları ise dikiş ile kapatılır. Yaralar omurganın sağ veya sol tarafında rassal olarak açılmalıdır. Bu tasarı <em>bağlı olmayan gözlemler</em> olarak isimlendirilmiştir çünkü faktöre ait alt sınıflar farklı tavşanlar üzerinde gözlemlenmiştir ve bu tavşanların herhangi bir şekilde eşlenmiş değillerdir. Örneğin aynı anneden gelen iki tavşan rassal olarak gruplara atansa idi gözlemler bağlı olurdu.</p>
+<p>Her iki yara kapatma yönteminden sonra yapılacak gerilme direnci ölçümlerinin evren bazında bir ortalaması ve standart sapması olduğu aşikardır.</p>
+<p>Konuyu açıklama amaçlı, yara bandı yönteminden sonra yapılan gerilme direnci ölçümlerine ait ortalamanın ve standart sapmanın bağlı gözlem veya bağlı olmayan gözlem tasarılarında aynı olduğunu düşünelim.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Parametres</th>
+<th align="center">Bant</th>
+<th align="center">Dikiş</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Ortalama</td>
+<td align="center"><span class="math inline">\(\mu_B\)</span></td>
+<td align="center"><span class="math inline">\(\mu_D\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">Standart Sapma</td>
+<td align="center"><span class="math inline">\(\sigma_B\)</span></td>
+<td align="center"><span class="math inline">\(\sigma_D\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">Örneklem</td>
+<td align="center"><span class="math inline">\(n_B\)</span></td>
+<td align="center"><span class="math inline">\(n_D\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Buradan itibaren <span class="math inline">\(\mu_B\)</span> yerine <span class="math inline">\(\mu_1\)</span>, <span class="math inline">\(\mu_D\)</span> yerine <span class="math inline">\(\mu_2\)</span>, <span class="math inline">\(\sigma_B\)</span> yerine <span class="math inline">\(\sigma_1\)</span>,<span class="math inline">\(\sigma_D\)</span> yerine <span class="math inline">\(\sigma_2\)</span> kullanılmıştır.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="29%" />
+<col width="20%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Örnekleme dağılım parametresi</th>
+<th align="center">Bağlı olmayan gözlem</th>
+<th align="center">Bağlı gözlem</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Ortalama (<span class="math inline">\(\mu_{\bar{Y_1}-\bar{Y_2}}\)</span>)</td>
+<td align="center"><span class="math inline">\(\mu_1-\mu_2\)</span></td>
+<td align="center"><span class="math inline">\(\mu_1-\mu_2\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">Standart sapma (<span class="math inline">\(\sigma_{\bar{Y_1}-\bar{Y_2}}\)</span>)</td>
+<td align="center"><span class="math inline">\(\sqrt{\frac{\sigma_1^2+\sigma_2^2}{n}}\)</span></td>
+<td align="center"><span class="math inline">\(\sqrt{\frac{\sigma_1^2+\sigma_2^2-2\sigma_1 \sigma_2 \rho_{12}}{n}}\)</span></td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(\rho_{12}\)</span> bağlı gözlemlerde, bant ve dikiş sonrası yapılan ölçümlerin arasındakı korelasyondur.</p></li>
+<li><p>Standart sapmadaki değişiklik <span class="math inline">\(\rho_{12}\)</span>’den kaynaklanır. Eğer bu korelasyon 0 ise iki tasarının da örneklem dağılımına ait standart sapma aynıdır.</p></li>
+</ol>
+<p>Bir araştırma tasarısında hedeflerden biri standart hatayı mümkün olduğunca küçük tutmaktır. Standart hatanın küçük olması elde edilen test istatistiğinin tahmin edilen parametreye yakın olduğu anlamına gelir.</p>
+<p>Veri çözümleme sürecinde hata varyansı (error variance) hesaplamak için bir formül seçilir. Yanlış formülün kullanılması büyük bir hatadır.</p>
+<p>Uygulamada, standart hatanın hesaplanışı tasarının bağlı mı bağsız mı olduğuna göre değişir. Tasarının yanlış sınıflandırılması, çözümleme sürecinde büyük bir hatadır.</p>
+<div id="bagmsz-gruplar-t-test-the-independent-groups-t-test" class="section level2">
+<h2><span class="header-section-number">8.1</span> Bağımsız gruplar t-test (The Independent Groups t-test)</h2>
+<p>Uşak ilinde yaşayan katılımcıların Toplumsal Cinsiyet Algısı (TCA) puanları yüksek öğretim durumuna göre karşılaştırılmıltır. Her grup için yoğunluk grafikleri;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
+<span class="co"># csv yükle</span>
+urlfile=<span class="st">&#39;https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv&#39;</span>
+dataWBT=<span class="kw">read.csv</span>(urlfile)
+
+<span class="co">#URL sil</span>
+<span class="kw">rm</span>(urlfile)
+dataWBT_USAK=dataWBT[dataWBT$city==<span class="st">&quot;USAK&quot;</span>,]
+
+<span class="co"># factor ve droplevels fonksiyonları bölüm 5.2.4 ile verilmiştir.</span>
+<span class="co"># yeni oluşturulan HEF (Higher Education Factor)</span>
+<span class="co"># katılımcı lise veya altı diplomaya sahipse 0, non-college</span>
+<span class="co"># katılımcı lise üstü diplomaya sahip ise 1,  college</span>
+dataWBT_USAK$HEF=<span class="kw">droplevels</span>(<span class="kw">factor</span>(dataWBT_USAK$higher_ed, 
+                    <span class="dt">levels =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), 
+                    <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;non-college&quot;</span>, <span class="st">&quot;college&quot;</span>)))
+
+<span class="kw">require</span>(ggplot2)
+plotdata=<span class="kw">na.omit</span>(dataWBT_USAK[,<span class="kw">c</span>(<span class="st">&quot;gen_att&quot;</span>,<span class="st">&quot;HEF&quot;</span>)])
+<span class="kw">ggplot</span>(plotdata, <span class="kw">aes</span>(<span class="dt">x =</span> gen_att)) +
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">y =</span> ..density..),<span class="dt">col=</span><span class="st">&quot;black&quot;</span>,<span class="dt">binwidth =</span> <span class="fl">0.2</span>,<span class="dt">alpha=</span><span class="fl">0.7</span>) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">size=</span><span class="dv">2</span>) +
+<span class="st">  </span><span class="kw">theme_bw</span>()+<span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Gender Attitude by HEF in USAK&quot;</span>)+<span class="st"> </span><span class="kw">facet_wrap</span>(~<span class="st"> </span>HEF)+
+<span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">15</span>),
+        <span class="dt">axis.title=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">14</span>,<span class="dt">face=</span><span class="st">&quot;bold&quot;</span>))</code></pre></div>
+<div class="figure"><span id="fig:genattusakcity"></span>
+<img src="SARP_files/figure-html/genattusakcity-1.png" alt="Yüksek Ögretim Durumuna göre TCA puanlari " width="672" />
+<p class="caption">
+Figure 8.1: Yüksek Ögretim Durumuna göre TCA puanlari
+</p>
+</div>
+<div id="bagmsz-gruplar-t-testi-icin-r-betigi" class="section level3">
+<h3><span class="header-section-number">8.1.1</span> Bağımsız gruplar t testi için R betiği</h3>
+<p>Takip edilen basamaklar;</p>
+<ol style="list-style-type: decimal">
+<li>Betimsel istatistikler</li>
+<li>Test istatistiğinin hesabı</li>
+</ol>
+<p><span class="math display">\[t=\frac{\bar{Y_1}-\bar{Y_2}}{S_p \sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}\]</span></p>
+<p><span class="math display">\[ S_p = \sqrt{\frac{(n_1-1)S_1^2 + (n_2-1)S_2^2 }{n_1+n_2-2}}   \]</span> 3. Kritik değerin hesabı <span class="math inline">\(\pm t_{\alpha/2,n_1+n_2-2}\)</span> <span class="math display">\[H_0:\mu_1-\mu_2=0\]</span> <span class="math display">\[H_1:\mu_1-\mu_2 \neq0\]</span></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
+<span class="kw">library</span>(psych)
+descIDT=<span class="kw">with</span>(dataWBT_USAK,<span class="kw">describeBy</span>(gen_att, HEF,<span class="dt">mat=</span>T,<span class="dt">digits =</span> <span class="dv">2</span>))
+descIDT
+##     item      group1 vars  n mean   sd median trimmed  mad min max range
+## X11    1 non-college    1 86 1.83 0.54    1.8    1.80 0.59   1 3.8   2.8
+## X12    2     college    1 51 1.64 0.61    1.6    1.54 0.59   1 3.4   2.4
+##     skew kurtosis   se
+## X11 0.72     0.90 0.06
+## X12 1.19     1.09 0.09
+<span class="co"># rapor etmek için</span>
+<span class="co">#write.csv(descIDT,file=&quot;independent_t_test_desc.csv&quot;)</span>
+
+<span class="co"># ss</span>
+sp=<span class="kw">sqrt</span>((<span class="dv">85</span>*.<span class="dv">543</span>^<span class="dv">2</span> +<span class="st"> </span><span class="dv">50</span>*.<span class="dv">608</span>^<span class="dv">2</span>)/(<span class="dv">86+51-2</span>))
+
+<span class="co"># t-istatistik</span>
+tstatistic=(<span class="fl">1.832-1.635</span>)/(sp*<span class="kw">sqrt</span>(<span class="dv">1</span>/<span class="dv">86+1</span>/<span class="dv">51</span>))
+
+<span class="co"># alfa=0.05 kritik değer</span>
+<span class="kw">qt</span>(.<span class="dv">975</span>,<span class="dt">df=</span><span class="dv">135</span>)
+## [1] 1.977692</code></pre></div>
+<p>1.963 kritik değer <span class="math inline">\(t_{.975,135}=1.978\)</span>’den küçük olduğu için, <span class="math inline">\(H_0\)</span> kabul edilir.</p>
+<p><span class="math inline">\(H_1:\mu_1-\mu_2 &gt; 0\)</span> alternatif hipotezi kurulsa idi, kritik değer <span class="math inline">\(t_{.95,135}=1.66\)</span>, 1.963’ten küçük olduğu için <span class="math inline">\(H_0\)</span> terkedilirdi.</p>
+<p><span class="math inline">\(H_1:\mu_1-\mu_2 &lt; 0\)</span> alternatif hipotezi kurulsa idi, 1.963 kritik değer olan <span class="math inline">\(t_{.05,135}=-1.66\)</span>’ ten küçük olmadığı için <span class="math inline">\(H_0\)</span> kabul edilirdi (Burada alternatif hipotez ile örneklem arası farklılık zıt yönde).</p>
+<p>Daha kullanışlı bir R betiği;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
+<span class="co"># dataWBT HEF faktörünü içermez, yukarıda HEF faktörü oluşturulmuştur.</span>
+
+<span class="kw">t.test</span>(gen_att~HEF,<span class="dt">data=</span>dataWBT_USAK,<span class="dt">var.equal=</span>T,
+                                     <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>,
+                                     <span class="dt">conf.level=</span><span class="fl">0.95</span>)
+## 
+##  Two Sample t-test
+## 
+## data:  gen_att by HEF
+## t = 1.9587, df = 135, p-value = 0.05221
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.001903268  0.394880924
+## sample estimates:
+## mean in group non-college     mean in group college 
+##                  1.831783                  1.635294
+
+<span class="co"># büyüktür</span>
+<span class="kw">t.test</span>(gen_att~HEF,<span class="dt">data=</span>dataWBT_USAK,<span class="dt">var.equal=</span>T,
+                                     <span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>,
+                                     <span class="dt">conf.level=</span><span class="fl">0.95</span>)
+## 
+##  Two Sample t-test
+## 
+## data:  gen_att by HEF
+## t = 1.9587, df = 135, p-value = 0.0261
+## alternative hypothesis: true difference in means is greater than 0
+## 95 percent confidence interval:
+##  0.03034529        Inf
+## sample estimates:
+## mean in group non-college     mean in group college 
+##                  1.831783                  1.635294
+
+
+<span class="co"># küçüktür</span>
+<span class="kw">t.test</span>(gen_att~HEF,<span class="dt">data=</span>dataWBT_USAK,<span class="dt">var.equal=</span>T,
+                                     <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>,
+                                     <span class="dt">conf.level=</span><span class="fl">0.95</span>)
+## 
+##  Two Sample t-test
+## 
+## data:  gen_att by HEF
+## t = 1.9587, df = 135, p-value = 0.9739
+## alternative hypothesis: true difference in means is less than 0
+## 95 percent confidence interval:
+##       -Inf 0.3626324
+## sample estimates:
+## mean in group non-college     mean in group college 
+##                  1.831783                  1.635294</code></pre></div>
+<div id="yonsuz-alternatif-icin-rapor-ornegi" class="section level4">
+<h4><span class="header-section-number">8.1.1.1</span> Yönsüz alternatif için rapor örneği</h4>
+<p>Uşak ilinde yaşayan katılımcılardan yüksek öğretim diplomasına sahip olan 51 kişi için TCA puanları ortalaması 1.64, standart sapması 0.61, puanlara ait dağılım çarpıklık değeri 1.19 ve basıklık değeri 1.09 olarak bulunmuştur. Aynı ilde yüksek öğretim diploması olmayan 86 katılımcının ise TCA puanları ortalaması 1.83, standart sapması 0.54, puanlara ait dağılımın çarpıklığı 0.72 ve basıklığı 0.90 olarak hesaplanmıştır.Bağımsız gruplar t-testi sonuçları, Uşak ilinde yaşayan katılımcıların Toplumsal Cinsiyet Algısı puanlarının yüksek öğretim durumuna göre değişeceği tezini desteklememiştir, t(135)=1.96, p=0.052. Puanlar arasındaki fark için %95 güven aralığı [-0.002,0.395] olarak hesaplanmıştır.<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a></p>
+</div>
+<div id="yonlu-alternatif-icin-rapor-ornegi" class="section level4">
+<h4><span class="header-section-number">8.1.1.2</span> Yönlü alternatif için rapor örneği</h4>
+<p>Uşak ilinde yaşayan katılımcılardan yüksek öğretim diplomasına sahip olan 51 kişi için TCA puanları ortalaması 1.64, standart sapması 0.61, puanlara ait dağılım çarpıklık değeri 1.19 ve basıklık değeri 1.09 olarak bulunmuştur. Aynı ilde yüksek öğretim diploması olmayan 86 katılımcının ise TCA puanları ortalaması 1.83, standart sapması 0.54, puanlara ait dağılımın çarpıklığı 0.72 ve basıklığı 0.90 olarak hesaplanmıştır. Bağımsız gruplar t testi sonuçları, yüksek öğretim diploması olmayanların TCA puanları yüksek öğretimlere nazaran daha yüksektir tezini desteklemiştir, t(135)=1.96, p=0.026. Puanlar arasındaki fark için %95 güven aralığı [0.030,<span class="math inline">\(\infty\)</span>] olarak hesaplanmıştır.</p>
+</div>
+</div>
+<div id="bagmsz-gruplar-t-testi-varsaymlar" class="section level3">
+<h3><span class="header-section-number">8.1.2</span> Bağımsız gruplar t testi varsayımları</h3>
+<p>Geleneksel t-testi sonuçlarının geçerliği 3 varsayımın ihlal edilmemesi ile mümkündür.</p>
+<ol style="list-style-type: decimal">
+<li><p>Yanıtların bağımsızlığı (independence). Her gruba ait puanların dağılımı birbirinden bağımsız olmalıdır. Yanıtların bağımsızlığını tehdit eden durumlardan biri aynı grup içeresinde yer alan bireylerin birbirlerinin yanıtlarını etkilemesidir (Yantların bağımsızlığı <a href="analysis-of-variance-anova.html#moreonindependence">9.2.1.4</a> bölümünde daha detaylı ele alınmıştır.)</p></li>
+<li><p>Normallik. Her gruba ait puanlar normal bir dağılımdan çekilmiştir. <span class="citation">Myers et al. (<a href="#ref-myerswell13">2013</a>)</span> grupların örneklem sayısı (n) eşit olduğunda ve toplam örneklemin 40 veya daha fazla olduğu durumlarda t test istatistiğinin normallik varsayımı ihlallerine dirençli olduğunu belirtmiştir. Fakat bu direnç normal dağılımdan büyük çaplı sapmalar (extreme) için geçerli değildir. Bu kitabın yazarları normallik testlerinin bu varsayımı kontrol etmek için kullanılmasına sıcak bakmamaktadır. Görsel bir değerlendirmeden sonra özellikle küçük örneklemlerde, normallik varsayımının ihlal edildiği kaygısı varsa araştırmacılar dirençli tahminleme yöntemlerini kullanmalıdırlar.</p></li>
+<li><p>Eş varyanslılık. Varyans homojenliği olarak da bilinen bu varsayım, iki grupta yer alan puanların evren bazında eşit varyanslı dağılımlardan çekildiğini kabul eder. <span class="citation">Myers et al. (<a href="#ref-myerswell13">2013</a>)</span> grup örneklem sayılarının <strong>eşit</strong> ve en az 5 olduğu durumlarda varyans eşitliği sağlanamasa dahi 1. tip hata oranlarının önemli ölçüde değişmeyeceğini belirtmiştir. Fakat bu direnç büyük çaplı heterojenlikler için geçerli değildir, örnğin <span class="math inline">\(s_1^2/s_2^2&gt;100\)</span>. <span class="citation">Field, Miles, and Field (<a href="#ref-Andy2012">2012</a>)</span> Levene testi gibi eşvaryanslılık testlerinin örneklem sayılarının eşit olmadığı ve küçük örneklemlerde sağlıklı sonuçlar vermediğini belirtmiştir, halbuki bu testlere en çok ihtiyaç durumlar küçük örneklem ve eşit olmayan örneklem sayısı durumlarıdır. Eş varyanslılık testleri ile ilgili bir diğer kaygı, bu test sonucunda varyansların eşit sayılabileceği kararı verilmiş olsa da varyanslar arası farklılığın t test istatistiğini etkileyebileceğidir. <em>t.test</em> fonksiyonu , aksi istenmediği sürece, varyans eşitliği varsayımı yapmaz ve Welch t testini hesaplar.</p></li>
+</ol>
+<p>Varsayımlar hakkındaki bu kısa tanıtımın ele almadığı durumlar vardır. Örneğin hem normalliğin hem eş varyanslılığın ihlal edildiği durumlar tartışılmamıştır. Ayrıca direnç konusu tartışmaya açıktır. Önreğin n1=n2=10 örneklem sayısı ve eş olmayan varyans durumu için 100000 tekrarla yaptığımız bir simülasyon, alfa=.01 ve yönsüz bir t testi için 1. tip hata oranını .018 bulmuştur. Bu oranın kabul edilebilir olup olmadığı tartışmaya açıktır.</p>
+<p>Sonuç olarak, eğer yanıtların bağımsızlığı kabul ediliyorsa, örneklem sayısı eşitse ve her grupta en az 20 ise bağımsız gruplar t istatistiğinin büyük ölçüde dirençli olduğu kabulu makul bir kabuldur. Diğer durumlarda varsayım ihlalleri tespit edildi ise araştırmacılar alternatif çözümleme yöntemlerini kullanabilirler.</p>
+</div>
+<div id="welch-t-test" class="section level3">
+<h3><span class="header-section-number">8.1.3</span> Welch t test</h3>
+<p>Normalliğin ciddi ölçüde zedelenmediği ve örneklem sayılarının her grup için en az 20 olduğu durumlarda Welch testi geçerli sonuçlar üretir. Bu test varyans eşdeğerli varsayımı yapmaz.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
+<span class="kw">t.test</span>(gen_att~HEF,<span class="dt">data=</span>dataWBT_USAK,<span class="dt">var.equal=</span>F,
+                                     <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>,
+                                     <span class="dt">conf.level=</span><span class="fl">0.95</span>)
+## 
+##  Welch Two Sample t-test
+## 
+## data:  gen_att by HEF
+## t = 1.9028, df = 95.885, p-value = 0.06006
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.008484626  0.401462282
+## sample estimates:
+## mean in group non-college     mean in group college 
+##                  1.831783                  1.635294</code></pre></div>
+<div id="welch-t-testi-icin-raporlama-ornegi" class="section level4">
+<h4><span class="header-section-number">8.1.3.1</span> Welch t testi için raporlama örneği</h4>
+<p>Uşak ilinde yaşayan katılımcılardan yüksek öğretim diplomasına sahip olan 51 kişi için TCA puanları ortalaması 1.64, standart sapması 0.61, puanlara ait dağılım çarpıklık değeri 1.19 ve basıklık değeri 1.09 olarak bulunmuştur. Aynı ilde yüksek öğretim diploması olmayan 86 katılımcının ise TCA puanları ortalaması 1.83, standart sapması 0.54, puanlara ait dağılımın çarpıklığı 0.72 ve basıklığı 0.90 olarak hesaplanmıştır.Bağımsız gruplar Welch t-testi sonuçları, Uşak ilinde yaşayan katılımcıların Toplumsal Cinsiyet Algısı puanlarının yüksek öğretim durumuna göre değişeceği tezini desteklememiştir, t(95.89)=1.9, p=0.06. Puanlar arasındaki fark için %95 güven aralığı [-0.082,0.402] olarak hesaplanmıştır.</p>
+<p>Eğer normallik varsayımı ciddi ölçüde süpheli ise ve özellikle iki grup farklı şekillerde dağılım gösteriyor ise yüzdeli bootstrap prosedürü (percentile bootstrap) kullanılabilir (<span class="citation">Wilcox (<a href="#ref-wilcox2012">2012</a>)</span>,page 171).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#bootstrap ile %95 güven aralığı (normallik varsayımı yok)</span>
+<span class="kw">set.seed</span>(<span class="dv">04012017</span>)
+B=<span class="dv">5000</span>       <span class="co"># bootstrap tekrar sayısı</span>
+alpha=<span class="fl">0.05</span>   <span class="co"># alfa</span>
+
+<span class="co"># grupları tanımla</span>
+GroupCollege=<span class="kw">na.omit</span>(dataWBT_USAK[dataWBT_USAK$HEF==<span class="st">&quot;college&quot;</span>,<span class="st">&quot;gen_att&quot;</span>])
+GroupNONcollege=<span class="kw">na.omit</span>(dataWBT_USAK[dataWBT_USAK$HEF==<span class="st">&quot;non-college&quot;</span>,<span class="st">&quot;gen_att&quot;</span>])
+
+output=<span class="kw">c</span>()
+for (i in <span class="dv">1</span>:B){
+
+  x1=<span class="kw">mean</span>(<span class="kw">sample</span>(GroupCollege,<span class="dt">replace=</span>T,<span class="dt">size=</span><span class="kw">length</span>(GroupCollege)))
+  x2=<span class="kw">mean</span>(<span class="kw">sample</span>(GroupNONcollege,<span class="dt">replace=</span>T,<span class="dt">size=</span><span class="kw">length</span>(GroupNONcollege)))
+  output[i]=x2-x1
+  }
+output=<span class="kw">sort</span>(output)
+
+## yönsüz
+<span class="co"># D yıldız alt</span>
+output[<span class="kw">as.integer</span>(B*alpha/<span class="dv">2</span>)+<span class="dv">1</span>]
+## [1] -0.01338349
+
+<span class="co"># D yıldız üst</span>
+output[B-<span class="kw">as.integer</span>(B*alpha/<span class="dv">2</span>)]
+## [1] 0.3899111
+
+##Yönlü x2&gt;x1
+<span class="co"># D yıldız alt</span>
+output[<span class="kw">as.integer</span>(B*alpha)+<span class="dv">1</span>]
+## [1] 0.02202462
+
+<span class="co">#hatalı yön x2&lt;x1</span>
+<span class="co"># D yıldız üst</span>
+output[<span class="kw">as.integer</span>(B*(<span class="dv">1</span>-alpha))]
+## [1] 0.3575695</code></pre></div>
+</div>
+<div id="yuzdeli-bootstrap-yontemi-icin-raporlama-ornegi" class="section level4">
+<h4><span class="header-section-number">8.1.3.2</span> Yüzdeli bootstrap yöntemi için raporlama örneği</h4>
+<p>Uşak ilinde yaşayan katılımcılardan yüksek öğretim diplomasına sahip olan 51 kişi için TCA puanları ortalaması 1.64, standart sapması 0.61, puanlara ait dağılım çarpıklık değeri 1.19 ve basıklık değeri 1.09 olarak bulunmuştur. Aynı ilde yüksek öğretim diploması olmayan 86 katılımcının ise TCA puanları ortalaması 1.83, standart sapması 0.54, puanlara ait dağılımın çarpıklığı 0.72 ve basıklığı 0.90 olarak hesaplanmıştır.Puanlar arasındaki fark için %95 bootstrap güven aralığı [-0.013,0.390] olarak hesaplanmıştır. Güven aralığı 0 değerini içerdiği için puanlar arasındaki farkın istatistiksel olarak anlamlı olduğu savunulamaz.</p>
+<p><strong>Yönlü test</strong> Alternatif hipotez, yüksek öğretim mezunu olmayan katılımcıların puanlarının yüksek olacağını belirtmiş ise; Puanlar arasındaki fark için %95 bootstrap güven aralığı [0.022,<span class="math inline">\(\infty\)</span>] olarak hesaplanmıştır. Eldeki veri yüksek öğretim mezunu olmayanların puanlarının daha yüksek olacığı tezini desteyecek kanıt sunmuştur, <span class="math inline">\(H_0:\mu_{non-college} = \mu_{college}\)</span> in favor of <span class="math inline">\(H_1:\mu_{non-college}-\mu_{college} &gt; 0\)</span>.</p>
+<p><strong>Yönlü test</strong> Alternatif hipotez, yüksek öğretim mezunu olmayan katılımcıların puanlarının düşük olacağını belirtmiş ise; Puanlar arasındaki fark için %95 bootstrap güven aralığı [<span class="math inline">\(-\infty\)</span>,0.358] olarak hesaplanmıştır. Eldeki veri yüksek öğretim mezunu olmayanların puanlarının daha düşük olacağı tezini desteklememektedir. <span class="math inline">\(H_0:\mu_{non-college} = \mu_{college}\)</span> ve <span class="math inline">\(H_1:\mu_{non-college}-\mu_{college} &lt; 0\)</span>.</p>
+<p>Yönlü ve yönsüz alternatif testler farklı kriterler kullanır. Yönlü testlerde yönün nasıl belirlendiği savunulmalıdır. Kullanılan örnekte yönsüz alternatif kullanıldığında Welch t testi p değeri 0.06 bulunmuştur. Bu sonuç marjinal anlamlılık olarak yorumlanabilir. Ülkemizde TCA puanları ve yüksek öğretim ilişkisi hakkında alanyazın sınırlı olduğu için yönlü bir alternatif savunulması zordur.</p>
+</div>
+</div>
+<div id="indepteff" class="section level3">
+<h3><span class="header-section-number">8.1.4</span> Bağımsız gruplar t testi için etki büyüklüğü</h3>
+<p>Bir t testi istatistiği ortalamaların birbirinden farklı olup olmadığı hakkında karar vermeye yardımcı olsa da, bu farklılığın büyüklüğünü yorumlamak için etki büyüklüğü hesaplamaları geliştirilmiştir. Bağımsız gruplar t testi için Cohen etki büyüklüğü , ortalamarın farkını bileşik standart sapmaya (pooled) bölünmesi ile hesaplanır. <span class="math display">\[EB=\frac{t}{\sqrt{\frac{n_1n_2}{n_1+n_2}}}\]</span></p>
+<p><span class="citation">Cohen (<a href="#ref-cohen1962">1962</a>)</span> etki büyüklüğü sınıflaması</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Etki büyüklüğü</th>
+<th align="center">Tanım</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">.2</td>
+<td align="center">Küçük</td>
+</tr>
+<tr class="even">
+<td align="center">.5</td>
+<td align="center">Orta</td>
+</tr>
+<tr class="odd">
+<td align="center">.8</td>
+<td align="center">Büyük</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">##  normallik ve eş varyanslılık varsayımı yapıldığında  
+## (dirençli yöntem benzer sonuç verdiğiiçin varsayımların kabulü makuldür.)
+n1=<span class="dv">51</span>
+n2=<span class="dv">86</span>
+tval=<span class="fl">1.96</span>
+
+EB=tval/<span class="kw">sqrt</span>((n1*n2)/(n1+n2))
+EB
+## [1] 0.3464033
+
+<span class="co">#veya effsize paketi ile</span>
+<span class="kw">t.test</span>(gen_att~HEF,<span class="dt">data=</span>dataWBT_USAK,<span class="dt">var.equal=</span>F,
+                                     <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>,
+                                     <span class="dt">conf.level=</span><span class="fl">0.95</span>)
+## 
+##  Welch Two Sample t-test
+## 
+## data:  gen_att by HEF
+## t = 1.9028, df = 95.885, p-value = 0.06006
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.008484626  0.401462282
+## sample estimates:
+## mean in group non-college     mean in group college 
+##                  1.831783                  1.635294
+<span class="kw">library</span>(effsize)
+<span class="kw">cohen.d</span>(gen_att~HEF,<span class="dt">data=</span>dataWBT_USAK, <span class="dt">paired=</span>F, <span class="dt">conf.level=</span><span class="fl">0.95</span>,<span class="dt">noncentral=</span>F)
+## 
+## Cohen&#39;s d
+## 
+## d estimate: 0.346177 (small)
+## 95 percent confidence interval:
+##          inf          sup 
+## -0.008425638  0.700779597
+<span class="co"># noncentral=T argümanını araştırabilirsiniz.</span></code></pre></div>
+<p>effsize paketi <span class="citation">(Torchiano <a href="#ref-R-effsize">2016</a>)</span> etki büyüklüğünü 0.35 ve ilgili %95 güven aralığını [-0.008, 0.701] olarak hesaplamıştır.</p>
+</div>
+<div id="extra-pratikte-anlamllk-ve-istatistiksel-anlamllk" class="section level3">
+<h3><span class="header-section-number">8.1.5</span> Extra: Pratikte anlamlılık ve istatistiksel anlamlılık</h3>
+<p>Bir çalışma sonucunda elde edilen sonuçların istatistiksel olarak anlamlı olmadığı fakat prtaikte anlamlı olduğu öne sürülebilir. Bu sakıncalı bşr durumdur ve sadece küçük örneklemlerde görülür. Küçük bir örneklem ile yapılan çalışmadan sonra pratikte anlamlılıktan bahsetmek tezat oluşturur.</p>
+<p>Bir çalısma sonucunda elde edilen sonuçların istatistiksel olarak anlamlı olduğu fakat pratikte anlamlı olmadığı öne sürülebilir. Bu doğru olabilir. 400 kişi ile tamamlanan bir çalışmada istatistiksel anlamlı farklılık .05 etki büyüklüğüne sahip olabilir. Eğer .05 etki büyüklüğü çalışmanın yapıldığı alanda küçük adlediliyorsa istatististiksel anlamlılık pratikte anlamlılığı desteklemez.</p>
+</div>
+<div id="kayp-veriler-ile-bagmsz-gruplar-t-testi" class="section level3">
+<h3><span class="header-section-number">8.1.6</span> Kayıp veriler ile bağımsız gruplar t testi</h3>
+<p>Eklenecek</p>
+</div>
+<div id="destekleyici-grafikler" class="section level3">
+<h3><span class="header-section-number">8.1.7</span> Destekleyici grafikler</h3>
+<p>Eklenecek</p>
+</div>
+<div id="istatisksel-guc" class="section level3">
+<h3><span class="header-section-number">8.1.8</span> İstatisksel güç</h3>
+<p>İstatistiksel güç konusunun ana hatlarına bölüm <a href="betimleyici-istatistikler-ve-hipotez-testi.html#statisticalpower">7.3.8</a>’de değinilmiştir.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#power.t.test</span>
+<span class="kw">power.t.test</span>(<span class="dt">delta=</span>.<span class="dv">35</span>, <span class="dt">sd=</span>.<span class="dv">6</span>,<span class="dt">sig.level=</span><span class="fl">0.05</span>, <span class="dt">power=</span><span class="fl">0.95</span>, 
+             <span class="dt">type=</span><span class="st">&quot;two.sample&quot;</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>)
+## 
+##      Two-sample t test power calculation 
+## 
+##               n = 77.35093
+##           delta = 0.35
+##              sd = 0.6
+##       sig.level = 0.05
+##           power = 0.95
+##     alternative = two.sided
+## 
+## NOTE: n is number in *each* group</code></pre></div>
+<p>Bu örnekte belirlenmiş değerler ortalamalar farkı 0.35, standart sapma 0.6, alfa 0.05, yönsüz test ve hedeflenen güç 0.95 seçildiğinde gereken örneklem sayısı her grup için 78’dir. Diğer bir ifade ile, 156 katılımcı ile belirlenen değerlere (ortalamalar farkı 0.35, standart sapma 0.6, alfa 0.05, yönsüz test) ulaşılması durumunda <span class="math inline">\(H_0:\mu_1-\mu_2=0\)</span> boş hipotezinin terkedilme olasılığı %95’tir.</p>
+</div>
+</div>
+<div id="bagl-gruplar-t-testi-within-subjects-t-test" class="section level2">
+<h2><span class="header-section-number">8.2</span> Bağlı gruplar t-testi (Within-subjects t-test)</h2>
+<p>20 tavşan ile gerçekleştirilen deneyde, yara bandı ve dikiş yöntemlerinin yara kapandıktan 10 gün sonra ölçülen germe mukavemeti değerleri üzerinde etkisi araştırılmıştır.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">gerMUK=<span class="kw">data.frame</span>(<span class="dt">tavid=</span><span class="dv">1</span>:<span class="dv">20</span>,
+                  <span class="dt">bant=</span><span class="kw">c</span>(<span class="fl">6.59</span>,<span class="fl">9.84</span> ,<span class="fl">3.97</span>,<span class="fl">5.74</span>,<span class="fl">4.47</span>,<span class="fl">4.79</span>,<span class="fl">6.76</span>,<span class="fl">7.61</span>,<span class="fl">6.47</span>,<span class="fl">5.77</span>,
+                         <span class="fl">7.36</span>,<span class="fl">10.45</span>,<span class="fl">4.98</span>,<span class="fl">5.85</span>,<span class="fl">5.65</span>,<span class="fl">5.88</span>,<span class="fl">7.77</span>,<span class="fl">8.84</span>,<span class="fl">7.68</span>,<span class="fl">6.89</span>),
+                  <span class="dt">dikis=</span><span class="kw">c</span>(<span class="fl">4.52</span>,<span class="fl">5.87</span>,<span class="fl">4.60</span>,<span class="fl">7.87</span>,<span class="fl">3.51</span>,<span class="fl">2.77</span>,<span class="fl">2.34</span>,<span class="fl">5.16</span>,<span class="fl">5.77</span>,<span class="fl">5.13</span>,
+                           <span class="fl">5.55</span>,<span class="fl">6.99</span>,<span class="fl">5.78</span>,<span class="fl">7.41</span>,<span class="fl">4.51</span>,<span class="fl">3.96</span>,<span class="fl">3.56</span>,<span class="fl">6.22</span>,<span class="fl">6.72</span>,<span class="fl">5.17</span>))
+
+<span class="co"># Grafik verisi</span>
+<span class="kw">library</span>(tidyr)
+plotdata=<span class="kw">gather</span>(gerMUK, metot, mukavemet, bant:dikis, <span class="dt">factor_key=</span><span class="ot">TRUE</span>)
+
+<span class="kw">require</span>(ggplot2)
+<span class="kw">ggplot</span>(plotdata, <span class="kw">aes</span>(<span class="dt">x =</span> mukavemet)) +
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">y =</span> ..density..),<span class="dt">col=</span><span class="st">&quot;black&quot;</span>,<span class="dt">alpha=</span><span class="fl">0.7</span>) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">size=</span><span class="dv">2</span>) +
+<span class="st">  </span><span class="kw">theme_bw</span>()+<span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;mukavemet&quot;</span>)+<span class="st"> </span><span class="kw">facet_wrap</span>(~<span class="st"> </span>metot)+
+<span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">15</span>),
+        <span class="dt">axis.title=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">14</span>,<span class="dt">face=</span><span class="st">&quot;bold&quot;</span>))</code></pre></div>
+<div class="figure"><span id="fig:gerMUKexampleplot"></span>
+<img src="SARP_files/figure-html/gerMUKexampleplot-1.png" alt="Bagli gruplar örnegi" width="672" />
+<p class="caption">
+Figure 8.2: Bagli gruplar örnegi
+</p>
+</div>
+<div id="bagl-gruplar-icin-t-testi" class="section level3">
+<h3><span class="header-section-number">8.2.1</span> Bağlı gruplar için t testi</h3>
+<p>Takip edilen basamaklar;</p>
+<ol style="list-style-type: decimal">
+<li>Betimsel istatistikler</li>
+<li>Test istatistiğinin hesabı</li>
+</ol>
+<p><span class="math display">\[t=\frac{\bar{Y_1}-\bar{Y_2}}{\sqrt{\frac{S_1^2+S_2^2-2S_1 S_2 r_{12}}{n}}}\]</span></p>
+<p>3.Kritik değerin hesabı <span class="math inline">\(\pm t_{\alpha/2,n-1}\)</span>, <span class="math display">\[H_0:\mu_1-\mu_2=0\]</span> <span class="math display">\[H_1:\mu_1-\mu_2 \neq0\]</span></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
+<span class="kw">library</span>(psych)
+descDT=<span class="kw">with</span>(gerMUK,<span class="kw">describe</span>(<span class="kw">cbind</span>(bant,dikis)))
+descDT
+##       vars  n mean   sd median trimmed  mad  min   max range  skew
+## bant     1 20 6.67 1.71   6.53    6.54 1.45 3.97 10.45  6.48  0.55
+## dikis    2 20 5.17 1.49   5.17    5.19 1.30 2.34  7.87  5.53 -0.08
+##       kurtosis   se
+## bant     -0.45 0.38
+## dikis    -0.87 0.33
+
+corDT=<span class="kw">with</span>(gerMUK,<span class="kw">cor</span>(bant,dikis,<span class="dt">use=</span><span class="st">&quot;complete.obs&quot;</span>))
+corDT
+## [1] 0.3536491
+
+
+<span class="co"># tahmin edilen standart hata (tsh)</span>
+tsh=<span class="kw">sqrt</span>(((<span class="fl">1.71</span>^<span class="dv">2</span><span class="fl">+1.49</span>^<span class="dv">2</span>)-(<span class="dv">2</span>*<span class="fl">1.71</span>*<span class="fl">1.49</span>*corDT))/(<span class="dv">20</span>))
+
+<span class="co"># t-istatistik</span>
+tstatistic=(<span class="fl">6.67-5.17</span>)/tsh
+
+<span class="co">#  alfa=0.05 kritik değer</span>
+<span class="kw">qt</span>(.<span class="dv">975</span>,<span class="dt">df=</span><span class="dv">19</span>)
+## [1] 2.093024</code></pre></div>
+<p>Hesaplanan 3.67, kritik değerden (<span class="math inline">\(t_{.975,19}=2.09\)</span>) büyük olduğu için boş hipotez terkedilebilir.</p>
+<p>Daha kolay bir R satırı;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
+<span class="kw">library</span>(psych)
+<span class="kw">with</span>(gerMUK, <span class="kw">t.test</span>(bant,dikis,<span class="dt">paired=</span>T,
+                                     <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>,
+                                     <span class="dt">conf.level=</span><span class="fl">0.95</span>))
+## 
+##  Paired t-test
+## 
+## data:  bant and dikis
+## t = 3.6678, df = 19, p-value = 0.001636
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  0.6429426 2.3520574
+## sample estimates:
+## mean of the differences 
+##                  1.4975</code></pre></div>
+<div id="raporlama-ornegi" class="section level4">
+<h4><span class="header-section-number">8.2.1.1</span> Raporlama örneği:</h4>
+<p>Bağlı gruplar t testi hesaplarına dayanarak, gerilim mukavemetinin bant tedavisi (ort=6.67,SS=1.71,çarpıklık=0.55,basıklık=-0.45) ve dikiş tedavisi (ort=5.17,SS=1.49,çarpıklık=-0.08,basıklık=-0.87) arasında farklılık gösterdiği sonucuna varılmıştır, t(19)=3.67, p=0.002 ,r=0.35. Aritmetik ortalamaların farkı için 95% güven aralığı [0.64,2.35] olarak hesaplanmıştır.</p>
+</div>
+</div>
+<div id="varsaymlar-bagl-gruplar-icin-t-testi" class="section level3">
+<h3><span class="header-section-number">8.2.2</span> Varsayımlar: bağlı gruplar için t testi</h3>
+<p>Puanların farkı (<span class="math inline">\(Y_{1i} - Y_{2i}\)</span>) normal bir dağılımdan çekilmiş olmalıdır. Puanların farkları her birey için bağımsız olmalıdır. Bağlı gruplar t testi , örneklem küçük değil ise, normallik varsayımı ihlallerine karşı genellikle dirençlidir.</p>
+</div>
+<div id="direncli-yontem-bagl-gruplar-icin-t-testi" class="section level3">
+<h3><span class="header-section-number">8.2.3</span> Dirençli yöntem: bağlı gruplar için t testi</h3>
+<p>Eğer dağılım normallikten büyük ölçüde ayrılıyor ise, yüzdeli bootstrap prosedürü kullanılabilir (<span class="citation">Wilcox (<a href="#ref-wilcox2012">2012</a>)</span>,page 201).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#bootstrap ile %95 güven aralığı (normallik varsayımı yok)</span>
+<span class="kw">set.seed</span>(<span class="dv">04012017</span>)
+B=<span class="dv">5000</span>       <span class="co"># bootstrap tekrar sayısı</span>
+alpha=<span class="fl">0.05</span>   <span class="co"># alfa</span>
+
+gerMUK=<span class="kw">data.frame</span>(<span class="dt">ratid=</span><span class="dv">1</span>:<span class="dv">20</span>,
+                  <span class="dt">bant=</span><span class="kw">c</span>(<span class="fl">6.59</span>,<span class="fl">9.84</span> ,<span class="fl">3.97</span>,<span class="fl">5.74</span>,<span class="fl">4.47</span>,<span class="fl">4.79</span>,<span class="fl">6.76</span>,<span class="fl">7.61</span>,<span class="fl">6.47</span>,<span class="fl">5.77</span>,
+                         <span class="fl">7.36</span>,<span class="fl">10.45</span>,<span class="fl">4.98</span>,<span class="fl">5.85</span>,<span class="fl">5.65</span>,<span class="fl">5.88</span>,<span class="fl">7.77</span>,<span class="fl">8.84</span>,<span class="fl">7.68</span>,<span class="fl">6.89</span>),
+                  <span class="dt">dikis=</span><span class="kw">c</span>(<span class="fl">4.52</span>,<span class="fl">5.87</span>,<span class="fl">4.60</span>,<span class="fl">7.87</span>,<span class="fl">3.51</span>,<span class="fl">2.77</span>,<span class="fl">2.34</span>,<span class="fl">5.16</span>,<span class="fl">5.77</span>,<span class="fl">5.13</span>,
+                           <span class="fl">5.55</span>,<span class="fl">6.99</span>,<span class="fl">5.78</span>,<span class="fl">7.41</span>,<span class="fl">4.51</span>,<span class="fl">3.96</span>,<span class="fl">3.56</span>,<span class="fl">6.22</span>,<span class="fl">6.72</span>,<span class="fl">5.17</span>))
+
+output=<span class="kw">c</span>()
+for (i in <span class="dv">1</span>:B){
+  <span class="co">#satırları örnekle</span>
+  bs_rows=<span class="kw">sample</span>(gerMUK$ratid,<span class="dt">replace=</span>T,<span class="dt">size=</span><span class="kw">nrow</span>(gerMUK))
+  bs_sample=gerMUK[bs_rows,]
+  mean1=<span class="kw">mean</span>(bs_sample$bant)
+  mean2=<span class="kw">mean</span>(bs_sample$dikis)
+  output[i]=mean1-mean2
+  }
+output=<span class="kw">sort</span>(output)
+
+## yönsüz
+<span class="co"># d yıldız alt</span>
+output[<span class="kw">as.integer</span>(B*alpha/<span class="dv">2</span>)+<span class="dv">1</span>]
+## [1] 0.6865
+
+<span class="co"># d yıldız üst</span>
+output[B-<span class="kw">as.integer</span>(B*alpha/<span class="dv">2</span>)]
+## [1] 2.2415
+
+##Yönlü x2&gt;x1
+<span class="co"># d yıldız alt</span>
+output[<span class="kw">as.integer</span>(B*alpha)+<span class="dv">1</span>]
+## [1] 0.837
+
+<span class="co">#yanlış yön x2&lt;x1</span>
+<span class="co"># d yıldız üst</span>
+output[<span class="kw">as.integer</span>(B*(<span class="dv">1</span>-alpha))]
+## [1] 2.1445</code></pre></div>
+<div id="yonsuz-yuzdeli-bootstrap-icin-ornek-rapor" class="section level4">
+<h4><span class="header-section-number">8.2.3.1</span> Yönsüz yüzdeli bootstrap için örnek rapor:</h4>
+<p>Yaraların tedavisinden 10 gün sonra gerilim mukavemeti ölçümleri yapılmıştır. Yara bandı ile (ort=6.67,SS=1.71,çarpıklık=0.55,basıklık=-0.45) dikiş tedavisi (ort=5.17,SS=1.49,çarpıklık=-0.08,basıklık=-0.87) ölçümleri arasındaki fark için 5000 tekrarlı bootstrap prosedürü %95 güven aralığı [0.667,2.2555] olarak hesaplanmıştır. Yeni geliştirilen yara bandı sonrası gerilim mukavemetinin daha yüksek olduğu ve bu farklılığın istatistiksel olarak anlamlı olduğu sonucuna varılmısştır.</p>
+</div>
+</div>
+<div id="effect-size-for-the-dependent-groups-t-test" class="section level3">
+<h3><span class="header-section-number">8.2.4</span> Effect size for the dependent groups t-test</h3>
+<p>En basit etki büyüklüğü hesaplama yöntemlerinden biri;<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a></p>
+<p><span class="math display">\[ES=\frac{t}{\sqrt{n}}\]</span></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## dirençli prosedürler farklı sonuç vermediği için
+## normallik ve varyans eşitliği varsayımları yapılmıştır.
+n=<span class="dv">20</span>
+tval=<span class="fl">3.6678</span>
+
+EB=tval/<span class="kw">sqrt</span>(n)
+EB
+## [1] 0.820145
+
+<span class="kw">library</span>(effsize)
+<span class="kw">cohen.d</span>(gerMUK$bant,gerMUK$dikis, 
+        <span class="dt">paired=</span>T, <span class="dt">conf.level=</span><span class="fl">0.95</span>,<span class="dt">noncentral=</span>F)
+## 
+## Cohen&#39;s d
+## 
+## d estimate: 0.820134 (large)
+## 95 percent confidence interval:
+##       inf       sup 
+## 0.1348856 1.5053823</code></pre></div>
+<p>effsize paketi <span class="citation">(Torchiano <a href="#ref-R-effsize">2016</a>)</span> etki büyüklüğünü 0.820 ve ilgili %95 güven aralığını [0.135, 1.505] olarak hesaplamıştır.</p>
+</div>
+<div id="kayp-veriler-ile-bagl-gruplar-t-testi" class="section level3">
+<h3><span class="header-section-number">8.2.5</span> Kayıp veriler ile bağlı gruplar t testi</h3>
+<p>Eklenecek</p>
+</div>
+<div id="destekleyici-grafikler-1" class="section level3">
+<h3><span class="header-section-number">8.2.6</span> Destekleyici grafikler</h3>
+<p>Eklenecek</p>
+</div>
+<div id="istatistiksel-guc-bagl-gruplar-t-testi" class="section level3">
+<h3><span class="header-section-number">8.2.7</span> İstatistiksel güç: bağlı gruplar t testi</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#power.t.test</span>
+<span class="kw">power.t.test</span>(<span class="dt">delta=</span>.<span class="dv">35</span>, <span class="dt">sd=</span>.<span class="dv">6</span>,<span class="dt">sig.level=</span><span class="fl">0.05</span>, <span class="dt">power=</span><span class="fl">0.95</span>, 
+             <span class="dt">type=</span><span class="st">&quot;paired&quot;</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>)
+## 
+##      Paired t test power calculation 
+## 
+##               n = 40.16447
+##           delta = 0.35
+##              sd = 0.6
+##       sig.level = 0.05
+##           power = 0.95
+##     alternative = two.sided
+## 
+## NOTE: n is number of *pairs*, sd is std.dev. of *differences* within pairs</code></pre></div>
+<p>Bu örnekte belirlenmiş değerler ortalamalar farkı 0.35, standart sapma 0.6, alfa 0.05, yönsüz test ve hedeflenen güç 0.95 seçildiğinde gereken örneklem sayısı 41’dir. Diğer bir ifade ile, 41 katılımcı ile belirlenen değerlere (ortalamalar farkı 0.35, standart sapma 0.6, alfa 0.05, yönsüz test) ulaşılması durumunda <span class="math inline">\(H_0:\mu_1-\mu_2=0\)</span> boş hipotezinin terkedilme olasılığı %95’tir.</p>
+</div>
+</div>
+<div id="yaygn-tasarlar" class="section level2">
+<h2><span class="header-section-number">8.3</span> Yaygın Tasarılar</h2>
+<p>Sosyal bilimlerde iki ortalamayı kıyaslamak üzere kurulan tasarılardan yaygın olanları özetlenmiştir.</p>
+<div id="gruplarn-iliskili-oldugu-durumlar" class="section level3">
+<h3><span class="header-section-number">8.3.1</span> Grupların ilişkili olduğu durumlar</h3>
+<p>Ortalamaların hesaplandığı puanların farklı gruplar altında ilişkili olup olmadğı önemlidir.</p>
+<div id="tekrarlanan-olcumler" class="section level4">
+<h4><span class="header-section-number">8.3.1.1</span> Tekrarlanan ölçümler</h4>
+<p>Aynı katılımcı içiin aynı değişkenin birden fazla ölçülmesi durumu.</p>
+<ol style="list-style-type: decimal">
+<li><strong>Bireylerin kendi kontrol grubunu oluşturması:</strong></li>
+</ol>
+<p>Semantik hafızanın aktivasyon hızını ölçmek üzere 100 üniversite öğrencisi ile araştırma yapılmıştır. Her öğrenci çiftler halinde verilen kelimeleri okumuştur. Okudukları ilk kelime ya bir silah (örneğin mermi, hançer) ya da silah olmayan bir kelimedir. Okudukları ikinci kelime mutlaka agresif bir kelimedir (örneğin yarala, imha et). Her bir öğrenci 192 çift kelimeyi bilgisayarda görüp sesli olarak okumuştur. Bilgisayar ilk kelimeyi 1.25 saniye ekranda tutmuş, .5 saniye siyah ekran göstermiş ve ikinci kelimeyi ekranda göstermiş, her ikinci kelimeden önce reaksiyon zamanını ölçmüştür. Her bireyin reaksiyon zamanı ortalamaları alınmış ve analiz edilmiştir.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">İlk kelime</th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Öğrenci</td>
+<td align="center">Silah</td>
+<td align="center">Silah Değil</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">2</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">…</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">100</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>Her öğrencinin kendi okuma hızı olduğundan, Silah ve Silah olmayan kelimeleri okumak için gereken reaksiyon zamanları birbiri ile ilişkilidir.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Boylamsal tasarılar:</strong> 6. sınıf öğrencilerinin matematik başarısı dönem başında ve dönem sonunda ölçülmüştür. Amaç puanların değişip değişmediğini görmektir.</li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">Zaman</th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Öğrenci</td>
+<td align="center">Dönem başı</td>
+<td align="center">Dönem sonu</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">2</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">…</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">48</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>Ölçümler aynı öğrenciler ile tekrarlandığı için puanlar ilişkilidir.</p>
+</div>
+<div id="blok-tasarlar" class="section level4">
+<h4><span class="header-section-number">8.3.1.2</span> Blok tasarıları</h4>
+<p>Katılımcıların blok olarak ikili eşleştirilmesidir. Her çiftin (blok içindeki) benzer davranması beklenir.</p>
+<ol style="list-style-type: decimal">
+<li><strong>Rassal blok tasarı:</strong> Okuma hızını artırmak için bir program geliştirilmiştir, etkililiğini araştırmak üzere, 30 ikinci sınıf öğrencisi bir okuma testini cevaplamış, ve puanlarına göre çiftler oluşturmuştur.</li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Çift</th>
+<th align="center">Okuma testi puan sırası</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">1,2</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">3,4</td>
+</tr>
+<tr class="odd">
+<td align="center">…</td>
+<td align="center">…</td>
+</tr>
+<tr class="even">
+<td align="center">15</td>
+<td align="center">29,30</td>
+</tr>
+</tbody>
+</table>
+<p>Görüldüğü gibi en hızlı okuyan 2 öğrenci ilk çifti, en yavas okuyan iki öğrenci son çifti oluşturmuştur.Çiftlerden her biri rassal olarak yeni program grubuna veya kontrol grubuna atanmıştır. As shown, the students with the two highest scores were in the first pair, the students with the</p>
+<p>Yeni program son bulduktan sonra öğrencilerin okuma hızları ölçülmüştür</p>
+<p>|:——–:|:————-:|:——-:| | Çift | Yeni Program | Kontrol | | 1 | | | | 2 | | | | … | | | | … | | | | 15 | | |</p>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Rassal olmayan blok tasarı:</strong> Şiddete maruz kalmış grup çocuğun, şiddet görmemiş daha kalabalık bir gruptan çocuklar ile genel kaygı düzeyi üzerinden eşleştiğini düşünelim. Sonrasında stres anında gösterdikleri endişe durumlarını ölçelim</li>
+</ol>
+<table>
+<tbody>
+<tr class="odd">
+<td align="center">Çift</td>
+<td align="center">Şiddete maruz kalan</td>
+<td align="center">Kontrol</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">2</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">…</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">20</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Kalıtsal tasarılar (Familial):</strong> 25 anne ve erişkin kızlarının politik görüşleri alınmıştır.</li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Çift</th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"></td>
+<td align="center">Anne</td>
+<td align="center">Kız</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">2</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">…</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">25</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>Dyadik tasaıları:</strong> Afrikalı-Amerikalı ve Avrupalı-Amerikalı çocuklardan oluşturulan çiftler işbirliği gerektiren küçük oyunlar oyamışlardır. Her bir çocuk eşinin işbirlikçiliğini puanlamıştır.</li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Etnisite</th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Çift</td>
+<td align="center">Afrikalı-Amerikalı</td>
+<td align="center">Avrupalı-Amerikalı</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">2</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">…</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">25</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="designbetween" class="section level3">
+<h3><span class="header-section-number">8.3.2</span> Bağlı olmayan grup tasarılarına örnekler</h3>
+<ol style="list-style-type: decimal">
+<li><strong>Tamamen rassal tasarı</strong><br />
+İki farklı manyetik ağrı kesici makinesinin performansı karşılaştırılacaktır. 50 hasta rassal olarak, 25-25, iki makineye alınmış, tedaviden sonra ağrı düzeylerini rapor etmişlerdir.</li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Makine</th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="center">.</td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">.</td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">.</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Rassal olmayan tasarı:</strong> Sekizinci sınıf öğrencilerinden 50 kız ve 50 erkek seçilmiş 2 basamaklı toplama işlemi yapma hızları ölçülmüştür.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-myerswell13">
+<p>Myers, Jerome L., A. Well, Robert F. Lorch, and Ebooks Corporation. 2013. <em>Research Design and Statistical Analysis</em>. 3rd ed. New York: Routledge.</p>
+</div>
+<div id="ref-Andy2012">
+<p>Field, Andy P., Jeremy Miles, and Zoë Field. 2012. <em>Discovering Statistics Using R</em>. Thousand Oaks, Calif;London; Sage.</p>
+</div>
+<div id="ref-wilcox2012">
+<p>Wilcox, Rand R. 2012. <em>Introduction to Robust Estimation and Hypothesis Testing</em>. 3rd;3; US: Academic Press.</p>
+</div>
+<div id="ref-cohen1962">
+<p>Cohen, Jacob. 1962. “The Statistical Power of Abnormal-Social Psychological Research: A Review.” <em>The Journal of Abnormal and Social Psychology</em> 65 (3): 145–53.</p>
+</div>
+<div id="ref-R-effsize">
+<p>Torchiano, Marco. 2016. <em>Effsize: Efficient Effect Size Computation</em>. <a href="https://CRAN.R-project.org/package=effsize" class="uri">https://CRAN.R-project.org/package=effsize</a>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="7">
+<li id="fn7"><p>Çözümlemeler R programlama dili kullanılarak tamamlanmıştır, betimsel istatistikler <em>psych</em> paketi<span class="citation">(Revelle <a href="#ref-R-psych">2016</a>)</span>, t test istatistiği ise stats paketi <span class="citation">(R Core Team <a href="#ref-R-base">2016</a><a href="#ref-R-base">b</a>)</span> ile hesaplanmıştır.<a href="iki-ortalamann-karslastrlmas-t-testi.html#fnref7">↩</a></p></li>
+<li id="fn8"><p><span class="citation">Lakens (<a href="#ref-lakens2013">2013</a>)</span> Eşitlik 7, fakat bu değer korelasyon 1’e yaklaştıkça sonsuza yaklaşır. <span class="citation">Lakens (<a href="#ref-lakens2013">2013</a>)</span> Eşitlik 10 daha uygun bir tercih olabilir.<span class="math inline">\(\frac{mean difference}{(SD_1+SD_2)/2}\)</span><a href="iki-ortalamann-karslastrlmas-t-testi.html#fnref8">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="betimleyici-istatistikler-ve-hipotez-testi.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="analysis-of-variance-anova.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/burakaydin/SARP/tree/gh-pages/07_t_test.Rmd",
+"text": "Edit"
+},
+"download": ["SARP.pdf", "SARP.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
