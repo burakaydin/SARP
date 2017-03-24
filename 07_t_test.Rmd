@@ -526,7 +526,7 @@ As shown, the students with the two highest scores were in the first pair, the s
 
 Yeni program son bulduktan sonra öğrencilerin okuma hızları ölçülmüştür
 
-
+|         |               |          |
 |:--------:|:-------------:|:-------:|
 | Çift     | Yeni Program | Kontrol |
 | 1        |               |         |

@@ -1,129 +1,119 @@
 
 
-# Analysis of Variance (ANOVA)
+# Varyans Analizi (ANOVA)
 
-##Terminology
-
-Designs are usually described using a standard terminology.  The following is an introduction to this terminology.
-
-__Factor__ a collection of treatments.  For example, in the Magnetic vs. Inactive device study, device is a factor.  In the priming study, type of prime word is a factor.
-
-__Level__ an instance of a factor.  In the Magnetic vs. Inactive device study \@ref(designbetween), magnetic device is a level of the type of instruction factor, as is inactive device.  In the priming study, weapon word is a level of the type of prime word factor, as is non-weapon word.
-
-__Crossed factors__ two factors are crossed if each level of one factor occurs in combination with every level of the second factor.  For example, consider the diagram, on the following page, of a repeated measures design in which the treatment factor has two levels.
-
-|  |   Levels of Treatment Factor  |
-|----------------------------|---|---|
-|                    | 1 | 2 |
-| Subjects                         |   |   |
-| 1                          |   |   |
-| 2                           |   |   |
-| .                           |   |   |
-| n                          |   |   |
+Varyans analizi (ANOVA) bölümünde kısaca tanıtılan konular; (a) terminoloji, (b) gruplar-arası ANOVA, ve (b) gruplar-içi ANOVA olarak üç başlıktır. Kitabın bir sonraki versiyonunda karma ANOVA (mixed ANOVA) eklenecektir. 
 
 
-Subjects can be considered a factor and is crossed with the treatment factor since each subject occurs in combination with each treatment.
+##Terminoloji
+Varyans analizi kapsamında kullanılan terimler kısaca açıklanmıştır. Fakat bu bölüm bir önceki bölümde tanıtılan *yaygın tasarılar* (\@ref(commondesigns)) paragraflarının devamıdır.
 
-__Nesting__ one factor is nested in a second factor if each level of the first factor occurs in combination with only one level of the second factor.  For example, consider the following diagram of an independent samples design in which the treatment factor has two levels.
 
-|  Levels of Treatment Factor    |
+__Faktör__ Kategorik bağımsız değişkenler ANOVA çerçevesinde faktör olarak isimlendirilir. Önreğin bir önceki bölümde (\@ref(designbetween)) rassal blok tasarısı içerisinde tanımlanan *okuma hızını artırmaya yönelik yeni program* ve *kontrol* grubu üyeliğini belirteniki kategorili (iki alt sınıflı) değişken bir faktör oluşturur. Toplumsal Cinsiyet Algısının (TCA) yüksek öğretim durumuna göre (yüksek öğretim mezunları ve yüksek öğretim mezunu olmayanlar)değişip değişmediğini test eden bir modelde TCA bağımlı değişken, yüksek öğretim durumu ise bir faktördür.  
+
+__Alt sınıf__ Faktörü oluşturan kategorilere alt sınıf denir. TCA örneğinde faktör yüksek öğretim durumudur. Bu faktöre ait alt sınıflar *yüksek öğretim mezunu* ve *yüksek öğretim mezunu değil* olmak üzere iki tanedir. 
+
+__Kesişen faktörler (Crossed factors)__ Bir faktöre ait alt sınıfların diğer bir faktörün bütün alt sınıfları ile kesişmesi durumudur. Tekarlanan ölçümler için bir önceki bölümde verilen örneği düşünelim, 
+
+|               |        İlk kelime                    |
+|:-------------:|:-----------------:|:----------------:|
+|    Öğrenci    |    Silah         |    Silah Değil   |
+|    1          |                   |                  |
+|    2          |                   |                  |
+| ...           |                   |                  |
+|    100        |                   |                  |
+
+Öğrenciler de bir faktör olarak düşünüldüğünde,  her öğrencinin reaksiyon süreleri ilk kelime faktörünün her iki alt sınıfında da ölçüldüğü için öğrenci ve ilk kelime faktörü kesişmiştir.  
+
+__Kesişmeyen faktörler (Nesting)__ Bir faktöre ait bir alt sınıfın, ikinci faktörün sadece bir alt sınıfında gözlemlenmesi durumudur. Tamamen rassal tasarı için bir önceki bölümde verilen örneği düşünelim,
+
+
+|  Makine    |
 |----------------------------|---|
 | 1                          | 2 |
-| $S_1$                      | $S_{n+1}$  |
-| $S_2$                      | $S_{n+2}$  |
-| $S_3$                      | $S_{n+3}$  |
+| $H_1$                      | $H_{n+1}$  |
+| $H_2$                      | $H_{n+2}$  |
+| $H_3$                      | $H_{n+3}$  |
 | ...                      |  |
-| $S_n$                      | $S_{2n}$  |
+| $H_n$                      | $H_{2n}$  |
 
-Subjects are nested in treatments because each subjects appears in only one treatment.
+Her bir hasta 1. veya 2. makine ile tedavi edildiği için, katılımcı faktörü makine faktörünün içinde düşünülür ve faktörler kesişmemiştir.
 
-__Within-subjects factor__ a factor that is crossed with subjects.  The name derives from the fact that the levels of the factor vary within a subject as can be seen in the diagram for the repeated measures design.  The following designs have a within-subjects factor: subjects as own control and longitudinal, both of which are examples of repeated measures designs.
+__Bağlı gözlemler faktörü (Within-subjects factor)__ katılımcı faktörü (öğrenci,çalışan,hasta vb.) ile kesişen faktörlerdir. Tekrarlanan ölçümler örneğinde olduğu gibi her bir katılımcı diğer bir faktörün bütün alt sınıflarında gözlemlenir. Boylamsal çalışmalarda zaman (örneğin öntest, sontest) bağlı gözlemler faktörüne örnektir.
 
-__Within-blocks factor__ a factor that is crossed with blocks.  The name derives from the fact that the levels of the factor vary within a block as can be seen in the following diagram.  
- 
-| Block | Levels of factor |     |
-|:-----:|:----------------:|:---:|
-|       | 1                | 2   |
-| 1     |                  |     |
-| 2     |                  |     |
-| ...   |                  |     |
-| n     |                  |     |
+__Bağlı bloklar faktörü__ bloklar ile kesişen faktördür. Rassal blok tasarı için bir önceki bölümde verilen örneği düşünelim,
 
-The following designs have a within-blocks factor: randomized block, nonrandomized block, familial, and dyads.
- 
-Many people do not distinguish between within-subjects and within-blocks factors, because they lead to the same method of analysis.  Typically, we will not distinguish between the two types of factors and will label both as a within-subjects factor.
+|         |               |          |
+|:--------:|:-------------:|:-------:|
+| Çift     | Yeni Program | Kontrol |
+| 1        |               |         |
+| 2        |               |         |
+|  ...     |               |         |
+| ...      |               |         |
+| 15       |               |         |
 
-__Between-subjects factor__ a factor that has subjects nested in its levels; the subjects in the levels are not crossed with blocks.  The qualifier following the semi-colon is necessary to distinguish a between-subjects factor from a within-blocks factor because in both factors a subject is assigned to only one level of a factor.  This can be seen from the diagram for the independent samples design:  
+Rassal olmayan blok, kalıtsal ve diyadik tasarılar da bağlı bloklar faktörüne örnektir.
 
-|  Levels of Treatment Factor    |
-|:--------------------------:|:-:|
-| 1                          | 2 |
-| $S_1$                      | $S_{n+1}$  |
-| $S_2$                      | $S_{n+2}$  |
-| $S_3$                      | $S_{n+3}$  |
-| ...                      |  |
-| $S_n$                      | $S_{2n}$  |
+Bağlı gözlemler faktörü ve bağlı bloklar faktörü aynı şekilde analiz edildiği için çoğu zaman aynı isimle kullanılır, bu bölümde de her iki faktör *bağlı gözlemler* olarak kullanılmıştır.
 
 
-## Between Subjects ANOVA
-
-The name between-subjects derives from the fact that the levels of the factor vary between subjects.
+__Gözlemler arası faktör veya Bağlı olmayan gözlemler faktörü (Between-subjects factor)__ katılımcı faktörü ile kesişmeyen faktörlerdir.  Toplumsal Cinsiyet Algısının (TCA) yüksek öğretim durumuna göre (yüksek öğretim mezunları ve yüksek öğretim mezunu olmayanlar)değişip değişmediğini test eden bir modelde TCA bağımlı değişken, yüksek öğretim durumu ise gözlemler arası faktördür. 
 
 
-### One-way Between Subjects ANOVA
-The structural model for a one-factor between subjects ANOVA is $Y_{ij}=\mu+\alpha_{j}+\epsilon_{ij}$, in which $Y_{ij}$ is the score for the participant _i_ in group _j_, $\mu$ is the grand mean of the scores, $\alpha_j$ is the effect of the level _j_, and $\epsilon_{ij}$ is the error term (nuisance). It can be shown that $\mu_j=\mu+\alpha_j$, where $\mu_j$ is the the mean for the jth level of the factor.
+## Bağlı olmayan gözlemler varyans analizi (Between Subjects ANOVA)
+Gözlemlerin (katılımcıların) tek bir alt sınıf kombinasyonuna ait olduğu durumlarda yapılan çözümlemelerdir.
 
-Generally, the interest is on $\alpha_j$ because it represents $\mu_j-\mu$. This interest leads to hypothesis testing: $H_0: \mu_1 = \mu_2 = \cdots = \mu_j$
 
-The alternative hypothesis states that at least one population mean is different. It is possible to test the null by partitioning the variance, for a one factor model using the notation by @myerswell13 
+### Tek-yönlü bağlı olmayan gözlemler varyans analizi
+Tek faktörlü bağlı olmayan gözlemler varyans çözümlemesi  $Y_{ij}=\mu+\alpha_{j}+\epsilon_{ij}$ eşitliğinde yer alan parametrelerin tahmini ile tamamlanabilir. Bu eşitlikte  $Y_{ij}$ _j_ alt sınıfında yer alan _i_ katılımcısına ait  puanı, $\mu$ bütün puanların ortalaması, $\alpha_j$ _j_ alt sınıfının etkisi ve $\epsilon_{ij}$ hata terimidir. $\mu_j=\mu+\alpha_j$'dir, $\mu_j$ _j_ alt sınıfında yer alan katılımcıların aritmetik ortalamasıdır.
 
-| SV    | df  | SS | MS | F |
+Genellikle ilgi  $\alpha_j$ üstünedir, çünkü $\mu_j-\mu$ 'yi temsil eder. Bu ilgi  $H_0: \mu_1 = \mu_2 = \cdots = \mu_j$ boş hipotezinin test edilmesini gerektirir.Alternatif hipotez en az bir alt sınıfa ait ortalamanın farklı olduğunu belirtir. Bu boş hipotez varyansın ayrıştırılması ile test edilebilir. @myerswell13 tarafından verilen notasyon kullanırsak;
+
+| VK   | sd  | KT | KTO | F |
 |:-------:|:-----:|:----:|:----:|:---:|
-| Total | $N-1$ | $\sum_{j=1}^{J}\sum_{i=1}^{n_j}(Y_{ij} - \bar{Y}_{\cdot \cdot})^2$    |   | |
+| Toplam | $N-1$ | $\sum_{j=1}^{J}\sum_{i=1}^{n_j}(Y_{ij} - \bar{Y}_{\cdot \cdot})^2$    |   | |
 | A     | $J-1$ | $\sum_{j=1}^{J}n_j(\bar{Y}_{\cdot j}-\bar{Y{\cdot \cdot}})^2$         | $SS_A/df_{A}$  | $MS_A/MS_{S/A}$ |
 | S/A   | $N-J$ | $\sum_{j=1}^{J}\sum_{i=1}^{n_j}(Y_{ij} - \bar{Y}_{\cdot j})^2$        | $SS_{S/A} / df_{S/A}$  |  |
 
 
-| SV    | EMS |
+| VK    | BKTO |
 |:-------:|:-----:|
-| Total |     |
+| Toplam |     |
 | A     | $\sigma_{S/A}^2 + \frac{1}{J-1} \sum_{j} n_j (\mu_j-\mu)^2$ |
 | S/A   | $\sigma_{S/A}^2$   |
 
+VK = vayans kaynağı, sd = serbestlik derecesi, KT = kareler toplamı, KTO = kareler toplamı ortalaması, BKTO = beklenilen kareler toplamı ortalaması.
+
+A , _J_ adet alt sınıfa sahip gruplar arası faktörü, S/A A fatörü içerisindeki katılımcıları, N toplam örneklem sayısını, j=1,...,J faktör alt sınıflarını, i=1,...,$n_j$ katılımcıları, $Y_{ij}$ katılımcı puanlarını, $\bar{Y}_{\cdot \cdot}$ genel ortalamayı, $\bar{Y}_{\cdot j}$ j alt sınıfı katılımcı ortalamasını temsil eder. 
+
+$MS_{A}/ MS_{S/A}$  oranı, boş hipotez doğru olduğunda ve varsayımlar ihlal edilmediğinde, J-1 ve N-J serbestlik derecesine sahip bir F dağılımını takip eder. Dolayısı ile $MS_{A}/ MS_{S/A}$, $F_{\alpha,J-1,N-J}$ kritik değerinden büyük ise boş hipotez terkedilir.
 
 
+#### Etki büyüklüğü tek-yönlü bağlı olmayan gözlemler varyans analizi
+Tanıtımı kolaylaştırmak amaçlı her alt sınıfın eşit sayıda gözlem içerdiğini düşünelim, $n_1=n_2=\cdots=n_j=n$. Bu durumda A faktörü için BKTO $\sigma^2+n\theta^2_A$ 'dır ve ;
 
-where SV=Source of Variance, df=degrees of freedom, SS=Sum of squares, MS= Mean Square, EMS= Expected Mean Square,
-A is the between subjects factor with J levels, S/A is the subjects within A, N is the total sample size, j=1,...,J factor level indicator, i=1,...,$n_j$ individual indicator, $Y_{ij}$ is the individual score, $\bar{Y}_{\cdot \cdot}$ is the grand mean, $\bar{Y}_{\cdot j}$ is the group j's mean. 
-
-The ratio of $MS_{A}/ MS_{S/A}$ , when the null is true and assumptions are met, follows an F distribution with J-1 and N-J degrees of freedom; hence, if $MS_{A}/ MS_{S/A}$ is larger than the $F_{\alpha,J-1,N-J}$ the null is rejected.
-
-
-#### Effect size for one-way between-subjects ANOVA
-To simplify the illustration, let us assume each treatment level has the same number of participants, $n_1=n_2=\cdots=n_j=n$. Hence, the expected mean square for A is $\sigma^2+n\theta^2_A$ in which
 $$\theta^2_A=\sum_{j=1}^{J}\frac{(\mu-\mu_j)^2}{J-1}$$.
 
-The estimate of $\theta^2_A$, the $\hat\theta^2_A$ is equal to $\frac{MS_A-MS_{S/A}}{n}$, and the estimate of $\sigma_{S/A}^2$, the $\hat\sigma_{S/A}$ is equal to $MS_{S/A}$ 
+$\theta^2_A$ parametresinin tahmini olan  $\hat\theta^2_A$, $\frac{MS_A-MS_{S/A}}{n}$ ile ve  $\sigma_{S/A}^2$ parametresinin tahmini olan  $\hat\sigma_{S/A}$,  $MS_{S/A}$ ile hesaplanır.
+
+\@ref(indepteff) bölümünde değinildiği gibi, aritmetik ortalamalar arasındaki farkın büyüklüğünü yorumlamak için etki büyüklüğü hesaplaması yapılabilir. Günümzde varyans çözümlemesi kullanmış çoğu bilimsel makalede etki büyüklüğü de raporlanmıştır. Bu etki büyüklükleri arasında omega-kare ($\hat\omega^2$), eta-kare ($\hat\eta^2$) ve $f$ en çok raporlananlar arasındadır. 
 
 
-As stated in Section \@ref(indepteff) to judge whether a mean difference is large in a substantive sense one can use an effect size. For a one-way between subjects ANOVA, reporting at least one type of effect size is a general practice. Among them, omega-hat-squared ($\hat\omega^2$), eta-hat-squared ($\hat\eta^2$) and $f$ are well known.
-
-##### Omega-squared for one-way between-subjects ANOVA
-Omega-hat-squared is the proportion of total variance that is due to the factor.
+##### Omega-kare
+Omega-kare faktör tarafından açıklanan varyansın toplam varyansa oranını tahmin etmek için türetilmiştir.
 $\hat\omega^2=\frac{(J-1)\hat\theta^2/J}{((J-1)\hat\theta^2/J)+\hat\sigma^2_{S/A})}$ 
 
-An omega-squared is considered small if it is 0.01, medium if 0.06, large if 0.14 @myerswell13.
+Omega-kare 0.01 ise küçük, 0.06 ise orta ve 0.14 ise büyük etki olarak yorumlanır @myerswell13.
 
-##### Eta-squared for one-way between-subjects ANOVA
-$\hat\eta^2=\frac{SS_A}{SS_{Total}}$ also attempts to estimate the proportion of total variance that is due to the factor.
+##### Eta-kare
+Eta-kare de , $\hat\eta^2=\frac{SS_A}{SS_{Total}}$,  faktör tarafından açıklanan varyansın toplam varyansa oranını tahmin etmek için türetilmiştir.
 
-$\hat\eta^2$ is larger than $\hat\omega^2$  because $\hat\eta^2$ is a positively biased statistics, that is, it tends to be too large, especially when n is small.
 
-$\hat\eta^2$ is probably the most widely used effect size for ANOVA and also reported in a regression fashion as $R^2$. 
+Aynı çözümleme için, $\hat\eta^2$ , $\hat\omega^2$  'den büyüktür , çünkü  $\hat\eta^2$, özellikle _n_ küçük ise, pozitif yönde yanlı bir tahmindir. Buna rağmen $\hat\eta^2$ bildiğimiz kadarı ile en çok raporlanan etki büyüklüğüdür. $\hat\eta^2$, regresyon çözümlemesi çerçevesinde $R^2$ olarak da raporlanır.
 
-##### Effect size f for one-way between-subjects ANOVA
 
-Cohen's $f=\frac{\hat\theta_A}{\hat\sigma_{S/A}}$. An f value is considered small if it is 0.10, medium if 0.25, large if 0.40.
+##### Etki büyüklüğü f
+Cohen'in f katsayısı,  $f=\frac{\hat\theta_A}{\hat\sigma_{S/A}}$ ile hesaplanır. Bir f değeri 0.10 ise küçük, 0.25 ise orta, 0.40 ise büyük etki olarak yorumlanır.
 
 ##### A general note on the Effect Size Measures
 For illustrative purposes, we briefly summarized effect size measures for equal sample size in each group. In practice it is generally not common to have equal sample sizes. It is also not common to have a single factor design. In addition, factors in a design are either measured or manipulated, which which affect the effect size computation. 

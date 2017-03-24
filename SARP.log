@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (MiKTeX 2.9.6100) (preloaded format=xelatex 2016.12.11)  23 MAR 2017 12:59
+This is XeTeX, Version 3.14159265-2.6-0.99996 (MiKTeX 2.9.6100) (preloaded format=xelatex 2016.12.11)  24 MAR 2017 17:14
 entering extended mode
 **./SARP.tex
 (SARP.tex
@@ -1058,41 +1058,41 @@ Underfull \vbox (badness 10000) detected at line 3659
 
 ]
 Chapter 9.
-[79] [80]
-Overfull \hbox (37.50458pt too wide) in paragraph at lines 3898--3900
+[79]
+Overfull \hbox (37.50458pt too wide) in paragraph at lines 3886--3888
  []|$[][] [][]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 Y[] \OMS/lmsy/m/n/10 ^^@ 
  []
 
 
-Overfull \hbox (23.25635pt too wide) in paragraph at lines 3909--3911
+Overfull \hbox (23.25635pt too wide) in paragraph at lines 3897--3899
  []|$[][] \OML/lmm/m/it/10 n[]\OT1/lmr/m/n/10 ([] \OMS/lmsy/m/n/10 ^^@ 
  []
 
 
-Overfull \hbox (1.7209pt too wide) in paragraph at lines 3911--3913
+Overfull \hbox (1.7209pt too wide) in paragraph at lines 3899--3901
  []|$\OML/lmm/m/it/10 SS[]=df[]$| 
  []
 
 
-Overfull \hbox (26.96239pt too wide) in paragraph at lines 3913--3915
+Overfull \hbox (26.96239pt too wide) in paragraph at lines 3901--3903
  []|$\OML/lmm/m/it/10 MS[]=MS[]$| 
  []
 
 
-Overfull \hbox (37.50458pt too wide) in paragraph at lines 3920--3922
+Overfull \hbox (37.50458pt too wide) in paragraph at lines 3908--3910
  []|$[][] [][]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 Y[] \OMS/lmsy/m/n/10 ^^@ 
  []
 
 
-Overfull \hbox (18.77928pt too wide) in paragraph at lines 3922--3924
+Overfull \hbox (18.77928pt too wide) in paragraph at lines 3910--3912
  []|$\OML/lmm/m/it/10 SS[]=df[]$| 
  []
 
-[81]
+[80] [81]
 Missing character: There is no ⁄ in font rm-lmr7!
 Missing character: There is no ⁄ in font rm-lmr10!
 [82] [83]
-Underfull \vbox (badness 10000) detected at line 4210
+Underfull \vbox (badness 10000) detected at line 4200
  []
 
 
@@ -1100,156 +1100,147 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [84]
 File: SARP_files/figure-latex/genattKOCAELI-1.pdf Graphic file (type QTm)
-<use  "SARP_files/figure-latex/genattKOCAELI-1.pdf" > [85]
+<use  "SARP_files/figure-latex/genattKOCAELI-1.pdf" >
 File: SARP_files/figure-latex/genattKOCAELIbox-1.pdf Graphic file (type QTm)
-<use  "SARP_files/figure-latex/genattKOCAELIbox-1.pdf" > [86]
-Underfull \vbox (badness 2088) detected at line 4350
- []
-
-
-Underfull \vbox (badness 2027) has occurred while \output is active []
-
-[87] [88]
-Underfull \vbox (badness 10000) detected at line 4488
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[89] [90]
+<use  "SARP_files/figure-latex/genattKOCAELIbox-1.pdf" > [85] [86] [87] [88] [8
+9] [90]
 Missing character: There is no − in font rm-lmr10!
 Missing character: There is no − in font rm-lmr10!
 Missing character: There is no − in font rm-lmr10!
 [91] [92]
 File: SARP_files/figure-latex/genattKayseri-1.pdf Graphic file (type QTm)
 <use  "SARP_files/figure-latex/genattKayseri-1.pdf" >
+Underfull \vbox (badness 1418) has occurred while \output is active []
+
+[93] [94]
 File: SARP_files/figure-latex/genattKayseribox-1.pdf Graphic file (type QTm)
-<use  "SARP_files/figure-latex/genattKayseribox-1.pdf" > [93] [94] [95] [96] [9
-7] [98] [99] [100] [101]
+<use  "SARP_files/figure-latex/genattKayseribox-1.pdf" > [95] [96] [97] [98] [9
+9] [100] [101]
 File: SARP_files/figure-latex/inhibitbox-1.pdf Graphic file (type QTm)
-<use  "SARP_files/figure-latex/inhibitbox-1.pdf" > [102]
+<use  "SARP_files/figure-latex/inhibitbox-1.pdf" >
+Overfull \vbox (0.90892pt too high) detected at line 5248
+ []
+
+[102]
 File: SARP_files/figure-latex/inhibitline-1.pdf Graphic file (type QTm)
 <use  "SARP_files/figure-latex/inhibitline-1.pdf" > [103]
-Underfull \vbox (badness 1931) has occurred while \output is active []
-
-[104]
 File: SARP_files/figure-latex/inhibitresiduals-1.pdf Graphic file (type QTm)
 <use  "SARP_files/figure-latex/inhibitresiduals-1.pdf" >
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1609) has occurred while \output is active []
 
-[105] [106]
+[104] [105] [106] [107] [108
+
+]
 Chapter 10.
 File: SARP_files/figure-latex/zerocrossproduct-1.pdf Graphic file (type QTm)
 <use  "SARP_files/figure-latex/zerocrossproduct-1.pdf" >
 File: SARP_files/figure-latex/corsample-1.pdf Graphic file (type QTm)
-<use  "SARP_files/figure-latex/corsample-1.pdf" > [107
-
-] [108] [109]
+<use  "SARP_files/figure-latex/corsample-1.pdf" > [109] [110] [111]
 File: SARP_files/figure-latex/perfectbinorm-1.pdf Graphic file (type QTm)
 <use  "SARP_files/figure-latex/perfectbinorm-1.pdf" >
 File: SARP_files/figure-latex/scatterincgenatt-1.pdf Graphic file (type QTm)
-<use  "SARP_files/figure-latex/scatterincgenatt-1.pdf" > [110] [111] [112] [113
-] [114]
+<use  "SARP_files/figure-latex/scatterincgenatt-1.pdf" > [112] [113] [114] [115
+] [116]
 File: SARP_files/figure-latex/incometransformed-1.pdf Graphic file (type QTm)
-<use  "SARP_files/figure-latex/incometransformed-1.pdf" > [115] [116] [117] [11
-8] [119] [120
+<use  "SARP_files/figure-latex/incometransformed-1.pdf" > [117] [118] [119] [12
+0] [121] [122
 
 ]
 Chapter 11.
-[121] [122] [123] [124]
+[123] [124] [125] [126]
 File: SARP_files/figure-latex/unnamed-chunk-120-1.pdf Graphic file (type QTm)
-<use  "SARP_files/figure-latex/unnamed-chunk-120-1.pdf" > [125]
+<use  "SARP_files/figure-latex/unnamed-chunk-120-1.pdf" > [127]
 File: SARP_files/figure-latex/unnamed-chunk-121-1.pdf Graphic file (type QTm)
 <use  "SARP_files/figure-latex/unnamed-chunk-121-1.pdf" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[126]
+[128]
 File: SARP_files/figure-latex/unnamed-chunk-122-1.pdf Graphic file (type QTm)
 <use  "SARP_files/figure-latex/unnamed-chunk-122-1.pdf" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[127] [128]
+[129] [130]
 Missing character: There is no ’ in font rm-lmr10!
 Missing character: There is no ′ in font rm-lmr10!
-[129]
+[131]
 File: SARP_files/figure-latex/unnamed-chunk-126-1.pdf Graphic file (type QTm)
 <use  "SARP_files/figure-latex/unnamed-chunk-126-1.pdf" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[130]
+[132]
 File: SARP_files/figure-latex/unnamed-chunk-127-1.pdf Graphic file (type QTm)
 <use  "SARP_files/figure-latex/unnamed-chunk-127-1.pdf" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[131] [132] [133]
+[133] [134] [135]
 File: SARP_files/figure-latex/unnamed-chunk-131-1.pdf Graphic file (type QTm)
 <use  "SARP_files/figure-latex/unnamed-chunk-131-1.pdf" >
 File: SARP_files/figure-latex/unnamed-chunk-131-2.pdf Graphic file (type QTm)
 <use  "SARP_files/figure-latex/unnamed-chunk-131-2.pdf" >
-Overfull \hbox (2.2224pt too wide) in paragraph at lines 6788--6788
+Overfull \hbox (2.2224pt too wide) in paragraph at lines 6778--6778
 [][] [] 
  []
 
-[134] [135] [136]
+[136] [137] [138]
 File: SARP_files/figure-latex/unnamed-chunk-133-1.pdf Graphic file (type QTm)
-<use  "SARP_files/figure-latex/unnamed-chunk-133-1.pdf" > [137]
+<use  "SARP_files/figure-latex/unnamed-chunk-133-1.pdf" > [139]
 File: SARP_files/figure-latex/unnamed-chunk-134-1.pdf Graphic file (type QTm)
-<use  "SARP_files/figure-latex/unnamed-chunk-134-1.pdf" > [138] [139] [140
+<use  "SARP_files/figure-latex/unnamed-chunk-134-1.pdf" > [140] [141] [142
 
 ]
 Chapter 12.
-[141]
-Underfull \vbox (badness 10000) detected at line 7300
- []
-
-
-Underfull \vbox (badness 10000) detected at line 7300
- []
-
-[142]
-Underfull \vbox (badness 10000) detected at line 7300
- []
-
-
-Underfull \vbox (badness 10000) detected at line 7300
- []
-
 [143]
-Underfull \vbox (badness 10000) detected at line 7300
+Underfull \vbox (badness 10000) detected at line 7290
  []
 
 
-Underfull \vbox (badness 10000) detected at line 7300
+Underfull \vbox (badness 10000) detected at line 7290
  []
 
 [144]
-Underfull \vbox (badness 10000) detected at line 7300
+Underfull \vbox (badness 10000) detected at line 7290
  []
 
 
-Underfull \vbox (badness 10000) detected at line 7300
+Underfull \vbox (badness 10000) detected at line 7290
  []
 
-[145] [146] (SARP.bbl [147] [148
+[145]
+Underfull \vbox (badness 10000) detected at line 7290
+ []
 
-] [149] [150])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 7352.
-[151]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 7352.
+
+Underfull \vbox (badness 10000) detected at line 7290
+ []
+
+[146]
+Underfull \vbox (badness 10000) detected at line 7290
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 7290
+ []
+
+[147] [148] (SARP.bbl [149] [150
+
+] [151] [152])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 7342.
+[153]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 7342.
 (SARP.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 7352.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 7352.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 7342.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 7342.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 25860 strings out of 428437
- 454047 string characters out of 3159924
- 544384 words of memory out of 3000000
- 28948 multiletter control sequences out of 15000+200000
+ 25858 strings out of 428437
+ 453994 string characters out of 3159924
+ 544263 words of memory out of 3000000
+ 28946 multiletter control sequences out of 15000+200000
  24450 words of font info for 63 fonts, out of 3000000 for 9000
  1314 hyphenation exceptions out of 8191
  52i,9n,68p,10404b,507s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on SARP.pdf (151 pages).
+Output written on SARP.pdf (153 pages).
