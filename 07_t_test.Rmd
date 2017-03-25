@@ -68,7 +68,7 @@ plotdata=na.omit(dataWBT_USAK[,c("gen_att","HEF")])
 ggplot(plotdata, aes(x = gen_att)) +
   geom_histogram(aes(y = ..density..),col="black",binwidth = 0.2,alpha=0.7) + 
   geom_density(size=2) +
-  theme_bw()+labs(x = "Gender Attitude by HEF in USAK")+ facet_wrap(~ HEF)+
+  theme_bw()+labs(x = "Uşak ilinde Yüksek Öğretim Durumuna göre TCA puanları")+ facet_wrap(~ HEF)+
   theme(axis.text=element_text(size=15),
         axis.title=element_text(size=14,face="bold"))
 
@@ -96,6 +96,9 @@ descIDT=with(dataWBT_USAK,describeBy(gen_att, HEF,mat=T,digits = 2))
 descIDT
 # rapor etmek için
 #write.csv(descIDT,file="independent_t_test_desc.csv")
+#türkçe excel için
+# #write.csv2(descIDT,file="independent_t_test_desc.csv")
+
 
 # ss
 sp=sqrt((85*.543^2 + 50*.608^2)/(86+51-2))
@@ -150,7 +153,7 @@ Uşak ilinde yaşayan katılımcılardan yüksek öğretim diplomasına sahip ol
 ### Bağımsız gruplar t testi varsayımları
 Geleneksel t-testi sonuçlarının geçerliği 3 varsayımın ihlal edilmemesi ile mümkündür.
 
-1. Yanıtların bağımsızlığı (independence). Her gruba ait puanların dağılımı birbirinden bağımsız olmalıdır. Yanıtların bağımsızlığını tehdit eden durumlardan biri aynı grup içeresinde yer alan bireylerin birbirlerinin yanıtlarını etkilemesidir (Yantların bağımsızlığı \@ref(moreonindependence) bölümünde daha detaylı ele alınmıştır.) 
+1. Yanıtların bağımsızlığı (independence). Her gruba ait puanların dağılımı birbirinden bağımsız olmalıdır. Yanıtların bağımsızlığını tehdit eden durumlardan biri aynı grup içeresinde yer alan bireylerin birbirlerinin yanıtlarını etkilemesidir (Yantların bağımsızlığı \@ref(moreonindependence) bölümünde daha detaylı ele alınmıştır). 
 
 2. Normallik. Her gruba ait puanlar normal bir dağılımdan çekilmiştir. @myerswell13 grupların örneklem sayısı (n) eşit olduğunda ve toplam örneklemin 40 veya daha fazla olduğu durumlarda t test istatistiğinin normallik varsayımı ihlallerine dirençli olduğunu belirtmiştir. Fakat bu direnç normal dağılımdan büyük çaplı sapmalar (extreme) için geçerli değildir. Bu kitabın yazarları normallik testlerinin bu varsayımı kontrol etmek için kullanılmasına sıcak bakmamaktadır. Görsel bir değerlendirmeden sonra özellikle küçük örneklemlerde, normallik varsayımının ihlal edildiği kaygısı varsa araştırmacılar dirençli tahminleme yöntemlerini kullanmalıdırlar. 
 
@@ -374,7 +377,7 @@ Bağlı gruplar t testi hesaplarına dayanarak, gerilim mukavemetinin bant tedav
 ###  Varsayımlar: bağlı gruplar için t testi
 Puanların farkı ($Y_{1i} - Y_{2i}$) normal bir dağılımdan çekilmiş olmalıdır. Puanların farkları her birey için bağımsız olmalıdır. Bağlı gruplar t testi , örneklem küçük değil ise, normallik varsayımı ihlallerine karşı genellikle dirençlidir.
 
-### Dirençli yöntem: bağlı gruplar için t testi
+### Dirençli tahminleme yöntemi: bağlı gruplar için t testi
 Eğer dağılım normallikten büyük ölçüde ayrılıyor ise, yüzdeli bootstrap prosedürü kullanılabilir (@wilcox2012,page 201).
 
 ```{r,collapse=T, eval=T, cache=F,message=F}
