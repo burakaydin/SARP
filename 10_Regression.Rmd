@@ -1,25 +1,23 @@
 
 
-# Multiple Linear Regression, A Short Introduction
+# Çoklu Doğrusal Regresyon , Kısa Tanıtım
 
-_Scientiﬁc development requires that knowledge be transferred reliably from one study to another and, as Galileo showed 350 years ago, such transference requires the precision and computational beneﬁts of a formal language._ @Pearl09
+_Bilimsel ilerleme bilginin güvenilir şekilde bir çalışmadan diğerine aktarılmasını gerektirir. Galileo'nun 350 sene önce dile getirdiği gibi bu aktarma keskinliği olan formal bir lisan ile yapılmalıdır._ @Pearl09
 
-The _formal language_ in the quote refers to _mathematical equations_. Galton for example, in late 1800s, used equations to describe the relationship between the weights of mother and daughter pea seeds. Galton’s work followed by Pearson’s contributions led to initial idea of regression ^[http://ww2.amstat.org/publications/jse/v9n3/stanton.html].  
+Bu alıntıda yer alan _formal lisanlardan_ biri matematiksel eşitliklerdir. Örneğin Galton 19. yüzyılda anne ve yavru bezelye tanelerinin büyüklüğü arasındaki ilişkiyi matematiksel eşitlikler ile açıklamaya çalışmıştır. Galton'un çalışmaları Pearson'ın çalışmalarına öncü olmuş ve ortaya regresyon fikri çıkmıştır.^[http://ww2.amstat.org/publications/jse/v9n3/stanton.html].  
 
-In the year 2016, the Web of Science reported that 60000+ abstracts of academic articles included the term “regression”. The literature is vast, oftentimes the regression is mentioned as the _workhorse_. It is extensively used by frequentist and Bayesian statisticians, and more generally by data scientists in hundreds of different disciplines. The explanation of the popularity of regression analysis is simple, unless they are simulated by a machine, connections between variables, whether observed or latent variables, in a data set requires more complex statistical solutions than are provided by correlation coefficients.
+Web of Science veri tabanında ,sadece 2016 yılı içerisinde, 60 binden fazla bilimsel makalenin özünde regresyon kelimesi yer almıştır. Alan yazın oldukça geniştir. Regresyon moellerinin bu kadar sık kullanılmasının sebebi , değişkenlerin arasındaki ilişkilerin sıradan bir korelasyon ile açıklanamayacak kadar karmaşık olmasıdır. Bir kitap bölümünde regresyonun bütün alt başlıkları ile ele alınması gerçekci değildir. Bu bölümde oldukça basit bir çoklu doğrusal regresyon modeli tanıtılmıştır.
 
-It is not feasible to cover regression in a book chapter. We briefly introduce basics of a relatively simple multiple regression model.
+## Matrisler ve En Küçük Kareler Yöntemi
+Regresyon modeli işlem basamaklarını matrisler ve en küçük kareler yöntemi (OLS) ile göstermenin iki avantajı vardır, (a) sürecin basamakları kolayca takip edilebilir ve (b) regresyon çözümlemesi konusunda daha üst düzey modelleri çalışmak isteyenler için sağlam bir temel oluşturabilir. Burdan sonraki bölümler iki farklı veri üzerinden devam edecektir. İlk veri seti sadece 12 katılımcıdan oluşur ve sentetik veri seti olarak isimlendirilmiştir. İkinci veri seti daha çok katılımcı içerir, gerçekci bir veri setini temsil edebilir ve simulasyon verisi olarak isimlendirilmiştir.
 
-## Matricies and Least Square Estimation
-In a multiple regression framework, demonstrating process of model fitting based on matrices and least squares estimation should have at least two benefits; (a) a simple demystification of the procedure, (b) a workable and sensible foundation for readers with a desire to move further in the advanced topics. The following sections use two different data sets. The first data set includes only 12-cases to show calculations and is named the synthetic data. The second data is simulated with a larger sample size for illustrative purposes and is named the simulated data.
-
-Consider a case in which data on three variables are collected and the researcher is interested in the relationship of one of the variables (i.e., the dependent variable) to the other two variables (i.e., the independent variables). Further, these three variables as continuous. The regression model in this scenario is 
+Araştırmacının bir bağımlı değişken (yordanan) ve iki farklı bağımsız değişken (yordayıcı) arasındaki ilişkiyi incelemek istediğini varsayalım. Bütün değişkenlerin sürekli değişken olduğunu düşünelim. Bu durumda regresyon modeli;
 
 $$Y_i=\beta_0 + \beta_1X_{i1}+ \beta_2X_{i2}+ \epsilon_i$$
-where _i_ represents individuals i=1,...,n, Y is the dependent variable, $X_1$ and $X_2$ are independent variables, $\beta$s are the regression coefficients and $\epsilon$ is the random error term(residuals) . This model can be presented in a matrix equations 
+ _i_ katılımcıları, i=1,...,n; Y bağımlı değişkeni; $X_1$ ve $X_2$ bağımsız değişkenleri; $\beta$ regresyon katsayılarını ve $\epsilon$ hata terimini temsil eder. Bu model matris eşitliği olarak da yazılabilir. 
 
 $$Y=X\beta+\epsilon$$
-In this more general form, all the independent variables are represented in the X matrix and the regression coefficients are represented by the $\beta$ matrix. Let us assume the researcher has the following data
+Bu genel eşitlikte bütün bağımsız değişkenler X matrisi ile ve bütün regresyon katsayıları da $\beta$ matrisi ile temsil edilir. Araştırmacının veri seti şu şekilde olsun
 
 ```{r, collapse=T, eval=T, cache=T, message=F,echo=FALSE}
 regintro=data.frame(id=paste("ind",1:12),
@@ -30,8 +28,7 @@ library(knitr)
 kable(regintro)
 ```
 
-This synthetic data set has only 12 cases. The researcher can form 2 matrices and use these to calculate $\hat\beta$, the estimate of $\beta$.
-
+Bu sentetik veri setinde sadece 12 katılımcı vardır. Araştırmacı bu veri setinden oluşturacağı 2 farklı matris ile, $\beta$ tahmini olan $\hat\beta$ matrisini hesaplayabilir.
 
 $$Y=\begin{bmatrix}
 8\\ 
@@ -61,14 +58,14 @@ $$Y=\begin{bmatrix}
 1 & -1 & 1
 \end{bmatrix}$$
 
-Using the least square procedure the $\beta$ coefficients can easily be estimated;
+OLS yöntemi ile $\hat\beta$ kolayca hesaplanabilir
 
 \begin{equation} 
  \hat\beta=(X'X)^{-1}X'Y
   (\#eq:lsebeta)
 \end{equation} 
 
-Let's calculate this with R for the synthetic-data;
+Bu hesaplamaları R ile yapalım;
 
 ```{r, collapse=T, eval=T, cache=T, message=F,echo=T}
 Y=matrix(c(8,4,6,6,5,9,7,-6,-8,-1,0,5),ncol=1)
@@ -81,58 +78,61 @@ solve(t(X)%*%X)%*%t(X)%*%Y
 ```
 
 
-
-The regression equation is
+Regresyon eşitliği;
 $$\hat Y_i=2.9167 + 0.1989X_{i1} + 1.5519X_{i2} $$
-where $\hat Y_i$ is the predicted value for the $i^{th}$ individual. Equation \@ref(eq:lsebeta) was derived to minimize the error sum of squares: $\sum_{i=1}^n(Y_i-\hat{Y_i})^2=Y'Y-\beta'X'X\beta$.These estimates are Best Linear Unbiased Estimates.
+ $\hat Y_i$ _i._ sıradaki birey için tahmin edilen değerdir. Eşitlik \@ref(eq:lsebeta) hata kareleri toplamını minimize etmek üzere türetilmiştir: $\sum_{i=1}^n(Y_i-\hat{Y_i})^2=Y'Y-\beta'X'X\beta$. Bu  yöntem en iyi doğrusal yansız kestiricilerdir (Best Linear Unbiased Estimates).
 
-Each independent variable has a mean of zero because they are mean-centered. Therefore, zero represents a score at the center of the distribution  for both $X_1$ and $X_2$  and is therefore an interpretable score for both $X_1$ and $X_2$. When both predictors are zero (at their mean), the $(\hat{Y_i})$ is 2.92. That is, for participants with independent variables scores equal to the mean on both independent variables the expected dependent variable score is 2.92. An increase in $X_1$ of 1 unit is predicted to correspond to an increase of 0.20 units in Y when the $X_2$ variable is held constant. Similarly, an increase in $X_2$ of 1 unit is predicted to correspond to an increase of 1.55 units in Y while controlling for $X_1$. The term “controlling for” (“ceteris paribus”) is necessary to describe the effect of an independent variable in a multiple regression. The coefficients .20 and 1.55 would provide information about the association of the dependent and independent variables, if the researcher had substantial understanding of the unit of measurement for the independent variables, that is,  the importance of a “1 unit” change in each variable. 
+Örnekte yer alan her iki bağımsız değişkeninde aritmetik ortalaması sıfırdır. $X_1$ ve $X_2$ sıfır iken, $(\hat{Y_i})$ 2.92 olarak hesaplanır. Bir diğer ifade ile, her iki bağımsız değişken için ortalamada bulunan bireylerin bağımlı değişken ölçümü 2.92 olarak tahmin edilmiştir. $X_2$ değişkeni kontrol edildiğinde, $X_1$ değişkeninde gerçekleşecek 1 birim artışın bağımlı değişken için 0.2 birim artışa yol açacağı tahmin edilmiştir. Benzer şekilde, $X_1$ değişkeni kontrol edildiğinde, $X_2$ değişkeninde gerçekleşecek 1 birim artışın bağımlı değişken için 1.55 birim artışa yol açacağı tahmin edilmiştir. Çoklu regresyon modellerinde "kontrol edildiğinde (ceteris paribus)" ifadesi gereklidir. Hesaplanan katsayılar, .20 ve 1.55, araştırmacıyı değişkenler arasındaki ilişki hakkında bilgilendirir. Tabi bu noktada araştırmacının "1 birim artış" ifadesinin tam olarak ne anlama geldiğini bilmesi gerekir.
 
-### a) "Essentially, all models are wrong, but some are useful."
-This aphorism belongs to @georgenorman87. The researcher should provide a convincing discussion about the relevance of the variables included in the regression model to the research questions addressed by the research. If there are important omitted variables, the beta coefficients are probably not valid. Hence the researcher is obligated to provide justifications on variable selections to claim usefulness of the results.
+### a) "Esasen bütün modeller yanlıştır, fakat bir kısmı işe yarardır."
+Bu çıkarım @georgenorman87 tarafından yapılmıştır. Araştırmacı, araştırma sorusu doğrultusunda inşaa edeceği modelde yer alan değişkenleri nasıl seçtiğine yönelik ikna edici argümanlar sunmalıdır. Eğer önemli bir değişken modelin dışında bırakıldı ise kestirilen regresyon katsayıları muhtemelen geçersizdir. 
 
-Consider the case below ;
+Aşağıdaki durumu düşünelim
 
 ```{r, collapse=T, eval=T, cache=T, message=F,echo=T}
-#omit X2 from the synthetic-data
+#sentetik veri setinde X2 göz ardı edilsin
 X2omitted=matrix(cbind(rep(1,12),c(0,-2,6,-2,5,4,3,-4,-4,-3,-2,-1)),ncol=2)
 solve(t(X2omitted)%*%X2omitted)%*%t(X2omitted)%*%Y
 
 ```
-For our synthetic data, $X_1$ and $X_2$ had a correlation of .68. If the researcher fails to include $X_2$ in the model, the coefficient for $X_1$ is estimated to be 1.09. This is a dramatic change from 0.20. Omitting predictors that are related to both the other predictors in the model and the dependent variable will cause the coefficients for the variables that have not been omitted to be misleading. Therefore an important part of the theoretical justification of a regression model is a discussion of variables that may have been omitted.^[This might lead to a clue on popularity of controlled randomized trials.]
 
-In addition to omitted variable issue, the validity of the results from a regression model (the usefulness) is also directly related to the sampling process and appropriate reflection of this process in the model. For example, if sampling weights exist they should not be ignored in the analyses. _Sampling and regression_ is beyond the scope of this chapter.
+Sentetik veri setinde $X_1$ ve $X_2$ arasındaki korelasyon 0.68, $Y$ ve $X_2$ arasındakş korelasyon ise 0.93'tür.Eğer araştırmacı $X_2$ değişkenine modelde yer vermezse $X_1$ için hesaplanan katsayı 1.09 olur. =.20 ile kıyaslandığında bu büyük bir değişikliktir. Bir diğer ifade ile, modelde yer alan bağımsız değişkenler ile ve bağımlı değişken ile ilişkili olduğu halde modelde yer verilmeyen bir değişken var ise hesaplanan regresyon katsayıları yanıltıcıdır. ^[Bu durum gerçek deneysel çalışmaların neden önemli olduğu hakkında ipucu teşkil eder.]
+
+Dışarıda kalan değişken probleminin yanında bir regresyon modelinin geçerliği örneklem seçimine ve örnekleme çerçevesinin (sampling frame) model ile yansıtabilmesine de bağlıdır. Örneğin örnekleme çerçevesinde ağrılıklandırma kullanıldı ise çözümleme esnasında bu ağırlıklar göz ardı edilmemelidir.
 
 
-### b) Strength of relationship between the dependent and independent variables
-The sum of squares for Y, which is also known as the total sum of  squares, can be decomposed into two parts, _the model sum of squares_, which is also the sum of squares for the predicted values, and _the error sum of squares_. The ratio of the model sum of squares to _the total sum of squares_, is called the sample squared multiple correlation coefficient and symbolized as $R^2$. The coefficient $R^2$ measures the strength of association between the dependent variable and the independent variables.  Examine the R code below given for the synthetic data;
+### b) Bağımlı değişken ve bağımsız değişkenler arasındaki ilişkinin kuvveti
+Bağımlı değişkene ait kareler toplamı (total sum of squares) iki ana parçaya ayrıştıtılabilir, _modele ait kareler toplamı_ ve _hataya ait kareler toplamı_. Modele ait kareler toplamının değişkene ait kareler toplamına oranı $R^2$ ile gösterilir ve çoklu belirlilik katsayısı olarak adlandırılır. $R^2$
+bağımlı değişken ve bağımsız değişkenler arasındaki ilişkinin kuvvetini ölçer. 
 
 
 ```{r, collapse=T, eval=T, cache=T, message=F,echo=T}
-# SS total
+# KT total
 n=length(Y)
 TotalSS=t(Y)%*%Y-(n*mean(Y)^2)
 
-# SS Model
+# KT Model
 betahat=solve(t(X)%*%X)%*%t(X)%*%Y
 ModelSS=t(betahat)%*%t(X)%*%Y-(n*mean(Y)^2)
 
 ModelSS/TotalSS
 
 ```
-Also known as _coefficient of determination_, $R^2$ is a biased estimator of the population squared multiple correlation coefficient. A more nearly unbiased estimate is the adjusted squared multiple correlation coefficient. One  benefit of adjusted $R^2$ is computational simplicity. Examine the R code below given for the synthetic data
+
+Fakat $R^2$ evren parametresi için yanlı bir kestiricidir.Daha yansız bir kestirici ise düzeltilmiş belirlilik katsayısıdır,  $R^2_{Adj}$;
+
 
 
 ```{r, collapse=T, eval=T, cache=T, message=F,echo=T}
 
 Rsquared=ModelSS/TotalSS
-#sample size
+#sörneklem
 n=12
 
-#the number of predictors
+#bağımsız değişken sayısı
 p=2
 
-# include intercept? 1 for yes, 0 for no
+# sabit (intercept) varsa 1, yoksa 0 
 
 int_inc=1
 
@@ -143,15 +143,13 @@ AdjustedRsquared
 
 ```
 
-$R^2$ and $R^2_{Adj}$ are useful coefficients; they provide information on how much of the variance is explained. Note that in this example $R^2 = .879$ and $R^2_{Adj}= .852$ are very similar. However if were $R^2 = .25$ then $R^2_{Adj}$ would be .08. When $R^2$ is 1, the model successfully explains 100% of the variance in Y and when $R^2$ is 0 the model does not explain any of the variance in Y. The coefficients $R^2$ and $R^2_{Adj}$ are also useful for comparing the strength of relationship for different set of predictors to predict a specific outcome. The interpretation of the $R^2$ is similar to the interpretation of a correlation coefficient. Depending on the context a small $R^2$ value might be regarded as substantial, or an $R^2$
-value of .7 might be regarded as low.
+$R^2$ ve $R^2_{Adj}$ kullanışlı katsayılardır ve ne kadar varyansın model ile açıklandığını belirtir. Örneğimiz için $R^2 = .879$ ve $R^2_{Adj}= .852$ birbirine yakın değerlerdir.Eğer $R^2 = .25$ olsa idi $R^2_{Adj}$ 0.08 olurdu. $R^2$ 1 ise model varyansın tamamını açıklamıştır (%100). $R^2$ ve $R^2_{Adj}$ aynı bağımlı değişkeni açıklayan farklı bağımsız değişken gruplarını karsşılaştırmak için de kullanılır. $R^2$'in yorumu korelasyon katsayısı yorumunda olduğu gibi konu alanına göre değişir. 0.7 $R^2$ değerinin çok güçlü veya çok zayıf adledilebileceği durumlar olabilir.
 
-
-### c) Residuals and influential data points
-Residuals provide information for assessing potential problems with the model. Inspecting residuals can provide information about deviations from the assumed linearity of the relationships of the dependent variables to the independent variable. Inspecting the distributional properties of residuals is needed to provide evidence for the validity of statistical inference. For example, because the normality assumption is made when conducting significance tests and calculating confidence interval, residuals should follow a straight line on a Quantile-Quantile (QQ) plot. Examine the R code below given for the synthetic data:
+### c) Artıklar ve etkili gözlemler
+Artıklar modelin uyumsuzluğu hakkında bilgi verebilir. Artıkların incelenmesi ile yordayıcı ve yordanan değişklenlerin arasındaki ilişkinin doğrusallığı görsel olarak kontrol edilebilir. Artıkların dağılımsal özelliklerini incelemek örneklemden evrene yorum yapmak için gerekli olabilir. Örneğin istatistiksel anlamlılık testlerinde ve güven aralığı hesaplamaları normal dağılım varsayımına dayandırılmış ise artıkların standart normal dağılım olasılığı grafiğinde (QQ grafiği) düz bir çizgiyi takip etmesi gerekir.
 
 ```{r, collapse=T, eval=T, cache=T, message=F,echo=T}
-#Predicted values
+#tahmin edilen değerler
 Yhat=X%*%betahat
 residuals=Y-Yhat
 residuals
@@ -159,21 +157,21 @@ qqnorm(residuals)
 
 ```
 
-There are three common types of residuals;
+Genellikle artıklar üç farklı yaklaşımdan biri ile incelenir;
 
-• Unstandardized residuals, that is, $Y_i-\hat{Y_i}$.  Unstandardized residuals are on the same scale as Y.
+• Ham artıklar,  $Y_i-\hat{Y_i}$.  Ham artıklar Y ile aynı skaladadır.
 
-• Standardized residuals: The residuals divided by the overall standard deviation of residuals; Standardized residuals are on  a z-score scale (M = 0, SD = 1). When residuals are assumed to be normally distributed, it is common practice to identify outliers as Y values for which the absolute value of the  standardized residual is larger than 2. However, it should be noted that this practice can be misleading because outliers can cause the regression coefficients to be poorly estimated and/or can increase the standard deviation of the residuals and both effects can cause poor outlier detection. In addition, if the residual are in fact normally distributed approximately %5 of the participants will have residuals beyone +/- 2.00.  See @wilcox2012 for more information about outlier detection. 
+• Standardize artıklar:Stanardize artıklar ham artıkların kkendi standart sapmlarına böünmesi ile hesaplanır. z puanı skalasındadırlar (ortalama=0, standart sapma=1). Normal dağılım varsayımı yapıldığında, aykırı değerlerin gözden geçirilmek üzere seçilmesi aşamasında mutlak standardize artıklar için kriter olarak 2 kullanılabilir. Bir diğer ifade ile, mutlak ğeri 2 den büyük olan standardize artıklar aykırı değer tespitinde incelenmelidir. Bununla birlikte bir z dağılımında değerlerin %5'inin +/-2 kriterinin dışında yer alır.
 
 
-• Studentized residual: A studentized residual is ratio of the unstandardized residual to the estimated standard error of the residual.
+• Student artıklar:  Ham artıkların tahmin edilen standart hataya bölünmesi ile hesaplanır.
 
-When investigating residuals , these three types of residuals generally lead to same conclusions. The standardized residual are forced have a z-scale, and thus, -2 and +2 are commonly pronounced cut offs. The studentized residuals are connected to the t distribution; $t_{n-p'-1}$ where n is the sample size $p'$ is the number of coefficients in the model (i.e intercept+two predictors =3). It is argued that when detecting outliers in residuals, investigating the studentized residuals is more convenient (@Rawling98). 
+Artıklar incelenirken bu üç yaklaşımda genellikle aynı sonucu verir. @Rawling98 aykırı değerlerin tespitinde student artıkların ve $t_{n-p'-1}$ serbestlik derecesi ile bir t dağılımının kullanımını tavsiye eder. Buradaki $p'$  modelde yer alan katsayıları temsil eder (örneğimiz için sabit+iki yordayıcı =3)
 
-Scatter plots of residuals vs. predicted values can provide information about whether the assumed linear relationships between the independent variables and the dependent variable are adequate. Ideally the scatter plot should not show a detectable pattern. Here is a plot of studentized residuals vs fitted values, from a regression model fitted to simulated-data in which the linearity assumption is adequate. The simulated data have a sample size of 500 and two independent variables.
+Artık değerleri tahmin edilen değerler ile karşılaştıran saçılım grafikleri doğrusallık hakkında fikir verebilir. Aşağıda 500 katılımcı ve 2 yordayıcı değişken için simüle edilmiş veri üzerine kurulmuş bir regresyon modelinden elde edilen artık değer-tahmin edilen değer saçılım grafiği verilmiştir. Doğrusallık ihlal edilmediğinden grafik üzerinde bir örüntü olmamalıdır.
 
 ```{r, collapse=T, eval=T, cache=F, message=F,echo=T}
-#simulate data
+#veri oluştur
 library(mvtnorm)
 sigma <- matrix(c(4,2,2,3), ncol=2)
 xx <- rmvnorm(n=500, mean=c(0,0), sigma=sigma)
@@ -182,20 +180,19 @@ model=lm(yy~xx[,1]+xx[,2])
 errors=rstudent(model)
 predicted=predict(model)
 
-#Standardized Residuals vs Yhat
 library(ggplot2)
 plotdata=data.frame(errors,predicted)
 ggplot(plotdata, aes(x = predicted, y = errors)) +
-  geom_point() + geom_hline(yintercept=0)+ ylab("Studentized residuals")+
+  geom_point() + geom_hline(yintercept=0)+ ylab("Student artıklar")+
   theme_bw()+stat_smooth()
 ```
 
-The  blue line above, which is determined independently from the regression model, should be compared to the horizontal line at 0. The more similar the two lines, the less likely the linearity assumption is violated.
+Grafikte yer alan mavi çizginin 0 çizgisine benzer olması doğrusallık ihlalinin olmadığını gösterir.
 
-Here is a plot, studentized residuals vs fitted values, from a mis-specified regression model on a simulated-data. The sample size is 100, there are two independent variables, and the relationship of Y and X2 is quadratic.
+Gösterim amaçlı simule edilen bir diğer veri setinde Y ve $X_2$ arasındaki ilişki doğrusal değildir quadratiktir. 
 
 ```{r, collapse=T, eval=T, cache=F, message=F,echo=T}
-#simulate data
+#veri oluştur
 library(mvtnorm)
 sigma <- matrix(c(4,2,2,3), ncol=2)
 xx <- rmvnorm(n=100, mean=c(10,10), sigma=sigma)
@@ -204,20 +201,20 @@ model=lm(yy~xx[,1]+xx[,2])
 errors=rstudent(model)
 predicted=predict(model)
 
-#Studentized Residuals vs Yhat
+
 library(ggplot2)
 plotdata=data.frame(errors,predicted)
 ggplot(plotdata, aes(x = predicted, y = errors)) +
-  geom_point() + geom_hline(yintercept=0)+ylab("Studentized residuals")+
+  geom_point() + geom_hline(yintercept=0)+ylab("Student artıklar")+
   theme_bw()+stat_smooth()
 ```
 
-There is a pattern indicating that the model is omitting a quadratic association.However, this graph does not inform about the source of the quadratic association, see non-linearity section below.
+Bu grafik ilişkinin doğrusal olmadığını gösterse dahi sorunun kaynağını bulmada yardımcı değildir. Araştırmacı artık değerleri yordayıcılar ile karşılaştırarak sorunun kaynağını bulabilir. Bu konuya tekrar değinilecektir.
 
-Unusual residuals should be inspected. Even when the residuals are substantially normally distributed and there is substantially no-pattern for the residual vs predicted value plot, there might be unusual residuals. Deciding whether a residual is unusual or not (e.g 3,4 or 5 standard deviation above), and more importantly whether to keep the observation in the data set or not requires justifications.  Examine the code below to simulate data and examine the studentized  residuals:
+Artık değer grafikleri herhangi bir sorun belirtmese dahi  sıradan olmayan artık değerler dikkatlice incelenmelidir. Bir artık değerin sıradışı  ( örneğin ortalamadan 3,4 veya 5 standart sapma farklı oluşu) olup olmadığına araştırmacı karar verir. Fakat bir gözlemin veri setinden çıkarılması iaraştırmacı tarafından detaylı olarak rapor edilmeli ve gerekçelendirilimelidir.
 
 ```{r, collapse=T, eval=T, cache=T, message=F,echo=T}
-#simulate data
+#veri oluştur
 set.seed(04022017)
 library(mvtnorm)
 sigma <- matrix(c(4,2,2,3), ncol=2)
@@ -226,64 +223,60 @@ yy=(xx[,1]*4)+(xx[,2]*-3)+rnorm(100,0,3)
 tempdata=data.frame(yy,xx,id=1:100)
 model=lm(yy~X1+X2,data=tempdata)
 tempdata$SUTresiduals=rstudent(model)
-# how many of the residuals are larger than a critical value?
-# lets use alpha=.05
+
+# kaç tane artık değer kritik değerin üstünde
+# alfa=.05
 sum(abs(tempdata$SUTresiduals)>qt(c(.975), df=100-3-1))
 
-#which observations?
+#hangi gözlemler?
 tempdata[which(abs(tempdata$SUTresiduals)>qt(c(.975), df=100-3-1)),]
 
 ```
 
-Assume we justified the use of $t_{.975,96}$ as the critical value, in which alpha=.05. We should expect approximately   $n * .05$ (in our case 100*.05=5) cases larger than the critical value. In this particular case, even though 8 cases were identified, none of them seems unusual.
+Tip I hata oranı 0.05 ile $t_{.975,96}$ kritik değerini kullanırsak yaklaşık olarak  $n * .05$  gözleme ait mutlak student ayrık değerin kritik değerden büyük olması beklenir. Son örneğimizde 100 katılımcı olduğu için  bu sayı 100*0.05=5'tir, tespit edilen potansiyel aykırı değer sayısı ise 8'dir. Fakat aykırı olma ihtimali olan gözlemler incelendiğinde bir anormallik görülmemiştir. Burada kullanılan $t_{.975,96}$ ihtiyatli bir kritik değerdir,$t_{.99,96}$ değeri de kullanılabilir. Bu yöntemin amacı potansiyel aykırı değerleri tespit edip incelemektir. Veri setine aşina olan araştırmacı hangi gözlemlerin sıradışı olduğunu söyleyebilir. 
 
-If the researcher detects an abnormality and further, if the researcher decides to remove the observation from the data, it should be done one observation at a time. The justification of removing a data point should be given clearly. A better alternative, on the other hand, may be to use an estimation method that is robust to outlying data points.
+Araştırmacı sıradışılık farkeder ve gözlemleri veri setinden çıkarmaya karar verirse bunu birer bire yapmalıdır. Belirlenen en sıradışı gözlem çıkarılıp analizler tekrarlanmalıdır. Eğer gözlem veri setinden çıkarılacaksa sebepleri detaylı bir şekilde açıklanmalıdır. Bununla beraber, aykırı değerlere dirençli yöntemlerde kullanılabilir. Güçlü bir gerekçesi olmadığı sürece gözlemlerin veri setinden çıkarılması doğru değildir.
 
-R program is convenient for  investigating influential data points. Examine _?influence.measures_ below for the simulated data set;
+R programlama dili ile etkili gözlemleri tespit etmekte oldukça kolaydır.Etkili gözlem, veri setinden çıkarıldığında sonuçları değiştirebilecek gözlem olarak tanımlanabilir . _influence.measures_ fonksiyonu 5 farklı ölçüm hesaplar;
 
 ```{r, collapse=T, eval=T, cache=F, message=F,echo=T}
 summary(influence.measures(model))
 ```
 
+Bu örnekte 12,33,41,42,50,64 ve 100 numaralı gözlemlerin etkili olma potansiyeli vardır. Tabloda görüldüğü gibi bu gözlemlerin hangi kritere göre seçildiği (*) işareti ile gösterilmiştir. Örneğimizde 7 gözlem de _kovaryans oranı_ kriterine göre etkin bulunmuştur. Bu katsayı, gözlemlerin, regresyon katsayılarına ait örneklem varyansına  etkisini ölçmeye çalışır. $1+(3p'/n)$ ve $1-(3p'/n)$ sınırları dışında kalan _kovaryans oranı_ katsayısına sahip gözlemler influence.measures fonksiyonu tarafından işaretlenir. Örneğimizde n=100 ve p'=3 olduğundan kritik değerler 1.09 and .91 olarak hesaplanır. 
 
-This output reports  5 different measures. 
+Dfb (DFBETAS) değeri, gözlem çıkarıldığında regresyon katsayılarının ne kadar değişeceği hakkında bilgi vermeye çalışır. Gözlem çıkarıldıktan sonra hesaplanan yeni katsayı ile eski katsayı arasındaki farki yeni katsayının standart hatasına böler. Yani bir t istatistiğidir. Hesaplanan değer $2/\sqrt(n)$ kritik değerinden büyük ise influence.measures fonksiyonu gözlemi işaretler. Örneğimizde kritik değer $2/\sqrt(100)=.2$
 
-In this example, cases 12, 33, 41, 42, 50, 64 and 100 are reported to be _potentially_ influential. As they highlighted by an asterisk, they labeled as potential using the covariance ratio criteria (cov.r). This value reports the impact of an observation on the sampling variances of the regression coefficients. Values larger than $1+(3p'/n)$ and lower than $1-(3p'/n)$ are labeled as influential, in our case, n=100 and p'=3, hence the cut offs are 1.09 and .91. 
+dffit, gözlem veri setinden çıkarıldığında o gözlem için yeni tahminin ne ölçüde değişeceği hakkında bilgi vermeye çalışır. $2*\sqrt{\frac{p'}{n}}$ kritik değerinden büyük olan mutlak dffit değerleri influence.measures fonksiyonu tarafından işaretlenir.
 
-The Dfb (DFBETAS) for each predictor reports how much the coefficient for the predictor changes when the case is removed. It is the difference between the two coefficients divided by an estimate of the standard error of the new coefficient and therefore is on the scale of a t statistic.  R  places an asterisk if the value is larger than $2/\sqrt(n)$. For this specific illustration  the cut off value is $2/\sqrt(100)=.2$.
+Cook uzaklğı (cook.d) bir gözlemin bütün regresyon katsayıları üzerindeki etkisini aynı anda ölçmeye çalışır. $F_{.5,p',n-p'}$ kritik değerinden büyük olan değerler influence.measures fonksiyonu tarafından işaretlenir. Cook uzaklığı aynı zamanda belli bir gözlemin veri setinden çıkarılması durumunda geri kalan tahmini değerlerin ($\hat{Y_i}$) ne kadar etkilendiğini ölçmeye çalışır.
 
-The dffit reports the change in the predicted value for the $i^{th}$ case when the $i^{th}$ case is removed from the data. The criterion for identifying potentially influential data points is $2*\sqrt{\frac{p'}{n}}$.
+Leverage değeri (Hat Diag) bir gözlemin diğer gözlemlerden ne kadar uzak olduğunu ölçmeye çalışır. $2p’/n$ kritik değerinden büyük olan leverage değerleri potansiyel etkili gözlemdir ve influence.measures fonksiyonu tarafından işaretlenir.  
 
-Cook’s distance (cook.d) measures the influence of a particular case on all of the estimated coefficients and  values larger than $F_{.5,p',n-p'}$ are highlighted. Cook’s distance also measures influence of omitting a particular case of the predicted values for all of the remaining cases.
-
-Leverage Values (Hat Diag) measure the distance of an observation compared to other independent variables. Values larger than $2p’/n$ are considered to identify potentially influential data points.
-
-It is researcher's responsibility to examine any potentially influential data points.
+Potansiyel etkili gözlem olarak işaretlenen gözlemlerin değerlendirilmesi araştırmacının sorumluluğundadır. Daha önce belirtildiği gibi, etkili bir gözlemin veri setinden çıkarılıp çıkarılmaması önemli bir karardır. Veri setinden çıkarılan bir gözlem varsa sebepleri detaylı olarak açıklanmalıdır. 
 
 
-### d) _Equal variance assumption_ 
-The standard errors of the of the coefficients are calculated as the square roots of the diagonal elements of $\hat\sigma^2(X′X)^{-1}$, where $\hat\sigma^2$ is the variance of the residuals. Examine the code below given for the synthetic data set:
+### d) _Eş varyanslılık varsayımı_
 
-When using the OLS with an assumption of normally distributed Y variable, the distribution of $\beta$ can be obtained. Examine the code below given for the synthetic-data set;
+Bağımlı değişkenin normal dağıldığı varsayımı ve OLS yöntemi ile regresyon katsayılarının $\beta$ dağılımları hesaplanabilir. Bu sayede regresyon katsayıları için standart hatalar $\hat\sigma^2(X′X)^{-1}$ ile kestirilebilir. Bu eşitlikteki $\hat\sigma^2$ hata terimlerinin varyansıdır. 
+ 
 
 ```{r, collapse=T, eval=T, cache=T, message=F,echo=T}
-#Residuals
+#artıklar
 s2 <- (t(residuals) %*% residuals)/(nrow(Y)-nrow(betahat))  
 Var_betahat <- s2[1,1]*solve(t(X)%*%X)  
 
 ```
 
-The equation $\sigma^2 (X'X)^{-1}$ is valid under the assumption of homogeneity, that is, observations on the Y variable have a common variance controlling for the independent variables. In other words, every observation of Y has the same amount of information (@Rawling98). With this assumption, regression coefficients are selected to minimize $\sum_{i=1}^n(Y_i-\hat{Y_i})^2$. 
-In this expression equal weights are given to the residuals for every case.. If homogeneity is questionable the estimator can be modified to allow for unequal weights or replaced. Alternatively the Y variable can be transformed  or the estimator of the standard error can be modified (see package ‘sandwich’ @R-sandwich). Otherwise, the standard error of $\hat\beta$ 
-could be underestimated or overestimated. Underestimation results in Type I error rates that are larger than the alpha level used in hypothesis tests and confidence intervals and over estimation results in reduced statistical power. It is common practice to plot residuals against the predicted values to study heterogeneity.  Examine the code below to simulate data with unequal  variance and examine the studentized  residuals:
+$\sigma^2 (X'X)^{-1}$ eşitliği homojen varyans varsayımı altında geçerlidir. Bu varsayım, bağımsız değişkenler kontrol edildiğinde bağımlı değişkenin eş varyanslılık göstermesi durumudur. Bir diğer deyişle, bağımlı değişken için yapılmış her bir gözlem aynı miktarda bilgi sağladığı varsayılır (@Rawling98). Bu varsayım ile birlikte regresyon katsayıları $\sum_{i=1}^n(Y_i-\hat{Y_i})^2$ toplamını minimize etmek üzere kestirilir. Bu eşitlikte her bir artık değer eşit bir ağırlığa sahiptir. Eğer eş varyanslılık varsayımı ihlal ediliyorsa artık değerlere farklı ağırlık vererek kestirici modifiye edilebilir veya başka bir dirençli kestirici kullanılabilir. Başka bir alternatif olarak bağımlı değişkenin transformasyonu kullanılabilir veya standart hataların tahmin yöntemi değiştirilebilir (bakınız @R-sandwich). Aksi takdirde $\hat\beta$ için standart hatalar, eş varyanslılığın nasıl ihmal edildiğine evren parametresine kıyasla gerekenden büyük veya küçük hesaplanabilir. Eğer küçük hesaplanırsa Tip I hata oranı alfadan daha büyük olabilir. Eğer büyük hesaplanırsa istatistiksel güç yitirilir. Eş varyanslılık hipotezi, artık değerler ile tahmin edilen değerlerin kıyaslandığı bir grafik üzerinden incelenebilir.  Eş varyanslılığın zedelendiği bir durum;
 
 ```{r, collapse=T, eval=T, cache=T, message=F,echo=T}
-#simulate data
+#veri oluştur
 set.seed(03032017)
 library(mvtnorm)
 sigma <- matrix(c(1,.7,.7,1), ncol=2)
 xx <- rmvnorm(n=100, mean=c(1,1), sigma=sigma)
-#heteroscedasticity function
+#heteroscedasticity ekle
 hts=function(v1,v2){2+.5*v1+.5*v2}
 yy=5+xx[,1]*5+xx[,2]*5+rnorm(100,0,hts(xx[,1],xx[,2]))
 model=lm(yy~xx[,1]+xx[,2])
@@ -291,21 +284,20 @@ model=lm(yy~xx[,1]+xx[,2])
 errors=rstudent(model)
 predicted=predict(model)
 
-#Studentized Residuals vs Yhat
+#student artıklar ve tahmin edilen Y
 library(ggplot2)
 plotdata=data.frame(errors,predicted)
 ggplot(plotdata, aes(x = predicted, y = errors)) +
-  geom_point() + geom_hline(yintercept=0)+ylab("Studentized residuals")+
+  geom_point() + geom_hline(yintercept=0)+ylab("Student artık değerler")+
   geom_segment(mapping=aes(xend = predicted, yend = 0)) +
   theme_bw()
 
 ```
 
-
-The variance with smaller $\hat Y$ values are smaller. Below is a graph for a regression model on a simulated data with equal variance.
+Genel olarak $\hat Y$ değerleri küçük ise hata varyansı da küçük görülmektedir. Eş varyanslılığın sağlandığı bir durum;
 
 ```{r, collapse=T, eval=T, cache=F, message=F,echo=F}
-#simulate data
+#veri oluştur
 library(mvtnorm)
 sigma <- matrix(c(1,.7,.7,1), ncol=2)
 xx <- rmvnorm(n=100, mean=c(1,1), sigma=sigma)
@@ -314,74 +306,75 @@ model=lm(yy~xx[,1]+xx[,2])
 errors=rstudent(model)
 predicted=predict(model)
 
-#Studentized Residuals vs Yhat
+
 library(ggplot2)
 plotdata=data.frame(errors,predicted)
 ggplot(plotdata, aes(x = predicted, y = errors)) +
-  geom_point() + geom_hline(yintercept=0)+ylab("Studentized residuals")+
+  geom_point() + geom_hline(yintercept=0)+ylab("Student artık değerler")+
   geom_segment(mapping=aes(xend = predicted, yend = 0)) +
   theme_bw()
 ```
 
 
-### e) Hypothesis testing 
-The F test is used within a multiple regression framework to test $H_0: \beta_1=...=\beta_p=0$ , a hypothesis stating that the p regression coefficients are all equal to zero in the population. The alternative hypothesis states that at least one coefficient is not zero. The null hypothesis can be tested using the statistic $MS_{regression}/MS_{residual}$. This statistic follows an F distribution with $p$ and $n-p'$ degrees of freedom. As mentioned earlier, p is the number of predictors and p’ is the number of coefficients (p’=p if there is no intercept). Examine the code below given for the synthetic data, setting Type I error rate = .05;
+### e) Hipotez testi
+$H_0: \beta_1=...=\beta_p=0$ boş hipotezi F dağılımı takip bir istatistik ile test edilebilir. Bu boş hipotez bütün regresyon katsayılarının sıfıra eşit olduğunu öne sürer. Alternatif hipotez ise en az bir regresyon katsayısının sıfırdan farklı olduğunu ileri sürer.  $MS_{regression}/MS_{residual}$ istatistiği  $p$ ve $n-p'$ serbestlik derecesine sahip bir F dağılımı takip eder. $p$ bağımsız değişken sayısını $p'$ ise regresyon katsayıları sayısını temsil eder (sabit yoksa $p=p'$). Alfa=0.05 ve sentetik data için;
 
 
 ```{r, collapse=T, eval=T, cache=T, message=F,echo=T}
-# Model SS and Total SS calculated before
-dfREG=2  #(p=2, predictors X1 and X2)
+# Model KT ve Total KT daha önceden hesaplanmıştır.
+dfREG=2  #(p=2, bağımsız değişkenler X1 and X2)
 dfRES=9  #(n-p', 12-3)
 MSreg=ModelSS/dfREG
 MSres=(TotalSS-ModelSS)/dfRES
 
 MSreg/MSres
 
-#critical F
+#kritik F
 qf(.95,dfREG,dfRES)
 1-pf(MSreg/MSres,dfREG,dfRES)
 ```
 
+t-testi ise $H_0:\beta_{X}=\beta_{hyp}$ boş hipotezi ve $H_1:\beta_{X}\neq\beta_{hyp}$ alternatif hipotezini test etmek için kullanılabilir. Genellikle $\beta_{hyp}=0$ kullanılır.
 
-The t-test is used for investigating $H_0:\beta_{X}=\beta_{hyp}$ vs $H_1:\beta_{X}\neq\beta_{hyp}$.  Most commonly $\beta_{hyp}=0$
-
-The statistic $(b_X-\beta_{hyp})/SE(b_X)$ follows a t-distribution with N-p' degrees of freedom.Examine the code below given for the synthetic-data;
+$(b_X-\beta_{hyp})/SE(b_X)$ istatistiği N-p'  serbest dağılımına sahip bir t dağılımı takip eder.
 
 
 ```{r, collapse=T, eval=T, cache=T, message=F,echo=T}
-# test if the coefficient for X2 is different than 0
-Bhyp=0  #hypothesized value
+# X2 regresyon katsayısı 0'dan farklı mı
+Bhyp=0  #boş hipotez değeri
 
-# estimated coefficient for X2 (see betahat calculated before)
+# betahat daha önceden hesaplanmıştır
+# X2 için hesaplanan katsayı
 bx2=betahat[3]  
 
-# estimated SE for X2 (see var_betahat calculated before)
+# Var_betahat daha önce hesaplanmıştır
+# X2 regresyon katsayısına ait standart hata
 se_bx2=sqrt(Var_betahat[3,3])
 
-#t statistic
+#t istatistiği
 (bx2-Bhyp)/se_bx2
 
-# t critic
+# t kritik değeri
 qt(.975,9)
 
-#p value
+#p değeri
 2*(pt(-abs((bx2-Bhyp)/se_bx2),9))
 
 ```
 
 
-### f) Variable Selection
-Broadly speaking there are two situations in which multiple regression is used to analyze data. 
+### f) Değişken seçimi
+Uzak bir bakışaçısından, çoklu regresyonun kullanıldığı iki senaryo vardır.
 
-The first is illustrated by the following example. A social science researcher conducts an extensive literature review, identifies all independent variables relevant to the research questions, collects the data, estimates a model in which all independent variables are included and reports results for this model. 
+İlk senaryo: Sosyal bilimci alan yazını dikkatli bir şekilde inceler, araştırma sorusu ile ilgili olan bağımsız değişkenleri belirler, gereken örneklem büyüklüğüne karar verir, veriyi toplar,bütün bağımsız değişkenleri içeren bir model kurar ve sonuçları raporlar
 
-The second is illustrated by an example in which the researcher has data on a very large set of variables and does not know prior to analyzing the data which variables will be included in the final model that will be reported. This might happen because the researcher is working in a relatively new research area and collects data on a wide variety of variables or is conducting a secondary data analysis of a data set with a wide variety of predictors. In either case the researcher may want to begin by conducting variable selection that is using statistical results to select the best subset of many independent variables.  There are several approaches to select the best subset of predictors. For example, stepwise regression, backward selection or forward selection is covered in many sources. However, in our experience, when applied to the same data set these three approaches are likely to give different answers.
+İkinci senaryo: Sosyal bilimcinin oldukça büyük bir veri setine erişimi vardır ve hangi bağımsız değişkenlerin modelde yer alacağına dair önceden bir kararı yoktur. Bu durum, (a) araştırmacının yeni bir teori üzerinde çalıştığı ve bir çok değişkeni ölçtüğü durumlarda durumlarda veya (b) daha önceden toplanmış bir veri seti üzerinde (secondary data) çalıştığı durumlarda görülebilir. Her iki durumda da araştırmacı en iyi tahmin kabiliyeti gösteren değişkenleri seçmek isteyebilir. Bu seçim işlemi için farklı yaklaşımlar mevcuttur, örneğin adım adım seçim (stepwise), eleme ile seçim (backward) veya ekleme ile seçim (forward). Fakat bizim tecrübemize göre tamamen aynı veri setine uygulandığında bile bu yöntemler farklı sonuçlar vermektedir. 
 
-A convenient approach with R is to study all possible regressions.For introductory purposes, examine the code below given for a simulated data set;
+R ile oldukça kolay tamamlanabilecek bir diğer değişken seçme yöntemi mümkün olan bütün regresyonları koşmaktır. Tanıtım amacı ile yazılan R kodunu inceleyiniz;
 
 
 ```{r, collapse=T, eval=T, cache=T, message=F,echo=T}
-#simulate data
+#veri oluştur
 set.seed(02082017)
 library(mvtnorm)
 sigma=matrix(c(5.899559,4.277045,3.906341,
@@ -397,9 +390,8 @@ formula <- formula(paste("yy ~ ",
 allpossreg <- regsubsets(formula,nbest=3,data=simdata)
 aprout <- summary(allpossreg)
 
-#this functions reports more than R-squared and adjusted R-squared
-#examine str(aprout)
-
+# str(aprout) u inceleyiniz
+# bu fonksiyon R2 ve Düzeltilmiş R2 den başka kriterler de hesaplar
 
 APRtable=with(aprout,round(cbind(which,rsq,adjr2),3))
 APRtable=data.frame(APRtable,check.rows = F,row.names = NULL)
@@ -407,10 +399,9 @@ APRtable$ppri=rowSums(APRtable[,1:4])
 kable(APRtable)
 ```
 
-This table reports that intercept and $X_2$ only model results in an $R^2$ value of .753. When all predictors included, the $R^2$ reaches to .890; however, excluding the X1 from the full model reduced the $R^2$ only by .019. Below is a graphical decpiction.
+Bu tabloya göre sabitin ve sadece $X_2$ değişkeninin olduğu model $R^2=.753$  sonucunu vermektedir. Bütün değişkenler eklendiğinde $R^2=.890$ olur, fakat $X_1$ in modelde yer almaması $R^2$ değerini sadece .019 düşürür. Grafiği inceleyiniz
 
-
-```{r, message=F,warning=F, out.width='50%', fig.show='hold', fig.cap='All Possible Regressions'}
+```{r, message=F,warning=F, out.width='50%', fig.show='hold', fig.cap='Mümkün olan bütün regresyonlar '}
 require(ggplot2)
 ggplot(APRtable, aes(x=ppri-1, y=rsq)) +
     geom_point(shape=1,size=3)+   
@@ -432,61 +423,61 @@ ggplot(APRtable, aes(x=ppri-1, y=adjr2)) +
 ```
 
 
-### g) Colliniearity
-Collinearity is the degree to which the predictors are correlated among themselves.
-The correlation between predictors is a concern in regression because the standard errors of the coefficients increase as collinearity increase and therefore collinearity hides the individual contribution of each predictor in the regression equation.
+### g) Güçlü doğrusal bağlantı sorunu
+Bağımsız değişkenlerin birbiri ile çok güçlü olarak ilişkili olması tahmin sürecinde istenmeyen sonuçlara yol açabilir. Bu durum doğrusal bağlantı (collinearity) sorunu olarak bilinir. Standart hatalar doğrusal bağlantı arttıkça artar çünkü bu sorun her bir bağımsız değişkenin tahmin sürecine olacak olumlu katkısını saklar.
 
+Açıklama amacı ile iki bağımsız değişkeninin olduğunu düşünelim, bu değişkenler arasındaki korelasyonun yüksek olduğu durumda iki tür problem oluşabilir, (a) regresyon katsayıları istikrarsız olabilir, aynı evrenden çekilen örneklemler ile çok farklı katsayılar elde edilebilir, (b) istatistiksel olarak anlamlı bir $R^2$ bulunsa dahi katsayılar istatistiksel olarak sıfırdan farksız olabilir.
 
-As an illustration suppose there are two independent variables with r = .9. You MIGHT have two types of problems:
-The regression coefficients become unstable (i.e. they would vary a great deal across different samples obtained from the same population).
-
-
-You may obtain a statistically significant $R^2$ but not statistically significant regression coefficients.
-
-Variance inflation factor (VIF) is helpful to detect collinearity in regard to a particular independent variables and can be applied in models two or more independent variables. The formula is $VIF_x=\frac{1}{1-R^2_X}$   where $R^2_X$ is the $R^2$ when the predictor is regressed on the remaining independent variables. Large VIF values are indicator of possible multicollinearity. Commonly pronounced cut off values are 4 and 10, however VIF values are indirectly affected by sample size and variance (@obrien09). When large VIF values are detected, the researcher should examine the problem. It might be justifiable to (a) leave out one of the highly correlated predictor, (b) combine the two highly correlated variable. The decision should be made cautiously given that the possible solution might be more problematic than a large VIF value, see @obrien09. Examine the code below given for a simulated data set;
+Varyans şişkinliği faktörü (Variance inflation factor,VIF) çoklu doğrusallık tespitinde kullanılabilir,$VIF_x=\frac{1}{1-R^2_X}$ . Bu eşitlikte  $R^2_X$ X değişkeni çıkarıldığında hesaplanan $R^2$ değeridir. Büyük VIF değerleri potansiyel doğrusallık problemini işaret eder.Telaffuz edilen kritik VIF değerleri 4 ve 10 dur, fakat VIF değerleri dolaylı da olsa örneklem büyüklüğüne ve değişken varyansına göre değişebilir (@obrien09). VIF değerleri büyük ise araştırmacı problemin kaynağını incelemedir. Araştırmacı şu seçeneklerden bir tanesini savunmaya çalışabilir, (a) yüksek korelasyona sahip iki değişkenden birini modelin dışında tutma, (b) yüksek korelasyon gösteren iki değişkeni birleştirme. Karar dikkatli bir şekilde verilmeli ve yeni sonuçlar ile eki sonuçlar kıyaslanmalıdır. 
 
 ```{r, collapse=T, eval=T, cache=F, message=F,echo=T}
-#check correlations among predictors
+#korelasyonları kontrol et.
 cor(simdata[,2:4])
 
-#the largest correlation is.73
-#no multicollinearity expected
+#en yüksek korelasyon .73, 
+#çoklu doğrusallık problemi beklenmez
 
 library(car)
 vif(lm(yy~X1+X2+X3,data=simdata))
-# no problematic VIF values
+# VIF değerleri düşük
 
 ```
 
 
-### h) Non-linearity
-In the presence of a non-linear relation between the dependent variable and any given independent variable, ignoring non-linearity is simply a validity concern due to the omitted variable issue. Examining the residuals is helpful to detect non-linearity. Residuals should be plotted against predicted and independent variables. A common practice is to include higher order variables in the model, for example, if the plot indicates a non linear pattern for $X_k$ against residuals, $X_k^2$ might be needed in the model. The type of the non-linearity , such as quadratic, cubic or quartic should be treated accordingly. @gelman07 , commenting on age variable when the age and dependent variable are not linearly associated, prefers treating the variable as a categorical predictor. Alternatively transformations of the dependent or independent variable may be employed. 
-
-### i) Correlated errors and nonindependent errors
-Errors should not be correlated or more broadly should be independent. When such dependency is not addressed, regression results are invalid. This topic ,however, is well beyond the scope of this introductory material. Correlated errors are likely to distort the standard errors for the beta coefficients. This is not desired. In social sciences, correlated errors might be present when measurements are repeated. Multilevel models and latent growth models has been developed to address appropriate modeling of repeated measure designs. Nesting of participants in subgoups is another common source of non-independent errors in social sciences. Multilevel models are one popular solution to model clustered data.
-
-### j) Centering and Scaling
-Consider an example in which mother’s age at the date of her child’s birth (maternal age) is used to predict IQ at age 10. The intercept estimates average IQ for children whose mother’s maternal age was zero and cannot be meaningfully interpreted.  Centering maternal age around its mean results in an intercept which estimates average IQ for children whose mother’s maternal age was at the mean of the sample and can be meaningfully interpreted. Or consider predicting absences from work from an anxiety measure. A score of zero is possible score on the anxiety measure, but does not occur in the sample. The intercept estimates average absences for employees whose anxiety level is outside the range of the data and therefore represents an extrapolation for the data. Centering around the mean for the sample solves this problem. Another approach would be to center around an anxiety score that is in the range of the data and considered high. Or consider a study of income and an index of health. Income is on a scale in which a change of 1 represents a change of 1 dollar in income.  The regression coefficient is .001, which represents a trivial change in the index. Dividing X by 1000 so that a change of 1 represents a change of 1000 dollars in income results in  a regression coefficient of 1, which is a small but not trivial change in the index may make the results easier to think about. 
+### h) Doğrusal olmayan regresyon
+Eğer bağımlı değişken bağımsız değişkenlerden biri ile lineer olmayan bir ilişkiye sahip ise, bu durumun görmezden gelinmesi önemli bir değişkenin dışarda bırakılması problemi ile aynıdır. Artık değerlerin incelenmesi lineer olmayan ilişkilerin tespitinde işe yarardır. Kullanılan yöntemlerden biri, bağımsız değişkenin üs kuvvetleri ile oluşturulacak yeni bir değişkenin modele eklenmesidir. Örneğin artık grafiği $X_k$ ve artıklar arasında karesel (quadratic) bir ilişki varsa $X_k^2$ modele alınarak artık model uyumu tekrar incelenebilir. Bir diğer alternatif bağımsız değişkenin transform edilmesidir.
 
 
-### k) Standardized coefficients
-A related topic to linear transformations is to use a z-score for the continious predictors by substracting the mean and dividing by the standard deviation. Depending on the nature of the variable, using the z scores might ease the communication between researchers. Here are interpretation examples;
-Raw scores: An increase in anxiety of 1 unit is predicted to correspond to an increase of 3 units in achievement, holding the remaining predictors constant.
-z-scores: An increase in motivation of 1 standard deviation is predicted to correspond to an increase of 0.25 standard deviations in achievement, holding the the remaining predictors constant.
+### i) Korelasyon gösteren veya bağımsız olmayan hata terimleri
+Hatalar birbiri ile korelasyonlu olmamlıdır, daha kapsayıcı bir ifade ile, hatalar bağımsız olmalıdır. Bağlı olma durumu var ise bu durum göz ardı edilirse regresyon sonuçları geçersizdir. Fakat bu konu bu tanıtım materyalinin kapsamı dışında kalır. Sosyal bilimlerde tekrarlı ölçümler kullanıldığında (boylamsal çalışma) korelasyon gösteren hata terimleri oluşabilir, bu durumda araştırmacılar Örtük gelişim modelleri (latent growth models) veya çok düzeyli modeller (multilevel models) kullanabilir. Eğer hataların bağlı olma durumu bireylerin aynı kümelerden gelişi ise (nested or clustered data) yine çok düzeyli modeller kullanılabilir. 
 
-### l) Interactions
-We covered the basic idea of interaction in our ANOVA section. Ignoring an interaction is an omitted variable problem because an interaction affects the interpretation of main effects. For example, suppose a researcher investigates the relationship between mathematics achievement at the end of the school year ($Y$), effort measured by voluntary homework completed and submitted during the year ($X_1$), and mathematics achievement at the end of the preceding year ($X_2$). Using the model $Y_i=\beta_0+\beta_1X_{i1}+\beta_2X_{i2}+\epsilon_i$  assumes that the relationship between $Y$  and $X_1$ does not depend on $X_2$ and will be misleading if the assumption is false.  A common model used to investigate interactions is ;
+
+### j) Bağımsız değişken üzerine işlemler (Centering and Scaling)
+Annenin doğum esnasındaki yaşının çocuğun 10 yaşındaki IQ puanını tahmin etmeye çalışan bir çalışma düşünelim. Bu durumda regresyon sabiti anne yaşının 0 olduğu durumda çocuğun IQ puanını gösterir. Bu anlamlı olarak yorumlanabilir bir katsayı değildir. Eğer anne yaşı ortalama etrafında merkezileştirilirse, bir diğer ifade ile, her annenin yaşından örneklemdeki annelerin ortalama yaşı çıkarılırsa, regresyon sabiti yorumlanabilir. Bu durumda yaş değişkeninde sıfır, yaş ortalamasını temsil eder ve regresyon sabiti de ortalama yaştaki bir annenin çocuğunun 10 yaşındaki tahmini IQ puanını verir. Benzer bir örnek olarak, işe devamsızlık değişkeninin iş stresi değişkeni ile açıklanmaya çalışıldığını düşünelim. İş stresi puanları 10 ila 50 arasında değişiyorsa regresyon sabitinin anlamlı bir yorumu olmaz. Araştırmacı iş stresi puanları ortalama etrafında merkezileştirmeyi veya seçtiği bir değeri (örneğin 40) stres puanlarından çıkararak sabitin anlamlı bir şekilde yorumlanmasını sağlayabilir.
+Başka bir örnekte gelir değişkeninin sağlık değişkeni üzerine etkisi araştırılsın. Gelir verisinde bir birimın 1 dolar olduğunu ve bu değişkene ait regresyon katsayısının .001 olduğunu düşünelim. Araştırmacı bu durumda gelir değişkenini 1000'e bölerek birimi 1 dolardan 1000 dolara çıkarabilir. Bu durumda regresyon katsayıso .001 değil 1 olacaktır. Bu durum araştırmacının yorum yapmasını kolaylaştırabilir.
+
+
+### k) Standardize edilmiş katsayılar
+Yukarıda bahsedilen lineer transformasyonun yanında z transformasyonu da yapılabilir. Her sürekli bağımsız değişken için, değerlerden ortalama çıkarılıp standart sapmaya bölünebilir. Değişkenin doğasına bağlı olmak kaydı ile, standardize edilmiş bir değişkenin yorumu daha anlamlı olabilir;
+Ham puanlar için yorum: Endişe puanlarındaki bir birim artışın akademik başarı değişkeninde 3 birim azalmaya yol açabileceği tahmin edilmiştir.
+z-puanları: Motivasyon değişkeninde gerçekleşecek bir standart sapma artışın, başarı değişkeninde 0.25 standart sapma artışla ilişkili olabileceği tahmin edilmiştir.
+
+### l) Etkileşimler (Interactions)
+ANOVA bölümünde etkileşim konusu kısaca ele alınmıştı. Değişkenler arası etkileşimin modelde yer alması gerekirken göz ardı edilmesi önemli bir değişkenin dışarıda bırakılması problemidir. Ayrıca iki değişken arasındaki etkileşimin sonuçları etkilemesi durumunda asıl etkilerin yorumlanması yanıltıcı olabilir. Örneğin bir araştırmacının, öğrencilerinin merkezi bir sınavda matematik başarısını  ($Y$) tahmin etmeye çalışsın. Ödevlerden alınan puanlar ($X_1$) ve öğretmen yapımı sınavlardan alınan puanların ($X_2$) başarı üzerinde etkili olup olmadığını incelesin. Kuracağı eşitlik $Y_i=\beta_0+\beta_1X_{i1}+\beta_2X_{i2}+\epsilon_i$  olursa araştırmacı $Y$ ve $X_1$ arasındaki ilişkinin  $X_2$'ye bağlı olmadığını varsayar. Eğer bu varsayım hatalı ise sonuçlar yanıltıcı olabilir. Etkileşimin varlığını kontrol etmek için 
+
 
 \begin{equation} 
  Y_i=\beta_0+\beta_1 X_{i1}+\beta_2 X_{i2}+\beta_3 X_{i1} X_{i2}+ \epsilon_i
   (\#eq:olsinteract)
 \end{equation} 
 
-The slope of the relationship between $Y$ and $X_1$, for example, is $\beta_1+\beta_2 X_{i2}$ indicating that the relationship depends on $X_2$. Similarly the slope relationship between $Y$ and $X_2$ is $\beta_2+\beta_1 X_{i1}$.  Consideration of $\beta_1+\beta_2 X_{i2}$ shows that $\beta_1$ is the slope of the relationship between $Y$ and $X_1$ when $X_2 = 0$ and therefore $\beta_1$ cannot be meaningfully interpreted if $X_2 = 0$ is not a meaningful score or is outside the range of the data. This problem can be addresses by centering $X_1$ and $X_2$ around their respective means. It should be noted that the model in Equation \@ref(eq:olsinteract) assumes that the interaction can be accurately modeled by including $\beta_2 X_{i1}X_{i2}$ in the model. This assumes the relationship between $Y$ and $X_1$ is linear when is $X_2$ controlled.  Violations of assumption  of the model in Equation \@ref(eq:olsinteract) should be investigated.R can be helpful in interpreting interactions by 3-dimension graphs. Examine the code below given for a simulated data set to highlight the use of R package _visreg_ (@R-visreg)
+modeli test edilebilir. Burada $Y$ ve $X_1$ arasındaki ilişki $\beta_1+\beta_2 X_{i2}$ ile gösterilir, bu $Y$ ve $X_1$ arasındaki ilişkinin $X_2$'ye bağlı olduğunu gösterir. Benzer şekilde $Y$ ve $X_2$ ilişkisi $\beta_2+\beta_1 X_{i1}$ ile gösterilir. 
+$\beta_1+\beta_2 X_{i2}$ düşünüldüğünde $\beta_1$, $Y$ ve $X_1$ arasındaki ilişkinin $X_2 = 0$ iken ne olduğunu belirtir. Eğer $X_2 = 0$ anlamlı değil ise $\beta_1$ yorumu da anlamlı değildir. 
+ Eşitlik \@ref(eq:olsinteract) etkileşimin $\beta_2 X_{i1}X_{i2}$ ile doğru bir şekilde dikkate alındığı varsayımını yapar. Yapar ayrıca bu durum $X_2$ konrol edilirken $Y$ ve $X_1$ arasındaki ilişki doğrusal ise geçerlidir. Eşitlik \@ref(eq:olsinteract) ile verilen modelin varsayımları incelenmelidir. R ile çizilebilecek grafikler etkileşimleri tespit etmede yardımcı olabilir. _visreg_ (@R-visreg) paketi ile çizilen grafiklere bakalım;
 
 ```{r, collapse=T, eval=T, cache=F, message=F,echo=T}
-## manipulate simdata
-## Yvar: dependent variable on no interaction
+## simule edilmiş veriyi manipüle et
+## Yvar: etkileşim yokken  bağımlı değişken
 simdata$Yvar=3+simdata$X1*2+simdata$X2*3+rnorm(nrow(simdata),0,5)
 
 library(visreg)
@@ -496,11 +487,11 @@ visreg2d(model, "X1", "X2", plot.type="persp")
 
 ```
 
-The surface is flat indicating no interaction. 
+Düz yüzey etkileşimin olmadığını işaret eder.
 
 ```{r, collapse=T, eval=T, cache=F, message=F,echo=T}
-## manipulate simdata
-## Yvarint: dependent variable on a interaction
+## simule edilmiş veriyi manipüle et
+## Yvar: etkileşim varken  bağımlı değişken
 simdata$Yvarint=3+simdata$X1*1+simdata$X2*2+simdata$X1*simdata$X2*1.5+rnorm(nrow(simdata),0,5)
 
 library(visreg)
@@ -511,31 +502,30 @@ visreg2d(model2, "X1", "X2", plot.type="persp")
 
 ```
 
-The surface is no longer flat in the presence of an interaction.
+Yüzey artık düz değil, etkilesim mevcut.
 
 
-### m) Estimators
-To be added
+### m) Farklı kestiriciler (estimators)
+Eklenecek
 
 
-### n) Robust Regression
-To be added
+### n) Dirençli yöntemler (Robust regression)
+Eklenecek
 
-### o) Sample size and statistical power
-To be added
+### o) Örneklem büyüklüğü ve istatistiksel güç
+Eklenecek
 
-### p) Reliability of variables
-To be added
+### p) Değişkenlerin güvenirliği
+Eklenecek
 
-### q) The nature of the variables
-To be added
+### q) Dğişkenlerin türü 
+Eklenecek
 
-### r) Multiple dependent variables
-To be added
+### r) Birden fazla bağımlı değişken
+Eklenecek
 
-### s) Missing variables
-To be added
-
+### s) Kayıp veri teknikleri
+Eklenecek
 
 
 

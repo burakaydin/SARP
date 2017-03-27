@@ -43,7 +43,7 @@ Uygulamada, standart hatanın hesaplanışı tasarının bağlı mı bağsız m�
 
 
 ## Bağımsız gruplar t-test (The Independent Groups t-test)
-Uşak ilinde yaşayan katılımcıların Toplumsal Cinsiyet Algısı (TCA) puanları yüksek öğretim durumuna göre karşılaştırılmıltır. Her grup için yoğunluk grafikleri;
+Uşak ilinde yaşayan katılımcıların Toplumsal Cinsiyet Algısı (TCA) puanları yüksek öğretim durumuna göre karşılaştırılmıltır (\@ref(dataWBT)). Her grup için yoğunluk grafikleri;
 
 ```{r genattusakcity, collapse=T, eval=T, cache=T, message=F, fig.show='hold', fig.cap='Yüksek Öğretim Durumuna göre TCA puanları '}
 

@@ -1,7 +1,5 @@
-# Correlation
-In our chapter 7, we introduced descriptive statistics; mean, variance, median, kurtosis, etc. These descriptive statistics aimed to ease the communication for a single variable. In other words, instead of transferring the entire raw data set to a colleague (or to a machine), providing these descriptives is generally satisfying and easier. However when the interest is in the association between variables, other measures are needed.
-
-The sum of cross products, $S_{XY}=\sum(X-\bar X)(Y- \bar Y)$, can provide some information about the association. For example Figure \@ref(fig:zerocrossproduct) depicts an X and a Y variable. The sum of cross products for these two variables is zero. 
+# Korelasyon
+Değişkenlerin birbiri ile olan ilişkilerini açıklamak çoğu araştırmacının ilgisini çekmiştir. İki değişkene ait çarpımlar toplamı (sum of cross products) $S_{XY}=\sum(X-\bar X)(Y- \bar Y)$ iki değişken arasındaki ilişki hakkında sınırlı olsa da bilgi verebilir. Örneğin Şekil \@ref(fig:zerocrossproduct) X ve Y değişkeni arasındaki ilişkiyi gösterir ve çarpımlar toplamı sıfırdır.
 
 
 ```{r, collapse=T, eval=T, cache=T, message=F,echo=FALSE}
@@ -18,7 +16,7 @@ dat$crossPRODUCT=dat$deviationX*dat$deviationY
 round(dat,2)
 ```
 
-```{r zerocrossproduct, message=F,warning=F,echo=F,fig.cap='Sum of cross products=0'}
+```{r zerocrossproduct, message=F,warning=F,echo=F,fig.cap='Çarpımlar toplamı=0'}
 
 library(ggplot2)
 ggplot(dat,aes(x,y)) + geom_path()+geom_point(size=2)+
@@ -30,10 +28,11 @@ ggplot(dat,aes(x,y)) + geom_path()+geom_point(size=2)+
   annotate("text", label="negative", x=0.5, y=-0.5, parse=T, fontface =2,size=6) 
 ```
 
-The covariance between two variable is simply $Cov_{XY}=S_{XY}/n-1$, but its a scale dependent measure, the correlation coefficient on the other hand generally has its bounds.
+İki değişken arasındaki kovaryans ise  $Cov_{XY}=S_{XY}/n-1$ ile hesaplanabilir. Fakat kovaryans ölçülen değişkenlerin skalasına bağımlıdır.  Bir diğer ifade ile, değişkenlerin sayısal değerleri arttıkça kovaryans artar. Bu durum kovaryans yorumunu zorlaştırır. Bir korelasyon katsayısı ise genellikle -1 ve 1 arasındadır ve sınırları olduğu için yorumlaması daha kolaydır.
 
-## Pearson correlation coefficient 
-Pearson introduced a correlation coefficient in 1896. This coefficient ranges between -1 and +1, can be calculated as $Cov_{XY}/S_X S_Y$. This coefficient measures the linear relationship between two variables. Figure \@ref(fig:zerocrossproduct) depicts a correlation of zero. Even though X and Y in this figure are related to form a 14-sided polygon, the relation is not linear. Hence the correlation is zero. Figure \@ref(fig:corsample) depicts several other associations; (A) is a perfect positive linear relationship, (B)is a positive correlation of .7, (C) substantially no linear relation, (D) is a correlation of -.4 and (E) is a correlation of -1.
+## Pearson korelasyon katsayısı
+Pearson 1986 yılında bir korelasyon katsayısı hesaplama yöntemi tanıtmıştır. Bu katsayı -1 ile +1 arasında değişir ve $Cov_{XY}/S_X S_Y$ ile hesaplanabilir. Bu katsayı iki değişken arasındaki doğrusal ilişkiyi ölçer. Şekil \@ref(fig:zerocrossproduct) aralarındaki korelasyonun sıfır olduğu iki değişken ile çizilmiştir. Aslında şekil içerisindeki X ve Y bir biri ile ilişkisiz değillerdir çünkü şekil kabaca bir çemberdir. X ve Y beraber bir çember oluşturabilecek ilişkiye sahip oldukları halde , ilişki doğrusal olmadığından, aralarındaki korelasyon sıfırdır.  Şekil \@ref(fig:corsample) aralarında ilişki olan değişkenlere örnekler gösterir,(A) kusursuz pozitif korelasyon, +1, (B) 0.7 pozitif korelasyon, (C) 0 korelasyon, (D) -0.4 korelasyon ve (E) kusursuz negatif korelasyon,-1. 
+
 
 ```{r corsample, echo=FALSE , warning=FALSE, message=FALSE,fig.cap='Correlation examples'}
 par(mfrow=c(2,3))
@@ -44,8 +43,8 @@ p1=ggplot(kor1, aes(x=X1, y=X2)) +
     geom_point(shape=1,size=2) +   
     geom_smooth(method=lm,   
                 se=FALSE,col="red")  +   
-   xlab("Total score") +    
-   ylab("Correct answer ")+     
+   xlab("Toplam puan") +    
+   ylab("Doğru yanıt sayısı ")+     
    ggtitle("(A)")
   
 kor7=data.frame(rmvnorm(800,mean=c(70,70),sigma=matrix(c(10,7,7,10), ncol=2)))
@@ -53,8 +52,8 @@ p2=ggplot(kor7, aes(x=X1, y=X2)) +
     geom_point(shape=1,size=2) +   
     geom_smooth(method=lm,   
                 se=FALSE,col="red")  +    
-   xlab("research self-efficacy ") +    
-   ylab("interest in research")  +   
+   xlab("araştırma yetkinliği") +    
+   ylab("araştırmaya ilgi")  +   
    ggtitle("(B)")
 
 
@@ -63,8 +62,8 @@ p3=ggplot(kor0, aes(x=X1, y=X2)) +
     geom_point(shape=1,size=2) + 
   geom_smooth(method=lm,   
                 se=FALSE,col="red")  + 
-   xlab("Shark attacks") +    
-   ylab("Economic Growth")  +   
+   xlab("Senelik köpek balığı saldırı sayısı") +    
+   ylab("Senelik ekonomik büyüme")  +   
    ggtitle("(C)")
 
 korn4=data.frame(rmvnorm(400,mean=c(70,21),sigma=matrix(c(10,-4,-4,10), ncol=2)))
@@ -72,8 +71,8 @@ p4=ggplot(korn4, aes(x=X1, y=X2)) +
     geom_point(shape=1,size=2) + 
   geom_smooth(method=lm,    
                 se=FALSE,col="red")  + 
-   xlab("Academic Achievement") +   
-   ylab("Classroom size")  +   
+   xlab("Akademik başarı") +   
+   ylab("Sınıf öğrenci sayısı")  +   
    ggtitle("(D)")
 
 korn1=data.frame(X1=seq(0,40,by=1),X2=seq(0,-10,by=-0.25))
@@ -81,8 +80,8 @@ p5=ggplot(korn1, aes(x=X1, y=X2)) +
     geom_point(shape=1,size=2) +   
     geom_smooth(method=lm,   
                 se=FALSE,col="red")  +    
-   xlab("number if incorrect answer") +   
-   ylab("Score")+    
+   xlab("yanlış yanıt sayısı") +   
+   ylab("Puan")+    
    ggtitle("(E)")
 
 library(gridExtra)
@@ -90,48 +89,48 @@ grid.arrange(p1, p2, p3, p4,p5, ncol=3, nrow =2)
 
 ```
 
-###Inference on a Pearson correlation coefficient
-Information from the sample ($r$) can be utilized to make judgement about the population ($\rho$).
+###Pearson korelasyon katsayısının evren bazında yorumu
+Örneklemden gelen bilgi ($r$) , evren ($\rho$) düzeyinde çıkarım yapmak zere kullanılabilir.
 
-__The z transformation__ , assuming a bivariate normality and a sample size of at least 10 (@myerswell13), is a helpful procedure to reach a judgement. The transformation equation is;
+__z transformasyonu__ . İkili normallik (bivariate normality) varsayımı ve en az 10 örneklem ile z transformasyonu kullanılarak evrene ait parametre hakkında yorum yapılabilir (@myerswell13). Transformasyon formülü 
 $$z_r = \frac{1}{2}ln \left( \frac{1+r}{1-r} \right)$$
 
-The standard error is;
+Standart hata
 $$\sigma_r = \frac{1}{\sqrt{n-3}}$$
+Güven aralığı $z_r \pm z_{\alpha / 2} \sigma_r$. Korelasyon katsayısı yorumunu kolaylaştırması amacı ile ters transformasyon $r=\frac{e^{2z_r}-1}{e^{2z_r}+1}$. 
 
-Hence the confidence intervals are $z_r \pm z_{\alpha / 2} \sigma_r$. Back transformation is needed to make interpretation about the correlation coefficient; $r=\frac{e^{2z_r}-1}{e^{2z_r}+1}$. 
-
-Utilizing a normal distribution, a null hypothesis can be tested;
+$H_0:\rho=0$ boş hipotezi normal bir dağılımın uygun olduğu varsayımı ile sınanabilir;
 $$z=\frac{z_r - z_{\rho_{null}}}{\frac{1}{\sqrt{n-3}}}$$
-__The t distribution__ can also be utilized to test $H_0:\rho=0$. 
+
+__t dağılımı__ da $H_0:\rho=0$ boş hipotezini test etmek için kullanılabilir. 
 
 $$t=r\sqrt{\frac{n-2}{1-r^2}}$$
 
-The distribution for this statistic follows a t distribution with a degrees of freedom of $n-2$. 
+Bu istatistik $n-2$ serbestlik derecesine sahip t dağılımını takip eder.
 
-### R codes for Pearson Correlation coefficent 
-For illustrative purposes we selected the city of Bayburt. The Pearson correlation is computed for the association between the Gender Attitudes scores and the annual income per person. The income per person is calculated as "total household income" divided by the "total number of residents in the house".
+### R betiği: Pearson korelasyon katsayısı
+Gösterim amaçlı dataWBT (\@ref(dataWBT)) içerisinde yer alan Bayburt ilçesi seçilmiştir. TCA puanları ile kişi başı senelik gelir arasındaki korelasyon incelenmiştir.
 
 ```{r, collapse=T, eval=T, cache=T, echo=T, message=F}
-# load csv from an online repository
+# CSV yükle
 urlfile='https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv'
 dataWBT=read.csv(urlfile)
 
-#remove URL 
+#URL sil
 rm(urlfile)
 
-#select the city of Elazig
-# listwise deletion for gen_att and education variables
+#Bayburt ilini seç
+#  sıralı silme uygula (listwise deletion)
 dataWBT_Bayburt=dataWBT[dataWBT$city=="BAYBURT",]
 #hist(dataWBT_Bayburt$income_per_member)
 
 ```
 
-The bivariate distribution can be seen in \@ref(fig:testbivarnorm). This is an interactive graph, please use your mouse to inspect it, created with the _rgl_ package  (@R-rgl). 
+İkili normal dağılım \@ref(fig:testbivarnorm zerinden incelenebilir. _rgl_ (@R-rgl) paketi ile oluşturulan bu grafik interaktiftir, fare ile inceleyiniz.
 
-```{r testbivarnorm, collapse=T, eval=T, cache=F, echo=F, message=F, warning=F, fig.show='hold', fig.cap='Gender Attitudes and Income'}
+```{r testbivarnorm, collapse=T, eval=T, cache=F, echo=F, message=F, warning=F, fig.show='hold', fig.cap='Bayburt TCA ve Gelir'}
 
-#kernel densities
+#kernel yoğunluk
 library(MASS)
 dataWBT_Bayburt2=na.omit(dataWBT_Bayburt[,c("gen_att","income_per_member")])
 kernden <- with(dataWBT_Bayburt2,kde2d(gen_att, income_per_member, n = 100))
@@ -155,9 +154,10 @@ col1 <- rainbow(length(kernden$z))[rank(kernden$z)]
 #persp(kernden, phi = 45, theta = 30, shade = .1, border = NA)
 ```
 
-Bivariate normality  seems to be violated. For comparison, below graph \@ref(fig:perfectbinorm).depicts a bivarite normal distribution with r=0.7. Nevertheless, for illustrative purposes we use these data to test the null hypothesis $H_0: \rho=0$ against the non-directional alternative hypothesis $H_1: \rho \neq0$.The scatter plot is provided in \@ref(fig:scatterincgenatt).
+İkili normallik varsayımı gerçekci görünmüyor. Karşılaştırmanız amacı ile \@ref(fig:perfectbinorm) korelasyonun 0.7 olduğu bir ikili normal dağılımı gösterir. 
+Varsayım ihlalinin sonuçları etkileyebileceğini göz ardı ederek, gösterim amaçlı, eldeki veri ile  $H_0: \rho=0$ boş hipotezi $H_1: \rho \neq0$ alternatif hipotezine karşı test edilmiştir.Saçılım grafiği Şekil \@ref(fig:scatterincgenatt) ile verilmiştir.
 
-```{r perfectbinorm, collapse=T, eval=T, cache=F, echo=F, message=F, warning=F, fig.show='hold', fig.cap='Bivariate Normal Distribution '}
+```{r perfectbinorm, collapse=T, eval=T, cache=F, echo=F, message=F, warning=F, fig.show='hold', fig.cap='İkili normal dağılım '}
 library(mvtnorm)  
 kor7=data.frame(rmvnorm(8000,mean=c(0,0),sigma=matrix(c(1,.7,.7,1), ncol=2)))
 #kernel densities
@@ -173,21 +173,21 @@ persp(kernden2, phi = 45, theta = 30, shade = .1, border = NA)
 
 
 
-```{r scatterincgenatt, echo=FALSE , warning=FALSE, message=FALSE,fig.cap='Bayburt: Gender attitudes vs income scatterplot'}
+```{r scatterincgenatt, echo=FALSE , warning=FALSE, message=FALSE,fig.cap='Bayburt TCA ve gelir'}
 p1=ggplot(dataWBT_Bayburt2, aes(x=gen_att, y=income_per_member)) +
     geom_point(shape=1,size=2) +   
     geom_smooth(method=lm,   
                 se=FALSE,col="blue")  +   
-   xlab("Gender Attitudes") +    
-   ylab("Income")
+   xlab("TCA") +    
+   ylab("Gelir")
 p1
 ```
 
-The correlation between these two variables is computed by the _cor_ function in the _stats_ package (@R-base). The _cor.test_ function in the same package performs the t-test and provides a confidence interval based on Fisher's z transformation.
+Bu iki değişken arasındaki korelasyon _stats_ paketinde (@R-base) yer alan _cor_ fonksiyonu ile hesaplanabilir. Aynı paket içerisinde yer alan _cor.test_ fonksiyonu t testi sonuçlarını ve z transformasyonu ile hesaplanmış güven aralığı hesaplarını rapor eder.
 
 
 ```{r, collapse=T, eval=T, cache=F, message=F}
-#use ?cor to see use="complete.obs" is doing casewise deletion
+#?cor komutu ile use = "complete.obs" argümanının ikili silme kullandığını görebilirsiniz
 
 with(dataWBT_Bayburt,cor(gen_att,income_per_member,
                          use = "complete.obs",method="pearson"))
@@ -199,28 +199,28 @@ with(dataWBT_Bayburt,cor.test(gen_att,income_per_member,
          na.action="na.omit"))   
 ```
 
-These procedures can easily be hard coded.Stating $H_0: \rho=0$ and $H_0: \rho \neq 0$ 
+Eğer kendiniz hesaplamak isterseniz,  $H_0: \rho=0$ ve $H_0: \rho \neq 0$; 
 
 ```{r, eval=T,collapse=TRUE,cache=F, message=F}
 sample_r=0.06641641 
-r0=0        #the null
-sample_n=137       # the number of complete.cases
-zr=(0.5)*log((1+sample_r)/(1-sample_r))  # Z transformasyonu
-z0=(0.5)*log((1+r0)/(1-r0))  # Z transformasyonu
+r0=0        #boş hipotez
+sample_n=137       # örneklem sayısı
+zr=(0.5)*log((1+sample_r)/(1-sample_r))  # z transformasyonu
+z0=(0.5)*log((1+r0)/(1-r0))  # z transformasyonu
 sigmar=1/(sqrt(sample_n-3))
 
-#the z test statistic
+#z istatistiği
 (zr-z0)/sigmar
 
 
-ll=zr-(qnorm(0.975)*sigmar)  # lower limit
+ll=zr-(qnorm(0.975)*sigmar)  # alt limit
 
 
-ul=zr+(qnorm(0.975)*sigmar)  # upper limit
+ul=zr+(qnorm(0.975)*sigmar)  # üst limit
 
 
-(exp(2*ll)-1)/(exp(2*ll)+1)  #transformback
-(exp(2*ul)-1)/(exp(2*ul)+1)  #transformback
+(exp(2*ll)-1)/(exp(2*ll)+1)  #ters transform
+(exp(2*ul)-1)/(exp(2*ul)+1)  #ters transform
 
 
 t=sample_r*(sqrt((sample_n-2)/(1-sample_r^2)))        
@@ -229,18 +229,18 @@ p.value = 2*pt(-abs(t), df=sample_n-2)
 p.value
 ```
 
-A percentile bootstrap method might perform satisfactorily as a robust approach (@myerswell13)
+Yüzdeli bootstrap yönetimi varsayım ihlallerine dirençli bir yöntem olabilir (@myerswell13).
 
 ```{r,collapse=T, eval=T, cache=F,message=F}
-#Calculate 95% CI using bootstrap (normality is not assumed)
+#Normallik varsayımı olmadan bootstrap ile %95 güven aralığı hesabı
 set.seed(31012017)
-B=5000       # number of bootstraps
-alpha=0.05   # alpha
+B=5000       #  bootstraps tekrarı
+alpha=0.05   # alfa
 
-#gender attitudes and income
+#TCA ve gelir
 originaldata=dataWBT_Bayburt2
 
-#add id
+# id ekle
 originaldata$id=1:nrow(originaldata)
 
 output=c()
@@ -252,23 +252,20 @@ for (i in 1:B){
   }
 output=sort(output)
 
-## Non-directional 
-# lower limit
+## Yönsüz
+# alt limit
 output[as.integer(B*alpha/2)]
 
-# d star upper
+# d yıldız üst
 output[B-as.integer(B*alpha/2)+1]
 
-# investigate the WRS package
-# library(WRS2)
-# pball(originaldata[,-3])
 
 ```
 
-There are alternatives to percentile bootstrapping for a correlation coefficient, extensively discussed by @wilcox2012. The WRS 2 package offers two alternatives, the percentage bend correlation and the Winsorized correlation. Only for illustrative purposes below is an R code;
+Yüzdeli bootstrap dışında alternatif dirençli yöntemler mevcuttur. @wilcox2012 dirençli korelasyon katsayısı hesaplama yöntemlerini bir araya toplamıştır. WRS2 paketi *pbcor* ve _wincor_ fonksiyonları incelenebilir.
 
 ```{r,collapse=T, eval=T, cache=F,message=F}
-# investigate the WRS package
+#  WRS2 paketi
 library(WRS2)
 pbcor(dataWBT_Bayburt2$gen_att,dataWBT_Bayburt2$income_per_member,beta=.2)
 
@@ -277,26 +274,24 @@ wincor(dataWBT_Bayburt2$gen_att,dataWBT_Bayburt2$income_per_member,tr=.2)
 ```
 
 
-__Write up:__ We tested a null hypothesis stating the gender attitudes scores and income variable are correlated against an non-directional alternative hypothesis. The Pearson correlation coefficient was $r=.066,p=.44$, the confidence interval with a .05 probability of a type I error using the z transformation is -.10 to .23. The null hypothesis is retained. This conclusion is consistent with the bootstrap results, using 5000 iterations, the 95% CI is -.138 to .252.     
+__Rapor örneği:__ Bayburt ilinde yaşayan katılımcılar göz önünde bulundurularak, TCA puanları ile gelir düzeyi değişkenleri arasında korelasyon olmadığı boş hioptezi test edilmiştir. Pearson korelasyon katsayısı  $r=.066 (p=.44)$ ve bu katsayı için %95 güvern aralığı [-.10,.23] olarak hesaplanmıştır.İki değişken arasında korelasyonun sıfır olduğunu ileri süre boş hipotez terkedilmemiştir. Aynı çıkarıma 5000 tekrarlı boostrap yöntemi ile de ulaşılmıştır (%95 güven aralığı [-.138 to .252 ]). 
 
 
-__Sign difference note__ The Pearson correlation coefficent is .066 but not significantly different than zero. The WRS package functions also agreed to retain the null but the coefficent was negative. 
-The income variable was sligthly skewed due to a small number of relatively large income values. In fact, when the World Bank team analyzed the data using a regression, they top-coded and transformed the income variable (for details @Hirshleifer16).
-Let us top-code and transform the income variable, inspect bivariate normality and calculate the Pearson correlation;
+__Not: Farklı işaret__ Pearson katsayısı istatistiksel olarak sıfırdan farklı değildirfakat işareti pozitiftir (.066). WRS paketinde yer alan fonksiyonlar da korelasyonun sıfırdan farklı olmadığı sonucuna ulaşmıştır. Fakat hesaplanan korelasyon negatiftir. Gelir değişkenine ait dağılımın çarpık olduğu ikili normallik dağılım grafiğinde de göze çarpmaktadır. World Bank araştırma takımı bu değişkenin çarpık dağılım göstermesi sebebi ile  değişkeni trabnsform ederek analiz etmişlerdir ( @Hirshleifer16). Benzer transformasyonu kullanırsak;
 
-```{r incometransformed, collapse=T, eval=T, cache=F, echo=F, message=F, warning=F, fig.show='hold', fig.cap='Top-coded and transformed income variable '}
-# top code the income at 95th percentile
+```{r incometransformed, collapse=T, eval=T, cache=F, echo=F, message=F, warning=F, fig.show='hold', fig.cap='Transform edilmiş Gelir '}
+# top code 
 top=quantile(dataWBT_Bayburt2$income_per_member,.95)
 dataWBT_Bayburt2$incomeTC=ifelse(dataWBT_Bayburt2$income_per_member>top,                                               top,dataWBT_Bayburt2$income_per_member)
 #transform
 dataWBT_Bayburt2$incomeTC=log(dataWBT_Bayburt2$incomeTC+
                                 sqrt((dataWBT_Bayburt2$incomeTC^2)+1))
 
-#kernel densities
+#kernel yoğunluk
 library(MASS)
 kernden3 <- with(dataWBT_Bayburt2,kde2d(gen_att, incomeTC, n = 100))
 library(rgl)
-# graph
+# grafik
 #persp(kernden2, phi = 45, theta = 30)
 
 persp(kernden3, phi = 45, theta = 30, shade = .1, border = NA)
@@ -312,17 +307,17 @@ with(dataWBT_Bayburt2,cor.test(gen_att,incomeTC,
          na.action="na.omit"))  
 ```
 
+Transformasyon sonucunda gelir değişkeni daha normal bir dağılım göstermiştir ve Pearson korelasyon katsaysının işareti negatiftir.
 
-Top-coding and transforming the income variable produced a distribution relatively closer to normal. The sign of the Pearson correlation coefficent is negative.
+## Spearman rho ve Kendall tau
+Verilerin sıralı veri olması durumunda veya sürekli değişkenlerde aykırı değerlerin etkisi azaltılmak istenildiğinde Spearman rho veya Kendall tau kullanılabilir. Burada bahsedilen aykırı değerlerin etkisinin azaltılması durumu Pearson korelasyona kıyasla geçerlidir. Aykırı değerlere karşı rho ve tauya nazaran daha iyi koruma sağlayan dirençli yöntemler mevcuttur, @wilcox2012.
 
-## Spearman’s rho and Kendall’s tau
-When the data is in the rank format, or there is a need for protection against outliers^[Here protection refers to being less sensetive to outliers compared to Pearson coefficient. However Spearman's rho and Kendall's tau might be more sensetive to outliers compared to robust procedures, see @wilcox2012.] when working with continuous data the Spearman correlation coefficient is used. If the number of ties in the ranks is not large, procedures provided for the Pearson correlation coefficient can be utilized. Setting the method argument to "spearman", the _cor.test_ function first transforms the data into ranks and performs the procedures introduced for the Pearson coefficient. 
 
-###The R code for Spearman's rho and Kendall's tau
-We calculated the Pearson correlation coefficient to assess the association between the gender attitudes scores and the income for the participants in Bayburt. The Spearman correlation coefficient can conveniently be calculated by R;
+###R betiği: Spearman’s rho ve Kendall’s tau
+Pearson korelasyon katsayısı hesaplama örneğinde kullanılan TCA puanları ve gelir ilişkisi için Spearman rho hesaplaması;
 
 ```{r, collapse=T, eval=T, cache=F, message=F}
-#use ?cor to see use="complete.obs" is doing casewise deletion
+
 with(dataWBT_Bayburt,cor.test(gen_att,income_per_member,
          alternative = "two.sided",
          method="spearman",
@@ -332,7 +327,7 @@ with(dataWBT_Bayburt,cor.test(gen_att,income_per_member,
 
 ```
 
-When there are ties, the _cor.test_ function corrects the Spearman coefficient but the exact p value can not be calculated. Instead  _exact=FALSE_ argument yields a p value based on a t distribution. @Andy2012 suggests using Kendall's tau with large number of ties;
+Sıralama verisinde eş-sıra (ties) durumu var ise _cor.test_ fonksiyonu Spearman rho hesaplanışında düzeltme yapar fakat p değeri hesaplamaz. Eğer _exact=FALSE_ argümanı kullanılırsa t dağılımı üzerinden p değeri hesaplanabilir. @Andy2012 eş-sıralılık durumunun çok olması durumunda Kendall tau hesaplanmasını önerir.
 
 ```{r, collapse=T, eval=T, cache=F, message=F}
 #use ?cor to see use="complete.obs" is doing casewise deletion
@@ -345,15 +340,15 @@ with(dataWBT_Bayburt,cor.test(gen_att,income_per_member,
 
 ```
 
-The _exact=FALSE_ argument with _method="kendall"_ uses normal approximation.
+_exact=FALSE_ argümanı _method="kendall"_ ile kullanılınca normal dağılım üzerinden p değeri hesaplar.
 
-The Spearman correlation between the gender attitudes scores and income was $r_S=-.051, p=.56$, and the Kendall's tau was $\tau = -.037,p=.54$
+Gelir değişkeninde bulunan aykırı değerlerin etkisini azaltmak üzere Spearman ve Kendall korelasyon katsayıları hesaplanmıştır. Spearman rho değeri $r_S=-.051 (p=.56)$ ve Kendall tau değeri $\tau = -.037,p=.54$ olarak bulunmuştur.
 
-## Biserial and Point-Biserial Correlation Coefficients with R
+## R betiği: Çift Serili ve Nokta-Çift Serili Korelasyonlar
 
-The association between a continuous variable and a dichotomously reflected latent continious variable can be examined with a biserial correlation. In psychometrics , for example, biserial correlation is used for calculating the correlation between a total test score (continuous) and  a dichotomous item score (assumed to underlie a latent variable).
+Çift serili korelasyon bir sürekli değişken ve örtük bir sürekli değişkeni yansıtan ikili değişken (dichotomous) arasındaki korelasyonu hesaplamak için kullanılabilir. Örneğin öğrencilerin bir soruya verdiği doğru veya yanlış yanıt değişkeni ile toplam puanlar arasındaki ilişki çift serili korelasyon ile hesaplanabilir.  
 
-For illustrative purposes let us use dichotomized item1^[This item is indeed dichotomized by the Worldbank team in their analyses] and the gender attitudes score. The _biserial_ function in the _psych_ (@R-psych) package can calculate the bi-serial correlation;
+Gösterim amaçlı veri setinde yer alan birinci TCA sorusunu ikili veri olarak kodlayalım^[World Bank araştırma takımı bu soruyu ikili değişken olarak yeniden kodlayarak analiz etmiştir]. Bu ikili değişken ile 2.,3.,4.,5. ve 6. soruların ortalaması olan TCA puanları arasındaki ilişki _psych_ paketinde (@R-psych) yer alan _biserial_  fonksiyonu ile hesaplanabilir. 
 
 ```{r, collapse=T, eval=T, cache=F, message=F}
 
@@ -363,8 +358,7 @@ with(dataWBT_Bayburt,biserial(gen_att,binitem1))
 
 ```
 
-
-The point-biserial correlation is calculated for an association between a dichotomous variable and a continuous variable. The _cor.test_ function with _method=“pearson”_ can be used to calculate a point-biserial correlation. The association between the gender and the gender attitudes scores is examined below;
+Nokta çift serili korelasyon ise sürekli bir değişken ve ikili bir değişken arasındaki ilişkiyi ölçmek için kullanılabilir. _cor.test_ fonksiyonu ve _method="pearson"_ argumanı ile nokta çift serili korelasyon hesaplanabilir. TCA puanları ve cinsiyet arasındaki nokta-çift serili korelasyon;
 
 ```{r, collapse=T, eval=T, cache=F, message=F}
 dataWBT_Kayseri=dataWBT[dataWBT$city=="KAYSERI",]
@@ -378,8 +372,8 @@ with(dataWBT_Kayseri,cor.test(gen_att,genderNUM,
 
 
 
-## Phi Correlation Coefficient with R
-When the two variables are dichotomous, a phi ($\phi$) correlation coefficient is calculated. For illustrative purposes we calculated the phi coefficent between the gender and the wage variable. This variable equals to "yes" if one of the house members receives wage in the past 12 months. The _phi_ function in the _psych_ package requires the 2 x 2 matrix of frequencies to calculate the phi coefficient.
+## R betiği: Phi korelasyon katsayısı
+Değişkenler ikili ise aralarındaki ilişki phi($\phi$) korelasyon katsayısı ile ölçülebilir. Gösterim amaçlı cinsiyet ve maaş durumu ilişkisi incelenmiştir. Maaş durumu katılımcının son 12 ay boyunca maaş alıp almadığını gösterir. _psych_ paketinde yer alan _phi_ fonksiyonu 2x2 frekans tablosu üzerinden hesaplama yapabilir.
 
 
 ```{r, collapse=T, eval=T, cache=F, message=F}
@@ -390,42 +384,35 @@ genderWAGE=matrix(c(52,49,97,54),ncol=2)
 library(psych)
 phi(genderWAGE)
 
-phi(genderWAGE)
 
 ```
 
 
 
-## Issues in Interpreting Correlation Coefficients
-Several issues arise in interpreting correlation coefficients.
+## Korelasyon katsayısı hakkında dikkat edilmesi gerekenler 
 
-__Causation__ A correlation coefficient does not imply causation.  For any correlation there are at least four possible interpretations involving cuasation: (a) X causes Y, (b) Y causes X,  (c) both X and Y  share one or more common causes, and (d) X and Y have different causes, but these causes are correlated.
 
-__The magnitude__ Whether a correlation of .6 is large or not depends on the context. For example suppose the .6 is the correlation between scores on two forms of a standardized achievement tests. This correlation is called an alternate forms reliability coefficient. Alternate forms reliability coefficients for standardized tests are expected to be at least .70 and preferably higher, so the .6 correlation would be regarded as small. 
-Now suppose the correlation is between GRE scores and GPA.  The correlation between GRE scores and GPA is typically somewhere between .10 and .30, so a .60 correaltion would be a very large correlation coefficient.
+__Sebep-Sonuç__ Bir korelasyon katsayısı sebep-sonuç belirtmez. Sebep-sonuç ilişkisi kurulmak istense dahi dört farklı senaryo mevcuttur, (a) X Y'yi etkiler, (b) Y X'i etkiler, (c) X ve Y bir veya daha fazla ortak sebebin sonucudur, (d) X ve Y farklı sebeplerle ortaya çıkmıştır fakat bu farklı sebepler ilişkilidir.
 
-__Outliers__ Correlation coefficients can be misleading when the data set contains outliers.
+__Büyüklük__ Bir korelasyon katsayısının büyük veya küçük oluşu konuya göre değişir. Birbirine benzemesi üzerine tasarlanmış iki matematik sınavından sonra hesaplanan korelasyon 0.6 ise bu küçük bir korelasyon olarak düşünülebilir çünkü paralel formlar korelasyonunun en az .70 olması beklenir. Fakat ALES puanları ile yüksek lisans not ortalaması arasında hesaplanacak bir 0.6 korelasyon oldukça büyüktür çünkü alan yazında bu değer genellikle .1 ve .3 arasındadır.
 
-__Reliability__ If either X or Y contains measurement error, the effect of the measurement error is to attenuate the correlation coefficient. Attenuate means to make the correlation coefficient closer to zero than it would have been if there had been no measurement error.
+__Aykırı değerler__ Veri setinde yer alan aykırı değerler korelasyon katsayılarını etkiler.
 
-Its possible to correct for attenuation using $$r_{T_x T_y}=\frac{r_{xy}}{\sqrt(r_{xx}r_{yy})}$$ where $r_{xx}$ and $r_{yy}$ is the reliability coefficients.
+__Güvenirlik__  X veya Y ölçme hatası (measurement error) içeriyorsa hesaplanan korelasyon aşağı yönde etkilenir. 
+Düzeltme yapmak için $$r_{T_x T_y}=\frac{r_{xy}}{\sqrt(r_{xx}r_{yy})}$$ kullanılabilir, $r_{xx}$ ve $r_{yy}$ X ve  Y için güvenirlik katsayılarıdır.
 
-• _When NOT to correct for attenuation:_ When a variable is used for practical decision making and we are interested in the validity of those decisions, we should NOT correct for attenuation because the decisions are made on the basis of an observed variable, not a true variable.
+• _Bu düzeltme ne zaman kullanılmaz:_ Gerçek hayatta yeri olacak bir karar verilecekse bu düzeltme yapılmamalıdır. Kararlar gözlemlenen veriler üzerine verilmelidir.
 
-• _When to correct for attenuation:_ We can correct for attenuation when our motivation is to examine theory. 
+• _Bu düzeltme ne zaman kullanılır:_ Teorilerin geliştirilmesi aşamasında düzeltme kullanılabilir.
 
-• _Comparison of Correlation Coefficients:_ A comparison of correlation coefficients for two variables with a third variable can be affected by differences in reliability for the first two variables. If we are interested in theoretical relationships between variables and we want to compare the strength of relationship of two constructs  (call these A and B and let them be measured by X1  and X2 ) with a third (call this C and let it be measured by Y),  the comparison of the strength of relationship  between A and C to the strength of relationship  between B and C is compromised if X1  and X2  have different reliability coefficients.  To compare strength of relationship we want the reliability of X1  and  X2 to be the similar. Of course, it is best if both reliability coefficients are high, but it is critical that that are quite similar.
 
-__Unit of analysis__ A correlation calculated for one unit of analysis (e.g., individuals without regard to school) should not be applied to other units of analysis (i.e., individuals within schools or school means).
 
-__Variance in the two variables being correlated__ The correlation coefficient for two variables can be strongly affected by the amount of variance for the variables being correlated.  Other things being equal when the variance of either or both variables is small, the correlation will tend to be small.  If the variance for either or both variables is artificially small, misleading small correlation coefficients can occur. Variance can be artificially small due to
+__Varyans__ Korelasyon katsayısı değişkenlerin varyansından etkilenir. Varyansın yapay olarak küçültülmesi korelasyonun da küçülmesine sebep olur. Varyansın yapay olarak küçülmesine örnekler;
 
-•	Categorizing Based on Quantitative Variables 
+•	Sürekli verilerin kategorize edilmesi 
 
-•	Limited Range Scales
+•	Ranj sınırlılığı
 
-•	Restriction of range
-
-•	Floor and Ceiling Effects
+•	Taban ve Tavan etkisi (Floor and Ceiling Effects)
 
 

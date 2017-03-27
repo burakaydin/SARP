@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SARP: Sosyal Bilimler R Platformu</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Sosyal Bilimler R Platformu">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="SARP: Sosyal Bilimler R Platformu" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="images/coverpicture.png" />
+  <meta property="og:description" content="Sosyal Bilimler R Platformu" />
+  <meta name="github-repo" content="burakaydin/BAP2219" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="SARP: Sosyal Bilimler R Platformu" />
+  
+  <meta name="twitter:description" content="Sosyal Bilimler R Platformu" />
+  <meta name="twitter:image" content="images/coverpicture.png" />
+
+<meta name="author" content="Burak AYDIN, James ALGINA, Walter LEITE">
+
+
+<meta name="date" content="2017-01-01">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="korelasyon.html">
+<link rel="next" href="kullansl-r-betikleri.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-0.8/htmlwidgets.js"></script>
+<link href="libs/rglwidgetClass-2/rgl.css" rel="stylesheet" />
+<script src="libs/rglwidgetClass-2/rglClass.src.js"></script>
+<script src="libs/CanvasMatrix4-2016/CanvasMatrix.src.js"></script>
+<script src="libs/rglWebGL-binding-0.97.0/rglWebGL.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SARP</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Kapak</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#tantm"><i class="fa fa-check"></i><b>1.1</b> Tanıtım</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#neden-bookdown"><i class="fa fa-check"></i><b>1.1.1</b> Neden Bookdown?</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#icerik"><i class="fa fa-check"></i><b>1.1.2</b> İçerik</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="onyuz.html"><a href="onyuz.html"><i class="fa fa-check"></i><b>2</b> Önyüz</a><ul>
+<li class="chapter" data-level="2.1" data-path="onyuz.html"><a href="onyuz.html#yazarlar"><i class="fa fa-check"></i><b>2.1</b> Yazarlar</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="onyuz.html"><a href="onyuz.html#burak-aydn-ph.d."><i class="fa fa-check"></i><b>2.1.1</b> Burak Aydın, Ph.D.</a></li>
+<li class="chapter" data-level="2.1.2" data-path="onyuz.html"><a href="onyuz.html#james-algina-ph.d."><i class="fa fa-check"></i><b>2.1.2</b> James Algina, Ph.D.</a></li>
+<li class="chapter" data-level="2.1.3" data-path="onyuz.html"><a href="onyuz.html#walter-l.-leite-ph.d."><i class="fa fa-check"></i><b>2.1.3</b> Walter L. Leite, Ph.D.</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="onyuz.html"><a href="onyuz.html#tesekkur"><i class="fa fa-check"></i><b>2.2</b> Teşekkür</a></li>
+<li class="chapter" data-level="2.3" data-path="onyuz.html"><a href="onyuz.html#dataWBT"><i class="fa fa-check"></i><b>2.3</b> Data</a></li>
+<li class="chapter" data-level="2.4" data-path="onyuz.html"><a href="onyuz.html#finansal-destek"><i class="fa fa-check"></i><b>2.4</b> Finansal Destek</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="rn-populerligi.html"><a href="rn-populerligi.html"><i class="fa fa-check"></i><b>3</b> R’ın popülerliği</a></li>
+<li class="chapter" data-level="4" data-path="windows-icin-r-kurulumu.html"><a href="windows-icin-r-kurulumu.html"><i class="fa fa-check"></i><b>4</b> Windows için R kurulumu</a></li>
+<li class="chapter" data-level="5" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>5</b> Giriş</a><ul>
+<li class="chapter" data-level="5.1" data-path="basics.html"><a href="basics.html#fonksiyonlar"><i class="fa fa-check"></i><b>5.1</b> Fonksiyonlar</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="basics.html"><a href="basics.html#r-basit-hesap-makinesi"><i class="fa fa-check"></i><b>5.1.1</b> R: Basit Hesap makinesi</a></li>
+<li class="chapter" data-level="5.1.2" data-path="basics.html"><a href="basics.html#r-programlanabilir-hesap-makinesi"><i class="fa fa-check"></i><b>5.1.2</b> R: Programlanabilir Hesap makinesi</a></li>
+<li class="chapter" data-level="5.1.3" data-path="basics.html"><a href="basics.html#yardm"><i class="fa fa-check"></i><b>5.1.3</b> Yardım!</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="basics.html"><a href="basics.html#r-data-tipleri"><i class="fa fa-check"></i><b>5.2</b> R Data Tipleri</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="basics.html"><a href="basics.html#vektorler"><i class="fa fa-check"></i><b>5.2.1</b> Vektörler</a></li>
+<li class="chapter" data-level="5.2.2" data-path="basics.html"><a href="basics.html#matrisler"><i class="fa fa-check"></i><b>5.2.2</b> Matrisler</a></li>
+<li class="chapter" data-level="5.2.3" data-path="basics.html"><a href="basics.html#variables"><i class="fa fa-check"></i><b>5.2.3</b> Değişkenler</a></li>
+<li class="chapter" data-level="5.2.4" data-path="basics.html"><a href="basics.html#faktorler"><i class="fa fa-check"></i><b>5.2.4</b> Faktörler</a></li>
+<li class="chapter" data-level="5.2.5" data-path="basics.html"><a href="basics.html#kayp-veriler"><i class="fa fa-check"></i><b>5.2.5</b> Kayıp Veriler</a></li>
+<li class="chapter" data-level="5.2.6" data-path="basics.html"><a href="basics.html#dataframes"><i class="fa fa-check"></i><b>5.2.6</b> Veri Çerçeveleri (Data Frames)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="basics.html"><a href="basics.html#r-paketleri"><i class="fa fa-check"></i><b>5.3</b> R Paketleri</a></li>
+<li class="chapter" data-level="5.4" data-path="basics.html"><a href="basics.html#theworkspace"><i class="fa fa-check"></i><b>5.4</b> Çalışma alanı (workspace)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="veri-setleri.html"><a href="veri-setleri.html"><i class="fa fa-check"></i><b>6</b> Veri Setleri</a><ul>
+<li class="chapter" data-level="6.1" data-path="veri-setleri.html"><a href="veri-setleri.html#veri-cekme"><i class="fa fa-check"></i><b>6.1</b> Veri Çekme</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="veri-setleri.html"><a href="veri-setleri.html#csv"><i class="fa fa-check"></i><b>6.1.1</b> CSV</a></li>
+<li class="chapter" data-level="6.1.2" data-path="veri-setleri.html"><a href="veri-setleri.html#spss"><i class="fa fa-check"></i><b>6.1.2</b> SPSS</a></li>
+<li class="chapter" data-level="6.1.3" data-path="veri-setleri.html"><a href="veri-setleri.html#rdata"><i class="fa fa-check"></i><b>6.1.3</b> Rdata</a></li>
+<li class="chapter" data-level="6.1.4" data-path="veri-setleri.html"><a href="veri-setleri.html#pullonline"><i class="fa fa-check"></i><b>6.1.4</b> Sanal Depolardan Veri Çekmek</a></li>
+<li class="chapter" data-level="6.1.5" data-path="veri-setleri.html"><a href="veri-setleri.html#r-stuido-araclg-ile-veri-cagrma"><i class="fa fa-check"></i><b>6.1.5</b> R Stuido Aracılığı ile Veri Çağırma</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="veri-setleri.html"><a href="veri-setleri.html#basit-veri-islemleri"><i class="fa fa-check"></i><b>6.2</b> Basit Veri İşlemleri</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="veri-setleri.html"><a href="veri-setleri.html#degiskenleri-yeniden-kodlama"><i class="fa fa-check"></i><b>6.2.1</b> Değişkenleri yeniden kodlama</a></li>
+<li class="chapter" data-level="6.2.2" data-path="veri-setleri.html"><a href="veri-setleri.html#alt-kume-secme-subsetting"><i class="fa fa-check"></i><b>6.2.2</b> Alt Küme Seçme (Subsetting)</a></li>
+<li class="chapter" data-level="6.2.3" data-path="veri-setleri.html"><a href="veri-setleri.html#yeni-degisken-olustur"><i class="fa fa-check"></i><b>6.2.3</b> Yeni Değişken Oluştur</a></li>
+<li class="chapter" data-level="6.2.4" data-path="veri-setleri.html"><a href="veri-setleri.html#veri-cercevesini-degistirme-reshaping-data"><i class="fa fa-check"></i><b>6.2.4</b> Veri Çerçevesini Değiştirme (Reshaping data)</a></li>
+<li class="chapter" data-level="6.2.5" data-path="veri-setleri.html"><a href="veri-setleri.html#degisken-turunu-degistirme"><i class="fa fa-check"></i><b>6.2.5</b> Değişken Türünü Değiştirme</a></li>
+<li class="chapter" data-level="6.2.6" data-path="veri-setleri.html"><a href="veri-setleri.html#veri-silme"><i class="fa fa-check"></i><b>6.2.6</b> Veri Silme</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="veri-setleri.html"><a href="veri-setleri.html#veri-kaydetme"><i class="fa fa-check"></i><b>6.3</b> veri Kaydetme</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html"><i class="fa fa-check"></i><b>7</b> Betimleyici İstatistikler ve Hipotez Testi</a><ul>
+<li class="chapter" data-level="7.1" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#descstats"><i class="fa fa-check"></i><b>7.1</b> Betimleyici İstatistikler</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#ortalama"><i class="fa fa-check"></i><b>7.1.1</b> Ortalama</a></li>
+<li class="chapter" data-level="7.1.2" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#ortanca"><i class="fa fa-check"></i><b>7.1.2</b> Ortanca</a></li>
+<li class="chapter" data-level="7.1.3" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#varyans"><i class="fa fa-check"></i><b>7.1.3</b> Varyans</a></li>
+<li class="chapter" data-level="7.1.4" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#standart-sapma"><i class="fa fa-check"></i><b>7.1.4</b> Standart Sapma</a></li>
+<li class="chapter" data-level="7.1.5" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#carpklk-skewness"><i class="fa fa-check"></i><b>7.1.5</b> Çarpıklık (Skewness)</a></li>
+<li class="chapter" data-level="7.1.6" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#basklk-kurtosis"><i class="fa fa-check"></i><b>7.1.6</b> Basıklık (Kurtosis)</a></li>
+<li class="chapter" data-level="7.1.7" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#betimleyici-istatisklerin-raporlanmas"><i class="fa fa-check"></i><b>7.1.7</b> Betimleyici İstatisklerin Raporlanması</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#basit-grafikler"><i class="fa fa-check"></i><b>7.2</b> Basit Grafikler</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#histogram"><i class="fa fa-check"></i><b>7.2.1</b> Histogram</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#hipotez-testi-tantm"><i class="fa fa-check"></i><b>7.3</b> Hipotez Testi Tanıtım</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#samplingdist"><i class="fa fa-check"></i><b>7.3.1</b> Örnekleme Dağılım (Sampling Distribution)</a></li>
+<li class="chapter" data-level="7.3.2" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#guven-aralklar-the-confidence-intervals-ci"><i class="fa fa-check"></i><b>7.3.2</b> Güven Aralıkları (The Confidence Intervals (CI))</a></li>
+<li class="chapter" data-level="7.3.3" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#bos-hipotez"><i class="fa fa-check"></i><b>7.3.3</b> Boş Hipotez</a></li>
+<li class="chapter" data-level="7.3.4" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#z-puan-ve-z-testi"><i class="fa fa-check"></i><b>7.3.4</b> z-puanı ve z-testi</a></li>
+<li class="chapter" data-level="7.3.5" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#tek-orneklem-t-testi"><i class="fa fa-check"></i><b>7.3.5</b> Tek örneklem t-testi</a></li>
+<li class="chapter" data-level="7.3.6" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#p-degeri"><i class="fa fa-check"></i><b>7.3.6</b> p-değeri</a></li>
+<li class="chapter" data-level="7.3.7" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#p-degeri-ornek-1"><i class="fa fa-check"></i><b>7.3.7</b> p değeri örnek-1</a></li>
+<li class="chapter" data-level="7.3.8" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#statisticalpower"><i class="fa fa-check"></i><b>7.3.8</b> İstatiksel Güç</a></li>
+<li class="chapter" data-level="7.3.9" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#z-ve-t-daglmlar-gecerli-degil-ise"><i class="fa fa-check"></i><b>7.3.9</b> z ve t dağılımları geçerli değil ise</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html"><i class="fa fa-check"></i><b>8</b> İki Ortalamanın Karşılaştırılması, t-testi</a><ul>
+<li class="chapter" data-level="8.1" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#bagmsz-gruplar-t-test-the-independent-groups-t-test"><i class="fa fa-check"></i><b>8.1</b> Bağımsız gruplar t-test (The Independent Groups t-test)</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#bagmsz-gruplar-t-testi-icin-r-betigi"><i class="fa fa-check"></i><b>8.1.1</b> Bağımsız gruplar t testi için R betiği</a></li>
+<li class="chapter" data-level="8.1.2" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#bagmsz-gruplar-t-testi-varsaymlar"><i class="fa fa-check"></i><b>8.1.2</b> Bağımsız gruplar t testi varsayımları</a></li>
+<li class="chapter" data-level="8.1.3" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#welch-t-test"><i class="fa fa-check"></i><b>8.1.3</b> Welch t test</a></li>
+<li class="chapter" data-level="8.1.4" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#indepteff"><i class="fa fa-check"></i><b>8.1.4</b> Bağımsız gruplar t testi için etki büyüklüğü</a></li>
+<li class="chapter" data-level="8.1.5" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#extra-pratikte-anlamllk-ve-istatistiksel-anlamllk"><i class="fa fa-check"></i><b>8.1.5</b> Extra: Pratikte anlamlılık ve istatistiksel anlamlılık</a></li>
+<li class="chapter" data-level="8.1.6" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#kayp-veriler-ile-bagmsz-gruplar-t-testi"><i class="fa fa-check"></i><b>8.1.6</b> Kayıp veriler ile bağımsız gruplar t testi</a></li>
+<li class="chapter" data-level="8.1.7" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#destekleyici-grafikler"><i class="fa fa-check"></i><b>8.1.7</b> Destekleyici grafikler</a></li>
+<li class="chapter" data-level="8.1.8" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#istatisksel-guc"><i class="fa fa-check"></i><b>8.1.8</b> İstatisksel güç</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#bagl-gruplar-t-testi-within-subjects-t-test"><i class="fa fa-check"></i><b>8.2</b> Bağlı gruplar t-testi (Within-subjects t-test)</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#bagl-gruplar-icin-t-testi"><i class="fa fa-check"></i><b>8.2.1</b> Bağlı gruplar için t testi</a></li>
+<li class="chapter" data-level="8.2.2" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#varsaymlar-bagl-gruplar-icin-t-testi"><i class="fa fa-check"></i><b>8.2.2</b> Varsayımlar: bağlı gruplar için t testi</a></li>
+<li class="chapter" data-level="8.2.3" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#direncli-tahminleme-yontemi-bagl-gruplar-icin-t-testi"><i class="fa fa-check"></i><b>8.2.3</b> Dirençli tahminleme yöntemi: bağlı gruplar için t testi</a></li>
+<li class="chapter" data-level="8.2.4" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#effect-size-for-the-dependent-groups-t-test"><i class="fa fa-check"></i><b>8.2.4</b> Effect size for the dependent groups t-test</a></li>
+<li class="chapter" data-level="8.2.5" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#kayp-veriler-ile-bagl-gruplar-t-testi"><i class="fa fa-check"></i><b>8.2.5</b> Kayıp veriler ile bağlı gruplar t testi</a></li>
+<li class="chapter" data-level="8.2.6" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#destekleyici-grafikler-1"><i class="fa fa-check"></i><b>8.2.6</b> Destekleyici grafikler</a></li>
+<li class="chapter" data-level="8.2.7" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#istatistiksel-guc-bagl-gruplar-t-testi"><i class="fa fa-check"></i><b>8.2.7</b> İstatistiksel güç: bağlı gruplar t testi</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#yaygn-tasarlar"><i class="fa fa-check"></i><b>8.3</b> Yaygın Tasarılar</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#gruplarn-iliskili-oldugu-durumlar"><i class="fa fa-check"></i><b>8.3.1</b> Grupların ilişkili olduğu durumlar</a></li>
+<li class="chapter" data-level="8.3.2" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#designbetween"><i class="fa fa-check"></i><b>8.3.2</b> Bağlı olmayan grup tasarılarına örnekler</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="varyans-analizi-anova.html"><a href="varyans-analizi-anova.html"><i class="fa fa-check"></i><b>9</b> Varyans Analizi (ANOVA)</a><ul>
+<li class="chapter" data-level="9.1" data-path="varyans-analizi-anova.html"><a href="varyans-analizi-anova.html#terminoloji"><i class="fa fa-check"></i><b>9.1</b> Terminoloji</a></li>
+<li class="chapter" data-level="9.2" data-path="varyans-analizi-anova.html"><a href="varyans-analizi-anova.html#bagl-olmayan-gozlemler-varyans-analizi-between-subjects-anova"><i class="fa fa-check"></i><b>9.2</b> Bağlı olmayan gözlemler varyans analizi (Between Subjects ANOVA)</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="varyans-analizi-anova.html"><a href="varyans-analizi-anova.html#tek-yonlu-bagl-olmayan-gozlemler-varyans-analizi"><i class="fa fa-check"></i><b>9.2.1</b> Tek-yönlü bağlı olmayan gözlemler varyans analizi</a></li>
+<li class="chapter" data-level="9.2.2" data-path="varyans-analizi-anova.html"><a href="varyans-analizi-anova.html#iki-faktorlu-bagl-olmayan-gozlemler-varyans-analizi"><i class="fa fa-check"></i><b>9.2.2</b> İki faktörlü bağlı olmayan gözlemler varyans analizi</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="varyans-analizi-anova.html"><a href="varyans-analizi-anova.html#bagl-gozlemler-varyans-analizi"><i class="fa fa-check"></i><b>9.3</b> Bağlı gözlemler varyans analizi</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="varyans-analizi-anova.html"><a href="varyans-analizi-anova.html#tek-yonlu-bagl-gozlemler-varyans-analizi"><i class="fa fa-check"></i><b>9.3.1</b> Tek-yönlü bağlı gözlemler varyans analizi</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="varyans-analizi-anova.html"><a href="varyans-analizi-anova.html#eklemesiz-non-additive-model-icin-esitlik"><i class="fa fa-check"></i><b>9.4</b> Eklemesiz (non-additive) model için eşitlik;</a></li>
+<li class="chapter" data-level="9.5" data-path="varyans-analizi-anova.html"><a href="varyans-analizi-anova.html#karma-tasar-mixed-design"><i class="fa fa-check"></i><b>9.5</b> Karma tasarı (Mixed design)</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="korelasyon.html"><a href="korelasyon.html"><i class="fa fa-check"></i><b>10</b> Korelasyon</a><ul>
+<li class="chapter" data-level="10.1" data-path="korelasyon.html"><a href="korelasyon.html#pearson-korelasyon-katsays"><i class="fa fa-check"></i><b>10.1</b> Pearson korelasyon katsayısı</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="korelasyon.html"><a href="korelasyon.html#pearson-korelasyon-katsaysnn-evren-baznda-yorumu"><i class="fa fa-check"></i><b>10.1.1</b> Pearson korelasyon katsayısının evren bazında yorumu</a></li>
+<li class="chapter" data-level="10.1.2" data-path="korelasyon.html"><a href="korelasyon.html#r-betigi-pearson-korelasyon-katsays"><i class="fa fa-check"></i><b>10.1.2</b> R betiği: Pearson korelasyon katsayısı</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="korelasyon.html"><a href="korelasyon.html#spearman-rho-ve-kendall-tau"><i class="fa fa-check"></i><b>10.2</b> Spearman rho ve Kendall tau</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="korelasyon.html"><a href="korelasyon.html#r-betigi-spearmans-rho-ve-kendalls-tau"><i class="fa fa-check"></i><b>10.2.1</b> R betiği: Spearman’s rho ve Kendall’s tau</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="korelasyon.html"><a href="korelasyon.html#r-betigi-cift-serili-ve-nokta-cift-serili-korelasyonlar"><i class="fa fa-check"></i><b>10.3</b> R betiği: Çift Serili ve Nokta-Çift Serili Korelasyonlar</a></li>
+<li class="chapter" data-level="10.4" data-path="korelasyon.html"><a href="korelasyon.html#r-betigi-phi-korelasyon-katsays"><i class="fa fa-check"></i><b>10.4</b> R betiği: Phi korelasyon katsayısı</a></li>
+<li class="chapter" data-level="10.5" data-path="korelasyon.html"><a href="korelasyon.html#korelasyon-katsays-hakknda-dikkat-edilmesi-gerekenler"><i class="fa fa-check"></i><b>10.5</b> Korelasyon katsayısı hakkında dikkat edilmesi gerekenler</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html"><i class="fa fa-check"></i><b>11</b> Çoklu Doğrusal Regresyon , Kısa Tanıtım</a><ul>
+<li class="chapter" data-level="11.1" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#matrisler-ve-en-kucuk-kareler-yontemi"><i class="fa fa-check"></i><b>11.1</b> Matrisler ve En Küçük Kareler Yöntemi</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#a-esasen-butun-modeller-yanlstr-fakat-bir-ksm-ise-yarardr."><i class="fa fa-check"></i><b>11.1.1</b> a) “Esasen bütün modeller yanlıştır, fakat bir kısmı işe yarardır.”</a></li>
+<li class="chapter" data-level="11.1.2" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#b-bagml-degisken-ve-bagmsz-degiskenler-arasndaki-iliskinin-kuvveti"><i class="fa fa-check"></i><b>11.1.2</b> b) Bağımlı değişken ve bağımsız değişkenler arasındaki ilişkinin kuvveti</a></li>
+<li class="chapter" data-level="11.1.3" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#c-artklar-ve-etkili-gozlemler"><i class="fa fa-check"></i><b>11.1.3</b> c) Artıklar ve etkili gözlemler</a></li>
+<li class="chapter" data-level="11.1.4" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#d-es-varyansllk-varsaym"><i class="fa fa-check"></i><b>11.1.4</b> d) <em>Eş varyanslılık varsayımı</em></a></li>
+<li class="chapter" data-level="11.1.5" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#e-hipotez-testi"><i class="fa fa-check"></i><b>11.1.5</b> e) Hipotez testi</a></li>
+<li class="chapter" data-level="11.1.6" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#f-degisken-secimi"><i class="fa fa-check"></i><b>11.1.6</b> f) Değişken seçimi</a></li>
+<li class="chapter" data-level="11.1.7" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#g-guclu-dogrusal-baglant-sorunu"><i class="fa fa-check"></i><b>11.1.7</b> g) Güçlü doğrusal bağlantı sorunu</a></li>
+<li class="chapter" data-level="11.1.8" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#h-dogrusal-olmayan-regresyon"><i class="fa fa-check"></i><b>11.1.8</b> h) Doğrusal olmayan regresyon</a></li>
+<li class="chapter" data-level="11.1.9" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#i-korelasyon-gosteren-veya-bagmsz-olmayan-hata-terimleri"><i class="fa fa-check"></i><b>11.1.9</b> i) Korelasyon gösteren veya bağımsız olmayan hata terimleri</a></li>
+<li class="chapter" data-level="11.1.10" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#j-bagmsz-degisken-uzerine-islemler-centering-and-scaling"><i class="fa fa-check"></i><b>11.1.10</b> j) Bağımsız değişken üzerine işlemler (Centering and Scaling)</a></li>
+<li class="chapter" data-level="11.1.11" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#k-standardize-edilmis-katsaylar"><i class="fa fa-check"></i><b>11.1.11</b> k) Standardize edilmiş katsayılar</a></li>
+<li class="chapter" data-level="11.1.12" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#l-etkilesimler-interactions"><i class="fa fa-check"></i><b>11.1.12</b> l) Etkileşimler (Interactions)</a></li>
+<li class="chapter" data-level="11.1.13" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#m-farkl-kestiriciler-estimators"><i class="fa fa-check"></i><b>11.1.13</b> m) Farklı kestiriciler (estimators)</a></li>
+<li class="chapter" data-level="11.1.14" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#n-direncli-yontemler-robust-regression"><i class="fa fa-check"></i><b>11.1.14</b> n) Dirençli yöntemler (Robust regression)</a></li>
+<li class="chapter" data-level="11.1.15" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#o-orneklem-buyuklugu-ve-istatistiksel-guc"><i class="fa fa-check"></i><b>11.1.15</b> o) Örneklem büyüklüğü ve istatistiksel güç</a></li>
+<li class="chapter" data-level="11.1.16" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#p-degiskenlerin-guvenirligi"><i class="fa fa-check"></i><b>11.1.16</b> p) Değişkenlerin güvenirliği</a></li>
+<li class="chapter" data-level="11.1.17" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#q-dgiskenlerin-turu"><i class="fa fa-check"></i><b>11.1.17</b> q) Dğişkenlerin türü</a></li>
+<li class="chapter" data-level="11.1.18" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#r-birden-fazla-bagml-degisken"><i class="fa fa-check"></i><b>11.1.18</b> r) Birden fazla bağımlı değişken</a></li>
+<li class="chapter" data-level="11.1.19" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#s-kayp-veri-teknikleri"><i class="fa fa-check"></i><b>11.1.19</b> s) Kayıp veri teknikleri</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="kullansl-r-betikleri.html"><a href="kullansl-r-betikleri.html"><i class="fa fa-check"></i><b>12</b> Kullanışlı R betikleri</a><ul>
+<li class="chapter" data-level="12.1" data-path="kullansl-r-betikleri.html"><a href="kullansl-r-betikleri.html#apastyle-paketi"><i class="fa fa-check"></i><b>12.1</b> apaStyle paketi</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="proje-basvurusu.html"><a href="proje-basvurusu.html"><i class="fa fa-check"></i><b>13</b> Proje Başvurusu</a><ul>
+<li class="chapter" data-level="13.0.1" data-path="proje-basvurusu.html"><a href="proje-basvurusu.html#amac-gerekce"><i class="fa fa-check"></i><b>13.0.1</b> Amaç / Gerekçe</a></li>
+<li class="chapter" data-level="13.0.2" data-path="proje-basvurusu.html"><a href="proje-basvurusu.html#konukapsam"><i class="fa fa-check"></i><b>13.0.2</b> Konu/Kapsam</a></li>
+<li class="chapter" data-level="13.0.3" data-path="proje-basvurusu.html"><a href="proje-basvurusu.html#literatur-ozeti"><i class="fa fa-check"></i><b>13.0.3</b> Literatür özeti</a></li>
+<li class="chapter" data-level="13.0.4" data-path="proje-basvurusu.html"><a href="proje-basvurusu.html#ozgun-degeri"><i class="fa fa-check"></i><b>13.0.4</b> Özgün Değeri</a></li>
+<li class="chapter" data-level="13.0.5" data-path="proje-basvurusu.html"><a href="proje-basvurusu.html#yaygn-etkikatma-deger"><i class="fa fa-check"></i><b>13.0.5</b> Yaygın etki/katma değer</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">SARP: Sosyal Bilimler R Platformu</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="coklu-dogrusal-regresyon-ksa-tantm" class="section level1">
+<h1><span class="header-section-number"> 11</span> Çoklu Doğrusal Regresyon , Kısa Tanıtım</h1>
+<p><em>Bilimsel ilerleme bilginin güvenilir şekilde bir çalışmadan diğerine aktarılmasını gerektirir. Galileo’nun 350 sene önce dile getirdiği gibi bu aktarma keskinliği olan formal bir lisan ile yapılmalıdır.</em> <span class="citation">Pearl (<a href="#ref-Pearl09">2009</a>)</span></p>
+<p>Bu alıntıda yer alan <em>formal lisanlardan</em> biri matematiksel eşitliklerdir. Örneğin Galton 19. yüzyılda anne ve yavru bezelye tanelerinin büyüklüğü arasındaki ilişkiyi matematiksel eşitlikler ile açıklamaya çalışmıştır. Galton’un çalışmaları Pearson’ın çalışmalarına öncü olmuş ve ortaya regresyon fikri çıkmıştır.<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a>.</p>
+<p>Web of Science veri tabanında ,sadece 2016 yılı içerisinde, 60 binden fazla bilimsel makalenin özünde regresyon kelimesi yer almıştır. Alan yazın oldukça geniştir. Regresyon moellerinin bu kadar sık kullanılmasının sebebi , değişkenlerin arasındaki ilişkilerin sıradan bir korelasyon ile açıklanamayacak kadar karmaşık olmasıdır. Bir kitap bölümünde regresyonun bütün alt başlıkları ile ele alınması gerçekci değildir. Bu bölümde oldukça basit bir çoklu doğrusal regresyon modeli tanıtılmıştır.</p>
+<div id="matrisler-ve-en-kucuk-kareler-yontemi" class="section level2">
+<h2><span class="header-section-number">11.1</span> Matrisler ve En Küçük Kareler Yöntemi</h2>
+<p>Regresyon modeli işlem basamaklarını matrisler ve en küçük kareler yöntemi (OLS) ile göstermenin iki avantajı vardır, (a) sürecin basamakları kolayca takip edilebilir ve (b) regresyon çözümlemesi konusunda daha üst düzey modelleri çalışmak isteyenler için sağlam bir temel oluşturabilir. Burdan sonraki bölümler iki farklı veri üzerinden devam edecektir. İlk veri seti sadece 12 katılımcıdan oluşur ve sentetik veri seti olarak isimlendirilmiştir. İkinci veri seti daha çok katılımcı içerir, gerçekci bir veri setini temsil edebilir ve simulasyon verisi olarak isimlendirilmiştir.</p>
+<p>Araştırmacının bir bağımlı değişken (yordanan) ve iki farklı bağımsız değişken (yordayıcı) arasındaki ilişkiyi incelemek istediğini varsayalım. Bütün değişkenlerin sürekli değişken olduğunu düşünelim. Bu durumda regresyon modeli;</p>
+<p><span class="math display">\[Y_i=\beta_0 + \beta_1X_{i1}+ \beta_2X_{i2}+ \epsilon_i\]</span> <em>i</em> katılımcıları, i=1,…,n; Y bağımlı değişkeni; <span class="math inline">\(X_1\)</span> ve <span class="math inline">\(X_2\)</span> bağımsız değişkenleri; <span class="math inline">\(\beta\)</span> regresyon katsayılarını ve <span class="math inline">\(\epsilon\)</span> hata terimini temsil eder. Bu model matris eşitliği olarak da yazılabilir.</p>
+<p><span class="math display">\[Y=X\beta+\epsilon\]</span> Bu genel eşitlikte bütün bağımsız değişkenler X matrisi ile ve bütün regresyon katsayıları da <span class="math inline">\(\beta\)</span> matrisi ile temsil edilir. Araştırmacının veri seti şu şekilde olsun</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">id</th>
+<th align="right">Y</th>
+<th align="right">X1</th>
+<th align="right">X2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">ind 1</td>
+<td align="right">8</td>
+<td align="right">0</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="left">ind 2</td>
+<td align="right">4</td>
+<td align="right">-2</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">ind 3</td>
+<td align="right">6</td>
+<td align="right">6</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="left">ind 4</td>
+<td align="right">6</td>
+<td align="right">-2</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">ind 5</td>
+<td align="right">5</td>
+<td align="right">5</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">ind 6</td>
+<td align="right">9</td>
+<td align="right">4</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">ind 7</td>
+<td align="right">7</td>
+<td align="right">3</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="left">ind 8</td>
+<td align="right">-6</td>
+<td align="right">-4</td>
+<td align="right">-5</td>
+</tr>
+<tr class="odd">
+<td align="left">ind 9</td>
+<td align="right">-8</td>
+<td align="right">-4</td>
+<td align="right">-6</td>
+</tr>
+<tr class="even">
+<td align="left">ind 10</td>
+<td align="right">-1</td>
+<td align="right">-3</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">ind 11</td>
+<td align="right">0</td>
+<td align="right">-2</td>
+<td align="right">-2</td>
+</tr>
+<tr class="even">
+<td align="left">ind 12</td>
+<td align="right">5</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>Bu sentetik veri setinde sadece 12 katılımcı vardır. Araştırmacı bu veri setinden oluşturacağı 2 farklı matris ile, <span class="math inline">\(\beta\)</span> tahmini olan <span class="math inline">\(\hat\beta\)</span> matrisini hesaplayabilir.</p>
+<p><span class="math display">\[Y=\begin{bmatrix}
+8\\ 
+4\\ 
+6\\ 
+6\\ 
+5\\ 
+9\\ 
+7\\ 
+-6\\ 
+-8\\ 
+-1\\ 
+0\\ 
+5
+\end{bmatrix},X=\begin{bmatrix}
+1 &amp; 0 &amp; 3\\ 
+1 &amp; -2 &amp; 1\\ 
+1 &amp; 6 &amp; 3\\ 
+1 &amp; -3 &amp; 0\\ 
+1 &amp; 5 &amp; 0\\ 
+1 &amp; 4 &amp; 2\\ 
+1 &amp; 3 &amp; 3\\ 
+1 &amp; -4 &amp; -5\\ 
+1 &amp; -4 &amp; -6\\ 
+1 &amp; -3 &amp; 0\\ 
+1 &amp; -2 &amp; -2\\ 
+1 &amp; -1 &amp; 1
+\end{bmatrix}\]</span></p>
+<p>OLS yöntemi ile <span class="math inline">\(\hat\beta\)</span> kolayca hesaplanabilir</p>
+<span class="math display" id="eq:lsebeta">\[\begin{equation} 
+ \hat\beta=(X&#39;X)^{-1}X&#39;Y
+  \tag{11.1}
+\end{equation}\]</span>
+<p>Bu hesaplamaları R ile yapalım;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Y=<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">8</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">9</span>,<span class="dv">7</span>,-<span class="dv">6</span>,-<span class="dv">8</span>,-<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">5</span>),<span class="dt">ncol=</span><span class="dv">1</span>)
+X=<span class="kw">matrix</span>(<span class="kw">cbind</span>(<span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">12</span>),
+               <span class="kw">c</span>(<span class="dv">0</span>,-<span class="dv">2</span>,<span class="dv">6</span>,-<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,-<span class="dv">4</span>,-<span class="dv">4</span>,-<span class="dv">3</span>,-<span class="dv">2</span>,-<span class="dv">1</span>),
+               <span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">3</span>,-<span class="dv">5</span>,-<span class="dv">6</span>,<span class="dv">0</span>,-<span class="dv">2</span>,<span class="dv">1</span>)),<span class="dt">ncol=</span><span class="dv">3</span>)
+
+<span class="kw">solve</span>(<span class="kw">t</span>(X)%*%X)%*%<span class="kw">t</span>(X)%*%Y
+##       [,1]
+## [1,] 2.917
+## [2,] 0.199
+## [3,] 1.552</code></pre></div>
+<p>Regresyon eşitliği; <span class="math display">\[\hat Y_i=2.9167 + 0.1989X_{i1} + 1.5519X_{i2} \]</span> <span class="math inline">\(\hat Y_i\)</span> <em>i.</em> sıradaki birey için tahmin edilen değerdir. Eşitlik <a href="coklu-dogrusal-regresyon-ksa-tantm.html#eq:lsebeta">(11.1)</a> hata kareleri toplamını minimize etmek üzere türetilmiştir: <span class="math inline">\(\sum_{i=1}^n(Y_i-\hat{Y_i})^2=Y&#39;Y-\beta&#39;X&#39;X\beta\)</span>. Bu yöntem en iyi doğrusal yansız kestiricilerdir (Best Linear Unbiased Estimates).</p>
+<p>Örnekte yer alan her iki bağımsız değişkeninde aritmetik ortalaması sıfırdır. <span class="math inline">\(X_1\)</span> ve <span class="math inline">\(X_2\)</span> sıfır iken, <span class="math inline">\((\hat{Y_i})\)</span> 2.92 olarak hesaplanır. Bir diğer ifade ile, her iki bağımsız değişken için ortalamada bulunan bireylerin bağımlı değişken ölçümü 2.92 olarak tahmin edilmiştir. <span class="math inline">\(X_2\)</span> değişkeni kontrol edildiğinde, <span class="math inline">\(X_1\)</span> değişkeninde gerçekleşecek 1 birim artışın bağımlı değişken için 0.2 birim artışa yol açacağı tahmin edilmiştir. Benzer şekilde, <span class="math inline">\(X_1\)</span> değişkeni kontrol edildiğinde, <span class="math inline">\(X_2\)</span> değişkeninde gerçekleşecek 1 birim artışın bağımlı değişken için 1.55 birim artışa yol açacağı tahmin edilmiştir. Çoklu regresyon modellerinde “kontrol edildiğinde (ceteris paribus)” ifadesi gereklidir. Hesaplanan katsayılar, .20 ve 1.55, araştırmacıyı değişkenler arasındaki ilişki hakkında bilgilendirir. Tabi bu noktada araştırmacının “1 birim artış” ifadesinin tam olarak ne anlama geldiğini bilmesi gerekir.</p>
+<div id="a-esasen-butun-modeller-yanlstr-fakat-bir-ksm-ise-yarardr." class="section level3">
+<h3><span class="header-section-number">11.1.1</span> a) “Esasen bütün modeller yanlıştır, fakat bir kısmı işe yarardır.”</h3>
+<p>Bu çıkarım <span class="citation">Box and Draper (<a href="#ref-georgenorman87">1987</a>)</span> tarafından yapılmıştır. Araştırmacı, araştırma sorusu doğrultusunda inşaa edeceği modelde yer alan değişkenleri nasıl seçtiğine yönelik ikna edici argümanlar sunmalıdır. Eğer önemli bir değişken modelin dışında bırakıldı ise kestirilen regresyon katsayıları muhtemelen geçersizdir.</p>
+<p>Aşağıdaki durumu düşünelim</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#sentetik veri setinde X2 göz ardı edilsin</span>
+X2omitted=<span class="kw">matrix</span>(<span class="kw">cbind</span>(<span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">12</span>),<span class="kw">c</span>(<span class="dv">0</span>,-<span class="dv">2</span>,<span class="dv">6</span>,-<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,-<span class="dv">4</span>,-<span class="dv">4</span>,-<span class="dv">3</span>,-<span class="dv">2</span>,-<span class="dv">1</span>)),<span class="dt">ncol=</span><span class="dv">2</span>)
+<span class="kw">solve</span>(<span class="kw">t</span>(X2omitted)%*%X2omitted)%*%<span class="kw">t</span>(X2omitted)%*%Y
+##      [,1]
+## [1,] 2.92
+## [2,] 1.09</code></pre></div>
+<p>Sentetik veri setinde <span class="math inline">\(X_1\)</span> ve <span class="math inline">\(X_2\)</span> arasındaki korelasyon 0.68, <span class="math inline">\(Y\)</span> ve <span class="math inline">\(X_2\)</span> arasındakş korelasyon ise 0.93’tür.Eğer araştırmacı <span class="math inline">\(X_2\)</span> değişkenine modelde yer vermezse <span class="math inline">\(X_1\)</span> için hesaplanan katsayı 1.09 olur. =.20 ile kıyaslandığında bu büyük bir değişikliktir. Bir diğer ifade ile, modelde yer alan bağımsız değişkenler ile ve bağımlı değişken ile ilişkili olduğu halde modelde yer verilmeyen bir değişken var ise hesaplanan regresyon katsayıları yanıltıcıdır.<a href="#fn12" class="footnoteRef" id="fnref12"><sup>12</sup></a></p>
+<p>Dışarıda kalan değişken probleminin yanında bir regresyon modelinin geçerliği örneklem seçimine ve örnekleme çerçevesinin (sampling frame) model ile yansıtabilmesine de bağlıdır. Örneğin örnekleme çerçevesinde ağrılıklandırma kullanıldı ise çözümleme esnasında bu ağırlıklar göz ardı edilmemelidir.</p>
+</div>
+<div id="b-bagml-degisken-ve-bagmsz-degiskenler-arasndaki-iliskinin-kuvveti" class="section level3">
+<h3><span class="header-section-number">11.1.2</span> b) Bağımlı değişken ve bağımsız değişkenler arasındaki ilişkinin kuvveti</h3>
+<p>Bağımlı değişkene ait kareler toplamı (total sum of squares) iki ana parçaya ayrıştıtılabilir, <em>modele ait kareler toplamı</em> ve <em>hataya ait kareler toplamı</em>. Modele ait kareler toplamının değişkene ait kareler toplamına oranı <span class="math inline">\(R^2\)</span> ile gösterilir ve çoklu belirlilik katsayısı olarak adlandırılır. <span class="math inline">\(R^2\)</span> bağımlı değişken ve bağımsız değişkenler arasındaki ilişkinin kuvvetini ölçer.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># KT total</span>
+n=<span class="kw">length</span>(Y)
+TotalSS=<span class="kw">t</span>(Y)%*%Y-(n*<span class="kw">mean</span>(Y)^<span class="dv">2</span>)
+
+<span class="co"># KT Model</span>
+betahat=<span class="kw">solve</span>(<span class="kw">t</span>(X)%*%X)%*%<span class="kw">t</span>(X)%*%Y
+ModelSS=<span class="kw">t</span>(betahat)%*%<span class="kw">t</span>(X)%*%Y-(n*<span class="kw">mean</span>(Y)^<span class="dv">2</span>)
+
+ModelSS/TotalSS
+##       [,1]
+## [1,] 0.879</code></pre></div>
+<p>Fakat <span class="math inline">\(R^2\)</span> evren parametresi için yanlı bir kestiricidir.Daha yansız bir kestirici ise düzeltilmiş belirlilik katsayısıdır, <span class="math inline">\(R^2_{Adj}\)</span>;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
+Rsquared=ModelSS/TotalSS
+<span class="co">#sörneklem</span>
+n=<span class="dv">12</span>
+
+<span class="co">#bağımsız değişken sayısı</span>
+p=<span class="dv">2</span>
+
+<span class="co"># sabit (intercept) varsa 1, yoksa 0 </span>
+
+int_inc=<span class="dv">1</span>
+
+
+AdjustedRsquared=<span class="dv">1</span>-(<span class="dv">1</span>-Rsquared)*((n-int_inc)/(n-int_inc-p))
+AdjustedRsquared
+##       [,1]
+## [1,] 0.852</code></pre></div>
+<p><span class="math inline">\(R^2\)</span> ve <span class="math inline">\(R^2_{Adj}\)</span> kullanışlı katsayılardır ve ne kadar varyansın model ile açıklandığını belirtir. Örneğimiz için <span class="math inline">\(R^2 = .879\)</span> ve <span class="math inline">\(R^2_{Adj}= .852\)</span> birbirine yakın değerlerdir.Eğer <span class="math inline">\(R^2 = .25\)</span> olsa idi <span class="math inline">\(R^2_{Adj}\)</span> 0.08 olurdu. <span class="math inline">\(R^2\)</span> 1 ise model varyansın tamamını açıklamıştır (%100). <span class="math inline">\(R^2\)</span> ve <span class="math inline">\(R^2_{Adj}\)</span> aynı bağımlı değişkeni açıklayan farklı bağımsız değişken gruplarını karsşılaştırmak için de kullanılır. <span class="math inline">\(R^2\)</span>’in yorumu korelasyon katsayısı yorumunda olduğu gibi konu alanına göre değişir. 0.7 <span class="math inline">\(R^2\)</span> değerinin çok güçlü veya çok zayıf adledilebileceği durumlar olabilir.</p>
+</div>
+<div id="c-artklar-ve-etkili-gozlemler" class="section level3">
+<h3><span class="header-section-number">11.1.3</span> c) Artıklar ve etkili gözlemler</h3>
+<p>Artıklar modelin uyumsuzluğu hakkında bilgi verebilir. Artıkların incelenmesi ile yordayıcı ve yordanan değişklenlerin arasındaki ilişkinin doğrusallığı görsel olarak kontrol edilebilir. Artıkların dağılımsal özelliklerini incelemek örneklemden evrene yorum yapmak için gerekli olabilir. Örneğin istatistiksel anlamlılık testlerinde ve güven aralığı hesaplamaları normal dağılım varsayımına dayandırılmış ise artıkların standart normal dağılım olasılığı grafiğinde (QQ grafiği) düz bir çizgiyi takip etmesi gerekir.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#tahmin edilen değerler</span>
+Yhat=X%*%betahat
+residuals=Y-Yhat
+residuals
+##          [,1]
+##  [1,]  0.4276
+##  [2,] -0.0708
+##  [3,] -2.7658
+##  [4,]  3.4811
+##  [5,]  1.0888
+##  [6,]  2.1839
+##  [7,] -1.1691
+##  [8,] -0.3615
+##  [9,] -0.8096
+## [10,] -3.3199
+## [11,]  0.5850
+## [12,]  0.7303
+<span class="kw">qqnorm</span>(residuals)</code></pre></div>
+<p><img src="SARP_files/figure-html/unnamed-chunk-120-1.png" width="672" /></p>
+<p>Genellikle artıklar üç farklı yaklaşımdan biri ile incelenir;</p>
+<p>• Ham artıklar, <span class="math inline">\(Y_i-\hat{Y_i}\)</span>. Ham artıklar Y ile aynı skaladadır.</p>
+<p>• Standardize artıklar:Stanardize artıklar ham artıkların kkendi standart sapmlarına böünmesi ile hesaplanır. z puanı skalasındadırlar (ortalama=0, standart sapma=1). Normal dağılım varsayımı yapıldığında, aykırı değerlerin gözden geçirilmek üzere seçilmesi aşamasında mutlak standardize artıklar için kriter olarak 2 kullanılabilir. Bir diğer ifade ile, mutlak ğeri 2 den büyük olan standardize artıklar aykırı değer tespitinde incelenmelidir. Bununla birlikte bir z dağılımında değerlerin %5’inin +/-2 kriterinin dışında yer alır.</p>
+<p>• Student artıklar: Ham artıkların tahmin edilen standart hataya bölünmesi ile hesaplanır.</p>
+<p>Artıklar incelenirken bu üç yaklaşımda genellikle aynı sonucu verir. <span class="citation">Rawlings, Pantula, and Dickey (<a href="#ref-Rawling98">1998</a>)</span> aykırı değerlerin tespitinde student artıkların ve <span class="math inline">\(t_{n-p&#39;-1}\)</span> serbestlik derecesi ile bir t dağılımının kullanımını tavsiye eder. Buradaki <span class="math inline">\(p&#39;\)</span> modelde yer alan katsayıları temsil eder (örneğimiz için sabit+iki yordayıcı =3)</p>
+<p>Artık değerleri tahmin edilen değerler ile karşılaştıran saçılım grafikleri doğrusallık hakkında fikir verebilir. Aşağıda 500 katılımcı ve 2 yordayıcı değişken için simüle edilmiş veri üzerine kurulmuş bir regresyon modelinden elde edilen artık değer-tahmin edilen değer saçılım grafiği verilmiştir. Doğrusallık ihlal edilmediğinden grafik üzerinde bir örüntü olmamalıdır.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#veri oluştur</span>
+<span class="kw">library</span>(mvtnorm)
+sigma &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dt">ncol=</span><span class="dv">2</span>)
+xx &lt;-<span class="st"> </span><span class="kw">rmvnorm</span>(<span class="dt">n=</span><span class="dv">500</span>, <span class="dt">mean=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="dt">sigma=</span>sigma)
+yy=<span class="dv">5</span>+xx[,<span class="dv">1</span>]*<span class="dv">2</span>+xx[,<span class="dv">2</span>]*-<span class="dv">3</span>+<span class="kw">rnorm</span>(<span class="dv">500</span>,<span class="dv">0</span>,<span class="fl">1.5</span>)
+model=<span class="kw">lm</span>(yy~xx[,<span class="dv">1</span>]+xx[,<span class="dv">2</span>])
+errors=<span class="kw">rstudent</span>(model)
+predicted=<span class="kw">predict</span>(model)
+
+<span class="kw">library</span>(ggplot2)
+plotdata=<span class="kw">data.frame</span>(errors,predicted)
+<span class="kw">ggplot</span>(plotdata, <span class="kw">aes</span>(<span class="dt">x =</span> predicted, <span class="dt">y =</span> errors)) +
+<span class="st">  </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_hline</span>(<span class="dt">yintercept=</span><span class="dv">0</span>)+<span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Student artıklar&quot;</span>)+
+<span class="st">  </span><span class="kw">theme_bw</span>()+<span class="kw">stat_smooth</span>()</code></pre></div>
+<p><img src="SARP_files/figure-html/unnamed-chunk-121-1.png" width="672" /></p>
+<p>Grafikte yer alan mavi çizginin 0 çizgisine benzer olması doğrusallık ihlalinin olmadığını gösterir.</p>
+<p>Gösterim amaçlı simule edilen bir diğer veri setinde Y ve <span class="math inline">\(X_2\)</span> arasındaki ilişki doğrusal değildir quadratiktir.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#veri oluştur</span>
+<span class="kw">library</span>(mvtnorm)
+sigma &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dt">ncol=</span><span class="dv">2</span>)
+xx &lt;-<span class="st"> </span><span class="kw">rmvnorm</span>(<span class="dt">n=</span><span class="dv">100</span>, <span class="dt">mean=</span><span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">10</span>), <span class="dt">sigma=</span>sigma)
+yy=<span class="dv">150</span>+(xx[,<span class="dv">1</span>]*<span class="dv">4</span>)+(xx[,<span class="dv">2</span>]*-<span class="dv">3</span>)+(xx[,<span class="dv">2</span>]^<span class="dv">2</span>*<span class="fl">1.2</span>)+<span class="kw">rnorm</span>(<span class="dv">100</span>,<span class="dv">0</span>,<span class="dv">3</span>)
+model=<span class="kw">lm</span>(yy~xx[,<span class="dv">1</span>]+xx[,<span class="dv">2</span>])
+errors=<span class="kw">rstudent</span>(model)
+predicted=<span class="kw">predict</span>(model)
+
+
+<span class="kw">library</span>(ggplot2)
+plotdata=<span class="kw">data.frame</span>(errors,predicted)
+<span class="kw">ggplot</span>(plotdata, <span class="kw">aes</span>(<span class="dt">x =</span> predicted, <span class="dt">y =</span> errors)) +
+<span class="st">  </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_hline</span>(<span class="dt">yintercept=</span><span class="dv">0</span>)+<span class="kw">ylab</span>(<span class="st">&quot;Student artıklar&quot;</span>)+
+<span class="st">  </span><span class="kw">theme_bw</span>()+<span class="kw">stat_smooth</span>()</code></pre></div>
+<p><img src="SARP_files/figure-html/unnamed-chunk-122-1.png" width="672" /></p>
+<p>Bu grafik ilişkinin doğrusal olmadığını gösterse dahi sorunun kaynağını bulmada yardımcı değildir. Araştırmacı artık değerleri yordayıcılar ile karşılaştırarak sorunun kaynağını bulabilir. Bu konuya tekrar değinilecektir.</p>
+<p>Artık değer grafikleri herhangi bir sorun belirtmese dahi sıradan olmayan artık değerler dikkatlice incelenmelidir. Bir artık değerin sıradışı ( örneğin ortalamadan 3,4 veya 5 standart sapma farklı oluşu) olup olmadığına araştırmacı karar verir. Fakat bir gözlemin veri setinden çıkarılması iaraştırmacı tarafından detaylı olarak rapor edilmeli ve gerekçelendirilimelidir.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#veri oluştur</span>
+<span class="kw">set.seed</span>(<span class="dv">04022017</span>)
+<span class="kw">library</span>(mvtnorm)
+sigma &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dt">ncol=</span><span class="dv">2</span>)
+xx &lt;-<span class="st"> </span><span class="kw">rmvnorm</span>(<span class="dt">n=</span><span class="dv">100</span>, <span class="dt">mean=</span><span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">10</span>), <span class="dt">sigma=</span>sigma)
+yy=(xx[,<span class="dv">1</span>]*<span class="dv">4</span>)+(xx[,<span class="dv">2</span>]*-<span class="dv">3</span>)+<span class="kw">rnorm</span>(<span class="dv">100</span>,<span class="dv">0</span>,<span class="dv">3</span>)
+tempdata=<span class="kw">data.frame</span>(yy,xx,<span class="dt">id=</span><span class="dv">1</span>:<span class="dv">100</span>)
+model=<span class="kw">lm</span>(yy~X1+X2,<span class="dt">data=</span>tempdata)
+tempdata$SUTresiduals=<span class="kw">rstudent</span>(model)
+
+<span class="co"># kaç tane artık değer kritik değerin üstünde</span>
+<span class="co"># alfa=.05</span>
+<span class="kw">sum</span>(<span class="kw">abs</span>(tempdata$SUTresiduals)&gt;<span class="kw">qt</span>(<span class="kw">c</span>(.<span class="dv">975</span>), <span class="dt">df=</span><span class="dv">100-3-1</span>))
+## [1] 8
+
+<span class="co">#hangi gözlemler?</span>
+tempdata[<span class="kw">which</span>(<span class="kw">abs</span>(tempdata$SUTresiduals)&gt;<span class="kw">qt</span>(<span class="kw">c</span>(.<span class="dv">975</span>), <span class="dt">df=</span><span class="dv">100-3-1</span>)),]
+##       yy    X1    X2 id SUTresiduals
+## 13 21.39 11.49 10.29 13         2.02
+## 32  8.85 11.96 10.65 32        -2.20
+## 43 15.80 11.14  7.56 43        -1.99
+## 50  9.21  8.00 10.21 50         2.53
+## 51 19.96 10.11  8.97 51         2.02
+## 68 25.33 10.96  8.33 68         2.04
+## 84  2.03  7.94  7.84 84        -2.03
+## 91  5.51 10.74 10.25 91        -2.10</code></pre></div>
+<p>Tip I hata oranı 0.05 ile <span class="math inline">\(t_{.975,96}\)</span> kritik değerini kullanırsak yaklaşık olarak <span class="math inline">\(n * .05\)</span> gözleme ait mutlak student ayrık değerin kritik değerden büyük olması beklenir. Son örneğimizde 100 katılımcı olduğu için bu sayı 100*0.05=5’tir, tespit edilen potansiyel aykırı değer sayısı ise 8’dir. Fakat aykırı olma ihtimali olan gözlemler incelendiğinde bir anormallik görülmemiştir. Burada kullanılan <span class="math inline">\(t_{.975,96}\)</span> ihtiyatli bir kritik değerdir,<span class="math inline">\(t_{.99,96}\)</span> değeri de kullanılabilir. Bu yöntemin amacı potansiyel aykırı değerleri tespit edip incelemektir. Veri setine aşina olan araştırmacı hangi gözlemlerin sıradışı olduğunu söyleyebilir.</p>
+<p>Araştırmacı sıradışılık farkeder ve gözlemleri veri setinden çıkarmaya karar verirse bunu birer bire yapmalıdır. Belirlenen en sıradışı gözlem çıkarılıp analizler tekrarlanmalıdır. Eğer gözlem veri setinden çıkarılacaksa sebepleri detaylı bir şekilde açıklanmalıdır. Bununla beraber, aykırı değerlere dirençli yöntemlerde kullanılabilir. Güçlü bir gerekçesi olmadığı sürece gözlemlerin veri setinden çıkarılması doğru değildir.</p>
+<p>R programlama dili ile etkili gözlemleri tespit etmekte oldukça kolaydır.Etkili gözlem, veri setinden çıkarıldığında sonuçları değiştirebilecek gözlem olarak tanımlanabilir . <em>influence.measures</em> fonksiyonu 5 farklı ölçüm hesaplar;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(<span class="kw">influence.measures</span>(model))
+## Potentially influential observations of
+##   lm(formula = yy ~ X1 + X2, data = tempdata) :
+## 
+##     dfb.1_ dfb.X1 dfb.X2 dffit cov.r   cook.d hat  
+## 12   0.08  -0.02  -0.08  -0.10  1.12_*  0.00   0.08
+## 33   0.09  -0.03  -0.07  -0.11  1.11_*  0.00   0.07
+## 41  -0.01  -0.03   0.03  -0.04  1.10_*  0.00   0.06
+## 42   0.05  -0.12   0.07   0.13  1.11_*  0.01   0.07
+## 50   0.20  -0.40   0.21   0.47  0.88_*  0.07   0.03
+## 64  -0.03   0.03   0.00   0.04  1.10_*  0.00   0.06
+## 100  0.01   0.13  -0.15  -0.18  1.10_*  0.01   0.07</code></pre></div>
+<p>Bu örnekte 12,33,41,42,50,64 ve 100 numaralı gözlemlerin etkili olma potansiyeli vardır. Tabloda görüldüğü gibi bu gözlemlerin hangi kritere göre seçildiği (*) işareti ile gösterilmiştir. Örneğimizde 7 gözlem de <em>kovaryans oranı</em> kriterine göre etkin bulunmuştur. Bu katsayı, gözlemlerin, regresyon katsayılarına ait örneklem varyansına etkisini ölçmeye çalışır. <span class="math inline">\(1+(3p&#39;/n)\)</span> ve <span class="math inline">\(1-(3p&#39;/n)\)</span> sınırları dışında kalan <em>kovaryans oranı</em> katsayısına sahip gözlemler influence.measures fonksiyonu tarafından işaretlenir. Örneğimizde n=100 ve p’=3 olduğundan kritik değerler 1.09 and .91 olarak hesaplanır.</p>
+<p>Dfb (DFBETAS) değeri, gözlem çıkarıldığında regresyon katsayılarının ne kadar değişeceği hakkında bilgi vermeye çalışır. Gözlem çıkarıldıktan sonra hesaplanan yeni katsayı ile eski katsayı arasındaki farki yeni katsayının standart hatasına böler. Yani bir t istatistiğidir. Hesaplanan değer <span class="math inline">\(2/\sqrt(n)\)</span> kritik değerinden büyük ise influence.measures fonksiyonu gözlemi işaretler. Örneğimizde kritik değer <span class="math inline">\(2/\sqrt(100)=.2\)</span></p>
+<p>dffit, gözlem veri setinden çıkarıldığında o gözlem için yeni tahminin ne ölçüde değişeceği hakkında bilgi vermeye çalışır. <span class="math inline">\(2*\sqrt{\frac{p&#39;}{n}}\)</span> kritik değerinden büyük olan mutlak dffit değerleri influence.measures fonksiyonu tarafından işaretlenir.</p>
+<p>Cook uzaklğı (cook.d) bir gözlemin bütün regresyon katsayıları üzerindeki etkisini aynı anda ölçmeye çalışır. <span class="math inline">\(F_{.5,p&#39;,n-p&#39;}\)</span> kritik değerinden büyük olan değerler influence.measures fonksiyonu tarafından işaretlenir. Cook uzaklığı aynı zamanda belli bir gözlemin veri setinden çıkarılması durumunda geri kalan tahmini değerlerin (<span class="math inline">\(\hat{Y_i}\)</span>) ne kadar etkilendiğini ölçmeye çalışır.</p>
+<p>Leverage değeri (Hat Diag) bir gözlemin diğer gözlemlerden ne kadar uzak olduğunu ölçmeye çalışır. <span class="math inline">\(2p’/n\)</span> kritik değerinden büyük olan leverage değerleri potansiyel etkili gözlemdir ve influence.measures fonksiyonu tarafından işaretlenir.</p>
+<p>Potansiyel etkili gözlem olarak işaretlenen gözlemlerin değerlendirilmesi araştırmacının sorumluluğundadır. Daha önce belirtildiği gibi, etkili bir gözlemin veri setinden çıkarılıp çıkarılmaması önemli bir karardır. Veri setinden çıkarılan bir gözlem varsa sebepleri detaylı olarak açıklanmalıdır.</p>
+</div>
+<div id="d-es-varyansllk-varsaym" class="section level3">
+<h3><span class="header-section-number">11.1.4</span> d) <em>Eş varyanslılık varsayımı</em></h3>
+<p>Bağımlı değişkenin normal dağıldığı varsayımı ve OLS yöntemi ile regresyon katsayılarının <span class="math inline">\(\beta\)</span> dağılımları hesaplanabilir. Bu sayede regresyon katsayıları için standart hatalar <span class="math inline">\(\hat\sigma^2(X′X)^{-1}\)</span> ile kestirilebilir. Bu eşitlikteki <span class="math inline">\(\hat\sigma^2\)</span> hata terimlerinin varyansıdır.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#artıklar</span>
+s2 &lt;-<span class="st"> </span>(<span class="kw">t</span>(residuals) %*%<span class="st"> </span>residuals)/(<span class="kw">nrow</span>(Y)-<span class="kw">nrow</span>(betahat))  
+Var_betahat &lt;-<span class="st"> </span>s2[<span class="dv">1</span>,<span class="dv">1</span>]*<span class="kw">solve</span>(<span class="kw">t</span>(X)%*%X)  </code></pre></div>
+<p><span class="math inline">\(\sigma^2 (X&#39;X)^{-1}\)</span> eşitliği homojen varyans varsayımı altında geçerlidir. Bu varsayım, bağımsız değişkenler kontrol edildiğinde bağımlı değişkenin eş varyanslılık göstermesi durumudur. Bir diğer deyişle, bağımlı değişken için yapılmış her bir gözlem aynı miktarda bilgi sağladığı varsayılır (<span class="citation">Rawlings, Pantula, and Dickey (<a href="#ref-Rawling98">1998</a>)</span>). Bu varsayım ile birlikte regresyon katsayıları <span class="math inline">\(\sum_{i=1}^n(Y_i-\hat{Y_i})^2\)</span> toplamını minimize etmek üzere kestirilir. Bu eşitlikte her bir artık değer eşit bir ağırlığa sahiptir. Eğer eş varyanslılık varsayımı ihlal ediliyorsa artık değerlere farklı ağırlık vererek kestirici modifiye edilebilir veya başka bir dirençli kestirici kullanılabilir. Başka bir alternatif olarak bağımlı değişkenin transformasyonu kullanılabilir veya standart hataların tahmin yöntemi değiştirilebilir (bakınız <span class="citation">Lumley and Zeileis (<a href="#ref-R-sandwich">2015</a>)</span>). Aksi takdirde <span class="math inline">\(\hat\beta\)</span> için standart hatalar, eş varyanslılığın nasıl ihmal edildiğine evren parametresine kıyasla gerekenden büyük veya küçük hesaplanabilir. Eğer küçük hesaplanırsa Tip I hata oranı alfadan daha büyük olabilir. Eğer büyük hesaplanırsa istatistiksel güç yitirilir. Eş varyanslılık hipotezi, artık değerler ile tahmin edilen değerlerin kıyaslandığı bir grafik üzerinden incelenebilir. Eş varyanslılığın zedelendiği bir durum;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#veri oluştur</span>
+<span class="kw">set.seed</span>(<span class="dv">03032017</span>)
+<span class="kw">library</span>(mvtnorm)
+sigma &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>,.<span class="dv">7</span>,.<span class="dv">7</span>,<span class="dv">1</span>), <span class="dt">ncol=</span><span class="dv">2</span>)
+xx &lt;-<span class="st"> </span><span class="kw">rmvnorm</span>(<span class="dt">n=</span><span class="dv">100</span>, <span class="dt">mean=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>), <span class="dt">sigma=</span>sigma)
+<span class="co">#heteroscedasticity ekle</span>
+hts=function(v1,v2){<span class="dv">2</span><span class="fl">+.5</span>*v1<span class="fl">+.5</span>*v2}
+yy=<span class="dv">5</span>+xx[,<span class="dv">1</span>]*<span class="dv">5</span>+xx[,<span class="dv">2</span>]*<span class="dv">5</span>+<span class="kw">rnorm</span>(<span class="dv">100</span>,<span class="dv">0</span>,<span class="kw">hts</span>(xx[,<span class="dv">1</span>],xx[,<span class="dv">2</span>]))
+model=<span class="kw">lm</span>(yy~xx[,<span class="dv">1</span>]+xx[,<span class="dv">2</span>])
+<span class="co">#summary(model)</span>
+errors=<span class="kw">rstudent</span>(model)
+predicted=<span class="kw">predict</span>(model)
+
+<span class="co">#student artıklar ve tahmin edilen Y</span>
+<span class="kw">library</span>(ggplot2)
+plotdata=<span class="kw">data.frame</span>(errors,predicted)
+<span class="kw">ggplot</span>(plotdata, <span class="kw">aes</span>(<span class="dt">x =</span> predicted, <span class="dt">y =</span> errors)) +
+<span class="st">  </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_hline</span>(<span class="dt">yintercept=</span><span class="dv">0</span>)+<span class="kw">ylab</span>(<span class="st">&quot;Student artık değerler&quot;</span>)+
+<span class="st">  </span><span class="kw">geom_segment</span>(<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">xend =</span> predicted, <span class="dt">yend =</span> <span class="dv">0</span>)) +
+<span class="st">  </span><span class="kw">theme_bw</span>()</code></pre></div>
+<p><img src="SARP_files/figure-html/unnamed-chunk-126-1.png" width="672" /></p>
+<p>Genel olarak <span class="math inline">\(\hat Y\)</span> değerleri küçük ise hata varyansı da küçük görülmektedir. Eş varyanslılığın sağlandığı bir durum;</p>
+<p><img src="SARP_files/figure-html/unnamed-chunk-127-1.png" width="672" /></p>
+</div>
+<div id="e-hipotez-testi" class="section level3">
+<h3><span class="header-section-number">11.1.5</span> e) Hipotez testi</h3>
+<p><span class="math inline">\(H_0: \beta_1=...=\beta_p=0\)</span> boş hipotezi F dağılımı takip bir istatistik ile test edilebilir. Bu boş hipotez bütün regresyon katsayılarının sıfıra eşit olduğunu öne sürer. Alternatif hipotez ise en az bir regresyon katsayısının sıfırdan farklı olduğunu ileri sürer. <span class="math inline">\(MS_{regression}/MS_{residual}\)</span> istatistiği <span class="math inline">\(p\)</span> ve <span class="math inline">\(n-p&#39;\)</span> serbestlik derecesine sahip bir F dağılımı takip eder. <span class="math inline">\(p\)</span> bağımsız değişken sayısını <span class="math inline">\(p&#39;\)</span> ise regresyon katsayıları sayısını temsil eder (sabit yoksa <span class="math inline">\(p=p&#39;\)</span>). Alfa=0.05 ve sentetik data için;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Model KT ve Total KT daha önceden hesaplanmıştır.</span>
+dfREG=<span class="dv">2</span>  <span class="co">#(p=2, bağımsız değişkenler X1 and X2)</span>
+dfRES=<span class="dv">9</span>  <span class="co">#(n-p&#39;, 12-3)</span>
+MSreg=ModelSS/dfREG
+MSres=(TotalSS-ModelSS)/dfRES
+
+MSreg/MSres
+##      [,1]
+## [1,] 32.8
+
+<span class="co">#kritik F</span>
+<span class="kw">qf</span>(.<span class="dv">95</span>,dfREG,dfRES)
+## [1] 4.26
+<span class="dv">1</span>-<span class="kw">pf</span>(MSreg/MSres,dfREG,dfRES)
+##          [,1]
+## [1,] 7.39e-05</code></pre></div>
+<p>t-testi ise <span class="math inline">\(H_0:\beta_{X}=\beta_{hyp}\)</span> boş hipotezi ve <span class="math inline">\(H_1:\beta_{X}\neq\beta_{hyp}\)</span> alternatif hipotezini test etmek için kullanılabilir. Genellikle <span class="math inline">\(\beta_{hyp}=0\)</span> kullanılır.</p>
+<p><span class="math inline">\((b_X-\beta_{hyp})/SE(b_X)\)</span> istatistiği N-p’ serbest dağılımına sahip bir t dağılımı takip eder.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># X2 regresyon katsayısı 0&#39;dan farklı mı</span>
+Bhyp=<span class="dv">0</span>  <span class="co">#boş hipotez değeri</span>
+
+<span class="co"># betahat daha önceden hesaplanmıştır</span>
+<span class="co"># X2 için hesaplanan katsayı</span>
+bx2=betahat[<span class="dv">3</span>]  
+
+<span class="co"># Var_betahat daha önce hesaplanmıştır</span>
+<span class="co"># X2 regresyon katsayısına ait standart hata</span>
+se_bx2=<span class="kw">sqrt</span>(Var_betahat[<span class="dv">3</span>,<span class="dv">3</span>])
+
+<span class="co">#t istatistiği</span>
+(bx2-Bhyp)/se_bx2
+## [1] 5.33
+
+<span class="co"># t kritik değeri</span>
+<span class="kw">qt</span>(.<span class="dv">975</span>,<span class="dv">9</span>)
+## [1] 2.26
+
+<span class="co">#p değeri</span>
+<span class="dv">2</span>*(<span class="kw">pt</span>(-<span class="kw">abs</span>((bx2-Bhyp)/se_bx2),<span class="dv">9</span>))
+## [1] 0.000478</code></pre></div>
+</div>
+<div id="f-degisken-secimi" class="section level3">
+<h3><span class="header-section-number">11.1.6</span> f) Değişken seçimi</h3>
+<p>Uzak bir bakışaçısından, çoklu regresyonun kullanıldığı iki senaryo vardır.</p>
+<p>İlk senaryo: Sosyal bilimci alan yazını dikkatli bir şekilde inceler, araştırma sorusu ile ilgili olan bağımsız değişkenleri belirler, gereken örneklem büyüklüğüne karar verir, veriyi toplar,bütün bağımsız değişkenleri içeren bir model kurar ve sonuçları raporlar</p>
+<p>İkinci senaryo: Sosyal bilimcinin oldukça büyük bir veri setine erişimi vardır ve hangi bağımsız değişkenlerin modelde yer alacağına dair önceden bir kararı yoktur. Bu durum, (a) araştırmacının yeni bir teori üzerinde çalıştığı ve bir çok değişkeni ölçtüğü durumlarda durumlarda veya (b) daha önceden toplanmış bir veri seti üzerinde (secondary data) çalıştığı durumlarda görülebilir. Her iki durumda da araştırmacı en iyi tahmin kabiliyeti gösteren değişkenleri seçmek isteyebilir. Bu seçim işlemi için farklı yaklaşımlar mevcuttur, örneğin adım adım seçim (stepwise), eleme ile seçim (backward) veya ekleme ile seçim (forward). Fakat bizim tecrübemize göre tamamen aynı veri setine uygulandığında bile bu yöntemler farklı sonuçlar vermektedir.</p>
+<p>R ile oldukça kolay tamamlanabilecek bir diğer değişken seçme yöntemi mümkün olan bütün regresyonları koşmaktır. Tanıtım amacı ile yazılan R kodunu inceleyiniz;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#veri oluştur</span>
+<span class="kw">set.seed</span>(<span class="dv">02082017</span>)
+<span class="kw">library</span>(mvtnorm)
+sigma=<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="fl">5.899559</span>,<span class="fl">4.277045</span>,<span class="fl">3.906341</span>,
+               <span class="fl">4.277045</span>,<span class="fl">5.817412</span>,<span class="fl">3.654419</span>,
+               <span class="fl">3.906341</span>,<span class="fl">3.654419</span>,<span class="fl">5.642258</span>),<span class="dt">ncol=</span><span class="dv">3</span>)
+xx &lt;-<span class="st"> </span><span class="kw">rmvnorm</span>(<span class="dt">n=</span><span class="dv">200</span>, <span class="dt">mean=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>), <span class="dt">sigma=</span>sigma)
+yy=<span class="dv">5</span>+xx[,<span class="dv">1</span>]+xx[,<span class="dv">2</span>]*<span class="fl">1.5</span>+xx[,<span class="dv">3</span>]*<span class="dv">2</span>+<span class="kw">rnorm</span>(<span class="dv">200</span>,<span class="dv">0</span>,<span class="dv">3</span>)
+simdata=<span class="kw">data.frame</span>(yy,xx,<span class="dt">id=</span><span class="dv">1</span>:<span class="dv">200</span>)
+
+<span class="kw">library</span>(leaps)
+formula &lt;-<span class="st"> </span><span class="kw">formula</span>(<span class="kw">paste</span>(<span class="st">&quot;yy ~ &quot;</span>, 
+     <span class="kw">paste</span>(<span class="kw">names</span>(simdata[<span class="dv">2</span>:<span class="dv">4</span>]), <span class="dt">collapse=</span><span class="st">&quot; + &quot;</span>)))
+allpossreg &lt;-<span class="st"> </span><span class="kw">regsubsets</span>(formula,<span class="dt">nbest=</span><span class="dv">3</span>,<span class="dt">data=</span>simdata)
+aprout &lt;-<span class="st"> </span><span class="kw">summary</span>(allpossreg)
+
+<span class="co"># str(aprout) u inceleyiniz</span>
+<span class="co"># bu fonksiyon R2 ve Düzeltilmiş R2 den başka kriterler de hesaplar</span>
+
+APRtable=<span class="kw">with</span>(aprout,<span class="kw">round</span>(<span class="kw">cbind</span>(which,rsq,adjr2),<span class="dv">3</span>))
+APRtable=<span class="kw">data.frame</span>(APRtable,<span class="dt">check.rows =</span> F,<span class="dt">row.names =</span> <span class="ot">NULL</span>)
+APRtable$ppri=<span class="kw">rowSums</span>(APRtable[,<span class="dv">1</span>:<span class="dv">4</span>])
+<span class="kw">kable</span>(APRtable)</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">X.Intercept.</th>
+<th align="right">X1</th>
+<th align="right">X2</th>
+<th align="right">X3</th>
+<th align="right">rsq</th>
+<th align="right">adjr2</th>
+<th align="right">ppri</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0.753</td>
+<td align="right">0.751</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.696</td>
+<td align="right">0.695</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0.630</td>
+<td align="right">0.629</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0.871</td>
+<td align="right">0.870</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.811</td>
+<td align="right">0.809</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0.808</td>
+<td align="right">0.806</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0.890</td>
+<td align="right">0.888</td>
+<td align="right">4</td>
+</tr>
+</tbody>
+</table>
+<p>Bu tabloya göre sabitin ve sadece <span class="math inline">\(X_2\)</span> değişkeninin olduğu model <span class="math inline">\(R^2=.753\)</span> sonucunu vermektedir. Bütün değişkenler eklendiğinde <span class="math inline">\(R^2=.890\)</span> olur, fakat <span class="math inline">\(X_1\)</span> in modelde yer almaması <span class="math inline">\(R^2\)</span> değerini sadece .019 düşürür. Grafiği inceleyiniz</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(ggplot2)
+<span class="kw">ggplot</span>(APRtable, <span class="kw">aes</span>(<span class="dt">x=</span>ppri<span class="dv">-1</span>, <span class="dt">y=</span>rsq)) +
+<span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">shape=</span><span class="dv">1</span>,<span class="dt">size=</span><span class="dv">3</span>)+<span class="st">   </span>
+<span class="st">    </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">0.05</span>)) +
+<span class="st">    </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3</span>, <span class="dt">by =</span> <span class="dv">1</span>))+
+<span class="st">    </span><span class="kw">theme_bw</span>()+<span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;R-squared&quot;</span>)+<span class="st"> </span>
+<span class="st">    </span><span class="kw">theme</span>(<span class="dt">axis.text=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">15</span>),
+        <span class="dt">axis.title=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">14</span>,<span class="dt">face=</span><span class="st">&quot;bold&quot;</span>))
+
+<span class="kw">ggplot</span>(APRtable, <span class="kw">aes</span>(<span class="dt">x=</span>ppri<span class="dv">-1</span>, <span class="dt">y=</span>adjr2)) +
+<span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">shape=</span><span class="dv">1</span>,<span class="dt">size=</span><span class="dv">3</span>)+<span class="st">   </span>
+<span class="st">    </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">0.05</span>)) +
+<span class="st">    </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3</span>, <span class="dt">by =</span> <span class="dv">1</span>))+
+<span class="st">      </span><span class="kw">theme_bw</span>()+<span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Adjusted R-squared&quot;</span>)+<span class="st"> </span>
+<span class="st">    </span><span class="kw">theme</span>(<span class="dt">axis.text=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">15</span>),
+        <span class="dt">axis.title=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">14</span>,<span class="dt">face=</span><span class="st">&quot;bold&quot;</span>))</code></pre></div>
+<div class="figure"><span id="fig:unnamed-chunk-131"></span>
+<img src="SARP_files/figure-html/unnamed-chunk-131-1.png" alt="Mümkün olan bütün regresyonlar " width="50%" /><img src="SARP_files/figure-html/unnamed-chunk-131-2.png" alt="Mümkün olan bütün regresyonlar " width="50%" />
+<p class="caption">
+Figure 11.1: Mümkün olan bütün regresyonlar
+</p>
+</div>
+</div>
+<div id="g-guclu-dogrusal-baglant-sorunu" class="section level3">
+<h3><span class="header-section-number">11.1.7</span> g) Güçlü doğrusal bağlantı sorunu</h3>
+<p>Bağımsız değişkenlerin birbiri ile çok güçlü olarak ilişkili olması tahmin sürecinde istenmeyen sonuçlara yol açabilir. Bu durum doğrusal bağlantı (collinearity) sorunu olarak bilinir. Standart hatalar doğrusal bağlantı arttıkça artar çünkü bu sorun her bir bağımsız değişkenin tahmin sürecine olacak olumlu katkısını saklar.</p>
+<p>Açıklama amacı ile iki bağımsız değişkeninin olduğunu düşünelim, bu değişkenler arasındaki korelasyonun yüksek olduğu durumda iki tür problem oluşabilir, (a) regresyon katsayıları istikrarsız olabilir, aynı evrenden çekilen örneklemler ile çok farklı katsayılar elde edilebilir, (b) istatistiksel olarak anlamlı bir <span class="math inline">\(R^2\)</span> bulunsa dahi katsayılar istatistiksel olarak sıfırdan farksız olabilir.</p>
+<p>Varyans şişkinliği faktörü (Variance inflation factor,VIF) çoklu doğrusallık tespitinde kullanılabilir,<span class="math inline">\(VIF_x=\frac{1}{1-R^2_X}\)</span> . Bu eşitlikte <span class="math inline">\(R^2_X\)</span> X değişkeni çıkarıldığında hesaplanan <span class="math inline">\(R^2\)</span> değeridir. Büyük VIF değerleri potansiyel doğrusallık problemini işaret eder.Telaffuz edilen kritik VIF değerleri 4 ve 10 dur, fakat VIF değerleri dolaylı da olsa örneklem büyüklüğüne ve değişken varyansına göre değişebilir (<span class="citation">Obrien (<a href="#ref-obrien09">2007</a>)</span>). VIF değerleri büyük ise araştırmacı problemin kaynağını incelemedir. Araştırmacı şu seçeneklerden bir tanesini savunmaya çalışabilir, (a) yüksek korelasyona sahip iki değişkenden birini modelin dışında tutma, (b) yüksek korelasyon gösteren iki değişkeni birleştirme. Karar dikkatli bir şekilde verilmeli ve yeni sonuçlar ile eki sonuçlar kıyaslanmalıdır.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#korelasyonları kontrol et.</span>
+<span class="kw">cor</span>(simdata[,<span class="dv">2</span>:<span class="dv">4</span>])
+##      X1    X2    X3
+## X1 1.00 0.730 0.640
+## X2 0.73 1.000 0.666
+## X3 0.64 0.666 1.000
+
+<span class="co">#en yüksek korelasyon .73, </span>
+<span class="co">#çoklu doğrusallık problemi beklenmez</span>
+
+<span class="kw">library</span>(car)
+<span class="kw">vif</span>(<span class="kw">lm</span>(yy~X1+X2+X3,<span class="dt">data=</span>simdata))
+##   X1   X2   X3 
+## 2.36 2.50 1.98
+<span class="co"># VIF değerleri düşük</span></code></pre></div>
+</div>
+<div id="h-dogrusal-olmayan-regresyon" class="section level3">
+<h3><span class="header-section-number">11.1.8</span> h) Doğrusal olmayan regresyon</h3>
+<p>Eğer bağımlı değişken bağımsız değişkenlerden biri ile lineer olmayan bir ilişkiye sahip ise, bu durumun görmezden gelinmesi önemli bir değişkenin dışarda bırakılması problemi ile aynıdır. Artık değerlerin incelenmesi lineer olmayan ilişkilerin tespitinde işe yarardır. Kullanılan yöntemlerden biri, bağımsız değişkenin üs kuvvetleri ile oluşturulacak yeni bir değişkenin modele eklenmesidir. Örneğin artık grafiği <span class="math inline">\(X_k\)</span> ve artıklar arasında karesel (quadratic) bir ilişki varsa <span class="math inline">\(X_k^2\)</span> modele alınarak artık model uyumu tekrar incelenebilir. Bir diğer alternatif bağımsız değişkenin transform edilmesidir.</p>
+</div>
+<div id="i-korelasyon-gosteren-veya-bagmsz-olmayan-hata-terimleri" class="section level3">
+<h3><span class="header-section-number">11.1.9</span> i) Korelasyon gösteren veya bağımsız olmayan hata terimleri</h3>
+<p>Hatalar birbiri ile korelasyonlu olmamlıdır, daha kapsayıcı bir ifade ile, hatalar bağımsız olmalıdır. Bağlı olma durumu var ise bu durum göz ardı edilirse regresyon sonuçları geçersizdir. Fakat bu konu bu tanıtım materyalinin kapsamı dışında kalır. Sosyal bilimlerde tekrarlı ölçümler kullanıldığında (boylamsal çalışma) korelasyon gösteren hata terimleri oluşabilir, bu durumda araştırmacılar Örtük gelişim modelleri (latent growth models) veya çok düzeyli modeller (multilevel models) kullanabilir. Eğer hataların bağlı olma durumu bireylerin aynı kümelerden gelişi ise (nested or clustered data) yine çok düzeyli modeller kullanılabilir.</p>
+</div>
+<div id="j-bagmsz-degisken-uzerine-islemler-centering-and-scaling" class="section level3">
+<h3><span class="header-section-number">11.1.10</span> j) Bağımsız değişken üzerine işlemler (Centering and Scaling)</h3>
+<p>Annenin doğum esnasındaki yaşının çocuğun 10 yaşındaki IQ puanını tahmin etmeye çalışan bir çalışma düşünelim. Bu durumda regresyon sabiti anne yaşının 0 olduğu durumda çocuğun IQ puanını gösterir. Bu anlamlı olarak yorumlanabilir bir katsayı değildir. Eğer anne yaşı ortalama etrafında merkezileştirilirse, bir diğer ifade ile, her annenin yaşından örneklemdeki annelerin ortalama yaşı çıkarılırsa, regresyon sabiti yorumlanabilir. Bu durumda yaş değişkeninde sıfır, yaş ortalamasını temsil eder ve regresyon sabiti de ortalama yaştaki bir annenin çocuğunun 10 yaşındaki tahmini IQ puanını verir. Benzer bir örnek olarak, işe devamsızlık değişkeninin iş stresi değişkeni ile açıklanmaya çalışıldığını düşünelim. İş stresi puanları 10 ila 50 arasında değişiyorsa regresyon sabitinin anlamlı bir yorumu olmaz. Araştırmacı iş stresi puanları ortalama etrafında merkezileştirmeyi veya seçtiği bir değeri (örneğin 40) stres puanlarından çıkararak sabitin anlamlı bir şekilde yorumlanmasını sağlayabilir. Başka bir örnekte gelir değişkeninin sağlık değişkeni üzerine etkisi araştırılsın. Gelir verisinde bir birimın 1 dolar olduğunu ve bu değişkene ait regresyon katsayısının .001 olduğunu düşünelim. Araştırmacı bu durumda gelir değişkenini 1000’e bölerek birimi 1 dolardan 1000 dolara çıkarabilir. Bu durumda regresyon katsayıso .001 değil 1 olacaktır. Bu durum araştırmacının yorum yapmasını kolaylaştırabilir.</p>
+</div>
+<div id="k-standardize-edilmis-katsaylar" class="section level3">
+<h3><span class="header-section-number">11.1.11</span> k) Standardize edilmiş katsayılar</h3>
+<p>Yukarıda bahsedilen lineer transformasyonun yanında z transformasyonu da yapılabilir. Her sürekli bağımsız değişken için, değerlerden ortalama çıkarılıp standart sapmaya bölünebilir. Değişkenin doğasına bağlı olmak kaydı ile, standardize edilmiş bir değişkenin yorumu daha anlamlı olabilir; Ham puanlar için yorum: Endişe puanlarındaki bir birim artışın akademik başarı değişkeninde 3 birim azalmaya yol açabileceği tahmin edilmiştir. z-puanları: Motivasyon değişkeninde gerçekleşecek bir standart sapma artışın, başarı değişkeninde 0.25 standart sapma artışla ilişkili olabileceği tahmin edilmiştir.</p>
+</div>
+<div id="l-etkilesimler-interactions" class="section level3">
+<h3><span class="header-section-number">11.1.12</span> l) Etkileşimler (Interactions)</h3>
+<p>ANOVA bölümünde etkileşim konusu kısaca ele alınmıştı. Değişkenler arası etkileşimin modelde yer alması gerekirken göz ardı edilmesi önemli bir değişkenin dışarıda bırakılması problemidir. Ayrıca iki değişken arasındaki etkileşimin sonuçları etkilemesi durumunda asıl etkilerin yorumlanması yanıltıcı olabilir. Örneğin bir araştırmacının, öğrencilerinin merkezi bir sınavda matematik başarısını (<span class="math inline">\(Y\)</span>) tahmin etmeye çalışsın. Ödevlerden alınan puanlar (<span class="math inline">\(X_1\)</span>) ve öğretmen yapımı sınavlardan alınan puanların (<span class="math inline">\(X_2\)</span>) başarı üzerinde etkili olup olmadığını incelesin. Kuracağı eşitlik <span class="math inline">\(Y_i=\beta_0+\beta_1X_{i1}+\beta_2X_{i2}+\epsilon_i\)</span> olursa araştırmacı <span class="math inline">\(Y\)</span> ve <span class="math inline">\(X_1\)</span> arasındaki ilişkinin <span class="math inline">\(X_2\)</span>’ye bağlı olmadığını varsayar. Eğer bu varsayım hatalı ise sonuçlar yanıltıcı olabilir. Etkileşimin varlığını kontrol etmek için</p>
+<span class="math display" id="eq:olsinteract">\[\begin{equation} 
+ Y_i=\beta_0+\beta_1 X_{i1}+\beta_2 X_{i2}+\beta_3 X_{i1} X_{i2}+ \epsilon_i
+  \tag{11.2}
+\end{equation}\]</span>
+<p>modeli test edilebilir. Burada <span class="math inline">\(Y\)</span> ve <span class="math inline">\(X_1\)</span> arasındaki ilişki <span class="math inline">\(\beta_1+\beta_2 X_{i2}\)</span> ile gösterilir, bu <span class="math inline">\(Y\)</span> ve <span class="math inline">\(X_1\)</span> arasındaki ilişkinin <span class="math inline">\(X_2\)</span>’ye bağlı olduğunu gösterir. Benzer şekilde <span class="math inline">\(Y\)</span> ve <span class="math inline">\(X_2\)</span> ilişkisi <span class="math inline">\(\beta_2+\beta_1 X_{i1}\)</span> ile gösterilir. <span class="math inline">\(\beta_1+\beta_2 X_{i2}\)</span> düşünüldüğünde <span class="math inline">\(\beta_1\)</span>, <span class="math inline">\(Y\)</span> ve <span class="math inline">\(X_1\)</span> arasındaki ilişkinin <span class="math inline">\(X_2 = 0\)</span> iken ne olduğunu belirtir. Eğer <span class="math inline">\(X_2 = 0\)</span> anlamlı değil ise <span class="math inline">\(\beta_1\)</span> yorumu da anlamlı değildir. Eşitlik <a href="coklu-dogrusal-regresyon-ksa-tantm.html#eq:olsinteract">(11.2)</a> etkileşimin <span class="math inline">\(\beta_2 X_{i1}X_{i2}\)</span> ile doğru bir şekilde dikkate alındığı varsayımını yapar. Yapar ayrıca bu durum <span class="math inline">\(X_2\)</span> konrol edilirken <span class="math inline">\(Y\)</span> ve <span class="math inline">\(X_1\)</span> arasındaki ilişki doğrusal ise geçerlidir. Eşitlik <a href="coklu-dogrusal-regresyon-ksa-tantm.html#eq:olsinteract">(11.2)</a> ile verilen modelin varsayımları incelenmelidir. R ile çizilebilecek grafikler etkileşimleri tespit etmede yardımcı olabilir. <em>visreg</em> (<span class="citation">Breheny and Burchett (<a href="#ref-R-visreg">2016</a>)</span>) paketi ile çizilen grafiklere bakalım;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## simule edilmiş veriyi manipüle et
+## Yvar: etkileşim yokken  bağımlı değişken
+simdata$Yvar=<span class="dv">3</span>+simdata$X1*<span class="dv">2</span>+simdata$X2*<span class="dv">3</span>+<span class="kw">rnorm</span>(<span class="kw">nrow</span>(simdata),<span class="dv">0</span>,<span class="dv">5</span>)
+
+<span class="kw">library</span>(visreg)
+
+model=<span class="kw">lm</span>(Yvar~X1+X2+X1*X2,<span class="dt">data=</span>simdata)
+<span class="kw">visreg2d</span>(model, <span class="st">&quot;X1&quot;</span>, <span class="st">&quot;X2&quot;</span>, <span class="dt">plot.type=</span><span class="st">&quot;persp&quot;</span>)</code></pre></div>
+<p><img src="SARP_files/figure-html/unnamed-chunk-133-1.png" width="672" /></p>
+<p>Düz yüzey etkileşimin olmadığını işaret eder.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## simule edilmiş veriyi manipüle et
+## Yvar: etkileşim varken  bağımlı değişken
+simdata$Yvarint=<span class="dv">3</span>+simdata$X1*<span class="dv">1</span>+simdata$X2*<span class="dv">2</span>+simdata$X1*simdata$X2*<span class="fl">1.5</span>+<span class="kw">rnorm</span>(<span class="kw">nrow</span>(simdata),<span class="dv">0</span>,<span class="dv">5</span>)
+
+<span class="kw">library</span>(visreg)
+
+model2=<span class="kw">lm</span>(Yvarint~X1+X2+X1*X2,<span class="dt">data=</span>simdata)
+<span class="kw">visreg2d</span>(model2, <span class="st">&quot;X1&quot;</span>, <span class="st">&quot;X2&quot;</span>, <span class="dt">plot.type=</span><span class="st">&quot;persp&quot;</span>)</code></pre></div>
+<p><img src="SARP_files/figure-html/unnamed-chunk-134-1.png" width="672" /></p>
+<p>Yüzey artık düz değil, etkilesim mevcut.</p>
+</div>
+<div id="m-farkl-kestiriciler-estimators" class="section level3">
+<h3><span class="header-section-number">11.1.13</span> m) Farklı kestiriciler (estimators)</h3>
+<p>Eklenecek</p>
+</div>
+<div id="n-direncli-yontemler-robust-regression" class="section level3">
+<h3><span class="header-section-number">11.1.14</span> n) Dirençli yöntemler (Robust regression)</h3>
+<p>Eklenecek</p>
+</div>
+<div id="o-orneklem-buyuklugu-ve-istatistiksel-guc" class="section level3">
+<h3><span class="header-section-number">11.1.15</span> o) Örneklem büyüklüğü ve istatistiksel güç</h3>
+<p>Eklenecek</p>
+</div>
+<div id="p-degiskenlerin-guvenirligi" class="section level3">
+<h3><span class="header-section-number">11.1.16</span> p) Değişkenlerin güvenirliği</h3>
+<p>Eklenecek</p>
+</div>
+<div id="q-dgiskenlerin-turu" class="section level3">
+<h3><span class="header-section-number">11.1.17</span> q) Dğişkenlerin türü</h3>
+<p>Eklenecek</p>
+</div>
+<div id="r-birden-fazla-bagml-degisken" class="section level3">
+<h3><span class="header-section-number">11.1.18</span> r) Birden fazla bağımlı değişken</h3>
+<p>Eklenecek</p>
+</div>
+<div id="s-kayp-veri-teknikleri" class="section level3">
+<h3><span class="header-section-number">11.1.19</span> s) Kayıp veri teknikleri</h3>
+<p>Eklenecek</p>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Pearl09">
+<p>Pearl, Judea. 2009. <em>Causality: Models, Reasoning, and Inference</em>. 2nd ed. Cambridge;New York: Cambridge University Press.</p>
+</div>
+<div id="ref-georgenorman87">
+<p>Box, George E. P., and Norman R. Draper. 1987. <em>Empirical Model-Building and Response Surfaces</em>. New York: Wiley.</p>
+</div>
+<div id="ref-Rawling98">
+<p>Rawlings, John O., Sastry G. Pantula, and David A. Dickey. 1998. <em>Applied Regression Analysis: A Research Tool</em>. 2nd ed. New York: Springer.</p>
+</div>
+<div id="ref-R-sandwich">
+<p>Lumley, Thomas, and Achim Zeileis. 2015. <em>Sandwich: Robust Covariance Matrix Estimators</em>. <a href="https://CRAN.R-project.org/package=sandwich" class="uri">https://CRAN.R-project.org/package=sandwich</a>.</p>
+</div>
+<div id="ref-obrien09">
+<p>Obrien, Robert M. 2007. “A Caution Regarding Rules of Thumb for Variance Inflation Factors.” <em>Quality and Quantity</em> 41 (5).</p>
+</div>
+<div id="ref-R-visreg">
+<p>Breheny, Patrick, and Woodrow Burchett. 2016. <em>Visreg: Visualization of Regression Models</em>. <a href="https://CRAN.R-project.org/package=visreg" class="uri">https://CRAN.R-project.org/package=visreg</a>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="11">
+<li id="fn11"><p><a href="http://ww2.amstat.org/publications/jse/v9n3/stanton.html" class="uri">http://ww2.amstat.org/publications/jse/v9n3/stanton.html</a><a href="coklu-dogrusal-regresyon-ksa-tantm.html#fnref11">↩</a></p></li>
+<li id="fn12"><p>Bu durum gerçek deneysel çalışmaların neden önemli olduğu hakkında ipucu teşkil eder.<a href="coklu-dogrusal-regresyon-ksa-tantm.html#fnref12">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="korelasyon.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="kullansl-r-betikleri.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/burakaydin/SARP/tree/gh-pages/10_Regression.Rmd",
+"text": "Edit"
+},
+"download": ["SARP.pdf", "SARP.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

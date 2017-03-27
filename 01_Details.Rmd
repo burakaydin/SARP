@@ -8,10 +8,12 @@ Akademik çalışmalarımız araştırma tasarıları (research design) ve nicel
 
 
 ### Burak Aydın, Ph.D.
+
 Eğitimde araştırma ve değerlendirme metotları doktora ve istatistik doktora yandal derecesi mevcuttur. 2010 yılından bu yana R kullanıcısıdır. Yapısal eşitlik modelleri, çok düzeyli modeller ve eğilim puanları üzerine akademik çalışmaları vardır. Detaylı bilgi için  <a href="http://www.aydinburak.net" target="_blank">Kişisel</a> or <a href="http://aves.erdogan.edu.tr/burak.aydin/" target="_blank">Kurumsal</a>
 
 
 ### James Algina, Ph.D.
+
 _Klasik ve Modern Test Teorisi_ kitabının yazarıdır. Amerikan Eğitim Araştırmaları Birliği ve Amerikan Psikoloji Birliği (APA) üyesidir. 100'den fazla saygın akademik çalışması mevcuttur.Detaylı bilgi için <a href="https://ceecs.education.ufl.edu/james-algina/" target="_blank">UF Anita Zucker Center</a>
 
 
@@ -20,9 +22,11 @@ _Klasik ve Modern Test Teorisi_ kitabının yazarıdır. Amerikan Eğitim Araşt
 Florida Üniversitesi Eğitim Fakültesinde Doçenttir. Gerçek deneysel ve yarı deneysel çalışmalardan edinilen verilerin analizinde saygın çalışmaları mevcuttur. Detaylı bilgi için <a href="https://education.ufl.edu/leite/" target="_blank">UF College of Education</a>
 
 ## Teşekkür {#tesekkur}
+
 Burada katkı sağlayanların isimlerine yer verilecektir.
 
 ## Data {#dataWBT}
+
 Veri kullanıma açıktır, Dünya Bankası ve İŞKUR tarafından toplanmıştır. Türkiye'de yaşayan, İŞKUR'dan mesleki eğitim talebinde bulunmuş bireyleri temsil eder. 5902 kişi içerir. Materyal içerisinde kullanılan veriye _dataWBT_ (data WorldBank Türkiye) ismi verilmiştir ulaşmak için Bölüm \@ref(pullonline) içerisinde yer alan basamaklar takip edilebilir.
 
 dataWBT içerisinde yer alan değişkenler;
@@ -58,6 +62,7 @@ __Dünya Bankası Tarafından Katılımcılara Sorulan Sorular__
 
 
 ## Finansal Destek
+
 Bu materyalin hazırlanması Recep Tayyip Erdoğan Üniversitesi BAP birimi tarafından desteklenmiştir. BAP-53005-601
 
 Öncesinde, bu proje TUBİTAK tarafından Şubat 2016 tarihinde ret edilmiştir.ID 1059B191501734. 

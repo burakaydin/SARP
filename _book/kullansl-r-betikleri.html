@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SARP: Sosyal Bilimler R Platformu</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Sosyal Bilimler R Platformu">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="SARP: Sosyal Bilimler R Platformu" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="images/coverpicture.png" />
+  <meta property="og:description" content="Sosyal Bilimler R Platformu" />
+  <meta name="github-repo" content="burakaydin/BAP2219" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="SARP: Sosyal Bilimler R Platformu" />
+  
+  <meta name="twitter:description" content="Sosyal Bilimler R Platformu" />
+  <meta name="twitter:image" content="images/coverpicture.png" />
+
+<meta name="author" content="Burak AYDIN, James ALGINA, Walter LEITE">
+
+
+<meta name="date" content="2017-01-01">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="coklu-dogrusal-regresyon-ksa-tantm.html">
+<link rel="next" href="proje-basvurusu.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-0.8/htmlwidgets.js"></script>
+<link href="libs/rglwidgetClass-2/rgl.css" rel="stylesheet" />
+<script src="libs/rglwidgetClass-2/rglClass.src.js"></script>
+<script src="libs/CanvasMatrix4-2016/CanvasMatrix.src.js"></script>
+<script src="libs/rglWebGL-binding-0.97.0/rglWebGL.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SARP</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Kapak</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#tantm"><i class="fa fa-check"></i><b>1.1</b> Tanıtım</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#neden-bookdown"><i class="fa fa-check"></i><b>1.1.1</b> Neden Bookdown?</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#icerik"><i class="fa fa-check"></i><b>1.1.2</b> İçerik</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="onyuz.html"><a href="onyuz.html"><i class="fa fa-check"></i><b>2</b> Önyüz</a><ul>
+<li class="chapter" data-level="2.1" data-path="onyuz.html"><a href="onyuz.html#yazarlar"><i class="fa fa-check"></i><b>2.1</b> Yazarlar</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="onyuz.html"><a href="onyuz.html#burak-aydn-ph.d."><i class="fa fa-check"></i><b>2.1.1</b> Burak Aydın, Ph.D.</a></li>
+<li class="chapter" data-level="2.1.2" data-path="onyuz.html"><a href="onyuz.html#james-algina-ph.d."><i class="fa fa-check"></i><b>2.1.2</b> James Algina, Ph.D.</a></li>
+<li class="chapter" data-level="2.1.3" data-path="onyuz.html"><a href="onyuz.html#walter-l.-leite-ph.d."><i class="fa fa-check"></i><b>2.1.3</b> Walter L. Leite, Ph.D.</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="onyuz.html"><a href="onyuz.html#tesekkur"><i class="fa fa-check"></i><b>2.2</b> Teşekkür</a></li>
+<li class="chapter" data-level="2.3" data-path="onyuz.html"><a href="onyuz.html#dataWBT"><i class="fa fa-check"></i><b>2.3</b> Data</a></li>
+<li class="chapter" data-level="2.4" data-path="onyuz.html"><a href="onyuz.html#finansal-destek"><i class="fa fa-check"></i><b>2.4</b> Finansal Destek</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="rn-populerligi.html"><a href="rn-populerligi.html"><i class="fa fa-check"></i><b>3</b> R’ın popülerliği</a></li>
+<li class="chapter" data-level="4" data-path="windows-icin-r-kurulumu.html"><a href="windows-icin-r-kurulumu.html"><i class="fa fa-check"></i><b>4</b> Windows için R kurulumu</a></li>
+<li class="chapter" data-level="5" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>5</b> Giriş</a><ul>
+<li class="chapter" data-level="5.1" data-path="basics.html"><a href="basics.html#fonksiyonlar"><i class="fa fa-check"></i><b>5.1</b> Fonksiyonlar</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="basics.html"><a href="basics.html#r-basit-hesap-makinesi"><i class="fa fa-check"></i><b>5.1.1</b> R: Basit Hesap makinesi</a></li>
+<li class="chapter" data-level="5.1.2" data-path="basics.html"><a href="basics.html#r-programlanabilir-hesap-makinesi"><i class="fa fa-check"></i><b>5.1.2</b> R: Programlanabilir Hesap makinesi</a></li>
+<li class="chapter" data-level="5.1.3" data-path="basics.html"><a href="basics.html#yardm"><i class="fa fa-check"></i><b>5.1.3</b> Yardım!</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="basics.html"><a href="basics.html#r-data-tipleri"><i class="fa fa-check"></i><b>5.2</b> R Data Tipleri</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="basics.html"><a href="basics.html#vektorler"><i class="fa fa-check"></i><b>5.2.1</b> Vektörler</a></li>
+<li class="chapter" data-level="5.2.2" data-path="basics.html"><a href="basics.html#matrisler"><i class="fa fa-check"></i><b>5.2.2</b> Matrisler</a></li>
+<li class="chapter" data-level="5.2.3" data-path="basics.html"><a href="basics.html#variables"><i class="fa fa-check"></i><b>5.2.3</b> Değişkenler</a></li>
+<li class="chapter" data-level="5.2.4" data-path="basics.html"><a href="basics.html#faktorler"><i class="fa fa-check"></i><b>5.2.4</b> Faktörler</a></li>
+<li class="chapter" data-level="5.2.5" data-path="basics.html"><a href="basics.html#kayp-veriler"><i class="fa fa-check"></i><b>5.2.5</b> Kayıp Veriler</a></li>
+<li class="chapter" data-level="5.2.6" data-path="basics.html"><a href="basics.html#dataframes"><i class="fa fa-check"></i><b>5.2.6</b> Veri Çerçeveleri (Data Frames)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="basics.html"><a href="basics.html#r-paketleri"><i class="fa fa-check"></i><b>5.3</b> R Paketleri</a></li>
+<li class="chapter" data-level="5.4" data-path="basics.html"><a href="basics.html#theworkspace"><i class="fa fa-check"></i><b>5.4</b> Çalışma alanı (workspace)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="veri-setleri.html"><a href="veri-setleri.html"><i class="fa fa-check"></i><b>6</b> Veri Setleri</a><ul>
+<li class="chapter" data-level="6.1" data-path="veri-setleri.html"><a href="veri-setleri.html#veri-cekme"><i class="fa fa-check"></i><b>6.1</b> Veri Çekme</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="veri-setleri.html"><a href="veri-setleri.html#csv"><i class="fa fa-check"></i><b>6.1.1</b> CSV</a></li>
+<li class="chapter" data-level="6.1.2" data-path="veri-setleri.html"><a href="veri-setleri.html#spss"><i class="fa fa-check"></i><b>6.1.2</b> SPSS</a></li>
+<li class="chapter" data-level="6.1.3" data-path="veri-setleri.html"><a href="veri-setleri.html#rdata"><i class="fa fa-check"></i><b>6.1.3</b> Rdata</a></li>
+<li class="chapter" data-level="6.1.4" data-path="veri-setleri.html"><a href="veri-setleri.html#pullonline"><i class="fa fa-check"></i><b>6.1.4</b> Sanal Depolardan Veri Çekmek</a></li>
+<li class="chapter" data-level="6.1.5" data-path="veri-setleri.html"><a href="veri-setleri.html#r-stuido-araclg-ile-veri-cagrma"><i class="fa fa-check"></i><b>6.1.5</b> R Stuido Aracılığı ile Veri Çağırma</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="veri-setleri.html"><a href="veri-setleri.html#basit-veri-islemleri"><i class="fa fa-check"></i><b>6.2</b> Basit Veri İşlemleri</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="veri-setleri.html"><a href="veri-setleri.html#degiskenleri-yeniden-kodlama"><i class="fa fa-check"></i><b>6.2.1</b> Değişkenleri yeniden kodlama</a></li>
+<li class="chapter" data-level="6.2.2" data-path="veri-setleri.html"><a href="veri-setleri.html#alt-kume-secme-subsetting"><i class="fa fa-check"></i><b>6.2.2</b> Alt Küme Seçme (Subsetting)</a></li>
+<li class="chapter" data-level="6.2.3" data-path="veri-setleri.html"><a href="veri-setleri.html#yeni-degisken-olustur"><i class="fa fa-check"></i><b>6.2.3</b> Yeni Değişken Oluştur</a></li>
+<li class="chapter" data-level="6.2.4" data-path="veri-setleri.html"><a href="veri-setleri.html#veri-cercevesini-degistirme-reshaping-data"><i class="fa fa-check"></i><b>6.2.4</b> Veri Çerçevesini Değiştirme (Reshaping data)</a></li>
+<li class="chapter" data-level="6.2.5" data-path="veri-setleri.html"><a href="veri-setleri.html#degisken-turunu-degistirme"><i class="fa fa-check"></i><b>6.2.5</b> Değişken Türünü Değiştirme</a></li>
+<li class="chapter" data-level="6.2.6" data-path="veri-setleri.html"><a href="veri-setleri.html#veri-silme"><i class="fa fa-check"></i><b>6.2.6</b> Veri Silme</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="veri-setleri.html"><a href="veri-setleri.html#veri-kaydetme"><i class="fa fa-check"></i><b>6.3</b> veri Kaydetme</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html"><i class="fa fa-check"></i><b>7</b> Betimleyici İstatistikler ve Hipotez Testi</a><ul>
+<li class="chapter" data-level="7.1" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#descstats"><i class="fa fa-check"></i><b>7.1</b> Betimleyici İstatistikler</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#ortalama"><i class="fa fa-check"></i><b>7.1.1</b> Ortalama</a></li>
+<li class="chapter" data-level="7.1.2" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#ortanca"><i class="fa fa-check"></i><b>7.1.2</b> Ortanca</a></li>
+<li class="chapter" data-level="7.1.3" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#varyans"><i class="fa fa-check"></i><b>7.1.3</b> Varyans</a></li>
+<li class="chapter" data-level="7.1.4" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#standart-sapma"><i class="fa fa-check"></i><b>7.1.4</b> Standart Sapma</a></li>
+<li class="chapter" data-level="7.1.5" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#carpklk-skewness"><i class="fa fa-check"></i><b>7.1.5</b> Çarpıklık (Skewness)</a></li>
+<li class="chapter" data-level="7.1.6" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#basklk-kurtosis"><i class="fa fa-check"></i><b>7.1.6</b> Basıklık (Kurtosis)</a></li>
+<li class="chapter" data-level="7.1.7" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#betimleyici-istatisklerin-raporlanmas"><i class="fa fa-check"></i><b>7.1.7</b> Betimleyici İstatisklerin Raporlanması</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#basit-grafikler"><i class="fa fa-check"></i><b>7.2</b> Basit Grafikler</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#histogram"><i class="fa fa-check"></i><b>7.2.1</b> Histogram</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#hipotez-testi-tantm"><i class="fa fa-check"></i><b>7.3</b> Hipotez Testi Tanıtım</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#samplingdist"><i class="fa fa-check"></i><b>7.3.1</b> Örnekleme Dağılım (Sampling Distribution)</a></li>
+<li class="chapter" data-level="7.3.2" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#guven-aralklar-the-confidence-intervals-ci"><i class="fa fa-check"></i><b>7.3.2</b> Güven Aralıkları (The Confidence Intervals (CI))</a></li>
+<li class="chapter" data-level="7.3.3" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#bos-hipotez"><i class="fa fa-check"></i><b>7.3.3</b> Boş Hipotez</a></li>
+<li class="chapter" data-level="7.3.4" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#z-puan-ve-z-testi"><i class="fa fa-check"></i><b>7.3.4</b> z-puanı ve z-testi</a></li>
+<li class="chapter" data-level="7.3.5" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#tek-orneklem-t-testi"><i class="fa fa-check"></i><b>7.3.5</b> Tek örneklem t-testi</a></li>
+<li class="chapter" data-level="7.3.6" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#p-degeri"><i class="fa fa-check"></i><b>7.3.6</b> p-değeri</a></li>
+<li class="chapter" data-level="7.3.7" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#p-degeri-ornek-1"><i class="fa fa-check"></i><b>7.3.7</b> p değeri örnek-1</a></li>
+<li class="chapter" data-level="7.3.8" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#statisticalpower"><i class="fa fa-check"></i><b>7.3.8</b> İstatiksel Güç</a></li>
+<li class="chapter" data-level="7.3.9" data-path="betimleyici-istatistikler-ve-hipotez-testi.html"><a href="betimleyici-istatistikler-ve-hipotez-testi.html#z-ve-t-daglmlar-gecerli-degil-ise"><i class="fa fa-check"></i><b>7.3.9</b> z ve t dağılımları geçerli değil ise</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html"><i class="fa fa-check"></i><b>8</b> İki Ortalamanın Karşılaştırılması, t-testi</a><ul>
+<li class="chapter" data-level="8.1" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#bagmsz-gruplar-t-test-the-independent-groups-t-test"><i class="fa fa-check"></i><b>8.1</b> Bağımsız gruplar t-test (The Independent Groups t-test)</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#bagmsz-gruplar-t-testi-icin-r-betigi"><i class="fa fa-check"></i><b>8.1.1</b> Bağımsız gruplar t testi için R betiği</a></li>
+<li class="chapter" data-level="8.1.2" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#bagmsz-gruplar-t-testi-varsaymlar"><i class="fa fa-check"></i><b>8.1.2</b> Bağımsız gruplar t testi varsayımları</a></li>
+<li class="chapter" data-level="8.1.3" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#welch-t-test"><i class="fa fa-check"></i><b>8.1.3</b> Welch t test</a></li>
+<li class="chapter" data-level="8.1.4" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#indepteff"><i class="fa fa-check"></i><b>8.1.4</b> Bağımsız gruplar t testi için etki büyüklüğü</a></li>
+<li class="chapter" data-level="8.1.5" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#extra-pratikte-anlamllk-ve-istatistiksel-anlamllk"><i class="fa fa-check"></i><b>8.1.5</b> Extra: Pratikte anlamlılık ve istatistiksel anlamlılık</a></li>
+<li class="chapter" data-level="8.1.6" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#kayp-veriler-ile-bagmsz-gruplar-t-testi"><i class="fa fa-check"></i><b>8.1.6</b> Kayıp veriler ile bağımsız gruplar t testi</a></li>
+<li class="chapter" data-level="8.1.7" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#destekleyici-grafikler"><i class="fa fa-check"></i><b>8.1.7</b> Destekleyici grafikler</a></li>
+<li class="chapter" data-level="8.1.8" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#istatisksel-guc"><i class="fa fa-check"></i><b>8.1.8</b> İstatisksel güç</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#bagl-gruplar-t-testi-within-subjects-t-test"><i class="fa fa-check"></i><b>8.2</b> Bağlı gruplar t-testi (Within-subjects t-test)</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#bagl-gruplar-icin-t-testi"><i class="fa fa-check"></i><b>8.2.1</b> Bağlı gruplar için t testi</a></li>
+<li class="chapter" data-level="8.2.2" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#varsaymlar-bagl-gruplar-icin-t-testi"><i class="fa fa-check"></i><b>8.2.2</b> Varsayımlar: bağlı gruplar için t testi</a></li>
+<li class="chapter" data-level="8.2.3" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#direncli-tahminleme-yontemi-bagl-gruplar-icin-t-testi"><i class="fa fa-check"></i><b>8.2.3</b> Dirençli tahminleme yöntemi: bağlı gruplar için t testi</a></li>
+<li class="chapter" data-level="8.2.4" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#effect-size-for-the-dependent-groups-t-test"><i class="fa fa-check"></i><b>8.2.4</b> Effect size for the dependent groups t-test</a></li>
+<li class="chapter" data-level="8.2.5" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#kayp-veriler-ile-bagl-gruplar-t-testi"><i class="fa fa-check"></i><b>8.2.5</b> Kayıp veriler ile bağlı gruplar t testi</a></li>
+<li class="chapter" data-level="8.2.6" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#destekleyici-grafikler-1"><i class="fa fa-check"></i><b>8.2.6</b> Destekleyici grafikler</a></li>
+<li class="chapter" data-level="8.2.7" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#istatistiksel-guc-bagl-gruplar-t-testi"><i class="fa fa-check"></i><b>8.2.7</b> İstatistiksel güç: bağlı gruplar t testi</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#yaygn-tasarlar"><i class="fa fa-check"></i><b>8.3</b> Yaygın Tasarılar</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#gruplarn-iliskili-oldugu-durumlar"><i class="fa fa-check"></i><b>8.3.1</b> Grupların ilişkili olduğu durumlar</a></li>
+<li class="chapter" data-level="8.3.2" data-path="iki-ortalamann-karslastrlmas-t-testi.html"><a href="iki-ortalamann-karslastrlmas-t-testi.html#designbetween"><i class="fa fa-check"></i><b>8.3.2</b> Bağlı olmayan grup tasarılarına örnekler</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="varyans-analizi-anova.html"><a href="varyans-analizi-anova.html"><i class="fa fa-check"></i><b>9</b> Varyans Analizi (ANOVA)</a><ul>
+<li class="chapter" data-level="9.1" data-path="varyans-analizi-anova.html"><a href="varyans-analizi-anova.html#terminoloji"><i class="fa fa-check"></i><b>9.1</b> Terminoloji</a></li>
+<li class="chapter" data-level="9.2" data-path="varyans-analizi-anova.html"><a href="varyans-analizi-anova.html#bagl-olmayan-gozlemler-varyans-analizi-between-subjects-anova"><i class="fa fa-check"></i><b>9.2</b> Bağlı olmayan gözlemler varyans analizi (Between Subjects ANOVA)</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="varyans-analizi-anova.html"><a href="varyans-analizi-anova.html#tek-yonlu-bagl-olmayan-gozlemler-varyans-analizi"><i class="fa fa-check"></i><b>9.2.1</b> Tek-yönlü bağlı olmayan gözlemler varyans analizi</a></li>
+<li class="chapter" data-level="9.2.2" data-path="varyans-analizi-anova.html"><a href="varyans-analizi-anova.html#iki-faktorlu-bagl-olmayan-gozlemler-varyans-analizi"><i class="fa fa-check"></i><b>9.2.2</b> İki faktörlü bağlı olmayan gözlemler varyans analizi</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="varyans-analizi-anova.html"><a href="varyans-analizi-anova.html#bagl-gozlemler-varyans-analizi"><i class="fa fa-check"></i><b>9.3</b> Bağlı gözlemler varyans analizi</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="varyans-analizi-anova.html"><a href="varyans-analizi-anova.html#tek-yonlu-bagl-gozlemler-varyans-analizi"><i class="fa fa-check"></i><b>9.3.1</b> Tek-yönlü bağlı gözlemler varyans analizi</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="varyans-analizi-anova.html"><a href="varyans-analizi-anova.html#eklemesiz-non-additive-model-icin-esitlik"><i class="fa fa-check"></i><b>9.4</b> Eklemesiz (non-additive) model için eşitlik;</a></li>
+<li class="chapter" data-level="9.5" data-path="varyans-analizi-anova.html"><a href="varyans-analizi-anova.html#karma-tasar-mixed-design"><i class="fa fa-check"></i><b>9.5</b> Karma tasarı (Mixed design)</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="korelasyon.html"><a href="korelasyon.html"><i class="fa fa-check"></i><b>10</b> Korelasyon</a><ul>
+<li class="chapter" data-level="10.1" data-path="korelasyon.html"><a href="korelasyon.html#pearson-korelasyon-katsays"><i class="fa fa-check"></i><b>10.1</b> Pearson korelasyon katsayısı</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="korelasyon.html"><a href="korelasyon.html#pearson-korelasyon-katsaysnn-evren-baznda-yorumu"><i class="fa fa-check"></i><b>10.1.1</b> Pearson korelasyon katsayısının evren bazında yorumu</a></li>
+<li class="chapter" data-level="10.1.2" data-path="korelasyon.html"><a href="korelasyon.html#r-betigi-pearson-korelasyon-katsays"><i class="fa fa-check"></i><b>10.1.2</b> R betiği: Pearson korelasyon katsayısı</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="korelasyon.html"><a href="korelasyon.html#spearman-rho-ve-kendall-tau"><i class="fa fa-check"></i><b>10.2</b> Spearman rho ve Kendall tau</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="korelasyon.html"><a href="korelasyon.html#r-betigi-spearmans-rho-ve-kendalls-tau"><i class="fa fa-check"></i><b>10.2.1</b> R betiği: Spearman’s rho ve Kendall’s tau</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="korelasyon.html"><a href="korelasyon.html#r-betigi-cift-serili-ve-nokta-cift-serili-korelasyonlar"><i class="fa fa-check"></i><b>10.3</b> R betiği: Çift Serili ve Nokta-Çift Serili Korelasyonlar</a></li>
+<li class="chapter" data-level="10.4" data-path="korelasyon.html"><a href="korelasyon.html#r-betigi-phi-korelasyon-katsays"><i class="fa fa-check"></i><b>10.4</b> R betiği: Phi korelasyon katsayısı</a></li>
+<li class="chapter" data-level="10.5" data-path="korelasyon.html"><a href="korelasyon.html#korelasyon-katsays-hakknda-dikkat-edilmesi-gerekenler"><i class="fa fa-check"></i><b>10.5</b> Korelasyon katsayısı hakkında dikkat edilmesi gerekenler</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html"><i class="fa fa-check"></i><b>11</b> Çoklu Doğrusal Regresyon , Kısa Tanıtım</a><ul>
+<li class="chapter" data-level="11.1" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#matrisler-ve-en-kucuk-kareler-yontemi"><i class="fa fa-check"></i><b>11.1</b> Matrisler ve En Küçük Kareler Yöntemi</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#a-esasen-butun-modeller-yanlstr-fakat-bir-ksm-ise-yarardr."><i class="fa fa-check"></i><b>11.1.1</b> a) “Esasen bütün modeller yanlıştır, fakat bir kısmı işe yarardır.”</a></li>
+<li class="chapter" data-level="11.1.2" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#b-bagml-degisken-ve-bagmsz-degiskenler-arasndaki-iliskinin-kuvveti"><i class="fa fa-check"></i><b>11.1.2</b> b) Bağımlı değişken ve bağımsız değişkenler arasındaki ilişkinin kuvveti</a></li>
+<li class="chapter" data-level="11.1.3" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#c-artklar-ve-etkili-gozlemler"><i class="fa fa-check"></i><b>11.1.3</b> c) Artıklar ve etkili gözlemler</a></li>
+<li class="chapter" data-level="11.1.4" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#d-es-varyansllk-varsaym"><i class="fa fa-check"></i><b>11.1.4</b> d) <em>Eş varyanslılık varsayımı</em></a></li>
+<li class="chapter" data-level="11.1.5" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#e-hipotez-testi"><i class="fa fa-check"></i><b>11.1.5</b> e) Hipotez testi</a></li>
+<li class="chapter" data-level="11.1.6" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#f-degisken-secimi"><i class="fa fa-check"></i><b>11.1.6</b> f) Değişken seçimi</a></li>
+<li class="chapter" data-level="11.1.7" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#g-guclu-dogrusal-baglant-sorunu"><i class="fa fa-check"></i><b>11.1.7</b> g) Güçlü doğrusal bağlantı sorunu</a></li>
+<li class="chapter" data-level="11.1.8" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#h-dogrusal-olmayan-regresyon"><i class="fa fa-check"></i><b>11.1.8</b> h) Doğrusal olmayan regresyon</a></li>
+<li class="chapter" data-level="11.1.9" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#i-korelasyon-gosteren-veya-bagmsz-olmayan-hata-terimleri"><i class="fa fa-check"></i><b>11.1.9</b> i) Korelasyon gösteren veya bağımsız olmayan hata terimleri</a></li>
+<li class="chapter" data-level="11.1.10" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#j-bagmsz-degisken-uzerine-islemler-centering-and-scaling"><i class="fa fa-check"></i><b>11.1.10</b> j) Bağımsız değişken üzerine işlemler (Centering and Scaling)</a></li>
+<li class="chapter" data-level="11.1.11" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#k-standardize-edilmis-katsaylar"><i class="fa fa-check"></i><b>11.1.11</b> k) Standardize edilmiş katsayılar</a></li>
+<li class="chapter" data-level="11.1.12" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#l-etkilesimler-interactions"><i class="fa fa-check"></i><b>11.1.12</b> l) Etkileşimler (Interactions)</a></li>
+<li class="chapter" data-level="11.1.13" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#m-farkl-kestiriciler-estimators"><i class="fa fa-check"></i><b>11.1.13</b> m) Farklı kestiriciler (estimators)</a></li>
+<li class="chapter" data-level="11.1.14" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#n-direncli-yontemler-robust-regression"><i class="fa fa-check"></i><b>11.1.14</b> n) Dirençli yöntemler (Robust regression)</a></li>
+<li class="chapter" data-level="11.1.15" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#o-orneklem-buyuklugu-ve-istatistiksel-guc"><i class="fa fa-check"></i><b>11.1.15</b> o) Örneklem büyüklüğü ve istatistiksel güç</a></li>
+<li class="chapter" data-level="11.1.16" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#p-degiskenlerin-guvenirligi"><i class="fa fa-check"></i><b>11.1.16</b> p) Değişkenlerin güvenirliği</a></li>
+<li class="chapter" data-level="11.1.17" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#q-dgiskenlerin-turu"><i class="fa fa-check"></i><b>11.1.17</b> q) Dğişkenlerin türü</a></li>
+<li class="chapter" data-level="11.1.18" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#r-birden-fazla-bagml-degisken"><i class="fa fa-check"></i><b>11.1.18</b> r) Birden fazla bağımlı değişken</a></li>
+<li class="chapter" data-level="11.1.19" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#s-kayp-veri-teknikleri"><i class="fa fa-check"></i><b>11.1.19</b> s) Kayıp veri teknikleri</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="kullansl-r-betikleri.html"><a href="kullansl-r-betikleri.html"><i class="fa fa-check"></i><b>12</b> Kullanışlı R betikleri</a><ul>
+<li class="chapter" data-level="12.1" data-path="kullansl-r-betikleri.html"><a href="kullansl-r-betikleri.html#apastyle-paketi"><i class="fa fa-check"></i><b>12.1</b> apaStyle paketi</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="proje-basvurusu.html"><a href="proje-basvurusu.html"><i class="fa fa-check"></i><b>13</b> Proje Başvurusu</a><ul>
+<li class="chapter" data-level="13.0.1" data-path="proje-basvurusu.html"><a href="proje-basvurusu.html#amac-gerekce"><i class="fa fa-check"></i><b>13.0.1</b> Amaç / Gerekçe</a></li>
+<li class="chapter" data-level="13.0.2" data-path="proje-basvurusu.html"><a href="proje-basvurusu.html#konukapsam"><i class="fa fa-check"></i><b>13.0.2</b> Konu/Kapsam</a></li>
+<li class="chapter" data-level="13.0.3" data-path="proje-basvurusu.html"><a href="proje-basvurusu.html#literatur-ozeti"><i class="fa fa-check"></i><b>13.0.3</b> Literatür özeti</a></li>
+<li class="chapter" data-level="13.0.4" data-path="proje-basvurusu.html"><a href="proje-basvurusu.html#ozgun-degeri"><i class="fa fa-check"></i><b>13.0.4</b> Özgün Değeri</a></li>
+<li class="chapter" data-level="13.0.5" data-path="proje-basvurusu.html"><a href="proje-basvurusu.html#yaygn-etkikatma-deger"><i class="fa fa-check"></i><b>13.0.5</b> Yaygın etki/katma değer</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">SARP: Sosyal Bilimler R Platformu</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="kullansl-r-betikleri" class="section level1">
+<h1><span class="header-section-number"> 12</span> Kullanışlı R betikleri</h1>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># sayısal veriyi faktöre çevir</span>
+
+temdata[,<span class="dv">2</span>:<span class="dv">9</span>] &lt;-<span class="st"> </span><span class="kw">lapply</span>(temdata[,<span class="dv">2</span>:<span class="dv">9</span>], as.factor) 
+
+<span class="co"># Faktörü sayısal veriye çevir</span>
+as.numeric.factor &lt;-<span class="st"> </span>function(x) {<span class="kw">as.numeric</span>(<span class="kw">levels</span>(x))[x]}
+temdata[,<span class="dv">2</span>:<span class="dv">5</span>] &lt;-<span class="st"> </span><span class="kw">lapply</span>(temdata[,<span class="dv">2</span>:<span class="dv">5</span>], as.numeric.factor) 
+
+<span class="co"># Birden fazla sütun için frekans tablosu</span>
+
+dems=<span class="kw">apply</span>(temdata[,<span class="dv">5</span>:<span class="dv">11</span>], <span class="dv">2</span>, function(x){<span class="kw">table</span>(x,temdata$grp)})
+<span class="kw">library</span> (plyr)
+mydems &lt;-<span class="st"> </span><span class="kw">ldply</span> (mydems, data.frame)
+
+<span class="co"># Faktpre göre özetle</span>
+uncagg=<span class="kw">aggregate</span>(. ~<span class="st"> </span>grp, <span class="dt">data =</span> temdata, <span class="dt">FUN=</span>mean, <span class="dt">na.rm=</span><span class="ot">TRUE</span>)
+
+uncaggfaster=temdata[, <span class="kw">lapply</span>(.SD, mean,<span class="dt">na.rm=</span>T), by =<span class="st"> </span>grp]
+
+<span class="co"># maksimum değeri bul</span>
+<span class="kw">which.max</span>(x)
+
+
+<span class="co"># R güncellemesi</span>
+if(!<span class="kw">require</span>(installr)) { 
+  <span class="kw">install.packages</span>(<span class="st">&quot;installr&quot;</span>); <span class="kw">require</span>(installr)} <span class="co">#load / install+load installr</span>
+<span class="kw">updateR</span>()
+
+
+<span class="co"># Kukla değişken oluştur</span>
+<span class="kw">head</span>(temdata)
+for(level in <span class="kw">unique</span>(temdata$zp)){
+  temdata[<span class="kw">paste</span>(<span class="st">&quot;dummy&quot;</span>, level, <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)] &lt;-<span class="st"> </span><span class="kw">ifelse</span>(temdata$zp ==<span class="st"> </span>level, <span class="dv">1</span>, <span class="dv">0</span>)
+}
+
+
+<span class="co"># noktalı virgül</span>
+x=<span class="kw">rnorm</span>(<span class="dv">10000</span>,<span class="dv">5</span>,<span class="dv">10</span>)
+<span class="kw">mean</span>(x);<span class="kw">var</span>(x);<span class="kw">sqrt</span>(<span class="kw">var</span>(x))
+
+<span class="co"># objeyi sil</span>
+y=<span class="kw">rnorm</span>(<span class="dv">10</span>)
+<span class="kw">rm</span>(y)
+
+<span class="co"># çalışma alanını boşalt</span>
+<span class="kw">rm</span>(<span class="dt">list=</span><span class="kw">ls</span>())
+
+<span class="co"># Belirlenen dışında sil</span>
+<span class="kw">rm</span>(<span class="dt">list=</span><span class="kw">setdiff</span>(<span class="kw">ls</span>(),<span class="kw">c</span>(<span class="st">&quot;temdata&quot;</span>, <span class="st">&quot;temdata2&quot;</span>)))
+
+
+<span class="co"># tam sayı bölümü</span>
+<span class="dv">7</span>%/%<span class="dv">2</span>
+
+<span class="co"># kalan</span>
+<span class="dv">5</span>%%<span class="dv">2</span> 
+
+<span class="co"># tanımla ve koş</span>
+(<span class="dt">count=</span><span class="kw">c</span>(<span class="dv">25</span>,<span class="dv">12</span>,<span class="dv">7</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>))
+
+<span class="co"># tıklama ile csv oku</span>
+data=<span class="kw">read.csv</span>(<span class="kw">file.choose</span>(),<span class="dt">header=</span><span class="ot">TRUE</span>,)
+
+<span class="co">#1 den fazla benzer CSV birleştir</span>
+filenames &lt;-<span class="st"> </span><span class="kw">list.files</span>()
+temdata=<span class="kw">do.call</span>(<span class="st">&quot;rbind&quot;</span>, <span class="kw">lapply</span>(filenames, read.csv, <span class="dt">header =</span> F))
+<span class="kw">write.table</span>(temdata, <span class="dt">file =</span><span class="st">&quot;temdata.binded.csv&quot;</span> , <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>,<span class="dt">col.names =</span> F, <span class="dt">row.names =</span> F)
+
+
+<span class="co">#birden çok grafik</span>
+<span class="kw">layout</span>(<span class="kw">matrix</span>(<span class="dv">1</span>:<span class="dv">9</span>, <span class="dt">nc =</span> <span class="dv">3</span>))
+<span class="kw">sapply</span>(<span class="kw">names</span>(temdata)[<span class="dv">1</span>:<span class="dv">9</span>], function(x) {
+  <span class="kw">qqnorm</span>(temdata[[x]], <span class="dt">main =</span> x)
+  <span class="kw">qqline</span>(temdata[[x]])
+})
+
+
+
+
+<span class="co">#birden fazla grafik için ekranı böl</span>
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">3</span>))
+
+
+<span class="co">#Çift loop</span>
+x=<span class="kw">matrix</span>(<span class="dv">1</span>:<span class="dv">15</span>,<span class="dv">3</span>,<span class="dv">5</span>)
+for(i in <span class="kw">seq_len</span>(<span class="kw">nrow</span>(x)))
+{
+  for(j in <span class="kw">seq_len</span>(<span class="kw">ncol</span>(x)))
+  {
+    <span class="kw">print</span>(x[i,j])
+      
+  }
+}
+
+
+
+<span class="co">#While loop</span>
+count=<span class="dv">0</span>
+while(count&lt;<span class="dv">10</span>){
+  <span class="kw">print</span>(count)
+  count=count<span class="dv">+1</span>
+}
+
+
+<span class="co">#kayıp veri</span>
+convert -999s to NAs 
+
+<span class="kw">read.csv</span>(<span class="st">&quot;x.csv&quot;</span>, <span class="dt">na.strings=</span><span class="st">&quot;-999&quot;</span>)
+temdata[<span class="kw">is.na</span>(temdata)] &lt;-<span class="st"> </span><span class="dv">0</span>
+
+
+<span class="co"># NA lar -99</span>
+
+vector[<span class="kw">which</span>(vector==<span class="st"> </span><span class="ot">NA</span>)]=<span class="st"> </span>(-<span class="dv">99</span>)
+temdata[<span class="kw">is.na</span>(temdata)]=<span class="st"> </span>(-<span class="dv">99</span>)
+
+<span class="co"># &lt;NA&gt; porblemi (but not NA)</span>
+temdata=<span class="kw">read.csv</span>(<span class="st">&quot;temdata.csv&quot;</span>,<span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>)
+
+
+<span class="co"># grup ortalaması ekle</span>
+
+temdata2=<span class="kw">merge</span>(temdata, <span class="kw">aggregate</span>(X ~<span class="st"> </span>grp, <span class="dt">data =</span> temdata, <span class="dt">FUN=</span>mean, <span class="dt">na.rm=</span><span class="ot">TRUE</span>), 
+          <span class="dt">by =</span> <span class="st">&quot;grp&quot;</span>, <span class="dt">suffixes =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;.mean&quot;</span>),<span class="dt">all=</span>T)
+
+
+temdata2=<span class="kw">merge</span>(temdata, <span class="kw">aggregate</span>(<span class="kw">cbind</span>(X1 ,X2 ,X3 , X4) ~<span class="st"> </span>grp, <span class="dt">data =</span> temdata, <span class="dt">FUN=</span>mean,                      <span class="dt">na.rm=</span><span class="ot">TRUE</span>), <span class="dt">by =</span> <span class="st">&quot;grp&quot;</span>, <span class="dt">suffixes =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;.mean&quot;</span>),<span class="dt">all=</span>T)
+
+temdata2=<span class="kw">merge</span>(temdata, 
+          <span class="kw">ddply</span>(temdata, <span class="kw">c</span>(<span class="st">&quot;grp&quot;</span>), function(x) <span class="kw">colMeans</span>(x[<span class="kw">c</span>(<span class="st">&quot;X1&quot;</span> ,<span class="st">&quot;X2&quot;</span>,<span class="st">&quot;X3&quot;</span> , <span class="st">&quot;X4&quot;</span>)])), 
+          <span class="dt">by =</span> <span class="st">&quot;grp&quot;</span>, <span class="dt">suffixes =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;.mean&quot;</span>),<span class="dt">all=</span>T)
+
+
+
+
+<span class="co">#ifelse</span>
+y=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>)
+y2=<span class="kw">ifelse</span>(y==<span class="dv">5</span>,<span class="ot">NA</span>,y)
+y2
+
+
+temdata &lt;-<span class="st"> </span><span class="kw">data.frame</span> (<span class="dt">ID=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>), <span class="dt">Hunger =</span><span class="kw">c</span>(<span class="dv">415</span>,<span class="dv">452</span>,<span class="dv">550</span>,<span class="dv">318</span> ))
+
+temdata$newcol&lt;-<span class="kw">ifelse</span>(temdata[,<span class="dv">2</span>]&gt;=<span class="dv">300</span> &amp;<span class="st"> </span>temdata[,<span class="dv">2</span>]&lt;<span class="dv">400</span>,<span class="dv">350</span>,
+                       <span class="kw">ifelse</span>(temdata[,<span class="dv">2</span>]&gt;=<span class="dv">400</span> &amp;temdata[,<span class="dv">2</span>]&lt;<span class="dv">500</span>,<span class="dv">450</span>,
+                              <span class="kw">ifelse</span>(temdata[,<span class="dv">2</span>]&gt;=<span class="dv">500</span> &amp;<span class="st"> </span>temdata[,<span class="dv">2</span>]&lt;<span class="dv">600</span>,<span class="dv">550</span>,<span class="ot">NA</span>)))
+
+
+
+<span class="co">#if </span>
+x=<span class="dv">5</span>
+y=if(x&gt;<span class="dv">6</span>){<span class="dv">1</span>}else{<span class="dv">0</span>}
+y=if(x&gt;<span class="dv">6</span>){<span class="dv">1</span>} else if(x==<span class="dv">5</span>) {<span class="dv">99</span>} else {<span class="dv">0</span>}
+
+
+<span class="co">#veri setini B ye göre diz</span>
+temdata[<span class="kw">order</span>(temdata$B),]                            
+
+temdata[<span class="kw">rev</span>(<span class="kw">order</span>(temdata$B)),]                         
+
+
+<span class="co">#kombinasyon oluştur</span>
+m=<span class="kw">c</span>(<span class="dv">54</span>,<span class="dv">38</span>,<span class="dv">51</span>,<span class="dv">62</span>,<span class="dv">18</span>,<span class="dv">31</span>,<span class="dv">58</span>,<span class="dv">74</span>,<span class="dv">35</span>,<span class="dv">34</span>)
+f=<span class="kw">c</span>(<span class="dv">41</span>,<span class="dv">18</span>,<span class="dv">19</span>,<span class="dv">39</span>,<span class="dv">44</span>,<span class="dv">18</span>,<span class="dv">58</span>,<span class="dv">21</span>,<span class="dv">38</span>)
+
+<span class="kw">mean</span>(m)
+<span class="kw">mean</span>(f)
+
+<span class="kw">combn</span>(m,<span class="dv">8</span>,<span class="dt">FUN=</span>mean)
+<span class="kw">combn</span>(f,<span class="dv">8</span>)
+
+<span class="kw">min</span>(<span class="kw">combn</span>(m,<span class="dv">8</span>,<span class="dt">FUN=</span>mean))
+<span class="kw">max</span>(<span class="kw">combn</span>(f,<span class="dv">8</span>,mean))
+
+
+<span class="co"># contrasts değiştirme</span>
+<span class="kw">options</span>(<span class="st">&#39;contrasts&#39;</span>)
+<span class="kw">options</span>(<span class="dt">contrasts=</span><span class="kw">c</span>(<span class="st">&#39;contr.sum&#39;</span>,<span class="st">&#39;contr.poly&#39;</span>))
+<span class="kw">options</span>(<span class="dt">contrasts=</span><span class="kw">c</span>(<span class="st">&#39;contr.treatment&#39;</span>,<span class="st">&#39;contr.poly&#39;</span>))
+
+
+<span class="co"># bütün satırlar kayıp ise sil</span>
+temdata=temdata[<span class="kw">apply</span>(temdata,<span class="dv">1</span>,function(x)<span class="kw">any</span>(!<span class="kw">is.na</span>(x))),]
+
+
+<span class="co"># grup frekansı ekle</span>
+temdata=<span class="kw">ddply</span>(temdata, <span class="st">&quot;grp&quot;</span>, transform, <span class="dt">cellsize =</span> <span class="kw">count</span>(grp)[<span class="dv">2</span>])
+
+
+<span class="co">#yeni klasör aç</span>
+<span class="kw">dir.create</span>(<span class="st">&quot;testdir&quot;</span>)
+
+<span class="co">#veri setini böl</span>
+<span class="kw">library</span>(datasets)
+<span class="kw">head</span>(airquality)
+splitdata=<span class="kw">split</span>(airquality,airquality$Month)
+splitdata
+<span class="kw">str</span>(splitdata)
+splitdata[[<span class="dv">2</span>]]
+
+
+x=<span class="kw">list</span>(<span class="dt">a=</span><span class="dv">1</span>:<span class="dv">5</span>, <span class="dt">b=</span><span class="kw">rnorm</span>(<span class="dv">10</span>))
+x
+<span class="kw">lapply</span>(x,mean)
+
+
+
+x=<span class="dv">1</span>:<span class="dv">4</span>
+<span class="kw">lapply</span>(x,runif)
+<span class="kw">lapply</span>(x,runif,<span class="dt">min=</span><span class="dv">10</span>, <span class="dt">max=</span><span class="dv">20</span>)
+
+
+x=<span class="kw">list</span>(<span class="dt">a=</span><span class="kw">matrix</span>(<span class="dv">1</span>:<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>),<span class="dt">b=</span><span class="kw">matrix</span>(<span class="dv">1</span>:<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">2</span>))
+
+<span class="kw">lapply</span>(x,function(elt) elt[,<span class="dv">1</span>])
+
+
+<span class="co"># sapply</span>
+
+x=<span class="kw">list</span>(<span class="dt">a=</span><span class="dv">1</span>:<span class="dv">5</span>, <span class="dt">b=</span><span class="kw">rnorm</span>(<span class="dv">10</span>),<span class="dt">c=</span><span class="kw">runif</span>(<span class="dv">10</span>))
+x
+<span class="kw">lapply</span>(x,mean)
+<span class="kw">sapply</span>(x,mean)
+
+
+
+<span class="co">#apply </span>
+
+x=<span class="kw">matrix</span>(<span class="kw">rnorm</span>(<span class="dv">200</span>),<span class="dv">20</span>,<span class="dv">10</span>)
+x
+<span class="kw">apply</span>(x,<span class="dv">2</span>,mean)
+<span class="kw">apply</span>(x,<span class="dv">1</span>,sum)
+
+<span class="co">#tapply </span>
+x=<span class="kw">c</span>(<span class="dv">1</span>:<span class="dv">10</span>,<span class="kw">rnorm</span>(<span class="dv">10</span>),<span class="kw">runif</span>(<span class="dv">10</span>,<span class="dv">3</span>,<span class="dv">5</span>))
+f=<span class="kw">gl</span>(<span class="dv">3</span>,<span class="dv">10</span>)
+?gl
+h=<span class="kw">factor</span>(<span class="kw">rep</span>(<span class="dv">1</span>:<span class="dv">3</span>,<span class="dt">each=</span><span class="dv">10</span>))
+<span class="kw">tapply</span>(x,f,mean)
+<span class="kw">tapply</span>(x,h,mean)
+<span class="kw">tapply</span>(x,h,mean,<span class="dt">simplify=</span>F)
+<span class="kw">tapply</span>(x,h,range)
+
+
+
+
+<span class="co">#kayıp veri yüzdeleri</span>
+propmiss &lt;-<span class="st"> </span>function(temdata) <span class="kw">lapply</span>(temdata,function(x) <span class="kw">data.frame</span>(<span class="dt">nmiss=</span><span class="kw">sum</span>(<span class="kw">is.na</span>(x)), <span class="dt">n=</span><span class="kw">length</span>(x), <span class="dt">propmiss=</span><span class="kw">sum</span>(<span class="kw">is.na</span>(x))/<span class="kw">length</span>(x)))
+<span class="kw">propmiss</span>(temdata)
+
+
+<span class="co">#büyük harf</span>
+temdata$childid=<span class="kw">toupper</span>(temdata$childid)
+
+
+
+<span class="co"># sütünları aynı anda graikleştir.</span>
+
+plotpdf=<span class="st">&quot;C:/Users/Desktop/work/multiplePLOTS.pdf&quot;</span>
+<span class="kw">pdf</span>(<span class="dt">file=</span>plotpdf)
+for (i in <span class="dv">7</span>:<span class="dv">55</span>){
+  muis=<span class="kw">round</span>(<span class="kw">mean</span>(temdata[,i],<span class="dt">na.rm=</span>T),<span class="dv">3</span>)
+  sdis=<span class="kw">round</span>(<span class="kw">sd</span>(temdata[,i],<span class="dt">na.rm=</span>T),<span class="dv">3</span>)
+  meansc=<span class="kw">c</span>(<span class="st">&quot;mean&quot;</span>,muis)
+  <span class="kw">hist</span>(temdata[,i],<span class="dt">freq=</span>F,<span class="dt">main=</span><span class="kw">names</span>(temdata)[i],<span class="dt">xlab=</span>meansc)
+  <span class="co">#lines(density(temdata[,i],na.rm=T))</span>
+  <span class="kw">curve</span>(<span class="kw">dnorm</span>(x, <span class="dt">mean=</span>muis, <span class="dt">sd=</span>sdis), <span class="dt">add=</span><span class="ot">TRUE</span>)
+  <span class="kw">lines</span>(<span class="kw">density</span>(temdata[,i],<span class="dt">na.rm=</span>T, <span class="dt">adjust=</span><span class="dv">2</span>), <span class="dt">lty=</span><span class="st">&quot;dotted&quot;</span>, <span class="dt">col=</span><span class="st">&quot;darkgreen&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>)
+  <span class="kw">abline</span>(<span class="dt">v=</span>muis,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)
+  <span class="kw">abline</span>(<span class="dt">v=</span>muis<span class="dv">+3</span>*sdis,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
+  <span class="kw">abline</span>(<span class="dt">v=</span>muis<span class="dv">-3</span>*sdis,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
+}
+
+<span class="kw">dev.off</span>()
+
+
+<span class="co"># bir üst klasörden oku</span>
+dd=<span class="kw">read.csv</span>(<span class="st">&quot;../temdata.csv&quot;</span>)</code></pre></div>
+<div id="apastyle-paketi" class="section level2">
+<h2><span class="header-section-number">12.1</span> apaStyle paketi</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(pastecs)
+<span class="kw">require</span>(apaStyle)
+<span class="kw">library</span>(rJava)
+<span class="co">#hata verirse</span>
+<span class="kw">Sys.setenv</span>(<span class="dt">JAVA_HOME=</span><span class="st">&#39;C:</span><span class="ch">\\</span><span class="st">Program Files</span><span class="ch">\\</span><span class="st">Java</span><span class="ch">\\</span><span class="st">jre1.8.0_111&#39;</span>) <span class="co"># for 64-bit version</span>
+
+<span class="co">#veri tanımla </span>
+
+<span class="kw">apa.descriptives</span>(<span class="dt">data =</span> temdataet[,<span class="dv">1</span>:<span class="dv">5</span>], <span class="dt">variables =</span> <span class="kw">names</span>(temdataet[,<span class="dv">1</span>:<span class="dv">5</span>]), <span class="dt">report =</span> <span class="st">&quot;&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;test&quot;</span>, <span class="dt">filename =</span> <span class="st">&quot;test.docx&quot;</span>, <span class="dt">note =</span> <span class="ot">NULL</span>, <span class="dt">position =</span> <span class="st">&quot;lower&quot;</span>, <span class="dt">merge =</span> <span class="ot">FALSE</span>, <span class="dt">landscape =</span> <span class="ot">FALSE</span>, <span class="dt">save =</span> <span class="ot">TRUE</span>)
+
+example &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">c</span>(<span class="st">&quot;Column 1&quot;</span>, <span class="st">&quot;Column 2&quot;</span>, <span class="st">&quot;Column 3&quot;</span>), <span class="kw">c</span>(<span class="fl">3.45</span>, <span class="fl">5.21</span>, <span class="fl">2.64</span>), <span class="kw">c</span>(<span class="fl">1.23</span>, <span class="fl">1.06</span>, <span class="fl">1.12</span>) )
+<span class="kw">apa.table</span>(<span class="dt">data =</span> example, <span class="dt">level1.header =</span> <span class="kw">c</span>(<span class="st">&quot;Variable&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;SD&quot;</span>))
+
+
+example &lt;-<span class="st"> </span><span class="kw">data.frame</span>( <span class="kw">c</span>(<span class="st">&quot;Column 1&quot;</span>, <span class="st">&quot;Column 2&quot;</span>, <span class="st">&quot;Column 3&quot;</span>), 
+                       <span class="kw">c</span>(<span class="fl">3.45</span>, <span class="fl">5.21</span>, <span class="fl">2.64</span>), 
+                       <span class="kw">c</span>(<span class="fl">1.23</span>, <span class="fl">1.06</span>, <span class="fl">1.12</span>), 
+                       <span class="kw">c</span>(<span class="fl">8.22</span>, <span class="fl">25.12</span>, <span class="fl">30.27</span>), 
+                       <span class="kw">c</span>(<span class="st">&quot;+&quot;</span>, <span class="st">&quot;**&quot;</span>, <span class="st">&quot;***&quot;</span>) )
+
+
+<span class="kw">apa.table</span>( <span class="dt">data =</span> example, <span class="dt">level1.header =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;Descriptives&quot;</span>, <span class="st">&quot;Inferential&quot;</span>), 
+           <span class="dt">level1.colspan =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>), 
+           <span class="dt">level2.header =</span> <span class="kw">c</span>(<span class="st">&quot;Variable&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;SD&quot;</span>, <span class="st">&quot;t-value&quot;</span>, <span class="st">&quot;*&quot;</span>) )$table</code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="coklu-dogrusal-regresyon-ksa-tantm.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="proje-basvurusu.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/burakaydin/SARP/tree/gh-pages/11_Useful.Rmd",
+"text": "Edit"
+},
+"download": ["SARP.pdf", "SARP.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
