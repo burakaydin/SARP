@@ -107,6 +107,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <ul class="summary">
 <li><a href="./">SARP</a></li>
+<li><a href="https://burakaydin.github.io/BAP2219/_book/" target="blank">SARP-EN</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Kapak</a><ul>
@@ -262,12 +263,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="12" data-path="kullansl-r-betikleri.html"><a href="kullansl-r-betikleri.html"><i class="fa fa-check"></i><b>12</b> Kullanışlı R betikleri</a><ul>
 <li class="chapter" data-level="12.1" data-path="kullansl-r-betikleri.html"><a href="kullansl-r-betikleri.html#apastyle-paketi"><i class="fa fa-check"></i><b>12.1</b> apaStyle paketi</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="proje-basvurusu.html"><a href="proje-basvurusu.html"><i class="fa fa-check"></i><b>13</b> Proje Başvurusu</a><ul>
-<li class="chapter" data-level="13.0.1" data-path="proje-basvurusu.html"><a href="proje-basvurusu.html#amac-gerekce"><i class="fa fa-check"></i><b>13.0.1</b> Amaç / Gerekçe</a></li>
-<li class="chapter" data-level="13.0.2" data-path="proje-basvurusu.html"><a href="proje-basvurusu.html#konukapsam"><i class="fa fa-check"></i><b>13.0.2</b> Konu/Kapsam</a></li>
-<li class="chapter" data-level="13.0.3" data-path="proje-basvurusu.html"><a href="proje-basvurusu.html#literatur-ozeti"><i class="fa fa-check"></i><b>13.0.3</b> Literatür özeti</a></li>
-<li class="chapter" data-level="13.0.4" data-path="proje-basvurusu.html"><a href="proje-basvurusu.html#ozgun-degeri"><i class="fa fa-check"></i><b>13.0.4</b> Özgün Değeri</a></li>
-<li class="chapter" data-level="13.0.5" data-path="proje-basvurusu.html"><a href="proje-basvurusu.html#yaygn-etkikatma-deger"><i class="fa fa-check"></i><b>13.0.5</b> Yaygın etki/katma değer</a></li>
+<li class="chapter" data-level="13" data-path="proje-basvurusu-secilen-ksmlar.html"><a href="proje-basvurusu-secilen-ksmlar.html"><i class="fa fa-check"></i><b>13</b> Proje Başvurusu (Seçilen kısımlar)</a><ul>
+<li class="chapter" data-level="13.0.1" data-path="proje-basvurusu-secilen-ksmlar.html"><a href="proje-basvurusu-secilen-ksmlar.html#amac-gerekce"><i class="fa fa-check"></i><b>13.0.1</b> Amaç / Gerekçe</a></li>
+<li class="chapter" data-level="13.0.2" data-path="proje-basvurusu-secilen-ksmlar.html"><a href="proje-basvurusu-secilen-ksmlar.html#konukapsam"><i class="fa fa-check"></i><b>13.0.2</b> Konu/Kapsam</a></li>
+<li class="chapter" data-level="13.0.3" data-path="proje-basvurusu-secilen-ksmlar.html"><a href="proje-basvurusu-secilen-ksmlar.html#literatur-ozeti"><i class="fa fa-check"></i><b>13.0.3</b> Literatür özeti</a></li>
+<li class="chapter" data-level="13.0.4" data-path="proje-basvurusu-secilen-ksmlar.html"><a href="proje-basvurusu-secilen-ksmlar.html#ozgun-degeri"><i class="fa fa-check"></i><b>13.0.4</b> Özgün Değeri</a></li>
+<li class="chapter" data-level="13.0.5" data-path="proje-basvurusu-secilen-ksmlar.html"><a href="proje-basvurusu-secilen-ksmlar.html#yaygn-etkikatma-deger"><i class="fa fa-check"></i><b>13.0.5</b> Yaygın etki/katma değer</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -505,15 +506,15 @@ notlar*<span class="fl">0.4</span> +<span class="st"> </span>notlar2*<span class
 <span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">6</span>,<span class="dt">by=</span><span class="fl">0.5</span>)   <span class="co"># 1&#39;den 6&#39;ya 0.5 atla</span>
 ##  [1] 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0 5.5 6.0
 <span class="kw">rnorm</span>(<span class="dv">12</span>)        <span class="co">#  ~N(0,1) 12 gözlem</span>
-##  [1] -1.54103150 -1.21197417 -1.47463959 -2.58429002  0.09892956
-##  [6]  0.42304948 -1.73194072  0.81168829 -0.79168121 -1.18827246
-## [11] -0.07255425 -0.92751826
+##  [1] -0.912842620  0.207384823 -0.951163244  0.501015210 -0.723834601
+##  [6] -0.836545932 -2.054679956 -0.577654446 -0.663828972 -0.006543609
+## [11] -0.393733417  1.030407782
 <span class="kw">rnorm</span>(<span class="dv">12</span>,<span class="dt">mean=</span><span class="dv">10</span>,<span class="dt">sd=</span><span class="dv">2</span>) <span class="co">#~ N(10,2) 12 gözlem</span>
-##  [1] 10.668842  8.336392  9.028256 12.179617 11.837112 10.495023  8.211467
-##  [8]  8.575160  7.970263  9.387079 10.985524 11.966687
+##  [1]  9.957827 10.039733  9.283772 12.198461 11.222138  8.528763 11.111781
+##  [8]  8.405877  8.340606 10.489895 14.845071 12.783531
 <span class="kw">runif</span>(<span class="dv">12</span>, <span class="dt">min =</span> <span class="dv">10</span>, <span class="dt">max =</span> <span class="dv">37</span>) 
-##  [1] 21.88312 31.74729 15.06641 18.43769 16.94438 33.47671 35.08963
-##  [8] 13.83761 24.68303 31.92505 24.29374 27.65700</code></pre></div>
+##  [1] 26.20945 14.14998 16.87337 13.17101 17.10575 17.98342 23.82056
+##  [8] 19.33852 30.56463 13.44236 15.80531 10.32612</code></pre></div>
 </div>
 <div id="matrisler" class="section level3">
 <h3><span class="header-section-number">5.2.2</span> Matrisler</h3>
@@ -530,28 +531,28 @@ B=<span class="kw">matrix</span>(<span class="kw">runif</span>(<span class="dv">
 <span class="co"># işlem örnekleri</span>
 A+B    <span class="co"># topla</span>
 ##          [,1]     [,2]     [,3]     [,4]
-## [1,] 28.50150 35.05397 44.28787 48.93885
-## [2,] 29.17138 27.14736 31.68863 46.54656
-## [3,] 42.22443 44.17498 49.45078 39.15362
-## [4,] 29.14072 45.07054 38.32249 51.03849
+## [1,] 37.57538 39.23063 35.35025 42.55840
+## [2,] 29.65273 26.05252 33.76721 52.40783
+## [3,] 25.55634 31.58328 41.59679 54.93529
+## [4,] 42.71152 32.16286 43.77182 54.17953
 A*B    <span class="co"># çarp</span>
 ##           [,1]     [,2]     [,3]     [,4]
-## [1,]  27.50150 150.2698 317.5909 467.2051
-## [2,]  54.34277 126.8842 216.8863 455.6518
-## [3,] 117.67330 260.2248 422.9586 362.3043
-## [4,] 100.56286 296.5643 315.8699 560.6159
+## [1,]  36.57538 171.1531 237.1523 384.2592
+## [2,]  55.30546 120.3151 237.6721 537.7097
+## [3,]  67.66901 172.0830 336.5647 599.0294
+## [4,] 154.84607 193.3029 381.2618 610.8725
 A%*%B  <span class="co"># matris çarp</span>
-##           [,1]      [,2]      [,3]      [,4]
-## [1,]  843.2076  952.2826  831.9804  871.5546
-## [2,]  962.2457 1077.7294  953.7302  999.2322
-## [3,] 1081.2837 1203.1763 1075.4799 1126.9097
-## [4,] 1200.3217 1328.6231 1197.2297 1254.5872
+##           [,1]     [,2]      [,3]     [,4]
+## [1,]  881.0958 669.8600  833.5910 1077.349
+## [2,] 1006.5918 772.8893  946.0771 1223.430
+## [3,] 1132.0877 875.9186 1058.5632 1369.511
+## [4,] 1257.5837 978.9479 1171.0493 1515.592
 <span class="kw">t</span>(B)   <span class="co"># çevir</span>
 ##          [,1]     [,2]     [,3]     [,4]
-## [1,] 27.50150 27.17138 39.22443 25.14072
-## [2,] 30.05397 21.14736 37.17498 37.07054
-## [3,] 35.28787 21.68863 38.45078 26.32249
-## [4,] 35.93885 32.54656 24.15362 35.03849</code></pre></div>
+## [1,] 36.57538 27.65273 22.55634 38.71152
+## [2,] 34.23063 20.05252 24.58328 24.16286
+## [3,] 26.35025 23.76721 30.59679 31.77182
+## [4,] 29.55840 38.40783 39.93529 38.17953</code></pre></div>
 </div>
 <div id="variables" class="section level3">
 <h3><span class="header-section-number">5.2.3</span> Değişkenler</h3>

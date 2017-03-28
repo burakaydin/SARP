@@ -33,8 +33,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="basics.html">
-<link rel="next" href="betimleyici-istatistikler-ve-hipotez-testi.html">
+<link rel="prev" href="kullansl-r-betikleri.html">
+
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -290,350 +290,174 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="veri-setleri" class="section level1">
-<h1><span class="header-section-number"> 6</span> Veri Setleri</h1>
-<p>Verileri teker teker kaydetme <a href="basics.html#dataframes">5.2.6</a> bölümünde verilmiştir. Fakat veri setleri genellikle çözümleme yapacak araştırmacıya hazır şekilde gelir. Bu bölüm (a) veri çekme , (b) basit veri işleme etme yöntemleri ve (c) veri kaydetme konularını içerir.</p>
-<div id="veri-cekme" class="section level2">
-<h2><span class="header-section-number">6.1</span> Veri Çekme</h2>
-<p>Bir veri seti farklı formatlarda bulunabilir. R kullanıcılarının çok karşılaştığı veri formatları arasında .csv, .sav, .Rdata, .txt sayılabilir. Çözümleme işleminden önce verilerin düzgün bir şekilde çalışma alanına getirilmesi önemlidir.Eğer çalışacağınız veri seti ve R betiği aynı klasör içerisinde ise, bir diğer deyişle veri setiniz çalışma klasörünün (working directory) içerisinde ise adres belirtmeden veriyi çalısma alanınıza çağırabilirsiniz.</p>
-<div id="csv" class="section level3">
-<h3><span class="header-section-number">6.1.1</span> CSV</h3>
-<p>CSV (comma separated values) virgülle ayrılmış değerler içeren dosyalardır. Microsoft Excel kullanıcıları excel formatında yer alan verileri kolayca csv olarak kaydedbilirler. Diğer excel formatları ile kıyaslandığında (xls,xlsx,xlsb, vd.) işlemesi daha kolay veri formatıdır. <em>read.csv</em> fonksiyonu ile veri çalısma alanına çağırılabilir. En basit hali ile;</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">data1=<span class="kw">read.csv</span>(<span class="st">&quot;dataismi.csv&quot;</span>)   <span class="co"># eğer çalısma klasöründe dataisim.csv dosyası</span>
-                                <span class="co"># mevut ise çalışır</span>
-
-<span class="co">#Windows için</span>
-data1=<span class="kw">read.csv</span>(<span class="st">&quot;C:</span><span class="ch">\\</span><span class="st">Users\Desktop</span><span class="ch">\\</span><span class="st">folderX</span><span class="ch">\\</span><span class="st">dataismi.csv&quot;</span>)  <span class="co"># adres (path) </span>
-data1=<span class="kw">read.csv</span>(<span class="st">&quot;C:/Users/Desktop/folderX/dataismi.csv&quot;</span>)  <span class="co"># adres (path) </span>
-<span class="co">#NOTE:  \ karakteri hata verir / veya \\ kullanılmalıdır. </span></code></pre></div>
-<p><em>?read.csv</em> komutu ile fonksiyonun argümanlarını görebilirsiniz. Önemli olan argümanlara örnek;</p>
-<ol style="list-style-type: lower-alpha">
-<li>veya değişken isimleri mevcut ise <em>header=TRUE</em> aksi halde <em>header=FALSE</em> .<br />
-</li>
-<li>Kayıp veri belirticiler için <em>na.strings</em> . Örneğin <em>na.strings = “-99”</em> bütün -99 değerlerinin kayıp veriyi belirttiğini R’a iletir. Benzer şekilde <em>na.strings = c(“-99” , “-9” )</em> hem -99 hem de -9 değerlerinin kayıp veri olduğunu belirtir.</li>
-<li>Eğer karakter verilerini faktör olarak kullanmak istiyorsanız <em>stringsAsFactors=TRUE</em> aksi halde <em>stringsAsFactors=FALSE</em>.</li>
-<li>Veriyi çağırma esnasında değişkenlere yeni isim vermek istiyorsanız <em>col.names</em> argümanı kullanılabilir. Örneğin 3 değiskeniniz varsa <em>col.names=c(“A1”,“B2”,“C3”)</em> argümanı ile sütunlara isim verebilirsiniz.</li>
-</ol>
-<p>Eğer csv dosyanızda ondalık sayılar nokta yerine virgül ile ayrılmış ise (Avrupa ve Türkiye) bu read.csv fonksiyonu için problem oluşturur. Çözüm olarak <em>read.csv2</em> fonksiyonunu kullanabilir, veya read.csv içerisinde <em>sep=“;”</em> ve <em>dec=“,”</em> argümanlarını kullanabilirsiniz. CSV dosyasından veri çağırma basamakları Video 5 ile gösterilmiştir.</p>
-<div class="figure"><span id="fig:Video5"></span>
-<iframe src="https://www.youtube.com/embed/RjiKIWxaZBk" width="768" height="400px">
-</iframe>
-<p class="caption">
-Figure 6.1:  CSV Oku
-</p>
+<div id="proje-basvurusu-secilen-ksmlar" class="section level1">
+<h1><span class="header-section-number"> 13</span> Proje Başvurusu (Seçilen kısımlar)</h1>
+<div id="amac-gerekce" class="section level3">
+<h3><span class="header-section-number">13.0.1</span> Amaç / Gerekçe</h3>
+<p>Hiç bir ticari çıkar gözetmeksizin hazırlanacak bu çalışmaların, R gibi dünyaya kendini ispatlamış ve ücretsiz olan bir programın ülkemizde de yaygınlaşmasına biraz olsun katkı sağlayabileceğini umuyorum. Eğitim alanında çalışan ve çalışacak araştırmacıların R ile tanışmak istediklerinde kullanabileceği dokümanlar ortaya çıkacaktır. Doküman halka açık bir çevrimiçi depoda tutulacaktır. Dokümanların kabul görmesi durumunda, kullanıcılardan gelen istekleri ve önerileri hızlı bir şekilde dokümanlara dahil ederek, ihtiyaçlara cevap verme ihtimali yüksek olan bir kaynağın ortaya çıkmasını umuyorum. R programlama dilini öğrenmiş araştırmacılara vakit kazandırmak, R programlama dilinde istediği gelişmeyi gösteremeyen araştırmacılara yardımcı olmak amacıyla hazırlanacak R tabanlı interaktif web uygulamalarına temel teşkil edecek özgün bir eser ortaya çıkmasını umuyorum. Ülkemizin, diğer her alanda olduğu gibi, eğitim alanında yapılan araştırmalar için kullanılan yazılımlar anlamında da kendi kendine yeter duruma gelebilmesi, diğer ülkelerde yaşanan gelişmeleri daha yakından takip edebilmesi ve yeni gelişmelere öncü olabilmesi için R programlama becerisinin araştırmacılara kazandırılmasının önemli olduğunu düşünüyorum. Her ne kadar öğrenme eğrisi oldukça dik olsa da, programlama becerileri günümüz dünyasında bir zorunluluk haline dönüşmektedir. Stephen Hawking’inde belirttiği gibi, “evrenin gizemini çözmek için ya da 21. yüzyıl dünyasında herhangi bir kariyere sahip olmak için bireylerin programlama becerisine sahip olması gerekmektedir.”</p>
 </div>
+<div id="konukapsam" class="section level3">
+<h3><span class="header-section-number">13.0.2</span> Konu/Kapsam</h3>
+<p>Eğitim alanında yapılan nicel araştırmalardan elde edilen sonuçların sistematik ve nesnel olarak yorumlanabilmesi için istatistiksel yöntemler kullanılmaktadır. Bu prosedürlerin tamamlanması çoğu zaman ücretli yazılımlar ile sağlanır, örneğin SPSS, SAS, Lisrel, AMOS. Ülkemizde üniversiteler bu yazılımlar için maalesef ciddi bütçeler ayırmak zorunda kalmaktadır. Araştırmacıların bu pahalı programlara ulaşmak için zaman zaman yazılım korsanlığına başvurmaları ise daha büyük bir sorun oluşturmaktadır. Eğitim alanında çalışan araştırmacıların bu ücretli (proprietary) yazılımları kullanmanın dışında başka bir alternatifleri açık kaynak (open source) tabanlı programlar olabilir. Bu araştırma önerisi, açık kaynak kodlu ve ücretsiz bir programlama dili olan R’ın eğitim alanında yapılan araştırmalarda daha yaygın kullanılabilmesini sağlamak için hazırlanacak materyallerle ve verilebilecek eğitimlerle ilgilidir.<br />
+Robert Muenchen (2011), R’ın yakın gelecekte veri analizi için kullanılan evrensel bir programlama dili olacağını söyleyerek yeni metodların SPSS ve SAS gibi yaygın yazılımlardan daha önce R’da tanıtıldığını vurgulamaktadır. Aynı zamanda Muenchen, kişisel web sitesinde 2014 yılında yayınladığı bir makalede R programının analitik akademik yayınlarda en çok kullanılan üçüncü yazılım paketi olduğunu, ücretsiz olanların içinde ise ilk sırada olduğunu belirtmiştir. Son yıllarda Harvard ve Oxford gibi tanınmış üniversiteler de R programlama dili üzerine çalıştaylar düzenlemektedirler . R programlama dilini öğretmek için hazırlanmış birçok İngilizce kitlesel açık çevrimiçi kurslar da bulunmaktadır . Microsoft, Google ve Ford gibi dünyaca bilinen şirketler de kullandığı programlar arasında R’a yer vermişlerdir . Data analizi ve istatistiksel modellemenin yanında, işlevsel grafikler çizme, dokümanlar oluşturma, sunum hazırlama ve simülasyon üretme gibi çeşitli amaçlar için kullanılabilen R, başta istatistikçiler olmak üzere, mühendisler, ekonometristler ve sosyal bilimlerde modern ve komplike modellerle çalışan araştırmacıların dikkatini çekmiştir.</p>
 </div>
-<div id="spss" class="section level3">
-<h3><span class="header-section-number">6.1.2</span> SPSS</h3>
-<p>SAV sosyal bilimciler tarafından kullanılan bir veri formatıdır. <em>foreign</em> <span class="citation">(R Core Team <a href="#ref-foreign">2016</a><a href="#ref-foreign">a</a>)</span> paketinde yer alan <em>read.spss</em> fonksiyonu sav dosyalarını okumak için kullanılabilir.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(foreign)
-?read.spss
-data=<span class="kw">read.spss</span>(<span class="st">&quot;dataismi.sav&quot;</span>,<span class="dt">to.data.frame=</span><span class="ot">TRUE</span>)   
-<span class="co"># eğer dataisim.sav çalışma klasöründe ise çalılşır</span></code></pre></div>
+<div id="literatur-ozeti" class="section level3">
+<h3><span class="header-section-number">13.0.3</span> Literatür özeti</h3>
+<p>R programını tanıtım amaçlı birçok yabancı kaynak bulunmaktadır. Kullanıldığı amaca göre oldukça teknik olabilen bu kaynakların içinde sosyal bilimciler için uygun olabilecek kaynaklardan bazıları şunlardır; (a) Field, Miles ve Field (2012), sosyal bilimlerde sıkça kullanılan modelleri (örneğin t-test, korelasyon, ANOVA, regresyon) çoğunluğu psikoloji alanında toplanmış verilerlerin analizi için kullanmıştır, (b) Dalgaard (2008) , Field’a oranla daha teknik bir dil ile yazılmış bu kitap, sosyal bilimcilerin sıkça kullandığı modelleri teorik altyapıları ile birlikte sunmuştur, (c) Everitt ve Hothorn (2011), ölçek geliştirme ve geçerlik çalışmalarında kullanılan faktör analizlerini içeren bir uygulama kitabı yazmıştır. Ücretsiz olan ve birçok gelişmiş analize öncülük eden R programlama dilinin tanıtımı ve yaygınlaştırılması ise Avrupa ve Amerika’ya oranla Türkiye’de neredeyse hiç yapılmamıştır. Türkçe kaynaklar R’ın kısa tanıtımını yapan ve istatistik bölümü öğretim üyeleri tarafından hazırlanmış kitaplar (Sönmez, 2006; Satman, 2010; İlk,2011; Gürsakal, 2014), bir kaç blog yazısı ve konferans bildirileri ile sınırlı kalmıştır. (Baydoğan ve Çetin, 2014; Özdemir, Yıldıztepe ve Binar, 2010). Bununla beraber Google Scholar ve ulusal veri tabanlarında, sosyal bilimcilere yönelik ucretli ya da ucretsiz Türkçe bir R kaynağı bulunamamıştır.</p>
 </div>
-<div id="rdata" class="section level3">
-<h3><span class="header-section-number">6.1.3</span> Rdata</h3>
-<p>Rdata formatı genelde daha az bilgisayar hafızası işgal eder. Rdata olarak kaydedilecek her R çıktısı ismi ile birlikte kaydedilir.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">load</span>(<span class="st">&quot;dataisim.Rdata&quot;</span>)  <span class="co">#eğer dataisim.Rdata çalışma klasöründe ise çalılşır</span></code></pre></div>
+<div id="ozgun-degeri" class="section level3">
+<h3><span class="header-section-number">13.0.4</span> Özgün Değeri</h3>
+<p>Tanınmış üniversitelerden, tanınmış bilim insanlarından ve büyük şirketlerden saygı gören R programının ülkemizde de yaygınlaşması ekonomik tasarrufun yanı sıra alanın öncülerine yetişme imkanı da sağlayabilir. Kalkınma Bakanlığının yayınladığı çalışma raporunda, Milli Savunma Bakanlığının açık kaynak kodlu yazılımların kullanılması sonucu sadece lisans bedellerinde 2012 yılı ve öncesinde yaklaşık 2 milyon Amerikan doları tasarruf edildiği belirtilmiştir . Bu çalışma, açık kaynak kodlu yazılımların kullanılması doğrultusunda, sosyal bilimler alanında atılacak ilk adımlardan biri olma niteliğindedir. Çalışmanın amacı, eğitim alanındaki araştırmacılara yönelik hazırlanacak olan R materyallerine zemin oluşturabilecek özgün bir tanıtım ve uygulama kılavuzu niteliğinde dokümanlar hazırlamaktır. Hazırlanacak dokümanlar Türkiye’de eğitim alanında toplanmış veriler üzerine inşa edilecektir. Daha sonra Türkçeye çevrilmek üzere İngilizce olarak hazırlanacak tanıtım dökümanı, programın kurulumunu, basit fonksiyonlarını, veri girdisi ve çıktısının nasıl yapılabileceğini, betimsel analizleri, basit grafik çizimlerini, t-test, varyans analizlerini, korelasyon ve regresyon analizlerini kapsayacaktır. Teorik altyapıya kısaca değinilecek, sonuçları raporlama süreci ise daha ayrıntılı verilecektir. Uygulama kılavuzu Türkçe olarak hazırlanacak ve eğitim etkinliklerinin çerçevesini oluşturacaktır. Ortaya çıkan ürünler, şu an çalıştığım kurum öncelikli olmak üzere yurt içinde verilecek çalıştaylar için kullanılabilecektir. Araştırmanın gerçekleşmesi halinde, programın yaygınlaşmasını sağlayabilecek gelişmiş R materyalleri için de zemin oluşacaktır.</p>
 </div>
-<div id="pullonline" class="section level3">
-<h3><span class="header-section-number">6.1.4</span> Sanal Depolardan Veri Çekmek</h3>
-<p>R ile sanal dünyadan veri çekilebilir. Süreci basite indirgersek, (a) öncelikle verinin nerede yer aldığı doğru şekilde belirlenmelidir, (b) verinin formatı doğru şekilde belirlenmelidir, (c) veri indirilip R’ çağrılır veya doğrudan R’a çağrılır. Aşağıda verilen komutlar <a href="onyuz.html#dataWBT">2.3</a> bölümünde tanıtılan dataWBT’nin çalışma alanınıza getirilmesini sağlar.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#sanal depodan CSV oku</span>
-urldosyasi=<span class="st">&#39;https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv&#39;</span>
-dataismi=<span class="kw">read.csv</span>(urldosyasi)
-<span class="kw">str</span>(dataismi)
+<div id="yaygn-etkikatma-deger" class="section level3">
+<h3><span class="header-section-number">13.0.5</span> Yaygın etki/katma değer</h3>
+<p>Amaç bölümünde belirtildiği gibi doküman halka açık bir çevrimiçi depoda tutulacak ve üniversitelerin eğitim fakültelerine elektronik posta ile tanıtılacaktır. Dokümanların kabul görmesi durumunda, kullanıcılardan gelen istekleri ve önerileri hızlı bir şekilde dokümanlara dahil ederek, ihtiyaçlara cevap verme ihtimali yüksek olan bir kaynak ortaya çıkabilir. Yine özgün değer bölümünde belirttiğim gibi, tamamen açık kaynak üzerinden çalışan R programının, ülkemizde yaygınlaşması durumunda ithal yazılım gerekliliğini azaltarak tasarruf etme ihtimali mevcuttur.</p>
 
-
-<span class="co">#sanal depodan Rdata oku</span>
-urldosyasi2=<span class="st">&#39;https://github.com/burakaydin/materyaller/blob/gh-pages/ARPASS/dataWBT.Rdata?raw=true&#39;</span>
-<span class="kw">load</span>(<span class="kw">url</span>(urldosyasi2))
-<span class="kw">str</span>(dataWBT)</code></pre></div>
-<p>Bu veri setleri <a href="https://github.com/burakaydin/materyaller/tree/gh-pages/ARPASS" target="_blank">Github Depo</a> veya , excel dosyası olarak <a href="https://www.aydinburak.net/sarp" target="_blank">buradan</a> indirilebilir.</p>
-</div>
-<div id="r-stuido-araclg-ile-veri-cagrma" class="section level3">
-<h3><span class="header-section-number">6.1.5</span> R Stuido Aracılığı ile Veri Çağırma</h3>
-<p>Veri dosyanız bilgisayarınızda farklı bir klasörde (çalışma klasörü dışında) ise veya tıkla-bırak yöntemini (point-click) tercih ederseniz R Studio’nun sağ üst köşesinde <em>Environment</em> sekmesi altında yer alan <em>import dataset</em> ile veri çağırabilirsiniz. Bu basamaklar Video 6 ile gösterilmiştir.</p>
-<div class="figure"><span id="fig:Video6"></span>
-<iframe src="https://www.youtube.com/embed/D_5wJFmlmxk" width="768" height="400px">
-</iframe>
-<p class="caption">
-Figure 6.2: R Studio ile CSV Oku
-</p>
-</div>
-</div>
-</div>
-<div id="basit-veri-islemleri" class="section level2">
-<h2><span class="header-section-number">6.2</span> Basit Veri İşlemleri</h2>
-<p>Genellikle çözümleme basamağına geçilmeden önce verinin işlenmesi gerekir. Bu bölüm (a) değişkenleri yeniden kodlama, (b) alt küme seçme, (c) yeni değişken oluşturma, (d) veri çerçevesini değiştirme, (e) değişken türünü değiştirme ve (f) veri silme işlemlerini kısaca özetler.</p>
-<div id="degiskenleri-yeniden-kodlama" class="section level3">
-<h3><span class="header-section-number">6.2.1</span> Değişkenleri yeniden kodlama</h3>
-<p>Bir satırı, bir sütünü veya bir satır/sütün keşiminde yer alan tek bir elemanı değiştirmek mümkündür. Değişkenlerin yeni isimler vermek mümkündür. <em>plyr</em> <span class="citation">(Wickham <a href="#ref-plyrpack">2011</a>)</span> paketi değişkenleri yeniden kodlamada yardımcı olabilir.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
-<span class="co"># sanal depodan CSV oku</span>
-urldosya=<span class="st">&#39;https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv&#39;</span>
-veriseti1=<span class="kw">read.csv</span>(urldosya)
-
-<span class="co">#URL adresini sil</span>
-<span class="kw">rm</span>(urldosya)
-
-
-<span class="co"># 151. satır 16. sütunu değiştir ve 30 yap</span>
-veriseti1[<span class="dv">151</span>,<span class="dv">16</span>]=<span class="dv">30</span>
-
-<span class="co"># aynı işlem satır ismi ve sütün ismi verilerek yapılabilir.</span>
-<span class="co"># id numarası 67034022 olan satırın yaş değerini 32 yap. </span>
-veriseti1[veriseti1$id==<span class="dv">67034022</span>,<span class="st">&quot;age&quot;</span>]=<span class="dv">32</span>
-
-<span class="co"># tekrar kodlama</span>
-<span class="co"># Veri setinde yer alan treatment değişkeni 0 ve 1 olarak girilmiştir.</span>
-<span class="co"># 1leri  &quot;trt&quot; ve 2leri  &quot;cnt&quot; yapmak için </span>
-veriseti1[veriseti1$treatment==<span class="dv">1</span>,<span class="st">&quot;treatment&quot;</span>]=<span class="st">&quot;trt&quot;</span>
-veriseti1[veriseti1$treatment==<span class="dv">2</span>,<span class="st">&quot;treatment&quot;</span>]=<span class="st">&quot;cnt&quot;</span>
-
-<span class="co"># ifelse fonksiyonu benzer şekilde çalışır</span>
-<span class="co"># &quot;wage01&quot; değişkeninde &quot;wage01&quot;  &quot;Yes&quot; ise 0.5, değil ise -0.5 olarak kodlayalım</span>
-veriseti1$wage01=<span class="kw">ifelse</span>(veriseti1$wage01==<span class="st">&quot;Yes&quot;</span>,<span class="fl">0.5</span>,-<span class="fl">0.5</span>)
-
-<span class="co"># plyr paketi kullanarak</span>
-<span class="kw">require</span>(plyr)
-<span class="co"># pension01yeni değişkeni pension01 değişkeni üzeriden tanımlanmıştır</span>
-<span class="co"># eski değerler olan Yes ve No yerine 1 ve 0 kodlayalım</span>
-veriseti1$pension01yeni &lt;-<span class="st"> </span><span class="kw">mapvalues</span>(veriseti1$pension01, 
-                                   <span class="dt">from=</span><span class="kw">c</span>(<span class="st">&quot;Yes&quot;</span>,<span class="st">&quot;No&quot;</span>),<span class="dt">to=</span><span class="kw">c</span>(<span class="st">&quot;1&quot;</span>,<span class="st">&quot;0&quot;</span>))
-
-
-<span class="co">#bir değişkene yeni isim verelim</span>
-<span class="co">#4. ve 5. değişkenlere yeni isim verelim</span>
-<span class="kw">colnames</span>(veriseti1)[<span class="dv">4</span>]=<span class="st">&quot;kurs&quot;</span>
-<span class="kw">colnames</span>(veriseti1)[<span class="dv">5</span>]=<span class="st">&quot;bolge&quot;</span>
-
-<span class="co">#isim verme işlemini tek sıra kod ile yapalım</span>
-<span class="kw">colnames</span>(veriseti1)[<span class="kw">c</span>(<span class="dv">17</span>,<span class="dv">21</span>)]=<span class="kw">c</span>(<span class="st">&quot;Tgelir&quot;</span>,<span class="st">&quot;maas1&quot;</span>)
-
-<span class="co">#plyr paketini kullanalım gen_att değişkenine toplumsalCinsiyet ismi verelim</span>
-veriseti1 &lt;-<span class="st"> </span><span class="kw">rename</span>(veriseti1,<span class="kw">c</span>(<span class="st">&#39;gen_att&#39;</span>=<span class="st">&#39;toplumsalCinsiyet&#39;</span>))
-
-<span class="co">#kontrol etmek için head(veriseti) veya summary(veriseti) kullanılabilir</span>
-
-<span class="co"># veriseti1&#39;i çalışma alanından sil</span>
-<span class="kw">rm</span>(veriseti1)</code></pre></div>
-</div>
-<div id="alt-kume-secme-subsetting" class="section level3">
-<h3><span class="header-section-number">6.2.2</span> Alt Küme Seçme (Subsetting)</h3>
-<p>R ile alt küme oluşturmak oldukça kolaydır.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
-<span class="co"># CSV yükle </span>
-urldosya=<span class="st">&#39;https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv&#39;</span>
-veriseti1=<span class="kw">read.csv</span>(urldosya)
-
-<span class="co"># URL adresi sil </span>
-<span class="kw">rm</span>(urldosya)
-
-
-<span class="co"># sadece İstanbul&#39;u seç</span>
-istDAT=veriseti1[veriseti1$city==<span class="st">&quot;ISTANBUL&quot;</span>,]
-
-<span class="co"># sadece İstanbul&#39;dan ilk sekiz katılımcıyı seç</span>
-istDAT18=veriseti1[veriseti1$city==<span class="st">&quot;ISTANBUL&quot;</span>,<span class="dv">1</span>:<span class="dv">8</span>]
-
-<span class="co"># sadece İstanbul&#39;dan gen_att puanı 2den yüksek olanları seç</span>
-istDATGAT2=veriseti1[veriseti1$city==<span class="st">&quot;ISTANBUL&quot;</span> |<span class="st"> </span>veriseti1$gen_att &gt;<span class="dv">2</span> ,]
-
-<span class="co"># subset fonksiyonu</span>
-<span class="co"># sadece İstanbul&#39;dan gen_att puanı 2den yüksek olan ilk sekiz katılımcıyı seç</span>
-istDATGAT2B=<span class="kw">subset</span>(veriseti1, city==<span class="st">&quot;ISTANBUL&quot;</span> |<span class="st"> </span>veriseti1$gen_att &gt;<span class="dv">2</span>, <span class="dt">select=</span><span class="dv">1</span>:<span class="dv">8</span>) 
-
-<span class="co">#item 1 değeri 1,2 ve 3 olan katılımcıları seç</span>
-item1_123 &lt;-<span class="st"> </span>veriseti1[veriseti1$item1 %in%<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), ]
-
-<span class="co">#çalışma alanını temizle</span>
-<span class="kw">rm</span>(<span class="dt">list=</span><span class="kw">ls</span>())</code></pre></div>
-</div>
-<div id="yeni-degisken-olustur" class="section level3">
-<h3><span class="header-section-number">6.2.3</span> Yeni Değişken Oluştur</h3>
-<p>Daha önce <a href="basics.html#basics">5</a> bölümünde değişken oluşturma yöntemlerine değinilmiştir. Bu bölüm hatırlatma olarak görülebilir.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># CSV yükle</span>
-urldosya=<span class="st">&#39;https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv&#39;</span>
-veriseti1=<span class="kw">read.csv</span>(urldosya)
-
-<span class="co">#URL dosyası yükle </span>
-<span class="kw">rm</span>(urldosya)
-
-<span class="co"># item2&#39;den 6&#39;ya kadar olan sütünları topla</span>
-veriseti1$itemTOPLAM=<span class="kw">with</span>(veriseti1,item2+item3+item4+item5+item6)
-
-<span class="co"># item2&#39;den 6&#39;ya kadar olan sütünların ortalamasını al (na.rm =T önemli)</span>
-veriseti1$itemAVE=<span class="kw">with</span>(veriseti1,
-                      <span class="kw">rowMeans</span>(<span class="kw">cbind</span>(item2,item3,item4,item5,item6),<span class="dt">na.rm=</span>T))
-
-<span class="co">#veya rowMeans fonksiyonu</span>
-veriseti1$itemAVE=<span class="kw">rowMeans</span>(veriseti1[,<span class="dv">10</span>:<span class="dv">14</span>],<span class="dt">na.rm =</span> T)
-
-<span class="co"># Şehirler için ortalama hesapla</span>
-veriseti1$CityAVEscore =<span class="kw">with</span>(veriseti1, <span class="kw">ave</span>(itemAVE,city,<span class="dt">FUN=</span>function(x) <span class="kw">mean</span>(x, <span class="dt">na.rm=</span>T)))
-
-<span class="co">#veya</span>
-veriseti1=<span class="kw">merge</span>(veriseti1, <span class="kw">aggregate</span>(itemAVE ~<span class="st"> </span>city, <span class="dt">data =</span> veriseti1, <span class="dt">FUN=</span>mean, <span class="dt">na.rm=</span><span class="ot">TRUE</span>), 
-          <span class="dt">by =</span> <span class="st">&quot;city&quot;</span>, <span class="dt">suffixes =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;citymean&quot;</span>),<span class="dt">all=</span>T)
-
-<span class="co">#veya her bir soru için şehir ortalaması hesapla</span>
-veriseti1=<span class="kw">merge</span>(veriseti1, <span class="kw">aggregate</span>(<span class="kw">cbind</span>(item2,item3,item4,item5,item6) ~<span class="st"> </span>city, 
-                                   <span class="dt">data =</span> veriseti1, <span class="dt">FUN=</span>mean, <span class="dt">na.rm=</span><span class="ot">TRUE</span>), 
-                                   <span class="dt">by =</span> <span class="st">&quot;city&quot;</span>, <span class="dt">suffixes =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;Citymean&quot;</span>),<span class="dt">all=</span>T)
-
-
-<span class="co"># değişkenlerin kategorize edilmesi. Eğer item1AVE 2&#39;den küçük ise 0 aksi halde 1</span>
-veriseti1$itemAVE01=<span class="kw">ifelse</span>(veriseti1$itemAVE&lt;<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">1</span>)
-
-
-<span class="co"># 0 ile 1.8 arasına 1 ver</span>
-<span class="co"># 1.8 ve 2.5 arasına 2 ver</span>
-<span class="co"># 2.5 ile 5 arasına 3 ver</span>
-veriseti1$itemAVE123=<span class="kw">with</span>(veriseti1,<span class="kw">cut</span>(itemAVE, <span class="dt">breaks=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">1.8</span>,<span class="fl">2.5</span>,<span class="dv">5</span>), <span class="dt">labels =</span> <span class="ot">FALSE</span>))
-<span class="co"># cut fonksiyonu içerisinde yer alan right=T argümanına göz gezdirin</span>
-<span class="co"># örneğin  right=T  ise değeri tam olarak 1.8 olan değişkenler 1 olur</span>
-<span class="co">#          right=F  ise değeri tam olarak 1.8 olan değişkenler 2 olur</span>
-     </code></pre></div>
-</div>
-<div id="veri-cercevesini-degistirme-reshaping-data" class="section level3">
-<h3><span class="header-section-number">6.2.4</span> Veri Çerçevesini Değiştirme (Reshaping data)</h3>
-<p>Veri çerçevesini değitirmek, uzun formattan geniş formata geçmek veya tam tersi gerekli olabilir. <em>tidyr</em> <span class="citation">(Wickham <a href="#ref-tidyrpack">2016</a>)</span> yardımcı olabilir.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># CSV yükle</span>
-urldosya=<span class="st">&#39;https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv&#39;</span>
-veriseti1=<span class="kw">read.csv</span>(urldosya)
-
-<span class="co">#adresi sil</span>
-<span class="kw">rm</span>(urldosya)
-
-<span class="co"># genişten uzuna item 1den 6 ya kadar olan sütünları item adı altında birleştir</span>
-<span class="kw">library</span>(tidyr)
-data_long =<span class="st"> </span><span class="kw">gather</span>(veriseti1, item, score, item1:item6, <span class="dt">factor_key=</span><span class="ot">TRUE</span>)
-
-<span class="co">#id&#39;ye göre diz</span>
-data_long=data_long[<span class="kw">order</span>(data_long$id),] 
-
-<span class="co"># uzundan genişe.</span>
-data_wide =<span class="st"> </span><span class="kw">spread</span>(data_long, item, score)
-
-## belirlediğiniz nesneler dışında çalışma alanını temizle
-<span class="kw">rm</span>(<span class="dt">list=</span><span class="kw">setdiff</span>(<span class="kw">ls</span>(),<span class="kw">c</span>(<span class="st">&quot;veriseti1&quot;</span>)))</code></pre></div>
-</div>
-<div id="degisken-turunu-degistirme" class="section level3">
-<h3><span class="header-section-number">6.2.5</span> Değişken Türünü Değiştirme</h3>
-<p>Sayısal girilen verileri faktöre çevirme gibi işlemler çözümleme basamağından önce gerekli olabilir.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># CSV yükle</span>
-urldosya=<span class="st">&#39;https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv&#39;</span>
-veriseti1=<span class="kw">read.csv</span>(urldosya,<span class="dt">stringsAsFactors =</span> F)
-
-<span class="co">#URL sil</span>
-<span class="kw">rm</span>(urldosya)
-
-<span class="co">#treatment değişkenini incele</span>
-<span class="kw">str</span>(veriseti1$treatment)
-
-<span class="co">#sayısal veriyi faktöre çevir</span>
-veriseti1$treatmentFactor=<span class="kw">factor</span>(veriseti1$treatment,<span class="dt">labels=</span><span class="kw">c</span>(<span class="st">&quot;treatment&quot;</span>,<span class="st">&quot;control&quot;</span>))
-
-<span class="co">#karakter olarak girildiğinde faktörleri sayıya çevirme</span>
-
-veriseti1$iv1=<span class="kw">factor</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;1&quot;</span>,<span class="st">&quot;2&quot;</span>,<span class="st">&quot;3&quot;</span>),<span class="dt">length=</span><span class="kw">nrow</span>(veriseti1)))
-veriseti1$iv1numeric=<span class="kw">as.numeric</span>(<span class="kw">levels</span>(veriseti1$iv1))[veriseti1$iv1]
-<span class="co">#veya</span>
-veriseti1$iv1numeric=<span class="kw">as.numeric</span>(<span class="kw">as.character</span>(veriseti1$iv1))
-
-<span class="co">#NAleri -99&#39;a çevir  </span>
-veriseti1[<span class="kw">is.na</span>(veriseti1)]=<span class="st"> </span>(-<span class="dv">99</span>)
-
-<span class="co">#çalışma alanını temizle</span>
-<span class="kw">rm</span>(<span class="dt">list=</span><span class="kw">ls</span>())</code></pre></div>
-</div>
-<div id="veri-silme" class="section level3">
-<h3><span class="header-section-number">6.2.6</span> Veri Silme</h3>
-<p>Bir tek hücreyi, bir satırı veya bir sütunu silmek gerekebilir.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># CSV yükle</span>
-urldosya=<span class="st">&#39;https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv&#39;</span>
-veriseti1=<span class="kw">read.csv</span>(urldosya,<span class="dt">stringsAsFactors =</span> F)
-
-<span class="co">#URL sil</span>
-<span class="kw">rm</span>(urldosya)
-
-<span class="co">#3. satır 5. sütunda yer alan hücreyi sil</span>
-veriseti1[<span class="dv">3</span>,<span class="dv">5</span>]=<span class="ot">NA</span>
-
-<span class="co">#3. satırı sil</span>
-veriseti1[<span class="dv">3</span>,]=<span class="st"> </span><span class="ot">NA</span>
-
-<span class="co">#veya</span>
-veriseti1=veriseti1[-<span class="dv">3</span>,]
-
-<span class="co">#course taken isimli sütunu sil </span>
-veriseti1$course_taken=<span class="ot">NULL</span>
-
-<span class="co">#gösterim amaçlı veri oluştur</span>
-temp=veriseti1[,<span class="dv">1</span>:<span class="dv">10</span>]
-
-<span class="co"># kayıp verili satırı silme (listwise)</span>
-temp=<span class="kw">na.omit</span>(temp)
-
-<span class="co">#çalışma alanını temizle</span>
-<span class="kw">rm</span>(<span class="dt">list=</span><span class="kw">ls</span>())</code></pre></div>
-</div>
-</div>
-<div id="veri-kaydetme" class="section level2">
-<h2><span class="header-section-number">6.3</span> veri Kaydetme</h2>
-<p>Adres belirtmediğiniz sürece kaydetme işlemi mevcut çalışma klasörünüz (working directory) içeriside tamamlanır.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># CSV yükle</span>
-urldosya=<span class="st">&#39;https://raw.githubusercontent.com/burakaydin/materyaller/gh-pages/ARPASS/dataWBT.csv&#39;</span>
-veriseti1=<span class="kw">read.csv</span>(urldosya,<span class="dt">stringsAsFactors =</span> F)
-
-<span class="co">#URL sil </span>
-<span class="kw">rm</span>(urldosya)
-
-<span class="co">#nesne oluştur.</span>
-subset1=veriseti1[<span class="dv">1</span>:<span class="dv">20</span>,<span class="dv">1</span>:<span class="dv">5</span>]
-object2=<span class="kw">mean</span>(veriseti1$item1,<span class="dt">na.rm =</span> T)
-
-
-<span class="co">#çalışma klasörünüzü kontrol edin</span>
-<span class="kw">getwd</span>()
-
-<span class="co"># Rdata olarak sakla</span>
-<span class="kw">save</span>(subset1,<span class="dt">file=</span><span class="st">&quot;subset1Rfile.Rdata&quot;</span>)
-<span class="co"># adres vererek sakla</span>
-<span class="kw">save</span>(object2,<span class="dt">file=</span><span class="st">&quot;C:/Users/Desktop/object2Rfile.Rdata&quot;</span>)
-
-<span class="co"># csv olarak sakla</span>
-<span class="kw">write.csv</span>(subset1,<span class="dt">file=</span><span class="st">&quot;subset1CSVfile.csv&quot;</span>,<span class="dt">row.names =</span> F)
-
-<span class="co">#sps dosyası olarak sakla</span>
-<span class="kw">library</span>(foreign)
-<span class="kw">write.foreign</span>(subset1, <span class="st">&quot;subset1SPSfile.txt&quot;</span>,<span class="st">&quot;subset1SPSfile.sps&quot;</span>, <span class="dt">package=</span><span class="st">&quot;SPSS&quot;</span>)
-
-<span class="co">#çalışma alanını temizle</span>
-<span class="kw">rm</span>(<span class="dt">list=</span><span class="kw">ls</span>())</code></pre></div>
-
-</div>
-</div>
-<h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-foreign">
+<div>
+<p>Adler, Daniel, and Duncan Murdoch. 2017. <em>Rgl: 3D Visualization Using Opengl</em>. <a href="https://CRAN.R-project.org/package=rgl" class="uri">https://CRAN.R-project.org/package=rgl</a>.</p>
+</div>
+<div>
+<p>Aho, Ken. 2016. <em>Asbio: A Collection of Statistical Tools for Biologists</em>. <a href="https://CRAN.R-project.org/package=asbio" class="uri">https://CRAN.R-project.org/package=asbio</a>.</p>
+</div>
+<div>
+<p>Allaire, JJ, Joe Cheng, Yihui Xie, Jonathan McPherson, Winston Chang, Jeff Allen, Hadley Wickham, Aron Atkins, and Rob Hyndman. 2016. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
+</div>
+<div>
+<p>Bakeman, Roger. 2005. “Recommended Effect Size Statistics for Repeated Measures Designs.” <em>Behavior Research Methods</em> 37 (3): 379–84. doi:<a href="https://doi.org/10.3758/BF03192707">10.3758/BF03192707</a>.</p>
+</div>
+<div>
+<p>Bates, Douglas, Martin Mächler, Ben Bolker, and Steve Walker. 2015. “Fitting Linear Mixed-Effects Models Using lme4.” <em>Journal of Statistical Software</em> 67 (1): 1–48. doi:<a href="https://doi.org/10.18637/jss.v067.i01">10.18637/jss.v067.i01</a>.</p>
+</div>
+<div>
+<p>Box, George E. P., and Norman R. Draper. 1987. <em>Empirical Model-Building and Response Surfaces</em>. New York: Wiley.</p>
+</div>
+<div>
+<p>Breheny, Patrick, and Woodrow Burchett. 2016. <em>Visreg: Visualization of Regression Models</em>. <a href="https://CRAN.R-project.org/package=visreg" class="uri">https://CRAN.R-project.org/package=visreg</a>.</p>
+</div>
+<div>
+<p>Cohen, Jacob. 1962. “The Statistical Power of Abnormal-Social Psychological Research: A Review.” <em>The Journal of Abnormal and Social Psychology</em> 65 (3): 145–53.</p>
+</div>
+<div>
+<p>Daunic, Ann P., Stephen W. Smith, Cynthia W. Garvan, Brian R. Barber, Mallory K. Becker, Christine D. Peters, Gregory G. Taylor, Christopher L. Van Loan, Wei Li, and Arlene H. Naranjo. 2012. “Reducing Developmental Risk for Emotional/Behavioral Problems: A Randomized Controlled Trial Examining the Tools for Getting Along Curriculum.” <em>Journal of School Psychology</em> 50 (2): 149–66.</p>
+</div>
+<div>
+<p>de Vreeze, Jort. 2016. <em>ApaStyle: Generate Apa Tables for Ms Word</em>. <a href="https://CRAN.R-project.org/package=apaStyle" class="uri">https://CRAN.R-project.org/package=apaStyle</a>.</p>
+</div>
+<div>
+<p>Field, Andy P., Jeremy Miles, and Zoë Field. 2012. <em>Discovering Statistics Using R</em>. Thousand Oaks, Calif;London; Sage.</p>
+</div>
+<div>
+<p>Hirshleifer, Sarojini, David McKenzie, Rita Almeida, and Cristobal Ridao-Cano. 2016. “The Impact of Vocational Training for the Unemployed: Experimental Evidence from Turkey.” <em>The Economic Journal</em> 126 (597): 2115–46.</p>
+</div>
+<div>
+<p>Holm, Sture. 1979. “A Simple Sequentially Rejective Multiple Test Procedure.” <em>Scandinavian Journal of Statistics</em> 6 (2): 65–70.</p>
+</div>
+<div>
+<p>Højsgaard, Søren, and Ulrich Halekoh. 2016. <em>DoBy: Groupwise Statistics, Lsmeans, Linear Contrasts, Utilities</em>. <a href="https://CRAN.R-project.org/package=doBy" class="uri">https://CRAN.R-project.org/package=doBy</a>.</p>
+</div>
+<div>
+<p>Komsta, Lukasz, and Frederick Novomestky. 2015. <em>Moments: Moments, Cumulants, Skewness, Kurtosis and Related Tests</em>. <a href="https://CRAN.R-project.org/package=moments" class="uri">https://CRAN.R-project.org/package=moments</a>.</p>
+</div>
+<div>
+<p>Lakens, Daniel. 2013. “Calculating and Reporting Effect Sizes to Facilitate Cumulative Science: A Practical Primer for T-Tests and Anovas.” <em>Frontiers in Psychology</em> 4: 863. doi:<a href="https://doi.org/10.3389/fpsyg.2013.00863">10.3389/fpsyg.2013.00863</a>.</p>
+</div>
+<div>
+<p>Lawrence, Michael A. 2016. <em>Ez: Easy Analysis and Visualization of Factorial Experiments</em>. <a href="https://CRAN.R-project.org/package=ez" class="uri">https://CRAN.R-project.org/package=ez</a>.</p>
+</div>
+<div>
+<p>Lemon, Jim, Ben Bolker, Sander Oom, Eduardo Klein, Barry Rowlingson, Hadley Wickham, Anupam Tyagi, et al. 2016. <em>Plotrix: Various Plotting Functions</em>. <a href="https://CRAN.R-project.org/package=plotrix" class="uri">https://CRAN.R-project.org/package=plotrix</a>.</p>
+</div>
+<div>
+<p>Lumley, Thomas, and Achim Zeileis. 2015. <em>Sandwich: Robust Covariance Matrix Estimators</em>. <a href="https://CRAN.R-project.org/package=sandwich" class="uri">https://CRAN.R-project.org/package=sandwich</a>.</p>
+</div>
+<div>
+<p>Mair, Patrick, and Rand Wilcox. 2016. <em>WRS2: A Collection of Robust Statistical Methods</em>. <a href="https://CRAN.R-project.org/package=WRS2" class="uri">https://CRAN.R-project.org/package=WRS2</a>.</p>
+</div>
+<div>
+<p>Muenchen, Robert A. 2011. <em>R for Sas and Spss Users</em>. 2nd ed. New York: Springer.</p>
+</div>
+<div>
+<p>Myers, Jerome L., A. Well, Robert F. Lorch, and Ebooks Corporation. 2013. <em>Research Design and Statistical Analysis</em>. 3rd ed. New York: Routledge.</p>
+</div>
+<div>
+<p>Obrien, Robert M. 2007. “A Caution Regarding Rules of Thumb for Variance Inflation Factors.” <em>Quality and Quantity</em> 41 (5).</p>
+</div>
+<div>
+<p>Olejnik, Stephen, and James Algina. 2003. “Generalized Eta and Omega Squared Statistics: Measures of Effect Size for Some Common Research Designs.” <em>Psychological Methods</em> 8 (4): 434–47.</p>
+</div>
+<div>
+<p>Pearl, Judea. 2009. <em>Causality: Models, Reasoning, and Inference</em>. 2nd ed. Cambridge;New York: Cambridge University Press.</p>
+</div>
+<div>
 <p>R Core Team. 2016a. <em>Foreign: Read Data Stored by Minitab, S, Sas, Spss, Stata, Systat, Weka, DBase, .</em> <a href="https://CRAN.R-project.org/package=foreign" class="uri">https://CRAN.R-project.org/package=foreign</a>.</p>
 </div>
-<div id="ref-plyrpack">
+<div>
+<p>———. 2016b. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
+</div>
+<div>
+<p>Rawlings, John O., Sastry G. Pantula, and David A. Dickey. 1998. <em>Applied Regression Analysis: A Research Tool</em>. 2nd ed. New York: Springer.</p>
+</div>
+<div>
+<p>Revelle, William. 2016. <em>Psych: Procedures for Psychological, Psychometric, and Personality Research</em>. <a href="https://CRAN.R-project.org/package=psych" class="uri">https://CRAN.R-project.org/package=psych</a>.</p>
+</div>
+<div>
+<p>RStudio Team. 2016. <em>RStudio: Integrated Development Environment for R</em>. Boston, MA: RStudio, Inc. <a href="http://www.rstudio.com/" class="uri">http://www.rstudio.com/</a>.</p>
+</div>
+<div>
+<p>Sarkar, Deepayan. 2016. <em>Lattice: Trellis Graphics for R</em>. <a href="https://CRAN.R-project.org/package=lattice" class="uri">https://CRAN.R-project.org/package=lattice</a>.</p>
+</div>
+<div>
+<p>Tippmann, Sylvia. 2015. “Programming Tools: Adventures with R: A Guide to the Popular, Free Statistics and Visualization Software That Gives Scientists Control of Their Own Data Analysis.” <em>Nature</em>, no. 7532: 109.</p>
+</div>
+<div>
+<p>Torchiano, Marco. 2016. <em>Effsize: Efficient Effect Size Computation</em>. <a href="https://CRAN.R-project.org/package=effsize" class="uri">https://CRAN.R-project.org/package=effsize</a>.</p>
+</div>
+<div>
+<p>Verzani, John. 2014. <em>Using R for Introductory Statistics</em>. Second. Boca Raton: CRC Press Taylor; Francis Group.</p>
+</div>
+<div>
 <p>Wickham, Hadley. 2011. “The Split-Apply-Combine Strategy for Data Analysis.” <em>Journal of Statistical Software</em> 40 (1): 1–29. <a href="http://www.jstatsoft.org/v40/i01/" class="uri">http://www.jstatsoft.org/v40/i01/</a>.</p>
 </div>
-<div id="ref-tidyrpack">
-<p>Wickham, Hadley. 2016. <em>Tidyr: Easily Tidy Data with ‘Spread()‘ and ‘Gather()‘ Functions</em>. <a href="https://CRAN.R-project.org/package=tidyr" class="uri">https://CRAN.R-project.org/package=tidyr</a>.</p>
+<div>
+<p>———. 2016. <em>Tidyr: Easily Tidy Data with ‘Spread()‘ and ‘Gather()‘ Functions</em>. <a href="https://CRAN.R-project.org/package=tidyr" class="uri">https://CRAN.R-project.org/package=tidyr</a>.</p>
+</div>
+<div>
+<p>Wickham, Hadley, and Winston Chang. 2016. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2" class="uri">https://CRAN.R-project.org/package=ggplot2</a>.</p>
+</div>
+<div>
+<p>Wilcox, Rand R. 2012. <em>Introduction to Robust Estimation and Hypothesis Testing</em>. 3rd;3; US: Academic Press.</p>
+</div>
+<div>
+<p>Xie, Yihui. 2016. <em>Bookdown: Authoring Books with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown" class="uri">https://CRAN.R-project.org/package=bookdown</a>.</p>
 </div>
 </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="basics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="betimleyici-istatistikler-ve-hipotez-testi.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+<a href="kullansl-r-betikleri.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
@@ -661,7 +485,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/burakaydin/SARP/tree/gh-pages/05_Read_data.Rmd",
+"link": "https://github.com/burakaydin/SARP/tree/gh-pages/12_basvuru.Rmd",
 "text": "Edit"
 },
 "download": ["SARP.pdf", "SARP.epub"],
