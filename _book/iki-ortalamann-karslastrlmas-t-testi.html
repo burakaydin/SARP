@@ -107,7 +107,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <ul class="summary">
 <li><a href="./">SARP-TR</a></li>
-<li><a href="https://bookdown.org/burak2358/SARP/" target="blank">SARP-EN</a></li>
+<li><a href="https://bookdown.org/burak2358/SARP-EN/" target="blank">SARP-EN</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Kapak</a><ul>
@@ -426,7 +426,7 @@ tstatistic=(<span class="fl">1.832-1.635</span>)/(sp*<span class="kw">sqrt</span
 
 <span class="co"># alfa=0.05 kritik değer</span>
 <span class="kw">qt</span>(.<span class="dv">975</span>,<span class="dt">df=</span><span class="dv">135</span>)
-## [1] 1.98</code></pre></div>
+## [1] 1.977692</code></pre></div>
 <p>1.963 kritik değer <span class="math inline">\(t_{.975,135}=1.978\)</span>’den küçük olduğu için, <span class="math inline">\(H_0\)</span> kabul edilir.</p>
 <p><span class="math inline">\(H_1:\mu_1-\mu_2 &gt; 0\)</span> alternatif hipotezi kurulsa idi, kritik değer <span class="math inline">\(t_{.95,135}=1.66\)</span>, 1.963’ten küçük olduğu için <span class="math inline">\(H_0\)</span> terkedilirdi.</p>
 <p><span class="math inline">\(H_1:\mu_1-\mu_2 &lt; 0\)</span> alternatif hipotezi kurulsa idi, 1.963 kritik değer olan <span class="math inline">\(t_{.05,135}=-1.66\)</span>’ ten küçük olmadığı için <span class="math inline">\(H_0\)</span> kabul edilirdi (Burada alternatif hipotez ile örneklem arası farklılık zıt yönde).</p>
@@ -441,13 +441,13 @@ tstatistic=(<span class="fl">1.832-1.635</span>)/(sp*<span class="kw">sqrt</span
 ##  Two Sample t-test
 ## 
 ## data:  gen_att by HEF
-## t = 2, df = 100, p-value = 0.05
+## t = 1.9587, df = 135, p-value = 0.05221
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
-##  -0.0019  0.3949
+##  -0.001903268  0.394880924
 ## sample estimates:
 ## mean in group non-college     mean in group college 
-##                      1.83                      1.64
+##                  1.831783                  1.635294
 
 <span class="co"># büyüktür</span>
 <span class="kw">t.test</span>(gen_att~HEF,<span class="dt">data=</span>dataWBT_USAK,<span class="dt">var.equal=</span>T,
@@ -457,13 +457,13 @@ tstatistic=(<span class="fl">1.832-1.635</span>)/(sp*<span class="kw">sqrt</span
 ##  Two Sample t-test
 ## 
 ## data:  gen_att by HEF
-## t = 2, df = 100, p-value = 0.03
+## t = 1.9587, df = 135, p-value = 0.0261
 ## alternative hypothesis: true difference in means is greater than 0
 ## 95 percent confidence interval:
-##  0.0303    Inf
+##  0.03034529        Inf
 ## sample estimates:
 ## mean in group non-college     mean in group college 
-##                      1.83                      1.64
+##                  1.831783                  1.635294
 
 
 <span class="co"># küçüktür</span>
@@ -474,13 +474,13 @@ tstatistic=(<span class="fl">1.832-1.635</span>)/(sp*<span class="kw">sqrt</span
 ##  Two Sample t-test
 ## 
 ## data:  gen_att by HEF
-## t = 2, df = 100, p-value = 1
+## t = 1.9587, df = 135, p-value = 0.9739
 ## alternative hypothesis: true difference in means is less than 0
 ## 95 percent confidence interval:
-##   -Inf 0.363
+##       -Inf 0.3626324
 ## sample estimates:
 ## mean in group non-college     mean in group college 
-##                      1.83                      1.64</code></pre></div>
+##                  1.831783                  1.635294</code></pre></div>
 <div id="yonsuz-alternatif-icin-rapor-ornegi" class="section level4">
 <h4><span class="header-section-number">8.1.1.1</span> Yönsüz alternatif için rapor örneği</h4>
 <p>Uşak ilinde yaşayan katılımcılardan yüksek öğretim diplomasına sahip olan 51 kişi için TCA puanları ortalaması 1.64, standart sapması 0.61, puanlara ait dağılım çarpıklık değeri 1.19 ve basıklık değeri 1.09 olarak bulunmuştur. Aynı ilde yüksek öğretim diploması olmayan 86 katılımcının ise TCA puanları ortalaması 1.83, standart sapması 0.54, puanlara ait dağılımın çarpıklığı 0.72 ve basıklığı 0.90 olarak hesaplanmıştır.Bağımsız gruplar t-testi sonuçları, Uşak ilinde yaşayan katılımcıların Toplumsal Cinsiyet Algısı puanlarının yüksek öğretim durumuna göre değişeceği tezini desteklememiştir, t(135)=1.96, p=0.052. Puanlar arasındaki fark için %95 güven aralığı [-0.002,0.395] olarak hesaplanmıştır.<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a></p>
@@ -512,13 +512,13 @@ tstatistic=(<span class="fl">1.832-1.635</span>)/(sp*<span class="kw">sqrt</span
 ##  Welch Two Sample t-test
 ## 
 ## data:  gen_att by HEF
-## t = 2, df = 100, p-value = 0.06
+## t = 1.9028, df = 95.885, p-value = 0.06006
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
-##  -0.00848  0.40146
+##  -0.008484626  0.401462282
 ## sample estimates:
 ## mean in group non-college     mean in group college 
-##                      1.83                      1.64</code></pre></div>
+##                  1.831783                  1.635294</code></pre></div>
 <div id="raporlama-ornegi-welch-t-testi" class="section level4">
 <h4><span class="header-section-number">8.1.3.1</span> Raporlama örneği: Welch t testi</h4>
 <p>Uşak ilinde yaşayan katılımcılardan yüksek öğretim diplomasına sahip olan 51 kişi için TCA puanları ortalaması 1.64, standart sapması 0.61, puanlara ait dağılım çarpıklık değeri 1.19 ve basıklık değeri 1.09 olarak bulunmuştur. Aynı ilde yüksek öğretim diploması olmayan 86 katılımcının ise TCA puanları ortalaması 1.83, standart sapması 0.54, puanlara ait dağılımın çarpıklığı 0.72 ve basıklığı 0.90 olarak hesaplanmıştır.Bağımsız gruplar Welch t-testi sonuçları, Uşak ilinde yaşayan katılımcıların Toplumsal Cinsiyet Algısı puanlarının yüksek öğretim durumuna göre değişeceği tezini desteklememiştir, t(95.89)=1.9, p=0.06. Puanlar arasındaki fark için %95 güven aralığı [-0.082,0.402] olarak hesaplanmıştır.</p>
@@ -544,21 +544,21 @@ output=<span class="kw">sort</span>(output)
 ## yönsüz
 <span class="co"># D yıldız alt</span>
 output[<span class="kw">as.integer</span>(B*alpha/<span class="dv">2</span>)+<span class="dv">1</span>]
-## [1] -0.0134
+## [1] -0.01338349
 
 <span class="co"># D yıldız üst</span>
 output[B-<span class="kw">as.integer</span>(B*alpha/<span class="dv">2</span>)]
-## [1] 0.39
+## [1] 0.3899111
 
 ##Yönlü x2&gt;x1
 <span class="co"># D yıldız alt</span>
 output[<span class="kw">as.integer</span>(B*alpha)+<span class="dv">1</span>]
-## [1] 0.022
+## [1] 0.02202462
 
 <span class="co">#hatalı yön x2&lt;x1</span>
 <span class="co"># D yıldız üst</span>
 output[<span class="kw">as.integer</span>(B*(<span class="dv">1</span>-alpha))]
-## [1] 0.358</code></pre></div>
+## [1] 0.3575695</code></pre></div>
 </div>
 <div id="yuzdeli-bootstrap-yontemi-icin-raporlama-ornegi" class="section level4">
 <h4><span class="header-section-number">8.1.3.2</span> Yüzdeli bootstrap yöntemi için raporlama örneği</h4>
@@ -602,7 +602,7 @@ tval=<span class="fl">1.96</span>
 
 EB=tval/<span class="kw">sqrt</span>((n1*n2)/(n1+n2))
 EB
-## [1] 0.346
+## [1] 0.3464033
 
 <span class="co">#veya effsize paketi ile</span>
 <span class="kw">t.test</span>(gen_att~HEF,<span class="dt">data=</span>dataWBT_USAK,<span class="dt">var.equal=</span>F,
@@ -612,22 +612,22 @@ EB
 ##  Welch Two Sample t-test
 ## 
 ## data:  gen_att by HEF
-## t = 2, df = 100, p-value = 0.06
+## t = 1.9028, df = 95.885, p-value = 0.06006
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
-##  -0.00848  0.40146
+##  -0.008484626  0.401462282
 ## sample estimates:
 ## mean in group non-college     mean in group college 
-##                      1.83                      1.64
+##                  1.831783                  1.635294
 <span class="kw">library</span>(effsize)
 <span class="kw">cohen.d</span>(gen_att~HEF,<span class="dt">data=</span>dataWBT_USAK, <span class="dt">paired=</span>F, <span class="dt">conf.level=</span><span class="fl">0.95</span>,<span class="dt">noncentral=</span>F)
 ## 
 ## Cohen&#39;s d
 ## 
-## d estimate: 0.346 (small)
+## d estimate: 0.346177 (small)
 ## 95 percent confidence interval:
-##      inf      sup 
-## -0.00579  0.69815
+##          inf          sup 
+## -0.005791781  0.698145741
 <span class="co"># noncentral=T argümanını araştırabilirsiniz.</span></code></pre></div>
 <p>effsize paketi <span class="citation">(Torchiano <a href="#ref-R-effsize">2016</a>)</span> etki büyüklüğünü 0.35 ve ilgili %95 güven aralığını [-0.008, 0.701] olarak hesaplamıştır.</p>
 </div>
@@ -653,7 +653,7 @@ EB
 ## 
 ##      Two-sample t test power calculation 
 ## 
-##               n = 77.4
+##               n = 77.35093
 ##           delta = 0.35
 ##              sd = 0.6
 ##       sig.level = 0.05
@@ -712,7 +712,7 @@ descDT
 
 corDT=<span class="kw">with</span>(gerMUK,<span class="kw">cor</span>(bant,dikis,<span class="dt">use=</span><span class="st">&quot;complete.obs&quot;</span>))
 corDT
-## [1] 0.354
+## [1] 0.3536491
 
 
 <span class="co"># tahmin edilen standart hata (tsh)</span>
@@ -723,7 +723,7 @@ tstatistic=(<span class="fl">6.67-5.17</span>)/tsh
 
 <span class="co">#  alfa=0.05 kritik değer</span>
 <span class="kw">qt</span>(.<span class="dv">975</span>,<span class="dt">df=</span><span class="dv">19</span>)
-## [1] 2.09</code></pre></div>
+## [1] 2.093024</code></pre></div>
 <p>Hesaplanan 3.67, kritik değerden (<span class="math inline">\(t_{.975,19}=2.09\)</span>) büyük olduğu için boş hipotez terkedilebilir.</p>
 <p>Daha kolay bir R satırı;</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
@@ -735,13 +735,13 @@ tstatistic=(<span class="fl">6.67-5.17</span>)/tsh
 ##  Paired t-test
 ## 
 ## data:  bant and dikis
-## t = 4, df = 20, p-value = 0.002
+## t = 3.6678, df = 19, p-value = 0.001636
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
-##  0.643 2.352
+##  0.6429426 2.3520574
 ## sample estimates:
 ## mean of the differences 
-##                     1.5</code></pre></div>
+##                  1.4975</code></pre></div>
 <div id="raporlama-ornegi" class="section level4">
 <h4><span class="header-section-number">8.2.1.1</span> Raporlama örneği:</h4>
 <p>Bağlı gruplar t testi hesaplarına dayanarak, gerilim mukavemetinin bant tedavisi (ort=6.67,SS=1.71,çarpıklık=0.55,basıklık=-0.45) ve dikiş tedavisi (ort=5.17,SS=1.49,çarpıklık=-0.08,basıklık=-0.87) arasında farklılık gösterdiği sonucuna varılmıştır, t(19)=3.67, p=0.002 ,r=0.35. Aritmetik ortalamaların farkı için 95% güven aralığı [0.64,2.35] olarak hesaplanmıştır.</p>
@@ -779,11 +779,11 @@ output=<span class="kw">sort</span>(output)
 ## yönsüz
 <span class="co"># d yıldız alt</span>
 output[<span class="kw">as.integer</span>(B*alpha/<span class="dv">2</span>)+<span class="dv">1</span>]
-## [1] 0.686
+## [1] 0.6865
 
 <span class="co"># d yıldız üst</span>
 output[B-<span class="kw">as.integer</span>(B*alpha/<span class="dv">2</span>)]
-## [1] 2.24
+## [1] 2.2415
 
 ##Yönlü x2&gt;x1
 <span class="co"># d yıldız alt</span>
@@ -793,7 +793,7 @@ output[<span class="kw">as.integer</span>(B*alpha)+<span class="dv">1</span>]
 <span class="co">#yanlış yön x2&lt;x1</span>
 <span class="co"># d yıldız üst</span>
 output[<span class="kw">as.integer</span>(B*(<span class="dv">1</span>-alpha))]
-## [1] 2.14</code></pre></div>
+## [1] 2.1445</code></pre></div>
 <div id="yonsuz-yuzdeli-bootstrap-icin-ornek-rapor" class="section level4">
 <h4><span class="header-section-number">8.2.3.1</span> Yönsüz yüzdeli bootstrap için örnek rapor:</h4>
 <p>Yaraların tedavisinden 10 gün sonra gerilim mukavemeti ölçümleri yapılmıştır. Yara bandı ile (ort=6.67,SS=1.71,çarpıklık=0.55,basıklık=-0.45) dikiş tedavisi (ort=5.17,SS=1.49,çarpıklık=-0.08,basıklık=-0.87) ölçümleri arasındaki fark için 5000 tekrarlı bootstrap prosedürü %95 güven aralığı [0.667,2.2555] olarak hesaplanmıştır. Yeni geliştirilen yara bandı sonrası gerilim mukavemetinin daha yüksek olduğu ve bu farklılığın istatistiksel olarak anlamlı olduğu sonucuna varılmısştır.</p>
@@ -810,7 +810,7 @@ tval=<span class="fl">3.6678</span>
 
 EB=tval/<span class="kw">sqrt</span>(n)
 EB
-## [1] 0.82
+## [1] 0.820145
 
 <span class="kw">library</span>(effsize)
 <span class="kw">cohen.d</span>(gerMUK$bant,gerMUK$dikis, 
@@ -818,10 +818,10 @@ EB
 ## 
 ## Cohen&#39;s d
 ## 
-## d estimate: 0.82 (large)
+## d estimate: 0.820134 (large)
 ## 95 percent confidence interval:
-##   inf   sup 
-## 0.154 1.487</code></pre></div>
+##       inf       sup 
+## 0.1535955 1.4866725</code></pre></div>
 <p>effsize paketi <span class="citation">(Torchiano <a href="#ref-R-effsize">2016</a>)</span> etki büyüklüğünü 0.820 ve ilgili %95 güven aralığını [0.135, 1.505] olarak hesaplamıştır.</p>
 </div>
 <div id="kayp-veriler-ile-bagl-gruplar-t-testi" class="section level3">
@@ -840,7 +840,7 @@ EB
 ## 
 ##      Paired t test power calculation 
 ## 
-##               n = 40.2
+##               n = 40.16447
 ##           delta = 0.35
 ##              sd = 0.6
 ##       sig.level = 0.05

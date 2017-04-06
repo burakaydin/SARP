@@ -4,7 +4,7 @@ bookdown::gitbook:
     toc:
       before: |
         <li><a href="./">SARP-TR</a></li>
-        <li><a href="https://bookdown.org/burak2358/SARP/" target="blank">SARP-EN</a></li>
+        <li><a href="https://bookdown.org/burak2358/SARP-EN/" target="blank">SARP-EN</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
     edit:

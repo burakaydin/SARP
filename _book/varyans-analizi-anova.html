@@ -107,7 +107,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <ul class="summary">
 <li><a href="./">SARP-TR</a></li>
-<li><a href="https://bookdown.org/burak2358/SARP/" target="blank">SARP-EN</a></li>
+<li><a href="https://bookdown.org/burak2358/SARP-EN/" target="blank">SARP-EN</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Kapak</a><ul>
@@ -682,9 +682,9 @@ alternative2=<span class="kw">lm</span>(gen_att~eduNEW,<span class="dt">data=</s
 ## Analysis of Variance Table
 ## 
 ## Response: gen_att
-##            Df Sum Sq Mean Sq F value  Pr(&gt;F)    
-## eduNEW      5   10.1   2.026    7.27 1.3e-06 ***
-## Residuals 564  157.2   0.279                    
+##            Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+## eduNEW      5  10.13 2.02610  7.2676 1.306e-06 ***
+## Residuals 564 157.24 0.27879                      
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre></div>
 <p><span class="citation">R Core Team (<a href="#ref-R-base">2016</a><a href="#ref-R-base">b</a>)</span> paketinde yer alan <em>aov</em> fonksiyonu da kullanılabilir.</p>
@@ -692,9 +692,9 @@ alternative2=<span class="kw">lm</span>(gen_att~eduNEW,<span class="dt">data=</s
 <span class="co">#üçüncü yol, aov fonksiyonu</span>
 alternative3=<span class="kw">aov</span>(gen_att~eduNEW,<span class="dt">data=</span>dataWBT_KOCAELI)
 <span class="kw">summary</span>(alternative3)
-##              Df Sum Sq Mean Sq F value  Pr(&gt;F)    
-## eduNEW        5   10.1   2.026    7.27 1.3e-06 ***
-## Residuals   564  157.2   0.279                    
+##              Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## eduNEW        5  10.13  2.0261   7.268 1.31e-06 ***
+## Residuals   564 157.24  0.2788                     
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre></div>
 <p><em>pairwise.t.test</em> fonksiyonu ikili kıyaslama için oldukça kullanışlıdır. Hangi ortak hata kontrol prosedürünü kullanacağınızı belirledikten sonra <em>p.adjust.method</em> argümanını kullanabilirsiniz. Örneğin <em>p.adjust.method =“Holm”</em> ile <span class="citation">Holm (<a href="#ref-holm1979">1979</a>)</span> tarafından verilen prosedür uygulanabilir. Toplamda 6 farklı prosedür seçilebilir, detaylar için inceleyiniz; <em>?p.adjust</em></p>
@@ -708,35 +708,35 @@ alternative3=<span class="kw">aov</span>(gen_att~eduNEW,<span class="dt">data=</
 ## data:  gen_att and eduNEW 
 ## 
 ##                                      Primary School (5 years)
-## Junior High/ Middle School (8 years) 1.000                   
-## High School (Lycee) (4 years)        0.004                   
-## Vocational High School (4 years)     1.000                   
-## Higher education of 2 years          0.001                   
-## University - Undergraduate degree    0.004                   
+## Junior High/ Middle School (8 years) 1.0000                  
+## High School (Lycee) (4 years)        0.0040                  
+## Vocational High School (4 years)     1.0000                  
+## Higher education of 2 years          0.0014                  
+## University - Undergraduate degree    0.0043                  
 ##                                      Junior High/ Middle School (8 years)
 ## Junior High/ Middle School (8 years) -                                   
-## High School (Lycee) (4 years)        0.005                               
-## Vocational High School (4 years)     1.000                               
-## Higher education of 2 years          0.002                               
-## University - Undergraduate degree    0.006                               
+## High School (Lycee) (4 years)        0.0046                              
+## Vocational High School (4 years)     1.0000                              
+## Higher education of 2 years          0.0017                              
+## University - Undergraduate degree    0.0057                              
 ##                                      High School (Lycee) (4 years)
 ## Junior High/ Middle School (8 years) -                            
 ## High School (Lycee) (4 years)        -                            
-## Vocational High School (4 years)     0.044                        
-## Higher education of 2 years          1.000                        
-## University - Undergraduate degree    1.000                        
+## Vocational High School (4 years)     0.0435                       
+## Higher education of 2 years          1.0000                       
+## University - Undergraduate degree    1.0000                       
 ##                                      Vocational High School (4 years)
 ## Junior High/ Middle School (8 years) -                               
 ## High School (Lycee) (4 years)        -                               
 ## Vocational High School (4 years)     -                               
-## Higher education of 2 years          0.018                           
-## University - Undergraduate degree    0.036                           
+## Higher education of 2 years          0.0176                          
+## University - Undergraduate degree    0.0357                          
 ##                                      Higher education of 2 years
 ## Junior High/ Middle School (8 years) -                          
 ## High School (Lycee) (4 years)        -                          
 ## Vocational High School (4 years)     -                          
 ## Higher education of 2 years          -                          
-## University - Undergraduate degree    1.000                      
+## University - Undergraduate degree    1.0000                     
 ## 
 ## P value adjustment method: holm</code></pre></div>
 </div>
@@ -752,9 +752,9 @@ alternative3=<span class="kw">aov</span>(gen_att~eduNEW,<span class="dt">data=</
 ## t1way(formula = gen_att ~ eduNEW, data = dataWBT_KOCAELI, tr = 0.2, 
 ##     nboot = 5000)
 ## 
-## Test statistic: 7.57 
+## Test statistic: 7.5658 
 ## Degrees of Freedom 1: 5 
-## Degrees of Freedom 2: 144 
+## Degrees of Freedom 2: 143.78 
 ## p-value: 0 
 ## 
 ## Explanatory measure of effect size: 0.29
@@ -765,9 +765,9 @@ alternative3=<span class="kw">aov</span>(gen_att~eduNEW,<span class="dt">data=</
 ## t1way(formula = gen_att ~ eduNEW, data = dataWBT_KOCAELI, tr = 0.1, 
 ##     nboot = 5000)
 ## 
-## Test statistic: 9.54 
+## Test statistic: 9.5355 
 ## Degrees of Freedom 1: 5 
-## Degrees of Freedom 2: 188 
+## Degrees of Freedom 2: 187.52 
 ## p-value: 0 
 ## 
 ## Explanatory measure of effect size: 0.3
@@ -778,9 +778,9 @@ alternative3=<span class="kw">aov</span>(gen_att~eduNEW,<span class="dt">data=</
 ## t1way(formula = gen_att ~ eduNEW, data = dataWBT_KOCAELI, tr = 0.05, 
 ##     nboot = 5000)
 ## 
-## Test statistic: 9.41 
+## Test statistic: 9.415 
 ## Degrees of Freedom 1: 5 
-## Degrees of Freedom 2: 212 
+## Degrees of Freedom 2: 211.55 
 ## p-value: 0 
 ## 
 ## Explanatory measure of effect size: 0.31
@@ -1068,10 +1068,10 @@ alternative1
 ## t2way(formula = gen_att ~ HEF * gender, data = dataWBT_Kayseri, 
 ##     tr = 0.05)
 ## 
-##             value p.value
-## HEF         6.169   0.015
-## gender     29.838   0.001
-## HEF:gender  0.164   0.687</code></pre></div>
+##              value p.value
+## HEF         6.1688   0.015
+## gender     29.8383   0.001
+## HEF:gender  0.1642   0.687</code></pre></div>
 </div>
 <div id="ornek-rapor-iki-yonlu-bagl-olmayan-gozlemler-varyans-analizi" class="section level4">
 <h4><span class="header-section-number">9.2.2.3</span> Örnek rapor: iki-yönlü bağlı olmayan gözlemler varyans analizi</h4>

@@ -107,7 +107,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <ul class="summary">
 <li><a href="./">SARP-TR</a></li>
-<li><a href="https://bookdown.org/burak2358/SARP/" target="blank">SARP-EN</a></li>
+<li><a href="https://bookdown.org/burak2358/SARP-EN/" target="blank">SARP-EN</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Kapak</a><ul>
@@ -316,13 +316,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 \tag{5.3}
 \end{equation}\]</span>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> +<span class="st"> </span>(<span class="dv">2</span> /<span class="st"> </span><span class="dv">3</span>) -<span class="st"> </span>(<span class="dv">2</span> *<span class="st"> </span><span class="fl">6.5</span>)
-## [1] -11.3</code></pre></div>
+## [1] -11.33333</code></pre></div>
 <span class="math display" id="eq:bc4">\[\begin{equation}
 sin(30) + 4^3 + log(4) + e^3 + \sqrt{7} = 87.13 
 \tag{5.4}
 \end{equation}\]</span>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sin</span>(<span class="dv">30</span>) +<span class="st"> </span><span class="dv">4</span>^<span class="dv">3</span> +<span class="st"> </span><span class="kw">log</span>(<span class="dv">4</span>) +<span class="st"> </span><span class="kw">exp</span>(<span class="dv">3</span>) +<span class="st"> </span><span class="kw">sqrt</span>(<span class="dv">7</span>)
-## [1] 87.1</code></pre></div>
+## [1] 87.12955</code></pre></div>
 <p>Eşitlik <a href="basics.html#eq:bc1">(5.1)</a> ’den <a href="basics.html#eq:bc4">(5.4)</a> ’e kadar olan işlemler R tarafından tamamlanır fakat hafızada tutulmaz. Eğer yaptığınız bir işelmin sonucunu tekrar kullanmak istiyorsanız ona isim vermelisiniz. İsim verdiğiniz R çıktıları oturum süresince (session) tekrar erişime açıktır. Çıktılara oturum kapandıktan sonra da ulaşmak istiyorsanız kaydetmelisiniz. Kaydetme işlemleri ilerleyen bölümlerde ele alınmıştır. İsim verme işlemi fraklı şekillerde yapılabilir; “=”, “&lt;-” or “&lt;&lt;-”. Bu materyal “=” operatörünü kullanır.</p>
 <p>Eşitlik <a href="basics.html#eq:bc1">(5.1)</a> ’den <a href="basics.html#eq:bc4">(5.4)</a> ’e kadar olan işlemleri oturum süresince saklamak için;</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a=<span class="dv">1</span> -<span class="st"> </span><span class="dv">1</span>
@@ -331,7 +331,7 @@ c=<span class="dv">1</span> +<span class="st"> </span>(<span class="dv">2</span>
 d=<span class="kw">sin</span>(<span class="dv">30</span>) +<span class="st"> </span><span class="dv">4</span>^<span class="dv">3</span> +<span class="st"> </span><span class="kw">log</span>(<span class="dv">4</span>) +<span class="st"> </span><span class="kw">exp</span>(<span class="dv">3</span>) +<span class="st"> </span><span class="kw">sqrt</span>(<span class="dv">7</span>)</code></pre></div>
 <p>İsim verdiğiniz çıktılar ile işlem yapabilirsiniz.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a+b+c+d
-## [1] 77.8</code></pre></div>
+## [1] 77.79622</code></pre></div>
 <p>İsim verdiğiniz bir çıktıyı değiştirebilirsiniz (overwrite)</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">e=<span class="dv">3+2</span>
 e
@@ -342,7 +342,7 @@ e
 <p>Farklı bir isim vermek için (Not: R büyük harf küçük harf ayrımı yapar)</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Equation1_output=a
 Equation1_output +<span class="st"> </span>b +<span class="st"> </span>c +<span class="st"> </span>d  <span class="co"># a+b+c+d ile eşit</span>
-## [1] 77.8</code></pre></div>
+## [1] 77.79622</code></pre></div>
 </div>
 <div id="r-programlanabilir-hesap-makinesi" class="section level3">
 <h3><span class="header-section-number">5.1.2</span> R: Programlanabilir Hesap makinesi</h3>
@@ -373,7 +373,7 @@ Equation1_output +<span class="st"> </span>b +<span class="st"> </span>c +<span 
 <span class="kw">systematic1</span>(<span class="dv">100</span>)
 ## [1] 101
 <span class="kw">systematic1</span>(<span class="dv">120</span>)
-## [1] 121</code></pre></div>
+## [1] 121.2</code></pre></div>
 </div>
 <div id="coklu-girdi-tek-ckt" class="section level4">
 <h4><span class="header-section-number">5.1.2.2</span> Çoklu Girdi-Tek Çıktı</h4>
@@ -506,13 +506,15 @@ notlar*<span class="fl">0.4</span> +<span class="st"> </span>notlar2*<span class
 <span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">6</span>,<span class="dt">by=</span><span class="fl">0.5</span>)   <span class="co"># 1&#39;den 6&#39;ya 0.5 atla</span>
 ##  [1] 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0 5.5 6.0
 <span class="kw">rnorm</span>(<span class="dv">12</span>)        <span class="co">#  ~N(0,1) 12 gözlem</span>
-##  [1] -0.763 -0.826  1.844 -0.284  1.830 -1.317  0.623 -0.215 -0.489 -0.226
-## [11] -1.255  1.353
+##  [1] -0.22225640 -1.31580992 -1.41319696  0.79414035  2.88395439
+##  [6] -0.03361707  0.37146765 -1.25705414  0.80515111 -0.19309087
+## [11]  0.56021539  0.13472171
 <span class="kw">rnorm</span>(<span class="dv">12</span>,<span class="dt">mean=</span><span class="dv">10</span>,<span class="dt">sd=</span><span class="dv">2</span>) <span class="co">#~ N(10,2) 12 gözlem</span>
-##  [1]  8.57  7.70  8.78 10.40  5.39  7.77  9.62  7.12  8.97 11.72  8.63
-## [12]  9.29
+##  [1] 10.601510 11.250981 11.251767  5.157681 10.554697  8.945542  7.450644
+##  [8] 10.719242 12.285389 12.783225  7.531408  7.860656
 <span class="kw">runif</span>(<span class="dv">12</span>, <span class="dt">min =</span> <span class="dv">10</span>, <span class="dt">max =</span> <span class="dv">37</span>) 
-##  [1] 34.8 22.1 12.4 23.6 32.4 18.9 10.1 36.3 14.9 27.4 20.5 14.2</code></pre></div>
+##  [1] 11.34828 36.79154 32.13427 23.12546 21.23074 15.09413 27.99836
+##  [8] 21.41329 18.85747 36.48286 30.43769 35.28173</code></pre></div>
 </div>
 <div id="matrisler" class="section level3">
 <h3><span class="header-section-number">5.2.2</span> Matrisler</h3>
@@ -528,29 +530,29 @@ B=<span class="kw">matrix</span>(<span class="kw">runif</span>(<span class="dv">
 
 <span class="co"># işlem örnekleri</span>
 A+B    <span class="co"># topla</span>
-##      [,1] [,2] [,3] [,4]
-## [1,] 36.3 31.5 33.6 38.8
-## [2,] 22.4 32.5 48.8 50.0
-## [3,] 31.6 33.3 45.9 35.3
-## [4,] 37.1 46.1 44.3 54.7
+##          [,1]     [,2]     [,3]     [,4]
+## [1,] 40.58999 32.89509 33.29258 40.72206
+## [2,] 25.07361 32.86088 39.02892 53.41340
+## [3,] 34.02937 30.29427 31.95793 50.36069
+## [4,] 41.61370 38.94765 42.68327 43.05661
 A*B    <span class="co"># çarp</span>
-##       [,1] [,2] [,3] [,4]
-## [1,]  35.3  132  222  335
-## [2,]  40.8  159  388  504
-## [3,]  85.9  184  384  304
-## [4,] 132.3  305  388  619
+##           [,1]     [,2]     [,3]     [,4]
+## [1,]  39.58999 139.4754 218.6332 360.3868
+## [2,]  46.14723 161.1653 290.2892 551.7876
+## [3,]  93.08810 163.0599 230.5372 530.4104
+## [4,] 150.45482 247.5812 368.1993 432.9057
 A%*%B  <span class="co"># matris çarp</span>
-##      [,1] [,2] [,3] [,4]
-## [1,]  825  891  954  891
-## [2,]  942 1008 1085 1012
-## [3,] 1060 1125 1215 1133
-## [4,] 1177 1243 1346 1254
+##           [,1]      [,2]      [,3]      [,4]
+## [1,]  923.2005  774.1673  756.9411  894.7712
+## [2,] 1054.5072  883.1652  861.9038 1024.3240
+## [3,] 1185.8139  992.1631  966.8665 1153.8768
+## [4,] 1317.1205 1101.1609 1071.8292 1283.4295
 <span class="kw">t</span>(B)   <span class="co"># çevir</span>
-##      [,1] [,2] [,3] [,4]
-## [1,] 35.3 20.4 28.6 33.1
-## [2,] 26.5 26.5 26.3 38.1
-## [3,] 24.6 38.8 34.9 32.3
-## [4,] 25.8 36.0 20.3 38.7</code></pre></div>
+##          [,1]     [,2]     [,3]     [,4]
+## [1,] 39.58999 23.07361 31.02937 37.61370
+## [2,] 27.89509 26.86088 23.29427 30.94765
+## [3,] 24.29258 29.02892 20.95793 30.68327
+## [4,] 27.72206 39.41340 35.36069 27.05661</code></pre></div>
 </div>
 <div id="variables" class="section level3">
 <h3><span class="header-section-number">5.2.3</span> Değişkenler</h3>
