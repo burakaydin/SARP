@@ -84,7 +84,7 @@ $$\hat Y_i=2.9167 + 0.1989X_{i1} + 1.5519X_{i2} $$
 
 Örnekte yer alan her iki bağımsız değişkeninde aritmetik ortalaması sıfırdır. $X_1$ ve $X_2$ sıfır iken, $(\hat{Y_i})$ 2.92 olarak hesaplanır. Bir diğer ifade ile, her iki bağımsız değişken için ortalamada bulunan bireylerin bağımlı değişken ölçümü 2.92 olarak tahmin edilmiştir. $X_2$ değişkeni kontrol edildiğinde, $X_1$ değişkeninde gerçekleşecek 1 birim artışın bağımlı değişken için 0.2 birim artışa yol açacağı tahmin edilmiştir. Benzer şekilde, $X_1$ değişkeni kontrol edildiğinde, $X_2$ değişkeninde gerçekleşecek 1 birim artışın bağımlı değişken için 1.55 birim artışa yol açacağı tahmin edilmiştir. Çoklu regresyon modellerinde "kontrol edildiğinde (ceteris paribus)" ifadesi gereklidir. Hesaplanan katsayılar, .20 ve 1.55, araştırmacıyı değişkenler arasındaki ilişki hakkında bilgilendirir. Tabi bu noktada araştırmacının "1 birim artış" ifadesinin tam olarak ne anlama geldiğini bilmesi gerekir.
 
-### a) "Esasen bütün modeller yanlıştır, fakat bir kısmı işe yarardır."
+### A) "Esasen bütün modeller yanlıştır, fakat bir kısmı işe yarardır."
 Bu çıkarım @georgenorman87 tarafından yapılmıştır. Araştırmacı, araştırma sorusu doğrultusunda inşaa edeceği modelde yer alan değişkenleri nasıl seçtiğine yönelik ikna edici argümanlar sunmalıdır. Eğer önemli bir değişken modelin dışında bırakıldı ise kestirilen regresyon katsayıları muhtemelen geçersizdir. 
 
 Aşağıdaki durumu düşünelim
@@ -101,7 +101,7 @@ Sentetik veri setinde $X_1$ ve $X_2$ arasındaki korelasyon 0.68, $Y$ ve $X_2$ a
 Dışarıda kalan değişken probleminin yanında bir regresyon modelinin geçerliği örneklem seçimine ve örnekleme çerçevesinin (sampling frame) model ile yansıtabilmesine de bağlıdır. Örneğin örnekleme çerçevesinde ağrılıklandırma kullanıldı ise çözümleme esnasında bu ağırlıklar göz ardı edilmemelidir.
 
 
-### b) Bağımlı değişken ve bağımsız değişkenler arasındaki ilişkinin kuvveti
+### B) Bağımlı değişken ve bağımsız değişkenler arasındaki ilişkinin kuvveti
 Bağımlı değişkene ait kareler toplamı (total sum of squares) iki ana parçaya ayrıştıtılabilir, _modele ait kareler toplamı_ ve _hataya ait kareler toplamı_. Modele ait kareler toplamının değişkene ait kareler toplamına oranı $R^2$ ile gösterilir ve çoklu belirlilik katsayısı olarak adlandırılır. $R^2$
 bağımlı değişken ve bağımsız değişkenler arasındaki ilişkinin kuvvetini ölçer. 
 
@@ -145,7 +145,7 @@ AdjustedRsquared
 
 $R^2$ ve $R^2_{Adj}$ kullanışlı katsayılardır ve ne kadar varyansın model ile açıklandığını belirtir. Örneğimiz için $R^2 = .879$ ve $R^2_{Adj}= .852$ birbirine yakın değerlerdir.Eğer $R^2 = .25$ olsa idi $R^2_{Adj}$ 0.08 olurdu. $R^2$ 1 ise model varyansın tamamını açıklamıştır (%100). $R^2$ ve $R^2_{Adj}$ aynı bağımlı değişkeni açıklayan farklı bağımsız değişken gruplarını karsşılaştırmak için de kullanılır. $R^2$'in yorumu korelasyon katsayısı yorumunda olduğu gibi konu alanına göre değişir. 0.7 $R^2$ değerinin çok güçlü veya çok zayıf adledilebileceği durumlar olabilir.
 
-### c) Artıklar ve etkili gözlemler
+### C) Artıklar ve etkili gözlemler
 Artıklar modelin uyumsuzluğu hakkında bilgi verebilir. Artıkların incelenmesi ile yordayıcı ve yordanan değişklenlerin arasındaki ilişkinin doğrusallığı görsel olarak kontrol edilebilir. Artıkların dağılımsal özelliklerini incelemek örneklemden evrene yorum yapmak için gerekli olabilir. Örneğin istatistiksel anlamlılık testlerinde ve güven aralığı hesaplamaları normal dağılım varsayımına dayandırılmış ise artıkların standart normal dağılım olasılığı grafiğinde (QQ grafiği) düz bir çizgiyi takip etmesi gerekir.
 
 ```{r, collapse=T, eval=T, cache=T, message=F,echo=T}
@@ -256,7 +256,7 @@ Leverage değeri (Hat Diag) bir gözlemin diğer gözlemlerden ne kadar uzak old
 Potansiyel etkili gözlem olarak işaretlenen gözlemlerin değerlendirilmesi araştırmacının sorumluluğundadır. Daha önce belirtildiği gibi, etkili bir gözlemin veri setinden çıkarılıp çıkarılmaması önemli bir karardır. Veri setinden çıkarılan bir gözlem varsa sebepleri detaylı olarak açıklanmalıdır. 
 
 
-### d) _Eş varyanslılık varsayımı_
+### D) _Eş varyanslılık varsayımı_
 
 Bağımlı değişkenin normal dağıldığı varsayımı ve OLS yöntemi ile regresyon katsayılarının $\beta$ dağılımları hesaplanabilir. Bu sayede regresyon katsayıları için standart hatalar $\hat\sigma^2(X′X)^{-1}$ ile kestirilebilir. Bu eşitlikteki $\hat\sigma^2$ hata terimlerinin varyansıdır. 
  
@@ -316,7 +316,7 @@ ggplot(plotdata, aes(x = predicted, y = errors)) +
 ```
 
 
-### e) Hipotez testi
+### E) Hipotez testi
 $H_0: \beta_1=...=\beta_p=0$ boş hipotezi F dağılımı takip bir istatistik ile test edilebilir. Bu boş hipotez bütün regresyon katsayılarının sıfıra eşit olduğunu öne sürer. Alternatif hipotez ise en az bir regresyon katsayısının sıfırdan farklı olduğunu ileri sürer.  $MS_{regression}/MS_{residual}$ istatistiği  $p$ ve $n-p'$ serbestlik derecesine sahip bir F dağılımı takip eder. $p$ bağımsız değişken sayısını $p'$ ise regresyon katsayıları sayısını temsil eder (sabit yoksa $p=p'$). Alfa=0.05 ve sentetik data için;
 
 
@@ -363,7 +363,7 @@ qt(.975,9)
 ```
 
 
-### f) Değişken seçimi
+### F) Değişken seçimi
 Uzak bir bakışaçısından, çoklu regresyonun kullanıldığı iki senaryo vardır.
 
 İlk senaryo: Sosyal bilimci alan yazını dikkatli bir şekilde inceler, araştırma sorusu ile ilgili olan bağımsız değişkenleri belirler, gereken örneklem büyüklüğüne karar verir, veriyi toplar,bütün bağımsız değişkenleri içeren bir model kurar ve sonuçları raporlar
@@ -423,7 +423,7 @@ ggplot(APRtable, aes(x=ppri-1, y=adjr2)) +
 ```
 
 
-### g) Güçlü doğrusal bağlantı sorunu
+### G) Güçlü doğrusal bağlantı sorunu
 Bağımsız değişkenlerin birbiri ile çok güçlü olarak ilişkili olması tahmin sürecinde istenmeyen sonuçlara yol açabilir. Bu durum doğrusal bağlantı (collinearity) sorunu olarak bilinir. Standart hatalar doğrusal bağlantı arttıkça artar çünkü bu sorun her bir bağımsız değişkenin tahmin sürecine olacak olumlu katkısını saklar.
 
 Açıklama amacı ile iki bağımsız değişkeninin olduğunu düşünelim, bu değişkenler arasındaki korelasyonun yüksek olduğu durumda iki tür problem oluşabilir, (a) regresyon katsayıları istikrarsız olabilir, aynı evrenden çekilen örneklemler ile çok farklı katsayılar elde edilebilir, (b) istatistiksel olarak anlamlı bir $R^2$ bulunsa dahi katsayılar istatistiksel olarak sıfırdan farksız olabilir.
@@ -444,25 +444,25 @@ vif(lm(yy~X1+X2+X3,data=simdata))
 ```
 
 
-### h) Doğrusal olmayan regresyon
+### H) Doğrusal olmayan regresyon
 Eğer bağımlı değişken bağımsız değişkenlerden biri ile lineer olmayan bir ilişkiye sahip ise, bu durumun görmezden gelinmesi önemli bir değişkenin dışarda bırakılması problemi ile aynıdır. Artık değerlerin incelenmesi lineer olmayan ilişkilerin tespitinde işe yarardır. Kullanılan yöntemlerden biri, bağımsız değişkenin üs kuvvetleri ile oluşturulacak yeni bir değişkenin modele eklenmesidir. Örneğin artık grafiği $X_k$ ve artıklar arasında karesel (quadratic) bir ilişki varsa $X_k^2$ modele alınarak artık model uyumu tekrar incelenebilir. Bir diğer alternatif bağımsız değişkenin transform edilmesidir.
 
 
-### i) Korelasyon gösteren veya bağımsız olmayan hata terimleri
+### I) Korelasyon gösteren veya bağımsız olmayan hata terimleri
 Hatalar birbiri ile korelasyonlu olmamlıdır, daha kapsayıcı bir ifade ile, hatalar bağımsız olmalıdır. Bağlı olma durumu var ise bu durum göz ardı edilirse regresyon sonuçları geçersizdir. Fakat bu konu bu tanıtım materyalinin kapsamı dışında kalır. Sosyal bilimlerde tekrarlı ölçümler kullanıldığında (boylamsal çalışma) korelasyon gösteren hata terimleri oluşabilir, bu durumda araştırmacılar Örtük gelişim modelleri (latent growth models) veya çok düzeyli modeller (multilevel models) kullanabilir. Eğer hataların bağlı olma durumu bireylerin aynı kümelerden gelişi ise (nested or clustered data) yine çok düzeyli modeller kullanılabilir. 
 
 
-### j) Bağımsız değişken üzerine işlemler (Centering and Scaling)
+### J) Bağımsız değişken üzerine işlemler (Centering and Scaling)
 Annenin doğum esnasındaki yaşının çocuğun 10 yaşındaki IQ puanını tahmin etmeye çalışan bir çalışma düşünelim. Bu durumda regresyon sabiti anne yaşının 0 olduğu durumda çocuğun IQ puanını gösterir. Bu anlamlı olarak yorumlanabilir bir katsayı değildir. Eğer anne yaşı ortalama etrafında merkezileştirilirse, bir diğer ifade ile, her annenin yaşından örneklemdeki annelerin ortalama yaşı çıkarılırsa, regresyon sabiti yorumlanabilir. Bu durumda yaş değişkeninde sıfır, yaş ortalamasını temsil eder ve regresyon sabiti de ortalama yaştaki bir annenin çocuğunun 10 yaşındaki tahmini IQ puanını verir. Benzer bir örnek olarak, işe devamsızlık değişkeninin iş stresi değişkeni ile açıklanmaya çalışıldığını düşünelim. İş stresi puanları 10 ila 50 arasında değişiyorsa regresyon sabitinin anlamlı bir yorumu olmaz. Araştırmacı iş stresi puanları ortalama etrafında merkezileştirmeyi veya seçtiği bir değeri (örneğin 40) stres puanlarından çıkararak sabitin anlamlı bir şekilde yorumlanmasını sağlayabilir.
 Başka bir örnekte gelir değişkeninin sağlık değişkeni üzerine etkisi araştırılsın. Gelir verisinde bir birimın 1 dolar olduğunu ve bu değişkene ait regresyon katsayısının .001 olduğunu düşünelim. Araştırmacı bu durumda gelir değişkenini 1000'e bölerek birimi 1 dolardan 1000 dolara çıkarabilir. Bu durumda regresyon katsayıso .001 değil 1 olacaktır. Bu durum araştırmacının yorum yapmasını kolaylaştırabilir.
 
 
-### k) Standardize edilmiş katsayılar
+### K) Standardize edilmiş katsayılar
 Yukarıda bahsedilen lineer transformasyonun yanında z transformasyonu da yapılabilir. Her sürekli bağımsız değişken için, değerlerden ortalama çıkarılıp standart sapmaya bölünebilir. Değişkenin doğasına bağlı olmak kaydı ile, standardize edilmiş bir değişkenin yorumu daha anlamlı olabilir;
 Ham puanlar için yorum: Endişe puanlarındaki bir birim artışın akademik başarı değişkeninde 3 birim azalmaya yol açabileceği tahmin edilmiştir.
 z-puanları: Motivasyon değişkeninde gerçekleşecek bir standart sapma artışın, başarı değişkeninde 0.25 standart sapma artışla ilişkili olabileceği tahmin edilmiştir.
 
-### l) Etkileşimler (Interactions)
+### L) Etkileşimler (Interactions)
 ANOVA bölümünde etkileşim konusu kısaca ele alınmıştı. Değişkenler arası etkileşimin modelde yer alması gerekirken göz ardı edilmesi önemli bir değişkenin dışarıda bırakılması problemidir. Ayrıca iki değişken arasındaki etkileşimin sonuçları etkilemesi durumunda asıl etkilerin yorumlanması yanıltıcı olabilir. Örneğin bir araştırmacının, öğrencilerinin merkezi bir sınavda matematik başarısını  ($Y$) tahmin etmeye çalışsın. Ödevlerden alınan puanlar ($X_1$) ve öğretmen yapımı sınavlardan alınan puanların ($X_2$) başarı üzerinde etkili olup olmadığını incelesin. Kuracağı eşitlik $Y_i=\beta_0+\beta_1X_{i1}+\beta_2X_{i2}+\epsilon_i$  olursa araştırmacı $Y$ ve $X_1$ arasındaki ilişkinin  $X_2$'ye bağlı olmadığını varsayar. Eğer bu varsayım hatalı ise sonuçlar yanıltıcı olabilir. Etkileşimin varlığını kontrol etmek için 
 
 
@@ -505,26 +505,26 @@ visreg2d(model2, "X1", "X2", plot.type="persp")
 Yüzey artık düz değil, etkilesim mevcut.
 
 
-### m) Farklı kestiriciler (estimators)
+### M) Farklı kestiriciler (estimators)
 Eklenecek
 
 
-### n) Dirençli yöntemler (Robust regression)
+### N) Dirençli yöntemler (Robust regression)
 Eklenecek
 
-### o) Örneklem büyüklüğü ve istatistiksel güç
+### O) Örneklem büyüklüğü ve istatistiksel güç
 Eklenecek
 
-### p) Değişkenlerin güvenirliği
+### P) Değişkenlerin güvenirliği
 Eklenecek
 
-### q) Dğişkenlerin türü 
+### Q) Dğişkenlerin türü 
 Eklenecek
 
-### r) Birden fazla bağımlı değişken
+### R) Birden fazla bağımlı değişken
 Eklenecek
 
-### s) Kayıp veri teknikleri
+### S) Kayıp veri teknikleri
 Eklenecek
 
 

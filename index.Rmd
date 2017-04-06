@@ -8,7 +8,7 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: burakaydin/BAP2219
+github-repo: burakaydin/SARP
 description: "Sosyal Bilimler R Platformu"
 cover-image: images/coverpicture.png
 always_allow_html: yes
@@ -29,7 +29,7 @@ Bu platformun hakları korunmuştur [CC0](https://creativecommons.org/publicdoma
 
 ## Tanıtım 
 Bu materyal İngilizce olarak hazırlanıp Türkçeye çevirilmiştir.
-Bu _platform_ sosyal bilimler alanında çalışan ve nicel veri analizlerinin teoriden ziyade uygulama aşamasına ilgi gösteren araştırmacılar için oluşturulmuştur. Bütün istatistiksel prosedürler R [@R-base] ile yürütülmüş, gerçek veri kullanımına özen gösterilmiştir. Bu materyale _platform_ denilmesinin üç sebebi vardır, (a) katkıya açıktır,(b) dinamik bir içeriğe sahiptir, (c) bilgisayar anakartı gibi kullanılabilir, R ile oluşturulmuş herhangi bir üst düzey çıktı platforma eklenebilir. Bu materyal Bookdown [@R-bookdown] ile inşaa edilmiştir, Bookdown ise R Markdown [@R-rmarkdown] üzerine inşa edilmiştir. Materyalin hazırlanma aşamasında R Studio [@R-studio] kullanılmıştır.
+Bu _platform_ sosyal bilimler alanında çalışan ve nicel veri analizlerinin teoriden ziyade uygulama aşamasına ilgi gösteren araştırmacılar için oluşturulmuştur. Bütün istatistiksel prosedürler R [@R-base] ile yürütülmüş, gerçek veri kullanımına özen gösterilmiştir. Bu materyale _platform_ denilmesinin üç sebebi vardır, (a) katkıya açıktır,(b) dinamik bir içeriğe sahiptir, (c) bilgisayar anakartı gibi kullanılabilir, R ile oluşturulmuş herhangi bir üst düzey çıktı platforma eklenebilir. Bu materyal Bookdown [@R-bookdown] ile inşa edilmiştir, Bookdown ise R Markdown [@R-rmarkdown] üzerine inşa edilmiştir. Materyalin hazırlanma aşamasında R Studio [@R-studio] kullanılmıştır.
 
 
 ### Neden Bookdown?

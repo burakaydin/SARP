@@ -4,7 +4,7 @@
 Verileri teker teker kaydetme  \@ref(dataframes) bölümünde verilmiştir. Fakat veri setleri genellikle çözümleme yapacak araştırmacıya hazır şekilde gelir. Bu bölüm (a) veri çekme , (b) basit veri işleme etme yöntemleri ve (c) veri kaydetme konularını içerir.
 
 
-##Veri Çekme
+## Veri Çekme
 Bir veri seti farklı formatlarda bulunabilir. R kullanıcılarının çok karşılaştığı veri formatları arasında .csv, .sav, .Rdata, .txt sayılabilir. Çözümleme işleminden önce verilerin düzgün bir şekilde çalışma alanına getirilmesi önemlidir.Eğer çalışacağınız veri seti ve R betiği aynı klasör içerisinde ise, bir diğer deyişle veri setiniz çalışma klasörünün (working directory) içerisinde ise adres belirtmeden veriyi çalısma alanınıza çağırabilirsiniz.
 
 ### CSV
@@ -328,7 +328,7 @@ rm(list=ls())
 
 
 
-## veri Kaydetme
+## Veri Kaydetme
 
 Adres belirtmediğiniz sürece kaydetme işlemi mevcut çalışma klasörünüz (working directory) içeriside tamamlanır.
 

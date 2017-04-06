@@ -75,7 +75,7 @@ ggplot(plotdata, aes(x = gen_att)) +
 ```
 
 
-### Bağımsız gruplar t testi için R betiği
+### R betiği: Bağımsız gruplar t testi  
 Takip edilen basamaklar;
 
 1. Betimsel istatistikler 
@@ -150,7 +150,7 @@ Uşak ilinde yaşayan katılımcılardan yüksek öğretim diplomasına sahip ol
 Uşak ilinde yaşayan katılımcılardan yüksek öğretim diplomasına sahip olan 51 kişi için TCA puanları ortalaması 1.64, standart sapması 0.61, puanlara ait dağılım çarpıklık değeri 1.19 ve basıklık değeri 1.09 olarak bulunmuştur. Aynı ilde yüksek öğretim diploması olmayan 86 katılımcının ise TCA puanları ortalaması 1.83, standart sapması 0.54, puanlara ait dağılımın çarpıklığı 0.72 ve basıklığı 0.90 olarak hesaplanmıştır. Bağımsız gruplar t testi sonuçları, yüksek öğretim diploması olmayanların TCA puanları yüksek öğretimlere nazaran daha yüksektir tezini desteklemiştir, t(135)=1.96, p=0.026. Puanlar arasındaki fark için %95 güven aralığı [0.030,$\infty$] olarak hesaplanmıştır.
 
 
-### Bağımsız gruplar t testi varsayımları
+### Varsayımlar: Bağımsız gruplar t testi 
 Geleneksel t-testi sonuçlarının geçerliği 3 varsayımın ihlal edilmemesi ile mümkündür.
 
 1. Yanıtların bağımsızlığı (independence). Her gruba ait puanların dağılımı birbirinden bağımsız olmalıdır. Yanıtların bağımsızlığını tehdit eden durumlardan biri aynı grup içeresinde yer alan bireylerin birbirlerinin yanıtlarını etkilemesidir (Yantların bağımsızlığı \@ref(moreonindependence) bölümünde daha detaylı ele alınmıştır). 
@@ -176,7 +176,7 @@ t.test(gen_att~HEF,data=dataWBT_USAK,var.equal=F,
 
 ```
 
-####Welch t testi için raporlama örneği
+####Raporlama örneği: Welch t testi 
 Uşak ilinde yaşayan katılımcılardan yüksek öğretim diplomasına sahip olan 51 kişi için TCA puanları ortalaması 1.64, standart sapması 0.61, puanlara ait dağılım çarpıklık değeri 1.19 ve basıklık değeri 1.09 olarak bulunmuştur. Aynı ilde yüksek öğretim diploması olmayan 86 katılımcının ise TCA puanları ortalaması 1.83, standart sapması 0.54, puanlara ait dağılımın çarpıklığı 0.72 ve basıklığı 0.90 olarak hesaplanmıştır.Bağımsız gruplar Welch t-testi sonuçları, Uşak ilinde yaşayan katılımcıların Toplumsal Cinsiyet Algısı puanlarının yüksek öğretim durumuna göre değişeceği tezini desteklememiştir,  t(95.89)=1.9, p=0.06. Puanlar arasındaki fark için %95 güven aralığı [-0.082,0.402] olarak hesaplanmıştır.
 
 Eğer normallik varsayımı ciddi ölçüde süpheli ise ve özellikle iki grup farklı şekillerde dağılım gösteriyor ise yüzdeli bootstrap prosedürü (percentile bootstrap) kullanılabilir (@wilcox2012,page 171).
@@ -227,7 +227,7 @@ Uşak ilinde yaşayan katılımcılardan yüksek öğretim diplomasına sahip ol
 
 Yönlü ve yönsüz alternatif testler farklı kriterler kullanır. Yönlü testlerde yönün nasıl belirlendiği savunulmalıdır. Kullanılan örnekte yönsüz alternatif kullanıldığında Welch t testi p değeri 0.06 bulunmuştur. Bu sonuç marjinal anlamlılık olarak yorumlanabilir. Ülkemizde TCA puanları ve yüksek öğretim ilişkisi hakkında alanyazın sınırlı olduğu için yönlü bir alternatif savunulması zordur.    
 
-### Bağımsız gruplar t testi için etki büyüklüğü  {#indepteff}
+### Etki büyüklüğü: Bağımsız gruplar t testi için   {#indepteff}
 Bir t testi istatistiği ortalamaların birbirinden farklı olup olmadığı hakkında karar vermeye yardımcı olsa da, bu farklılığın büyüklüğünü yorumlamak için etki büyüklüğü hesaplamaları geliştirilmiştir. Bağımsız gruplar t testi için Cohen etki büyüklüğü , ortalamarın farkını bileşik standart sapmaya (pooled) bölünmesi ile hesaplanır.
 $$EB=\frac{t}{\sqrt{\frac{n_1n_2}{n_1+n_2}}}$$
 
@@ -424,7 +424,7 @@ output[as.integer(B*(1-alpha))]
 Yaraların tedavisinden 10 gün sonra gerilim mukavemeti ölçümleri yapılmıştır. Yara bandı ile (ort=6.67,SS=1.71,çarpıklık=0.55,basıklık=-0.45)  dikiş tedavisi (ort=5.17,SS=1.49,çarpıklık=-0.08,basıklık=-0.87) ölçümleri arasındaki fark için 5000 tekrarlı bootstrap prosedürü %95 güven aralığı [0.667,2.2555] olarak hesaplanmıştır. Yeni geliştirilen yara bandı sonrası gerilim mukavemetinin daha yüksek olduğu ve bu farklılığın istatistiksel olarak anlamlı olduğu sonucuna varılmısştır.   
 
 
-### Effect size for the dependent groups t-test 
+### Etki büyüklüğü: bağlı gruplar t testi 
 
 En basit etki büyüklüğü hesaplama yöntemlerinden biri; ^[ @lakens2013 Eşitlik 7, fakat bu değer korelasyon 1'e yaklaştıkça sonsuza yaklaşır. @lakens2013  Eşitlik 10 daha uygun bir tercih olabilir.$\frac{mean difference}{(SD_1+SD_2)/2}$]  
 
@@ -471,7 +471,7 @@ power.t.test(delta=.35, sd=.6,sig.level=0.05, power=0.95,
 Bu örnekte belirlenmiş değerler ortalamalar farkı 0.35, standart sapma 0.6, alfa 0.05, yönsüz test ve hedeflenen güç 0.95 seçildiğinde gereken örneklem sayısı 41'dir. Diğer bir ifade ile, 41 katılımcı ile belirlenen değerlere (ortalamalar farkı 0.35, standart sapma 0.6, alfa 0.05, yönsüz test) ulaşılması durumunda $H_0:\mu_1-\mu_2=0$ boş hipotezinin terkedilme olasılığı %95'tir.
 
 
-## Yaygın Tasarılar
+## Yaygın Tasarılar {#commondesigns}
 
 Sosyal bilimlerde iki ortalamayı kıyaslamak üzere kurulan tasarılardan yaygın olanları özetlenmiştir.
 
