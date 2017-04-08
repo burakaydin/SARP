@@ -19,3 +19,6 @@ Tanınmış üniversitelerden, tanınmış bilim insanlarından ve büyük şirk
 
 ### Yaygın etki/katma değer
 Amaç bölümünde belirtildiği gibi doküman halka açık bir çevrimiçi depoda tutulacak ve üniversitelerin eğitim fakültelerine elektronik posta ile tanıtılacaktır. Dokümanların kabul görmesi durumunda, kullanıcılardan gelen istekleri ve önerileri hızlı bir şekilde dokümanlara dahil ederek, ihtiyaçlara cevap verme ihtimali yüksek olan bir kaynak ortaya çıkabilir. Yine özgün değer bölümünde belirttiğim gibi, tamamen açık kaynak üzerinden çalışan R programının, ülkemizde yaygınlaşması durumunda ithal yazılım gerekliliğini azaltarak tasarruf etme ihtimali mevcuttur.
+
+### Genel tavsiye
+1) eksikler var 
