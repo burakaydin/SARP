@@ -22,3 +22,4 @@ Amaç bölümünde belirtildiği gibi doküman halka açık bir çevrimiçi depo
 
 ### Genel Tavsiye
 1) eksikler var
+2) duzeltme 1
