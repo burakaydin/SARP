@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (MiKTeX 2.9.6100) (preloaded format=xelatex 2016.12.11)  13 JUL 2017 16:21
+This is XeTeX, Version 3.14159265-2.6-0.99996 (MiKTeX 2.9.6100) (preloaded format=xelatex 2016.12.11)  27 FEB 2018 16:21
 entering extended mode
 **./SARP-TR.tex
 (SARP-TR.tex
@@ -770,41 +770,60 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 \thanksmarkwidth=\skip60
 \thanksmargin=\skip61
 \droptitle=\skip62
-) (SARP-TR.aux)
+) (C:\Users\Burak\AppData\Roaming\MiKTeX\2.9\tex\latex\amscls\amsthm.sty
+Package: amsthm 2015/03/04 v2.20.2
+\thm@style=\toks28
+\thm@bodyfont=\toks29
+\thm@headfont=\toks30
+\thm@notefont=\toks31
+\thm@headpunct=\toks32
+\thm@preskip=\skip63
+\thm@postskip=\skip64
+\thm@headsep=\skip65
+\dth@everypar=\toks33
+)
+\c@theorem=\count168
+\c@lemma=\count169
+\c@definition=\count170
+\c@corollary=\count171
+\c@proposition=\count172
+\c@example=\count173
+\c@exercise=\count174
+(SARP-TR.aux)
 \openout1 = `SARP-TR.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 131.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 131.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 145.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 145.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tipa\t3cmr.fd"
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 131.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 131.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 145.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 145.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 131.
-LaTeX Font Info:    ... okay on input line 131.
-LaTeX Info: Redefining \microtypecontext on input line 131.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Info: Redefining \microtypecontext on input line 145.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
@@ -849,17 +868,17 @@ ern Roman (RS)
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box50
-Package hyperref Info: Link coloring OFF on input line 131.
+Package hyperref Info: Link coloring OFF on input line 145.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count168
+\c@section@level=\count175
 )
-LaTeX Info: Redefining \ref on input line 131.
-LaTeX Info: Redefining \pageref on input line 131.
-LaTeX Info: Redefining \nameref on input line 131.
+LaTeX Info: Redefining \ref on input line 145.
+LaTeX Info: Redefining \pageref on input line 145.
+LaTeX Info: Redefining \nameref on input line 145.
 (SARP-TR.out) (SARP-TR.out)
 \@outlinefile=\write4
 \openout4 = `SARP-TR.out'.
@@ -919,9 +938,9 @@ File: images/cc0pic.png Graphic file (type QTm)
 ] [6]
 Chapter 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 222.
+(Font)              <8> on input line 233.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 222.
+(Font)              <6> on input line 233.
 [7
 
 ] [8]
@@ -933,12 +952,12 @@ Chapter 3.
 ]
 Chapter 4.
 
-LaTeX Warning: Reference `fig:Video1' on page 11 undefined on input line 365.
+LaTeX Warning: Reference `fig:Video1' on page 11 undefined on input line 384.
 
 File: SARP-TR_files/figure-latex/Video1-1.pdf Graphic file (type QTm)
 <use  "SARP-TR_files/figure-latex/Video1-1.pdf" >
 
-LaTeX Warning: Reference `fig:Video2' on page 11 undefined on input line 373.
+LaTeX Warning: Reference `fig:Video2' on page 11 undefined on input line 392.
 
 File: SARP-TR_files/figure-latex/Video2-1.pdf Graphic file (type QTm)
 <use  "SARP-TR_files/figure-latex/Video2-1.pdf" >
@@ -946,7 +965,7 @@ Underfull \vbox (badness 2698) has occurred while \output is active []
 
 [11]
 
-LaTeX Warning: Reference `fig:Video3' on page 12 undefined on input line 380.
+LaTeX Warning: Reference `fig:Video3' on page 12 undefined on input line 399.
 
 File: SARP-TR_files/figure-latex/Video3-1.pdf Graphic file (type QTm)
 <use  "SARP-TR_files/figure-latex/Video3-1.pdf" >
@@ -956,22 +975,22 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 Chapter 5.
-LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 407
+LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 426
 .
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\euenc\eu1lmtt.fd"
 File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `EU1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `EU1/lmtt/b/n' tried instead on input line 444.
+(Font)              Font shape `EU1/lmtt/b/n' tried instead on input line 427.
 [15] [16] [17] [18] [19] [20] [21] [22] [23] [24]
 
-LaTeX Warning: Reference `fig:Video4' on page 25 undefined on input line 1112.
+LaTeX Warning: Reference `fig:Video4' on page 25 undefined on input line 1131.
 
 File: SARP-TR_files/figure-latex/Video4-1.pdf Graphic file (type QTm)
 <use  "SARP-TR_files/figure-latex/Video4-1.pdf" > [25] [26]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1184--1187
+Underfull \hbox (badness 10000) in paragraph at lines 1203--1206
 
  []
 
@@ -1012,7 +1031,7 @@ File: SARP-TR_files/figure-latex/unnamed-chunk-57-1.pdf Graphic file (type QTm)
 <use  "SARP-TR_files/figure-latex/unnamed-chunk-57-1.pdf" > [43] [44] [45]
 File: apatable.png Graphic file (type QTm)
 <use  "apatable.png" >
-Overfull \hbox (558.35226pt too wide) in paragraph at lines 1886--1886
+Overfull \hbox (558.35226pt too wide) in paragraph at lines 1905--1905
 [][] 
  []
 
@@ -1025,7 +1044,7 @@ File: SARP-TR_files/figure-latex/unnamed-chunk-59-1.pdf Graphic file (type QTm)
 File: SARP-TR_files/figure-latex/unnamed-chunk-59-2.pdf Graphic file (type QTm)
 
 <use  "SARP-TR_files/figure-latex/unnamed-chunk-59-2.pdf" >
-Overfull \hbox (2.2224pt too wide) in paragraph at lines 1959--1959
+Overfull \hbox (2.2224pt too wide) in paragraph at lines 1978--1978
 [][] [] 
  []
 
@@ -1052,53 +1071,53 @@ File: SARP-TR_files/figure-latex/normaldist-1.pdf Graphic file (type QTm)
 <use  "SARP-TR_files/figure-latex/normaldist-1.pdf" > [53] [54] [55] [56] [57] 
 [58]
 File: SARP-TR_files/figure-latex/pvalue1-1.pdf Graphic file (type QTm)
-<use  "SARP-TR_files/figure-latex/pvalue1-1.pdf" > [59]
+<use  "SARP-TR_files/figure-latex/pvalue1-1.pdf" >
 File: SARP-TR_files/figure-latex/pvalue2-1.pdf Graphic file (type QTm)
-<use  "SARP-TR_files/figure-latex/pvalue2-1.pdf" > [60]
+<use  "SARP-TR_files/figure-latex/pvalue2-1.pdf" > [59] [60] [61]
 File: SARP-TR_files/figure-latex/zpower-1.pdf Graphic file (type QTm)
 <use  "SARP-TR_files/figure-latex/zpower-1.pdf" >
 Missing character: There is no ⁄ in font rm-lmr10!
 Missing character: There is no ⁄ in font rm-lmr10!
-[61] [62] [63] [64
+[62] [63] [64]
+Chapter 8.
+[65
 
 ]
-Chapter 8.
-[65]
 File: SARP-TR_files/figure-latex/genattusakcity-1.pdf Graphic file (type QTm)
 <use  "SARP-TR_files/figure-latex/genattusakcity-1.pdf" > [66] [67] [68] [69] [
 70] [71] [72] [73] [74]
 File: SARP-TR_files/figure-latex/gerMUKexampleplot-1.pdf Graphic file (type QTm
 )
 <use  "SARP-TR_files/figure-latex/gerMUKexampleplot-1.pdf" > [75]
-Overfull \hbox (70.27701pt too wide) in paragraph at lines 3388--3394
+Overfull \hbox (70.27701pt too wide) in paragraph at lines 3403--3409
 \EU1/lmr/m/n/10 Bağlı gruplar t testi hesaplarına dayanarak, gerilim mukavemeti
 nin bant tedavisi (ort=6.67,SS=1.71,çarpıklık=0.55,basıklık=-
  []
 
 
-Underfull \hbox (badness 1490) in paragraph at lines 3388--3394
+Underfull \hbox (badness 1490) in paragraph at lines 3403--3409
 \EU1/lmr/m/n/10 0.45) ve dikiş tedavisi (ort=5.17,SS=1.49,çarpıklık=-0.08,basık
 lık=-0.87) arasında farklılık gösterdiği
  []
 
 [76]
-Underfull \hbox (badness 2189) in paragraph at lines 3457--3465
+Underfull \hbox (badness 2189) in paragraph at lines 3472--3480
 \EU1/lmr/m/n/10 Yaraların tedavisinden 10 gün sonra gerilim mukavemeti ölçümler
 i yapılmıştır. Yara bandı ile
  []
 
 
-Overfull \hbox (3.13498pt too wide) in paragraph at lines 3457--3465
+Overfull \hbox (3.13498pt too wide) in paragraph at lines 3472--3480
 \EU1/lmr/m/n/10 (ort=6.67,SS=1.71,çarpıklık=0.55,basıklık=-0.45) dikiş tedavisi
  (ort=5.17,SS=1.49,çarpıklık=-0.08,basıklık=-
  []
 
 [77] [78] [79]
-Underfull \vbox (badness 10000) detected at line 3660
+Underfull \vbox (badness 10000) detected at line 3675
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3681
+Underfull \vbox (badness 10000) detected at line 3696
  []
 
 [80] [81] [82
@@ -1106,36 +1125,36 @@ Underfull \vbox (badness 10000) detected at line 3681
 ]
 Chapter 9.
 [83]
-Underfull \vbox (badness 10000) detected at line 3854
+Underfull \vbox (badness 10000) detected at line 3869
  []
 
 
-Overfull \hbox (37.50458pt too wide) in paragraph at lines 3914--3916
+Overfull \hbox (37.50458pt too wide) in paragraph at lines 3929--3931
  []|$[][] [][]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 Y[] \OMS/lmsy/m/n/10 ^^@ 
  []
 
 
-Overfull \hbox (23.25635pt too wide) in paragraph at lines 3925--3927
+Overfull \hbox (23.25635pt too wide) in paragraph at lines 3940--3942
  []|$[][] \OML/lmm/m/it/10 n[]\OT1/lmr/m/n/10 ([] \OMS/lmsy/m/n/10 ^^@ 
  []
 
 
-Overfull \hbox (1.7209pt too wide) in paragraph at lines 3927--3929
+Overfull \hbox (1.7209pt too wide) in paragraph at lines 3942--3944
  []|$\OML/lmm/m/it/10 SS[]=df[]$| 
  []
 
 
-Overfull \hbox (26.96239pt too wide) in paragraph at lines 3929--3931
+Overfull \hbox (26.96239pt too wide) in paragraph at lines 3944--3946
  []|$\OML/lmm/m/it/10 MS[]=MS[]$| 
  []
 
 
-Overfull \hbox (37.50458pt too wide) in paragraph at lines 3936--3938
+Overfull \hbox (37.50458pt too wide) in paragraph at lines 3951--3953
  []|$[][] [][]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 Y[] \OMS/lmsy/m/n/10 ^^@ 
  []
 
 
-Overfull \hbox (18.77928pt too wide) in paragraph at lines 3938--3940
+Overfull \hbox (18.77928pt too wide) in paragraph at lines 3953--3955
  []|$\OML/lmm/m/it/10 SS[]=df[]$| 
  []
 
@@ -1143,11 +1162,11 @@ Overfull \hbox (18.77928pt too wide) in paragraph at lines 3938--3940
 Missing character: There is no ⁄ in font rm-lmr7!
 Missing character: There is no ⁄ in font rm-lmr10!
 [86] [87]
-Underfull \vbox (badness 10000) detected at line 4213
+Underfull \vbox (badness 10000) detected at line 4228
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4213
+Underfull \vbox (badness 10000) detected at line 4228
  []
 
 [88]
@@ -1156,14 +1175,14 @@ File: SARP-TR_files/figure-latex/genattKOCAELI-1.pdf Graphic file (type QTm)
 File: SARP-TR_files/figure-latex/genattKOCAELIbox-1.pdf Graphic file (type QTm)
 
 <use  "SARP-TR_files/figure-latex/genattKOCAELIbox-1.pdf" > [89] [90]
-Underfull \vbox (badness 4872) detected at line 4337
+Underfull \vbox (badness 4872) detected at line 4352
  []
 
 
 Underfull \vbox (badness 1584) has occurred while \output is active []
 
 [91] [92]
-Underfull \hbox (badness 1454) in paragraph at lines 4413--4418
+Underfull \hbox (badness 1454) in paragraph at lines 4428--4433
 \EU1/lmr/m/n/10 paketi ile kullanılabilecek \EU1/lmr/m/it/10 t1way \EU1/lmr/m/n
 /10 fonksiyonu ile tamamlanabilir. Kırpılmış ortalamalar için farklı-
  []
@@ -1178,7 +1197,7 @@ File: SARP-TR_files/figure-latex/genattKayseri-1.pdf Graphic file (type QTm)
 File: SARP-TR_files/figure-latex/genattKayseribox-1.pdf Graphic file (type QTm)
 
 <use  "SARP-TR_files/figure-latex/genattKayseribox-1.pdf" > [97] [98] [99]
-Underfull \hbox (badness 1454) in paragraph at lines 4795--4800
+Underfull \hbox (badness 1454) in paragraph at lines 4810--4815
 \EU1/lmr/m/n/10 paketi ile kullanılabilecek \EU1/lmr/m/it/10 t2way \EU1/lmr/m/n
 /10 fonksiyonu ile tamamlanabilir. Kırpılmış ortalamalar için farklı-
  []
@@ -1187,10 +1206,7 @@ Underfull \hbox (badness 1454) in paragraph at lines 4795--4800
 File: SARP-TR_files/figure-latex/inhibitbox-1.pdf Graphic file (type QTm)
 <use  "SARP-TR_files/figure-latex/inhibitbox-1.pdf" > [105] [106]
 File: SARP-TR_files/figure-latex/inhibitline-1.pdf Graphic file (type QTm)
-<use  "SARP-TR_files/figure-latex/inhibitline-1.pdf" >
-Underfull \vbox (badness 1009) has occurred while \output is active []
-
-[107]
+<use  "SARP-TR_files/figure-latex/inhibitline-1.pdf" > [107]
 File: SARP-TR_files/figure-latex/inhibitresiduals-1.pdf Graphic file (type QTm)
 
 <use  "SARP-TR_files/figure-latex/inhibitresiduals-1.pdf" >
@@ -1213,7 +1229,7 @@ File: SARP-TR_files/figure-latex/scatterincgenatt-1.pdf Graphic file (type QTm)
 
 <use  "SARP-TR_files/figure-latex/scatterincgenatt-1.pdf" > [116] [117] [118] [
 119]
-Underfull \vbox (badness 10000) detected at line 5613
+Underfull \vbox (badness 10000) detected at line 5628
  []
 
 
@@ -1222,109 +1238,109 @@ Underfull \vbox (badness 5592) has occurred while \output is active []
 [120] [121]
 File: SARP-TR_files/figure-latex/incometransformed-1.pdf Graphic file (type QTm
 )
-<use  "SARP-TR_files/figure-latex/incometransformed-1.pdf" > [122] [123]
-Overfull \vbox (0.54172pt too high) detected at line 5854
+<use  "SARP-TR_files/figure-latex/incometransformed-1.pdf" >
+Underfull \vbox (badness 1997) detected at line 5739
  []
 
-[124] [125] [126
+[122] [123] [124] [125] [126] [127] [128
 
 ]
 Chapter 11.
-[127] [128] [129]
-File: SARP-TR_files/figure-latex/unnamed-chunk-120-1.pdf Graphic file (type QTm
-)
-<use  "SARP-TR_files/figure-latex/unnamed-chunk-120-1.pdf" > [130] [131]
-File: SARP-TR_files/figure-latex/unnamed-chunk-121-1.pdf Graphic file (type QTm
-)
-<use  "SARP-TR_files/figure-latex/unnamed-chunk-121-1.pdf" >
+[129] [130] [131]
 File: SARP-TR_files/figure-latex/unnamed-chunk-122-1.pdf Graphic file (type QTm
 )
-<use  "SARP-TR_files/figure-latex/unnamed-chunk-122-1.pdf" >
+<use  "SARP-TR_files/figure-latex/unnamed-chunk-122-1.pdf" > [132] [133]
+File: SARP-TR_files/figure-latex/unnamed-chunk-123-1.pdf Graphic file (type QTm
+)
+<use  "SARP-TR_files/figure-latex/unnamed-chunk-123-1.pdf" >
+File: SARP-TR_files/figure-latex/unnamed-chunk-124-1.pdf Graphic file (type QTm
+)
+<use  "SARP-TR_files/figure-latex/unnamed-chunk-124-1.pdf" >
 Underfull \vbox (badness 5667) has occurred while \output is active []
 
-[132] [133] [134]
+[134] [135] [136]
 Missing character: There is no ’ in font rm-lmr10!
 Missing character: There is no ′ in font rm-lmr10!
-File: SARP-TR_files/figure-latex/unnamed-chunk-126-1.pdf Graphic file (type QTm
+File: SARP-TR_files/figure-latex/unnamed-chunk-128-1.pdf Graphic file (type QTm
 )
-<use  "SARP-TR_files/figure-latex/unnamed-chunk-126-1.pdf" > [135]
-File: SARP-TR_files/figure-latex/unnamed-chunk-127-1.pdf Graphic file (type QTm
+<use  "SARP-TR_files/figure-latex/unnamed-chunk-128-1.pdf" > [137]
+File: SARP-TR_files/figure-latex/unnamed-chunk-129-1.pdf Graphic file (type QTm
 )
-<use  "SARP-TR_files/figure-latex/unnamed-chunk-127-1.pdf" >
+<use  "SARP-TR_files/figure-latex/unnamed-chunk-129-1.pdf" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[136] [137] [138]
-File: SARP-TR_files/figure-latex/unnamed-chunk-131-1.pdf Graphic file (type QTm
-)
-<use  "SARP-TR_files/figure-latex/unnamed-chunk-131-1.pdf" >
-File: SARP-TR_files/figure-latex/unnamed-chunk-131-2.pdf Graphic file (type QTm
-)
-<use  "SARP-TR_files/figure-latex/unnamed-chunk-131-2.pdf" >
-Overfull \hbox (2.2224pt too wide) in paragraph at lines 6660--6660
-[][] [] 
- []
-
-[139]
-Underfull \vbox (badness 4713) has occurred while \output is active []
-
-[140] [141]
+[138] [139] [140]
 File: SARP-TR_files/figure-latex/unnamed-chunk-133-1.pdf Graphic file (type QTm
 )
 <use  "SARP-TR_files/figure-latex/unnamed-chunk-133-1.pdf" >
-File: SARP-TR_files/figure-latex/unnamed-chunk-134-1.pdf Graphic file (type QTm
+File: SARP-TR_files/figure-latex/unnamed-chunk-133-2.pdf Graphic file (type QTm
 )
-<use  "SARP-TR_files/figure-latex/unnamed-chunk-134-1.pdf" >
+<use  "SARP-TR_files/figure-latex/unnamed-chunk-133-2.pdf" >
+Overfull \hbox (2.2224pt too wide) in paragraph at lines 6757--6757
+[][] [] 
+ []
+
+[141]
+Underfull \vbox (badness 4713) has occurred while \output is active []
+
+[142] [143]
+File: SARP-TR_files/figure-latex/unnamed-chunk-135-1.pdf Graphic file (type QTm
+)
+<use  "SARP-TR_files/figure-latex/unnamed-chunk-135-1.pdf" >
+File: SARP-TR_files/figure-latex/unnamed-chunk-136-1.pdf Graphic file (type QTm
+)
+<use  "SARP-TR_files/figure-latex/unnamed-chunk-136-1.pdf" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[142] [143] [144]
+[144] [145] [146]
 Chapter 12.
-[145
+[147
 
 ]
-Underfull \vbox (badness 10000) detected at line 7164
+Underfull \vbox (badness 10000) detected at line 7261
  []
 
 
-Underfull \vbox (badness 10000) detected at line 7164
- []
-
-[146]
-Underfull \vbox (badness 10000) detected at line 7164
- []
-
-
-Underfull \vbox (badness 10000) detected at line 7164
- []
-
-[147]
-Underfull \vbox (badness 10000) detected at line 7164
- []
-
-
-Underfull \vbox (badness 10000) detected at line 7164
+Underfull \vbox (badness 10000) detected at line 7261
  []
 
 [148]
-Underfull \vbox (badness 10000) detected at line 7164
+Underfull \vbox (badness 10000) detected at line 7261
  []
 
 
-Underfull \vbox (badness 10000) detected at line 7164
+Underfull \vbox (badness 10000) detected at line 7261
  []
 
-[149] [150] [151] [152
+[149]
+Underfull \vbox (badness 10000) detected at line 7261
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 7261
+ []
+
+[150]
+Underfull \vbox (badness 10000) detected at line 7261
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 7261
+ []
+
+[151] [152] [153] [154
 
 ]
 Chapter 13.
-[153] [154] (SARP-TR.bbl [155] [156
+[155] [156] (SARP-TR.bbl [157] [158
 
-] [157])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 7335.
-[158]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 7335.
+] [159] [160])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 7434.
+[161]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 7434.
 (SARP-TR.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 7335.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 7335.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 7434.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 7434.
 
 LaTeX Warning: There were undefined references.
 
@@ -1333,12 +1349,12 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 25868 strings out of 428437
- 454468 string characters out of 3159924
- 544349 words of memory out of 3000000
- 28949 multiletter control sequences out of 15000+200000
+ 25985 strings out of 428437
+ 455868 string characters out of 3159924
+ 551938 words of memory out of 3000000
+ 29063 multiletter control sequences out of 15000+200000
  24450 words of font info for 63 fonts, out of 3000000 for 9000
  1314 hyphenation exceptions out of 8191
- 52i,9n,68p,10407b,461s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 52i,9n,68p,10407b,507s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on SARP-TR.pdf (158 pages).
+Output written on SARP-TR.pdf (161 pages).

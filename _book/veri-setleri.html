@@ -6,9 +6,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Sosyal Bilimler R Platformu</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="Sosyal Bilimler R Platformu">
-  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Sosyal Bilimler R Platformu" />
   <meta property="og:type" content="book" />
@@ -23,7 +22,7 @@
   <meta name="twitter:description" content="Sosyal Bilimler R Platformu" />
   <meta name="twitter:image" content="images/coverpicture.png" />
 
-<meta name="author" content="Burak AYDIN, James ALGINA, Walter LEITE">
+<meta name="author" content="Burak AYDIN, James ALGINA, Walter LEITE, Hakan ATILGAN">
 
 
 <meta name="date" content="2017-01-01">
@@ -35,7 +34,6 @@
   
 <link rel="prev" href="basics.html">
 <link rel="next" href="betimleyici-istatistikler-ve-hipotez-testi.html">
-
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,7 +47,7 @@
 
 
 
-<script src="libs/htmlwidgets-0.8/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-0.9/htmlwidgets.js"></script>
 <link href="libs/rglwidgetClass-2/rgl.css" rel="stylesheet" />
 <script src="libs/rglwidgetClass-2/rglClass.src.js"></script>
 <script src="libs/CanvasMatrix4-2016/CanvasMatrix.src.js"></script>
@@ -100,6 +98,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <body>
 
 
+
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
 
     <div class="book-summary">
@@ -112,8 +111,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Kapak</a><ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#tantm"><i class="fa fa-check"></i><b>1.1</b> Tanıtım</a><ul>
-<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#neden-bookdown"><i class="fa fa-check"></i><b>1.1.1</b> Neden Bookdown?</a></li>
-<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#icerik"><i class="fa fa-check"></i><b>1.1.2</b> İçerik</a></li>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#atf"><i class="fa fa-check"></i><b>1.1.1</b> Atıf</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#neden-bookdown"><i class="fa fa-check"></i><b>1.1.2</b> Neden Bookdown?</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#icerik"><i class="fa fa-check"></i><b>1.1.3</b> İçerik</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="onyuz.html"><a href="onyuz.html"><i class="fa fa-check"></i><b>2</b> Önyüz</a><ul>
@@ -121,6 +121,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.1.1" data-path="onyuz.html"><a href="onyuz.html#burak-aydn-ph.d."><i class="fa fa-check"></i><b>2.1.1</b> Burak Aydın, Ph.D.</a></li>
 <li class="chapter" data-level="2.1.2" data-path="onyuz.html"><a href="onyuz.html#james-algina-ph.d."><i class="fa fa-check"></i><b>2.1.2</b> James Algina, Ph.D.</a></li>
 <li class="chapter" data-level="2.1.3" data-path="onyuz.html"><a href="onyuz.html#walter-l.-leite-ph.d."><i class="fa fa-check"></i><b>2.1.3</b> Walter L. Leite, Ph.D.</a></li>
+<li class="chapter" data-level="2.1.4" data-path="onyuz.html"><a href="onyuz.html#hakan-atlgan-ph.d."><i class="fa fa-check"></i><b>2.1.4</b> Hakan Atılgan, Ph.D.</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="onyuz.html"><a href="onyuz.html#tesekkur"><i class="fa fa-check"></i><b>2.2</b> Teşekkür</a></li>
 <li class="chapter" data-level="2.3" data-path="onyuz.html"><a href="onyuz.html#dataWBT"><i class="fa fa-check"></i><b>2.3</b> Data</a></li>
@@ -235,7 +236,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="10.3" data-path="korelasyon.html"><a href="korelasyon.html#r-betigi-cift-serili-ve-nokta-cift-serili-korelasyonlar"><i class="fa fa-check"></i><b>10.3</b> R betiği: Çift Serili ve Nokta-Çift Serili Korelasyonlar</a></li>
 <li class="chapter" data-level="10.4" data-path="korelasyon.html"><a href="korelasyon.html#r-betigi-phi-korelasyon-katsays"><i class="fa fa-check"></i><b>10.4</b> R betiği: Phi korelasyon katsayısı</a></li>
-<li class="chapter" data-level="10.5" data-path="korelasyon.html"><a href="korelasyon.html#korelasyon-katsays-hakknda-dikkat-edilmesi-gerekenler"><i class="fa fa-check"></i><b>10.5</b> Korelasyon katsayısı hakkında dikkat edilmesi gerekenler</a></li>
+<li class="chapter" data-level="10.5" data-path="korelasyon.html"><a href="korelasyon.html#tetrakorik-ve-polikorik-korelasyon-katsays"><i class="fa fa-check"></i><b>10.5</b> Tetrakorik ve polikorik korelasyon katsayısı</a></li>
+<li class="chapter" data-level="10.6" data-path="korelasyon.html"><a href="korelasyon.html#korelasyon-katsays-hakknda-dikkat-edilmesi-gerekenler"><i class="fa fa-check"></i><b>10.6</b> Korelasyon katsayısı hakkında dikkat edilmesi gerekenler</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html"><i class="fa fa-check"></i><b>11</b> Çoklu Doğrusal Regresyon , Kısa Tanıtım</a><ul>
 <li class="chapter" data-level="11.1" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#matrisler-ve-en-kucuk-kareler-yontemi"><i class="fa fa-check"></i><b>11.1</b> Matrisler ve En Küçük Kareler Yöntemi</a><ul>
@@ -384,23 +386,23 @@ veriseti1[<span class="dv">151</span>,<span class="dv">16</span>]=<span class="d
 
 <span class="co"># aynı işlem satır ismi ve sütün ismi verilerek yapılabilir.</span>
 <span class="co"># id numarası 67034022 olan satırın yaş değerini 32 yap. </span>
-veriseti1[veriseti1$id==<span class="dv">67034022</span>,<span class="st">&quot;age&quot;</span>]=<span class="dv">32</span>
+veriseti1[veriseti1<span class="op">$</span>id<span class="op">==</span><span class="dv">67034022</span>,<span class="st">&quot;age&quot;</span>]=<span class="dv">32</span>
 
 <span class="co"># tekrar kodlama</span>
 <span class="co"># Veri setinde yer alan treatment değişkeni 0 ve 1 olarak girilmiştir.</span>
 <span class="co"># 1leri  &quot;trt&quot; ve 2leri  &quot;cnt&quot; yapmak için </span>
-veriseti1[veriseti1$treatment==<span class="dv">1</span>,<span class="st">&quot;treatment&quot;</span>]=<span class="st">&quot;trt&quot;</span>
-veriseti1[veriseti1$treatment==<span class="dv">2</span>,<span class="st">&quot;treatment&quot;</span>]=<span class="st">&quot;cnt&quot;</span>
+veriseti1[veriseti1<span class="op">$</span>treatment<span class="op">==</span><span class="dv">1</span>,<span class="st">&quot;treatment&quot;</span>]=<span class="st">&quot;trt&quot;</span>
+veriseti1[veriseti1<span class="op">$</span>treatment<span class="op">==</span><span class="dv">2</span>,<span class="st">&quot;treatment&quot;</span>]=<span class="st">&quot;cnt&quot;</span>
 
 <span class="co"># ifelse fonksiyonu benzer şekilde çalışır</span>
 <span class="co"># &quot;wage01&quot; değişkeninde &quot;wage01&quot;  &quot;Yes&quot; ise 0.5, değil ise -0.5 olarak kodlayalım</span>
-veriseti1$wage01=<span class="kw">ifelse</span>(veriseti1$wage01==<span class="st">&quot;Yes&quot;</span>,<span class="fl">0.5</span>,-<span class="fl">0.5</span>)
+veriseti1<span class="op">$</span>wage01=<span class="kw">ifelse</span>(veriseti1<span class="op">$</span>wage01<span class="op">==</span><span class="st">&quot;Yes&quot;</span>,<span class="fl">0.5</span>,<span class="op">-</span><span class="fl">0.5</span>)
 
 <span class="co"># plyr paketi kullanarak</span>
 <span class="kw">require</span>(plyr)
 <span class="co"># pension01yeni değişkeni pension01 değişkeni üzeriden tanımlanmıştır</span>
 <span class="co"># eski değerler olan Yes ve No yerine 1 ve 0 kodlayalım</span>
-veriseti1$pension01yeni &lt;-<span class="st"> </span><span class="kw">mapvalues</span>(veriseti1$pension01, 
+veriseti1<span class="op">$</span>pension01yeni &lt;-<span class="st"> </span><span class="kw">mapvalues</span>(veriseti1<span class="op">$</span>pension01, 
                                    <span class="dt">from=</span><span class="kw">c</span>(<span class="st">&quot;Yes&quot;</span>,<span class="st">&quot;No&quot;</span>),<span class="dt">to=</span><span class="kw">c</span>(<span class="st">&quot;1&quot;</span>,<span class="st">&quot;0&quot;</span>))
 
 
@@ -433,20 +435,20 @@ veriseti1=<span class="kw">read.csv</span>(urldosya)
 
 
 <span class="co"># sadece İstanbul&#39;u seç</span>
-istDAT=veriseti1[veriseti1$city==<span class="st">&quot;ISTANBUL&quot;</span>,]
+istDAT=veriseti1[veriseti1<span class="op">$</span>city<span class="op">==</span><span class="st">&quot;ISTANBUL&quot;</span>,]
 
 <span class="co"># sadece İstanbul&#39;dan ilk sekiz katılımcıyı seç</span>
-istDAT18=veriseti1[veriseti1$city==<span class="st">&quot;ISTANBUL&quot;</span>,<span class="dv">1</span>:<span class="dv">8</span>]
+istDAT18=veriseti1[veriseti1<span class="op">$</span>city<span class="op">==</span><span class="st">&quot;ISTANBUL&quot;</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>]
 
 <span class="co"># sadece İstanbul&#39;dan gen_att puanı 2den yüksek olanları seç</span>
-istDATGAT2=veriseti1[veriseti1$city==<span class="st">&quot;ISTANBUL&quot;</span> |<span class="st"> </span>veriseti1$gen_att &gt;<span class="dv">2</span> ,]
+istDATGAT2=veriseti1[veriseti1<span class="op">$</span>city<span class="op">==</span><span class="st">&quot;ISTANBUL&quot;</span> <span class="op">|</span><span class="st"> </span>veriseti1<span class="op">$</span>gen_att <span class="op">&gt;</span><span class="dv">2</span> ,]
 
 <span class="co"># subset fonksiyonu</span>
 <span class="co"># sadece İstanbul&#39;dan gen_att puanı 2den yüksek olan ilk sekiz katılımcıyı seç</span>
-istDATGAT2B=<span class="kw">subset</span>(veriseti1, city==<span class="st">&quot;ISTANBUL&quot;</span> |<span class="st"> </span>veriseti1$gen_att &gt;<span class="dv">2</span>, <span class="dt">select=</span><span class="dv">1</span>:<span class="dv">8</span>) 
+istDATGAT2B=<span class="kw">subset</span>(veriseti1, city<span class="op">==</span><span class="st">&quot;ISTANBUL&quot;</span> <span class="op">|</span><span class="st"> </span>veriseti1<span class="op">$</span>gen_att <span class="op">&gt;</span><span class="dv">2</span>, <span class="dt">select=</span><span class="dv">1</span><span class="op">:</span><span class="dv">8</span>) 
 
 <span class="co">#item 1 değeri 1,2 ve 3 olan katılımcıları seç</span>
-item1_123 &lt;-<span class="st"> </span>veriseti1[veriseti1$item1 %in%<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), ]
+item1_<span class="dv">123</span> &lt;-<span class="st"> </span>veriseti1[veriseti1<span class="op">$</span>item1 <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), ]
 
 <span class="co">#çalışma alanını temizle</span>
 <span class="kw">rm</span>(<span class="dt">list=</span><span class="kw">ls</span>())</code></pre></div>
@@ -462,36 +464,36 @@ veriseti1=<span class="kw">read.csv</span>(urldosya)
 <span class="kw">rm</span>(urldosya)
 
 <span class="co"># item2&#39;den 6&#39;ya kadar olan sütünları topla</span>
-veriseti1$itemTOPLAM=<span class="kw">with</span>(veriseti1,item2+item3+item4+item5+item6)
+veriseti1<span class="op">$</span>itemTOPLAM=<span class="kw">with</span>(veriseti1,item2<span class="op">+</span>item3<span class="op">+</span>item4<span class="op">+</span>item5<span class="op">+</span>item6)
 
 <span class="co"># item2&#39;den 6&#39;ya kadar olan sütünların ortalamasını al (na.rm =T önemli)</span>
-veriseti1$itemAVE=<span class="kw">with</span>(veriseti1,
+veriseti1<span class="op">$</span>itemAVE=<span class="kw">with</span>(veriseti1,
                       <span class="kw">rowMeans</span>(<span class="kw">cbind</span>(item2,item3,item4,item5,item6),<span class="dt">na.rm=</span>T))
 
 <span class="co">#veya rowMeans fonksiyonu</span>
-veriseti1$itemAVE=<span class="kw">rowMeans</span>(veriseti1[,<span class="dv">10</span>:<span class="dv">14</span>],<span class="dt">na.rm =</span> T)
+veriseti1<span class="op">$</span>itemAVE=<span class="kw">rowMeans</span>(veriseti1[,<span class="dv">10</span><span class="op">:</span><span class="dv">14</span>],<span class="dt">na.rm =</span> T)
 
 <span class="co"># Şehirler için ortalama hesapla</span>
-veriseti1$CityAVEscore =<span class="kw">with</span>(veriseti1, <span class="kw">ave</span>(itemAVE,city,<span class="dt">FUN=</span>function(x) <span class="kw">mean</span>(x, <span class="dt">na.rm=</span>T)))
+veriseti1<span class="op">$</span>CityAVEscore =<span class="kw">with</span>(veriseti1, <span class="kw">ave</span>(itemAVE,city,<span class="dt">FUN=</span><span class="cf">function</span>(x) <span class="kw">mean</span>(x, <span class="dt">na.rm=</span>T)))
 
 <span class="co">#veya</span>
-veriseti1=<span class="kw">merge</span>(veriseti1, <span class="kw">aggregate</span>(itemAVE ~<span class="st"> </span>city, <span class="dt">data =</span> veriseti1, <span class="dt">FUN=</span>mean, <span class="dt">na.rm=</span><span class="ot">TRUE</span>), 
+veriseti1=<span class="kw">merge</span>(veriseti1, <span class="kw">aggregate</span>(itemAVE <span class="op">~</span><span class="st"> </span>city, <span class="dt">data =</span> veriseti1, <span class="dt">FUN=</span>mean, <span class="dt">na.rm=</span><span class="ot">TRUE</span>), 
           <span class="dt">by =</span> <span class="st">&quot;city&quot;</span>, <span class="dt">suffixes =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;citymean&quot;</span>),<span class="dt">all=</span>T)
 
 <span class="co">#veya her bir soru için şehir ortalaması hesapla</span>
-veriseti1=<span class="kw">merge</span>(veriseti1, <span class="kw">aggregate</span>(<span class="kw">cbind</span>(item2,item3,item4,item5,item6) ~<span class="st"> </span>city, 
+veriseti1=<span class="kw">merge</span>(veriseti1, <span class="kw">aggregate</span>(<span class="kw">cbind</span>(item2,item3,item4,item5,item6) <span class="op">~</span><span class="st"> </span>city, 
                                    <span class="dt">data =</span> veriseti1, <span class="dt">FUN=</span>mean, <span class="dt">na.rm=</span><span class="ot">TRUE</span>), 
                                    <span class="dt">by =</span> <span class="st">&quot;city&quot;</span>, <span class="dt">suffixes =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;Citymean&quot;</span>),<span class="dt">all=</span>T)
 
 
 <span class="co"># değişkenlerin kategorize edilmesi. Eğer item1AVE 2&#39;den küçük ise 0 aksi halde 1</span>
-veriseti1$itemAVE01=<span class="kw">ifelse</span>(veriseti1$itemAVE&lt;<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">1</span>)
+veriseti1<span class="op">$</span>itemAVE01=<span class="kw">ifelse</span>(veriseti1<span class="op">$</span>itemAVE<span class="op">&lt;</span><span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">1</span>)
 
 
 <span class="co"># 0 ile 1.8 arasına 1 ver</span>
 <span class="co"># 1.8 ve 2.5 arasına 2 ver</span>
 <span class="co"># 2.5 ile 5 arasına 3 ver</span>
-veriseti1$itemAVE123=<span class="kw">with</span>(veriseti1,<span class="kw">cut</span>(itemAVE, <span class="dt">breaks=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">1.8</span>,<span class="fl">2.5</span>,<span class="dv">5</span>), <span class="dt">labels =</span> <span class="ot">FALSE</span>))
+veriseti1<span class="op">$</span>itemAVE123=<span class="kw">with</span>(veriseti1,<span class="kw">cut</span>(itemAVE, <span class="dt">breaks=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">1.8</span>,<span class="fl">2.5</span>,<span class="dv">5</span>), <span class="dt">labels =</span> <span class="ot">FALSE</span>))
 <span class="co"># cut fonksiyonu içerisinde yer alan right=T argümanına göz gezdirin</span>
 <span class="co"># örneğin  right=T  ise değeri tam olarak 1.8 olan değişkenler 1 olur</span>
 <span class="co">#          right=F  ise değeri tam olarak 1.8 olan değişkenler 2 olur</span>
@@ -509,10 +511,10 @@ veriseti1=<span class="kw">read.csv</span>(urldosya)
 
 <span class="co"># genişten uzuna item 1den 6 ya kadar olan sütünları item adı altında birleştir</span>
 <span class="kw">library</span>(tidyr)
-data_long =<span class="st"> </span><span class="kw">gather</span>(veriseti1, item, score, item1:item6, <span class="dt">factor_key=</span><span class="ot">TRUE</span>)
+data_long =<span class="st"> </span><span class="kw">gather</span>(veriseti1, item, score, item1<span class="op">:</span>item6, <span class="dt">factor_key=</span><span class="ot">TRUE</span>)
 
 <span class="co">#id&#39;ye göre diz</span>
-data_long=data_long[<span class="kw">order</span>(data_long$id),] 
+data_long=data_long[<span class="kw">order</span>(data_long<span class="op">$</span>id),] 
 
 <span class="co"># uzundan genişe.</span>
 data_wide =<span class="st"> </span><span class="kw">spread</span>(data_long, item, score)
@@ -531,20 +533,20 @@ veriseti1=<span class="kw">read.csv</span>(urldosya,<span class="dt">stringsAsFa
 <span class="kw">rm</span>(urldosya)
 
 <span class="co">#treatment değişkenini incele</span>
-<span class="kw">str</span>(veriseti1$treatment)
+<span class="kw">str</span>(veriseti1<span class="op">$</span>treatment)
 
 <span class="co">#sayısal veriyi faktöre çevir</span>
-veriseti1$treatmentFactor=<span class="kw">factor</span>(veriseti1$treatment,<span class="dt">labels=</span><span class="kw">c</span>(<span class="st">&quot;treatment&quot;</span>,<span class="st">&quot;control&quot;</span>))
+veriseti1<span class="op">$</span>treatmentFactor=<span class="kw">factor</span>(veriseti1<span class="op">$</span>treatment,<span class="dt">labels=</span><span class="kw">c</span>(<span class="st">&quot;treatment&quot;</span>,<span class="st">&quot;control&quot;</span>))
 
 <span class="co">#karakter olarak girildiğinde faktörleri sayıya çevirme</span>
 
-veriseti1$iv1=<span class="kw">factor</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;1&quot;</span>,<span class="st">&quot;2&quot;</span>,<span class="st">&quot;3&quot;</span>),<span class="dt">length=</span><span class="kw">nrow</span>(veriseti1)))
-veriseti1$iv1numeric=<span class="kw">as.numeric</span>(<span class="kw">levels</span>(veriseti1$iv1))[veriseti1$iv1]
+veriseti1<span class="op">$</span>iv1=<span class="kw">factor</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;1&quot;</span>,<span class="st">&quot;2&quot;</span>,<span class="st">&quot;3&quot;</span>),<span class="dt">length=</span><span class="kw">nrow</span>(veriseti1)))
+veriseti1<span class="op">$</span>iv1numeric=<span class="kw">as.numeric</span>(<span class="kw">levels</span>(veriseti1<span class="op">$</span>iv1))[veriseti1<span class="op">$</span>iv1]
 <span class="co">#veya</span>
-veriseti1$iv1numeric=<span class="kw">as.numeric</span>(<span class="kw">as.character</span>(veriseti1$iv1))
+veriseti1<span class="op">$</span>iv1numeric=<span class="kw">as.numeric</span>(<span class="kw">as.character</span>(veriseti1<span class="op">$</span>iv1))
 
 <span class="co">#NAleri -99&#39;a çevir  </span>
-veriseti1[<span class="kw">is.na</span>(veriseti1)]=<span class="st"> </span>(-<span class="dv">99</span>)
+veriseti1[<span class="kw">is.na</span>(veriseti1)]=<span class="st"> </span>(<span class="op">-</span><span class="dv">99</span>)
 
 <span class="co">#çalışma alanını temizle</span>
 <span class="kw">rm</span>(<span class="dt">list=</span><span class="kw">ls</span>())</code></pre></div>
@@ -566,13 +568,13 @@ veriseti1[<span class="dv">3</span>,<span class="dv">5</span>]=<span class="ot">
 veriseti1[<span class="dv">3</span>,]=<span class="st"> </span><span class="ot">NA</span>
 
 <span class="co">#veya</span>
-veriseti1=veriseti1[-<span class="dv">3</span>,]
+veriseti1=veriseti1[<span class="op">-</span><span class="dv">3</span>,]
 
 <span class="co">#course taken isimli sütunu sil </span>
-veriseti1$course_taken=<span class="ot">NULL</span>
+veriseti1<span class="op">$</span>course_taken=<span class="ot">NULL</span>
 
 <span class="co">#gösterim amaçlı veri oluştur</span>
-temp=veriseti1[,<span class="dv">1</span>:<span class="dv">10</span>]
+temp=veriseti1[,<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]
 
 <span class="co"># kayıp verili satırı silme (listwise)</span>
 temp=<span class="kw">na.omit</span>(temp)
@@ -592,8 +594,8 @@ veriseti1=<span class="kw">read.csv</span>(urldosya,<span class="dt">stringsAsFa
 <span class="kw">rm</span>(urldosya)
 
 <span class="co">#nesne oluştur.</span>
-subset1=veriseti1[<span class="dv">1</span>:<span class="dv">20</span>,<span class="dv">1</span>:<span class="dv">5</span>]
-object2=<span class="kw">mean</span>(veriseti1$item1,<span class="dt">na.rm =</span> T)
+subset1=veriseti1[<span class="dv">1</span><span class="op">:</span><span class="dv">20</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]
+object2=<span class="kw">mean</span>(veriseti1<span class="op">$</span>item1,<span class="dt">na.rm =</span> T)
 
 
 <span class="co">#çalışma klasörünüzü kontrol edin</span>
@@ -619,7 +621,7 @@ object2=<span class="kw">mean</span>(veriseti1$item1,<span class="dt">na.rm =</s
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-foreign">
-<p>R Core Team. 2016a. <em>Foreign: Read Data Stored by Minitab, S, Sas, Spss, Stata, Systat, Weka, DBase, .</em> <a href="https://CRAN.R-project.org/package=foreign" class="uri">https://CRAN.R-project.org/package=foreign</a>.</p>
+<p>R Core Team. 2016a. <em>Foreign: Read Data Stored by Minitab, S, Sas, Spss, Stata, Systat, Weka, dBase, ...</em> <a href="https://CRAN.R-project.org/package=foreign" class="uri">https://CRAN.R-project.org/package=foreign</a>.</p>
 </div>
 <div id="ref-plyrpack">
 <p>Wickham, Hadley. 2011. “The Split-Apply-Combine Strategy for Data Analysis.” <em>Journal of Statistical Software</em> 40 (1): 1–29. <a href="http://www.jstatsoft.org/v40/i01/" class="uri">http://www.jstatsoft.org/v40/i01/</a>.</p>
@@ -634,8 +636,9 @@ object2=<span class="kw">mean</span>(veriseti1$item1,<span class="dt">na.rm =</s
         </div>
       </div>
 <a href="basics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="betimleyici-istatistikler-ve-hipotez-testi.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
-
+<a href="betimleyici-istatistikler-ve-hipotez-testi.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -644,7 +647,7 @@ object2=<span class="kw">mean</span>(veriseti1$item1,<span class="dt">na.rm =</s
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
@@ -678,7 +681,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);

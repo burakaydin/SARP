@@ -6,9 +6,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Sosyal Bilimler R Platformu</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="Sosyal Bilimler R Platformu">
-  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Sosyal Bilimler R Platformu" />
   <meta property="og:type" content="book" />
@@ -23,7 +22,7 @@
   <meta name="twitter:description" content="Sosyal Bilimler R Platformu" />
   <meta name="twitter:image" content="images/coverpicture.png" />
 
-<meta name="author" content="Burak AYDIN, James ALGINA, Walter LEITE">
+<meta name="author" content="Burak AYDIN, James ALGINA, Walter LEITE, Hakan ATILGAN">
 
 
 <meta name="date" content="2017-01-01">
@@ -35,7 +34,6 @@
   
 <link rel="prev" href="veri-setleri.html">
 <link rel="next" href="iki-ortalamann-karslastrlmas-t-testi.html">
-
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,7 +47,7 @@
 
 
 
-<script src="libs/htmlwidgets-0.8/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-0.9/htmlwidgets.js"></script>
 <link href="libs/rglwidgetClass-2/rgl.css" rel="stylesheet" />
 <script src="libs/rglwidgetClass-2/rglClass.src.js"></script>
 <script src="libs/CanvasMatrix4-2016/CanvasMatrix.src.js"></script>
@@ -100,6 +98,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <body>
 
 
+
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
 
     <div class="book-summary">
@@ -112,8 +111,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Kapak</a><ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#tantm"><i class="fa fa-check"></i><b>1.1</b> Tanıtım</a><ul>
-<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#neden-bookdown"><i class="fa fa-check"></i><b>1.1.1</b> Neden Bookdown?</a></li>
-<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#icerik"><i class="fa fa-check"></i><b>1.1.2</b> İçerik</a></li>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#atf"><i class="fa fa-check"></i><b>1.1.1</b> Atıf</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#neden-bookdown"><i class="fa fa-check"></i><b>1.1.2</b> Neden Bookdown?</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#icerik"><i class="fa fa-check"></i><b>1.1.3</b> İçerik</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="onyuz.html"><a href="onyuz.html"><i class="fa fa-check"></i><b>2</b> Önyüz</a><ul>
@@ -121,6 +121,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.1.1" data-path="onyuz.html"><a href="onyuz.html#burak-aydn-ph.d."><i class="fa fa-check"></i><b>2.1.1</b> Burak Aydın, Ph.D.</a></li>
 <li class="chapter" data-level="2.1.2" data-path="onyuz.html"><a href="onyuz.html#james-algina-ph.d."><i class="fa fa-check"></i><b>2.1.2</b> James Algina, Ph.D.</a></li>
 <li class="chapter" data-level="2.1.3" data-path="onyuz.html"><a href="onyuz.html#walter-l.-leite-ph.d."><i class="fa fa-check"></i><b>2.1.3</b> Walter L. Leite, Ph.D.</a></li>
+<li class="chapter" data-level="2.1.4" data-path="onyuz.html"><a href="onyuz.html#hakan-atlgan-ph.d."><i class="fa fa-check"></i><b>2.1.4</b> Hakan Atılgan, Ph.D.</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="onyuz.html"><a href="onyuz.html#tesekkur"><i class="fa fa-check"></i><b>2.2</b> Teşekkür</a></li>
 <li class="chapter" data-level="2.3" data-path="onyuz.html"><a href="onyuz.html#dataWBT"><i class="fa fa-check"></i><b>2.3</b> Data</a></li>
@@ -235,7 +236,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="10.3" data-path="korelasyon.html"><a href="korelasyon.html#r-betigi-cift-serili-ve-nokta-cift-serili-korelasyonlar"><i class="fa fa-check"></i><b>10.3</b> R betiği: Çift Serili ve Nokta-Çift Serili Korelasyonlar</a></li>
 <li class="chapter" data-level="10.4" data-path="korelasyon.html"><a href="korelasyon.html#r-betigi-phi-korelasyon-katsays"><i class="fa fa-check"></i><b>10.4</b> R betiği: Phi korelasyon katsayısı</a></li>
-<li class="chapter" data-level="10.5" data-path="korelasyon.html"><a href="korelasyon.html#korelasyon-katsays-hakknda-dikkat-edilmesi-gerekenler"><i class="fa fa-check"></i><b>10.5</b> Korelasyon katsayısı hakkında dikkat edilmesi gerekenler</a></li>
+<li class="chapter" data-level="10.5" data-path="korelasyon.html"><a href="korelasyon.html#tetrakorik-ve-polikorik-korelasyon-katsays"><i class="fa fa-check"></i><b>10.5</b> Tetrakorik ve polikorik korelasyon katsayısı</a></li>
+<li class="chapter" data-level="10.6" data-path="korelasyon.html"><a href="korelasyon.html#korelasyon-katsays-hakknda-dikkat-edilmesi-gerekenler"><i class="fa fa-check"></i><b>10.6</b> Korelasyon katsayısı hakkında dikkat edilmesi gerekenler</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html"><i class="fa fa-check"></i><b>11</b> Çoklu Doğrusal Regresyon , Kısa Tanıtım</a><ul>
 <li class="chapter" data-level="11.1" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#matrisler-ve-en-kucuk-kareler-yontemi"><i class="fa fa-check"></i><b>11.1</b> Matrisler ve En Küçük Kareler Yöntemi</a><ul>
@@ -313,7 +315,7 @@ dataWBT=<span class="kw">read.csv</span>(urldosya)
 \tag{7.1}
 \end{equation}\]</span>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># gen_att değişkeninin ortalamasını hesapla</span>
-<span class="kw">mean</span>(dataWBT$gen_att,<span class="dt">na.rm =</span> T)
+<span class="kw">mean</span>(dataWBT<span class="op">$</span>gen_att,<span class="dt">na.rm =</span> T)
 ## [1] 1.940576
 
 <span class="co"># birden fazla değişkenin ortalamasını hesapla</span>
@@ -326,7 +328,7 @@ dataWBT=<span class="kw">read.csv</span>(urldosya)
 <h3><span class="header-section-number">7.1.2</span> Ortanca</h3>
 <p>Büyükten küçüğe veya küçükten büyüğe dizilmiş bir değişkenin orta noktasına ortanca denir. Eğer değişkenin eleman sayısı (n) tek sayı ise <span class="math inline">\(({(n+1)/2}).\)</span> sırada yer alan, eğer çift sayı ise <span class="math inline">\((n/2).\)</span> ve <span class="math inline">\(((n+1)/2).\)</span> değerin ortalaması ortancayı verir.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Ortanca hesapla</span>
-<span class="kw">median</span>(dataWBT$gen_att,<span class="dt">na.rm =</span> T)
+<span class="kw">median</span>(dataWBT<span class="op">$</span>gen_att,<span class="dt">na.rm =</span> T)
 ## [1] 2</code></pre></div>
 </div>
 <div id="varyans" class="section level3">
@@ -337,7 +339,7 @@ s_Y^2  = \frac{1}{{n - 1}}\sum\limits_{i = 1}^n {\left( {Y_i  - \bar Y} \right)^
 \tag{7.2}
 \end{equation}\]</span>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#varyans hesapla</span>
-<span class="kw">var</span>(dataWBT$gen_att,<span class="dt">na.rm =</span> T)
+<span class="kw">var</span>(dataWBT<span class="op">$</span>gen_att,<span class="dt">na.rm =</span> T)
 ## [1] 0.3638408</code></pre></div>
 </div>
 <div id="standart-sapma" class="section level3">
@@ -348,7 +350,7 @@ s_Y  = \sqrt {\frac{1}{{n - 1}}\sum\limits_{i = 1}^n {\left( {Y_i  - \bar Y} \ri
 \tag{7.3}
 \end{equation}\]</span>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#SS hesapla</span>
-<span class="kw">sd</span>(dataWBT$gen_att,<span class="dt">na.rm =</span> T)
+<span class="kw">sd</span>(dataWBT<span class="op">$</span>gen_att,<span class="dt">na.rm =</span> T)
 ## [1] 0.6031922</code></pre></div>
 </div>
 <div id="carpklk-skewness" class="section level3">
@@ -365,12 +367,12 @@ s_Y  = \sqrt {\frac{1}{{n - 1}}\sum\limits_{i = 1}^n {\left( {Y_i  - \bar Y} \ri
 <p>Örneklem için çarpıklık değeri <em>moments</em> <span class="citation">(Komsta and Novomestky <a href="#ref-moments">2015</a>)</span> paketinde yer alan <em>skewness</em> fonksiyonu ile hesaplanabilir.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#çarpıklık hesapla</span>
 <span class="kw">library</span>(moments)
-<span class="kw">skewness</span>(dataWBT$gen_att,<span class="dt">na.rm =</span> T)
+<span class="kw">skewness</span>(dataWBT<span class="op">$</span>gen_att,<span class="dt">na.rm =</span> T)
 ## [1] 0.377095</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">NOT:<span class="st"> </span>Çarpıklık ve basıklık değerleri için standart hata ve sonrasında z-puanı hesaplanabilir.
-Hesaplanan bu z-puanı seçilen bir kritik değer <span class="kw">ile</span> (ör. <span class="fl">1.96</span>) kıyaslanarak
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">NOT<span class="op">:</span><span class="st"> </span>Çarpıklık ve basıklık değerleri için standart hata ve sonrasında z<span class="op">-</span>puanı hesaplanabilir.
+Hesaplanan bu z<span class="op">-</span>puanı seçilen bir kritik değer <span class="kw">ile</span> (ör. <span class="fl">1.96</span>) kıyaslanarak
 çarpıklık veya basıklığın istatistiksel olarak anlamlı olup olmadığı sınanabilir.
-Benzer şekilde normallik testleri <span class="kw">de</span> (ör. Shapiro-Wilk) yapılabilir. Fakat bu testler
+Benzer şekilde normallik testleri <span class="kw">de</span> (ör. Shapiro<span class="op">-</span>Wilk) yapılabilir. Fakat bu testler
 örneklem büyüklüğüne hassasstır. Bir diğer deyişle örneklem büyüdükçe çok küçük farklılıklar
 istatistiksel olarak anlamlı bulunabilir.
 Çarpıklık,basıklık veya normallik testlerinin varsayım ihlallerini tespit etmek 
@@ -413,7 +415,7 @@ n\frac{\sum_{i}^{n}(X_i-\bar{X})^4}{(\sum_{i}^{n}(X_i-\bar{X})^2)^2}
 <p>Örneklem için Pearson basıklık değeri <em>moments</em> <span class="citation">(Komsta and Novomestky <a href="#ref-moments">2015</a>)</span> paketinde yer alan <em>kurtosis</em> fonksiyonu ile hesaplanabilir.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#basıklık hesapla</span>
 <span class="kw">library</span>(moments)
-<span class="kw">kurtosis</span>(dataWBT$gen_att,<span class="dt">na.rm =</span> T)
+<span class="kw">kurtosis</span>(dataWBT<span class="op">$</span>gen_att,<span class="dt">na.rm =</span> T)
 ## [1] 2.903905</code></pre></div>
 <div id="basklk-ornekleri" class="section level4">
 <h4><span class="header-section-number">7.1.6.1</span> Basıklık Örnekleri</h4>
@@ -467,11 +469,11 @@ desc1
 <span class="co"># program değişkenine göre betimleyici istatistikler</span>
 <span class="kw">library</span>(doBy)
 <span class="kw">library</span>(moments)
-desc2=<span class="kw">as.matrix</span>(<span class="kw">summaryBy</span>(gen_att+age~treatment, <span class="dt">data =</span> dataWBT, 
-          <span class="dt">FUN =</span> function(x) { <span class="kw">c</span>(<span class="dt">n =</span> <span class="kw">sum</span>(!<span class="kw">is.na</span>(x)), <span class="dt">nmis=</span><span class="kw">sum</span>(<span class="kw">is.na</span>(x)),
+desc2=<span class="kw">as.matrix</span>(<span class="kw">summaryBy</span>(gen_att<span class="op">+</span>age<span class="op">~</span>treatment, <span class="dt">data =</span> dataWBT, 
+          <span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">n =</span> <span class="kw">sum</span>(<span class="op">!</span><span class="kw">is.na</span>(x)), <span class="dt">nmis=</span><span class="kw">sum</span>(<span class="kw">is.na</span>(x)),
                                 <span class="dt">m =</span> <span class="kw">mean</span>(x,<span class="dt">na.rm=</span>T), <span class="dt">s =</span> <span class="kw">sd</span>(x,<span class="dt">na.rm=</span>T),
-                               <span class="dt">skw=</span>moments::<span class="kw">skewness</span>(x,<span class="dt">na.rm=</span>T),                    
-                               <span class="dt">krt=</span>moments::<span class="kw">kurtosis</span>(x,<span class="dt">na.rm=</span>T)) } ))
+                               <span class="dt">skw=</span>moments<span class="op">::</span><span class="kw">skewness</span>(x,<span class="dt">na.rm=</span>T),                    
+                               <span class="dt">krt=</span>moments<span class="op">::</span><span class="kw">kurtosis</span>(x,<span class="dt">na.rm=</span>T)) } ))
 
 <span class="co">#yuvarlama</span>
 <span class="kw">round</span>(desc2,<span class="dv">2</span>)
@@ -520,8 +522,8 @@ Figure 7.7: APA Tablo.docx
 <h4><span class="header-section-number">7.2.1.1</span> Tek değişken için histogram</h4>
 <p>Dağılım hakkında bilgi sahibi olmak için kullanışlıdır.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
-<span class="kw">ggplot</span>(dataWBT, <span class="kw">aes</span>(<span class="dt">x =</span> gen_att)) +
-<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="fl">0.2</span>)+<span class="st"> </span><span class="kw">theme_bw</span>()+<span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Toplumsal Cinsiyet Algısı &quot;</span>)+
+<span class="kw">ggplot</span>(dataWBT, <span class="kw">aes</span>(<span class="dt">x =</span> gen_att)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="fl">0.2</span>)<span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>()<span class="op">+</span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Toplumsal Cinsiyet Algısı &quot;</span>)<span class="op">+</span>
 <span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">15</span>),
         <span class="dt">axis.title=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">14</span>,<span class="dt">face=</span><span class="st">&quot;bold&quot;</span>))</code></pre></div>
 <div class="figure"><span id="fig:genatthist"></span>
@@ -534,20 +536,20 @@ Figure 7.8: Toplumsal Cinsiyet Algisi Puan Dagilimi
 <div id="tek-degisken-tek-faktor-histogram" class="section level4">
 <h4><span class="header-section-number">7.2.1.2</span> Tek değişken tek faktör histogram</h4>
 <p>Gruplara dayalı farklılıkları görmek için kullanışlı</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dataWBT$HEF=<span class="kw">droplevels</span>(<span class="kw">factor</span>(dataWBT$higher_ed, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dataWBT<span class="op">$</span>HEF=<span class="kw">droplevels</span>(<span class="kw">factor</span>(dataWBT<span class="op">$</span>higher_ed, 
                     <span class="dt">levels =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), 
                     <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Lise ve altı&quot;</span>, <span class="st">&quot;Üniversite&quot;</span>)))
 
-<span class="kw">ggplot</span>(dataWBT, <span class="kw">aes</span>(<span class="dt">x =</span> gen_att, <span class="dt">fill=</span>HEF,<span class="dt">drop=</span>T)) +
-<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">breaks=</span><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dt">by =</span><span class="fl">0.2</span>),<span class="dt">alpha=</span>.<span class="dv">5</span>,<span class="dt">col=</span><span class="st">&quot;black&quot;</span>)+<span class="st"> </span>
-<span class="st">  </span><span class="kw">theme_bw</span>()+<span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Toplumsal Cinsiyet Algısı&quot;</span>,<span class="dt">fill=</span><span class="st">&#39;Yüksek Öğretim Durumu&#39;</span>)+<span class="st">  </span>
+<span class="kw">ggplot</span>(dataWBT, <span class="kw">aes</span>(<span class="dt">x =</span> gen_att, <span class="dt">fill=</span>HEF,<span class="dt">drop=</span>T)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">breaks=</span><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dt">by =</span><span class="fl">0.2</span>),<span class="dt">alpha=</span>.<span class="dv">5</span>,<span class="dt">col=</span><span class="st">&quot;black&quot;</span>)<span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">theme_bw</span>()<span class="op">+</span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Toplumsal Cinsiyet Algısı&quot;</span>,<span class="dt">fill=</span><span class="st">&#39;Yüksek Öğretim Durumu&#39;</span>)<span class="op">+</span><span class="st">  </span>
 <span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">15</span>),
         <span class="dt">axis.title=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">14</span>,<span class="dt">face=</span><span class="st">&quot;bold&quot;</span>))
 
 dataWBT2=<span class="kw">na.omit</span>(dataWBT[,<span class="kw">c</span>(<span class="st">&quot;gen_att&quot;</span>,<span class="st">&quot;HEF&quot;</span>)])
-<span class="kw">ggplot</span>(dataWBT2, <span class="kw">aes</span>(<span class="dt">x =</span> gen_att)) +
-<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">breaks=</span><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dt">by =</span><span class="fl">0.2</span>),<span class="dt">alpha=</span>.<span class="dv">5</span>,<span class="dt">col=</span><span class="st">&quot;black&quot;</span>)+<span class="st"> </span>
-<span class="st">  </span><span class="kw">theme_bw</span>()+<span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Toplumsal Cinsiyet Algısı&quot;</span>)+<span class="st"> </span><span class="kw">facet_wrap</span>(~<span class="st"> </span>HEF)+
+<span class="kw">ggplot</span>(dataWBT2, <span class="kw">aes</span>(<span class="dt">x =</span> gen_att)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">breaks=</span><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dt">by =</span><span class="fl">0.2</span>),<span class="dt">alpha=</span>.<span class="dv">5</span>,<span class="dt">col=</span><span class="st">&quot;black&quot;</span>)<span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">theme_bw</span>()<span class="op">+</span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Toplumsal Cinsiyet Algısı&quot;</span>)<span class="op">+</span><span class="st"> </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>HEF)<span class="op">+</span>
 <span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">15</span>),
         <span class="dt">axis.title=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">14</span>,<span class="dt">face=</span><span class="st">&quot;bold&quot;</span>))</code></pre></div>
 <div class="figure"><span id="fig:unnamed-chunk-59"></span>
@@ -557,9 +559,9 @@ Figure 7.9: Egitime Göre Toplumsal Cinsiyet Algisi
 </p>
 </div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
-<span class="kw">ggplot</span>(dataWBT, <span class="kw">aes</span>(<span class="dt">x =</span> gen_att)) +
-<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="fl">0.2</span>)+<span class="st"> </span><span class="kw">theme_bw</span>()+
-<span class="st">   </span><span class="kw">facet_wrap</span>(~city, <span class="dt">ncol =</span> <span class="dv">8</span>)</code></pre></div>
+<span class="kw">ggplot</span>(dataWBT, <span class="kw">aes</span>(<span class="dt">x =</span> gen_att)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="fl">0.2</span>)<span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>()<span class="op">+</span>
+<span class="st">   </span><span class="kw">facet_wrap</span>(<span class="op">~</span>city, <span class="dt">ncol =</span> <span class="dv">8</span>)</code></pre></div>
 <p><img src="SARP-TR_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
 </div>
 <div id="tek-degisken-iki-faktor-histogram" class="section level4">
@@ -567,23 +569,23 @@ Figure 7.9: Egitime Göre Toplumsal Cinsiyet Algisi
 <p>Useful for two way interactions</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dataWBT2=<span class="kw">na.omit</span>(dataWBT[,<span class="kw">c</span>(<span class="st">&quot;gen_att&quot;</span>,<span class="st">&quot;HEF&quot;</span>,<span class="st">&quot;gender&quot;</span>)])
 
-<span class="kw">ggplot</span>(dataWBT2, <span class="kw">aes</span>(<span class="dt">x =</span> gen_att,<span class="dt">fill=</span>gender)) +<span class="kw">labs</span>(<span class="dt">fill=</span><span class="st">&#39;Gender&#39;</span>)+<span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="fl">0.2</span>,<span class="dt">alpha=</span>.<span class="dv">5</span>)+<span class="st"> </span><span class="kw">theme_bw</span>()+
-<span class="st">    </span><span class="kw">facet_grid</span>(~HEF)</code></pre></div>
+<span class="kw">ggplot</span>(dataWBT2, <span class="kw">aes</span>(<span class="dt">x =</span> gen_att,<span class="dt">fill=</span>gender)) <span class="op">+</span><span class="kw">labs</span>(<span class="dt">fill=</span><span class="st">&#39;Gender&#39;</span>)<span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="fl">0.2</span>,<span class="dt">alpha=</span>.<span class="dv">5</span>)<span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>()<span class="op">+</span>
+<span class="st">    </span><span class="kw">facet_grid</span>(<span class="op">~</span>HEF)</code></pre></div>
 <p><img src="SARP-TR_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
 </div>
 <div id="tek-degisken-uc-faktor-histogram" class="section level4">
 <h4><span class="header-section-number">7.2.1.4</span> Tek değişken üç faktör histogram</h4>
 <p>Etkileşim (interaction) açıklamada kullanışlı</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dataWBT$Condition=<span class="kw">droplevels</span>(<span class="kw">factor</span>(dataWBT$treatment, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dataWBT<span class="op">$</span>Condition=<span class="kw">droplevels</span>(<span class="kw">factor</span>(dataWBT<span class="op">$</span>treatment, 
                     <span class="dt">levels =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), 
                     <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;treatment&quot;</span>, <span class="st">&quot;control&quot;</span>)))
 
 dataWBT2=<span class="kw">na.omit</span>(dataWBT[,<span class="kw">c</span>(<span class="st">&quot;gen_att&quot;</span>,<span class="st">&quot;HEF&quot;</span>,<span class="st">&quot;gender&quot;</span>,<span class="st">&quot;Condition&quot;</span>)])
 
-<span class="kw">ggplot</span>(dataWBT2, <span class="kw">aes</span>(<span class="dt">x =</span> gen_att,<span class="dt">fill=</span>gender)) +<span class="kw">labs</span>(<span class="dt">fill=</span><span class="st">&#39;Gender&#39;</span>)+<span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="fl">0.2</span>,<span class="dt">alpha=</span>.<span class="dv">5</span>)+<span class="st"> </span><span class="kw">theme_bw</span>()+
-<span class="st">    </span><span class="kw">facet_grid</span>(~HEF+Condition)</code></pre></div>
+<span class="kw">ggplot</span>(dataWBT2, <span class="kw">aes</span>(<span class="dt">x =</span> gen_att,<span class="dt">fill=</span>gender)) <span class="op">+</span><span class="kw">labs</span>(<span class="dt">fill=</span><span class="st">&#39;Gender&#39;</span>)<span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="fl">0.2</span>,<span class="dt">alpha=</span>.<span class="dv">5</span>)<span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>()<span class="op">+</span>
+<span class="st">    </span><span class="kw">facet_grid</span>(<span class="op">~</span>HEF<span class="op">+</span>Condition)</code></pre></div>
 <p><img src="SARP-TR_files/figure-html/unnamed-chunk-62-1.png" width="672" /></p>
 </div>
 </div>
@@ -620,24 +622,24 @@ Figure 7.10: The z distribution
 <h4><span class="header-section-number">7.3.2.1</span> Güven Aralığı Örneği</h4>
 <p>Toplumsal Cinsiyet Algısına ait ortalama ve güven aralığı hesaplamaları</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># gözlem sayısı, n</span>
-GA_n=<span class="kw">sum</span>(!<span class="kw">is.na</span>(dataWBT$gen_att))
+GA_n=<span class="kw">sum</span>(<span class="op">!</span><span class="kw">is.na</span>(dataWBT<span class="op">$</span>gen_att))
 
 <span class="co">#ortalama</span>
-GA_m=<span class="kw">mean</span>(dataWBT$gen_att,<span class="dt">na.rm =</span> T)
+GA_m=<span class="kw">mean</span>(dataWBT<span class="op">$</span>gen_att,<span class="dt">na.rm =</span> T)
 
 <span class="co">#ss</span>
-GA_s=<span class="kw">sd</span>(dataWBT$gen_att,<span class="dt">na.rm =</span> T)
+GA_s=<span class="kw">sd</span>(dataWBT<span class="op">$</span>gen_att,<span class="dt">na.rm =</span> T)
 
 <span class="co">#95% güven aralığı</span>
-alt=GA_m -<span class="st"> </span><span class="fl">1.96</span> *<span class="st"> </span>(GA_s/<span class="kw">sqrt</span>(GA_n))
+alt=GA_m <span class="op">-</span><span class="st"> </span><span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>(GA_s<span class="op">/</span><span class="kw">sqrt</span>(GA_n))
 alt
 ## [1] 1.924339
-ust=GA_m +<span class="st"> </span><span class="fl">1.96</span> *<span class="st"> </span>(GA_s/<span class="kw">sqrt</span>(GA_n))
+ust=GA_m <span class="op">+</span><span class="st"> </span><span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>(GA_s<span class="op">/</span><span class="kw">sqrt</span>(GA_n))
 ust
 ## [1] 1.956812
 
 <span class="co">#veya </span>
-GA_m +<span class="kw">c</span>(-<span class="dv">1</span>,<span class="dv">1</span>)*<span class="fl">1.96</span> *<span class="st"> </span>(GA_s/<span class="kw">sqrt</span>(GA_n))
+GA_m <span class="op">+</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="op">*</span><span class="fl">1.96</span> <span class="op">*</span><span class="st"> </span>(GA_s<span class="op">/</span><span class="kw">sqrt</span>(GA_n))
 ## [1] 1.924339 1.956812
 
 
@@ -699,12 +701,12 @@ GA_m +<span class="kw">c</span>(-<span class="dv">1</span>,<span class="dv">1</s
 <p>Hesaplanan bu z değişkeni 0 ortalamaya ve 1 standart sapmaya sahiptir. Eğer X normal dağılım gösteriyorsa z de normal dağılım gösterir.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># z puanı hesapla</span>
 
-GA_m=<span class="kw">mean</span>(dataWBT$gen_att,<span class="dt">na.rm =</span> T)
-GA_s=<span class="kw">sd</span>(dataWBT$gen_att,<span class="dt">na.rm =</span> T)
-z_GA=(dataWBT$gen_att-GA_m)/GA_s
+GA_m=<span class="kw">mean</span>(dataWBT<span class="op">$</span>gen_att,<span class="dt">na.rm =</span> T)
+GA_s=<span class="kw">sd</span>(dataWBT<span class="op">$</span>gen_att,<span class="dt">na.rm =</span> T)
+z_GA=(dataWBT<span class="op">$</span>gen_att<span class="op">-</span>GA_m)<span class="op">/</span>GA_s
 
 <span class="co">#veya</span>
-z_GA=<span class="kw">scale</span>(dataWBT$gen_att, <span class="dt">center=</span>T, <span class="dt">scale=</span>T)
+z_GA=<span class="kw">scale</span>(dataWBT<span class="op">$</span>gen_att, <span class="dt">center=</span>T, <span class="dt">scale=</span>T)
 
 <span class="co"># scale fonksiyonu ile birden fazla değisken için z hesaplanabilir.</span>
 <span class="co"># center=T her X puanından ortalamayı çıkarır</span>
@@ -722,23 +724,23 @@ z_GA=<span class="kw">scale</span>(dataWBT$gen_att, <span class="dt">center=</sp
 <h4><span class="header-section-number">7.3.4.1</span> z testi örnek-1 (yönsüz)</h4>
 <p>Boş hipotez <span class="math inline">\(H_0: \mu_{Cinsiyet Algisi} = 2\)</span> ve alternatif hipotez <span class="math inline">\(H_1: \mu_{Cinsiyet Algisi} \neq 2\)</span> ve <span class="math inline">\(\alpha=0.05\)</span>;</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#  n</span>
-GA_n=<span class="kw">sum</span>(!<span class="kw">is.na</span>(dataWBT$gen_att))
+GA_n=<span class="kw">sum</span>(<span class="op">!</span><span class="kw">is.na</span>(dataWBT<span class="op">$</span>gen_att))
 
 <span class="co">#ortalama</span>
-GA_m=<span class="kw">mean</span>(dataWBT$gen_att,<span class="dt">na.rm =</span> T)
+GA_m=<span class="kw">mean</span>(dataWBT<span class="op">$</span>gen_att,<span class="dt">na.rm =</span> T)
 
 <span class="co">#ss</span>
-GA_s=<span class="kw">sd</span>(dataWBT$gen_att,<span class="dt">na.rm =</span> T)
+GA_s=<span class="kw">sd</span>(dataWBT<span class="op">$</span>gen_att,<span class="dt">na.rm =</span> T)
 
 <span class="co"># boş hipotez</span>
 mu_hyp=<span class="dv">2</span>
 
 <span class="co"># z istatistiği</span>
-(GA_m-mu_hyp)/(GA_s/<span class="kw">sqrt</span>(GA_n))
+(GA_m<span class="op">-</span>mu_hyp)<span class="op">/</span>(GA_s<span class="op">/</span><span class="kw">sqrt</span>(GA_n))
 ## [1] -7.17343
 
 <span class="co">#alpha=0.05 ve yönsüz alternatif için kritik değer</span>
-<span class="kw">qnorm</span>(<span class="dv">1</span>-(<span class="fl">0.05</span>/<span class="dv">2</span>))
+<span class="kw">qnorm</span>(<span class="dv">1</span><span class="op">-</span>(<span class="fl">0.05</span><span class="op">/</span><span class="dv">2</span>))
 ## [1] 1.959964</code></pre></div>
 <p>5302 katılımcıya ait Toplumsal Cinsiyet Algısı puanları için ortalama 1.94 ve standart sampma 0.6 olarak hesaplanmıştır. Tek örneklem için hesaplanan z testi, gözlemlenen ortalamanın, hipotez ile öne sürülen 2’den 7.17 standart hata daha düşük olduğunu göstermiştir. Kritik değer olarak 1.96 (<span class="math inline">\(z_{1-(0.05/2)}\)</span>) seçildiğinde ve gözlemlenen ortalama ve hipotez ile öne sürülen ortalama arasındaki farkın istatistiksel olarak anlamlı olduğu kararı verilmiştir.</p>
 </div>
@@ -749,11 +751,11 @@ mu_hyp=<span class="dv">2</span>
 mu_hyp=<span class="fl">1.9</span>
 
 <span class="co"># z istatistik</span>
-(GA_m-mu_hyp)/(<span class="fl">0.75</span>/<span class="kw">sqrt</span>(GA_n))
+(GA_m<span class="op">-</span>mu_hyp)<span class="op">/</span>(<span class="fl">0.75</span><span class="op">/</span><span class="kw">sqrt</span>(GA_n))
 ## [1] 3.939368
 
 <span class="co">#yönlü alternatif ve alfa=.01</span>
-<span class="kw">qnorm</span>(<span class="dv">1</span>-(<span class="fl">0.01</span>))
+<span class="kw">qnorm</span>(<span class="dv">1</span><span class="op">-</span>(<span class="fl">0.01</span>))
 ## [1] 2.326348</code></pre></div>
 <p>Kritik değer olarak 2.33 kullanıldığında (<span class="math inline">\(z_{0.99}\)</span>) gözlemlenen ortalamanın hipotez ile öne sürülen ortalamadan büyük olduğu ve bu farkın istatistiksel olarak anlamlı olduğu kararına varılmıştır <span class="math inline">\(z=3.94\)</span>.</p>
 </div>
@@ -765,14 +767,14 @@ mu_hyp=<span class="fl">1.9</span>
 <h4><span class="header-section-number">7.3.5.1</span> t test örnek-1 (yönsüz)</h4>
 <p>Örnek için Düzce ilinde yaşadığını belirten katılımcılara ait Toplumsal Cinsiyet Algısı puanları kullanılmıştır.</p>
 <p><span class="math inline">\(H_0: \mu_{Cinsiyet Algisi} = 1.94\)</span> ve alternatif <span class="math inline">\(H_1: \mu_{Cinsiyet Algisi} \neq 1.94\)</span> ve <span class="math inline">\(\alpha=0.05\)</span>;</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dataWBT_DUZCE=dataWBT[dataWBT$city==<span class="st">&quot;DUZCE&quot;</span>,]
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dataWBT_DUZCE=dataWBT[dataWBT<span class="op">$</span>city<span class="op">==</span><span class="st">&quot;DUZCE&quot;</span>,]
 <span class="co">#betimleyici</span>
 <span class="kw">describe</span>(dataWBT_DUZCE[,<span class="st">&quot;gen_att&quot;</span>],<span class="dt">type=</span><span class="dv">3</span>)
 ##    vars  n mean   sd median trimmed  mad min max range skew kurtosis   se
 ## X1    1 47 2.18 0.55      2    2.14 0.59   1 3.8   2.8 0.56     0.28 0.08
 
 <span class="co">#t test</span>
-<span class="kw">t.test</span>(dataWBT_DUZCE$gen_att,
+<span class="kw">t.test</span>(dataWBT_DUZCE<span class="op">$</span>gen_att,
        <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>,
        <span class="dt">mu=</span><span class="fl">1.94</span>,
        <span class="dt">conf.level =</span> <span class="fl">0.95</span>)
@@ -797,7 +799,7 @@ mu_hyp=<span class="fl">1.9</span>
 <h4><span class="header-section-number">7.3.5.2</span> t test örnek-2</h4>
 <p><span class="math inline">\(H_0: \mu_{Cinsiyet Algisi} = 1.94\)</span> ve alternatif <span class="math inline">\(H_1: \mu_{Cinsiyet Algisi} \leq 1.94\)</span> ve <span class="math inline">\(\alpha=0.05\)</span>;</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#t test</span>
-<span class="kw">t.test</span>(dataWBT_DUZCE$gen_att,
+<span class="kw">t.test</span>(dataWBT_DUZCE<span class="op">$</span>gen_att,
        <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>,
        <span class="dt">mu=</span><span class="fl">1.94</span>,
        <span class="dt">conf.level =</span> <span class="fl">0.95</span>)
@@ -833,7 +835,7 @@ Figure 7.11: z dagilimi ve z=1.8
 </p>
 </div>
 <p>Mavi alan yoğunluğun %3.6’sını gösterir, p=0.0359</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span>-<span class="kw">pnorm</span>(<span class="fl">1.8</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">-</span><span class="kw">pnorm</span>(<span class="fl">1.8</span>)</code></pre></div>
 <pre><code>## [1] 0.03593032</code></pre>
 <p>Bu p değeri yönlü bir alternatif hipotez için hesaplanmıştır. Yönsüz alternatif için geçerli değildir. Yönsüz alternatif için ;</p>
 <div class="figure"><span id="fig:pvalue2"></span>
@@ -843,28 +845,28 @@ Figure 7.12: z dagilimi ve |z|)=1.8
 </p>
 </div>
 <p>Mavi alan yoğunluğun %7.2’sini gösterir, p=0.0719;</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span>*(<span class="dv">1</span>-<span class="kw">pnorm</span>(<span class="fl">1.8</span>))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="kw">pnorm</span>(<span class="fl">1.8</span>))</code></pre></div>
 <pre><code>## [1] 0.07186064</code></pre>
 </div>
 <div id="statisticalpower" class="section level3">
 <h3><span class="header-section-number">7.3.8</span> İstatiksel Güç</h3>
 <p>İstatistiksel güç, gerçekte yanlış olan bir boş hipotezi terketme olasılığıdır ve <span class="math inline">\((1-\beta) &#39;ya\)</span> eşittir. Bu olasılık istatistiksel sınamalar yapıldıktan önce (a-priori) veya sonra (post-hoc) hesaplanabilir, fakat sınama sonrasında yapılan güç analizi genellikle işlevsizdir. Sınama yapılmadan önce, daha doğrusu veriler toplanmadan önce yapılacak bir güç hesabı ile çalışma tasarısı gözden geçirebilir, yeniden düzenlenebilir ve örneklem sayısı belirlenebilir. Amerika’da bir çok proje başvurusu istatistiksel güç analizlerini mecbur tutar.</p>
 <p>İstatisksel gücü açıklamak için R ile çizilen grafik ve kod<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>;</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">seq</span>(-<span class="dv">4</span>, <span class="dv">8</span>, <span class="fl">0.02</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">4</span>, <span class="dv">8</span>, <span class="fl">0.02</span>)
 zdat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">x =</span> x, <span class="dt">y1 =</span> <span class="kw">dnorm</span>(x, <span class="dv">0</span>, <span class="dv">1</span>), <span class="dt">y2 =</span> <span class="kw">dnorm</span>(x, <span class="fl">2.5</span>, <span class="dv">1</span>))
-<span class="kw">ggplot</span>(zdat, <span class="kw">aes</span>(<span class="dt">x =</span> x)) +
-<span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> y1), <span class="dt">size=</span><span class="dv">2</span>) +
-<span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> y2), <span class="dt">color=</span><span class="st">&#39;red&#39;</span>,<span class="dt">size=</span><span class="dv">2</span>) +
-<span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">2.5</span>), <span class="dt">color=</span><span class="st">&quot;black&quot;</span>, <span class="dt">linetype =</span> <span class="st">&quot;longdash&quot;</span>)+
-<span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="kw">qnorm</span>(<span class="dv">1</span> -<span class="st"> </span><span class="fl">0.05</span>))+
-<span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(-<span class="dv">4</span>,<span class="dv">0</span>,<span class="fl">1.65</span>,<span class="fl">2.5</span>,<span class="dv">4</span>))+
-<span class="st">  </span><span class="kw">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="dt">label=</span><span class="st">&quot;beta&quot;</span> , <span class="dt">x=</span><span class="fl">1.1</span>, <span class="dt">y=</span><span class="fl">0.05</span>, <span class="dt">parse=</span>T, <span class="dt">fontface =</span><span class="dv">2</span>, <span class="dt">size=</span><span class="dv">6</span>)+
-<span class="st">  </span><span class="kw">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="dt">label=</span><span class="st">&quot;alpha&quot;</span>, <span class="dt">x=</span><span class="dv">2</span>  , <span class="dt">y=</span><span class="fl">0.02</span>, <span class="dt">parse=</span>T, <span class="dt">fontface =</span><span class="dv">2</span>, <span class="dt">size=</span><span class="dv">6</span>)+
-<span class="st">  </span><span class="kw">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="dt">label=</span><span class="st">&quot;1-~beta&quot;</span>, <span class="dt">x=</span><span class="fl">3.3</span>, <span class="dt">y=</span><span class="fl">0.1</span>, <span class="dt">parse=</span>T, <span class="dt">fontface =</span><span class="dv">2</span>,<span class="dt">size=</span><span class="dv">6</span>)+
-<span class="st">  </span><span class="kw">geom_area</span>(<span class="kw">aes</span>(<span class="dt">y=</span>y1, <span class="dt">x =</span> <span class="kw">ifelse</span>(x &gt;<span class="st"> </span><span class="kw">qnorm</span>(.<span class="dv">95</span>), x, <span class="ot">NA</span>)), <span class="dt">fill =</span> <span class="st">&#39;blue&#39;</span>  , <span class="dt">alpha=</span><span class="fl">0.25</span>) +
-<span class="st">  </span><span class="kw">geom_area</span>(<span class="kw">aes</span>(<span class="dt">y=</span>y2, <span class="dt">x =</span> <span class="kw">ifelse</span>(x &gt;<span class="st"> </span><span class="kw">qnorm</span>(.<span class="dv">95</span>), x, <span class="ot">NA</span>)), <span class="dt">fill =</span> <span class="st">&#39;green&#39;</span> , <span class="dt">alpha=</span><span class="fl">0.25</span>) +
-<span class="st">  </span><span class="kw">geom_area</span>(<span class="kw">aes</span>(<span class="dt">y=</span>y2, <span class="dt">x =</span> <span class="kw">ifelse</span>(x &lt;<span class="st"> </span><span class="kw">qnorm</span>(.<span class="dv">95</span>), x, <span class="ot">NA</span>)), <span class="dt">fill =</span> <span class="st">&#39;yellow&#39;</span>, <span class="dt">alpha=</span><span class="fl">0.25</span>) +
-<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;z&quot;</span>) +<span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;dnorm(z)&quot;</span>) +<span class="st"> </span><span class="kw">theme_bw</span>()</code></pre></div>
+<span class="kw">ggplot</span>(zdat, <span class="kw">aes</span>(<span class="dt">x =</span> x)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> y1), <span class="dt">size=</span><span class="dv">2</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> y2), <span class="dt">color=</span><span class="st">&#39;red&#39;</span>,<span class="dt">size=</span><span class="dv">2</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">2.5</span>), <span class="dt">color=</span><span class="st">&quot;black&quot;</span>, <span class="dt">linetype =</span> <span class="st">&quot;longdash&quot;</span>)<span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="kw">qnorm</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="fl">0.05</span>))<span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">4</span>,<span class="dv">0</span>,<span class="fl">1.65</span>,<span class="fl">2.5</span>,<span class="dv">4</span>))<span class="op">+</span>
+<span class="st">  </span><span class="kw">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="dt">label=</span><span class="st">&quot;beta&quot;</span> , <span class="dt">x=</span><span class="fl">1.1</span>, <span class="dt">y=</span><span class="fl">0.05</span>, <span class="dt">parse=</span>T, <span class="dt">fontface =</span><span class="dv">2</span>, <span class="dt">size=</span><span class="dv">6</span>)<span class="op">+</span>
+<span class="st">  </span><span class="kw">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="dt">label=</span><span class="st">&quot;alpha&quot;</span>, <span class="dt">x=</span><span class="dv">2</span>  , <span class="dt">y=</span><span class="fl">0.02</span>, <span class="dt">parse=</span>T, <span class="dt">fontface =</span><span class="dv">2</span>, <span class="dt">size=</span><span class="dv">6</span>)<span class="op">+</span>
+<span class="st">  </span><span class="kw">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="dt">label=</span><span class="st">&quot;1-~beta&quot;</span>, <span class="dt">x=</span><span class="fl">3.3</span>, <span class="dt">y=</span><span class="fl">0.1</span>, <span class="dt">parse=</span>T, <span class="dt">fontface =</span><span class="dv">2</span>,<span class="dt">size=</span><span class="dv">6</span>)<span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_area</span>(<span class="kw">aes</span>(<span class="dt">y=</span>y1, <span class="dt">x =</span> <span class="kw">ifelse</span>(x <span class="op">&gt;</span><span class="st"> </span><span class="kw">qnorm</span>(.<span class="dv">95</span>), x, <span class="ot">NA</span>)), <span class="dt">fill =</span> <span class="st">&#39;blue&#39;</span>  , <span class="dt">alpha=</span><span class="fl">0.25</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_area</span>(<span class="kw">aes</span>(<span class="dt">y=</span>y2, <span class="dt">x =</span> <span class="kw">ifelse</span>(x <span class="op">&gt;</span><span class="st"> </span><span class="kw">qnorm</span>(.<span class="dv">95</span>), x, <span class="ot">NA</span>)), <span class="dt">fill =</span> <span class="st">&#39;green&#39;</span> , <span class="dt">alpha=</span><span class="fl">0.25</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_area</span>(<span class="kw">aes</span>(<span class="dt">y=</span>y2, <span class="dt">x =</span> <span class="kw">ifelse</span>(x <span class="op">&lt;</span><span class="st"> </span><span class="kw">qnorm</span>(.<span class="dv">95</span>), x, <span class="ot">NA</span>)), <span class="dt">fill =</span> <span class="st">&#39;yellow&#39;</span>, <span class="dt">alpha=</span><span class="fl">0.25</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;z&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;dnorm(z)&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>()</code></pre></div>
 <div class="figure"><span id="fig:zpower"></span>
 <img src="SARP-TR_files/figure-html/zpower-1.png" alt="z dagilimi ile istatistiksel güç" width="672" />
 <p class="caption">
@@ -872,7 +874,7 @@ Figure 7.13: z dagilimi ile istatistiksel güç
 </p>
 </div>
 <p><span class="math inline">\(H_0:\mu=0\)</span> boş hipotezini doğru kabul eden bir z dağılımı siyah çizgiler ile gösterilmiştir, bu dağılımın ortalaması sıfırdır ve kesik çizgiler ile gösterilmiştir. Kırmızı çizgiler ile gösterilen dağılım (a) boş hipotezin yanlış olduğu ve (b) evrene ait ortalama ve standard sapma ile hesaplanan z-istatistiğinin <span class="math inline">\(((\mu-\mu_{hypothesis} )⁄(\sigma⁄\sqrt{n})=2.5)\)</span> olduğu varsayımı ile çizilmiştir. Bu görsel yönlü bir alternatif hipotez ve alfa=0.05, dolayısıyla kritik değer <span class="math inline">\(z_{0.95}=1.65\)</span> için geçerlidir. Mavi alan <span class="math inline">\(\alpha\)</span>’yı, sarı alan <span class="math inline">\(\beta\)</span>’yı ve yeşil alan istatistiksel gücü yansıtır. Bu görselde istatistiksel güç .804’tür.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span>-<span class="kw">pnorm</span>(<span class="kw">qnorm</span>(<span class="fl">0.95</span>),<span class="dt">mean=</span><span class="fl">2.5</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">-</span><span class="kw">pnorm</span>(<span class="kw">qnorm</span>(<span class="fl">0.95</span>),<span class="dt">mean=</span><span class="fl">2.5</span>)</code></pre></div>
 <pre><code>## [1] 0.8037649</code></pre>
 <p>Figüre<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> <a href="betimleyici-istatistikler-ve-hipotez-testi.html#fig:zpower">7.13</a> , istatistiksel güç hesaplamak için iki farklı dağılımın, bir alfa değerinin ve bir test istatistiğinin olması gerektiğini gösterir. Bu bilinenler ile istatistiksel güç hesaplanabilir. Burda önemli olan detay bir test istatistiğinin kendi bileşenleri olduğudur, genellikle bu bileşenler bir bölünen ve bir bölendir. z testi için bölünen , hipotez ile öne sürülen değer ile gözlemlenen değer arasındaki fark, bölen ise ortalamanın standart hatasıdır (<span class="math inline">\(\sigma/\sqrt(n)\)</span>). Eğer istatistiksel güç sabit tutulursa (örneğin .8) eşitlik seçilen bir bilinmeyene göre çözülebilir. Genellikle de seçilen bilinmeyen örneklem sayısıdır, <em>n</em>.</p>
 <p>İstatistiksel güç ilerleyen bölümlerde tekrar değinilmiştir. Test istatistikleri, parametre kestirimleri, standart hatalar, dağılımsal varsayımlar tasarlanan araştırmaya göre değişecektir. Tek örneklem için t testi düşünüldüğünde <em>power.t.test</em> fonksiyonu işeyarardır.</p>
@@ -897,11 +899,11 @@ Figure 7.13: z dagilimi ile istatistiksel güç
 <p>Tek örneklem ile aritmetik ortalama için yapılacak dirençli istatistikler detaylı olarak <span class="citation">Wilcox (<a href="#ref-wilcox2012">2012</a>)</span> tarafından verilmiştir. Verilen R kodu bootstrap-t metodu içim %95 güven aralığı hesaplar (<span class="citation">Wilcox (<a href="#ref-wilcox2012">2012</a>)</span>, page 117).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#ikinci tür bootstrap t metodu</span>
 <span class="co"># Düzce katılımcılarını seç</span>
-dataWBT_DUZCE=<span class="kw">na.omit</span>(dataWBT[dataWBT$city==<span class="st">&quot;DUZCE&quot;</span>,<span class="kw">c</span>(<span class="st">&quot;id&quot;</span>,<span class="st">&quot;gen_att&quot;</span>)])
+dataWBT_DUZCE=<span class="kw">na.omit</span>(dataWBT[dataWBT<span class="op">$</span>city<span class="op">==</span><span class="st">&quot;DUZCE&quot;</span>,<span class="kw">c</span>(<span class="st">&quot;id&quot;</span>,<span class="st">&quot;gen_att&quot;</span>)])
 
 <span class="co"># normallik varsayımı ve t test kullanarak</span>
 <span class="co"># evren ortalamasının 1.94 olup olmadığını sına</span>
-<span class="kw">t.test</span>(dataWBT_DUZCE$gen_att,<span class="dt">mu=</span><span class="fl">1.94</span>,<span class="dt">conf.level =</span> <span class="fl">0.95</span>)
+<span class="kw">t.test</span>(dataWBT_DUZCE<span class="op">$</span>gen_att,<span class="dt">mu=</span><span class="fl">1.94</span>,<span class="dt">conf.level =</span> <span class="fl">0.95</span>)
 ## 
 ##  One Sample t-test
 ## 
@@ -922,21 +924,21 @@ alpha=<span class="fl">0.05</span>   <span class="co"># alfa</span>
 
 <span class="co">#x değişken</span>
 <span class="co"># xBAR gözlemlenen ortalama</span>
-tstar=function(x,xBAR) <span class="kw">sqrt</span>(<span class="kw">length</span>(x))*<span class="kw">abs</span>(<span class="kw">mean</span>(x)-xBAR)/<span class="kw">sd</span>(x)
+tstar=<span class="cf">function</span>(x,xBAR) <span class="kw">sqrt</span>(<span class="kw">length</span>(x))<span class="op">*</span><span class="kw">abs</span>(<span class="kw">mean</span>(x)<span class="op">-</span>xBAR)<span class="op">/</span><span class="kw">sd</span>(x)
 
 
 output=<span class="kw">c</span>()
-for (i in <span class="dv">1</span>:B){
-  output[i]=<span class="kw">tstar</span>(<span class="kw">sample</span>(dataWBT_DUZCE$gen_att,
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>B){
+  output[i]=<span class="kw">tstar</span>(<span class="kw">sample</span>(dataWBT_DUZCE<span class="op">$</span>gen_att,
                          <span class="dt">replace=</span>T,
-                         <span class="dt">size=</span><span class="kw">length</span>(dataWBT_DUZCE$gen_att)),
-                  <span class="dt">xBAR=</span><span class="kw">mean</span>(dataWBT_DUZCE$gen_att))
+                         <span class="dt">size=</span><span class="kw">length</span>(dataWBT_DUZCE<span class="op">$</span>gen_att)),
+                  <span class="dt">xBAR=</span><span class="kw">mean</span>(dataWBT_DUZCE<span class="op">$</span>gen_att))
   }
 output=<span class="kw">sort</span>(output)
-Tc=output[<span class="kw">as.integer</span>(B*(<span class="dv">1</span>-alpha))]
+Tc=output[<span class="kw">as.integer</span>(B<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>alpha))]
 
 <span class="co">#bootstrap GA</span>
-<span class="kw">mean</span>(dataWBT_DUZCE$gen_att)+<span class="kw">c</span>(-<span class="dv">1</span>,<span class="dv">1</span>)*(Tc*<span class="kw">sd</span>(dataWBT_DUZCE$gen_att)/<span class="kw">sqrt</span>(<span class="kw">length</span>(dataWBT_DUZCE$gen_att)))
+<span class="kw">mean</span>(dataWBT_DUZCE<span class="op">$</span>gen_att)<span class="op">+</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="op">*</span>(Tc<span class="op">*</span><span class="kw">sd</span>(dataWBT_DUZCE<span class="op">$</span>gen_att)<span class="op">/</span><span class="kw">sqrt</span>(<span class="kw">length</span>(dataWBT_DUZCE<span class="op">$</span>gen_att)))
 ## [1] 2.011540 2.339524</code></pre></div>
 <div id="raporlama" class="section level4">
 <h4><span class="header-section-number">7.3.9.1</span> Raporlama</h4>
@@ -998,8 +1000,9 @@ Tc=output[<span class="kw">as.integer</span>(B*(<span class="dv">1</span>-alpha)
         </div>
       </div>
 <a href="veri-setleri.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="iki-ortalamann-karslastrlmas-t-testi.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
-
+<a href="iki-ortalamann-karslastrlmas-t-testi.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -1008,7 +1011,7 @@ Tc=output[<span class="kw">as.integer</span>(B*(<span class="dv">1</span>-alpha)
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
@@ -1042,7 +1045,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);

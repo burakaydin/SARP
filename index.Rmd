@@ -1,6 +1,6 @@
 ---
 title: "Sosyal Bilimler R Platformu"
-author: "Burak AYDIN, James ALGINA, Walter LEITE"
+author: "Burak AYDIN, James ALGINA, Walter LEITE, Hakan ATILGAN"
 date: "2017"
 output: bookdown::gitbook
 site: bookdown::bookdown_site
@@ -31,7 +31,12 @@ Bu platformun hakları korunmuştur [CC0](https://creativecommons.org/publicdoma
 Bu materyal İngilizce olarak hazırlanıp Türkçeye çevirilmiştir.
 Bu _platform_ sosyal bilimler alanında çalışan ve nicel veri analizlerinin teoriden ziyade uygulama aşamasına ilgi gösteren araştırmacılar için oluşturulmuştur. Bütün istatistiksel prosedürler R [@R-base] ile yürütülmüş, gerçek veri kullanımına özen gösterilmiştir. Bu materyale _platform_ denilmesinin üç sebebi vardır, (a) katkıya açıktır,(b) dinamik bir içeriğe sahiptir, (c) bilgisayar anakartı gibi kullanılabilir, R ile oluşturulmuş herhangi bir üst düzey çıktı platforma eklenebilir. Bu materyal Bookdown [@R-bookdown] ile inşa edilmiştir, Bookdown ise R Markdown [@R-rmarkdown] üzerine inşa edilmiştir. Materyalin hazırlanma aşamasında R Studio [@R-studio] kullanılmıştır.
 
-Kitabın ismi neden SARP? Sosyal bilimler R platformuna kısaca S-aR-P denmesinin üç sebebi var; (1) SARP kelimesi hem Türkçede hem de İngilizcede kullanılıyor. SARP`ın  İngilizcede kullanımlarından biri "Standard and Recommended Practice" (2) Türkçe anlamlarından biri 'zorlu' ve diğeri ise (3) SARP sınır kapısı. Öğrenmek kolay değil fakat belli bir sınırı geçtikten sonra güzel bir dünyanın kapıları açılabilir. R öğrenen araştırmacılar bu güzel dünyanın birbirine karşılıksız yardım eden R kullacılarının kurduğu "the R community" olduğunu göreceklerdir. 
+### Atıf
+
+Bu materyalin uygun atıfı:
+
+Aydın, B., Algina, J., Leite, W. L., & Atılgan, H. (2018). *Sosyal Bilimler İçin R’ a Giriş*. Ankara: ANI Yayıncılık.
+
 
 ### Neden Bookdown?
 Bookdown ile görsel zenginliği mevcut materyaller oluşturulabilir. Shiny uygulamaları, basit olmayan grafikler gibi R'ın araştırmacılara sunduğu ve sunacağı teknolojiler bu materyale kolayca eklenebilir. Bookdown ile aynı materyal PDF, HTML veya EBOOK olarak farklı şekilde kolayca okunabilir. Bookdown ile yazılan bir kitap Git Hub içerisinde depolanabilir ve en önemlisi katkı sağlamak isteyen araştırmacıların kolaylık sağlar. Kısacası Bookdown yeni nesil kitap yazma araçlarından biridir.

@@ -6,9 +6,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Sosyal Bilimler R Platformu</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="Sosyal Bilimler R Platformu">
-  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Sosyal Bilimler R Platformu" />
   <meta property="og:type" content="book" />
@@ -23,7 +22,7 @@
   <meta name="twitter:description" content="Sosyal Bilimler R Platformu" />
   <meta name="twitter:image" content="images/coverpicture.png" />
 
-<meta name="author" content="Burak AYDIN, James ALGINA, Walter LEITE">
+<meta name="author" content="Burak AYDIN, James ALGINA, Walter LEITE, Hakan ATILGAN">
 
 
 <meta name="date" content="2017-01-01">
@@ -35,7 +34,6 @@
   
 <link rel="prev" href="onyuz.html">
 <link rel="next" href="windows-icin-r-kurulumu.html">
-
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,7 +47,7 @@
 
 
 
-<script src="libs/htmlwidgets-0.8/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-0.9/htmlwidgets.js"></script>
 <link href="libs/rglwidgetClass-2/rgl.css" rel="stylesheet" />
 <script src="libs/rglwidgetClass-2/rglClass.src.js"></script>
 <script src="libs/CanvasMatrix4-2016/CanvasMatrix.src.js"></script>
@@ -100,6 +98,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <body>
 
 
+
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
 
     <div class="book-summary">
@@ -112,8 +111,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Kapak</a><ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#tantm"><i class="fa fa-check"></i><b>1.1</b> Tanıtım</a><ul>
-<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#neden-bookdown"><i class="fa fa-check"></i><b>1.1.1</b> Neden Bookdown?</a></li>
-<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#icerik"><i class="fa fa-check"></i><b>1.1.2</b> İçerik</a></li>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#atf"><i class="fa fa-check"></i><b>1.1.1</b> Atıf</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#neden-bookdown"><i class="fa fa-check"></i><b>1.1.2</b> Neden Bookdown?</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#icerik"><i class="fa fa-check"></i><b>1.1.3</b> İçerik</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="onyuz.html"><a href="onyuz.html"><i class="fa fa-check"></i><b>2</b> Önyüz</a><ul>
@@ -121,6 +121,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.1.1" data-path="onyuz.html"><a href="onyuz.html#burak-aydn-ph.d."><i class="fa fa-check"></i><b>2.1.1</b> Burak Aydın, Ph.D.</a></li>
 <li class="chapter" data-level="2.1.2" data-path="onyuz.html"><a href="onyuz.html#james-algina-ph.d."><i class="fa fa-check"></i><b>2.1.2</b> James Algina, Ph.D.</a></li>
 <li class="chapter" data-level="2.1.3" data-path="onyuz.html"><a href="onyuz.html#walter-l.-leite-ph.d."><i class="fa fa-check"></i><b>2.1.3</b> Walter L. Leite, Ph.D.</a></li>
+<li class="chapter" data-level="2.1.4" data-path="onyuz.html"><a href="onyuz.html#hakan-atlgan-ph.d."><i class="fa fa-check"></i><b>2.1.4</b> Hakan Atılgan, Ph.D.</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="onyuz.html"><a href="onyuz.html#tesekkur"><i class="fa fa-check"></i><b>2.2</b> Teşekkür</a></li>
 <li class="chapter" data-level="2.3" data-path="onyuz.html"><a href="onyuz.html#dataWBT"><i class="fa fa-check"></i><b>2.3</b> Data</a></li>
@@ -235,7 +236,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="10.3" data-path="korelasyon.html"><a href="korelasyon.html#r-betigi-cift-serili-ve-nokta-cift-serili-korelasyonlar"><i class="fa fa-check"></i><b>10.3</b> R betiği: Çift Serili ve Nokta-Çift Serili Korelasyonlar</a></li>
 <li class="chapter" data-level="10.4" data-path="korelasyon.html"><a href="korelasyon.html#r-betigi-phi-korelasyon-katsays"><i class="fa fa-check"></i><b>10.4</b> R betiği: Phi korelasyon katsayısı</a></li>
-<li class="chapter" data-level="10.5" data-path="korelasyon.html"><a href="korelasyon.html#korelasyon-katsays-hakknda-dikkat-edilmesi-gerekenler"><i class="fa fa-check"></i><b>10.5</b> Korelasyon katsayısı hakkında dikkat edilmesi gerekenler</a></li>
+<li class="chapter" data-level="10.5" data-path="korelasyon.html"><a href="korelasyon.html#tetrakorik-ve-polikorik-korelasyon-katsays"><i class="fa fa-check"></i><b>10.5</b> Tetrakorik ve polikorik korelasyon katsayısı</a></li>
+<li class="chapter" data-level="10.6" data-path="korelasyon.html"><a href="korelasyon.html#korelasyon-katsays-hakknda-dikkat-edilmesi-gerekenler"><i class="fa fa-check"></i><b>10.6</b> Korelasyon katsayısı hakkında dikkat edilmesi gerekenler</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html"><i class="fa fa-check"></i><b>11</b> Çoklu Doğrusal Regresyon , Kısa Tanıtım</a><ul>
 <li class="chapter" data-level="11.1" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#matrisler-ve-en-kucuk-kareler-yontemi"><i class="fa fa-check"></i><b>11.1</b> Matrisler ve En Küçük Kareler Yöntemi</a><ul>
@@ -318,8 +320,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         </div>
       </div>
 <a href="onyuz.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="windows-icin-r-kurulumu.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
-
+<a href="windows-icin-r-kurulumu.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -328,7 +331,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
@@ -362,7 +365,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);

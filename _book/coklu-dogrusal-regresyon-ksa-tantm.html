@@ -6,9 +6,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Sosyal Bilimler R Platformu</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="Sosyal Bilimler R Platformu">
-  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Sosyal Bilimler R Platformu" />
   <meta property="og:type" content="book" />
@@ -23,7 +22,7 @@
   <meta name="twitter:description" content="Sosyal Bilimler R Platformu" />
   <meta name="twitter:image" content="images/coverpicture.png" />
 
-<meta name="author" content="Burak AYDIN, James ALGINA, Walter LEITE">
+<meta name="author" content="Burak AYDIN, James ALGINA, Walter LEITE, Hakan ATILGAN">
 
 
 <meta name="date" content="2017-01-01">
@@ -35,7 +34,6 @@
   
 <link rel="prev" href="korelasyon.html">
 <link rel="next" href="kullansl-r-betikleri.html">
-
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,7 +47,7 @@
 
 
 
-<script src="libs/htmlwidgets-0.8/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-0.9/htmlwidgets.js"></script>
 <link href="libs/rglwidgetClass-2/rgl.css" rel="stylesheet" />
 <script src="libs/rglwidgetClass-2/rglClass.src.js"></script>
 <script src="libs/CanvasMatrix4-2016/CanvasMatrix.src.js"></script>
@@ -100,6 +98,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <body>
 
 
+
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
 
     <div class="book-summary">
@@ -112,8 +111,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Kapak</a><ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#tantm"><i class="fa fa-check"></i><b>1.1</b> Tanıtım</a><ul>
-<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#neden-bookdown"><i class="fa fa-check"></i><b>1.1.1</b> Neden Bookdown?</a></li>
-<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#icerik"><i class="fa fa-check"></i><b>1.1.2</b> İçerik</a></li>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#atf"><i class="fa fa-check"></i><b>1.1.1</b> Atıf</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#neden-bookdown"><i class="fa fa-check"></i><b>1.1.2</b> Neden Bookdown?</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#icerik"><i class="fa fa-check"></i><b>1.1.3</b> İçerik</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="onyuz.html"><a href="onyuz.html"><i class="fa fa-check"></i><b>2</b> Önyüz</a><ul>
@@ -121,6 +121,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.1.1" data-path="onyuz.html"><a href="onyuz.html#burak-aydn-ph.d."><i class="fa fa-check"></i><b>2.1.1</b> Burak Aydın, Ph.D.</a></li>
 <li class="chapter" data-level="2.1.2" data-path="onyuz.html"><a href="onyuz.html#james-algina-ph.d."><i class="fa fa-check"></i><b>2.1.2</b> James Algina, Ph.D.</a></li>
 <li class="chapter" data-level="2.1.3" data-path="onyuz.html"><a href="onyuz.html#walter-l.-leite-ph.d."><i class="fa fa-check"></i><b>2.1.3</b> Walter L. Leite, Ph.D.</a></li>
+<li class="chapter" data-level="2.1.4" data-path="onyuz.html"><a href="onyuz.html#hakan-atlgan-ph.d."><i class="fa fa-check"></i><b>2.1.4</b> Hakan Atılgan, Ph.D.</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="onyuz.html"><a href="onyuz.html#tesekkur"><i class="fa fa-check"></i><b>2.2</b> Teşekkür</a></li>
 <li class="chapter" data-level="2.3" data-path="onyuz.html"><a href="onyuz.html#dataWBT"><i class="fa fa-check"></i><b>2.3</b> Data</a></li>
@@ -235,7 +236,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="10.3" data-path="korelasyon.html"><a href="korelasyon.html#r-betigi-cift-serili-ve-nokta-cift-serili-korelasyonlar"><i class="fa fa-check"></i><b>10.3</b> R betiği: Çift Serili ve Nokta-Çift Serili Korelasyonlar</a></li>
 <li class="chapter" data-level="10.4" data-path="korelasyon.html"><a href="korelasyon.html#r-betigi-phi-korelasyon-katsays"><i class="fa fa-check"></i><b>10.4</b> R betiği: Phi korelasyon katsayısı</a></li>
-<li class="chapter" data-level="10.5" data-path="korelasyon.html"><a href="korelasyon.html#korelasyon-katsays-hakknda-dikkat-edilmesi-gerekenler"><i class="fa fa-check"></i><b>10.5</b> Korelasyon katsayısı hakkında dikkat edilmesi gerekenler</a></li>
+<li class="chapter" data-level="10.5" data-path="korelasyon.html"><a href="korelasyon.html#tetrakorik-ve-polikorik-korelasyon-katsays"><i class="fa fa-check"></i><b>10.5</b> Tetrakorik ve polikorik korelasyon katsayısı</a></li>
+<li class="chapter" data-level="10.6" data-path="korelasyon.html"><a href="korelasyon.html#korelasyon-katsays-hakknda-dikkat-edilmesi-gerekenler"><i class="fa fa-check"></i><b>10.6</b> Korelasyon katsayısı hakkında dikkat edilmesi gerekenler</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html"><i class="fa fa-check"></i><b>11</b> Çoklu Doğrusal Regresyon , Kısa Tanıtım</a><ul>
 <li class="chapter" data-level="11.1" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#matrisler-ve-en-kucuk-kareler-yontemi"><i class="fa fa-check"></i><b>11.1</b> Matrisler ve En Küçük Kareler Yöntemi</a><ul>
@@ -420,12 +422,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   \tag{11.1}
 \end{equation}\]</span>
 <p>Bu hesaplamaları R ile yapalım;</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Y=<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">8</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">9</span>,<span class="dv">7</span>,-<span class="dv">6</span>,-<span class="dv">8</span>,-<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">5</span>),<span class="dt">ncol=</span><span class="dv">1</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Y=<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">8</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">9</span>,<span class="dv">7</span>,<span class="op">-</span><span class="dv">6</span>,<span class="op">-</span><span class="dv">8</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">5</span>),<span class="dt">ncol=</span><span class="dv">1</span>)
 X=<span class="kw">matrix</span>(<span class="kw">cbind</span>(<span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">12</span>),
-               <span class="kw">c</span>(<span class="dv">0</span>,-<span class="dv">2</span>,<span class="dv">6</span>,-<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,-<span class="dv">4</span>,-<span class="dv">4</span>,-<span class="dv">3</span>,-<span class="dv">2</span>,-<span class="dv">1</span>),
-               <span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">3</span>,-<span class="dv">5</span>,-<span class="dv">6</span>,<span class="dv">0</span>,-<span class="dv">2</span>,<span class="dv">1</span>)),<span class="dt">ncol=</span><span class="dv">3</span>)
+               <span class="kw">c</span>(<span class="dv">0</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">6</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="op">-</span><span class="dv">4</span>,<span class="op">-</span><span class="dv">4</span>,<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>),
+               <span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="op">-</span><span class="dv">5</span>,<span class="op">-</span><span class="dv">6</span>,<span class="dv">0</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">1</span>)),<span class="dt">ncol=</span><span class="dv">3</span>)
 
-<span class="kw">solve</span>(<span class="kw">t</span>(X)%*%X)%*%<span class="kw">t</span>(X)%*%Y
+<span class="kw">solve</span>(<span class="kw">t</span>(X)<span class="op">%*%</span>X)<span class="op">%*%</span><span class="kw">t</span>(X)<span class="op">%*%</span>Y
 ##       [,1]
 ## [1,] 2.917
 ## [2,] 0.199
@@ -437,8 +439,8 @@ X=<span class="kw">matrix</span>(<span class="kw">cbind</span>(<span class="kw">
 <p>Bu çıkarım <span class="citation">Box and Draper (<a href="#ref-georgenorman87">1987</a>)</span> tarafından yapılmıştır. Araştırmacı, araştırma sorusu doğrultusunda inşaa edeceği modelde yer alan değişkenleri nasıl seçtiğine yönelik ikna edici argümanlar sunmalıdır. Eğer önemli bir değişken modelin dışında bırakıldı ise kestirilen regresyon katsayıları muhtemelen geçersizdir.</p>
 <p>Aşağıdaki durumu düşünelim</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#sentetik veri setinde X2 göz ardı edilsin</span>
-X2omitted=<span class="kw">matrix</span>(<span class="kw">cbind</span>(<span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">12</span>),<span class="kw">c</span>(<span class="dv">0</span>,-<span class="dv">2</span>,<span class="dv">6</span>,-<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,-<span class="dv">4</span>,-<span class="dv">4</span>,-<span class="dv">3</span>,-<span class="dv">2</span>,-<span class="dv">1</span>)),<span class="dt">ncol=</span><span class="dv">2</span>)
-<span class="kw">solve</span>(<span class="kw">t</span>(X2omitted)%*%X2omitted)%*%<span class="kw">t</span>(X2omitted)%*%Y
+X2omitted=<span class="kw">matrix</span>(<span class="kw">cbind</span>(<span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">12</span>),<span class="kw">c</span>(<span class="dv">0</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">6</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="op">-</span><span class="dv">4</span>,<span class="op">-</span><span class="dv">4</span>,<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>)),<span class="dt">ncol=</span><span class="dv">2</span>)
+<span class="kw">solve</span>(<span class="kw">t</span>(X2omitted)<span class="op">%*%</span>X2omitted)<span class="op">%*%</span><span class="kw">t</span>(X2omitted)<span class="op">%*%</span>Y
 ##      [,1]
 ## [1,] 2.92
 ## [2,] 1.09</code></pre></div>
@@ -450,18 +452,18 @@ X2omitted=<span class="kw">matrix</span>(<span class="kw">cbind</span>(<span cla
 <p>Bağımlı değişkene ait kareler toplamı (total sum of squares) iki ana parçaya ayrıştıtılabilir, <em>modele ait kareler toplamı</em> ve <em>hataya ait kareler toplamı</em>. Modele ait kareler toplamının değişkene ait kareler toplamına oranı <span class="math inline">\(R^2\)</span> ile gösterilir ve çoklu belirlilik katsayısı olarak adlandırılır. <span class="math inline">\(R^2\)</span> bağımlı değişken ve bağımsız değişkenler arasındaki ilişkinin kuvvetini ölçer.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># KT total</span>
 n=<span class="kw">length</span>(Y)
-TotalSS=<span class="kw">t</span>(Y)%*%Y-(n*<span class="kw">mean</span>(Y)^<span class="dv">2</span>)
+TotalSS=<span class="kw">t</span>(Y)<span class="op">%*%</span>Y<span class="op">-</span>(n<span class="op">*</span><span class="kw">mean</span>(Y)<span class="op">^</span><span class="dv">2</span>)
 
 <span class="co"># KT Model</span>
-betahat=<span class="kw">solve</span>(<span class="kw">t</span>(X)%*%X)%*%<span class="kw">t</span>(X)%*%Y
-ModelSS=<span class="kw">t</span>(betahat)%*%<span class="kw">t</span>(X)%*%Y-(n*<span class="kw">mean</span>(Y)^<span class="dv">2</span>)
+betahat=<span class="kw">solve</span>(<span class="kw">t</span>(X)<span class="op">%*%</span>X)<span class="op">%*%</span><span class="kw">t</span>(X)<span class="op">%*%</span>Y
+ModelSS=<span class="kw">t</span>(betahat)<span class="op">%*%</span><span class="kw">t</span>(X)<span class="op">%*%</span>Y<span class="op">-</span>(n<span class="op">*</span><span class="kw">mean</span>(Y)<span class="op">^</span><span class="dv">2</span>)
 
-ModelSS/TotalSS
+ModelSS<span class="op">/</span>TotalSS
 ##       [,1]
 ## [1,] 0.879</code></pre></div>
 <p>Fakat <span class="math inline">\(R^2\)</span> evren parametresi için yanlı bir kestiricidir.Daha yansız bir kestirici ise düzeltilmiş belirlilik katsayısıdır, <span class="math inline">\(R^2_{Adj}\)</span>;</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
-Rsquared=ModelSS/TotalSS
+Rsquared=ModelSS<span class="op">/</span>TotalSS
 <span class="co">#sörneklem</span>
 n=<span class="dv">12</span>
 
@@ -473,7 +475,7 @@ p=<span class="dv">2</span>
 int_inc=<span class="dv">1</span>
 
 
-AdjustedRsquared=<span class="dv">1</span>-(<span class="dv">1</span>-Rsquared)*((n-int_inc)/(n-int_inc-p))
+AdjustedRsquared=<span class="dv">1</span><span class="op">-</span>(<span class="dv">1</span><span class="op">-</span>Rsquared)<span class="op">*</span>((n<span class="op">-</span>int_inc)<span class="op">/</span>(n<span class="op">-</span>int_inc<span class="op">-</span>p))
 AdjustedRsquared
 ##       [,1]
 ## [1,] 0.852</code></pre></div>
@@ -483,8 +485,8 @@ AdjustedRsquared
 <h3><span class="header-section-number">11.1.3</span> C) Artıklar ve etkili gözlemler</h3>
 <p>Artıklar modelin uyumsuzluğu hakkında bilgi verebilir. Artıkların incelenmesi ile yordayıcı ve yordanan değişklenlerin arasındaki ilişkinin doğrusallığı görsel olarak kontrol edilebilir. Artıkların dağılımsal özelliklerini incelemek örneklemden evrene yorum yapmak için gerekli olabilir. Örneğin istatistiksel anlamlılık testlerinde ve güven aralığı hesaplamaları normal dağılım varsayımına dayandırılmış ise artıkların standart normal dağılım olasılığı grafiğinde (QQ grafiği) düz bir çizgiyi takip etmesi gerekir.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#tahmin edilen değerler</span>
-Yhat=X%*%betahat
-residuals=Y-Yhat
+Yhat=X<span class="op">%*%</span>betahat
+residuals=Y<span class="op">-</span>Yhat
 residuals
 ##          [,1]
 ##  [1,]  0.4276
@@ -500,7 +502,7 @@ residuals
 ## [11,]  0.5850
 ## [12,]  0.7303
 <span class="kw">qqnorm</span>(residuals)</code></pre></div>
-<p><img src="SARP-TR_files/figure-html/unnamed-chunk-120-1.png" width="672" /></p>
+<p><img src="SARP-TR_files/figure-html/unnamed-chunk-122-1.png" width="672" /></p>
 <p>Genellikle artıklar üç farklı yaklaşımdan biri ile incelenir;</p>
 <p>• Ham artıklar, <span class="math inline">\(Y_i-\hat{Y_i}\)</span>. Ham artıklar Y ile aynı skaladadır.</p>
 <p>• Standardize artıklar:Stanardize artıklar ham artıkların kkendi standart sapmlarına böünmesi ile hesaplanır. z puanı skalasındadırlar (ortalama=0, standart sapma=1). Normal dağılım varsayımı yapıldığında, aykırı değerlerin gözden geçirilmek üzere seçilmesi aşamasında mutlak standardize artıklar için kriter olarak 2 kullanılabilir. Bir diğer ifade ile, mutlak ğeri 2 den büyük olan standardize artıklar aykırı değer tespitinde incelenmelidir. Bununla birlikte bir z dağılımında değerlerin %5’inin +/-2 kriterinin dışında yer alır.</p>
@@ -511,35 +513,35 @@ residuals
 <span class="kw">library</span>(mvtnorm)
 sigma &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dt">ncol=</span><span class="dv">2</span>)
 xx &lt;-<span class="st"> </span><span class="kw">rmvnorm</span>(<span class="dt">n=</span><span class="dv">500</span>, <span class="dt">mean=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="dt">sigma=</span>sigma)
-yy=<span class="dv">5</span>+xx[,<span class="dv">1</span>]*<span class="dv">2</span>+xx[,<span class="dv">2</span>]*-<span class="dv">3</span>+<span class="kw">rnorm</span>(<span class="dv">500</span>,<span class="dv">0</span>,<span class="fl">1.5</span>)
-model=<span class="kw">lm</span>(yy~xx[,<span class="dv">1</span>]+xx[,<span class="dv">2</span>])
+yy=<span class="dv">5</span><span class="op">+</span>xx[,<span class="dv">1</span>]<span class="op">*</span><span class="dv">2</span><span class="op">+</span>xx[,<span class="dv">2</span>]<span class="op">*-</span><span class="dv">3</span><span class="op">+</span><span class="kw">rnorm</span>(<span class="dv">500</span>,<span class="dv">0</span>,<span class="fl">1.5</span>)
+model=<span class="kw">lm</span>(yy<span class="op">~</span>xx[,<span class="dv">1</span>]<span class="op">+</span>xx[,<span class="dv">2</span>])
 errors=<span class="kw">rstudent</span>(model)
 predicted=<span class="kw">predict</span>(model)
 
 <span class="kw">library</span>(ggplot2)
 plotdata=<span class="kw">data.frame</span>(errors,predicted)
-<span class="kw">ggplot</span>(plotdata, <span class="kw">aes</span>(<span class="dt">x =</span> predicted, <span class="dt">y =</span> errors)) +
-<span class="st">  </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_hline</span>(<span class="dt">yintercept=</span><span class="dv">0</span>)+<span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Student artıklar&quot;</span>)+
-<span class="st">  </span><span class="kw">theme_bw</span>()+<span class="kw">stat_smooth</span>()</code></pre></div>
-<p><img src="SARP-TR_files/figure-html/unnamed-chunk-121-1.png" width="672" /></p>
+<span class="kw">ggplot</span>(plotdata, <span class="kw">aes</span>(<span class="dt">x =</span> predicted, <span class="dt">y =</span> errors)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_hline</span>(<span class="dt">yintercept=</span><span class="dv">0</span>)<span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Student artıklar&quot;</span>)<span class="op">+</span>
+<span class="st">  </span><span class="kw">theme_bw</span>()<span class="op">+</span><span class="kw">stat_smooth</span>()</code></pre></div>
+<p><img src="SARP-TR_files/figure-html/unnamed-chunk-123-1.png" width="672" /></p>
 <p>Grafikte yer alan mavi çizginin 0 çizgisine benzer olması doğrusallık ihlalinin olmadığını gösterir.</p>
 <p>Gösterim amaçlı simule edilen bir diğer veri setinde Y ve <span class="math inline">\(X_2\)</span> arasındaki ilişki doğrusal değildir quadratiktir.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#veri oluştur</span>
 <span class="kw">library</span>(mvtnorm)
 sigma &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dt">ncol=</span><span class="dv">2</span>)
 xx &lt;-<span class="st"> </span><span class="kw">rmvnorm</span>(<span class="dt">n=</span><span class="dv">100</span>, <span class="dt">mean=</span><span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">10</span>), <span class="dt">sigma=</span>sigma)
-yy=<span class="dv">150</span>+(xx[,<span class="dv">1</span>]*<span class="dv">4</span>)+(xx[,<span class="dv">2</span>]*-<span class="dv">3</span>)+(xx[,<span class="dv">2</span>]^<span class="dv">2</span>*<span class="fl">1.2</span>)+<span class="kw">rnorm</span>(<span class="dv">100</span>,<span class="dv">0</span>,<span class="dv">3</span>)
-model=<span class="kw">lm</span>(yy~xx[,<span class="dv">1</span>]+xx[,<span class="dv">2</span>])
+yy=<span class="dv">150</span><span class="op">+</span>(xx[,<span class="dv">1</span>]<span class="op">*</span><span class="dv">4</span>)<span class="op">+</span>(xx[,<span class="dv">2</span>]<span class="op">*-</span><span class="dv">3</span>)<span class="op">+</span>(xx[,<span class="dv">2</span>]<span class="op">^</span><span class="dv">2</span><span class="op">*</span><span class="fl">1.2</span>)<span class="op">+</span><span class="kw">rnorm</span>(<span class="dv">100</span>,<span class="dv">0</span>,<span class="dv">3</span>)
+model=<span class="kw">lm</span>(yy<span class="op">~</span>xx[,<span class="dv">1</span>]<span class="op">+</span>xx[,<span class="dv">2</span>])
 errors=<span class="kw">rstudent</span>(model)
 predicted=<span class="kw">predict</span>(model)
 
 
 <span class="kw">library</span>(ggplot2)
 plotdata=<span class="kw">data.frame</span>(errors,predicted)
-<span class="kw">ggplot</span>(plotdata, <span class="kw">aes</span>(<span class="dt">x =</span> predicted, <span class="dt">y =</span> errors)) +
-<span class="st">  </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_hline</span>(<span class="dt">yintercept=</span><span class="dv">0</span>)+<span class="kw">ylab</span>(<span class="st">&quot;Student artıklar&quot;</span>)+
-<span class="st">  </span><span class="kw">theme_bw</span>()+<span class="kw">stat_smooth</span>()</code></pre></div>
-<p><img src="SARP-TR_files/figure-html/unnamed-chunk-122-1.png" width="672" /></p>
+<span class="kw">ggplot</span>(plotdata, <span class="kw">aes</span>(<span class="dt">x =</span> predicted, <span class="dt">y =</span> errors)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_hline</span>(<span class="dt">yintercept=</span><span class="dv">0</span>)<span class="op">+</span><span class="kw">ylab</span>(<span class="st">&quot;Student artıklar&quot;</span>)<span class="op">+</span>
+<span class="st">  </span><span class="kw">theme_bw</span>()<span class="op">+</span><span class="kw">stat_smooth</span>()</code></pre></div>
+<p><img src="SARP-TR_files/figure-html/unnamed-chunk-124-1.png" width="672" /></p>
 <p>Bu grafik ilişkinin doğrusal olmadığını gösterse dahi sorunun kaynağını bulmada yardımcı değildir. Araştırmacı artık değerleri yordayıcılar ile karşılaştırarak sorunun kaynağını bulabilir. Bu konuya tekrar değinilecektir.</p>
 <p>Artık değer grafikleri herhangi bir sorun belirtmese dahi sıradan olmayan artık değerler dikkatlice incelenmelidir. Bir artık değerin sıradışı ( örneğin ortalamadan 3,4 veya 5 standart sapma farklı oluşu) olup olmadığına araştırmacı karar verir. Fakat bir gözlemin veri setinden çıkarılması iaraştırmacı tarafından detaylı olarak rapor edilmeli ve gerekçelendirilimelidir.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#veri oluştur</span>
@@ -547,18 +549,18 @@ plotdata=<span class="kw">data.frame</span>(errors,predicted)
 <span class="kw">library</span>(mvtnorm)
 sigma &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dt">ncol=</span><span class="dv">2</span>)
 xx &lt;-<span class="st"> </span><span class="kw">rmvnorm</span>(<span class="dt">n=</span><span class="dv">100</span>, <span class="dt">mean=</span><span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">10</span>), <span class="dt">sigma=</span>sigma)
-yy=(xx[,<span class="dv">1</span>]*<span class="dv">4</span>)+(xx[,<span class="dv">2</span>]*-<span class="dv">3</span>)+<span class="kw">rnorm</span>(<span class="dv">100</span>,<span class="dv">0</span>,<span class="dv">3</span>)
-tempdata=<span class="kw">data.frame</span>(yy,xx,<span class="dt">id=</span><span class="dv">1</span>:<span class="dv">100</span>)
-model=<span class="kw">lm</span>(yy~X1+X2,<span class="dt">data=</span>tempdata)
-tempdata$SUTresiduals=<span class="kw">rstudent</span>(model)
+yy=(xx[,<span class="dv">1</span>]<span class="op">*</span><span class="dv">4</span>)<span class="op">+</span>(xx[,<span class="dv">2</span>]<span class="op">*-</span><span class="dv">3</span>)<span class="op">+</span><span class="kw">rnorm</span>(<span class="dv">100</span>,<span class="dv">0</span>,<span class="dv">3</span>)
+tempdata=<span class="kw">data.frame</span>(yy,xx,<span class="dt">id=</span><span class="dv">1</span><span class="op">:</span><span class="dv">100</span>)
+model=<span class="kw">lm</span>(yy<span class="op">~</span>X1<span class="op">+</span>X2,<span class="dt">data=</span>tempdata)
+tempdata<span class="op">$</span>SUTresiduals=<span class="kw">rstudent</span>(model)
 
 <span class="co"># kaç tane artık değer kritik değerin üstünde</span>
 <span class="co"># alfa=.05</span>
-<span class="kw">sum</span>(<span class="kw">abs</span>(tempdata$SUTresiduals)&gt;<span class="kw">qt</span>(<span class="kw">c</span>(.<span class="dv">975</span>), <span class="dt">df=</span><span class="dv">100-3-1</span>))
+<span class="kw">sum</span>(<span class="kw">abs</span>(tempdata<span class="op">$</span>SUTresiduals)<span class="op">&gt;</span><span class="kw">qt</span>(<span class="kw">c</span>(.<span class="dv">975</span>), <span class="dt">df=</span><span class="dv">100</span><span class="op">-</span><span class="dv">3</span><span class="op">-</span><span class="dv">1</span>))
 ## [1] 8
 
 <span class="co">#hangi gözlemler?</span>
-tempdata[<span class="kw">which</span>(<span class="kw">abs</span>(tempdata$SUTresiduals)&gt;<span class="kw">qt</span>(<span class="kw">c</span>(.<span class="dv">975</span>), <span class="dt">df=</span><span class="dv">100-3-1</span>)),]
+tempdata[<span class="kw">which</span>(<span class="kw">abs</span>(tempdata<span class="op">$</span>SUTresiduals)<span class="op">&gt;</span><span class="kw">qt</span>(<span class="kw">c</span>(.<span class="dv">975</span>), <span class="dt">df=</span><span class="dv">100</span><span class="op">-</span><span class="dv">3</span><span class="op">-</span><span class="dv">1</span>)),]
 ##       yy    X1    X2 id SUTresiduals
 ## 13 21.39 11.49 10.29 13         2.02
 ## 32  8.85 11.96 10.65 32        -2.20
@@ -594,8 +596,8 @@ tempdata[<span class="kw">which</span>(<span class="kw">abs</span>(tempdata$SUTr
 <h3><span class="header-section-number">11.1.4</span> D) <em>Eş varyanslılık varsayımı</em></h3>
 <p>Bağımlı değişkenin normal dağıldığı varsayımı ve OLS yöntemi ile regresyon katsayılarının <span class="math inline">\(\beta\)</span> dağılımları hesaplanabilir. Bu sayede regresyon katsayıları için standart hatalar <span class="math inline">\(\hat\sigma^2(X′X)^{-1}\)</span> ile kestirilebilir. Bu eşitlikteki <span class="math inline">\(\hat\sigma^2\)</span> hata terimlerinin varyansıdır.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#artıklar</span>
-s2 &lt;-<span class="st"> </span>(<span class="kw">t</span>(residuals) %*%<span class="st"> </span>residuals)/(<span class="kw">nrow</span>(Y)-<span class="kw">nrow</span>(betahat))  
-Var_betahat &lt;-<span class="st"> </span>s2[<span class="dv">1</span>,<span class="dv">1</span>]*<span class="kw">solve</span>(<span class="kw">t</span>(X)%*%X)  </code></pre></div>
+s2 &lt;-<span class="st"> </span>(<span class="kw">t</span>(residuals) <span class="op">%*%</span><span class="st"> </span>residuals)<span class="op">/</span>(<span class="kw">nrow</span>(Y)<span class="op">-</span><span class="kw">nrow</span>(betahat))  
+Var_betahat &lt;-<span class="st"> </span>s2[<span class="dv">1</span>,<span class="dv">1</span>]<span class="op">*</span><span class="kw">solve</span>(<span class="kw">t</span>(X)<span class="op">%*%</span>X)  </code></pre></div>
 <p><span class="math inline">\(\sigma^2 (X&#39;X)^{-1}\)</span> eşitliği homojen varyans varsayımı altında geçerlidir. Bu varsayım, bağımsız değişkenler kontrol edildiğinde bağımlı değişkenin eş varyanslılık göstermesi durumudur. Bir diğer deyişle, bağımlı değişken için yapılmış her bir gözlem aynı miktarda bilgi sağladığı varsayılır (<span class="citation">Rawlings, Pantula, and Dickey (<a href="#ref-Rawling98">1998</a>)</span>). Bu varsayım ile birlikte regresyon katsayıları <span class="math inline">\(\sum_{i=1}^n(Y_i-\hat{Y_i})^2\)</span> toplamını minimize etmek üzere kestirilir. Bu eşitlikte her bir artık değer eşit bir ağırlığa sahiptir. Eğer eş varyanslılık varsayımı ihlal ediliyorsa artık değerlere farklı ağırlık vererek kestirici modifiye edilebilir veya başka bir dirençli kestirici kullanılabilir. Başka bir alternatif olarak bağımlı değişkenin transformasyonu kullanılabilir veya standart hataların tahmin yöntemi değiştirilebilir (bakınız <span class="citation">Lumley and Zeileis (<a href="#ref-R-sandwich">2015</a>)</span>). Aksi takdirde <span class="math inline">\(\hat\beta\)</span> için standart hatalar, eş varyanslılığın nasıl ihmal edildiğine evren parametresine kıyasla gerekenden büyük veya küçük hesaplanabilir. Eğer küçük hesaplanırsa Tip I hata oranı alfadan daha büyük olabilir. Eğer büyük hesaplanırsa istatistiksel güç yitirilir. Eş varyanslılık hipotezi, artık değerler ile tahmin edilen değerlerin kıyaslandığı bir grafik üzerinden incelenebilir. Eş varyanslılığın zedelendiği bir durum;</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#veri oluştur</span>
 <span class="kw">set.seed</span>(<span class="dv">03032017</span>)
@@ -603,9 +605,9 @@ Var_betahat &lt;-<span class="st"> </span>s2[<span class="dv">1</span>,<span cla
 sigma &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>,.<span class="dv">7</span>,.<span class="dv">7</span>,<span class="dv">1</span>), <span class="dt">ncol=</span><span class="dv">2</span>)
 xx &lt;-<span class="st"> </span><span class="kw">rmvnorm</span>(<span class="dt">n=</span><span class="dv">100</span>, <span class="dt">mean=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>), <span class="dt">sigma=</span>sigma)
 <span class="co">#heteroscedasticity ekle</span>
-hts=function(v1,v2){<span class="dv">2</span><span class="fl">+.5</span>*v1<span class="fl">+.5</span>*v2}
-yy=<span class="dv">5</span>+xx[,<span class="dv">1</span>]*<span class="dv">5</span>+xx[,<span class="dv">2</span>]*<span class="dv">5</span>+<span class="kw">rnorm</span>(<span class="dv">100</span>,<span class="dv">0</span>,<span class="kw">hts</span>(xx[,<span class="dv">1</span>],xx[,<span class="dv">2</span>]))
-model=<span class="kw">lm</span>(yy~xx[,<span class="dv">1</span>]+xx[,<span class="dv">2</span>])
+hts=<span class="cf">function</span>(v1,v2){<span class="dv">2</span><span class="op">+</span>.<span class="dv">5</span><span class="op">*</span>v1<span class="op">+</span>.<span class="dv">5</span><span class="op">*</span>v2}
+yy=<span class="dv">5</span><span class="op">+</span>xx[,<span class="dv">1</span>]<span class="op">*</span><span class="dv">5</span><span class="op">+</span>xx[,<span class="dv">2</span>]<span class="op">*</span><span class="dv">5</span><span class="op">+</span><span class="kw">rnorm</span>(<span class="dv">100</span>,<span class="dv">0</span>,<span class="kw">hts</span>(xx[,<span class="dv">1</span>],xx[,<span class="dv">2</span>]))
+model=<span class="kw">lm</span>(yy<span class="op">~</span>xx[,<span class="dv">1</span>]<span class="op">+</span>xx[,<span class="dv">2</span>])
 <span class="co">#summary(model)</span>
 errors=<span class="kw">rstudent</span>(model)
 predicted=<span class="kw">predict</span>(model)
@@ -613,13 +615,13 @@ predicted=<span class="kw">predict</span>(model)
 <span class="co">#student artıklar ve tahmin edilen Y</span>
 <span class="kw">library</span>(ggplot2)
 plotdata=<span class="kw">data.frame</span>(errors,predicted)
-<span class="kw">ggplot</span>(plotdata, <span class="kw">aes</span>(<span class="dt">x =</span> predicted, <span class="dt">y =</span> errors)) +
-<span class="st">  </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_hline</span>(<span class="dt">yintercept=</span><span class="dv">0</span>)+<span class="kw">ylab</span>(<span class="st">&quot;Student artık değerler&quot;</span>)+
-<span class="st">  </span><span class="kw">geom_segment</span>(<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">xend =</span> predicted, <span class="dt">yend =</span> <span class="dv">0</span>)) +
+<span class="kw">ggplot</span>(plotdata, <span class="kw">aes</span>(<span class="dt">x =</span> predicted, <span class="dt">y =</span> errors)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_hline</span>(<span class="dt">yintercept=</span><span class="dv">0</span>)<span class="op">+</span><span class="kw">ylab</span>(<span class="st">&quot;Student artık değerler&quot;</span>)<span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_segment</span>(<span class="dt">mapping=</span><span class="kw">aes</span>(<span class="dt">xend =</span> predicted, <span class="dt">yend =</span> <span class="dv">0</span>)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">theme_bw</span>()</code></pre></div>
-<p><img src="SARP-TR_files/figure-html/unnamed-chunk-126-1.png" width="672" /></p>
+<p><img src="SARP-TR_files/figure-html/unnamed-chunk-128-1.png" width="672" /></p>
 <p>Genel olarak <span class="math inline">\(\hat Y\)</span> değerleri küçük ise hata varyansı da küçük görülmektedir. Eş varyanslılığın sağlandığı bir durum;</p>
-<p><img src="SARP-TR_files/figure-html/unnamed-chunk-127-1.png" width="672" /></p>
+<p><img src="SARP-TR_files/figure-html/unnamed-chunk-129-1.png" width="672" /></p>
 </div>
 <div id="e-hipotez-testi" class="section level3">
 <h3><span class="header-section-number">11.1.5</span> E) Hipotez testi</h3>
@@ -627,17 +629,17 @@ plotdata=<span class="kw">data.frame</span>(errors,predicted)
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Model KT ve Total KT daha önceden hesaplanmıştır.</span>
 dfREG=<span class="dv">2</span>  <span class="co">#(p=2, bağımsız değişkenler X1 and X2)</span>
 dfRES=<span class="dv">9</span>  <span class="co">#(n-p&#39;, 12-3)</span>
-MSreg=ModelSS/dfREG
-MSres=(TotalSS-ModelSS)/dfRES
+MSreg=ModelSS<span class="op">/</span>dfREG
+MSres=(TotalSS<span class="op">-</span>ModelSS)<span class="op">/</span>dfRES
 
-MSreg/MSres
+MSreg<span class="op">/</span>MSres
 ##      [,1]
 ## [1,] 32.8
 
 <span class="co">#kritik F</span>
 <span class="kw">qf</span>(.<span class="dv">95</span>,dfREG,dfRES)
 ## [1] 4.26
-<span class="dv">1</span>-<span class="kw">pf</span>(MSreg/MSres,dfREG,dfRES)
+<span class="dv">1</span><span class="op">-</span><span class="kw">pf</span>(MSreg<span class="op">/</span>MSres,dfREG,dfRES)
 ##          [,1]
 ## [1,] 7.39e-05</code></pre></div>
 <p>t-testi ise <span class="math inline">\(H_0:\beta_{X}=\beta_{hyp}\)</span> boş hipotezi ve <span class="math inline">\(H_1:\beta_{X}\neq\beta_{hyp}\)</span> alternatif hipotezini test etmek için kullanılabilir. Genellikle <span class="math inline">\(\beta_{hyp}=0\)</span> kullanılır.</p>
@@ -654,7 +656,7 @@ bx2=betahat[<span class="dv">3</span>]
 se_bx2=<span class="kw">sqrt</span>(Var_betahat[<span class="dv">3</span>,<span class="dv">3</span>])
 
 <span class="co">#t istatistiği</span>
-(bx2-Bhyp)/se_bx2
+(bx2<span class="op">-</span>Bhyp)<span class="op">/</span>se_bx2
 ## [1] 5.33
 
 <span class="co"># t kritik değeri</span>
@@ -662,7 +664,7 @@ se_bx2=<span class="kw">sqrt</span>(Var_betahat[<span class="dv">3</span>,<span 
 ## [1] 2.26
 
 <span class="co">#p değeri</span>
-<span class="dv">2</span>*(<span class="kw">pt</span>(-<span class="kw">abs</span>((bx2-Bhyp)/se_bx2),<span class="dv">9</span>))
+<span class="dv">2</span><span class="op">*</span>(<span class="kw">pt</span>(<span class="op">-</span><span class="kw">abs</span>((bx2<span class="op">-</span>Bhyp)<span class="op">/</span>se_bx2),<span class="dv">9</span>))
 ## [1] 0.000478</code></pre></div>
 </div>
 <div id="f-degisken-secimi" class="section level3">
@@ -678,12 +680,12 @@ sigma=<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="fl">
                <span class="fl">4.277045</span>,<span class="fl">5.817412</span>,<span class="fl">3.654419</span>,
                <span class="fl">3.906341</span>,<span class="fl">3.654419</span>,<span class="fl">5.642258</span>),<span class="dt">ncol=</span><span class="dv">3</span>)
 xx &lt;-<span class="st"> </span><span class="kw">rmvnorm</span>(<span class="dt">n=</span><span class="dv">200</span>, <span class="dt">mean=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>), <span class="dt">sigma=</span>sigma)
-yy=<span class="dv">5</span>+xx[,<span class="dv">1</span>]+xx[,<span class="dv">2</span>]*<span class="fl">1.5</span>+xx[,<span class="dv">3</span>]*<span class="dv">2</span>+<span class="kw">rnorm</span>(<span class="dv">200</span>,<span class="dv">0</span>,<span class="dv">3</span>)
-simdata=<span class="kw">data.frame</span>(yy,xx,<span class="dt">id=</span><span class="dv">1</span>:<span class="dv">200</span>)
+yy=<span class="dv">5</span><span class="op">+</span>xx[,<span class="dv">1</span>]<span class="op">+</span>xx[,<span class="dv">2</span>]<span class="op">*</span><span class="fl">1.5</span><span class="op">+</span>xx[,<span class="dv">3</span>]<span class="op">*</span><span class="dv">2</span><span class="op">+</span><span class="kw">rnorm</span>(<span class="dv">200</span>,<span class="dv">0</span>,<span class="dv">3</span>)
+simdata=<span class="kw">data.frame</span>(yy,xx,<span class="dt">id=</span><span class="dv">1</span><span class="op">:</span><span class="dv">200</span>)
 
 <span class="kw">library</span>(leaps)
 formula &lt;-<span class="st"> </span><span class="kw">formula</span>(<span class="kw">paste</span>(<span class="st">&quot;yy ~ &quot;</span>, 
-     <span class="kw">paste</span>(<span class="kw">names</span>(simdata[<span class="dv">2</span>:<span class="dv">4</span>]), <span class="dt">collapse=</span><span class="st">&quot; + &quot;</span>)))
+     <span class="kw">paste</span>(<span class="kw">names</span>(simdata[<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>]), <span class="dt">collapse=</span><span class="st">&quot; + &quot;</span>)))
 allpossreg &lt;-<span class="st"> </span><span class="kw">regsubsets</span>(formula,<span class="dt">nbest=</span><span class="dv">3</span>,<span class="dt">data=</span>simdata)
 aprout &lt;-<span class="st"> </span><span class="kw">summary</span>(allpossreg)
 
@@ -692,7 +694,7 @@ aprout &lt;-<span class="st"> </span><span class="kw">summary</span>(allpossreg)
 
 APRtable=<span class="kw">with</span>(aprout,<span class="kw">round</span>(<span class="kw">cbind</span>(which,rsq,adjr2),<span class="dv">3</span>))
 APRtable=<span class="kw">data.frame</span>(APRtable,<span class="dt">check.rows =</span> F,<span class="dt">row.names =</span> <span class="ot">NULL</span>)
-APRtable$ppri=<span class="kw">rowSums</span>(APRtable[,<span class="dv">1</span>:<span class="dv">4</span>])
+APRtable<span class="op">$</span>ppri=<span class="kw">rowSums</span>(APRtable[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>])
 <span class="kw">kable</span>(APRtable)</code></pre></div>
 <table>
 <thead>
@@ -774,23 +776,23 @@ APRtable$ppri=<span class="kw">rowSums</span>(APRtable[,<span class="dv">1</span
 </table>
 <p>Bu tabloya göre sabitin ve sadece <span class="math inline">\(X_2\)</span> değişkeninin olduğu model <span class="math inline">\(R^2=.753\)</span> sonucunu vermektedir. Bütün değişkenler eklendiğinde <span class="math inline">\(R^2=.890\)</span> olur, fakat <span class="math inline">\(X_1\)</span> in modelde yer almaması <span class="math inline">\(R^2\)</span> değerini sadece .019 düşürür. Grafiği inceleyiniz</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(ggplot2)
-<span class="kw">ggplot</span>(APRtable, <span class="kw">aes</span>(<span class="dt">x=</span>ppri<span class="dv">-1</span>, <span class="dt">y=</span>rsq)) +
-<span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">shape=</span><span class="dv">1</span>,<span class="dt">size=</span><span class="dv">3</span>)+<span class="st">   </span>
-<span class="st">    </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">0.05</span>)) +
-<span class="st">    </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3</span>, <span class="dt">by =</span> <span class="dv">1</span>))+
-<span class="st">    </span><span class="kw">theme_bw</span>()+<span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;R-squared&quot;</span>)+<span class="st"> </span>
+<span class="kw">ggplot</span>(APRtable, <span class="kw">aes</span>(<span class="dt">x=</span>ppri<span class="op">-</span><span class="dv">1</span>, <span class="dt">y=</span>rsq)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">shape=</span><span class="dv">1</span>,<span class="dt">size=</span><span class="dv">3</span>)<span class="op">+</span><span class="st">   </span>
+<span class="st">    </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">0.05</span>)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3</span>, <span class="dt">by =</span> <span class="dv">1</span>))<span class="op">+</span>
+<span class="st">    </span><span class="kw">theme_bw</span>()<span class="op">+</span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;R-squared&quot;</span>)<span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">theme</span>(<span class="dt">axis.text=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">15</span>),
         <span class="dt">axis.title=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">14</span>,<span class="dt">face=</span><span class="st">&quot;bold&quot;</span>))
 
-<span class="kw">ggplot</span>(APRtable, <span class="kw">aes</span>(<span class="dt">x=</span>ppri<span class="dv">-1</span>, <span class="dt">y=</span>adjr2)) +
-<span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">shape=</span><span class="dv">1</span>,<span class="dt">size=</span><span class="dv">3</span>)+<span class="st">   </span>
-<span class="st">    </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">0.05</span>)) +
-<span class="st">    </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3</span>, <span class="dt">by =</span> <span class="dv">1</span>))+
-<span class="st">      </span><span class="kw">theme_bw</span>()+<span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Adjusted R-squared&quot;</span>)+<span class="st"> </span>
+<span class="kw">ggplot</span>(APRtable, <span class="kw">aes</span>(<span class="dt">x=</span>ppri<span class="op">-</span><span class="dv">1</span>, <span class="dt">y=</span>adjr2)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">shape=</span><span class="dv">1</span>,<span class="dt">size=</span><span class="dv">3</span>)<span class="op">+</span><span class="st">   </span>
+<span class="st">    </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dt">by =</span> <span class="fl">0.05</span>)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">3</span>, <span class="dt">by =</span> <span class="dv">1</span>))<span class="op">+</span>
+<span class="st">      </span><span class="kw">theme_bw</span>()<span class="op">+</span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Adjusted R-squared&quot;</span>)<span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">theme</span>(<span class="dt">axis.text=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">15</span>),
         <span class="dt">axis.title=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">14</span>,<span class="dt">face=</span><span class="st">&quot;bold&quot;</span>))</code></pre></div>
-<div class="figure"><span id="fig:unnamed-chunk-131"></span>
-<img src="SARP-TR_files/figure-html/unnamed-chunk-131-1.png" alt="Mümkün olan bütün regresyonlar " width="50%" /><img src="SARP-TR_files/figure-html/unnamed-chunk-131-2.png" alt="Mümkün olan bütün regresyonlar " width="50%" />
+<div class="figure"><span id="fig:unnamed-chunk-133"></span>
+<img src="SARP-TR_files/figure-html/unnamed-chunk-133-1.png" alt="Mümkün olan bütün regresyonlar " width="50%" /><img src="SARP-TR_files/figure-html/unnamed-chunk-133-2.png" alt="Mümkün olan bütün regresyonlar " width="50%" />
 <p class="caption">
 Figure 11.1: Mümkün olan bütün regresyonlar
 </p>
@@ -802,7 +804,7 @@ Figure 11.1: Mümkün olan bütün regresyonlar
 <p>Açıklama amacı ile iki bağımsız değişkeninin olduğunu düşünelim, bu değişkenler arasındaki korelasyonun yüksek olduğu durumda iki tür problem oluşabilir, (a) regresyon katsayıları istikrarsız olabilir, aynı evrenden çekilen örneklemler ile çok farklı katsayılar elde edilebilir, (b) istatistiksel olarak anlamlı bir <span class="math inline">\(R^2\)</span> bulunsa dahi katsayılar istatistiksel olarak sıfırdan farksız olabilir.</p>
 <p>Varyans şişkinliği faktörü (Variance inflation factor,VIF) çoklu doğrusallık tespitinde kullanılabilir,<span class="math inline">\(VIF_x=\frac{1}{1-R^2_X}\)</span> . Bu eşitlikte <span class="math inline">\(R^2_X\)</span> X değişkeni çıkarıldığında hesaplanan <span class="math inline">\(R^2\)</span> değeridir. Büyük VIF değerleri potansiyel doğrusallık problemini işaret eder.Telaffuz edilen kritik VIF değerleri 4 ve 10 dur, fakat VIF değerleri dolaylı da olsa örneklem büyüklüğüne ve değişken varyansına göre değişebilir (<span class="citation">Obrien (<a href="#ref-obrien09">2007</a>)</span>). VIF değerleri büyük ise araştırmacı problemin kaynağını incelemedir. Araştırmacı şu seçeneklerden bir tanesini savunmaya çalışabilir, (a) yüksek korelasyona sahip iki değişkenden birini modelin dışında tutma, (b) yüksek korelasyon gösteren iki değişkeni birleştirme. Karar dikkatli bir şekilde verilmeli ve yeni sonuçlar ile eki sonuçlar kıyaslanmalıdır.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#korelasyonları kontrol et.</span>
-<span class="kw">cor</span>(simdata[,<span class="dv">2</span>:<span class="dv">4</span>])
+<span class="kw">cor</span>(simdata[,<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>])
 ##      X1    X2    X3
 ## X1 1.00 0.730 0.640
 ## X2 0.73 1.000 0.666
@@ -812,7 +814,7 @@ Figure 11.1: Mümkün olan bütün regresyonlar
 <span class="co">#çoklu doğrusallık problemi beklenmez</span>
 
 <span class="kw">library</span>(car)
-<span class="kw">vif</span>(<span class="kw">lm</span>(yy~X1+X2+X3,<span class="dt">data=</span>simdata))
+<span class="kw">vif</span>(<span class="kw">lm</span>(yy<span class="op">~</span>X1<span class="op">+</span>X2<span class="op">+</span>X3,<span class="dt">data=</span>simdata))
 ##   X1   X2   X3 
 ## 2.36 2.50 1.98
 <span class="co"># VIF değerleri düşük</span></code></pre></div>
@@ -843,23 +845,23 @@ Figure 11.1: Mümkün olan bütün regresyonlar
 <p>modeli test edilebilir. Burada <span class="math inline">\(Y\)</span> ve <span class="math inline">\(X_1\)</span> arasındaki ilişki <span class="math inline">\(\beta_1+\beta_2 X_{i2}\)</span> ile gösterilir, bu <span class="math inline">\(Y\)</span> ve <span class="math inline">\(X_1\)</span> arasındaki ilişkinin <span class="math inline">\(X_2\)</span>’ye bağlı olduğunu gösterir. Benzer şekilde <span class="math inline">\(Y\)</span> ve <span class="math inline">\(X_2\)</span> ilişkisi <span class="math inline">\(\beta_2+\beta_1 X_{i1}\)</span> ile gösterilir. <span class="math inline">\(\beta_1+\beta_2 X_{i2}\)</span> düşünüldüğünde <span class="math inline">\(\beta_1\)</span>, <span class="math inline">\(Y\)</span> ve <span class="math inline">\(X_1\)</span> arasındaki ilişkinin <span class="math inline">\(X_2 = 0\)</span> iken ne olduğunu belirtir. Eğer <span class="math inline">\(X_2 = 0\)</span> anlamlı değil ise <span class="math inline">\(\beta_1\)</span> yorumu da anlamlı değildir. Eşitlik <a href="coklu-dogrusal-regresyon-ksa-tantm.html#eq:olsinteract">(11.2)</a> etkileşimin <span class="math inline">\(\beta_2 X_{i1}X_{i2}\)</span> ile doğru bir şekilde dikkate alındığı varsayımını yapar. Yapar ayrıca bu durum <span class="math inline">\(X_2\)</span> konrol edilirken <span class="math inline">\(Y\)</span> ve <span class="math inline">\(X_1\)</span> arasındaki ilişki doğrusal ise geçerlidir. Eşitlik <a href="coklu-dogrusal-regresyon-ksa-tantm.html#eq:olsinteract">(11.2)</a> ile verilen modelin varsayımları incelenmelidir. R ile çizilebilecek grafikler etkileşimleri tespit etmede yardımcı olabilir. <em>visreg</em> (<span class="citation">Breheny and Burchett (<a href="#ref-R-visreg">2016</a>)</span>) paketi ile çizilen grafiklere bakalım;</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## simule edilmiş veriyi manipüle et
 ## Yvar: etkileşim yokken  bağımlı değişken
-simdata$Yvar=<span class="dv">3</span>+simdata$X1*<span class="dv">2</span>+simdata$X2*<span class="dv">3</span>+<span class="kw">rnorm</span>(<span class="kw">nrow</span>(simdata),<span class="dv">0</span>,<span class="dv">5</span>)
+simdata<span class="op">$</span>Yvar=<span class="dv">3</span><span class="op">+</span>simdata<span class="op">$</span>X1<span class="op">*</span><span class="dv">2</span><span class="op">+</span>simdata<span class="op">$</span>X2<span class="op">*</span><span class="dv">3</span><span class="op">+</span><span class="kw">rnorm</span>(<span class="kw">nrow</span>(simdata),<span class="dv">0</span>,<span class="dv">5</span>)
 
 <span class="kw">library</span>(visreg)
 
-model=<span class="kw">lm</span>(Yvar~X1+X2+X1*X2,<span class="dt">data=</span>simdata)
+model=<span class="kw">lm</span>(Yvar<span class="op">~</span>X1<span class="op">+</span>X2<span class="op">+</span>X1<span class="op">*</span>X2,<span class="dt">data=</span>simdata)
 <span class="kw">visreg2d</span>(model, <span class="st">&quot;X1&quot;</span>, <span class="st">&quot;X2&quot;</span>, <span class="dt">plot.type=</span><span class="st">&quot;persp&quot;</span>)</code></pre></div>
-<p><img src="SARP-TR_files/figure-html/unnamed-chunk-133-1.png" width="672" /></p>
+<p><img src="SARP-TR_files/figure-html/unnamed-chunk-135-1.png" width="672" /></p>
 <p>Düz yüzey etkileşimin olmadığını işaret eder.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## simule edilmiş veriyi manipüle et
 ## Yvar: etkileşim varken  bağımlı değişken
-simdata$Yvarint=<span class="dv">3</span>+simdata$X1*<span class="dv">1</span>+simdata$X2*<span class="dv">2</span>+simdata$X1*simdata$X2*<span class="fl">1.5</span>+<span class="kw">rnorm</span>(<span class="kw">nrow</span>(simdata),<span class="dv">0</span>,<span class="dv">5</span>)
+simdata<span class="op">$</span>Yvarint=<span class="dv">3</span><span class="op">+</span>simdata<span class="op">$</span>X1<span class="op">*</span><span class="dv">1</span><span class="op">+</span>simdata<span class="op">$</span>X2<span class="op">*</span><span class="dv">2</span><span class="op">+</span>simdata<span class="op">$</span>X1<span class="op">*</span>simdata<span class="op">$</span>X2<span class="op">*</span><span class="fl">1.5</span><span class="op">+</span><span class="kw">rnorm</span>(<span class="kw">nrow</span>(simdata),<span class="dv">0</span>,<span class="dv">5</span>)
 
 <span class="kw">library</span>(visreg)
 
-model2=<span class="kw">lm</span>(Yvarint~X1+X2+X1*X2,<span class="dt">data=</span>simdata)
+model2=<span class="kw">lm</span>(Yvarint<span class="op">~</span>X1<span class="op">+</span>X2<span class="op">+</span>X1<span class="op">*</span>X2,<span class="dt">data=</span>simdata)
 <span class="kw">visreg2d</span>(model2, <span class="st">&quot;X1&quot;</span>, <span class="st">&quot;X2&quot;</span>, <span class="dt">plot.type=</span><span class="st">&quot;persp&quot;</span>)</code></pre></div>
-<p><img src="SARP-TR_files/figure-html/unnamed-chunk-134-1.png" width="672" /></p>
+<p><img src="SARP-TR_files/figure-html/unnamed-chunk-136-1.png" width="672" /></p>
 <p>Yüzey artık düz değil, etkilesim mevcut.</p>
 </div>
 <div id="m-farkl-kestiriciler-estimators" class="section level3">
@@ -927,8 +929,9 @@ model2=<span class="kw">lm</span>(Yvarint~X1+X2+X1*X2,<span class="dt">data=</sp
         </div>
       </div>
 <a href="korelasyon.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="kullansl-r-betikleri.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
-
+<a href="kullansl-r-betikleri.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -937,7 +940,7 @@ model2=<span class="kw">lm</span>(Yvarint~X1+X2+X1*X2,<span class="dt">data=</sp
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
@@ -971,7 +974,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);

@@ -6,9 +6,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Sosyal Bilimler R Platformu</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="Sosyal Bilimler R Platformu">
-  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Sosyal Bilimler R Platformu" />
   <meta property="og:type" content="book" />
@@ -23,7 +22,7 @@
   <meta name="twitter:description" content="Sosyal Bilimler R Platformu" />
   <meta name="twitter:image" content="images/coverpicture.png" />
 
-<meta name="author" content="Burak AYDIN, James ALGINA, Walter LEITE">
+<meta name="author" content="Burak AYDIN, James ALGINA, Walter LEITE, Hakan ATILGAN">
 
 
 <meta name="date" content="2017-01-01">
@@ -35,7 +34,6 @@
   
 <link rel="prev" href="iki-ortalamann-karslastrlmas-t-testi.html">
 <link rel="next" href="korelasyon.html">
-
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,7 +47,7 @@
 
 
 
-<script src="libs/htmlwidgets-0.8/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-0.9/htmlwidgets.js"></script>
 <link href="libs/rglwidgetClass-2/rgl.css" rel="stylesheet" />
 <script src="libs/rglwidgetClass-2/rglClass.src.js"></script>
 <script src="libs/CanvasMatrix4-2016/CanvasMatrix.src.js"></script>
@@ -100,6 +98,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <body>
 
 
+
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
 
     <div class="book-summary">
@@ -112,8 +111,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Kapak</a><ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#tantm"><i class="fa fa-check"></i><b>1.1</b> Tanıtım</a><ul>
-<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#neden-bookdown"><i class="fa fa-check"></i><b>1.1.1</b> Neden Bookdown?</a></li>
-<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#icerik"><i class="fa fa-check"></i><b>1.1.2</b> İçerik</a></li>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#atf"><i class="fa fa-check"></i><b>1.1.1</b> Atıf</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#neden-bookdown"><i class="fa fa-check"></i><b>1.1.2</b> Neden Bookdown?</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#icerik"><i class="fa fa-check"></i><b>1.1.3</b> İçerik</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="onyuz.html"><a href="onyuz.html"><i class="fa fa-check"></i><b>2</b> Önyüz</a><ul>
@@ -121,6 +121,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.1.1" data-path="onyuz.html"><a href="onyuz.html#burak-aydn-ph.d."><i class="fa fa-check"></i><b>2.1.1</b> Burak Aydın, Ph.D.</a></li>
 <li class="chapter" data-level="2.1.2" data-path="onyuz.html"><a href="onyuz.html#james-algina-ph.d."><i class="fa fa-check"></i><b>2.1.2</b> James Algina, Ph.D.</a></li>
 <li class="chapter" data-level="2.1.3" data-path="onyuz.html"><a href="onyuz.html#walter-l.-leite-ph.d."><i class="fa fa-check"></i><b>2.1.3</b> Walter L. Leite, Ph.D.</a></li>
+<li class="chapter" data-level="2.1.4" data-path="onyuz.html"><a href="onyuz.html#hakan-atlgan-ph.d."><i class="fa fa-check"></i><b>2.1.4</b> Hakan Atılgan, Ph.D.</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="onyuz.html"><a href="onyuz.html#tesekkur"><i class="fa fa-check"></i><b>2.2</b> Teşekkür</a></li>
 <li class="chapter" data-level="2.3" data-path="onyuz.html"><a href="onyuz.html#dataWBT"><i class="fa fa-check"></i><b>2.3</b> Data</a></li>
@@ -235,7 +236,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="10.3" data-path="korelasyon.html"><a href="korelasyon.html#r-betigi-cift-serili-ve-nokta-cift-serili-korelasyonlar"><i class="fa fa-check"></i><b>10.3</b> R betiği: Çift Serili ve Nokta-Çift Serili Korelasyonlar</a></li>
 <li class="chapter" data-level="10.4" data-path="korelasyon.html"><a href="korelasyon.html#r-betigi-phi-korelasyon-katsays"><i class="fa fa-check"></i><b>10.4</b> R betiği: Phi korelasyon katsayısı</a></li>
-<li class="chapter" data-level="10.5" data-path="korelasyon.html"><a href="korelasyon.html#korelasyon-katsays-hakknda-dikkat-edilmesi-gerekenler"><i class="fa fa-check"></i><b>10.5</b> Korelasyon katsayısı hakkında dikkat edilmesi gerekenler</a></li>
+<li class="chapter" data-level="10.5" data-path="korelasyon.html"><a href="korelasyon.html#tetrakorik-ve-polikorik-korelasyon-katsays"><i class="fa fa-check"></i><b>10.5</b> Tetrakorik ve polikorik korelasyon katsayısı</a></li>
+<li class="chapter" data-level="10.6" data-path="korelasyon.html"><a href="korelasyon.html#korelasyon-katsays-hakknda-dikkat-edilmesi-gerekenler"><i class="fa fa-check"></i><b>10.6</b> Korelasyon katsayısı hakkında dikkat edilmesi gerekenler</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html"><i class="fa fa-check"></i><b>11</b> Çoklu Doğrusal Regresyon , Kısa Tanıtım</a><ul>
 <li class="chapter" data-level="11.1" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#matrisler-ve-en-kucuk-kareler-yontemi"><i class="fa fa-check"></i><b>11.1</b> Matrisler ve En Küçük Kareler Yöntemi</a><ul>
@@ -548,21 +550,21 @@ dataWBT=<span class="kw">read.csv</span>(urlfile)
 
 <span class="co">#Kocaeli&#39;yi seç</span>
 <span class="co"># sıralı silme uygula (listwise deletion)</span>
-dataWBT_KOCAELI=<span class="kw">na.omit</span>(dataWBT[dataWBT$city==<span class="st">&quot;KOCAELI&quot;</span>,
+dataWBT_KOCAELI=<span class="kw">na.omit</span>(dataWBT[dataWBT<span class="op">$</span>city<span class="op">==</span><span class="st">&quot;KOCAELI&quot;</span>,
                                 <span class="kw">c</span>(<span class="st">&quot;id&quot;</span>,<span class="st">&quot;gen_att&quot;</span>,<span class="st">&quot;education&quot;</span>)])
 
 
 <span class="co">#diplomasız katılımcıyı ilkokul alt sınıfına al</span>
 <span class="kw">library</span>(car)
-dataWBT_KOCAELI$eduNEW &lt;-<span class="st"> </span><span class="kw">recode</span>(dataWBT_KOCAELI$education,
+dataWBT_KOCAELI<span class="op">$</span>eduNEW &lt;-<span class="st"> </span><span class="kw">recode</span>(dataWBT_KOCAELI<span class="op">$</span>education,
                                  <span class="st">&quot;&#39;None&#39;=&#39;Primary School (5 years)&#39;&quot;</span>)
 
 <span class="co">#kozmetik, faktör etiketini kısalt</span>
-dataWBT_KOCAELI$eduNEW &lt;-<span class="st"> </span><span class="kw">recode</span>(dataWBT_KOCAELI$eduNEW,
+dataWBT_KOCAELI<span class="op">$</span>eduNEW &lt;-<span class="st"> </span><span class="kw">recode</span>(dataWBT_KOCAELI<span class="op">$</span>eduNEW,
                                  <span class="st">&quot;&#39;High School (Lycee)&#39;=</span>
 <span class="st">                                 &#39;High School (Lycee) (4 years)&#39;&quot;</span>)
 
-dataWBT_KOCAELI$eduNEW &lt;-<span class="st"> </span><span class="kw">recode</span>(dataWBT_KOCAELI$eduNEW,
+dataWBT_KOCAELI<span class="op">$</span>eduNEW &lt;-<span class="st"> </span><span class="kw">recode</span>(dataWBT_KOCAELI<span class="op">$</span>eduNEW,
                                  <span class="st">&quot;&#39;Vocational School&#39;=</span>
 <span class="st">                                 &#39;Vocational High School (4 years)&#39;&quot;</span>)
 <span class="co"># faktör alt sınıflarını görmek için</span>
@@ -570,14 +572,14 @@ dataWBT_KOCAELI$eduNEW &lt;-<span class="st"> </span><span class="kw">recode</sp
 
 ##kozmetik, alt sınıfları sırala
 <span class="co">#levels(dataWBT_KOCAELI$eduNEW)</span>
-dataWBT_KOCAELI$eduNEW =<span class="st"> </span><span class="kw">factor</span>(dataWBT_KOCAELI$eduNEW,
-                         <span class="kw">levels</span>(dataWBT_KOCAELI$eduNEW)[<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">5</span>)])
+dataWBT_KOCAELI<span class="op">$</span>eduNEW =<span class="st"> </span><span class="kw">factor</span>(dataWBT_KOCAELI<span class="op">$</span>eduNEW,
+                         <span class="kw">levels</span>(dataWBT_KOCAELI<span class="op">$</span>eduNEW)[<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">5</span>)])
 
 <span class="co"># hangi katılımcı diplomasız</span>
 <span class="co">#which(dataWBT_KOCAELI$education==&quot;None&quot;)</span>
 
 <span class="co">#boş alt sınıfları kaldır</span>
-dataWBT_KOCAELI$eduNEW=<span class="kw">droplevels</span>(dataWBT_KOCAELI$eduNEW)
+dataWBT_KOCAELI<span class="op">$</span>eduNEW=<span class="kw">droplevels</span>(dataWBT_KOCAELI<span class="op">$</span>eduNEW)
 
 
 <span class="co">#betimsel </span>
@@ -604,10 +606,10 @@ desc1BW[,<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4<
 <p>Basamak 2 : Varsayım kontrolü</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
 <span class="kw">require</span>(ggplot2)
-<span class="kw">ggplot</span>(dataWBT_KOCAELI, <span class="kw">aes</span>(<span class="dt">x =</span> gen_att)) +
-<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">y =</span> ..density..),<span class="dt">col=</span><span class="st">&quot;black&quot;</span>,<span class="dt">binwidth =</span> <span class="fl">0.2</span>,<span class="dt">alpha=</span><span class="fl">0.7</span>) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">size=</span><span class="fl">1.5</span>) +
-<span class="st">  </span><span class="kw">theme_bw</span>()+<span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Kocaeli Diploma ve TCA&quot;</span>)+<span class="st"> </span><span class="kw">facet_wrap</span>(~<span class="st"> </span>eduNEW)+
+<span class="kw">ggplot</span>(dataWBT_KOCAELI, <span class="kw">aes</span>(<span class="dt">x =</span> gen_att)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">y =</span> ..density..),<span class="dt">col=</span><span class="st">&quot;black&quot;</span>,<span class="dt">binwidth =</span> <span class="fl">0.2</span>,<span class="dt">alpha=</span><span class="fl">0.7</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">size=</span><span class="fl">1.5</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme_bw</span>()<span class="op">+</span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Kocaeli Diploma ve TCA&quot;</span>)<span class="op">+</span><span class="st"> </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>eduNEW)<span class="op">+</span>
 <span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">14</span>),
         <span class="dt">axis.title=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">14</span>,<span class="dt">face=</span><span class="st">&quot;bold&quot;</span>))</code></pre></div>
 <div class="figure"><span id="fig:genattKOCAELI"></span>
@@ -619,9 +621,9 @@ Figure 9.1: Diploma ve TCA
 <p>Normallikten kopmalar büyük ölçüde değil.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
 <span class="kw">require</span>(ggplot2)
-<span class="kw">ggplot</span>(dataWBT_KOCAELI, <span class="kw">aes</span>(eduNEW,gen_att)) +
-<span class="st">  </span><span class="kw">geom_boxplot</span>() +<span class="st"> </span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Education&quot;</span>,<span class="dt">y=</span><span class="st">&quot;Kocaeli Diploma ve TCA&quot;</span>)+<span class="kw">coord_flip</span>()</code></pre></div>
+<span class="kw">ggplot</span>(dataWBT_KOCAELI, <span class="kw">aes</span>(eduNEW,gen_att)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_boxplot</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Education&quot;</span>,<span class="dt">y=</span><span class="st">&quot;Kocaeli Diploma ve TCA&quot;</span>)<span class="op">+</span><span class="kw">coord_flip</span>()</code></pre></div>
 <div class="figure"><span id="fig:genattKOCAELIbox"></span>
 <img src="SARP-TR_files/figure-html/genattKOCAELIbox-1.png" alt="Diploma ve TCA " width="672" />
 <p class="caption">
@@ -637,7 +639,7 @@ Figure 9.2: Diploma ve TCA
 
 <span class="co">#katılımcı kimliğini belirten id değişkeni faktör olmazsa uyarı verir</span>
 
-dataWBT_KOCAELI$id=<span class="kw">as.factor</span>(dataWBT_KOCAELI$id)
+dataWBT_KOCAELI<span class="op">$</span>id=<span class="kw">as.factor</span>(dataWBT_KOCAELI<span class="op">$</span>id)
 
 <span class="co"># kozmetik, virgülden sonra kaç rakam gösterilsin?</span>
 <span class="kw">options</span>(<span class="dt">digits =</span> <span class="dv">3</span>)
@@ -676,7 +678,7 @@ Dolayısıyla bu uyarı göz ardı edilebilir.</code></pre></div>
 <p><span class="citation">R Core Team (<a href="#ref-R-base">2016</a><a href="#ref-R-base">b</a>)</span> paketinde yer alan <em>lm</em> fonksiyonu ile aynı sonuçlar elde edilebilir.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
 <span class="co"># ikinci yol, lm fonksiyonu</span>
-alternative2=<span class="kw">lm</span>(gen_att~eduNEW,<span class="dt">data=</span>dataWBT_KOCAELI)
+alternative2=<span class="kw">lm</span>(gen_att<span class="op">~</span>eduNEW,<span class="dt">data=</span>dataWBT_KOCAELI)
 
 <span class="co">#Tablo 2</span>
 <span class="kw">anova</span>(alternative2)
@@ -691,7 +693,7 @@ alternative2=<span class="kw">lm</span>(gen_att~eduNEW,<span class="dt">data=</s
 <p><span class="citation">R Core Team (<a href="#ref-R-base">2016</a><a href="#ref-R-base">b</a>)</span> paketinde yer alan <em>aov</em> fonksiyonu da kullanılabilir.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
 <span class="co">#üçüncü yol, aov fonksiyonu</span>
-alternative3=<span class="kw">aov</span>(gen_att~eduNEW,<span class="dt">data=</span>dataWBT_KOCAELI)
+alternative3=<span class="kw">aov</span>(gen_att<span class="op">~</span>eduNEW,<span class="dt">data=</span>dataWBT_KOCAELI)
 <span class="kw">summary</span>(alternative3)
 ##              Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 ## eduNEW        5  10.13  2.0261   7.268 1.31e-06 ***
@@ -748,7 +750,7 @@ alternative3=<span class="kw">aov</span>(gen_att~eduNEW,<span class="dt">data=</
 
 <span class="co">#t1way</span>
 <span class="co"># 20% kırpılmış</span>
-<span class="kw">t1way</span>(gen_att~eduNEW,<span class="dt">data=</span>dataWBT_KOCAELI,<span class="dt">tr=</span>.<span class="dv">2</span>,<span class="dt">nboot=</span><span class="dv">5000</span>)
+<span class="kw">t1way</span>(gen_att<span class="op">~</span>eduNEW,<span class="dt">data=</span>dataWBT_KOCAELI,<span class="dt">tr=</span>.<span class="dv">2</span>,<span class="dt">nboot=</span><span class="dv">5000</span>)
 ## Call:
 ## t1way(formula = gen_att ~ eduNEW, data = dataWBT_KOCAELI, tr = 0.2, 
 ##     nboot = 5000)
@@ -761,7 +763,7 @@ alternative3=<span class="kw">aov</span>(gen_att~eduNEW,<span class="dt">data=</
 ## Explanatory measure of effect size: 0.29
 
 <span class="co"># 10% kırpılmış</span>
-<span class="kw">t1way</span>(gen_att~eduNEW,<span class="dt">data=</span>dataWBT_KOCAELI,<span class="dt">tr=</span>.<span class="dv">1</span>,<span class="dt">nboot=</span><span class="dv">5000</span>)
+<span class="kw">t1way</span>(gen_att<span class="op">~</span>eduNEW,<span class="dt">data=</span>dataWBT_KOCAELI,<span class="dt">tr=</span>.<span class="dv">1</span>,<span class="dt">nboot=</span><span class="dv">5000</span>)
 ## Call:
 ## t1way(formula = gen_att ~ eduNEW, data = dataWBT_KOCAELI, tr = 0.1, 
 ##     nboot = 5000)
@@ -774,7 +776,7 @@ alternative3=<span class="kw">aov</span>(gen_att~eduNEW,<span class="dt">data=</
 ## Explanatory measure of effect size: 0.3
 
 <span class="co"># 5% kırpılmış</span>
-<span class="kw">t1way</span>(gen_att~eduNEW,<span class="dt">data=</span>dataWBT_KOCAELI,<span class="dt">tr=</span>.<span class="dv">05</span>,<span class="dt">nboot=</span><span class="dv">5000</span>)
+<span class="kw">t1way</span>(gen_att<span class="op">~</span>eduNEW,<span class="dt">data=</span>dataWBT_KOCAELI,<span class="dt">tr=</span>.<span class="dv">05</span>,<span class="dt">nboot=</span><span class="dv">5000</span>)
 ## Call:
 ## t1way(formula = gen_att ~ eduNEW, data = dataWBT_KOCAELI, tr = 0.05, 
 ##     nboot = 5000)
@@ -789,7 +791,7 @@ alternative3=<span class="kw">aov</span>(gen_att~eduNEW,<span class="dt">data=</
 ## heteroscedastic ikili kıyaslamalar
 
 <span class="co">#alt sınıfların sıralanışı</span>
-<span class="kw">lincon</span>(gen_att~eduNEW,<span class="dt">data=</span>dataWBT_KOCAELI,<span class="dt">tr=</span>.<span class="dv">1</span>)[[<span class="dv">2</span>]]
+<span class="kw">lincon</span>(gen_att<span class="op">~</span>eduNEW,<span class="dt">data=</span>dataWBT_KOCAELI,<span class="dt">tr=</span>.<span class="dv">1</span>)[[<span class="dv">2</span>]]
 ## [1] &quot;Higher education of 2 years&quot;         
 ## [2] &quot;Junior High/ Middle School (8 years)&quot;
 ## [3] &quot;University - Undergraduate degree&quot;   
@@ -797,7 +799,7 @@ alternative3=<span class="kw">aov</span>(gen_att~eduNEW,<span class="dt">data=</
 ## [5] &quot;High School (Lycee) (4 years)&quot;       
 ## [6] &quot;Primary School (5 years)&quot;
 <span class="co">#ikili kıyaslamalar</span>
-<span class="kw">round</span>(<span class="kw">lincon</span>(gen_att~eduNEW,<span class="dt">data=</span>dataWBT_KOCAELI,<span class="dt">tr=</span>.<span class="dv">1</span>)[[<span class="dv">1</span>]][,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">6</span>)],<span class="dv">3</span>)
+<span class="kw">round</span>(<span class="kw">lincon</span>(gen_att<span class="op">~</span>eduNEW,<span class="dt">data=</span>dataWBT_KOCAELI,<span class="dt">tr=</span>.<span class="dv">1</span>)[[<span class="dv">1</span>]][,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">6</span>)],<span class="dv">3</span>)
 ##       Group Group p.value
 ##  [1,]     1     2   0.701
 ##  [2,]     1     3   0.000
@@ -923,10 +925,10 @@ dataWBT=<span class="kw">read.csv</span>(urlfile)
 
 <span class="co">#Kayseri ilini seç</span>
 <span class="co"># sıralı silme uygula</span>
-dataWBT_Kayseri=<span class="kw">na.omit</span>(dataWBT[dataWBT$city==<span class="st">&quot;KAYSERI&quot;</span>,<span class="kw">c</span>(<span class="st">&quot;id&quot;</span>,<span class="st">&quot;gen_att&quot;</span>,<span class="st">&quot;higher_ed&quot;</span>,<span class="st">&quot;gender&quot;</span>)])
+dataWBT_Kayseri=<span class="kw">na.omit</span>(dataWBT[dataWBT<span class="op">$</span>city<span class="op">==</span><span class="st">&quot;KAYSERI&quot;</span>,<span class="kw">c</span>(<span class="st">&quot;id&quot;</span>,<span class="st">&quot;gen_att&quot;</span>,<span class="st">&quot;higher_ed&quot;</span>,<span class="st">&quot;gender&quot;</span>)])
 
 <span class="co"># Yüksek öğretim etiketlerini değiştir</span>
-dataWBT_Kayseri$HEF=<span class="kw">droplevels</span>(<span class="kw">factor</span>(dataWBT_Kayseri$higher_ed, 
+dataWBT_Kayseri<span class="op">$</span>HEF=<span class="kw">droplevels</span>(<span class="kw">factor</span>(dataWBT_Kayseri<span class="op">$</span>higher_ed, 
                     <span class="dt">levels =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), 
                     <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;non-college&quot;</span>, <span class="st">&quot;college&quot;</span>)))
 
@@ -934,7 +936,7 @@ dataWBT_Kayseri$HEF=<span class="kw">droplevels</span>(<span class="kw">factor</
 <span class="co">#table(dataWBT_Kayseri$HEF)</span>
 
 <span class="co">#boş alt sınıfları düşür</span>
-dataWBT_Kayseri$gender=<span class="kw">droplevels</span>(dataWBT_Kayseri$gender)
+dataWBT_Kayseri<span class="op">$</span>gender=<span class="kw">droplevels</span>(dataWBT_Kayseri<span class="op">$</span>gender)
 
 <span class="kw">with</span>(dataWBT_Kayseri,
      <span class="kw">table</span>(gender,HEF))
@@ -950,11 +952,11 @@ dataWBT_Kayseri$gender=<span class="kw">droplevels</span>(dataWBT_Kayseri$gender
 <span class="co">#betimsel analizler </span>
 <span class="kw">library</span>(doBy)
 <span class="kw">library</span>(moments)
-desc2BW=<span class="kw">as.matrix</span>(<span class="kw">summaryBy</span>(gen_att~HEF+gender, <span class="dt">data =</span> dataWBT_Kayseri, 
-          <span class="dt">FUN =</span> function(x) { <span class="kw">c</span>(<span class="dt">n =</span> <span class="kw">sum</span>(!<span class="kw">is.na</span>(x)),
+desc2BW=<span class="kw">as.matrix</span>(<span class="kw">summaryBy</span>(gen_att<span class="op">~</span>HEF<span class="op">+</span>gender, <span class="dt">data =</span> dataWBT_Kayseri, 
+          <span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">n =</span> <span class="kw">sum</span>(<span class="op">!</span><span class="kw">is.na</span>(x)),
                                 <span class="dt">mean =</span> <span class="kw">mean</span>(x,<span class="dt">na.rm=</span>T), <span class="dt">sdv =</span> <span class="kw">sd</span>(x,<span class="dt">na.rm=</span>T),
-                               <span class="dt">skw=</span>moments::<span class="kw">skewness</span>(x,<span class="dt">na.rm=</span>T),                    
-                               <span class="dt">krt=</span>moments::<span class="kw">kurtosis</span>(x,<span class="dt">na.rm=</span>T)) } ))
+                               <span class="dt">skw=</span>moments<span class="op">::</span><span class="kw">skewness</span>(x,<span class="dt">na.rm=</span>T),                    
+                               <span class="dt">krt=</span>moments<span class="op">::</span><span class="kw">kurtosis</span>(x,<span class="dt">na.rm=</span>T)) } ))
 <span class="co"># Tablo 4</span>
 desc2BW
 ##   HEF           gender   gen_att.n gen_att.mean gen_att.sdv gen_att.skw
@@ -971,10 +973,10 @@ desc2BW
 <p>Basamak 2: Varsayım kontrolü</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
 <span class="kw">require</span>(ggplot2)
-<span class="kw">ggplot</span>(dataWBT_Kayseri, <span class="kw">aes</span>(<span class="dt">x =</span> gen_att)) +
-<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">y =</span> ..density..),<span class="dt">col=</span><span class="st">&quot;black&quot;</span>,<span class="dt">binwidth =</span> <span class="fl">0.2</span>,<span class="dt">alpha=</span><span class="fl">0.7</span>) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">size=</span><span class="fl">1.5</span>) +
-<span class="st">  </span><span class="kw">theme_bw</span>()+<span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Kayseri Diploma ve TCA&quot;</span>)+<span class="st"> </span><span class="kw">facet_wrap</span>(~<span class="st"> </span>HEF+gender)+
+<span class="kw">ggplot</span>(dataWBT_Kayseri, <span class="kw">aes</span>(<span class="dt">x =</span> gen_att)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">y =</span> ..density..),<span class="dt">col=</span><span class="st">&quot;black&quot;</span>,<span class="dt">binwidth =</span> <span class="fl">0.2</span>,<span class="dt">alpha=</span><span class="fl">0.7</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_density</span>(<span class="dt">size=</span><span class="fl">1.5</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme_bw</span>()<span class="op">+</span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Kayseri Diploma ve TCA&quot;</span>)<span class="op">+</span><span class="st"> </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>HEF<span class="op">+</span>gender)<span class="op">+</span>
 <span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.text=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">14</span>),
         <span class="dt">axis.title=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">14</span>,<span class="dt">face=</span><span class="st">&quot;bold&quot;</span>))</code></pre></div>
 <div class="figure"><span id="fig:genattKayseri"></span>
@@ -986,9 +988,9 @@ Figure 9.3: Kayseri Diploma ve TCA
 <p>Normallikten kopmalar büyük ölçüde değil.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
 <span class="kw">require</span>(ggplot2)
-<span class="kw">ggplot</span>(dataWBT_Kayseri, <span class="kw">aes</span>(<span class="dt">x=</span>gender, <span class="dt">y=</span>gen_att))+
-<span class="st">  </span><span class="kw">geom_boxplot</span>()+
-<span class="st">  </span><span class="kw">facet_grid</span>(.~HEF)+
+<span class="kw">ggplot</span>(dataWBT_Kayseri, <span class="kw">aes</span>(<span class="dt">x=</span>gender, <span class="dt">y=</span>gen_att))<span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_boxplot</span>()<span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_grid</span>(.<span class="op">~</span>HEF)<span class="op">+</span>
 <span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Gender&quot;</span>,<span class="dt">y=</span><span class="st">&quot;Kayseri Diploma ve TCA&quot;</span>)</code></pre></div>
 <div class="figure"><span id="fig:genattKayseribox"></span>
 <img src="SARP-TR_files/figure-html/genattKayseribox-1.png" alt="Kayseri Diploma ve TCA" width="672" />
@@ -1003,7 +1005,7 @@ Figure 9.4: Kayseri Diploma ve TCA
 <span class="kw">library</span>(ez)
 <span class="co">#katılımcı kimliğini belirten id değişkeni faktör olmazsa uyarı verir</span>
 
-dataWBT_Kayseri$id=<span class="kw">as.factor</span>(dataWBT_Kayseri$id)
+dataWBT_Kayseri<span class="op">$</span>id=<span class="kw">as.factor</span>(dataWBT_Kayseri<span class="op">$</span>id)
 
 <span class="co">#birinci yol ezANOVA</span>
 alternative1 =<span class="st"> </span><span class="kw">ezANOVA</span>(
@@ -1042,7 +1044,7 @@ alternative1
 
 <span class="co">#t2way</span>
 <span class="co"># 20% kırpılmış</span>
-<span class="kw">t2way</span>(gen_att~HEF*gender,<span class="dt">data=</span>dataWBT_Kayseri,<span class="dt">tr=</span>.<span class="dv">2</span>)
+<span class="kw">t2way</span>(gen_att<span class="op">~</span>HEF<span class="op">*</span>gender,<span class="dt">data=</span>dataWBT_Kayseri,<span class="dt">tr=</span>.<span class="dv">2</span>)
 ## Call:
 ## t2way(formula = gen_att ~ HEF * gender, data = dataWBT_Kayseri, 
 ##     tr = 0.2)
@@ -1053,7 +1055,7 @@ alternative1
 ## HEF:gender  0.0855   0.772
 
 <span class="co"># 10% kırpılmış</span>
-<span class="kw">t2way</span>(gen_att~HEF*gender,<span class="dt">data=</span>dataWBT_Kayseri,<span class="dt">tr=</span>.<span class="dv">1</span>)
+<span class="kw">t2way</span>(gen_att<span class="op">~</span>HEF<span class="op">*</span>gender,<span class="dt">data=</span>dataWBT_Kayseri,<span class="dt">tr=</span>.<span class="dv">1</span>)
 ## Call:
 ## t2way(formula = gen_att ~ HEF * gender, data = dataWBT_Kayseri, 
 ##     tr = 0.1)
@@ -1064,7 +1066,7 @@ alternative1
 ## HEF:gender  0.0361   0.850
 
 <span class="co"># 5% kırpılmış</span>
-<span class="kw">t2way</span>(gen_att~HEF*gender,<span class="dt">data=</span>dataWBT_Kayseri,<span class="dt">tr=</span>.<span class="dv">05</span>)
+<span class="kw">t2way</span>(gen_att<span class="op">~</span>HEF<span class="op">*</span>gender,<span class="dt">data=</span>dataWBT_Kayseri,<span class="dt">tr=</span>.<span class="dv">05</span>)
 ## Call:
 ## t2way(formula = gen_att ~ HEF * gender, data = dataWBT_Kayseri, 
 ##     tr = 0.05)
@@ -1227,12 +1229,12 @@ alternative1
 ## [1] 3.2 4.0 4.4 4.8 5.4 6.0 6.2 7.6
 
 <span class="co">#alt sınıfların ortalaması</span>
-<span class="kw">apply</span>(owadata[,-<span class="dv">1</span>],<span class="dv">2</span>, mean)
+<span class="kw">apply</span>(owadata[,<span class="op">-</span><span class="dv">1</span>],<span class="dv">2</span>, mean)
 ## Alkolyok    ikioz   dortoz   altioz 
 ##      2.8      3.5      6.2      9.0
 
 <span class="co">#alt sınıfların standart sapması</span>
-<span class="kw">apply</span>(owadata[,-<span class="dv">1</span>],<span class="dv">2</span>,sd)
+<span class="kw">apply</span>(owadata[,<span class="op">-</span><span class="dv">1</span>],<span class="dv">2</span>,sd)
 ## Alkolyok    ikioz   dortoz   altioz 
 ##     1.49     0.93     1.04     1.31</code></pre></div>
 <p>Her katılımcının reaksiyon zamanları 4 farklı doz sonrasında da ölçüldüğünden, alkol oranı bağlı gözlem faktörüdür. Her doz alt sınıf çifti için korelasyon hesaplanabilir. Tablo 9.2 ile verilen bu korelasyonlar oldukça yüksektir. Her alt sınıf çifti için kovaryans da hesaplanabilir;</p>
@@ -1361,7 +1363,7 @@ alternative1
 <p>Basamak 1 Veriyi hazırla</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
 <span class="co"># datayı gir</span>
-PSdata=<span class="kw">data.frame</span>(<span class="dt">id=</span><span class="kw">factor</span>(<span class="dv">1</span>:<span class="dv">17</span>),
+PSdata=<span class="kw">data.frame</span>(<span class="dt">id=</span><span class="kw">factor</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">17</span>),
                     <span class="dt">wave1=</span><span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">19</span>,<span class="dv">13</span>,<span class="dv">10</span>,<span class="dv">16</span>,<span class="dv">12</span>,<span class="dv">16</span>,<span class="dv">11</span>,<span class="dv">11</span>,<span class="dv">14</span>,<span class="dv">13</span>,<span class="dv">17</span>,<span class="dv">16</span>,<span class="dv">12</span>,<span class="dv">12</span>,<span class="dv">16</span>,<span class="dv">16</span>),
                     <span class="dt">wave2=</span><span class="kw">c</span>(<span class="dv">28</span>,<span class="dv">27</span>,<span class="dv">18</span>,<span class="dv">17</span>,<span class="dv">29</span>,<span class="dv">18</span>,<span class="dv">26</span>,<span class="dv">21</span>,<span class="dv">15</span>,<span class="dv">26</span>,<span class="dv">28</span>,<span class="dv">23</span>,<span class="dv">29</span>,<span class="dv">18</span>,<span class="dv">26</span>,<span class="dv">21</span>,<span class="dv">22</span>),
                     <span class="dt">wave3=</span><span class="kw">c</span>(<span class="dv">21</span>,<span class="dv">24</span>,<span class="dv">14</span>,<span class="dv">8</span>,<span class="dv">23</span>,<span class="dv">15</span>,<span class="dv">21</span>,<span class="dv">15</span>,<span class="dv">12</span>,<span class="dv">21</span>,<span class="dv">23</span>,<span class="dv">17</span>,<span class="dv">26</span>,<span class="dv">18</span>,<span class="dv">14</span>,<span class="dv">18</span>,<span class="dv">19</span>))</code></pre></div>
@@ -1372,16 +1374,16 @@ PSdata=<span class="kw">data.frame</span>(<span class="dt">id=</span><span class
 <span class="co">#veriyi uzun formata çevir</span>
 <span class="co">#head(PSdata)</span>
 <span class="kw">library</span>(tidyr)
-data_long =<span class="st"> </span><span class="kw">gather</span>(PSdata, wave, PrbSol, wave1:wave3, <span class="dt">factor_key=</span><span class="ot">TRUE</span>)
+data_long =<span class="st"> </span><span class="kw">gather</span>(PSdata, wave, PrbSol, wave1<span class="op">:</span>wave3, <span class="dt">factor_key=</span><span class="ot">TRUE</span>)
 
 <span class="co">#betimsel analizler</span>
 <span class="kw">library</span>(doBy)
 <span class="kw">library</span>(moments)
-desc1W=<span class="kw">as.matrix</span>(<span class="kw">summaryBy</span>(PrbSol~wave, <span class="dt">data =</span> data_long, 
-          <span class="dt">FUN =</span> function(x) { <span class="kw">c</span>(<span class="dt">n =</span> <span class="kw">sum</span>(!<span class="kw">is.na</span>(x)),
+desc1W=<span class="kw">as.matrix</span>(<span class="kw">summaryBy</span>(PrbSol<span class="op">~</span>wave, <span class="dt">data =</span> data_long, 
+          <span class="dt">FUN =</span> <span class="cf">function</span>(x) { <span class="kw">c</span>(<span class="dt">n =</span> <span class="kw">sum</span>(<span class="op">!</span><span class="kw">is.na</span>(x)),
                                 <span class="dt">mean =</span> <span class="kw">mean</span>(x,<span class="dt">na.rm=</span>T), <span class="dt">sdv =</span> <span class="kw">sd</span>(x,<span class="dt">na.rm=</span>T),
-                                <span class="dt">skw=</span>moments::<span class="kw">skewness</span>(x,<span class="dt">na.rm=</span>T),                    
-                                <span class="dt">krt=</span>moments::<span class="kw">kurtosis</span>(x,<span class="dt">na.rm=</span>T)) } ))
+                                <span class="dt">skw=</span>moments<span class="op">::</span><span class="kw">skewness</span>(x,<span class="dt">na.rm=</span>T),                    
+                                <span class="dt">krt=</span>moments<span class="op">::</span><span class="kw">kurtosis</span>(x,<span class="dt">na.rm=</span>T)) } ))
 <span class="co"># Tablo 6</span>
 desc1W
 ##   wave    PrbSol.n PrbSol.mean PrbSol.sdv PrbSol.skw PrbSol.krt
@@ -1392,15 +1394,15 @@ desc1W
 <span class="co">#write.csv2(desc1W,file=&quot;onewayW_ANOVA_desc.csv&quot;)</span></code></pre></div>
 <p>Kovaryans matrisi</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#  Tablo 7</span>
-<span class="kw">cov</span>(PSdata[,-<span class="dv">1</span>])
+<span class="kw">cov</span>(PSdata[,<span class="op">-</span><span class="dv">1</span>])
 ##       wave1 wave2 wave3
 ## wave1  8.49  8.85  9.87
 ## wave2  8.85 21.81 18.49
 ## wave3  9.87 18.49 22.78</code></pre></div>
 <p>Basamak 2 Varsayım kontrolü</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
-<span class="kw">ggplot</span>(data_long, <span class="kw">aes</span>(<span class="dt">x=</span>wave, <span class="dt">y=</span>PrbSol))+
-<span class="st">  </span><span class="kw">geom_boxplot</span>()+
+<span class="kw">ggplot</span>(data_long, <span class="kw">aes</span>(<span class="dt">x=</span>wave, <span class="dt">y=</span>PrbSol))<span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_boxplot</span>()<span class="op">+</span>
 <span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Wave&quot;</span>,<span class="dt">y=</span><span class="st">&quot;Problem çözme bilgisi&quot;</span>)</code></pre></div>
 <div class="figure"><span id="fig:inhibitbox"></span>
 <img src="SARP-TR_files/figure-html/inhibitbox-1.png" alt="Problem çözme bilgisi" width="672" />
@@ -1411,8 +1413,8 @@ Figure 9.5: Problem çözme bilgisi
 <p>Küresellik varsayımını test etmek için <em>ezANOVA</em> tarafından verilen Mauchy testi kullanılmıştır.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
 <span class="kw">require</span>(ggplot2)
-<span class="kw">ggplot</span>(data_long, <span class="kw">aes</span>(<span class="dt">x=</span>wave, <span class="dt">y=</span>PrbSol, <span class="dt">group=</span>id))+
-<span class="kw">geom_line</span>() +<span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Wave&quot;</span>,<span class="dt">y=</span><span class="st">&quot;Problem çözme bilgisi&quot;</span>)</code></pre></div>
+<span class="kw">ggplot</span>(data_long, <span class="kw">aes</span>(<span class="dt">x=</span>wave, <span class="dt">y=</span>PrbSol, <span class="dt">group=</span>id))<span class="op">+</span>
+<span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Wave&quot;</span>,<span class="dt">y=</span><span class="st">&quot;Problem çözme bilgisi&quot;</span>)</code></pre></div>
 <div class="figure"><span id="fig:inhibitline"></span>
 <img src="SARP-TR_files/figure-html/inhibitline-1.png" alt="Problem çözme bilgisi çizgi grafigi" width="672" />
 <p class="caption">
@@ -1478,7 +1480,7 @@ alternative1
 ## 
 ## Residual standard error: 2.3
 ## Estimated effects may be unbalanced</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">PrbSolres=<span class="kw">sort</span>(alternative1$aov$id$residuals)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">PrbSolres=<span class="kw">sort</span>(alternative1<span class="op">$</span>aov<span class="op">$</span>id<span class="op">$</span>residuals)
 <span class="kw">qqnorm</span>(PrbSolres);<span class="kw">qqline</span>(PrbSolres)</code></pre></div>
 <div class="figure"><span id="fig:inhibitresiduals"></span>
 <img src="SARP-TR_files/figure-html/inhibitresiduals-1.png" alt="Problem çözme bilgisi hata terimleri" width="672" />
@@ -1489,7 +1491,7 @@ Figure 9.7: Problem çözme bilgisi hata terimleri
 <p>Hataların dağılımı normal sayılabilir.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
 <span class="co"># ikinci yol aov fonksiyonu</span>
-<span class="kw">summary</span>(<span class="kw">aov</span>(PrbSol ~<span class="st"> </span>wave +<span class="st"> </span><span class="kw">Error</span>(id/wave), <span class="dt">data=</span>data_long))
+<span class="kw">summary</span>(<span class="kw">aov</span>(PrbSol <span class="op">~</span><span class="st"> </span>wave <span class="op">+</span><span class="st"> </span><span class="kw">Error</span>(id<span class="op">/</span>wave), <span class="dt">data=</span>data_long))
 ## 
 ## Error: id
 ##           Df Sum Sq Mean Sq F value Pr(&gt;F)
@@ -1586,8 +1588,9 @@ Figure 9.7: Problem çözme bilgisi hata terimleri
         </div>
       </div>
 <a href="iki-ortalamann-karslastrlmas-t-testi.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="korelasyon.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
-
+<a href="korelasyon.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -1596,7 +1599,7 @@ Figure 9.7: Problem çözme bilgisi hata terimleri
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
@@ -1630,7 +1633,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);

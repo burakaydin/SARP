@@ -6,9 +6,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Sosyal Bilimler R Platformu</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="Sosyal Bilimler R Platformu">
-  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Sosyal Bilimler R Platformu" />
   <meta property="og:type" content="book" />
@@ -23,7 +22,7 @@
   <meta name="twitter:description" content="Sosyal Bilimler R Platformu" />
   <meta name="twitter:image" content="images/coverpicture.png" />
 
-<meta name="author" content="Burak AYDIN, James ALGINA, Walter LEITE">
+<meta name="author" content="Burak AYDIN, James ALGINA, Walter LEITE, Hakan ATILGAN">
 
 
 <meta name="date" content="2017-01-01">
@@ -35,7 +34,6 @@
   
 <link rel="prev" href="coklu-dogrusal-regresyon-ksa-tantm.html">
 <link rel="next" href="proje-basvurusu-secilen-ksmlar.html">
-
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,7 +47,7 @@
 
 
 
-<script src="libs/htmlwidgets-0.8/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-0.9/htmlwidgets.js"></script>
 <link href="libs/rglwidgetClass-2/rgl.css" rel="stylesheet" />
 <script src="libs/rglwidgetClass-2/rglClass.src.js"></script>
 <script src="libs/CanvasMatrix4-2016/CanvasMatrix.src.js"></script>
@@ -100,6 +98,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <body>
 
 
+
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
 
     <div class="book-summary">
@@ -112,8 +111,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Kapak</a><ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#tantm"><i class="fa fa-check"></i><b>1.1</b> Tanıtım</a><ul>
-<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#neden-bookdown"><i class="fa fa-check"></i><b>1.1.1</b> Neden Bookdown?</a></li>
-<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#icerik"><i class="fa fa-check"></i><b>1.1.2</b> İçerik</a></li>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#atf"><i class="fa fa-check"></i><b>1.1.1</b> Atıf</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#neden-bookdown"><i class="fa fa-check"></i><b>1.1.2</b> Neden Bookdown?</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#icerik"><i class="fa fa-check"></i><b>1.1.3</b> İçerik</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="onyuz.html"><a href="onyuz.html"><i class="fa fa-check"></i><b>2</b> Önyüz</a><ul>
@@ -121,6 +121,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.1.1" data-path="onyuz.html"><a href="onyuz.html#burak-aydn-ph.d."><i class="fa fa-check"></i><b>2.1.1</b> Burak Aydın, Ph.D.</a></li>
 <li class="chapter" data-level="2.1.2" data-path="onyuz.html"><a href="onyuz.html#james-algina-ph.d."><i class="fa fa-check"></i><b>2.1.2</b> James Algina, Ph.D.</a></li>
 <li class="chapter" data-level="2.1.3" data-path="onyuz.html"><a href="onyuz.html#walter-l.-leite-ph.d."><i class="fa fa-check"></i><b>2.1.3</b> Walter L. Leite, Ph.D.</a></li>
+<li class="chapter" data-level="2.1.4" data-path="onyuz.html"><a href="onyuz.html#hakan-atlgan-ph.d."><i class="fa fa-check"></i><b>2.1.4</b> Hakan Atılgan, Ph.D.</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="onyuz.html"><a href="onyuz.html#tesekkur"><i class="fa fa-check"></i><b>2.2</b> Teşekkür</a></li>
 <li class="chapter" data-level="2.3" data-path="onyuz.html"><a href="onyuz.html#dataWBT"><i class="fa fa-check"></i><b>2.3</b> Data</a></li>
@@ -235,7 +236,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="10.3" data-path="korelasyon.html"><a href="korelasyon.html#r-betigi-cift-serili-ve-nokta-cift-serili-korelasyonlar"><i class="fa fa-check"></i><b>10.3</b> R betiği: Çift Serili ve Nokta-Çift Serili Korelasyonlar</a></li>
 <li class="chapter" data-level="10.4" data-path="korelasyon.html"><a href="korelasyon.html#r-betigi-phi-korelasyon-katsays"><i class="fa fa-check"></i><b>10.4</b> R betiği: Phi korelasyon katsayısı</a></li>
-<li class="chapter" data-level="10.5" data-path="korelasyon.html"><a href="korelasyon.html#korelasyon-katsays-hakknda-dikkat-edilmesi-gerekenler"><i class="fa fa-check"></i><b>10.5</b> Korelasyon katsayısı hakkında dikkat edilmesi gerekenler</a></li>
+<li class="chapter" data-level="10.5" data-path="korelasyon.html"><a href="korelasyon.html#tetrakorik-ve-polikorik-korelasyon-katsays"><i class="fa fa-check"></i><b>10.5</b> Tetrakorik ve polikorik korelasyon katsayısı</a></li>
+<li class="chapter" data-level="10.6" data-path="korelasyon.html"><a href="korelasyon.html#korelasyon-katsays-hakknda-dikkat-edilmesi-gerekenler"><i class="fa fa-check"></i><b>10.6</b> Korelasyon katsayısı hakkında dikkat edilmesi gerekenler</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html"><i class="fa fa-check"></i><b>11</b> Çoklu Doğrusal Regresyon , Kısa Tanıtım</a><ul>
 <li class="chapter" data-level="11.1" data-path="coklu-dogrusal-regresyon-ksa-tantm.html"><a href="coklu-dogrusal-regresyon-ksa-tantm.html#matrisler-ve-en-kucuk-kareler-yontemi"><i class="fa fa-check"></i><b>11.1</b> Matrisler ve En Küçük Kareler Yöntemi</a><ul>
@@ -295,20 +297,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number"> 12</span> Kullanışlı R betikleri</h1>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># sayısal veriyi faktöre çevir</span>
 
-temdata[,<span class="dv">2</span>:<span class="dv">9</span>] &lt;-<span class="st"> </span><span class="kw">lapply</span>(temdata[,<span class="dv">2</span>:<span class="dv">9</span>], as.factor) 
+temdata[,<span class="dv">2</span><span class="op">:</span><span class="dv">9</span>] &lt;-<span class="st"> </span><span class="kw">lapply</span>(temdata[,<span class="dv">2</span><span class="op">:</span><span class="dv">9</span>], as.factor) 
 
 <span class="co"># Faktörü sayısal veriye çevir</span>
-as.numeric.factor &lt;-<span class="st"> </span>function(x) {<span class="kw">as.numeric</span>(<span class="kw">levels</span>(x))[x]}
-temdata[,<span class="dv">2</span>:<span class="dv">5</span>] &lt;-<span class="st"> </span><span class="kw">lapply</span>(temdata[,<span class="dv">2</span>:<span class="dv">5</span>], as.numeric.factor) 
+as.numeric.factor &lt;-<span class="st"> </span><span class="cf">function</span>(x) {<span class="kw">as.numeric</span>(<span class="kw">levels</span>(x))[x]}
+temdata[,<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>] &lt;-<span class="st"> </span><span class="kw">lapply</span>(temdata[,<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>], as.numeric.factor) 
 
 <span class="co"># Birden fazla sütun için frekans tablosu</span>
 
-dems=<span class="kw">apply</span>(temdata[,<span class="dv">5</span>:<span class="dv">11</span>], <span class="dv">2</span>, function(x){<span class="kw">table</span>(x,temdata$grp)})
+dems=<span class="kw">apply</span>(temdata[,<span class="dv">5</span><span class="op">:</span><span class="dv">11</span>], <span class="dv">2</span>, <span class="cf">function</span>(x){<span class="kw">table</span>(x,temdata<span class="op">$</span>grp)})
 <span class="kw">library</span> (plyr)
 mydems &lt;-<span class="st"> </span><span class="kw">ldply</span> (mydems, data.frame)
 
 <span class="co"># Faktpre göre özetle</span>
-uncagg=<span class="kw">aggregate</span>(. ~<span class="st"> </span>grp, <span class="dt">data =</span> temdata, <span class="dt">FUN=</span>mean, <span class="dt">na.rm=</span><span class="ot">TRUE</span>)
+uncagg=<span class="kw">aggregate</span>(. <span class="op">~</span><span class="st"> </span>grp, <span class="dt">data =</span> temdata, <span class="dt">FUN=</span>mean, <span class="dt">na.rm=</span><span class="ot">TRUE</span>)
 
 uncaggfaster=temdata[, <span class="kw">lapply</span>(.SD, mean,<span class="dt">na.rm=</span>T), by =<span class="st"> </span>grp]
 
@@ -317,15 +319,15 @@ uncaggfaster=temdata[, <span class="kw">lapply</span>(.SD, mean,<span class="dt"
 
 
 <span class="co"># R güncellemesi</span>
-if(!<span class="kw">require</span>(installr)) { 
+<span class="cf">if</span>(<span class="op">!</span><span class="kw">require</span>(installr)) { 
   <span class="kw">install.packages</span>(<span class="st">&quot;installr&quot;</span>); <span class="kw">require</span>(installr)} <span class="co">#load / install+load installr</span>
 <span class="kw">updateR</span>()
 
 
 <span class="co"># Kukla değişken oluştur</span>
 <span class="kw">head</span>(temdata)
-for(level in <span class="kw">unique</span>(temdata$zp)){
-  temdata[<span class="kw">paste</span>(<span class="st">&quot;dummy&quot;</span>, level, <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)] &lt;-<span class="st"> </span><span class="kw">ifelse</span>(temdata$zp ==<span class="st"> </span>level, <span class="dv">1</span>, <span class="dv">0</span>)
+<span class="cf">for</span>(level <span class="cf">in</span> <span class="kw">unique</span>(temdata<span class="op">$</span>zp)){
+  temdata[<span class="kw">paste</span>(<span class="st">&quot;dummy&quot;</span>, level, <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)] &lt;-<span class="st"> </span><span class="kw">ifelse</span>(temdata<span class="op">$</span>zp <span class="op">==</span><span class="st"> </span>level, <span class="dv">1</span>, <span class="dv">0</span>)
 }
 
 
@@ -345,10 +347,10 @@ y=<span class="kw">rnorm</span>(<span class="dv">10</span>)
 
 
 <span class="co"># tam sayı bölümü</span>
-<span class="dv">7</span>%/%<span class="dv">2</span>
+<span class="dv">7</span><span class="op">%/%</span><span class="dv">2</span>
 
 <span class="co"># kalan</span>
-<span class="dv">5</span>%%<span class="dv">2</span> 
+<span class="dv">5</span><span class="op">%%</span><span class="dv">2</span> 
 
 <span class="co"># tanımla ve koş</span>
 (<span class="dt">count=</span><span class="kw">c</span>(<span class="dv">25</span>,<span class="dv">12</span>,<span class="dv">7</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>))
@@ -363,8 +365,8 @@ temdata=<span class="kw">do.call</span>(<span class="st">&quot;rbind&quot;</span
 
 
 <span class="co">#birden çok grafik</span>
-<span class="kw">layout</span>(<span class="kw">matrix</span>(<span class="dv">1</span>:<span class="dv">9</span>, <span class="dt">nc =</span> <span class="dv">3</span>))
-<span class="kw">sapply</span>(<span class="kw">names</span>(temdata)[<span class="dv">1</span>:<span class="dv">9</span>], function(x) {
+<span class="kw">layout</span>(<span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">9</span>, <span class="dt">nc =</span> <span class="dv">3</span>))
+<span class="kw">sapply</span>(<span class="kw">names</span>(temdata)[<span class="dv">1</span><span class="op">:</span><span class="dv">9</span>], <span class="cf">function</span>(x) {
   <span class="kw">qqnorm</span>(temdata[[x]], <span class="dt">main =</span> x)
   <span class="kw">qqline</span>(temdata[[x]])
 })
@@ -377,10 +379,10 @@ temdata=<span class="kw">do.call</span>(<span class="st">&quot;rbind&quot;</span
 
 
 <span class="co">#Çift loop</span>
-x=<span class="kw">matrix</span>(<span class="dv">1</span>:<span class="dv">15</span>,<span class="dv">3</span>,<span class="dv">5</span>)
-for(i in <span class="kw">seq_len</span>(<span class="kw">nrow</span>(x)))
+x=<span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>,<span class="dv">3</span>,<span class="dv">5</span>)
+<span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq_len</span>(<span class="kw">nrow</span>(x)))
 {
-  for(j in <span class="kw">seq_len</span>(<span class="kw">ncol</span>(x)))
+  <span class="cf">for</span>(j <span class="cf">in</span> <span class="kw">seq_len</span>(<span class="kw">ncol</span>(x)))
   {
     <span class="kw">print</span>(x[i,j])
       
@@ -391,14 +393,14 @@ for(i in <span class="kw">seq_len</span>(<span class="kw">nrow</span>(x)))
 
 <span class="co">#While loop</span>
 count=<span class="dv">0</span>
-while(count&lt;<span class="dv">10</span>){
+<span class="cf">while</span>(count<span class="op">&lt;</span><span class="dv">10</span>){
   <span class="kw">print</span>(count)
-  count=count<span class="dv">+1</span>
+  count=count<span class="op">+</span><span class="dv">1</span>
 }
 
 
 <span class="co">#kayıp veri</span>
-convert -999s to NAs 
+convert <span class="op">-</span>999s to NAs 
 
 <span class="kw">read.csv</span>(<span class="st">&quot;x.csv&quot;</span>, <span class="dt">na.strings=</span><span class="st">&quot;-999&quot;</span>)
 temdata[<span class="kw">is.na</span>(temdata)] &lt;-<span class="st"> </span><span class="dv">0</span>
@@ -406,8 +408,8 @@ temdata[<span class="kw">is.na</span>(temdata)] &lt;-<span class="st"> </span><s
 
 <span class="co"># NA lar -99</span>
 
-vector[<span class="kw">which</span>(vector==<span class="st"> </span><span class="ot">NA</span>)]=<span class="st"> </span>(-<span class="dv">99</span>)
-temdata[<span class="kw">is.na</span>(temdata)]=<span class="st"> </span>(-<span class="dv">99</span>)
+vector[<span class="kw">which</span>(vector<span class="op">==</span><span class="st"> </span><span class="ot">NA</span>)]=<span class="st"> </span>(<span class="op">-</span><span class="dv">99</span>)
+temdata[<span class="kw">is.na</span>(temdata)]=<span class="st"> </span>(<span class="op">-</span><span class="dv">99</span>)
 
 <span class="co"># &lt;NA&gt; porblemi (but not NA)</span>
 temdata=<span class="kw">read.csv</span>(<span class="st">&quot;temdata.csv&quot;</span>,<span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>)
@@ -415,14 +417,14 @@ temdata=<span class="kw">read.csv</span>(<span class="st">&quot;temdata.csv&quot
 
 <span class="co"># grup ortalaması ekle</span>
 
-temdata2=<span class="kw">merge</span>(temdata, <span class="kw">aggregate</span>(X ~<span class="st"> </span>grp, <span class="dt">data =</span> temdata, <span class="dt">FUN=</span>mean, <span class="dt">na.rm=</span><span class="ot">TRUE</span>), 
+temdata2=<span class="kw">merge</span>(temdata, <span class="kw">aggregate</span>(X <span class="op">~</span><span class="st"> </span>grp, <span class="dt">data =</span> temdata, <span class="dt">FUN=</span>mean, <span class="dt">na.rm=</span><span class="ot">TRUE</span>), 
           <span class="dt">by =</span> <span class="st">&quot;grp&quot;</span>, <span class="dt">suffixes =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;.mean&quot;</span>),<span class="dt">all=</span>T)
 
 
-temdata2=<span class="kw">merge</span>(temdata, <span class="kw">aggregate</span>(<span class="kw">cbind</span>(X1 ,X2 ,X3 , X4) ~<span class="st"> </span>grp, <span class="dt">data =</span> temdata, <span class="dt">FUN=</span>mean,                      <span class="dt">na.rm=</span><span class="ot">TRUE</span>), <span class="dt">by =</span> <span class="st">&quot;grp&quot;</span>, <span class="dt">suffixes =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;.mean&quot;</span>),<span class="dt">all=</span>T)
+temdata2=<span class="kw">merge</span>(temdata, <span class="kw">aggregate</span>(<span class="kw">cbind</span>(X1 ,X2 ,X3 , X4) <span class="op">~</span><span class="st"> </span>grp, <span class="dt">data =</span> temdata, <span class="dt">FUN=</span>mean,                      <span class="dt">na.rm=</span><span class="ot">TRUE</span>), <span class="dt">by =</span> <span class="st">&quot;grp&quot;</span>, <span class="dt">suffixes =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;.mean&quot;</span>),<span class="dt">all=</span>T)
 
 temdata2=<span class="kw">merge</span>(temdata, 
-          <span class="kw">ddply</span>(temdata, <span class="kw">c</span>(<span class="st">&quot;grp&quot;</span>), function(x) <span class="kw">colMeans</span>(x[<span class="kw">c</span>(<span class="st">&quot;X1&quot;</span> ,<span class="st">&quot;X2&quot;</span>,<span class="st">&quot;X3&quot;</span> , <span class="st">&quot;X4&quot;</span>)])), 
+          <span class="kw">ddply</span>(temdata, <span class="kw">c</span>(<span class="st">&quot;grp&quot;</span>), <span class="cf">function</span>(x) <span class="kw">colMeans</span>(x[<span class="kw">c</span>(<span class="st">&quot;X1&quot;</span> ,<span class="st">&quot;X2&quot;</span>,<span class="st">&quot;X3&quot;</span> , <span class="st">&quot;X4&quot;</span>)])), 
           <span class="dt">by =</span> <span class="st">&quot;grp&quot;</span>, <span class="dt">suffixes =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;.mean&quot;</span>),<span class="dt">all=</span>T)
 
 
@@ -430,28 +432,28 @@ temdata2=<span class="kw">merge</span>(temdata,
 
 <span class="co">#ifelse</span>
 y=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>)
-y2=<span class="kw">ifelse</span>(y==<span class="dv">5</span>,<span class="ot">NA</span>,y)
+y2=<span class="kw">ifelse</span>(y<span class="op">==</span><span class="dv">5</span>,<span class="ot">NA</span>,y)
 y2
 
 
 temdata &lt;-<span class="st"> </span><span class="kw">data.frame</span> (<span class="dt">ID=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>), <span class="dt">Hunger =</span><span class="kw">c</span>(<span class="dv">415</span>,<span class="dv">452</span>,<span class="dv">550</span>,<span class="dv">318</span> ))
 
-temdata$newcol&lt;-<span class="kw">ifelse</span>(temdata[,<span class="dv">2</span>]&gt;=<span class="dv">300</span> &amp;<span class="st"> </span>temdata[,<span class="dv">2</span>]&lt;<span class="dv">400</span>,<span class="dv">350</span>,
-                       <span class="kw">ifelse</span>(temdata[,<span class="dv">2</span>]&gt;=<span class="dv">400</span> &amp;temdata[,<span class="dv">2</span>]&lt;<span class="dv">500</span>,<span class="dv">450</span>,
-                              <span class="kw">ifelse</span>(temdata[,<span class="dv">2</span>]&gt;=<span class="dv">500</span> &amp;<span class="st"> </span>temdata[,<span class="dv">2</span>]&lt;<span class="dv">600</span>,<span class="dv">550</span>,<span class="ot">NA</span>)))
+temdata<span class="op">$</span>newcol&lt;-<span class="kw">ifelse</span>(temdata[,<span class="dv">2</span>]<span class="op">&gt;=</span><span class="dv">300</span> <span class="op">&amp;</span><span class="st"> </span>temdata[,<span class="dv">2</span>]<span class="op">&lt;</span><span class="dv">400</span>,<span class="dv">350</span>,
+                       <span class="kw">ifelse</span>(temdata[,<span class="dv">2</span>]<span class="op">&gt;=</span><span class="dv">400</span> <span class="op">&amp;</span>temdata[,<span class="dv">2</span>]<span class="op">&lt;</span><span class="dv">500</span>,<span class="dv">450</span>,
+                              <span class="kw">ifelse</span>(temdata[,<span class="dv">2</span>]<span class="op">&gt;=</span><span class="dv">500</span> <span class="op">&amp;</span><span class="st"> </span>temdata[,<span class="dv">2</span>]<span class="op">&lt;</span><span class="dv">600</span>,<span class="dv">550</span>,<span class="ot">NA</span>)))
 
 
 
 <span class="co">#if </span>
 x=<span class="dv">5</span>
-y=if(x&gt;<span class="dv">6</span>){<span class="dv">1</span>}else{<span class="dv">0</span>}
-y=if(x&gt;<span class="dv">6</span>){<span class="dv">1</span>} else if(x==<span class="dv">5</span>) {<span class="dv">99</span>} else {<span class="dv">0</span>}
+y=<span class="cf">if</span>(x<span class="op">&gt;</span><span class="dv">6</span>){<span class="dv">1</span>}<span class="cf">else</span>{<span class="dv">0</span>}
+y=<span class="cf">if</span>(x<span class="op">&gt;</span><span class="dv">6</span>){<span class="dv">1</span>} <span class="cf">else</span> <span class="cf">if</span>(x<span class="op">==</span><span class="dv">5</span>) {<span class="dv">99</span>} <span class="cf">else</span> {<span class="dv">0</span>}
 
 
 <span class="co">#veri setini B ye göre diz</span>
-temdata[<span class="kw">order</span>(temdata$B),]                            
+temdata[<span class="kw">order</span>(temdata<span class="op">$</span>B),]                            
 
-temdata[<span class="kw">rev</span>(<span class="kw">order</span>(temdata$B)),]                         
+temdata[<span class="kw">rev</span>(<span class="kw">order</span>(temdata<span class="op">$</span>B)),]                         
 
 
 <span class="co">#kombinasyon oluştur</span>
@@ -475,7 +477,7 @@ f=<span class="kw">c</span>(<span class="dv">41</span>,<span class="dv">18</span
 
 
 <span class="co"># bütün satırlar kayıp ise sil</span>
-temdata=temdata[<span class="kw">apply</span>(temdata,<span class="dv">1</span>,function(x)<span class="kw">any</span>(!<span class="kw">is.na</span>(x))),]
+temdata=temdata[<span class="kw">apply</span>(temdata,<span class="dv">1</span>,<span class="cf">function</span>(x)<span class="kw">any</span>(<span class="op">!</span><span class="kw">is.na</span>(x))),]
 
 
 <span class="co"># grup frekansı ekle</span>
@@ -488,31 +490,31 @@ temdata=<span class="kw">ddply</span>(temdata, <span class="st">&quot;grp&quot;<
 <span class="co">#veri setini böl</span>
 <span class="kw">library</span>(datasets)
 <span class="kw">head</span>(airquality)
-splitdata=<span class="kw">split</span>(airquality,airquality$Month)
+splitdata=<span class="kw">split</span>(airquality,airquality<span class="op">$</span>Month)
 splitdata
 <span class="kw">str</span>(splitdata)
 splitdata[[<span class="dv">2</span>]]
 
 
-x=<span class="kw">list</span>(<span class="dt">a=</span><span class="dv">1</span>:<span class="dv">5</span>, <span class="dt">b=</span><span class="kw">rnorm</span>(<span class="dv">10</span>))
+x=<span class="kw">list</span>(<span class="dt">a=</span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">b=</span><span class="kw">rnorm</span>(<span class="dv">10</span>))
 x
 <span class="kw">lapply</span>(x,mean)
 
 
 
-x=<span class="dv">1</span>:<span class="dv">4</span>
+x=<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>
 <span class="kw">lapply</span>(x,runif)
 <span class="kw">lapply</span>(x,runif,<span class="dt">min=</span><span class="dv">10</span>, <span class="dt">max=</span><span class="dv">20</span>)
 
 
-x=<span class="kw">list</span>(<span class="dt">a=</span><span class="kw">matrix</span>(<span class="dv">1</span>:<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>),<span class="dt">b=</span><span class="kw">matrix</span>(<span class="dv">1</span>:<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">2</span>))
+x=<span class="kw">list</span>(<span class="dt">a=</span><span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>),<span class="dt">b=</span><span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">2</span>))
 
-<span class="kw">lapply</span>(x,function(elt) elt[,<span class="dv">1</span>])
+<span class="kw">lapply</span>(x,<span class="cf">function</span>(elt) elt[,<span class="dv">1</span>])
 
 
 <span class="co"># sapply</span>
 
-x=<span class="kw">list</span>(<span class="dt">a=</span><span class="dv">1</span>:<span class="dv">5</span>, <span class="dt">b=</span><span class="kw">rnorm</span>(<span class="dv">10</span>),<span class="dt">c=</span><span class="kw">runif</span>(<span class="dv">10</span>))
+x=<span class="kw">list</span>(<span class="dt">a=</span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">b=</span><span class="kw">rnorm</span>(<span class="dv">10</span>),<span class="dt">c=</span><span class="kw">runif</span>(<span class="dv">10</span>))
 x
 <span class="kw">lapply</span>(x,mean)
 <span class="kw">sapply</span>(x,mean)
@@ -527,10 +529,10 @@ x
 <span class="kw">apply</span>(x,<span class="dv">1</span>,sum)
 
 <span class="co">#tapply </span>
-x=<span class="kw">c</span>(<span class="dv">1</span>:<span class="dv">10</span>,<span class="kw">rnorm</span>(<span class="dv">10</span>),<span class="kw">runif</span>(<span class="dv">10</span>,<span class="dv">3</span>,<span class="dv">5</span>))
+x=<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,<span class="kw">rnorm</span>(<span class="dv">10</span>),<span class="kw">runif</span>(<span class="dv">10</span>,<span class="dv">3</span>,<span class="dv">5</span>))
 f=<span class="kw">gl</span>(<span class="dv">3</span>,<span class="dv">10</span>)
 ?gl
-h=<span class="kw">factor</span>(<span class="kw">rep</span>(<span class="dv">1</span>:<span class="dv">3</span>,<span class="dt">each=</span><span class="dv">10</span>))
+h=<span class="kw">factor</span>(<span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>,<span class="dt">each=</span><span class="dv">10</span>))
 <span class="kw">tapply</span>(x,f,mean)
 <span class="kw">tapply</span>(x,h,mean)
 <span class="kw">tapply</span>(x,h,mean,<span class="dt">simplify=</span>F)
@@ -540,12 +542,12 @@ h=<span class="kw">factor</span>(<span class="kw">rep</span>(<span class="dv">1<
 
 
 <span class="co">#kayıp veri yüzdeleri</span>
-propmiss &lt;-<span class="st"> </span>function(temdata) <span class="kw">lapply</span>(temdata,function(x) <span class="kw">data.frame</span>(<span class="dt">nmiss=</span><span class="kw">sum</span>(<span class="kw">is.na</span>(x)), <span class="dt">n=</span><span class="kw">length</span>(x), <span class="dt">propmiss=</span><span class="kw">sum</span>(<span class="kw">is.na</span>(x))/<span class="kw">length</span>(x)))
+propmiss &lt;-<span class="st"> </span><span class="cf">function</span>(temdata) <span class="kw">lapply</span>(temdata,<span class="cf">function</span>(x) <span class="kw">data.frame</span>(<span class="dt">nmiss=</span><span class="kw">sum</span>(<span class="kw">is.na</span>(x)), <span class="dt">n=</span><span class="kw">length</span>(x), <span class="dt">propmiss=</span><span class="kw">sum</span>(<span class="kw">is.na</span>(x))<span class="op">/</span><span class="kw">length</span>(x)))
 <span class="kw">propmiss</span>(temdata)
 
 
 <span class="co">#büyük harf</span>
-temdata$childid=<span class="kw">toupper</span>(temdata$childid)
+temdata<span class="op">$</span>childid=<span class="kw">toupper</span>(temdata<span class="op">$</span>childid)
 
 
 
@@ -553,7 +555,7 @@ temdata$childid=<span class="kw">toupper</span>(temdata$childid)
 
 plotpdf=<span class="st">&quot;C:/Users/Desktop/work/multiplePLOTS.pdf&quot;</span>
 <span class="kw">pdf</span>(<span class="dt">file=</span>plotpdf)
-for (i in <span class="dv">7</span>:<span class="dv">55</span>){
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">7</span><span class="op">:</span><span class="dv">55</span>){
   muis=<span class="kw">round</span>(<span class="kw">mean</span>(temdata[,i],<span class="dt">na.rm=</span>T),<span class="dv">3</span>)
   sdis=<span class="kw">round</span>(<span class="kw">sd</span>(temdata[,i],<span class="dt">na.rm=</span>T),<span class="dv">3</span>)
   meansc=<span class="kw">c</span>(<span class="st">&quot;mean&quot;</span>,muis)
@@ -562,8 +564,8 @@ for (i in <span class="dv">7</span>:<span class="dv">55</span>){
   <span class="kw">curve</span>(<span class="kw">dnorm</span>(x, <span class="dt">mean=</span>muis, <span class="dt">sd=</span>sdis), <span class="dt">add=</span><span class="ot">TRUE</span>)
   <span class="kw">lines</span>(<span class="kw">density</span>(temdata[,i],<span class="dt">na.rm=</span>T, <span class="dt">adjust=</span><span class="dv">2</span>), <span class="dt">lty=</span><span class="st">&quot;dotted&quot;</span>, <span class="dt">col=</span><span class="st">&quot;darkgreen&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>)
   <span class="kw">abline</span>(<span class="dt">v=</span>muis,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)
-  <span class="kw">abline</span>(<span class="dt">v=</span>muis<span class="dv">+3</span>*sdis,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
-  <span class="kw">abline</span>(<span class="dt">v=</span>muis<span class="dv">-3</span>*sdis,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
+  <span class="kw">abline</span>(<span class="dt">v=</span>muis<span class="op">+</span><span class="dv">3</span><span class="op">*</span>sdis,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
+  <span class="kw">abline</span>(<span class="dt">v=</span>muis<span class="op">-</span><span class="dv">3</span><span class="op">*</span>sdis,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
 }
 
 <span class="kw">dev.off</span>()
@@ -581,7 +583,7 @@ dd=<span class="kw">read.csv</span>(<span class="st">&quot;../temdata.csv&quot;<
 
 <span class="co">#veri tanımla </span>
 
-<span class="kw">apa.descriptives</span>(<span class="dt">data =</span> temdataet[,<span class="dv">1</span>:<span class="dv">5</span>], <span class="dt">variables =</span> <span class="kw">names</span>(temdataet[,<span class="dv">1</span>:<span class="dv">5</span>]), <span class="dt">report =</span> <span class="st">&quot;&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;test&quot;</span>, <span class="dt">filename =</span> <span class="st">&quot;test.docx&quot;</span>, <span class="dt">note =</span> <span class="ot">NULL</span>, <span class="dt">position =</span> <span class="st">&quot;lower&quot;</span>, <span class="dt">merge =</span> <span class="ot">FALSE</span>, <span class="dt">landscape =</span> <span class="ot">FALSE</span>, <span class="dt">save =</span> <span class="ot">TRUE</span>)
+<span class="kw">apa.descriptives</span>(<span class="dt">data =</span> temdataet[,<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>], <span class="dt">variables =</span> <span class="kw">names</span>(temdataet[,<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]), <span class="dt">report =</span> <span class="st">&quot;&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;test&quot;</span>, <span class="dt">filename =</span> <span class="st">&quot;test.docx&quot;</span>, <span class="dt">note =</span> <span class="ot">NULL</span>, <span class="dt">position =</span> <span class="st">&quot;lower&quot;</span>, <span class="dt">merge =</span> <span class="ot">FALSE</span>, <span class="dt">landscape =</span> <span class="ot">FALSE</span>, <span class="dt">save =</span> <span class="ot">TRUE</span>)
 
 example &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">c</span>(<span class="st">&quot;Column 1&quot;</span>, <span class="st">&quot;Column 2&quot;</span>, <span class="st">&quot;Column 3&quot;</span>), <span class="kw">c</span>(<span class="fl">3.45</span>, <span class="fl">5.21</span>, <span class="fl">2.64</span>), <span class="kw">c</span>(<span class="fl">1.23</span>, <span class="fl">1.06</span>, <span class="fl">1.12</span>) )
 <span class="kw">apa.table</span>(<span class="dt">data =</span> example, <span class="dt">level1.header =</span> <span class="kw">c</span>(<span class="st">&quot;Variable&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;SD&quot;</span>))
@@ -596,7 +598,7 @@ example &lt;-<span class="st"> </span><span class="kw">data.frame</span>( <span 
 
 <span class="kw">apa.table</span>( <span class="dt">data =</span> example, <span class="dt">level1.header =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;Descriptives&quot;</span>, <span class="st">&quot;Inferential&quot;</span>), 
            <span class="dt">level1.colspan =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>), 
-           <span class="dt">level2.header =</span> <span class="kw">c</span>(<span class="st">&quot;Variable&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;SD&quot;</span>, <span class="st">&quot;t-value&quot;</span>, <span class="st">&quot;*&quot;</span>) )$table</code></pre></div>
+           <span class="dt">level2.header =</span> <span class="kw">c</span>(<span class="st">&quot;Variable&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;SD&quot;</span>, <span class="st">&quot;t-value&quot;</span>, <span class="st">&quot;*&quot;</span>) )<span class="op">$</span>table</code></pre></div>
 
 </div>
 </div>
@@ -606,8 +608,9 @@ example &lt;-<span class="st"> </span><span class="kw">data.frame</span>( <span 
         </div>
       </div>
 <a href="coklu-dogrusal-regresyon-ksa-tantm.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="proje-basvurusu-secilen-ksmlar.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
-
+<a href="proje-basvurusu-secilen-ksmlar.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -616,7 +619,7 @@ example &lt;-<span class="st"> </span><span class="kw">data.frame</span>( <span 
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
@@ -650,7 +653,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);

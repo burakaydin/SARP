@@ -388,6 +388,29 @@ phi(genderWAGE)
 ```
 
 
+##Tetrakorik ve polikorik korelasyon katsayısı
+
+Aralarında korelasyon belirlenmesi istenen değişkenlerin doğasının sürekli ve normal dağılımlı olduğu hâlde iki kategorili (dikatom) olarak gözlenmiş olması durumunda, bir diğer ifade ile, dikatom değişkenlerin örtük sürekli değişkenleri yansıtıyor olması durumunda, tetrakorik (rt) korelasyon katsayısı kullanılır. Bu noktada araştırmacı, karşılaştığı dikatom değişkenlerin doğası gereği sürekli olup olmadığına karar vermesi ve kararını savunabilmesi gerekir. Örneğin öğrencilerin doğru-yanlış sorularına verdiği yanıtlar (0: yanlış, 1: doğru) sürekli bir değişkenin yansıması olarak düşünülebilir. Diğer bir örnek ankete katılan bireylerin yaşlarının 30 yaş altı ve 30 yaş üstü olarak toplanmış olmasıdır. Gösterim amaçlı, veri setinde yer alan üçüncü ve altıncı TCA sorularını ikili veri olarak kodlayarak  ve psych paketinde yaralan tetrachoric  fonksiyonunu kullanılarak tetrakorik korelasyon katsayısı hesaplanabilir. Hesaplanan korelasyon 0.07’dir. 
+
+```{r, collapse=T, eval=T, cache=F, message=F}
+# 3. ve 6. sorular dikatom yapılsın
+# Dünya Bankası araştırma grubu tarafından kullanılan yöntem, 
+# eğer yanıt 1 (strongly disagree) veya 2 (disagree) ise 1, değilse 0.
+dataWBT_Kayseri$Bitem3=ifelse(dataWBT_Kayseri$item3==1|dataWBT_Kayseri$item3==2,1,0)
+dataWBT_Kayseri$Bitem6=ifelse(dataWBT_Kayseri$item6==1|dataWBT_Kayseri$item6==2,1,0)
+require(psych)
+tetrachoric(as.matrix(dataWBT_Kayseri[,c("Bitem3","Bitem6")]))
+
+```
+
+
+Polikorik korelasyon katsayısı eldeki değişkenlerin sıralı (ordinal) kategorik olduğu durumlarda hesaplanır. Tetrakorik korelasyonda olduğu gibi, polikorik korelasyon hesaplanırken de kategorik değişkenlerin sürekli bir değişeni yansıttığı varsayımı yapılır. Bu iki korelasyon katsayısı örtük sürekli korelasyonlar (latent continuous correlation) olarak tek bir terim altında düşünülebilir (@uebersax2015introduction). Tetrakorik ve polikorik korelasyonların hesaplanmasında kullanılan yöntemler kapalı ve açık form olarak düşünülebilir. Kapalı form nispeten daha basittir ve formüllerle basitçe ifade edilebilir. Fakat kapalı formlar genellikle yaklaşık değerler hesaplar. Açık form yöntemlerden kasıt iteratif prosedürlerdir ve oldukça karmaşık olabilirler, fakat kapalı formlara kıyasla daha doğru sonuçlar vermesi beklenir. Kategorik değişkenler için yürütülen faktör analizlerinde bu iki tür korelasyon birçok yazılım tarafından kullanılmaktadır. Tetrakorik veya polikorik korelasyon hesaplayacak olan araştırmacıların kullandığı yöntemi ve yazılımı açık olarak ifade etmesi doğru bir yaklaşım olacaktır, çünkü farklı yazılımlar ve farklı yöntemler kullanıldığında sonuçlar arasında farklılık görülebilir. Sonuçların birbirinden neden farklı olabileceğini daha detaylı araştırmak isteyen okuyucular @olsson1979maximum tarafından kaleme alınan makaleyi inceleyebilirler. Bu noktada okuyucular psych paketinde yer alan polychoric  fonksiyonunun argümanlarını dikkatlice incelemek isteyebilirler. Gösterim amaçlı veri setinde yer alan üçüncü ve altıncı TCA sorular için polikorik korelasyon hesaplanmış ve 0.16 bulunmuştur. 
+
+```{r, collapse=T, eval=T, cache=F, message=F}
+require(psych)
+polychoric(as.matrix(dataWBT_Kayseri[,c("item3","item6")]))
+
+```
 
 ## Korelasyon katsayısı hakkında dikkat edilmesi gerekenler 
 

@@ -1,7 +1,7 @@
 
 
 # Önyüz
-Bu kitabın yazarları olarak elimizde olan notları bir araya getirmek istedik. Akademik özenle oluşturduğumuz bu içerik her zaman açık kaynak olarak kalacaktır. Katkılarınız, istekleriniz titizlikle dikkate alınacak ve içeriğe dahil edilecektir. Bu içeriğin hangi motivasyonlarla hazırlandığını merak eden okuyucular kitabın sonuna eklediğimiz ^[sadece Türkçe versiyonunda yer alır] proje önerisini okuyabilirler.
+Bu kitabın yazarları olarak elimizde olan notları bir araya getirmek istedik. Akademik özenle oluşturduğumuz bu içerik her zaman açık kaynak olarak kalacaktır. Katkılarınız, istekleriniz  dikkate alınacak ve içeriğe dahil edilecektir. Bu içeriğin hangi motivasyonlarla hazırlandığını merak eden okuyucular kitabın sonuna eklediğimiz ^[sadece Türkçe versiyonunda yer alır] proje önerisini okuyabilirler.
 
 ## Yazarlar
 Akademik çalışmalarımız araştırma tasarıları (research design) ve nicel veri analizine yoğunlaşmıştır. Monte Carlo simulasyonları mutlaka çalışma takvimimizde yer alır. Diğer bir ortak noktamız çok düzeyli modeller üzerine yaptığımız çalışmalardır. 
@@ -20,6 +20,10 @@ _Klasik ve Modern Test Teorisi_ kitabının yazarıdır. Amerikan Eğitim Araşt
 ### Walter L. Leite, Ph.D.
 
 Florida Üniversitesi Eğitim Fakültesinde Doçenttir. Gerçek deneysel ve yarı deneysel çalışmalardan edinilen verilerin analizinde saygın çalışmaları mevcuttur. Detaylı bilgi için <a href="https://education.ufl.edu/leite/" target="_blank">UF College of Education</a>
+
+### Hakan Atılgan, Ph.D.
+
+Ege Üniversitesi Eğitim Fakültesinde Ölçme ve Değerlendirme doçentidir. Yapısal eşitlik modelleri, varyans analizine dayalı güvenirlik belirleme yöntemleri ve psikometri üzerine çalışmaktadır. Yaklaşık 15 yıldır lisansüstü düzeyde istatistik dersleri vermektedir.Detaylı bilgi için <a href="http://akademik.ege.edu.tr/?q=tr/bilgiler&id=2229" target="_blank">Ege Üniversitesi</a>
 
 ## Teşekkür {#tesekkur}
 
